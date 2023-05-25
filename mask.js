@@ -90,6 +90,7 @@ if (locationURL.includes('detail')) {
         setStyle() {
             const headElm = document.querySelector('head');
             const addStyleElm = document.createElement('style');
+            const addStyles = object['add_Styles'];
             const style = `
                 .js-added-font-size {
                     font-size:1.2rem; 
@@ -113,10 +114,7 @@ if (locationURL.includes('detail')) {
                     flex:1 3;
                     padding:1.2rem 1.2rem;
                 }
-                #surrounding-information-table {
-                    margin-top:10px;
-                    margin-bottom:10px;
-                }
+                ${addStyles}
             `;
             addStyleElm.textContent = style;
             headElm.appendChild(addStyleElm);
@@ -170,6 +168,12 @@ if (locationURL.includes('detail')) {
                     {td:surroundingInformationList}
                 ]
             ],
+            add_Styles:`
+                #surrounding-information-table {
+                    margin-top:10px;
+                    margin-bottom:10px;
+                }
+            `, 
             table_Id:{id:'surrounding-information-table'},
             add_To_Selector:''
         }
