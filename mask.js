@@ -316,6 +316,7 @@ if (locationURL.includes('detail')) {
         setStyle(object) {
             const headElm = document.querySelector('head');
             const addStyleElm = document.createElement('style');
+            const addStyles = object['add_Styles'];
             const tabCount = (() => {
                 if (object['tab_Contents'].length <= 3) {
                     return 3;
@@ -371,12 +372,7 @@ if (locationURL.includes('detail')) {
                 .js-added-tab-contents-item.show {
                     display:block;
                 } 
-                #contents-item-map {
-                    position:relative; 
-                    padding-bottom:${aspectRatio}%; 
-                    height:0; 
-                    overflow:hidden;
-                }
+                ${addStyles}
             `;
             addStyleElm.textContent = style;
             headElm.appendChild(addStyleElm);
@@ -448,15 +444,22 @@ if (locationURL.includes('detail')) {
             tab_Contents:[
                 {tabContentTitle:'周辺マップ'},
                 {tabContentTitle:'周辺施設情報'}
-           ],
-
+            ],
+            add_Styles:`
+                #contents-item-map {
+                    position:relative; 
+                    padding-bottom:${aspectRatio}%; 
+                    height:0; 
+                    overflow:hidden;
+                }
+            `, 
             add_To_Selector:'div.detail_btm'
        },
        tab_Content_Map,
        tab_Content_SurroundingInformation
     );
-    const tabElm_Map_h = document.querySelector('#contents-item-map').clientHeight;
-    document.querySelector('#surrounding-information-table').parentNode.setAttribute('style','min-height:' + (tabElm_Map_h - 20) + 'px;');
+    //const tabElm_Map_h = document.querySelector('#contents-item-map').clientHeight;
+    //document.querySelector('#surrounding-information-table').parentNode.setAttribute('style','min-height:' + (tabElm_Map_h - 20) + 'px;');
 
 } else if (locationURL.includes('property')) {
 } else {
