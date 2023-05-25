@@ -324,15 +324,6 @@ if (locationURL.includes('detail')) {
                     return object['tab_Contents'].length;
                 };
             })();
-            const aspectRatio = (() => {
-                if (window.screen.width <= 480) {
-                    return 75;
-                } else if (window.screen.width > 480 && window.screen.width < 960){
-                    return 75;
-                } else {
-                    return 66.667;
-                };
-            })();
             const tabWidthBase = Math.trunc((100 / Number(tabCount)) * 1000) / 1000;
             const style = `
                 .js-added-tab {
@@ -436,7 +427,16 @@ if (locationURL.includes('detail')) {
             };
         };
     };
-
+    const aspectRatio = (() => {
+        if (window.screen.width <= 480) {
+            return 75;
+        } else if (window.screen.width > 480 && window.screen.width < 960){
+            return 75;
+        } else {
+            return 66.667;
+        };
+    })();
+    
     const surroundingEnvironment = new AddTabContents(
         {
             contents_Title:'周辺概要',
