@@ -167,7 +167,8 @@ if (locationURL.includes('detail')) {
     //テーブルコンテンツの作成
     const surroundingInformationRegex = /[（].+[）]/g;
     const surroundingListJson = document.querySelector('span#extra-json').textContent;
-    const surroundingList = surroundingListJson['surroundingInformation'];
+    const surroundingListJson_Obj = JSON.parse(surroundingListJson);
+    const surroundingList = surroundingListJson_Obj['surroundingInformation'];
     const surroundingInformationList = (() =>{
         const outputList = [];
         for(surroundingItem of surroundingList) {
