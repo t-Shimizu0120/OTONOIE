@@ -166,7 +166,8 @@ if (locationURL.includes('detail')) {
     
     //テーブルコンテンツの作成
     const surroundingInformationRegex = /[（].+[）]/g;
-    const surroundingList = ['柿生郵便局（郵便局）まで540m','ローソン（コンビニ）まで219m','セブンイレブン（コンビニ）まで1100m'];
+    const surroundingListJson = document.querySelector('span#extra-json').textContent;
+    const surroundingList = surroundingListJson['surroundingInformation'];
     const surroundingInformationList = (() =>{
         const outputList = [];
         for(surroundingItem of surroundingList) {
@@ -493,7 +494,3 @@ if (locationURL.includes('detail')) {
 } else if (locationURL.includes('property')) {
 } else {
 };
-
-
-
-
