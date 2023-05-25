@@ -166,19 +166,22 @@ if (locationURL.includes('detail')) {
     
     //テーブルコンテンツの作成
     const surroundingInformationRegex = /[（].+[）]/g;
-    const surroundingListJson = document.querySelector('span#extra-json').textContent;
-    const surroundingListJson_Obj = JSON.parse(surroundingListJson);
-    const surroundingList = surroundingListJson_Obj['surroundingInformation'];
     const surroundingInformationList = (() =>{
-        const outputList = [];
-        for(surroundingItem of surroundingList) {
-            const targetText = surroundingItem.match(surroundingInformationRegex)[0];
-            const category = targetText.replace('（','').replace('）','');
-            const information = surroundingItem.replace(targetText,'');
-            const surroundingObj = `■ ${category}：${information}`;
-            outputList.push(surroundingObj);
+        if (document.querySelector('span#extra-json') != null) {
+            const surroundingListJson = document.querySelector('span#extra-json').textContent;
+            const surroundingListJson_Obj = JSON.parse(surroundingListJson);
+            const surroundingList = surroundingListJson_Obj['surroundingInformation'];
+            const outputList = [];
+            for(surroundingItem of surroundingList) {
+                const targetText = surroundingItem.match(surroundingInformationRegex)[0];
+                const category = targetText.replace('（','').replace('）','');
+                const information = surroundingItem.replace(targetText,'');
+                const surroundingObj = `■ ${category}：${information}`;
+                outputList.push(surroundingObj);
+            };
+            return outputList;
+        } else {
         };
-        return outputList;
     })(); 
     
     //インスタンスの作成
