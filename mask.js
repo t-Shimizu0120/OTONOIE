@@ -471,27 +471,36 @@ if (locationURL.includes('detail')) {
         };
     })();
     //インスタンス生成
-    const surroundingEnvironment = new AddTabContents(
-        {
-            contents_Title:'周辺概要',
-            contents_BaseId:'surrounding-environment',
-            tab_Contents:[
-                {tabContentTitle:'周辺マップ'},
-                {tabContentTitle:'周辺施設情報'}
-            ],
-            add_Styles:`
-                #contents-item-map {
-                    position:relative; 
-                    padding-bottom:${aspectRatio}%; 
-                    height:0; 
-                    overflow:hidden;
-                }
-            `, 
-            add_To_Selector:'div.detail_btm'
-       },
-       tab_Content_Map,
-       tab_Content_SurroundingInformation
-    );
+    //const surroundingEnvironment = new AddTabContents(
+        //{
+            //contents_Title:'周辺概要',
+            //contents_BaseId:'surrounding-environment',
+            //tab_Contents:[
+                //{tabContentTitle:'周辺マップ'},
+                //{tabContentTitle:'周辺施設情報'}
+            //],
+            //add_Styles:`
+                //#contents-item-map {
+                    //position:relative; 
+                    //padding-bottom:${aspectRatio}%; 
+                    //height:0; 
+                    //overflow:hidden;
+                //}
+            //`, 
+            //add_To_Selector:'div.detail_btm'
+       //},
+       //tab_Content_Map,
+       //tab_Content_SurroundingInformation
+    //);
+    const insertTargetElm = document.querySelector('div.detail_btm');
+    const surroundingEnvironmentTitle = document.createElement('h5');
+    surroundingEnvironmentTitle.textContent = '周辺概要';
+    insertTargetElm.appendChild(surroundingEnvironmentTitle);
+    insertTargetElm.appendChild(tab_Content_Map);
+    if (tab_Content_SurroundingInformation != null) {
+        insertTargetElm.appendChild(tab_Content_SurroundingInformation);
+    } else {
+    };
 } else if (locationURL.includes('property')) {
 } else {
 };
