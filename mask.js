@@ -19,9 +19,9 @@ if (locationURL.includes('detail')) {
             if(object.table_Contents.length === 0) {
                 return null;
             } else {
-                if (document.querySelector('.js-added-table') != null) {
-                    const styles = document.querySelector('#table-style');
-                    styles.textContent += object['add_Styles'];
+                if (document.querySelector('#table-style') != null) {
+                    const style = document.querySelector('#table-style');
+                    style.textContent += object['add_Styles'];
                 } else {
                     this.setStyle(object);
                 };
@@ -229,9 +229,9 @@ if (locationURL.includes('detail')) {
                 return null;
             } else {
 
-                if (document.querySelector('.js-added-tab-list') != null) {
-                    const styles = document.querySelector('#tab-style');
-                    styles.textContent += object['add_Styles'];
+                if (document.querySelector('#tab-style') != null) {
+                    const style = document.querySelector('#tab-style');
+                    style.textContent += object['add_Styles'];
                 } else {
                     this.setStyle(object);
                 };
