@@ -468,7 +468,7 @@ if (locationURL.includes('detail')) {
             return 66.667;
         };
     })();
-    
+    //インスタンス生成
     const surroundingEnvironment = new AddTabContents(
         {
             contents_Title:'周辺概要',
