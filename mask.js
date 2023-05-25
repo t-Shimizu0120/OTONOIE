@@ -20,6 +20,8 @@ if (locationURL.includes('detail')) {
                 return null;
             } else {
                 if (document.querySelector('.js-added-table') != null) {
+                    const styles = document.querySelector('#table-style');
+                    styles.textContent += object['add_Styles'];
                 } else {
                     this.setStyle(object);
                 };
@@ -228,6 +230,8 @@ if (locationURL.includes('detail')) {
             } else {
 
                 if (document.querySelector('.js-added-tab-list') != null) {
+                    const styles = document.querySelector('#tab-style');
+                    styles.textContent += object['add_Styles'];
                 } else {
                     this.setStyle(object);
                 };
