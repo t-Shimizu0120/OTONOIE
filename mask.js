@@ -1,6 +1,8 @@
+//URL取得
 const locationURL = location.href;
+//URLで分岐
 if (locationURL.includes('detail')) {
-
+    //要素作成関数
     const create_Element = (tagName,attributes) => {
         const add_Elm = document.createElement(tagName);
         for (attribute of attributes) {
@@ -10,48 +12,57 @@ if (locationURL.includes('detail')) {
         };
         return add_Elm;
     };
-
-
-
+    
+    
+    //テーブル作成のクラス
     class AddTable {
         constructor (object,...args) {
-
+            //コンテンツの有無を判定
             if(object.table_Contents.length === 0) {
+                //無い場合はnullを返す
                 return null;
             } else {
+                //ある場合は処理継続
+                //styleタグの有無を判定
                 if (document.querySelector('#table-style') != null) {
+                    //あれば追加
                     const style = document.querySelector('#table-style');
                     style.textContent += object['add_Styles'];
                 } else {
+                    //無ければ作成・追加
                     this.setStyle(object);
                 };
-
+                //attribute用のオブジェクトの作成
                 const obj = this.setAttrs(object);
-
+                //コンテンツタイトルの作成
                 if (obj['contents_Title'] === '') {
                 } else {
                     const table_Contents_Title = document.createElement('h5');
                     table_Contents_Title.textContent = obj['contents_Title'];
                 };
-
+                //テーブルタグのattribute設定
                 const add_Elm_table = document.createElement('table');
                 for (this.table_Attr of obj.table_Attrs) {
                     const table_AttrName = Object.keys(this.table_Attr)[0];
                     const table_AttrValue = this.table_Attr[table_AttrName];
                     add_Elm_table.setAttribute(table_AttrName,table_AttrValue);
                 };
-
+                //tbodyタグ作成
                 const add_Elm_tbody = document.createElement('tbody');
-
+                //tr、th、tdタグの作成・値の代入
                 for (this.tableRow of obj.table_Contents){
+                    //tr作成
                     const add_Elm_tr = document.createElement('tr');
                     for (this.rowItem of this.tableRow) {
+                        //キー名を取得
                         const items_KeyName = Object.keys(this.rowItem)[0];
+                        //キーの値に応じて要素作成、キーの値でバリューを取得・設定
                         if (items_KeyName === 'th') {
                             const add_Elm_th = document.createElement(items_KeyName);
                             const add_Elm_th_Value = this.rowItem[items_KeyName];
                             add_Elm_th.textContent = add_Elm_th_Value;
                             add_Elm_tr.appendChild(add_Elm_th);
+                        //tdの場合、リストを作成
                         } else if (items_KeyName === 'td') {
                             if (this.rowItem[items_KeyName].length === 0) {
                             } else {
@@ -67,15 +78,16 @@ if (locationURL.includes('detail')) {
                             };
                         };
                     };
+                    //tbodyへtrを追加
                     add_Elm_tbody.appendChild(add_Elm_tr);
                 };
                 const add_Elm_tr = document.createElement('tr');
                 const add_Elm_th = document.createElement('th');
                 const add_Elm_td = document.createElement('td');
-
-
+                //tbodyをtableへ追加
                 add_Elm_table.appendChild(add_Elm_tbody);
-
+                
+                //追加先の設定があれば追加する
                 if (obj.add_To_Selector === '') {
                     return add_Elm_table;
                 } else {
@@ -90,6 +102,7 @@ if (locationURL.includes('detail')) {
             };
         };
         setStyle(object) {
+            //styleタグの追加
             const headElm = document.querySelector('head');
             const addStyleElm = document.createElement('style');
             addStyleElm.setAttribute('id','table-style');
@@ -123,6 +136,7 @@ if (locationURL.includes('detail')) {
             headElm.appendChild(addStyleElm);
         };
         setAttrs(object) {
+            //attributeオブジェクトの作成
             const table_Obj = {
                 contents_Title:'',
                 table_Contents:[],
@@ -139,6 +153,7 @@ if (locationURL.includes('detail')) {
             for (this.table_Content of table_Contents) {
                 table_Obj.table_Contents.push(this.table_Content);
             };
+            //ベースIdからidを生成
             const table_Id = {};
             table_Id.id = object.table_BaseId + '-table';
             table_Obj.table_Attrs.push(table_Id);
@@ -148,7 +163,8 @@ if (locationURL.includes('detail')) {
         };
 
     };
-
+    
+    //テーブルコンテンツの作成
     const surroundingInformationRegex = /[（].+[）]/g;
     const surroundingList = ['柿生郵便局（郵便局）まで540m','ローソン（コンビニ）まで219m','セブンイレブン（コンビニ）まで1100m'];
     const surroundingInformationList = (() =>{
@@ -162,7 +178,8 @@ if (locationURL.includes('detail')) {
         };
         return outputList;
     })(); 
-
+    
+    //インスタンスの作成
     const tab_Content_SurroundingInformation = new AddTable(
         {
             contents_Title:'',
@@ -182,9 +199,10 @@ if (locationURL.includes('detail')) {
             add_To_Selector:''
         }
     );
-
-
-
+    
+    
+    
+    //マップコンテンツ作成
     const tab_Content_Map = (() => {
         const map_Parent_Elm = create_Element('div',[
             {class:'tab-contents-item'},
@@ -192,9 +210,10 @@ if (locationURL.includes('detail')) {
         ]);
 
         const map_Address = document.querySelector('div.detail_r').querySelector('dl.clearfix').querySelector('dd').textContent;
-
+        //src作成
         const map_Src = (() => {
             let m_src;
+            //画面幅でズーム調整
             if (window.screen.width <= 480) {
                 m_src = 'https://www.google.com/maps/?output=embed&q=' + map_Address + '&t=m&z=15';
             } else if (window.screen.width > 480 && window.screen.width < 960) {
@@ -204,7 +223,7 @@ if (locationURL.includes('detail')) {
             };
             return m_src;
         })(); 
-
+        
         const map_Elm = create_Element('iframe',[
             {width:'100%'},
             {height:'auto'},
@@ -219,9 +238,10 @@ if (locationURL.includes('detail')) {
 
         return map_Parent_Elm;
     })();
-
-
-
+    
+    
+    
+    //タブコンテンツ作成のクラス　※基本テーブルと同じ構成
     class AddTabContents {
 
         constructor (object,...args) {
@@ -438,6 +458,7 @@ if (locationURL.includes('detail')) {
             };
         };
     };
+    //スクリーン幅から地図用のアスペクト比を生成
     const aspectRatio = (() => {
         if (window.screen.width <= 480) {
             return 75;
