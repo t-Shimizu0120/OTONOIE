@@ -90,6 +90,7 @@ if (locationURL.includes('detail')) {
         setStyle(object) {
             const headElm = document.querySelector('head');
             const addStyleElm = document.createElement('style');
+            addStyleElm.setAttribute('id','table-style');
             const addStyles = object['add_Styles'];
             const style = `
                 .js-added-font-size {
@@ -320,6 +321,7 @@ if (locationURL.includes('detail')) {
         setStyle(object) {
             const headElm = document.querySelector('head');
             const addStyleElm = document.createElement('style');
+            addStyleElm.setAttribute('id','tab-style');
             const addStyles = object['add_Styles'];
             const tabCount = (() => {
                 if (object['tab_Contents'].length <= 3) {
