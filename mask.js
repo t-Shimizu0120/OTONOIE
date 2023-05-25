@@ -21,7 +21,7 @@ if (locationURL.includes('detail')) {
             } else {
                 if (document.querySelector('.js-added-table') != null) {
                 } else {
-                    this.setStyle();
+                    this.setStyle(object);
                 };
 
                 const obj = this.setAttrs(object);
