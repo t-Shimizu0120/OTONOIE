@@ -167,11 +167,11 @@ if (locationURL.includes('detail')) {
     //テーブルコンテンツの作成
     const surroundingInformationRegex = /[（].+[）]/g;
     const surroundingInformationList = (() =>{
+        const outputList = [];
         if (document.querySelector('span#extra-json') != null) {
             const surroundingListJson = document.querySelector('span#extra-json').textContent;
             const surroundingListJson_Obj = JSON.parse(surroundingListJson);
             const surroundingList = surroundingListJson_Obj['surroundingInformation'];
-            const outputList = [];
             for(surroundingItem of surroundingList) {
                 const targetText = surroundingItem.match(surroundingInformationRegex)[0];
                 const category = targetText.replace('（','').replace('）','');
@@ -181,6 +181,7 @@ if (locationURL.includes('detail')) {
             };
             return outputList;
         } else {
+            return outputList;
         };
     })(); 
     
