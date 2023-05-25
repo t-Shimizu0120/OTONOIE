@@ -496,6 +496,16 @@ if (locationURL.includes('detail')) {
     const surroundingEnvironmentTitle = document.createElement('h5');
     surroundingEnvironmentTitle.textContent = '周辺概要';
     insertTargetElm.appendChild(surroundingEnvironmentTitle);
+    const mapStyle = document.createElement('style');
+    mapStyle.textContent = `
+        #contents-item-map {
+            position:relative; 
+            padding-bottom:${aspectRatio}%; 
+            height:0; 
+            overflow:hidden;
+        }
+    `; 
+    insertTargetElm.appendChild(mapStyle);
     insertTargetElm.appendChild(tab_Content_Map);
     if (tab_Content_SurroundingInformation != null) {
         insertTargetElm.appendChild(tab_Content_SurroundingInformation);
