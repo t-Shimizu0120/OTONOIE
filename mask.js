@@ -139,7 +139,8 @@ if (locationURL.includes('detail')) {
             for (this.table_Content of table_Contents) {
                 table_Obj.table_Contents.push(this.table_Content);
             };
-            const table_Id = object.table_Id;
+            const table_Id = {};
+            table_Id.id = object.table_BaseId + '-table';
             table_Obj.table_Attrs.push(table_Id);
             table_Obj.add_To_Selector = object.add_To_Selector;
 
@@ -165,6 +166,7 @@ if (locationURL.includes('detail')) {
     const tab_Content_SurroundingInformation = new AddTable(
         {
             contents_Title:'',
+            table_BaseId:'surrounding-information',
             table_Contents:[
                 [
                     {th:'周辺施設'},
@@ -177,7 +179,6 @@ if (locationURL.includes('detail')) {
                     margin-bottom:10px;
                 }
             `, 
-            table_Id:{id:'surrounding-information-table'},
             add_To_Selector:''
         }
     );
@@ -468,9 +469,6 @@ if (locationURL.includes('detail')) {
        tab_Content_Map,
        tab_Content_SurroundingInformation
     );
-    //const tabElm_Map_h = document.querySelector('#contents-item-map').clientHeight;
-    //document.querySelector('#surrounding-information-table').parentNode.setAttribute('style','min-height:' + (tabElm_Map_h - 20) + 'px;');
-
 } else if (locationURL.includes('property')) {
 } else {
 };
