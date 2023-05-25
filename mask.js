@@ -164,7 +164,7 @@ if (locationURL.includes('detail')) {
 
     };
     
-    //テーブルコンテンツの作成
+    //テーブルコンテンツ（周辺リスト）の作成
     const surroundingInformationRegex = /[（].+[）]/g;
     const surroundingInformationList = (() =>{
         const outputList = [];
