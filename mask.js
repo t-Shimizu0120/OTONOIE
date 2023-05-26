@@ -206,7 +206,7 @@ if (locationURL.includes('detail')) {
         {
             contents_Title:'',
             table_BaseId:'surrounding-information',
-            table_Contents:[insert_Table_Contents],
+            table_Contents:[add_Table_Contents],
             add_Styles:`
                 #surrounding-information-table {
                     margin-top:10px;
