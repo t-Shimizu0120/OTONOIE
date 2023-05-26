@@ -194,27 +194,28 @@ if (locationURL.includes('detail')) {
     })(); 
     
     //インスタンスの作成
-    const tab_Content_SurroundingInformation = new AddTable(
-        {
-            contents_Title:'',
-            table_BaseId:'surrounding-information',
-            table_Contents:[
-                [
-                    {th:'周辺施設'},
-                    {td:surroundingInformationList}
-                ]
-            ],
-            add_Styles:`
-                #surrounding-information-table {
-                    margin-top:10px;
-                    margin-bottom:10px;
-                }
-            `, 
-            add_To_Selector:''
-        }
-    );
-    
-    
+    if (surroundingInformationList.length === 0) {
+    } else {
+        const tab_Content_SurroundingInformation = new AddTable(
+            {
+                contents_Title:'',
+                table_BaseId:'surrounding-information',
+                table_Contents:[
+                    [
+                        {th:'周辺施設'},
+                        {td:surroundingInformationList}
+                    ]
+                ],
+                add_Styles:`
+                    #surrounding-information-table {
+                        margin-top:10px;
+                        margin-bottom:10px;
+                    }
+                `, 
+                add_To_Selector:''
+            }
+        );
+    };    
     
     //マップコンテンツ作成
     const tab_Content_Map = (() => {
