@@ -171,7 +171,7 @@ if (locationURL.includes('detail')) {
         if (document.querySelector('span#extra-json') != null) {
             const surroundingListJson = document.querySelector('span#extra-json').textContent;
             const surroundingListJson_Obj = JSON.parse(surroundingListJson);
-            if (surroundingInformation in surroundingListJson_Obj) {
+            if (surroundingListJson_Obj.surroundingInformation) {
                 const surroundingList = surroundingListJson_Obj['surroundingInformation'];
                 if (surroundingList.length === 0) {
                     return outputList;
