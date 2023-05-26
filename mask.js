@@ -194,7 +194,7 @@ if (locationURL.includes('detail')) {
     })(); 
     
     //テーブルのコンテンツ生成
-    const insert_Table_Contents (() => {
+    const add_Table_Contents (() => {
         if (surroundingInformationList.length === 0) {
             return '';
         } else {
