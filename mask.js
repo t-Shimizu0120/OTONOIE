@@ -193,43 +193,30 @@ if (locationURL.includes('detail')) {
         };
     })(); 
     
+    //テーブルのコンテンツ生成
+    const insert_Table_Contents (() => {
+        if (surroundingInformationList.length === 0) {
+            return '';
+        } else {
+            return [{th:'周辺施設'},{td:surroundingInformationList}];
+        };
+    })();
     //インスタンスの作成
-    if (surroundingInformationList.length === 0) {
-        const tab_Content_SurroundingInformation = new AddTable(
-            {
-                contents_Title:'',
-                table_BaseId:'surrounding-information',
-                table_Contents:[],
-                add_Styles:`
-                    #surrounding-information-table {
-                        margin-top:10px;
-                        margin-bottom:10px;
-                    }
-                `, 
-                add_To_Selector:''
-            }
-        );
-    } else {
-        const tab_Content_SurroundingInformation = new AddTable(
-            {
-                contents_Title:'',
-                table_BaseId:'surrounding-information',
-                table_Contents:[
-                    [
-                        {th:'周辺施設'},
-                        {td:surroundingInformationList}
-                    ]
-                ],
-                add_Styles:`
-                    #surrounding-information-table {
-                        margin-top:10px;
-                        margin-bottom:10px;
-                    }
-                `, 
-                add_To_Selector:''
-            }
-        );
-    };    
+    const tab_Content_SurroundingInformation = new AddTable(
+        {
+            contents_Title:'',
+            table_BaseId:'surrounding-information',
+            table_Contents:[insert_Table_Contents],
+            add_Styles:`
+                #surrounding-information-table {
+                    margin-top:10px;
+                    margin-bottom:10px;
+                }
+            `, 
+            add_To_Selector:''
+        }
+    );
+    
     
     //マップコンテンツ作成
     const tab_Content_Map = (() => {
