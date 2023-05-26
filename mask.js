@@ -331,7 +331,7 @@ if (locationURL.includes('detail')) {
                             tab_Contents_Item.classList.add(this.class_Except);
                         };
                     };
-                    if(args[i] === null) {
+                    if(args[i] = null) {
                     } else {
                         tab_Contents_Item.appendChild(args[i]);
                     };
