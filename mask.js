@@ -171,15 +171,23 @@ if (locationURL.includes('detail')) {
         if (document.querySelector('span#extra-json') != null) {
             const surroundingListJson = document.querySelector('span#extra-json').textContent;
             const surroundingListJson_Obj = JSON.parse(surroundingListJson);
-            const surroundingList = surroundingListJson_Obj['surroundingInformation'];
-            for(surroundingItem of surroundingList) {
-                const targetText = surroundingItem.match(surroundingInformationRegex)[0];
-                const category = targetText.replace('（','').replace('）','');
-                const information = surroundingItem.replace(targetText,'');
-                const surroundingObj = `■ ${category}：${information}`;
-                outputList.push(surroundingObj);
+            if (surroundingInformation in surroundingListJson_Obj) {
+                const surroundingList = surroundingListJson_Obj['surroundingInformation'];
+                if (surroundingList.length === 0) {
+                    return outputList;
+                } else {
+                    for(surroundingItem of surroundingList) {
+                        const targetText = surroundingItem.match(surroundingInformationRegex)[0];
+                        const category = targetText.replace('（','').replace('）','');
+                        const information = surroundingItem.replace(targetText,'');
+                        const surroundingObj = `■ ${category}：${information}`;
+                        outputList.push(surroundingObj);
+                    };
+                    return outputList;
+                };
+            } else {
+                return outputList;
             };
-            return outputList;
         } else {
             return outputList;
         };
