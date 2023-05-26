@@ -195,6 +195,20 @@ if (locationURL.includes('detail')) {
     
     //インスタンスの作成
     if (surroundingInformationList.length === 0) {
+        const tab_Content_SurroundingInformation = new AddTable(
+            {
+                contents_Title:'',
+                table_BaseId:'surrounding-information',
+                table_Contents:[],
+                add_Styles:`
+                    #surrounding-information-table {
+                        margin-top:10px;
+                        margin-bottom:10px;
+                    }
+                `, 
+                add_To_Selector:''
+            }
+        );
     } else {
         const tab_Content_SurroundingInformation = new AddTable(
             {
