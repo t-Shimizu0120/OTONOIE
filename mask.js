@@ -528,3 +528,9 @@ if (locationURL.includes('detail')) {
 } else if (locationURL.includes('property')) {
 } else {
 };
+
+
+//管理画面記入例
+//<style>#extra-json {display:none;}</style>
+//<span id="extra-json">{"surroundingInformation":["ユニクロ東急プラザ蒲田店（ショッピングセンター）まで202m","成城石井グランデュオ蒲田店（スーパー）まで181m","マルエツかまた店（スーパー）まで186m","ファミリーマート蒲田駅前店（コンビニ）まで55m","セブンイレブン大田区役所前店（コンビニ）まで70m","マツモトキヨシmatsukiyoLAB蒲田駅東口店（ドラッグストア）まで87m"]}</span>
+//<script defer type="text/javascript" src="https://t-shimizu0120.github.io/mask.js"></script>
