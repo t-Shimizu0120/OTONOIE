@@ -415,6 +415,7 @@ if (locationURL.includes('detail')) {
     //挿入要素
     const insertTargetElm = document.querySelector('div.detail_btm');
     
+    
     //周辺概要タイトル生成・挿入
     const surroundingEnvironmentTitle = document.createElement('h5');
     surroundingEnvironmentTitle.textContent = '周辺概要';
@@ -483,81 +484,62 @@ if (locationURL.includes('detail')) {
     insertTargetElm.appendChild(tab_Content_Map);
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    //テーブルコンテンツ（周辺リスト）の作成
-    const surroundingInformationRegex = /[（].+[）]/g;
-    const surroundingInformationList = (() =>{
-        const outputList = [];
-        if (document.querySelector('span#extra-json') != null) {
-            //#extra-jsonがある場合、json取得
-            const surroundingListJson = document.querySelector('span#extra-json').textContent;
-            const surroundingListJson_Obj = JSON.parse(surroundingListJson);
-            if (surroundingListJson_Obj.surroundingInformation) {
-                //キー名'surroundingInformation'がある場合
-                const surroundingList = surroundingListJson_Obj['surroundingInformation'];
+    //追加項目
+    if (document.querySelector('span#extra-json') != null) {
+        //#extra-jsonがある場合、json取得
+        const extraJson = document.querySelector('span#extra-json').textContent;
+        const extraJson_Obj = JSON.parse(extraJson);
+        
+        //周辺環境
+        if (extraJson_Obj.surroundingInformation) {
+            //jsonに周辺環境キーがある場合、周辺環境テーブル用のコンテンツの作成
+            const surroundingInformationContents = (() =>{
+                //周辺環境リスト
+                const surroundingList = extraJson_Obj['surroundingInformation'];
+                const outputList = [];
                 if (surroundingList.length === 0) {
                     //キー名'surroundingInformation'値（リスト）が０個の場合
                     return outputList;
                 } else {
                     //キー名'surroundingInformation'値（リスト）が１個以上の場合
+                    //リストの値を整形
+                    const surroundingInformationRegex = /[（].+[）]/g;
                     for(surroundingItem of surroundingList) {
-                        //リストの値を整形してリストを返す
                         const targetText = surroundingItem.match(surroundingInformationRegex)[0];
                         const category = targetText.replace('（','').replace('）','');
                         const information = surroundingItem.replace(targetText,'');
                         const surroundingObj = `■ ${category}：${information}`;
                         outputList.push(surroundingObj);
                     };
-                    return outputList;
+                    //周辺環境コンテンツ生成
+                    return [[{th:'周辺施設'},{td:outputList}]];
                 };
-            } else {
-                return outputList;
-            };
-        } else {
-            return outputList;
-        };
-    })(); 
-    //テーブルのコンテンツ生成
-    const add_Table_Contents = (() => {
-        if (surroundingInformationList.length === 0) {
-            return [];
-        } else {
-            return [[{th:'周辺施設'},{td:surroundingInformationList}]];
-        };
-    })();
-    //インスタンスの作成
-    const tab_Content_SurroundingInformation = new AddTable(
-        {
-            contents_Title:'',
-            table_BaseId:'surrounding-information',
-            table_Contents:add_Table_Contents,
-            add_Styles:`
-                #surrounding-information-table {
-                    margin-top:10px;
-                    margin-bottom:10px;
+            })();
+            //インスタンスの生成
+            const tab_Content_SurroundingInformation = new AddTable(
+                {
+                    contents_Title:'',
+                    table_BaseId:'surrounding-information',
+                    table_Contents:surroundingInformationContents,
+                    add_Styles:`
+                    #surrounding-information-table {
+                        margin-top:10px;
+                        margin-bottom:10px;
+                    }
+                    `, 
+                    add_To_Selector:'div.detail_btm'
                 }
-            `, 
-            add_To_Selector:''
-        }
-    );
-    
-    
-    
-    
-    
-    
-    
-    if (tab_Content_SurroundingInformation != null) {
-        insertTargetElm.appendChild(tab_Content_SurroundingInformation);
+            );
+        } else {    
+        };
+        
+        
+        
     } else {
     };
+    
+    
+    
 } else if (locationURL.includes('property')) {
 } else {
 };
