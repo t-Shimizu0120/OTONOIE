@@ -437,7 +437,7 @@ if (locationURL.includes('detail')) {
     const mapStyle = document.createElement('style');
     mapStyle.setAttribute('id','map-style');
     mapStyle.textContent = `
-        #contents-item-map {
+        #item-map {
             position:relative; 
             padding-bottom:${aspectRatio}%; 
             height:0; 
@@ -446,10 +446,10 @@ if (locationURL.includes('detail')) {
     `; 
     headElm.appendChild(mapStyle);
     //マップコンテンツ作成
-    const tab_Content_Map = (() => {
+    const item_Map = (() => {
         const map_Parent_Elm = create_Element('div',[
-            {class:'tab-contents-item'},
-            {id:'contents-item-map'}
+            {class:'item-map'},
+            {id:'item-map'}
         ]);
         
         const map_Address = document.querySelector('div.detail_r').querySelector('dl.clearfix').querySelector('dd').textContent;
@@ -481,7 +481,7 @@ if (locationURL.includes('detail')) {
 
         return map_Parent_Elm;
     })();
-    insertTargetElm.appendChild(tab_Content_Map);
+    insertTargetElm.appendChild(item_Map);
     
     
     //追加項目
