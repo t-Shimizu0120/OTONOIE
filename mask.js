@@ -2,7 +2,8 @@
 const locationURL = location.href;
 //URLで分岐
 if (locationURL.includes('detail')) {
-    //要素作成関数
+    
+    //■要素作成関数
     const create_Element = (tagName,attributes) => {
         const add_Elm = document.createElement(tagName);
         for (attribute of attributes) {
@@ -14,7 +15,7 @@ if (locationURL.includes('detail')) {
     };
     
     
-    //テーブル作成のクラス
+    //■テーブル作成のクラス
     class AddTable {
         constructor (object,...args) {
             //コンテンツの有無を判定
@@ -164,100 +165,8 @@ if (locationURL.includes('detail')) {
 
     };
     
-    //テーブルコンテンツ（周辺リスト）の作成
-    const surroundingInformationRegex = /[（].+[）]/g;
-    const surroundingInformationList = (() =>{
-        const outputList = [];
-        if (document.querySelector('span#extra-json') != null) {
-            const surroundingListJson = document.querySelector('span#extra-json').textContent;
-            const surroundingListJson_Obj = JSON.parse(surroundingListJson);
-            if (surroundingListJson_Obj.surroundingInformation) {
-                const surroundingList = surroundingListJson_Obj['surroundingInformation'];
-                if (surroundingList.length === 0) {
-                    return outputList;
-                } else {
-                    for(surroundingItem of surroundingList) {
-                        const targetText = surroundingItem.match(surroundingInformationRegex)[0];
-                        const category = targetText.replace('（','').replace('）','');
-                        const information = surroundingItem.replace(targetText,'');
-                        const surroundingObj = `■ ${category}：${information}`;
-                        outputList.push(surroundingObj);
-                    };
-                    return outputList;
-                };
-            } else {
-                return outputList;
-            };
-        } else {
-            return outputList;
-        };
-    })(); 
     
-    //テーブルのコンテンツ生成
-    const add_Table_Contents = (() => {
-        if (surroundingInformationList.length === 0) {
-            return '';
-        } else {
-            return [{th:'周辺施設'},{td:surroundingInformationList}];
-        };
-    })();
-    //インスタンスの作成
-    const tab_Content_SurroundingInformation = new AddTable(
-        {
-            contents_Title:'',
-            table_BaseId:'surrounding-information',
-            table_Contents:[add_Table_Contents],
-            add_Styles:`
-                #surrounding-information-table {
-                    margin-top:10px;
-                    margin-bottom:10px;
-                }
-            `, 
-            add_To_Selector:''
-        }
-    );
-    
-    
-    //マップコンテンツ作成
-    const tab_Content_Map = (() => {
-        const map_Parent_Elm = create_Element('div',[
-            {class:'tab-contents-item'},
-            {id:'contents-item-map'}
-        ]);
-
-        const map_Address = document.querySelector('div.detail_r').querySelector('dl.clearfix').querySelector('dd').textContent;
-        //src作成
-        const map_Src = (() => {
-            let m_src;
-            //画面幅でズーム調整
-            if (window.screen.width <= 480) {
-                m_src = 'https://www.google.com/maps/?output=embed&q=' + map_Address + '&t=m&z=15';
-            } else if (window.screen.width > 480 && window.screen.width < 960) {
-                m_src = 'https://www.google.com/maps/?output=embed&q=' + map_Address + '&t=m&z=16';
-            } else {
-                m_src = 'https://www.google.com/maps/?output=embed&q=' + map_Address + '&t=m&z=17';
-            };
-            return m_src;
-        })(); 
-        
-        const map_Elm = create_Element('iframe',[
-            {width:'100%'},
-            {height:'auto'},
-            {style:'border:0; position:absolute; top:-180px; left:0; width:100%; height:calc(100% + 180px + 180px);'},
-            {loading:'lazy'},
-            {allowfullscreen:''},
-            {referrerpolicy:'no-referrer-when-downgrade'}
-        ]);
-        map_Elm.src = map_Src;
-
-        map_Parent_Elm.appendChild(map_Elm);
-
-        return map_Parent_Elm;
-    })();
-    
-    
-    
-    //タブコンテンツ作成のクラス　※基本テーブルと同じ構成
+    //■タブコンテンツ作成のクラス　※基本テーブルと同じ構成
     class AddTabContents {
 
         constructor (object,...args) {
@@ -474,6 +383,105 @@ if (locationURL.includes('detail')) {
             };
         };
     };
+    
+    
+    
+    
+    
+    //テーブルコンテンツ（周辺リスト）の作成
+    const surroundingInformationRegex = /[（].+[）]/g;
+    const surroundingInformationList = (() =>{
+        const outputList = [];
+        if (document.querySelector('span#extra-json') != null) {
+            const surroundingListJson = document.querySelector('span#extra-json').textContent;
+            const surroundingListJson_Obj = JSON.parse(surroundingListJson);
+            if (surroundingListJson_Obj.surroundingInformation) {
+                const surroundingList = surroundingListJson_Obj['surroundingInformation'];
+                if (surroundingList.length === 0) {
+                    return outputList;
+                } else {
+                    for(surroundingItem of surroundingList) {
+                        const targetText = surroundingItem.match(surroundingInformationRegex)[0];
+                        const category = targetText.replace('（','').replace('）','');
+                        const information = surroundingItem.replace(targetText,'');
+                        const surroundingObj = `■ ${category}：${information}`;
+                        outputList.push(surroundingObj);
+                    };
+                    return outputList;
+                };
+            } else {
+                return outputList;
+            };
+        } else {
+            return outputList;
+        };
+    })(); 
+    
+    //テーブルのコンテンツ生成
+    const add_Table_Contents = (() => {
+        if (surroundingInformationList.length === 0) {
+            return '';
+        } else {
+            return [{th:'周辺施設'},{td:surroundingInformationList}];
+        };
+    })();
+    //インスタンスの作成
+    const tab_Content_SurroundingInformation = new AddTable(
+        {
+            contents_Title:'',
+            table_BaseId:'surrounding-information',
+            table_Contents:[add_Table_Contents],
+            add_Styles:`
+                #surrounding-information-table {
+                    margin-top:10px;
+                    margin-bottom:10px;
+                }
+            `, 
+            add_To_Selector:''
+        }
+    );
+    
+    
+    //マップコンテンツ作成
+    const tab_Content_Map = (() => {
+        const map_Parent_Elm = create_Element('div',[
+            {class:'tab-contents-item'},
+            {id:'contents-item-map'}
+        ]);
+
+        const map_Address = document.querySelector('div.detail_r').querySelector('dl.clearfix').querySelector('dd').textContent;
+        //src作成
+        const map_Src = (() => {
+            let m_src;
+            //画面幅でズーム調整
+            if (window.screen.width <= 480) {
+                m_src = 'https://www.google.com/maps/?output=embed&q=' + map_Address + '&t=m&z=15';
+            } else if (window.screen.width > 480 && window.screen.width < 960) {
+                m_src = 'https://www.google.com/maps/?output=embed&q=' + map_Address + '&t=m&z=16';
+            } else {
+                m_src = 'https://www.google.com/maps/?output=embed&q=' + map_Address + '&t=m&z=17';
+            };
+            return m_src;
+        })(); 
+        
+        const map_Elm = create_Element('iframe',[
+            {width:'100%'},
+            {height:'auto'},
+            {style:'border:0; position:absolute; top:-180px; left:0; width:100%; height:calc(100% + 180px + 180px);'},
+            {loading:'lazy'},
+            {allowfullscreen:''},
+            {referrerpolicy:'no-referrer-when-downgrade'}
+        ]);
+        map_Elm.src = map_Src;
+
+        map_Parent_Elm.appendChild(map_Elm);
+
+        return map_Parent_Elm;
+    })();
+    
+    
+    
+
     //スクリーン幅から地図用のアスペクト比を生成
     const aspectRatio = (() => {
         if (window.screen.width <= 480) {
