@@ -383,6 +383,27 @@ if (locationURL.includes('detail')) {
             };
         };
     };
+    const surroundingEnvironment = new AddTabContents(
+        {
+            contents_Title:'周辺概要',
+            contents_BaseId:'surrounding-environment',
+            tab_Contents:[
+                {tabContentTitle:'周辺マップ'},
+                {tabContentTitle:'周辺施設情報'}
+            ],
+            add_Styles:`
+                #contents-item-map {
+                    position:relative; 
+                    padding-bottom:${aspectRatio}%; 
+                    height:0; 
+                    overflow:hidden;
+                }
+            `, 
+            add_To_Selector:'div.detail_btm'
+       },
+       document.querySelectorAll('dl.clearfix')[0],
+       document.querySelectorAll('dl.clearfix')[1]
+    );
     //インスタンス生成例
     //const surroundingEnvironment = new AddTabContents(
         //{
