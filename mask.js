@@ -383,6 +383,28 @@ if (locationURL.includes('detail')) {
             };
         };
     };
+    //インスタンス生成例
+    //const surroundingEnvironment = new AddTabContents(
+        //{
+            //contents_Title:'周辺概要',
+            //contents_BaseId:'surrounding-environment',
+            //tab_Contents:[
+                //{tabContentTitle:'周辺マップ'},
+                //{tabContentTitle:'周辺施設情報'}
+            //],
+            //add_Styles:`
+                //#contents-item-map {
+                    //position:relative; 
+                    //padding-bottom:${aspectRatio}%; 
+                    //height:0; 
+                    //overflow:hidden;
+                //}
+            //`, 
+            //add_To_Selector:'div.detail_btm'
+       //},
+       //tab_Content_Map,
+       //tab_Content_SurroundingInformation
+    //);
     
     
     
@@ -416,13 +438,12 @@ if (locationURL.includes('detail')) {
             return outputList;
         };
     })(); 
-    
     //テーブルのコンテンツ生成
     const add_Table_Contents = (() => {
         if (surroundingInformationList.length === 0) {
-            return '';
+            return [];
         } else {
-            return [{th:'周辺施設'},{td:surroundingInformationList}];
+            return [[{th:'周辺施設'},{td:surroundingInformationList}]];
         };
     })();
     //インスタンスの作成
@@ -430,7 +451,7 @@ if (locationURL.includes('detail')) {
         {
             contents_Title:'',
             table_BaseId:'surrounding-information',
-            table_Contents:[add_Table_Contents],
+            table_Contents:add_Table_Contents,
             add_Styles:`
                 #surrounding-information-table {
                     margin-top:10px;
