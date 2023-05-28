@@ -437,7 +437,7 @@ if (locationURL.includes('detail')) {
     const mapStyle = document.createElement('style');
     mapStyle.setAttribute('id','map-style');
     mapStyle.textContent = `
-        #map-content {
+        .js-added-map {
             position:relative; 
             padding-bottom:${aspectRatio}%; 
             height:0; 
