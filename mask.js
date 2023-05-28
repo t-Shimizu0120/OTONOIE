@@ -15,6 +15,7 @@ if (locationURL.includes('detail')) {
     };
     
     
+    
     //■テーブル作成のクラス
     class AddTable {
         constructor (object,...args) {
@@ -164,6 +165,7 @@ if (locationURL.includes('detail')) {
         };
 
     };
+    
     
     
     //■タブコンテンツ作成のクラス　※基本テーブルと同じ構成
@@ -410,19 +412,103 @@ if (locationURL.includes('detail')) {
     
     
     
+    //挿入要素
+    const insertTargetElm = document.querySelector('div.detail_btm');
+    
+    //周辺概要タイトル生成・挿入
+    const surroundingEnvironmentTitle = document.createElement('h5');
+    surroundingEnvironmentTitle.textContent = '周辺概要';
+    insertTargetElm.appendChild(surroundingEnvironmentTitle);
+    
+    
+    //ウィンドウ幅から地図用のアスペクト比を生成
+    const aspectRatio = (() => {
+        if (window.screen.width <= 480) {
+            return 75;
+        } else if (window.screen.width > 480 && window.screen.width < 960){
+            return 75;
+        } else {
+            return 66.667;
+        };
+    })();
+    //地図用のstyleタグの生成・挿入
+    const headElm = document.querySelector('head');
+    const mapStyle = document.createElement('style');
+    mapStyle.setAttribute('id','map-style');
+    mapStyle.textContent = `
+        #contents-item-map {
+            position:relative; 
+            padding-bottom:${aspectRatio}%; 
+            height:0; 
+            overflow:hidden;
+        }
+    `; 
+    headElm.appendChild(mapStyle);
+    //マップコンテンツ作成
+    const tab_Content_Map = (() => {
+        const map_Parent_Elm = create_Element('div',[
+            {class:'tab-contents-item'},
+            {id:'contents-item-map'}
+        ]);
+        
+        const map_Address = document.querySelector('div.detail_r').querySelector('dl.clearfix').querySelector('dd').textContent;
+        //src作成
+        const map_Src = (() => {
+            let m_src;
+            //画面幅でズーム調整
+            if (window.screen.width <= 480) {
+                m_src = 'https://www.google.com/maps/?output=embed&q=' + map_Address + '&t=m&z=15';
+            } else if (window.screen.width > 480 && window.screen.width < 960) {
+                m_src = 'https://www.google.com/maps/?output=embed&q=' + map_Address + '&t=m&z=16';
+            } else {
+                m_src = 'https://www.google.com/maps/?output=embed&q=' + map_Address + '&t=m&z=17';
+            };
+            return m_src;
+        })(); 
+        
+        const map_Elm = create_Element('iframe',[
+            {width:'100%'},
+            {height:'auto'},
+            {style:'border:0; position:absolute; top:-180px; left:0; width:100%; height:calc(100% + 180px + 180px);'},
+            {loading:'lazy'},
+            {allowfullscreen:''},
+            {referrerpolicy:'no-referrer-when-downgrade'}
+        ]);
+        map_Elm.src = map_Src;
+
+        map_Parent_Elm.appendChild(map_Elm);
+
+        return map_Parent_Elm;
+    })();
+    insertTargetElm.appendChild(tab_Content_Map);
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     //テーブルコンテンツ（周辺リスト）の作成
     const surroundingInformationRegex = /[（].+[）]/g;
     const surroundingInformationList = (() =>{
         const outputList = [];
         if (document.querySelector('span#extra-json') != null) {
+            //#extra-jsonがある場合、json取得
             const surroundingListJson = document.querySelector('span#extra-json').textContent;
             const surroundingListJson_Obj = JSON.parse(surroundingListJson);
             if (surroundingListJson_Obj.surroundingInformation) {
+                //キー名'surroundingInformation'がある場合
                 const surroundingList = surroundingListJson_Obj['surroundingInformation'];
                 if (surroundingList.length === 0) {
+                    //キー名'surroundingInformation'値（リスト）が０個の場合
                     return outputList;
                 } else {
+                    //キー名'surroundingInformation'値（リスト）が１個以上の場合
                     for(surroundingItem of surroundingList) {
+                        //リストの値を整形してリストを返す
                         const targetText = surroundingItem.match(surroundingInformationRegex)[0];
                         const category = targetText.replace('（','').replace('）','');
                         const information = surroundingItem.replace(targetText,'');
@@ -463,93 +549,11 @@ if (locationURL.includes('detail')) {
     );
     
     
-    //マップコンテンツ作成
-    const tab_Content_Map = (() => {
-        const map_Parent_Elm = create_Element('div',[
-            {class:'tab-contents-item'},
-            {id:'contents-item-map'}
-        ]);
-
-        const map_Address = document.querySelector('div.detail_r').querySelector('dl.clearfix').querySelector('dd').textContent;
-        //src作成
-        const map_Src = (() => {
-            let m_src;
-            //画面幅でズーム調整
-            if (window.screen.width <= 480) {
-                m_src = 'https://www.google.com/maps/?output=embed&q=' + map_Address + '&t=m&z=15';
-            } else if (window.screen.width > 480 && window.screen.width < 960) {
-                m_src = 'https://www.google.com/maps/?output=embed&q=' + map_Address + '&t=m&z=16';
-            } else {
-                m_src = 'https://www.google.com/maps/?output=embed&q=' + map_Address + '&t=m&z=17';
-            };
-            return m_src;
-        })(); 
-        
-        const map_Elm = create_Element('iframe',[
-            {width:'100%'},
-            {height:'auto'},
-            {style:'border:0; position:absolute; top:-180px; left:0; width:100%; height:calc(100% + 180px + 180px);'},
-            {loading:'lazy'},
-            {allowfullscreen:''},
-            {referrerpolicy:'no-referrer-when-downgrade'}
-        ]);
-        map_Elm.src = map_Src;
-
-        map_Parent_Elm.appendChild(map_Elm);
-
-        return map_Parent_Elm;
-    })();
     
     
     
-
-    //スクリーン幅から地図用のアスペクト比を生成
-    const aspectRatio = (() => {
-        if (window.screen.width <= 480) {
-            return 75;
-        } else if (window.screen.width > 480 && window.screen.width < 960){
-            return 75;
-        } else {
-            return 66.667;
-        };
-    })();
-    //インスタンス生成
-    //const surroundingEnvironment = new AddTabContents(
-        //{
-            //contents_Title:'周辺概要',
-            //contents_BaseId:'surrounding-environment',
-            //tab_Contents:[
-                //{tabContentTitle:'周辺マップ'},
-                //{tabContentTitle:'周辺施設情報'}
-            //],
-            //add_Styles:`
-                //#contents-item-map {
-                    //position:relative; 
-                    //padding-bottom:${aspectRatio}%; 
-                    //height:0; 
-                    //overflow:hidden;
-                //}
-            //`, 
-            //add_To_Selector:'div.detail_btm'
-       //},
-       //tab_Content_Map,
-       //tab_Content_SurroundingInformation
-    //);
-    const insertTargetElm = document.querySelector('div.detail_btm');
-    const surroundingEnvironmentTitle = document.createElement('h5');
-    surroundingEnvironmentTitle.textContent = '周辺概要';
-    insertTargetElm.appendChild(surroundingEnvironmentTitle);
-    const mapStyle = document.createElement('style');
-    mapStyle.textContent = `
-        #contents-item-map {
-            position:relative; 
-            padding-bottom:${aspectRatio}%; 
-            height:0; 
-            overflow:hidden;
-        }
-    `; 
-    insertTargetElm.appendChild(mapStyle);
-    insertTargetElm.appendChild(tab_Content_Map);
+    
+    
     if (tab_Content_SurroundingInformation != null) {
         insertTargetElm.appendChild(tab_Content_SurroundingInformation);
     } else {
