@@ -213,7 +213,7 @@ if (locationURL.includes('detail')) {
                         };
                     };
                     if(args[i] === null) {
-                        tab_Li.classList.add('js-disabled');
+                        tab_Li.classList.add('js-added-disabled');
                         for (this.class_Except of obj.li_Class_Except) {
                             tab_Li.classList.remove(this.class_Except);
                         };
@@ -251,11 +251,11 @@ if (locationURL.includes('detail')) {
                     tab_Contents.appendChild(tab_Contents_Item);
                 };
                 const add_tabContents = document.createElement('div');
-                add_tabContents.setAttribute('class','js-added-tab');
-
+                add_tabContents.setAttribute('class','js-added-tab-contents-container');
+                
                 add_tabContents.appendChild(tab_Ul);
                 add_tabContents.appendChild(tab_Contents);
-
+                
                 if (obj.add_To_Selector === '') {
                     return add_tabContents;
                 } else {
@@ -284,7 +284,7 @@ if (locationURL.includes('detail')) {
             })();
             const tabWidthBase = Math.trunc((100 / Number(tabCount)) * 1000) / 1000;
             const style = `
-                .js-added-tab {
+                .js-added-tab-contents-container {
                     width:100%;
                 }
                 .js-added-tab-list {
@@ -304,14 +304,14 @@ if (locationURL.includes('detail')) {
                 .js-added-tab-list-item-valid {
                     cursor:pointer;
                 } 
+                .js-added-tab-list-item-valid:hover {
+                    opacity:.6;
+                } 
                 .js-added-tab-list-item.active {
                     background-color:#3f3f3f; 
                     color:#eee;
                 } 
-                .js-added-h:hover {
-                    opacity:.6;
-                } 
-                .js-disabled {
+                .js-added-disabled {
                     opacity:.6; 
                     pointer-events:none;
                 } 
@@ -334,7 +334,7 @@ if (locationURL.includes('detail')) {
                 ul_Attrs:[{class:'js-added-tab-list'}],
                 li_Attrs:[{class:'js-added-tab-list-item'}],
                 li_Class_First:['active'],
-                li_Class_Except:['js-added-tab-list-item-valid','js-added-h'],
+                li_Class_Except:['js-added-tab-list-item-valid'],
 
                 contents_Attrs:[{class:'js-added-tab-contents'}],
                 contents_Item_Attrs:[{class:'js-added-tab-contents-item'}],
@@ -349,7 +349,7 @@ if (locationURL.includes('detail')) {
                 tab_Obj.tab_Contents.push(this.tab_Content);
             };
             const ul_Id = {};
-            ul_Id.id = object.contents_BaseId + '-tabs';
+            ul_Id.id = object.contents_BaseId + '-tab-list';
             tab_Obj.ul_Attrs.push(ul_Id);
             const contents_Id = {};
             contents_Id.id = object.contents_BaseId + '-tab-contents';
@@ -362,14 +362,13 @@ if (locationURL.includes('detail')) {
             e.preventDefault();
             const targetTab = e.target;
             const parentId = targetTab.parentNode.getAttribute('id');
-            const target_Contents_Id = parentId.replace(/tabs$/g,'tab-contents');
+            const target_Contents_Id = parentId.replace(/tab-list$/g,'tab-contents');
             const target_Contents_Parent = document.getElementById(target_Contents_Id);
             if (targetTab.className.includes('active')) {
             } else {
                 targetTab.parentNode.querySelectorAll('.js-added-tab-list-item.active')[0].classList.remove('active');
                 targetTab.classList.add('active');
                 targetTab.classList.remove('js-added-tab-list-item-valid');
-                targetTab.classList.remove('js-added-h');
 
                 target_Contents_Parent.querySelectorAll('.js-added-tab-contents-item.show')[0].classList.remove('show');
                 const aryTabs = Array.prototype.slice.call(targetTab.parentNode.children);
@@ -379,7 +378,6 @@ if (locationURL.includes('detail')) {
             for(let i = 0; i < targetTab.parentNode.children.length; i++) {
                 if (target_Contents_Parent.children[i].hasChildNodes() == true && targetTab.parentNode.children[i].className.includes('active') == false) {
                     targetTab.parentNode.children[i].classList.add('js-added-tab-list-item-valid');
-                    targetTab.parentNode.children[i].classList.add('js-added-h');
                 } else {
                 };
             };
