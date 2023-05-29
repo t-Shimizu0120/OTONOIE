@@ -30,14 +30,29 @@ console.log(add_tabContents);
 const targetElm = document.querySelector('div.detail_btm');
 const tab_Style = document.createElement('style');
 tab_Style.textContent = `
+.'js-added-tab-contents {
+  width: 500px;
+  margin: auto;
+  flex-wrap: wrap;
+  display: flex;
+}
 input[name="name"] {
   display: none;
+}
+.label {
+  width: calc(100%/3);
+  height: 30px;
+  line-height: 50px;
+  font-size: 15px;
+  text-align: center;
+  display: block;
+  float: left;
+  order: -1;
 }
 .js-added-tab-contents-item {
   display: none;
   width: 100%;
 }
- 
 input:checked + .label + .js-added-tab-contents-item {
   display: block;
 }
