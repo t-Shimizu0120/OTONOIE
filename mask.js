@@ -83,9 +83,6 @@ if (locationURL.includes('detail')) {
                     //tbodyへtrを追加
                     add_Elm_tbody.appendChild(add_Elm_tr);
                 };
-                const add_Elm_tr = document.createElement('tr');
-                const add_Elm_th = document.createElement('th');
-                const add_Elm_td = document.createElement('td');
                 //tbodyをtableへ追加
                 add_Elm_table.appendChild(add_Elm_tbody);
                 
