@@ -31,7 +31,11 @@
                 };
                 
                 //コンテンツ作成
+                const checkedJudge = false;
                 for (let i = 0; i < obj.tab_Contents.length; i++) {
+                    //id生成
+                    const input_label_Id = 'id-' + obj.tab_Contents[i][tabContentName];
+                    
                     //input作成
                     const tab_Input = document.createElement('input');
                     for (this.input_Attr of obj.input_Attrs) {
@@ -39,11 +43,17 @@
                         const input_AttrValue = this.input_Attr[input_AttrName];
                         tab_Input.setAttribute(input_AttrName,input_AttrValue);
                     };
-                    if (i === 0) {
+                    tab_Input.setAttribute('id',input_label_Id);
+                    //表示用attributeの設定
+                    if (args[i] === null) {
+                        //コンテンツが空（null）の場合、disabledを設定
+                        tab_Input.setAttribute('disabled','');
+                    } else if (checkedJudge === false) {
+                        //コンテンツが空（null）以外の最初のコンテンツにCheckedを設定
                         tab_Input.setAttribute('checked','');
-                    } else if () {
-                        //コンテンツが空（null）の場合
-                        //tab_Input.setAttribute('disabled','');
+                        //Checkedを設定した場合、checkedJudgeをtrueへ変更
+                        checkedJudge = true;
+                    } else {
                     };
                     
                     //label作成
@@ -53,6 +63,9 @@
                         const input_AttrValue = this.input_Attr[input_AttrName];
                         tab_Input.setAttribute(input_AttrName,input_AttrValue);
                     };
+                    tab_Label.setAttribute('for',input_label_Id);
+                    tab_Label.textContent = obj.tab_Contents[i][tabContentTitle];
+                    
                 };
                 
                 
