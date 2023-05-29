@@ -13,6 +13,7 @@ for (let i = 0; i < 3; i++) {
   const tab_Label = document.createElement('label');
   tab_Label.setAttribute('class','label');
   tab_Label.setAttribute('for',setId);
+  tab_Label.textContent = 'ラベル' + i;
   
   add_tabContents.appendChild(tab_Input);
   add_tabContents.appendChild(tab_Label);
