@@ -8,6 +8,9 @@ for (let i = 0; i < 3; i++) {
   tab_Input.setAttribute('name','name');
   if (i === 0) {
     tab_Input.setAttribute('checked','');
+  } else if (i === 2) {
+    tab_Input.setAttribute('disabled','');
+  } else {
   };
   
   const tab_Label = document.createElement('label');
