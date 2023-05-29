@@ -1,5 +1,4 @@
-                } 
-                .js-added-tab-contents-item.show {
+tab-contents-item.show {
                     display:block;
                 } 
                 ${addStyles}
@@ -32,16 +31,16 @@
             const ul_Id = {};
             ul_Id.id = object.contents_BaseId + '-tab-list';
             tab_Obj.ul_Attrs.push(ul_Id);
-            const contents_Id = {};
+            const contents_Id = {}
             contents_Id.id = object.contents_BaseId + '-tab-contents';
             tab_Obj.contents_Attrs.push(contents_Id);
-            tab_Obj.add_To_Selector = object.add_To_Selector;
+            tab_Obj.add_To_Selector = object.add_To_Selector
 
             return tab_Obj;
         };
         clickHandler(e) {
             e.preventDefault();
-            const targetTab = e.target;
+            const targetTab = e.target
             const parentId = targetTab.parentNode.getAttribute('id');
             const target_Contents_Id = parentId.replace(/tab-list$/g,'tab-contents');
             const target_Contents_Parent = document.getElementById(target_Contents_Id);
