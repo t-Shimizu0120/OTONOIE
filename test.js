@@ -16,10 +16,15 @@ for (let i = 0; i < 3; i++) {
   const tab_Label = document.createElement('label');
   tab_Label.setAttribute('class','label');
   tab_Label.setAttribute('for',setId);
-  tab_Label.textContent = 'ラベル' + i;
+  tab_Label.textContent = '周辺環境' + i;
+  
+  const tab_Content = document.createElement('div');
+  tab_Content.setAttribute('class','js-added-tab-contents-item');
+  tab_Content.textContent = 'ああああ' + i;
   
   add_tabContents.appendChild(tab_Input);
   add_tabContents.appendChild(tab_Label);
+  add_tabContents.appendChild(tab_Content);
 };
 console.log(add_tabContents);
 const targetElm = document.querySelector('div.detail_btm');
