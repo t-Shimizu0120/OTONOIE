@@ -517,7 +517,7 @@ if (locationURL.includes('detail')) {
                     table_BaseId:'surrounding-information',
                     table_Contents:surroundingInformationContents,
                     add_Styles:`
-                    #surrounding-information-table {
+                    .js-added-table {
                         margin-top:10px;
                         margin-bottom:10px;
                     }
