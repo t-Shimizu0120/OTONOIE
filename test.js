@@ -28,4 +28,19 @@ for (let i = 0; i < 3; i++) {
 };
 console.log(add_tabContents);
 const targetElm = document.querySelector('div.detail_btm');
+const tab_Style = document.createElement('style');
+tab_Style.textContent = `
+input[name="name"] {
+  display: none;
+}
+.js-added-tab-contents-item {
+  display: none;
+  width: 100%;
+}
+ 
+input:checked + .label + .js-added-tab-contents-item {
+  display: block;
+}
+`;
+targetElm.appendChild(tab_Style);
 targetElm.appendChild(add_tabContents);
