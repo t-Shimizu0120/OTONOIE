@@ -34,18 +34,29 @@
                 for (let i = 0; i < obj.tab_Contents.length; i++) {
                     //input作成
                     const tab_Input = document.createElement('input');
+                    for (this.input_Attr of obj.input_Attrs) {
+                        const input_AttrName = Object.keys(this.input_Attr)[0];
+                        const input_AttrValue = this.input_Attr[input_AttrName];
+                        tab_Input.setAttribute(input_AttrName,input_AttrValue);
+                    };
+                    if (i === 0) {
+                        tab_Input.setAttribute('checked','');
+                    } else if () {
+                        //コンテンツが空（null）の場合
+                        //tab_Input.setAttribute('disabled','');
+                    };
                     
+                    //label作成
+                    const tab_Label = document.createElement('label');
+                    for (this.input_Attr of obj.input_Attrs) {
+                        const input_AttrName = Object.keys(this.input_Attr)[0];
+                        const input_AttrValue = this.input_Attr[input_AttrName];
+                        tab_Input.setAttribute(input_AttrName,input_AttrValue);
+                    };
                 };
                 
                 
                 
-                
-                const tab_Ul = document.createElement('ul');
-                for (this.ul_Attr of obj.ul_Attrs) {
-                    const ul_AttrName = Object.keys(this.ul_Attr)[0];
-                    const ul_AttrValue = this.ul_Attr[ul_AttrName];
-                    tab_Ul.setAttribute(ul_AttrName,ul_AttrValue);
-                };
             };
         };
     };
