@@ -1,5 +1,47 @@
-const add_tabContents = document.createElement('div');
-add_tabContents.setAttribute('class','js-added-tab-contents');
+    //◻タブコンテンツ作成クラス
+    class AddTabContents {
+        constructor (object,...args) {
+            if(object.tab_Contents.length === 0) {
+                //コンテンツがない場合、nullを返す
+                return null;
+            } else {
+                //別のタブがあるかどうかを判定
+                if (document.querySelector('#tab-style') != null) {
+                    //あればスタイルを追加
+                    const style = document.querySelector('#tab-style');
+                    style.textContent += object['add_Styles'];
+                } else {
+                    //無ければ作成
+                    this.setStyle(object);
+                };
+                //オブジェクトを作成
+                const obj = this.setAttrs(object);
+                //タイトル作成
+                const tab_Contents_Title = document.createElement('h5');
+                tab_Contents_Title.textContent = obj['contents_Title'];
+                //コンテナ作成
+                const add_tabContents = document.createElement('div');
+                //add_tabContents.setAttribute('class','js-added-tab-contents');
+                for (this.div_Attr of obj.div_Attrs) {
+                    const div_AttrName = Object.keys(this.div_Attr)[0];
+                    const div_AttrValue = this.div_Attr[div_AttrName];
+                    add_tabContents.setAttribute(div_AttrName,div_AttrValue);
+                };
+                
+                
+                
+                
+                const tab_Ul = document.createElement('ul');
+                for (this.ul_Attr of obj.ul_Attrs) {
+                    const ul_AttrName = Object.keys(this.ul_Attr)[0];
+                    const ul_AttrValue = this.ul_Attr[ul_AttrName];
+                    tab_Ul.setAttribute(ul_AttrName,ul_AttrValue);
+                };
+            };
+        };
+    };
+
+
 for (let i = 0; i < 3; i++) {
   const tab_Input = document.createElement('input');
   const setId = 'tab' + (i + 1);
