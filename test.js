@@ -18,3 +18,5 @@ for (let i = 0; i < 3; i++) {
   add_tabContents.appendChild(tab_Label);
 };
 console.log(add_tabContents);
+const targetElm = document.querySelector();
+targetElm.appendChild(add_tabContents);
