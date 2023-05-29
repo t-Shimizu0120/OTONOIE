@@ -14,18 +14,27 @@
                     //無ければ作成
                     this.setStyle(object);
                 };
-                //オブジェクトを作成
+                //attributeオブジェクトを作成
                 const obj = this.setAttrs(object);
+                
                 //タイトル作成
                 const tab_Contents_Title = document.createElement('h5');
                 tab_Contents_Title.textContent = obj['contents_Title'];
+                
                 //コンテナ作成
-                const add_tabContents = document.createElement('div');
+                const tabContents_Container = document.createElement('div');
                 //add_tabContents.setAttribute('class','js-added-tab-contents');
                 for (this.div_Attr of obj.div_Attrs) {
                     const div_AttrName = Object.keys(this.div_Attr)[0];
                     const div_AttrValue = this.div_Attr[div_AttrName];
-                    add_tabContents.setAttribute(div_AttrName,div_AttrValue);
+                    tabContents_Container.setAttribute(div_AttrName,div_AttrValue);
+                };
+                
+                //コンテンツ作成
+                for (let i = 0; i < obj.tab_Contents.length; i++) {
+                    //input作成
+                    const tab_Input = document.createElement('input');
+                    
                 };
                 
                 
