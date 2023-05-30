@@ -60,7 +60,7 @@
                     const tab_Label = document.createElement('label');
                     for (this.label_Attr of obj.label_Attrs) {
                         const label_AttrName = Object.keys(this.label_Attr)[0];
-                        const label_AttrValue = this.input_Attr[label_AttrName];
+                        const label_AttrValue = this.label_Attr[label_AttrName];
                         tab_Label.setAttribute(label_AttrName,label_AttrValue);
                     };
                     tab_Label.setAttribute('for',input_label_Id);
@@ -70,7 +70,7 @@
                     const tab_Content = document.createElement('div');
                     for (this.content_Attr of obj.content_Attrs) {
                         const content_AttrName = Object.keys(this.content_Attr)[0];
-                        const content_AttrValue = this.input_Attr[content_AttrName];
+                        const content_AttrValue = this.content_Attr[content_AttrName];
                         tab_Content.setAttribute(content_AttrName,content_AttrValue);
                     };
                     tabContents_Container.appendChild(tab_Input);
