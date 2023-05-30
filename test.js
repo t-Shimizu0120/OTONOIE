@@ -17,10 +17,6 @@
                 //attributeオブジェクトを作成
                 const obj = this.setAttrs(object);
                 
-                //タイトル作成
-                const tab_Contents_Title = document.createElement('h5');
-                tab_Contents_Title.textContent = obj['contents_Title'];
-                
                 //コンテナ作成
                 const tabContents_Container = document.createElement('div');
                 //add_tabContents.setAttribute('class','js-added-tab-contents');
@@ -85,6 +81,10 @@
                     if (obj['contents_Title'] === '') {
                         targetElm.appendChild(tabContents_Container);
                     } else {
+                        //タイトル作成
+                        const tab_Contents_Title = document.createElement('h5');
+                        tab_Contents_Title.textContent = obj['contents_Title'];
+                        
                         targetElm.appendChild(tab_Contents_Title);
                         targetElm.appendChild(tabContents_Container);
                     };
