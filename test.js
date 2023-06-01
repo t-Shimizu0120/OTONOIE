@@ -30,7 +30,7 @@
                 const checkedJudge = false;
                 for (let i = 0; i < obj.tab_Contents.length; i++) {
                     //id生成
-                    const input_label_Id = 'id-' + obj.tab_Contents[i][tabContentName];
+                    const input_label_Id = 'id-' + obj.tab_Contents[i]['tabContentName'];
                     
                     //input作成
                     const tab_Input = document.createElement('input');
@@ -60,7 +60,7 @@
                         tab_Label.setAttribute(label_AttrName,label_AttrValue);
                     };
                     tab_Label.setAttribute('for',input_label_Id);
-                    tab_Label.textContent = obj.tab_Contents[i][tabContentTitle];
+                    tab_Label.textContent = obj.tab_Contents[i]['tabContentTitle'];
                     
                     //content作成
                     const tab_Content = document.createElement('div');
