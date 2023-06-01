@@ -16,7 +16,7 @@ if (locationURL.includes('detail')) {
     
     
     
-    //■テーブル作成のクラス
+    //■テーブルクラス
     class AddTable {
         constructor (object,...args) {
             //コンテンツの有無を判定
@@ -165,113 +165,161 @@ if (locationURL.includes('detail')) {
     
     
     
-    //■タブコンテンツ作成のクラス　※基本テーブルと同じ構成
+    const content_Map = (() => {
+        const map_Parent_Elm = create_Element('div',[
+            {class:'js-added-map'},
+            {id:'map-content'}
+        ]);
+        
+        const map_Address = document.querySelector('div.detail_r').querySelector('dl.clearfix').querySelector('dd').textContent;
+        //src作成
+        const map_Src = (() => {
+            let m_src;
+            //画面幅でズーム調整
+            if (window.screen.width <= 480) {
+                m_src = 'https://www.google.com/maps/?output=embed&q=' + map_Address + '&t=m&z=15';
+            } else if (window.screen.width > 480 && window.screen.width < 960) {
+                m_src = 'https://www.google.com/maps/?output=embed&q=' + map_Address + '&t=m&z=16';
+            } else {
+                m_src = 'https://www.google.com/maps/?output=embed&q=' + map_Address + '&t=m&z=17';
+            };
+            return m_src;
+        })(); 
+        
+        const map_Elm = create_Element('iframe',[
+            {width:'100%'},
+            {height:'auto'},
+            {style:'border:0; position:absolute; top:-180px; left:0; width:100%; height:calc(100% + 180px + 180px);'},
+            {loading:'lazy'},
+            {allowfullscreen:''},
+            {referrerpolicy:'no-referrer-when-downgrade'}
+        ]);
+        map_Elm.src = map_Src;
+
+        map_Parent_Elm.appendChild(map_Elm);
+
+        return map_Parent_Elm;
+    })();
+
+
+
+    //■タブコンテンツクラス
     class AddTabContents {
-
         constructor (object,...args) {
-
             if(object.tab_Contents.length === 0) {
+                //コンテンツがない場合、nullを返す
                 return null;
             } else {
-
+                //別のタブがあるかどうかを判定
                 if (document.querySelector('#tab-style') != null) {
+                    //あればスタイルを追加
                     const style = document.querySelector('#tab-style');
                     style.textContent += object['add_Styles'];
                 } else {
+                    //無ければ作成
                     this.setStyle(object);
                 };
-
+                //attributeオブジェクトを作成
                 const obj = this.setAttrs(object);
-
-                const tab_Contents_Title = document.createElement('h5');
-                tab_Contents_Title.textContent = obj['contents_Title'];
-
-                const tab_Ul = document.createElement('ul');
-                for (this.ul_Attr of obj.ul_Attrs) {
-                    const ul_AttrName = Object.keys(this.ul_Attr)[0];
-                    const ul_AttrValue = this.ul_Attr[ul_AttrName];
-                    tab_Ul.setAttribute(ul_AttrName,ul_AttrValue);
-                };
-                for (let i = 0; i < obj.tab_Contents.length; i++) {
-                    const tab_Li = document.createElement('li');
-                    for (this.li_Attr of obj.li_Attrs) {
-                        const li_AttrName = Object.keys(this.li_Attr)[0];
-                        const li_AttrValue = this.li_Attr[li_AttrName];
-                        tab_Li.setAttribute(li_AttrName,li_AttrValue);
-                    };
-                    tab_Li.textContent = obj.tab_Contents[i]['tabContentTitle'];
-                    if (i === 0) {
-                        for (this.class_First of obj.li_Class_First) {
-                            tab_Li.classList.add(this.class_First);
-                        };
-                    } else {
-                        for (this.class_Except of obj.li_Class_Except) {
-                            tab_Li.classList.add(this.class_Except);
-                        };
-                    };
-                    if(args[i] === null) {
-                        tab_Li.classList.add('js-added-disabled');
-                        for (this.class_Except of obj.li_Class_Except) {
-                            tab_Li.classList.remove(this.class_Except);
-                        };
-                    } else {
-                        tab_Li.addEventListener('click', (e) => this.clickHandler(e));
-                    };
-                    tab_Ul.appendChild(tab_Li);
-                };
-                const tab_Contents = document.createElement('div');
-                for (this.contents_Attr of obj.contents_Attrs) {
-                    const contents_AttrName = Object.keys(this.contents_Attr)[0];
-                    const contents_AttrValue = this.contents_Attr[contents_AttrName];
-                    tab_Contents.setAttribute(contents_AttrName,contents_AttrValue);
-                };
-                for (let i = 0; i < obj.tab_Contents.length; i++) {
-                    const tab_Contents_Item = document.createElement('div');
-                    for (this.contents_Item_Attr of obj.contents_Item_Attrs) {
-                        const contents_Item_AttrName = Object.keys(this.contents_Item_Attr)[0];
-                        const contents_Item_AttrValue = this.contents_Item_Attr[contents_Item_AttrName];
-                        tab_Contents_Item.setAttribute(contents_Item_AttrName,contents_Item_AttrValue);
-                    };
-                    if (i === 0) {
-                        for (this.class_First of obj.contents_Item_Class_First) {
-                            tab_Contents_Item.classList.add(this.class_First);
-                        };    
-                    } else {
-                        for (this.class_Except of obj.contents_Item_Class_Except) {
-                            tab_Contents_Item.classList.add(this.class_Except);
-                        };
-                    };
-                    if(args[i] === null) {
-                    } else {
-                        tab_Contents_Item.appendChild(args[i]);
-                    };
-                    tab_Contents.appendChild(tab_Contents_Item);
-                };
-                const add_tabContents = document.createElement('div');
-                add_tabContents.setAttribute('class','js-added-tab-contents-container');
                 
-                add_tabContents.appendChild(tab_Ul);
-                add_tabContents.appendChild(tab_Contents);
+                //コンテナ作成
+                const tabContents_Container = document.createElement('div');
+                //add_tabContents.setAttribute('class','js-added-tab-contents');
+                for (this.div_Attr of obj.div_Attrs) {
+                    const div_AttrName = Object.keys(this.div_Attr)[0];
+                    const div_AttrValue = this.div_Attr[div_AttrName];
+                    tabContents_Container.setAttribute(div_AttrName,div_AttrValue);
+                };
+                
+                //コンテンツ作成
+                let checkedJudge = false;
+                for (let i = 0; i < obj.tab_Contents.length; i++) {
+                    //id生成
+                    const input_label_Id = 'id-' + obj.tab_Contents[i]['tabContentName'];
+                    
+                    //input作成
+                    const tab_Input = document.createElement('input');
+                    for (this.input_Attr of obj.input_Attrs) {
+                        const input_AttrName = Object.keys(this.input_Attr)[0];
+                        const input_AttrValue = this.input_Attr[input_AttrName];
+                        tab_Input.setAttribute(input_AttrName,input_AttrValue);
+                    };
+                    tab_Input.setAttribute('id',input_label_Id);
+                    
+                    //label作成
+                    const tab_Label = document.createElement('label');
+                    for (this.label_Attr of obj.label_Attrs) {
+                        const label_AttrName = Object.keys(this.label_Attr)[0];
+                        const label_AttrValue = this.label_Attr[label_AttrName];
+                        tab_Label.setAttribute(label_AttrName,label_AttrValue);
+                    };
+                    tab_Label.setAttribute('for',input_label_Id);
+                    tab_Label.textContent = obj.tab_Contents[i]['tabContentTitle'];
+                    
+                    //content作成
+                    const tab_Content = document.createElement('div');
+                    for (this.content_Attr of obj.content_Attrs) {
+                        const content_AttrName = Object.keys(this.content_Attr)[0];
+                        const content_AttrValue = this.content_Attr[content_AttrName];
+                        tab_Content.setAttribute(content_AttrName,content_AttrValue);
+                    };
+                    
+                    //表示用attributeの設定・コンテンツ要素へ入れる
+                    if (args[i] === null) {
+                        //コンテンツが空（null）の場合、disabledを設定
+                        tab_Input.setAttribute('disabled','');
+                    } else if (checkedJudge === false) {
+                        //コンテンツが空（null）以外の最初のコンテンツにCheckedを設定
+                        tab_Input.setAttribute('checked','');
+                        //Checkedを設定した場合、checkedJudgeをtrueへ変更
+                        checkedJudge = true;
+                        tab_Content.appendChild(args[i]);
+                    } else {
+                        tab_Content.appendChild(args[i]);
+                    };
+                    
+                    tabContents_Container.appendChild(tab_Input);
+                    tabContents_Container.appendChild(tab_Label);
+                    tabContents_Container.appendChild(tab_Content);
+                };
                 
                 if (obj.add_To_Selector === '') {
-                    return add_tabContents;
+                    return tabContents_Container;
                 } else {
                     const targetElm = document.querySelector(obj.add_To_Selector);
                     if (obj['contents_Title'] === '') {
-                        targetElm.appendChild(add_tabContents);
+                        targetElm.appendChild(tabContents_Container);
                     } else {
+                        //タイトル作成
+                        const tab_Contents_Title = document.createElement('h5');
+                        tab_Contents_Title.textContent = obj['contents_Title'];
+                        
                         targetElm.appendChild(tab_Contents_Title);
-                        targetElm.appendChild(add_tabContents);
+                        targetElm.appendChild(tabContents_Container);
                     };
                 };
-
+                
             };
         };
+        //style生成
         setStyle(object) {
+            //headタグへ挿入
             const headElm = document.querySelector('head');
             const addStyleElm = document.createElement('style');
             addStyleElm.setAttribute('id','tab-style');
-            const addStyles = object['add_Styles'];
+            //コンテンツ独自のstyleを挿入
+            const addStyles = (() => {
+                if (object['add_Styles']) {
+                    if (object['add_Styles'] !== '') {
+                        return object['add_Styles'];
+                    } else {
+                        return '';
+                    };
+                } else {
+                    return '';
+                };
+            })();
+            //コンテンツ数からタブの幅（％）を設定
             const tabCount = (() => {
                 if (object['tab_Contents'].length <= 3) {
                     return 3;
@@ -280,117 +328,97 @@ if (locationURL.includes('detail')) {
                 };
             })();
             const tabWidthBase = Math.trunc((100 / Number(tabCount)) * 1000) / 1000;
+            //style
             const style = `
-                .js-added-tab-contents-container {
+                .js-added-tab-contents {
                     width:100%;
+                    flex-wrap: wrap;
+                    display: flex;
                 }
-                .js-added-tab-list {
-                    list-style-type:none; 
-                    display:flex; 
-                    flex-flow:row wrap; 
-                    justify-content:space-btween;
-                } 
-                .js-added-tab-list-item {
-                    text-align:center;
-                    flex: 0 0 ${tabWidthBase}%; 
+                input[name="js-added-tab-input"] {
+                    display: none;
+                }
+                .js-added-tab-label {
                     background-color:#dddddd; 
                     color:#3f3f3f; 
+                    text-align:center;
+                    flex: 0 0 ${tabWidthBase}%; 
                     padding: 10px 0; 
                     font-weight:bold;
-                } 
-                .js-added-tab-list-item-valid {
                     cursor:pointer;
-                } 
-                .js-added-tab-list-item-valid:hover {
-                    opacity:.6;
-                } 
-                .js-added-tab-list-item.active {
-                    background-color:#3f3f3f; 
-                    color:#eee;
-                } 
-                .js-added-disabled {
-                    opacity:.6; 
+                    display: block;
+                    float: left;
+                    order: -1;
+                }
+                input:checked + .js-added-tab-label {
+                    background-color: #3f3f3f;
+                    color: #eee;
                     pointer-events:none;
-                } 
-                .js-added-tab-contents-item {
-                    display:none;
-                } 
-                .js-added-tab-contents-item.show {
-                    display:block;
-                } 
+                }
+                input:disabled + .js-added-tab-label {
+                    opacity:.6;
+                    pointer-events:none;
+                }
+                .js-added-tab-label:hover {
+                    opacity:.6;
+                }
+                input:checked + .js-added-tab-label:hover {
+                    opacity:1;
+                }
+                input:disabled + .js-added-tab-label:hover {
+                    opacity:1;
+                }
+                .js-added-tab-content {
+                    display: none;
+                    width: 100%;
+                }
+                input:checked + .js-added-tab-label + .js-added-tab-content {
+                    display: block;
+                }
                 ${addStyles}
             `;
             addStyleElm.textContent = style;
             headElm.appendChild(addStyleElm);
         };
+        //attributeオブジェクトの生成
         setAttrs(object) {
+            //ベースオブジェクト
             const tab_Obj = {
                 contents_Title:'',
                 tab_Contents:[],
 
-                ul_Attrs:[{class:'js-added-tab-list'}],
-                li_Attrs:[{class:'js-added-tab-list-item'}],
-                li_Class_First:['active'],
-                li_Class_Except:['js-added-tab-list-item-valid'],
-
-                contents_Attrs:[{class:'js-added-tab-contents'}],
-                contents_Item_Attrs:[{class:'js-added-tab-contents-item'}],
-                contents_Item_Class_First:['show'],
-                contents_Item_Class_Except:[],
+                div_Attrs:[{class:'js-added-tab-contents'}],
+                input_Attrs:[{type:'radio'},{name:'js-added-tab-input'}],
+                label_Attrs:[{class:'js-added-tab-label'}],
+                content_Attrs:[{class:'js-added-tab-content'}],
 
                 add_To_Selector:''
             };
+            //コンテンツ独自のattributeを追加
             tab_Obj.contents_Title = object.contents_Title;
             const tab_Contents = object.tab_Contents;
             for (this.tab_Content of tab_Contents) {
                 tab_Obj.tab_Contents.push(this.tab_Content);
             };
-            const ul_Id = {};
-            ul_Id.id = object.contents_BaseId + '-tab-list';
-            tab_Obj.ul_Attrs.push(ul_Id);
-            const contents_Id = {};
-            contents_Id.id = object.contents_BaseId + '-tab-contents';
-            tab_Obj.contents_Attrs.push(contents_Id);
+            const div_Id = {};
+            div_Id.id = object.contents_BaseId + '-tab-contents';
+            tab_Obj.div_Attrs.push(div_Id);
             tab_Obj.add_To_Selector = object.add_To_Selector;
 
             return tab_Obj;
         };
-        clickHandler(e) {
-            e.preventDefault();
-            const targetTab = e.target;
-            const parentId = targetTab.parentNode.getAttribute('id');
-            const target_Contents_Id = parentId.replace(/tab-list$/g,'tab-contents');
-            const target_Contents_Parent = document.getElementById(target_Contents_Id);
-            if (targetTab.className.includes('active')) {
-            } else {
-                targetTab.parentNode.querySelectorAll('.js-added-tab-list-item.active')[0].classList.remove('active');
-                targetTab.classList.add('active');
-                targetTab.classList.remove('js-added-tab-list-item-valid');
-
-                target_Contents_Parent.querySelectorAll('.js-added-tab-contents-item.show')[0].classList.remove('show');
-                const aryTabs = Array.prototype.slice.call(targetTab.parentNode.children);
-                const index = aryTabs.indexOf(targetTab);
-                target_Contents_Parent.children[index].classList.add('show');
-            };
-            for(let i = 0; i < targetTab.parentNode.children.length; i++) {
-                if (target_Contents_Parent.children[i].hasChildNodes() == true && targetTab.parentNode.children[i].className.includes('active') == false) {
-                    targetTab.parentNode.children[i].classList.add('js-added-tab-list-item-valid');
-                } else {
-                };
-            };
-        };
     };
-    //インスタンス生成例
+
     //const surroundingEnvironment = new AddTabContents(
         //{
             //contents_Title:'周辺概要',
             //contents_BaseId:'surrounding-environment',
             //tab_Contents:[
-                //{tabContentTitle:'周辺マップ'},
-                //{tabContentTitle:'周辺施設情報'}
+                //{tabContentTitle:'周辺マップ',tabContentName:'map'},
+                //{tabContentTitle:'周辺施設情報',tabContentName:'surrounding-information'}
             //],
             //add_Styles:`
-                //#contents-item-map {
+                //.js-added-map {
                     //position:relative; 
                     //padding-bottom:${aspectRatio}%; 
                     //height:0; 
@@ -399,8 +427,8 @@ if (locationURL.includes('detail')) {
             //`, 
             //add_To_Selector:'div.detail_btm'
        //},
-       //tab_Content_Map,
-       //tab_Content_SurroundingInformation
+       //content_Map,
+       //null
     //);
     
     
