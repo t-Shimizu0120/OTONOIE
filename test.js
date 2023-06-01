@@ -92,7 +92,9 @@
                 
             };
         };
+        //attributeオブジェクトの生成
         setAttrs(object) {
+            //ベースオブジェクト
             const tab_Obj = {
                 contents_Title:'',
                 tab_Contents:[],
@@ -104,6 +106,7 @@
 
                 add_To_Selector:''
             };
+            //コンテンツ独自のattributeを追加
             tab_Obj.contents_Title = object.contents_Title;
             const tab_Contents = object.tab_Contents;
             for (this.tab_Content of tab_Contents) {
@@ -118,193 +121,17 @@
         };
     };
 
-
-
-
-        setStyle(object) {
-            const headElm = document.querySelector('head');
-            const addStyleElm = document.createElement('style');
-            addStyleElm.setAttribute('id','tab-style');
-            const addStyles = object['add_Styles'];
-            const tabCount = (() => {
-                if (object['tab_Contents'].length <= 3) {
-                    return 3;
-                } else {
-                    return object['tab_Contents'].length;
-                };
-            })();
-            const tabWidthBase = Math.trunc((100 / Number(tabCount)) * 1000) / 1000;
-            const style = `
-                .js-added-tab-contents-container {
-                    width:100%;
-                }
-                .js-added-tab-list {
-                    list-style-type:none; 
-                    display:flex; 
-                    flex-flow:row wrap; 
-                    justify-content:space-btween;
-                } 
-                .js-added-tab-list-item {
-                    text-align:center;
-                    flex: 0 0 ${tabWidthBase}%; 
-                    background-color:#dddddd; 
-                    color:#3f3f3f; 
-                    padding: 10px 0; 
-                    font-weight:bold;
-                } 
-                .js-added-tab-list-item-valid {
-                    cursor:pointer;
-                } 
-                .js-added-tab-list-item-valid:hover {
-                    opacity:.6;
-                } 
-                .js-added-tab-list-item.active {
-                    background-color:#3f3f3f; 
-                    color:#eee;
-                } 
-                .js-added-disabled {
-                    opacity:.6; 
-                    pointer-events:none;
-                } 
-                .js-added-tab-contents-item {
-                    display:none;
-                } 
-                .js-added-tab-contents-item.show {
-                    display:block;
-                } 
-                ${addStyles}
-            `;
-            addStyleElm.textContent = style;
-            headElm.appendChild(addStyleElm);
-        };
-        setAttrs(object) {
-            const tab_Obj = {
-                contents_Title:'',
-                tab_Contents:[],
-
-                ul_Attrs:[{class:'js-added-tab-list'}],
-                li_Attrs:[{class:'js-added-tab-list-item'}],
-                li_Class_First:['active'],
-                li_Class_Except:['js-added-tab-list-item-valid'],
-
-                contents_Attrs:[{class:'js-added-tab-contents'}],
-                contents_Item_Attrs:[{class:'js-added-tab-contents-item'}],
-                contents_Item_Class_First:['show'],
-                contents_Item_Class_Except:[],
-
-                add_To_Selector:''
-            };
-            tab_Obj.contents_Title = object.contents_Title;
-            const tab_Contents = object.tab_Contents;
-            for (this.tab_Content of tab_Contents) {
-                tab_Obj.tab_Contents.push(this.tab_Content);
-            };
-            const ul_Id = {};
-            ul_Id.id = object.contents_BaseId + '-tab-list';
-            tab_Obj.ul_Attrs.push(ul_Id);
-            const contents_Id = {};
-            contents_Id.id = object.contents_BaseId + '-tab-contents';
-            tab_Obj.contents_Attrs.push(contents_Id);
-            tab_Obj.add_To_Selector = object.add_To_Selector;
-
-            return tab_Obj;
-        };
-
-
-
-    //const surroundingEnvironment = new AddTabContents(
-        //{
-            //contents_Title:'周辺概要',
-            //contents_BaseId:'surrounding-environment',
-            //tab_Contents:[
-                //{tabContentTitle:'周辺マップ',tabContentName:''},
-                //{tabContentTitle:'周辺施設情報'tabContentName:''}
-            //],
-            //add_Styles:`
-                //#contents-item-map {
-                    //position:relative; 
-                    //padding-bottom:${aspectRatio}%; 
-                    //height:0; 
-                    //overflow:hidden;
-                //}
-            //`, 
-            //add_To_Selector:'div.detail_btm'
-       //},
-       //tab_Content_Map,
-       //tab_Content_SurroundingInformation
-    //);
-
-
-
-
-
-
-
-for (let i = 0; i < 3; i++) {
-  const tab_Input = document.createElement('input');
-  const setId = 'tab' + (i + 1);
-  tab_Input.setAttribute('id',setId);
-  tab_Input.setAttribute('type','radio');
-  tab_Input.setAttribute('name','name');
-  if (i === 0) {
-    tab_Input.setAttribute('checked','');
-  } else if (i === 2) {
-    tab_Input.setAttribute('disabled','');
-  } else {
-  };
-  
-  const tab_Label = document.createElement('label');
-  tab_Label.setAttribute('class','label');
-  tab_Label.setAttribute('for',setId);
-  tab_Label.textContent = '周辺環境' + i;
-  
-  const tab_Content = document.createElement('div');
-  tab_Content.setAttribute('class','js-added-tab-contents-item');
-  tab_Content.textContent = 'ああああ' + i;
-  
-  add_tabContents.appendChild(tab_Input);
-  add_tabContents.appendChild(tab_Label);
-  add_tabContents.appendChild(tab_Content);
-};
-console.log(add_tabContents);
-const targetElm = document.querySelector('div.detail_btm');
-const tab_Style = document.createElement('style');
-tab_Style.textContent = `
-.js-added-tab-contents {
-  width: 500px;
-  margin: auto;
-  flex-wrap: wrap;
-  display: flex;
-} 
-.label {
-  width: calc(100%/5);
-  height: 50px;
-  background-color: darkgrey;
-  line-height: 50px;
-  font-size: 15px;
-  text-align: center;
-  display: block;
-  float: left;
-  order: -1;
-}
- 
-input[name="name"] {
-  display: none;
-}
- 
-input:checked + .label {
-  background-color: cadetblue;
-  color: aliceblue;
-}
- 
-.js-added-tab-contents-item {
-  display: none;
-  width: 100%;
-}
- 
-input:checked + .label + .js-added-tab-contents-item {
-  display: block;
-}
-`;
-targetElm.appendChild(tab_Style);
-targetElm.appendChild(add_tabContents);
+    const surroundingEnvironment = new AddTabContents(
+        {
+            contents_Title:'周辺概要',
+            contents_BaseId:'surrounding-environment',
+            tab_Contents:[
+                {tabContentTitle:'周辺マップ',tabContentName:'js-added-map'},
+                {tabContentTitle:'周辺施設情報',tabContentName:'js-added-111'}
+            ],
+            add_Styles:``, 
+            add_To_Selector:'div.detail_btm'
+       },
+       null,
+       null
+    );
