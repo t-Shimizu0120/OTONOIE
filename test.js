@@ -40,17 +40,6 @@
                         tab_Input.setAttribute(input_AttrName,input_AttrValue);
                     };
                     tab_Input.setAttribute('id',input_label_Id);
-                    //表示用attributeの設定
-                    if (args[i] === null) {
-                        //コンテンツが空（null）の場合、disabledを設定
-                        tab_Input.setAttribute('disabled','');
-                    } else if (checkedJudge === false) {
-                        //コンテンツが空（null）以外の最初のコンテンツにCheckedを設定
-                        tab_Input.setAttribute('checked','');
-                        //Checkedを設定した場合、checkedJudgeをtrueへ変更
-                        checkedJudge = true;
-                    } else {
-                    };
                     
                     //label作成
                     const tab_Label = document.createElement('label');
@@ -69,6 +58,21 @@
                         const content_AttrValue = this.content_Attr[content_AttrName];
                         tab_Content.setAttribute(content_AttrName,content_AttrValue);
                     };
+                    
+                    //表示用attributeの設定・コンテンツ要素へ入れる
+                    if (args[i] === null) {
+                        //コンテンツが空（null）の場合、disabledを設定
+                        tab_Input.setAttribute('disabled','');
+                    } else if (checkedJudge === false) {
+                        //コンテンツが空（null）以外の最初のコンテンツにCheckedを設定
+                        tab_Input.setAttribute('checked','');
+                        //Checkedを設定した場合、checkedJudgeをtrueへ変更
+                        checkedJudge = true;
+                        tab_Content.appendChild(args[i]);
+                    } else {
+                        tab_Content.appendChild(args[i]);
+                    };
+                    
                     tabContents_Container.appendChild(tab_Input);
                     tabContents_Container.appendChild(tab_Label);
                     tabContents_Container.appendChild(tab_Content);
