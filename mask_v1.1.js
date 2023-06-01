@@ -408,8 +408,11 @@ if (locationURL.includes('detail')) {
                 {tabContentTitle:'初期費用',tabContentName:'initial-cost'},
                 {tabContentTitle:'印刷',tabContentName:'print'}
             ],
-            //add_Styles:`
-            //`, 
+            add_Styles:`
+                #extra-data-tab-contents{
+                    margin-top: 20px;
+                }
+            `, 
             add_To_Selector:'div.detail_btm'
        },
        content_access,
