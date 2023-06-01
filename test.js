@@ -92,6 +92,86 @@
                 
             };
         };
+        //style生成
+        setStyle(object) {
+            //headタグへ挿入
+            const headElm = document.querySelector('head');
+            const addStyleElm = document.createElement('style');
+            addStyleElm.setAttribute('id','tab-style');
+            //コンテンツ独自のstyleを挿入
+            const addStyles = (() => {
+                if (object['add_Styles']) {
+                    if (object['add_Styles'] !== '') {
+                        return object['add_Styles'];
+                    } else {
+                        return '';
+                    };
+                } else {
+                    return '';
+                };
+            })();
+            //コンテンツ数からタブの幅（％）を設定
+            const tabCount = (() => {
+                if (object['tab_Contents'].length <= 3) {
+                    return 3;
+                } else {
+                    return object['tab_Contents'].length;
+                };
+            })();
+            const tabWidthBase = Math.trunc((100 / Number(tabCount)) * 1000) / 1000;
+            
+            const style = `
+                .js-added-tab-contents {
+                    width:100%;
+                    flex-wrap: wrap;
+                    display: flex;
+                }
+                input[name="js-added-tab-input"] {
+                    display: none;
+                }
+                .js-added-tab-label{
+                    background-color:#dddddd; 
+                    color:#3f3f3f; 
+                }
+                .js-added-tab-list {
+                    list-style-type:none; 
+                    display:flex; 
+                    flex-flow:row wrap; 
+                    justify-content:space-btween;
+                } 
+                .js-added-tab-list-item {
+                    text-align:center;
+                    flex: 0 0 ${tabWidthBase}%; 
+                    background-color:#dddddd; 
+                    color:#3f3f3f; 
+                    padding: 10px 0; 
+                    font-weight:bold;
+                } 
+                .js-added-tab-list-item-valid {
+                    cursor:pointer;
+                } 
+                .js-added-tab-list-item-valid:hover {
+                    opacity:.6;
+                } 
+                .js-added-tab-list-item.active {
+                    background-color:#3f3f3f; 
+                    color:#eee;
+                } 
+                .js-added-disabled {
+                    opacity:.6; 
+                    pointer-events:none;
+                } 
+                .js-added-tab-contents-item {
+                    display:none;
+                } 
+                .js-added-tab-contents-item.show {
+                    display:block;
+                } 
+                ${addStyles}
+            `;
+            addStyleElm.textContent = style;
+            headElm.appendChild(addStyleElm);
+        };
         //attributeオブジェクトの生成
         setAttrs(object) {
             //ベースオブジェクト
