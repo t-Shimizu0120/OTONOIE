@@ -393,32 +393,26 @@ if (locationURL.includes('detail')) {
     //挿入要素
     const insertTargetElm = document.querySelector('div.detail_btm');
     
-    
-    //アクセス
-    const accessTitle = document.createElement('h5');
-    accessTitle.textContent = 'アクセス';
-    insertTargetElm.appendChild(accessTitle);
-    
     //アクセスコンテンツ作成
     const content_access = (() => {
         return null;
     })();
-    //アクセスインスタンス生成
+    //アクセスインスタンス生成・挿入
     const content_Access = new AddTabContents(
         {
-            //contents_Title:'',
-            //contents_BaseId:'',
-            //tab_Contents:[
-                //{tabContentTitle:'',tabContentName:''},
-                //{tabContentTitle:'',tabContentName:''}
-            //],
+            contents_Title:'アクセス',
+            contents_BaseId:'access',
+            tab_Contents:[
+                {tabContentTitle:'出発駅指定',tabContentName:'from-station'},
+                {tabContentTitle:'到着駅指定',tabContentName:'to-station'}
+            ],
             //add_Styles:`
             //`, 
-            //add_To_Selector:''
-       //},
-       //*******,
-       //*******
-    //);
+            add_To_Selector:'div.detail_btm'
+       },
+       content_access,
+       content_access
+    );
     
     //周辺概要タイトル生成・挿入
     const surroundingEnvironmentTitle = document.createElement('h5');
@@ -518,8 +512,8 @@ if (locationURL.includes('detail')) {
                     return [[{th:'周辺施設'},{td:outputList}]];
                 };
             })();
-            //インスタンスの生成
-            const tab_Content_SurroundingInformation = new AddTable(
+            //周辺環境インスタンス生成
+            const content_SurroundingInformation = new AddTable(
                 {
                     contents_Title:'',
                     table_BaseId:'surrounding-information',
