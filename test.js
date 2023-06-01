@@ -27,7 +27,7 @@
                 };
                 
                 //コンテンツ作成
-                const checkedJudge = false;
+                let checkedJudge = false;
                 for (let i = 0; i < obj.tab_Contents.length; i++) {
                     //id生成
                     const input_label_Id = 'id-' + obj.tab_Contents[i]['tabContentName'];
