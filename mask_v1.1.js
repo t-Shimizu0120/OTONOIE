@@ -405,8 +405,7 @@ if (locationURL.includes('detail')) {
             contents_BaseId:'extra-data',
             tab_Contents:[
                 {tabContentTitle:'路線情報',tabContentName:'route-information'},
-                {tabContentTitle:'初期費用',tabContentName:'initial-cost'},
-                {tabContentTitle:'共有',tabContentName:'share'}
+                {tabContentTitle:'初期費用',tabContentName:'initial-cost'}
             ],
             add_Styles:`
                 #extra-data-tab-contents{
@@ -415,7 +414,6 @@ if (locationURL.includes('detail')) {
             `, 
             add_To_Selector:'div.detail_btm'
        },
-       content_access,
        content_access,
        content_access
     );
