@@ -401,16 +401,18 @@ if (locationURL.includes('detail')) {
     //アクセスインスタンス生成・挿入
     const content_Access = new AddTabContents(
         {
-            contents_Title:'アクセス',
-            contents_BaseId:'access',
+            contents_Title:'',
+            contents_BaseId:'extra-data',
             tab_Contents:[
-                {tabContentTitle:'出発駅指定',tabContentName:'from-station'},
-                {tabContentTitle:'到着駅指定',tabContentName:'to-station'}
+                {tabContentTitle:'路線情報',tabContentName:'route-information'},
+                {tabContentTitle:'初期費用',tabContentName:'initial-cost'},
+                {tabContentTitle:'印刷',tabContentName:'print'}
             ],
             //add_Styles:`
             //`, 
             add_To_Selector:'div.detail_btm'
        },
+       content_access,
        content_access,
        content_access
     );
