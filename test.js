@@ -215,6 +215,9 @@
                     padding: 10px 0; 
                     font-weight:bold;
                     cursor:pointer;
+                    display: block;
+                    float: left;
+                    order: -1;
                 }
                 input:checked + .js-added-tab-label:hover {
                     opacity:1;
