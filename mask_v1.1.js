@@ -505,26 +505,8 @@ if (locationURL.includes('detail')) {
                         margin-bottom:10px;
                     }
                     `, 
-                    //add_To_Selector:'div.detail_btm'
-                    add_To_Selector:''
-                }
-            );
-            const surroundingInformation = new AddTabContents(
-                {
-                    contents_Title:'',
-                    contents_BaseId:'surrounding-information-',
-                    tab_Contents:[
-                        {tabContentTitle:'周辺1',tabContentName:'surrounding-information-1'},
-                        {tabContentTitle:'周辺2',tabContentName:'surrounding-information-2'},
-                        {tabContentTitle:'周辺2',tabContentName:'surrounding-information-3'}
-                    ],
-                    add_Styles:`
-                    `, 
                     add_To_Selector:'div.detail_btm'
-                },
-                tab_Content_SurroundingInformation,
-                tab_Content_SurroundingInformation,
-                tab_Content_SurroundingInformation
+                }
             );
         } else {    
         };
