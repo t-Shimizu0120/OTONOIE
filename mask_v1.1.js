@@ -405,7 +405,7 @@ if (locationURL.includes('detail')) {
         if (window.screen.width <= 480) {
             return 75;
         } else if (window.screen.width > 480 && window.screen.width < 960){
-            return 75;
+            return 66.667;
         } else {
             return 66.667;
         };
