@@ -119,7 +119,7 @@
                 };
             })();
             const tabWidthBase = Math.trunc((100 / Number(tabCount)) * 1000) / 1000;
-            
+            //style
             const style = `
                 .js-added-tab-contents {
                     width:100%;
@@ -129,44 +129,40 @@
                 input[name="js-added-tab-input"] {
                     display: none;
                 }
-                .js-added-tab-label{
+                input:checked + .js-added-tab-label {
+                    background-color: #3f3f3f;
+                    color: #eee;
+                    pointer-events:none;
+                }
+                input:disabled + .js-added-tab-label {
+                    opacity:.6;
+                    pointer-events:none;
+                }
+                .js-added-tab-label {
                     background-color:#dddddd; 
                     color:#3f3f3f; 
-                }
-                .js-added-tab-list {
-                    list-style-type:none; 
-                    display:flex; 
-                    flex-flow:row wrap; 
-                    justify-content:space-btween;
-                } 
-                .js-added-tab-list-item {
                     text-align:center;
                     flex: 0 0 ${tabWidthBase}%; 
-                    background-color:#dddddd; 
-                    color:#3f3f3f; 
                     padding: 10px 0; 
                     font-weight:bold;
-                } 
-                .js-added-tab-list-item-valid {
                     cursor:pointer;
-                } 
-                .js-added-tab-list-item-valid:hover {
+                }
+                input:checked + .js-added-tab-label:hover {
+                    opacity:1;
+                }
+                input:disabled + .js-added-tab-label:hover {
+                    opacity:1;
+                }
+                .js-added-tab-label:hover {
                     opacity:.6;
-                } 
-                .js-added-tab-list-item.active {
-                    background-color:#3f3f3f; 
-                    color:#eee;
-                } 
-                .js-added-disabled {
-                    opacity:.6; 
-                    pointer-events:none;
-                } 
-                .js-added-tab-contents-item {
-                    display:none;
-                } 
-                .js-added-tab-contents-item.show {
-                    display:block;
-                } 
+                }
+                .js-added-tab-content {
+                    display: none;
+                    width: 100%;
+                }
+                input:checked + .js-added-tab-label + .js-added-tab-content {
+                    display: block;
+                }
                 ${addStyles}
             `;
             addStyleElm.textContent = style;
