@@ -406,7 +406,7 @@ if (locationURL.includes('detail')) {
             tab_Contents:[
                 {tabContentTitle:'路線情報',tabContentName:'route-information'},
                 {tabContentTitle:'初期費用',tabContentName:'initial-cost'},
-                {tabContentTitle:'印刷',tabContentName:'print'}
+                {tabContentTitle:'共有',tabContentName:'share'}
             ],
             add_Styles:`
                 #extra-data-tab-contents{
