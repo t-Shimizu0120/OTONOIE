@@ -394,11 +394,36 @@ if (locationURL.includes('detail')) {
     const insertTargetElm = document.querySelector('div.detail_btm');
     
     
+    //アクセス
+    const accessTitle = document.createElement('h5');
+    accessTitle.textContent = 'アクセス';
+    insertTargetElm.appendChild(accessTitle);
+    
+    //アクセスコンテンツ作成
+    const content_access = (() => {
+        return null;
+    })();
+    //アクセスインスタンス生成
+    const content_Access = new AddTabContents(
+        {
+            //contents_Title:'',
+            //contents_BaseId:'',
+            //tab_Contents:[
+                //{tabContentTitle:'',tabContentName:''},
+                //{tabContentTitle:'',tabContentName:''}
+            //],
+            //add_Styles:`
+            //`, 
+            //add_To_Selector:''
+       //},
+       //*******,
+       //*******
+    //);
+    
     //周辺概要タイトル生成・挿入
     const surroundingEnvironmentTitle = document.createElement('h5');
     surroundingEnvironmentTitle.textContent = '周辺概要';
     insertTargetElm.appendChild(surroundingEnvironmentTitle);
-    
     
     //ウィンドウ幅から地図用のアスペクト比を生成
     const aspectRatio = (() => {
@@ -469,7 +494,7 @@ if (locationURL.includes('detail')) {
         const extraJson_Obj = JSON.parse(extraJson);
         
         //周辺環境
-        if (extraJson_Obj.surroundingInformation) {
+        if (extraJson_Obj['surroundingInformation']) {
             //jsonに周辺環境キーがある場合、周辺環境テーブル用のコンテンツの作成
             const surroundingInformationContents = (() =>{
                 //周辺環境リスト
