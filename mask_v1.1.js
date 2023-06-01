@@ -165,44 +165,6 @@ if (locationURL.includes('detail')) {
     
     
     
-    const content_Map = (() => {
-        const map_Parent_Elm = create_Element('div',[
-            {class:'js-added-map'},
-            {id:'map-content'}
-        ]);
-        
-        const map_Address = document.querySelector('div.detail_r').querySelector('dl.clearfix').querySelector('dd').textContent;
-        //src作成
-        const map_Src = (() => {
-            let m_src;
-            //画面幅でズーム調整
-            if (window.screen.width <= 480) {
-                m_src = 'https://www.google.com/maps/?output=embed&q=' + map_Address + '&t=m&z=15';
-            } else if (window.screen.width > 480 && window.screen.width < 960) {
-                m_src = 'https://www.google.com/maps/?output=embed&q=' + map_Address + '&t=m&z=16';
-            } else {
-                m_src = 'https://www.google.com/maps/?output=embed&q=' + map_Address + '&t=m&z=17';
-            };
-            return m_src;
-        })(); 
-        
-        const map_Elm = create_Element('iframe',[
-            {width:'100%'},
-            {height:'auto'},
-            {style:'border:0; position:absolute; top:-180px; left:0; width:100%; height:calc(100% + 180px + 180px);'},
-            {loading:'lazy'},
-            {allowfullscreen:''},
-            {referrerpolicy:'no-referrer-when-downgrade'}
-        ]);
-        map_Elm.src = map_Src;
-
-        map_Parent_Elm.appendChild(map_Elm);
-
-        return map_Parent_Elm;
-    })();
-
-
-
     //■タブコンテンツクラス
     class AddTabContents {
         constructor (object,...args) {
