@@ -440,6 +440,7 @@ if (locationURL.includes('detail')) {
             padding-bottom:${aspectRatio}%; 
             height:0; 
             overflow:hidden;
+            margin-bottom: 20px;
         }
     `; 
     headElm.appendChild(mapStyle);
