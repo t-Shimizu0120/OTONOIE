@@ -370,27 +370,20 @@ if (locationURL.includes('detail')) {
             return tab_Obj;
         };
     };
-
-    //const surroundingEnvironment = new AddTabContents(
+    //const ********** = new AddTabContents(
         //{
-            //contents_Title:'周辺概要',
-            //contents_BaseId:'surrounding-environment',
+            //contents_Title:'',
+            //contents_BaseId:'',
             //tab_Contents:[
-                //{tabContentTitle:'周辺マップ',tabContentName:'map'},
-                //{tabContentTitle:'周辺施設情報',tabContentName:'surrounding-information'}
+                //{tabContentTitle:'',tabContentName:''},
+                //{tabContentTitle:'',tabContentName:''}
             //],
             //add_Styles:`
-                //.js-added-map {
-                    //position:relative; 
-                    //padding-bottom:${aspectRatio}%; 
-                    //height:0; 
-                    //overflow:hidden;
-                //}
             //`, 
-            //add_To_Selector:'div.detail_btm'
+            //add_To_Selector:''
        //},
-       //content_Map,
-       //null
+       //*******,
+       //*******
     //);
     
     
