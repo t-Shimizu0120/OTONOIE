@@ -296,6 +296,7 @@ if (locationURL.includes('detail')) {
                     width:100%;
                     flex-wrap: wrap;
                     display: flex;
+                    margin-bottom: 20px;
                 }
                 input[name="js-added-tab-input"] {
                     display: none;
