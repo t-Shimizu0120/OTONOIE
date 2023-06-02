@@ -430,6 +430,65 @@ if (locationURL.includes('detail')) {
         content_access
     );
     
+    
+    
+    
+    //追加項目
+    if (document.querySelector('span#extra-json') != null) {
+        //#extra-jsonがある場合、json取得
+        const extraJson = document.querySelector('span#extra-json').textContent;
+        const extraJson_Obj = JSON.parse(extraJson);
+        
+        //周辺環境
+        if (extraJson_Obj['surroundingInformation']) {
+            //jsonに周辺環境キーがある場合、周辺環境テーブル用のコンテンツの作成
+            const surroundingInformationContents = (() =>{
+                //周辺環境リスト
+                const surroundingList = extraJson_Obj['surroundingInformation'];
+                const outputList = [];
+                if (surroundingList.length === 0) {
+                    //キー名'surroundingInformation'値（リスト）が０個の場合
+                    return outputList;
+                } else {
+                    //キー名'surroundingInformation'値（リスト）が１個以上の場合
+                    //リストの値を整形
+                    const surroundingInformationRegex = /[（].+[）]/g;
+                    for(surroundingItem of surroundingList) {
+                        const targetText = surroundingItem.match(surroundingInformationRegex)[0];
+                        const category = targetText.replace('（','').replace('）','');
+                        const information = surroundingItem.replace(targetText,'');
+                        const surroundingObj = `■ ${category}：${information}`;
+                        outputList.push(surroundingObj);
+                    };
+                    //周辺環境コンテンツ生成
+                    return [[{th:'周辺施設'},{td:outputList}]];
+                };
+            })();
+            //周辺環境インスタンス生成
+            const content_SurroundingInformation = new AddTable(
+                {
+                    contents_Title:'',
+                    table_BaseId:'surrounding-information',
+                    table_Contents:surroundingInformationContents,
+                    add_Styles:`
+                    .js-added-table {
+                        margin-top:10px;
+                        margin-bottom:10px;
+                    }
+                    `, 
+                    add_To_Selector:'div.detail_btm'
+                }
+            );
+        } else {    
+        };
+        
+        
+        
+    } else {
+    };
+    
+    
+    
     //周辺概要タイトル生成・挿入
     const surroundingEnvironmentTitle = document.createElement('h5');
     surroundingEnvironmentTitle.textContent = '周辺概要';
@@ -496,61 +555,6 @@ if (locationURL.includes('detail')) {
         return map_Parent_Elm;
     })();
     insertTargetElm.appendChild(content_Map);
-    
-    
-    //追加項目
-    if (document.querySelector('span#extra-json') != null) {
-        //#extra-jsonがある場合、json取得
-        const extraJson = document.querySelector('span#extra-json').textContent;
-        const extraJson_Obj = JSON.parse(extraJson);
-        
-        //周辺環境
-        if (extraJson_Obj['surroundingInformation']) {
-            //jsonに周辺環境キーがある場合、周辺環境テーブル用のコンテンツの作成
-            const surroundingInformationContents = (() =>{
-                //周辺環境リスト
-                const surroundingList = extraJson_Obj['surroundingInformation'];
-                const outputList = [];
-                if (surroundingList.length === 0) {
-                    //キー名'surroundingInformation'値（リスト）が０個の場合
-                    return outputList;
-                } else {
-                    //キー名'surroundingInformation'値（リスト）が１個以上の場合
-                    //リストの値を整形
-                    const surroundingInformationRegex = /[（].+[）]/g;
-                    for(surroundingItem of surroundingList) {
-                        const targetText = surroundingItem.match(surroundingInformationRegex)[0];
-                        const category = targetText.replace('（','').replace('）','');
-                        const information = surroundingItem.replace(targetText,'');
-                        const surroundingObj = `■ ${category}：${information}`;
-                        outputList.push(surroundingObj);
-                    };
-                    //周辺環境コンテンツ生成
-                    return [[{th:'周辺施設'},{td:outputList}]];
-                };
-            })();
-            //周辺環境インスタンス生成
-            const content_SurroundingInformation = new AddTable(
-                {
-                    contents_Title:'',
-                    table_BaseId:'surrounding-information',
-                    table_Contents:surroundingInformationContents,
-                    add_Styles:`
-                    .js-added-table {
-                        margin-top:10px;
-                        margin-bottom:10px;
-                    }
-                    `, 
-                    add_To_Selector:'div.detail_btm'
-                }
-            );
-        } else {    
-        };
-        
-        
-        
-    } else {
-    };
     
     
     
