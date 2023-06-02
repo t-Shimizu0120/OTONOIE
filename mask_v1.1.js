@@ -444,27 +444,33 @@ if (locationURL.includes('detail')) {
         const line_button = create_Element('a',[
             {href:'https://social-plugins.line.me/lineit/share?url=' + detailPageUrl}
         ]);
+        const line_img = create_Element('img',[
+            {src:'https://www.otonoie.net/otonoie/img/prep/p8238/83560b3f27ae7909e9859b63855b95af.png'},
+            {class:'line-img'}
+        ]);
+        line_button.appendChild(line_img);
+        line_div.appendChild(line_button);
+        
         //ウィンドウ幅からサイズ調整
-        const aspectRatio = (() => {
-            if (window.screen.width <= 480) {
-                return 40;
-            } else if (window.screen.width > 480 && window.screen.width < 750){
-                return 30;
-            } else {
-                return 0;
-            };
-        })();
-        if (aspectRatio === 0) {
-            return null;
-        } else {
-            const line_img = create_Element('img',[
-                {src:'https://www.otonoie.net/otonoie/img/prep/p8238/83560b3f27ae7909e9859b63855b95af.png'},
-                {width:`${aspectRatio}%`}
-            ]);
-            line_button.appendChild(line_img);
-            line_div.appendChild(line_button);
-            return line_div;
-        };
+        const line_style = document.createElement('style');
+        line_style.textContent = `
+            .line-img {
+                width: 40%;
+            }@media screen and (min-width:480px) {
+                .line-img {
+                    width: 30%;
+                }
+            }@media screen and (min-width:751px) {
+                .line-img {
+                    display: none;
+                }
+            }
+        `;
+        line_style.setAttribute('id','line-style');
+        const headElm = document.querySelector('head');
+        headElm.appendChild(line_style);
+        
+        return line_div;
     })();
     //const share_Mail = ;
     
