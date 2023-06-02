@@ -16,7 +16,13 @@ if (locationURL.includes('detail')) {
     
     
     
-    //■テーブルクラス
+    //=================================================================
+    //class
+    //=================================================================
+    
+    
+    
+    //■テーブル
     class AddTable {
         constructor (object,...args) {
             //コンテンツの有無を判定
@@ -165,7 +171,7 @@ if (locationURL.includes('detail')) {
     
     
     
-    //■タブコンテンツクラス
+    //■タブコンテンツ
     class AddTabContents {
         constructor (object,...args) {
             if(object.tab_Contents.length === 0) {
@@ -390,6 +396,10 @@ if (locationURL.includes('detail')) {
     
     
     
+    
+    //============================================================================
+    //contens
+    //============================================================================
     
     //挿入要素
     const insertTargetElm = document.querySelector('div.detail_btm');
