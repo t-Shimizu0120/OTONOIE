@@ -446,7 +446,7 @@ if (locationURL.includes('detail')) {
         ]);
         const line_img = create_Element('img',[
             {src:'https://www.otonoie.net/otonoie/img/prep/p8238/83560b3f27ae7909e9859b63855b95af.png'},
-            {width:'33.333%'}
+            {width:'25%'}
         ]);
         line_button.appendChild(line_img);
         line_div.appendChild(line_button);
