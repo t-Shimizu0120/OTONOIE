@@ -417,6 +417,9 @@ if (locationURL.includes('detail')) {
     //----------------------------------シェア-------------------------------------
     const apartmentCode = document.querySelector('p.code').textContent.match(/[0-9]+$/)[0];
     const detailPageUrl = 'https://www.otonoie.net/detail/index.html?number=' + apartmentCode;
+    const share = create_Element('div',[
+        {class:'js-added-share'}
+    ]);
     //QRコード
     const share_Qr = (() => {
         const qr_div = create_Element('div',[
@@ -434,7 +437,7 @@ if (locationURL.includes('detail')) {
     //const share_Line = ;
     //const share_Mail = ;
     
-    
+    share.appendChild(share_Qr);
     //----------------------------------------------------------------------------
     
     //----------------------------タブインスタンス-----------------------------------
@@ -446,7 +449,7 @@ if (locationURL.includes('detail')) {
             tab_Contents:[
                 {tabContentTitle:'路線情報',tabContentName:'route-information'},
                 {tabContentTitle:'初期費用',tabContentName:'initial-cost'},
-                {tabContentTitle:'QRコード',tabContentName:'qrcode'}
+                {tabContentTitle:'シェア',tabContentName:'share'}
             ],
             add_Styles:`
                 #extra-data-tab-contents{
@@ -457,7 +460,7 @@ if (locationURL.includes('detail')) {
         },
         content_access,
         content_access,
-        share_Qr
+        share
     );
     //---------------------------------------------------------------
     //===============================================================
