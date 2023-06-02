@@ -457,7 +457,7 @@ if (locationURL.includes('detail')) {
         },
         content_access,
         content_access,
-        content_access
+        share_Qr
     );
     //---------------------------------------------------------------
     //===============================================================
