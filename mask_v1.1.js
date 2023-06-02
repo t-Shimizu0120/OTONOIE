@@ -475,7 +475,7 @@ if (locationURL.includes('detail')) {
     //const share_Mail = ;
     
     share.appendChild(share_Qr);
-    share.appendChild(share_Line);
+    //share.appendChild(share_Line);
     //----------------------------------------------------------------------------
     
     //----------------------------タブインスタンス-----------------------------------
