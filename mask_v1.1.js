@@ -426,7 +426,7 @@ if (locationURL.includes('detail')) {
             {title:'qrcode'},
             {alt:'qrcode'}
         ]);
-        qr_Img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&amp;size=50x50&amp;margin=3`; 
+        qr_Img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=100x100&margin=3`; 
         qr_div.appendChild(qr_Img);
         return qr_div;
     })();
