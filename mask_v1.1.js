@@ -436,7 +436,7 @@ if (locationURL.includes('detail')) {
         qr_div.appendChild(qr_Img);
         return qr_div;
     })();
-    
+    //line
     const share_Line = (() => {
         const line_div = create_Element('div',[
             {class:'js-added-line'}
@@ -451,16 +451,20 @@ if (locationURL.includes('detail')) {
             } else if (window.screen.width > 480 && window.screen.width < 750){
                 return 30;
             } else {
-                return 25;
+                return 0;
             };
         })();
-        const line_img = create_Element('img',[
-            {src:'https://www.otonoie.net/otonoie/img/prep/p8238/83560b3f27ae7909e9859b63855b95af.png'},
-            {width:`${aspectRatio}%`}
-        ]);
-        line_button.appendChild(line_img);
-        line_div.appendChild(line_button);
-        return line_div;
+        if (aspectRatio === 0) {
+            return null;
+        } else {
+            const line_img = create_Element('img',[
+                {src:'https://www.otonoie.net/otonoie/img/prep/p8238/83560b3f27ae7909e9859b63855b95af.png'},
+                {width:`${aspectRatio}%`}
+            ]);
+            line_button.appendChild(line_img);
+            line_div.appendChild(line_button);
+            return line_div;
+        };
     })();
     //const share_Mail = ;
     
