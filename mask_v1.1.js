@@ -411,10 +411,31 @@ if (locationURL.includes('detail')) {
     //-----------------------------------------------------------------------------
     
     //----------------------------------初期費用-----------------------------------
+    //const initialCost = ;
     //----------------------------------------------------------------------------
     
-    //----------------------------------シェア-----------------------------------
-    //-----------------------------------------------------------------------------
+    //----------------------------------シェア-------------------------------------
+    const apartmentCode = document.querySelector('p.code').textContent.match(/[0-9]+$/)[0];
+    const detailPageUrl = 'https://www.otonoie.net/detail/index.html?number=' + apartmentCode;
+    //QRコード
+    const share_Qr = (() => {
+        const qr_div = create_Element('div',[
+            {class:'js-added-qrcode'}
+        ]);
+        const qr_Img = create_Element('img',[
+            {title:'qrcode'},
+            {alt:'qrcode'}
+        ]);
+        qr_Img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&amp;size=50x50&amp;margin=3`; 
+        qr_div.appendChild(qr_Img);
+        return qr_div;
+    })();
+    
+    //const share_Line = ;
+    //const share_Mail = ;
+    
+    
+    //----------------------------------------------------------------------------
     
     //----------------------------タブインスタンス-----------------------------------
     //アクセスインスタンス生成・挿入
