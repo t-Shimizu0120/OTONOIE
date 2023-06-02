@@ -444,12 +444,12 @@ if (locationURL.includes('detail')) {
         const line_button = create_Element('a',[
             {href:'https://social-plugins.line.me/lineit/share?url=' + detailPageUrl}
         ]);
-        //ウィンドウ幅から地図用のアスペクト比を生成
+        //ウィンドウ幅からサイズ調整
         const aspectRatio = (() => {
             if (window.screen.width <= 480) {
                 return 40;
-            } else if (window.screen.width > 480 && window.screen.width < 960){
-                return 33.334;
+            } else if (window.screen.width > 480 && window.screen.width < 750){
+                return 30;
             } else {
                 return 25;
             };
