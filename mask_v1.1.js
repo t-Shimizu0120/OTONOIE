@@ -489,11 +489,13 @@ if (locationURL.includes('detail')) {
     
     
     
-    //周辺概要タイトル生成・挿入
+    //=================周辺概要タイトル生成・挿入======================
     const surroundingEnvironmentTitle = document.createElement('h5');
     surroundingEnvironmentTitle.textContent = '周辺概要';
     insertTargetElm.appendChild(surroundingEnvironmentTitle);
     
+    
+    //=============================地図==============================
     //ウィンドウ幅から地図用のアスペクト比を生成
     const aspectRatio = (() => {
         if (window.screen.width <= 480) {
