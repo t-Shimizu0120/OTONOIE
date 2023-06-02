@@ -441,28 +441,16 @@ if (locationURL.includes('detail')) {
         const line_div = create_Element('div',[
             {class:'js-added-line'}
         ]);
-        const line_button = create_Element('div',[
-            {class:'line-it-button'},
-            {'data-lang':'ja'},
-            {'data-type':'share-a'},
-            {'data-env':'REAL'},
-            {'data-color':'default'},
-            {'data-size':'large'},
-            {'data-count':'false'},
-            {'data-ver':'3'},
-            {style:'display: none;'},
-            {'data-url':detailPageUrl}
+        const line_button = create_Element('a',[
+            {href:'https://social-plugins.line.me/lineit/share?url=' + detailPageUrl}
         ]);
-        const line_script = create_Element('script',[
-            {src:'https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js'},
-            {async:'async'},
-            {defer:'defer'}
+        const line_img = create_Element('img',[
+            {src:'https://www.otonoie.net/otonoie/img/prep/p8238/83560b3f27ae7909e9859b63855b95af.png'}
         ]);
+        line_button.appendChild(line_img);
         line_div.appendChild(line_button);
-        line_div.appendChild(line_script);
         return line_div;
     })();
-    
     //const share_Mail = ;
     
     share.appendChild(share_Qr);
