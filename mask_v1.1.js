@@ -415,11 +415,14 @@ if (locationURL.includes('detail')) {
     //----------------------------------------------------------------------------
     
     //----------------------------------シェア-------------------------------------
+    //コードからURLを生成
     const apartmentCode = document.querySelector('p.code').textContent.match(/[0-9]+$/)[0];
     const detailPageUrl = 'https://www.otonoie.net/detail/index.html?number=' + apartmentCode;
+    //コンテナ
     const share = create_Element('div',[
         {class:'js-added-share'}
     ]);
+    
     //QRコード
     const share_Qr = (() => {
         const qr_div = create_Element('div',[
@@ -434,7 +437,32 @@ if (locationURL.includes('detail')) {
         return qr_div;
     })();
     
-    //const share_Line = ;
+    const share_Line = (() => {
+        const line_div = create_Element('div',[
+            {class:'js-added-line'}
+        ]);
+        const line_button = create_Element('div',[
+            {class:'line-it-button'},
+            {data-lang:'ja'},
+            {data-type:'share-a'},
+            {data-env:'REAL'},
+            {data-color:'default'},
+            {data-size:'large'},
+            {data-count:'false'},
+            {data-ver:'3'},
+            {style:'display: none;'},
+            {data-url:detailPageUrl}
+        ]);
+        const line_script = create_Element('script',[
+            {src:'https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js'},
+            {async:'async'},
+            {defer:'defer'}
+        ]);
+        line_div.appendChild(line_button);
+        line_div.appendChild(line_script);
+        return line_div;
+    })();
+    
     //const share_Mail = ;
     
     share.appendChild(share_Qr);
@@ -459,7 +487,7 @@ if (locationURL.includes('detail')) {
             add_To_Selector:'div.detail_btm'
         },
         content_access,
-        content_access,
+        share_Line,
         share
     );
     //---------------------------------------------------------------
