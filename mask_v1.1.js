@@ -453,6 +453,7 @@ if (locationURL.includes('detail')) {
         
         //ウィンドウ幅からサイズ調整
         const line_style = document.createElement('style');
+        line_style.setAttribute('id','line-style');
         line_style.textContent = `
             .line-img {
                 width: 40%;
@@ -466,7 +467,6 @@ if (locationURL.includes('detail')) {
                 }
             }
         `;
-        line_style.setAttribute('id','line-style');
         const headElm = document.querySelector('head');
         headElm.appendChild(line_style);
         
@@ -570,16 +570,6 @@ if (locationURL.includes('detail')) {
     //----------------------------------------------------------------
     
     //----------------------------地図--------------------------------
-    //ウィンドウ幅から地図用のアスペクト比を生成
-    const aspectRatio = (() => {
-        if (window.screen.width <= 480) {
-            return 75;
-        } else if (window.screen.width > 480 && window.screen.width < 960){
-            return 66.667;
-        } else {
-            return 66.667;
-        };
-    })();
     //地図用のstyleタグの生成・挿入
     const headElm = document.querySelector('head');
     const mapStyle = document.createElement('style');
@@ -587,10 +577,18 @@ if (locationURL.includes('detail')) {
     mapStyle.textContent = `
         .js-added-map {
             position:relative; 
-            padding-bottom:${aspectRatio}%; 
+            padding-bottom: 75%; 
             height:0; 
             overflow:hidden;
             margin-bottom: 20px;
+        }@media screen and (min-width:480px) {
+            .js-added-map {
+                padding-bottom: 66.667%; 
+            }
+        }@media screen and (min-width:751px) {
+            .js-added-map {
+                padding-bottom: 66.667%; 
+            }
         }
     `; 
     headElm.appendChild(mapStyle);
