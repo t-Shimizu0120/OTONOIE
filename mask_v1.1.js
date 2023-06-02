@@ -443,15 +443,15 @@ if (locationURL.includes('detail')) {
         ]);
         const line_button = create_Element('div',[
             {class:'line-it-button'},
-            {data-lang:'ja'},
-            {data-type:'share-a'},
-            {data-env:'REAL'},
-            {data-color:'default'},
-            {data-size:'large'},
-            {data-count:'false'},
-            {data-ver:'3'},
+            {'data-lang':'ja'},
+            {'data-type':'share-a'},
+            {'data-env':'REAL'},
+            {'data-color':'default'},
+            {'data-size':'large'},
+            {'data-count':'false'},
+            {'data-ver':'3'},
             {style:'display: none;'},
-            {data-url:detailPageUrl}
+            {'data-url':detailPageUrl}
         ]);
         const line_script = create_Element('script',[
             {src:'https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js'},
