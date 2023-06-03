@@ -46,5 +46,5 @@
         return share_Div;
     })();
     const shareTargetElm = document.querySelector('#pagetop');
-    insertTargetElm.appendChild(share);
+    shareTargetElm.appendChild(share);
     
