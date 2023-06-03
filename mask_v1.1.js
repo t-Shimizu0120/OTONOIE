@@ -7,8 +7,8 @@ if (locationURL.includes('detail')) {
     const create_Element = (tagName,attributes) => {
         const add_Elm = document.createElement(tagName);
         for (attribute of attributes) {
-            const attrName = Object.keys(attribute)[0]
-            const attrValue = attribute[attrName]
+            const attrName = Object.keys(attribute)[0];
+            const attrValue = attribute[attrName];
             add_Elm.setAttribute(attrName,attrValue);
         };
         return add_Elm;
