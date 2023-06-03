@@ -455,14 +455,14 @@ if (locationURL.includes('detail')) {
         const line_style = document.createElement('style');
         line_style.setAttribute('id','line-style');
         line_style.textContent = `
-            .line-img {
+            .js-added-line {
                 width: 40%;
             }@media screen and (min-width:480px) {
-                .line-img {
+                .js-added-line {
                     width: 30%;
                 }
             }@media screen and (min-width:751px) {
-                .line-img {
+                .js-added-line {
                     display: none;
                 }
             }
