@@ -11,7 +11,7 @@
     const share = (() => {
         const share_Div = create_Element('div',[
             {class:'js-added-share'},
-            {id;'share'}
+            {id:'share'}
         ]);
         const share_Input = create_Element('input',[
             {type:'checkbox'},
