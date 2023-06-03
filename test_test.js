@@ -49,16 +49,16 @@
                     
                 }
                 input[name="js-added-share-input"] {
-                    display: none;
+                    
                 }
                 .share-img-close {
-                    display: none;
+                    
                 }
                 input:checked + .js-added-share-label + .share-img + .share-img-close {
                     
                 }
                 input:checked + .js-added-share-label + .share-img + .share-img-close {
-                    display: block;
+                    
                 }
             `;
             headElm.appendChild(share_Style);
