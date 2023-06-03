@@ -10,6 +10,7 @@
 
     (() => {
         const share = (() => {
+            const shareTargetElm = document.querySelector('#pagetop');
             //シェア
             const share_Div = create_Element('div',[
                 {class:'js-added-share'},
@@ -48,6 +49,5 @@
         
             return share_Div;
         })();
-        const shareTargetElm = document.querySelector('#pagetop');
         shareTargetElm.before(share);
     })();
