@@ -441,11 +441,11 @@ if (locationURL.includes('detail')) {
         qr_Style.textContent = `
             .js-added-qrcode {
                 display: none;
-            }@media screen and (min-width:480px) {
+            }@media screen and (min-width:480px) and (max-width:750px) {
                 .js-added-qrcode {
                     display: block;
                 }
-            }@media screen and (min-width:751px) {
+            }@media screen and (min-width:750px) {
                 .js-added-qrcode {
                     display: block;
                 }
@@ -478,11 +478,11 @@ if (locationURL.includes('detail')) {
         line_Style.textContent = `
             .js-added-line {
                 width: 40%;
-            }@media screen and (min-width:480px) {
+            }@media screen and (min-width:480px) and (max-width:750px) {
                 .js-added-line {
                     width: 30%;
                 }
-            }@media screen and (min-width:751px) {
+            }@media screen and (min-width:750px) {
                 .js-added-line {
                     display: none;
                 }
@@ -621,13 +621,13 @@ if (locationURL.includes('detail')) {
             height:0; 
             overflow:hidden;
             margin-bottom: 20px;
-        }@media screen and (min-width:480px) {
+        }@media screen and (min-width:480px) and (max-width:750){
             .js-added-map {
                 padding-bottom: 66.667%; 
             }
-        }@media screen and (min-width:751px) {
+        }@media screen and (min-width:750px) {
             .js-added-map {
-                padding-bottom: 66.667%; 
+                padding-bottom: 56.25%; 
             }
         }
     `; 
