@@ -504,7 +504,14 @@ if (locationURL.includes('detail')) {
         const mail_a = create_Element('a',[
             {href:'mailto:?subject=' + mail_Subject + '&amp;body=' + mail_Body}
         ]);
-    
+        const mail_img = create_Element('img',[
+            {src:'https://www.otonoie.net/otonoie/img/prep/p8238/83560b3f27ae7909e9859b63855b95af.png'},
+            {class:'mail-img'}
+        ]);
+        mail_a.appendChild(mail_img);
+        mail_div.appendChild(mail_a);
+        
+        return mail_div;
     })();
     
     //share.appendChild(share_Qr);
@@ -529,7 +536,7 @@ if (locationURL.includes('detail')) {
             `, 
             add_To_Selector:'div.detail_btm'
         },
-        content_access,
+        share_Mail,
         share_Line,
         share
     );
