@@ -604,71 +604,75 @@ if (locationURL.includes('detail')) {
     
     //=============================周辺概要===========================
     //----------------------------タイトル-----------------------------
-    const surroundingEnvironmentTitle = document.createElement('h5');
-    surroundingEnvironmentTitle.textContent = '周辺概要';
-    insertTargetElm.appendChild(surroundingEnvironmentTitle);
+    (() => {
+        const surroundingEnvironmentTitle = document.createElement('h5');
+        surroundingEnvironmentTitle.textContent = '周辺概要';
+        insertTargetElm.appendChild(surroundingEnvironmentTitle);
+    })();
     //----------------------------------------------------------------
     
     //----------------------------地図--------------------------------
-    //地図用のstyleタグの生成・挿入
-    const headElm = document.querySelector('head');
-    const mapStyle = document.createElement('style');
-    mapStyle.setAttribute('id','map-style');
-    mapStyle.textContent = `
-        .js-added-map {
-            position:relative; 
-            padding-bottom: 75%; 
-            height:0; 
-            overflow:hidden;
-            margin-bottom: 20px;
-        }@media screen and (min-width:480px) and (max-width:750){
+    (() => {
+        //地図用のstyleタグの生成・挿入
+        const headElm = document.querySelector('head');
+        const mapStyle = document.createElement('style');
+        mapStyle.setAttribute('id','map-style');
+        mapStyle.textContent = `
             .js-added-map {
-                padding-bottom: 66.667%; 
+                position:relative; 
+                padding-bottom: 75%; 
+                height:0; 
+                overflow:hidden;
+                margin-bottom: 20px;
+            }@media screen and (min-width:480px) and (max-width:750px) {
+                .js-added-map {
+                    padding-bottom: 66.667%; 
+                }
+            }@media screen and (min-width:750px) {
+                .js-added-map {
+                    padding-bottom: 56.25%;
+                }
             }
-        }@media screen and (min-width:750px) {
-            .js-added-map {
-                padding-bottom: 56.25%; 
-            }
-        }
-    `; 
-    headElm.appendChild(mapStyle);
-    //マップコンテンツ作成
-    const content_Map = (() => {
-        const map_Parent_Elm = create_Element('div',[
-            {class:'js-added-map'},
-            {id:'map-content'}
-        ]);
+        `; 
+        headElm.appendChild(mapStyle);
+        //マップコンテンツ作成
+        const content_Map = (() => {
+            const map_Parent_Elm = create_Element('div',[
+                {class:'js-added-map'},
+                {id:'map-content'}
+            ]);
+            
+            const map_Address = document.querySelector('div.detail_r').querySelector('dl.clearfix').querySelector('dd').textContent;
+            //src作成
+            const map_Src = (() => {
+                let m_src;
+                //画面幅でズーム調整
+                if (window.screen.width <= 480) {
+                    m_src = 'https://www.google.com/maps/?output=embed&q=' + map_Address + '&t=m&z=15';
+                } else if (window.screen.width > 480 && window.screen.width < 960) {
+                    m_src = 'https://www.google.com/maps/?output=embed&q=' + map_Address + '&t=m&z=16';
+                } else {
+                    m_src = 'https://www.google.com/maps/?output=embed&q=' + map_Address + '&t=m&z=17';
+                };
+                return m_src;
+            })(); 
         
-        const map_Address = document.querySelector('div.detail_r').querySelector('dl.clearfix').querySelector('dd').textContent;
-        //src作成
-        const map_Src = (() => {
-            let m_src;
-            //画面幅でズーム調整
-            if (window.screen.width <= 480) {
-                m_src = 'https://www.google.com/maps/?output=embed&q=' + map_Address + '&t=m&z=15';
-            } else if (window.screen.width > 480 && window.screen.width < 960) {
-                m_src = 'https://www.google.com/maps/?output=embed&q=' + map_Address + '&t=m&z=16';
-            } else {
-                m_src = 'https://www.google.com/maps/?output=embed&q=' + map_Address + '&t=m&z=17';
-            };
-            return m_src;
-        })(); 
-        
-        const map_Elm = create_Element('iframe',[
-            {width:'100%'},
-            {height:'auto'},
-            {style:'border:0; position:absolute; top:-180px; left:0; width:100%; height:calc(100% + 180px + 180px);'},
-            {loading:'lazy'},
-            {allowfullscreen:''},
-            {referrerpolicy:'no-referrer-when-downgrade'}
-        ]);
-        map_Elm.src = map_Src;
+            const map_Elm = create_Element('iframe',[
+                {width:'100%'},
+                {height:'auto'},
+                {style:'border:0; position:absolute; top:-180px; left:0; width:100%; height:calc(100% + 180px + 180px);'},
+                {loading:'lazy'},
+                {allowfullscreen:''},
+                {referrerpolicy:'no-referrer-when-downgrade'}
+            ]);
+            map_Elm.src = map_Src;
 
-        map_Parent_Elm.appendChild(map_Elm);
+            map_Parent_Elm.appendChild(map_Elm);
 
-        return map_Parent_Elm;
+            return map_Parent_Elm;
+        })();
+        insertTargetElm.appendChild(content_Map);
     })();
-    insertTargetElm.appendChild(content_Map);
     //---------------------------------------------------------------
     //===============================================================
     
