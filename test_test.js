@@ -58,7 +58,7 @@
                     display: none;
                 }
                 input:checked + .js-added-share-label > .share-img {
-                    
+                    display: none;
                 }
                 input:checked + .js-added-share-label > .share-img-close {
                     display: block;
