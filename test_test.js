@@ -49,7 +49,10 @@
                     
                 }
                 input[name="js-added-share-input"] {
-                    
+                    display: none;
+                }
+                .share-img {
+                    display: block;
                 }
                 .share-img-close {
                     display: none;
