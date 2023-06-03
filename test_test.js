@@ -27,7 +27,13 @@
             {alt:'share-img'},
             {class:'share-img'}
         ]);
+        const share_img_close = create_Element('img',[
+            {src:'https://www.otonoie.net/otonoie/img/prep/p8238/83560b3f27ae7909e9859b63855b95af.png'},
+            {alt:'share-img-close'},
+            {class:'share-img-close'}
+        ]);
         share_Label.appendChild(share_img);
+        share_Label.appendChild(share_img_close);
         share_Div.appendChild(share_Input);
         share_Div.appendChild(share_Label);
         return share_Div;
