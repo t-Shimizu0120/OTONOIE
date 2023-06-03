@@ -54,10 +54,10 @@
                 .share-img-close {
                     display: none;
                 }
-                input:checked + .js-added-share-label + .share-img {
+                input:checked + .js-added-share-label > .share-img {
                     
                 }
-                input:checked + .js-added-share-label + .share-img + .share-img-close {
+                input:checked + .js-added-share-label > .share-img-close {
                     display: block;
                 }
             `;
