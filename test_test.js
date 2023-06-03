@@ -45,16 +45,20 @@
             const share_Style = document.createElement('style');
             share_Style.setAttribute('id','share-style');
             share_Style.textContent = `
-                .js-added-line {
-                    width: 40%;
-                }@media screen and (min-width:480px) and (max-width:750px) {
-                    .js-added-line {
-                        width: 30%;
-                    }
-                }@media screen and (min-width:750px) {
-                    .js-added-line {
-                        display: none;
-                    }
+                .js-added-share {
+                    
+                }
+                input[name="js-added-share-input"] {
+                    display: none;
+                }
+                .share-img-close {
+                    display: none;
+                }
+                input:checked + .js-added-share-label + .share-img + .share-img-close {
+                    
+                }
+                input:checked + .js-added-share-label + .share-img + .share-img-close {
+                    display: block;
                 }
             `;
             headElm.appendChild(share_Style);
