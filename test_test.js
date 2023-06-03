@@ -30,6 +30,6 @@
         share_Label.appendChild(share_img);
         share_Div.appendChild(share_Input);
         share_Div.appendChild(share_Label);
-        
+        return share_Div;
     })();
     
