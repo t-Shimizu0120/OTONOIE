@@ -635,6 +635,8 @@ if (locationURL.includes('detail')) {
             }
         `; 
         headElm.appendChild(mapStyle);
+        
+        const insertTargetElm = document.querySelector('div.detail_btm');
         //マップコンテンツ作成
         const content_Map = (() => {
             const map_Parent_Elm = create_Element('div',[
