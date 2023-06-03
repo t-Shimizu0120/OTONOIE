@@ -9,8 +9,9 @@
     };
 
     (() => {
+        const headElm = document.querySelector('head');
+        const insertTargetElm = document.querySelector('#pagetop');
         const share = (() => {
-            const shareTargetElm = document.querySelector('#pagetop');
             //シェア
             const share_Div = create_Element('div',[
                 {class:'js-added-share'},
@@ -41,13 +42,24 @@
             share_Div.appendChild(share_Input);
             share_Div.appendChild(share_Label);
         
-            const share_Style = create_Element('style',[
-                {id:'https://www.otonoie.net/otonoie/img/prep/p8238/83560b3f27ae7909e9859b63855b95af.png'},
-                {alt:'share-img'},
-                {class:'share-img'}
-            ]);
-        
+            const share_Style = document.createElement('style');
+            share_Style.setAttribute('id','share-style');
+            share_Style.textContent = `
+                .js-added-line {
+                    width: 40%;
+                }@media screen and (min-width:480px) and (max-width:750px) {
+                    .js-added-line {
+                        width: 30%;
+                    }
+                }@media screen and (min-width:750px) {
+                    .js-added-line {
+                        display: none;
+                    }
+                }
+            `;
+            headElm.appendChild(share_Style);
+            
             return share_Div;
         })();
-        shareTargetElm.before(share);
+        insertTargetElm.before(share);
     })();
