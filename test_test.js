@@ -9,10 +9,12 @@
     };
     
     const share = (() => {
+        //シェア
         const share_Div = create_Element('div',[
             {class:'js-added-share'},
             {id:'share'}
         ]);
+        //シェアチェックボックス
         const share_Input = create_Element('input',[
             {type:'checkbox'},
             {id:'id-share'},
