@@ -38,4 +38,6 @@
         share_Div.appendChild(share_Label);
         return share_Div;
     })();
+    const insertTargetElm = document.querySelector('div.detail_btm');
+    insertTargetElm.appendChild(share);
     
