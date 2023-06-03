@@ -434,8 +434,29 @@ if (locationURL.includes('detail')) {
         ]);
         qr_Img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=100x100&margin=3`; 
         qr_div.appendChild(qr_Img);
+        
+        //ウィンドウ幅からサイズ調整
+        const qr_Style = document.createElement('style');
+        qr_Style.setAttribute('id','qrcode-style');
+        qr_Style.textContent = `
+            .js-added-qrcode {
+                display: none;
+            }@media screen and (min-width:480px) {
+                .js-added-qrcode {
+                    display: block;
+                }
+            }@media screen and (min-width:751px) {
+                .js-added-qrcode {
+                    display: block;
+                }
+            }
+        `;
+        const headElm = document.querySelector('head');
+        headElm.appendChild(qr_Style);
+        
         return qr_div;
     })();
+    
     //line
     const share_Line = (() => {
         const line_div = create_Element('div',[
@@ -452,9 +473,9 @@ if (locationURL.includes('detail')) {
         line_div.appendChild(line_button);
         
         //ウィンドウ幅からサイズ調整
-        const line_style = document.createElement('style');
-        line_style.setAttribute('id','line-style');
-        line_style.textContent = `
+        const line_Style = document.createElement('style');
+        line_Style.setAttribute('id','line-style');
+        line_Style.textContent = `
             .js-added-line {
                 width: 40%;
             }@media screen and (min-width:480px) {
@@ -468,7 +489,7 @@ if (locationURL.includes('detail')) {
             }
         `;
         const headElm = document.querySelector('head');
-        headElm.appendChild(line_style);
+        headElm.appendChild(line_Style);
         
         return line_div;
     })();
