@@ -50,7 +50,7 @@
                     width: 51px;
                     height: 51px;
                     overflow: hidden;
-                    background-color:#dddddd;
+                    background-color:#3f3f3f;
                     position: fixed;
                     right: 20px;
                     bottom: 71px;
@@ -77,24 +77,3 @@
         })();
         insertTargetElm.before(share);
     })();
-
-
-
-
-window.onload=function(){
-    let Animation = function() {
-        //アイコン位置取得
-        const shareElm =  document.querySelector('#share');
-        //要素の位置座標を取得
-        const rect = shareElm.getBoundingClientRect();
-        //topからの距離
-        const scrollFromTop = rect.top + window.pageYOffset;
- 
-        if (scrollFromTop > 780) {
-            shareElm.classList.add('show');
-        } else {
-            shareElm.classList.remove('show');
-        };
-    };
-    window.addEventListener('scroll', Animation);
-}
