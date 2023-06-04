@@ -402,6 +402,7 @@ if (locationURL.includes('detail')) {
     //============================================================================
     //----------------------------------シェアボタン-------------------------------
     (() => {
+        const insertTargetElm = document.querySelector('#pagetop');
         //コードからリンクを生成
         const apartmentCode = document.querySelector('p.code').textContent.match(/[0-9]+$/)[0];
         const detailPageUrl = 'https://www.otonoie.net/detail/index.html?number=' + apartmentCode;
@@ -483,7 +484,6 @@ if (locationURL.includes('detail')) {
         
         //style設定
         const headElm = document.querySelector('head');
-        const insertTargetElm = document.querySelector('#pagetop');
         const shareStyle = document.createElement('style');
         shareStyle.setAttribute('id','share-style');
         shareStyle.textContent = `
@@ -501,19 +501,17 @@ if (locationURL.includes('detail')) {
         `; 
         headElm.appendChild(shareStyle);
         
+        // スクロールされたら表示
+        window.addEventListener("scroll", scroll_event);
+        function scroll_event () {
+            if (window.pageYOffset > 300) {
+                share.classList.add('show');
+            } else if (window.pageYOffset < 300) {
+                share.classList.remove('show');
+            };
+        };
         insertTargetElm.before(share);
     })();
-    
-    // スクロールされたら表示
-    const shareElm = document.querySelector('#share');
-    window.addEventListener("scroll", scroll_event);
-    function scroll_event () {
-        if (window.pageYOffset > 300) {
-            shareElm.classList.add('show');
-        } else if (window.pageYOffset < 300) {
-            shareElm.classList.remove('show');
-        };
-    };
     //----------------------------------------------------------------------------
     
     
