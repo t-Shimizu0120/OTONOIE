@@ -488,28 +488,18 @@ if (locationURL.includes('detail')) {
         shareStyle.setAttribute('id','share-style');
         shareStyle.textContent = `
             .js-added-share {
-                display: none;
-            }
-            .js-added-share.show {
                 width:35px;
                 min-height:105px;
                 background-color:#3f3f3f;
-                position: fixed;
+                position: -webkit-sticky;
+                position: sticky;
                 left: 0;
                 top: 40vh;
+                margin-top:100vh;
             }
         `; 
         headElm.appendChild(shareStyle);
         
-        // スクロールされたら表示
-        window.addEventListener("scroll", scroll_event, true);
-        function scroll_event () {
-            if (window.offsetTop > 500) {
-                share.classList.add('show');
-            } else if (window.offsetTop < 700) {
-                share.classList.remove('show');
-            };
-        };
         insertTargetElm.before(share);
     })();
     //----------------------------------------------------------------------------
