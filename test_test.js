@@ -55,10 +55,8 @@
                     right: 20px;
                     bottom: 71px;
                     border: 4px solid #000000;
-                    cursor: pointer;
                 }
                 js-added-share-label {
-                    cursor: pointer;
                 }
                 input[name="js-added-share-input"] {
                     display: none;
