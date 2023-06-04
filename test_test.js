@@ -54,7 +54,7 @@
                     position: fixed;
                     right: 20px;
                     bottom: 71px;
-                    border: 2px solid #000000;
+                    border: 4px solid #000000;
                 }
                 js-added-share-label {
                     cursor: pointer;
