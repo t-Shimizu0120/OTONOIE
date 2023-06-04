@@ -59,6 +59,7 @@
                     display: none;
                 }
                 .share-img {
+                    width: 32px;
                     display: block;
                 }
                 .share-img-close {
