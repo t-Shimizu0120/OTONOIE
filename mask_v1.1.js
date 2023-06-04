@@ -502,7 +502,7 @@ if (locationURL.includes('detail')) {
         headElm.appendChild(shareStyle);
         
         // スクロールされたら表示
-        window.addEventListener("scroll", scroll_event);
+        window.addEventListener("scroll", scroll_event, true);
         function scroll_event () {
             if (window.pageYOffset > 300) {
                 share.classList.add('show');
