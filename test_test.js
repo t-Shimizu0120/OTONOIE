@@ -55,12 +55,16 @@
                     right: 20px;
                     bottom: 71px;
                 }
+                js-added-share-label {
+                    cursor: pointer;
+                }
                 input[name="js-added-share-input"] {
                     display: none;
                 }
                 .share-img {
                     width: 32px;
                     display: block;
+                    text-align: center;
                 }
                 .share-img-close {
                     display: none;
