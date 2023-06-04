@@ -495,7 +495,7 @@ if (locationURL.includes('detail')) {
                 position: sticky;
                 left: 0;
                 top: 40vh;
-                margin-top:-150vh;
+                margin-top:-350vh;
             }
         `; 
         headElm.appendChild(shareStyle);
