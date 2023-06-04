@@ -28,7 +28,7 @@
                 {for:'id-share'}
             ]);
             const share_Img = create_Element('img',[
-                {src:'https://www.otonoie.net/otonoie/img/thumbs/p8246/d4cd2832ceffed29788d5ca885b225bd.png'},
+                {src:'https://www.otonoie.net/otonoie/img/thumbs/p8246/64348e8ce47fbdcc20c2f72c632c7681.png'},
                 {alt:'share-img'},
                 {class:'share-img'}
             ]);
