@@ -50,7 +50,7 @@
                     background-color:#3f3f3f;
                     position: fixed;
                     right: 0;
-                    bottom: 201px;
+                    top: 201px;
                 }
                 js-added-share-label {
                 }
