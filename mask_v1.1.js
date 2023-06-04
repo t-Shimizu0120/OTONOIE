@@ -487,6 +487,12 @@ if (locationURL.includes('detail')) {
         const shareStyle = document.createElement('style');
         shareStyle.setAttribute('id','share-style');
         shareStyle.textContent = `
+            .js-added-share{
+                background-color:#3f3f3f;
+                position: fixed;
+                left: 0;
+                top: 201px;
+            }
         `; 
         headElm.appendChild(shareStyle);
         
