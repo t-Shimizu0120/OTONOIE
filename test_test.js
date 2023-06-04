@@ -90,7 +90,7 @@ window.onload=function(){
         //topからの距離
         let scrollTop = rect.top + window.pageYOffset;
  
-        if (scrollTop > 420) {
+        if (scrollTop > 780) {
             pageTop.classList.add('show');
         }  else {
             pageTop.classList.remove('show');
