@@ -46,14 +46,13 @@
             share_Style.setAttribute('id','share-style');
             share_Style.textContent = `
                 .js-added-share {
-                    border-radius: 35% 0 0 35%;
-                    width: 30px;
-                    height: 75px;
+                    width: 35px;
+                    height: 90px;
                     overflow: hidden;
                     background-color:#000000;
                     position: fixed;
                     right: 0;
-                    bottom: 71px;
+                    bottom: 151px;
                 }
                 js-added-share-label {
                 }
