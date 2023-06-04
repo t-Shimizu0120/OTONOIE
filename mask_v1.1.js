@@ -488,6 +488,8 @@ if (locationURL.includes('detail')) {
         shareStyle.setAttribute('id','share-style');
         shareStyle.textContent = `
             .js-added-share{
+                width:35px;
+                min-height:105px;
                 background-color:#3f3f3f;
                 position: fixed;
                 left: 0;
