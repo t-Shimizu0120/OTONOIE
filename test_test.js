@@ -46,7 +46,10 @@
             share_Style.setAttribute('id','share-style');
             share_Style.textContent = `
                 .js-added-share {
-                    border-radius:50%;
+                    border-radius: 50%;
+                    width: 30px;
+                    height: 30px;
+                    overflow: hidden;
                 }
                 input[name="js-added-share-input"] {
                     display: none;
