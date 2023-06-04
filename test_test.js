@@ -55,6 +55,7 @@
                     right: 20px;
                     bottom: 71px;
                     border: 4px solid #000000;
+                    cursor: pointer;
                 }
                 js-added-share-label {
                     cursor: pointer;
@@ -66,6 +67,7 @@
                     width: 51px;
                     height: 51px;
                     display: block;
+                    cursor: pointer;
                 }
                 .share-img-close {
                     display: none;
