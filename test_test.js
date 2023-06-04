@@ -46,8 +46,6 @@
             share_Style.setAttribute('id','share-style');
             share_Style.textContent = `
                 .js-added-share {
-                    width: 35px;
-                    height: 105px;
                     overflow: hidden;
                     background-color:#3f3f3f;
                     position: fixed;
@@ -66,14 +64,14 @@
                     cursor: pointer;
                 }
                 .share-img-close {
-                    width: 35px;
-                    height: 35px;
                     display: none;
                 }
                 input:checked + .js-added-share-label > .share-img {
                     display: none;
                 }
                 input:checked + .js-added-share-label > .share-img-close {
+                    width: 35px;
+                    height: 105px;
                     display: block;
                     cursor: pointer;
                 }
