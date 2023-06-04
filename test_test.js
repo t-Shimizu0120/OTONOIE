@@ -47,7 +47,7 @@
             share_Style.textContent = `
                 .js-added-share {
                     width: 35px;
-                    height: 100px;
+                    height: 105px;
                     overflow: hidden;
                     background-color:#3f3f3f;
                     position: fixed;
@@ -60,12 +60,14 @@
                     display: none;
                 }
                 .share-img {
-                    width: 51px;
-                    height: 51px;
+                    width: 35px;
+                    height: 35px;
                     display: block;
                     cursor: pointer;
                 }
                 .share-img-close {
+                    width: 35px;
+                    height: 35px;
                     display: none;
                 }
                 input:checked + .js-added-share-label > .share-img {
@@ -73,6 +75,7 @@
                 }
                 input:checked + .js-added-share-label > .share-img-close {
                     display: block;
+                    cursor: pointer;
                 }
             `;
             headElm.appendChild(share_Style);
