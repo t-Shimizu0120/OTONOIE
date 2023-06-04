@@ -504,9 +504,9 @@ if (locationURL.includes('detail')) {
         // スクロールされたら表示
         window.addEventListener("scroll", scroll_event, true);
         function scroll_event () {
-            if (window.pageYOffset > 700) {
+            if (window.offsetTop > 500) {
                 share.classList.add('show');
-            } else if (window.pageYOffset < 700) {
+            } else if (window.offsetTop < 700) {
                 share.classList.remove('show');
             };
         };
