@@ -494,8 +494,7 @@ if (locationURL.includes('detail')) {
                 position: -webkit-sticky;
                 position: sticky;
                 left: 0;
-                top: 40vh;
-                margin-top:-350vh;
+                bottom: 0;
             }
         `; 
         headElm.appendChild(shareStyle);
