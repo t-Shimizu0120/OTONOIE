@@ -50,7 +50,7 @@
                     width: 51px;
                     height: 51px;
                     overflow: hidden;
-                    background-color:#ff9324;
+                    background-color:#ffffff;
                     position: fixed;
                     right: 20px;
                     bottom: 71px;
