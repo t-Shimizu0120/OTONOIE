@@ -52,6 +52,8 @@
                     overflow: hidden;
                     background-color:#dddddd;
                     position: fixed;
+                    right: 20px;
+                    bottom: 71px;
                 }
                 input[name="js-added-share-input"] {
                     display: none;
