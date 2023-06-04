@@ -57,7 +57,6 @@
                 }
                 js-added-share-label {
                     cursor: pointer;
-                    text-align: center;
                 }
                 input[name="js-added-share-input"] {
                     display: none;
@@ -65,6 +64,7 @@
                 .share-img {
                     width: 32px;
                     display: block;
+                    margin: auto;
                 }
                 .share-img-close {
                     display: none;
