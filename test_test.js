@@ -47,10 +47,11 @@
             share_Style.textContent = `
                 .js-added-share {
                     border-radius: 50%;
-                    width: 30px;
-                    height: 30px;
+                    width: 51px;
+                    height: 51px;
                     overflow: hidden;
                     background-color:#dddddd;
+                    position: fixed;
                 }
                 input[name="js-added-share-input"] {
                     display: none;
