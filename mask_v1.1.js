@@ -493,7 +493,7 @@ if (locationURL.includes('detail')) {
                 background-color:#3f3f3f;
                 position: fixed;
                 left: 0;
-                top: 201px;
+                top: 40%;
             }
         `; 
         headElm.appendChild(shareStyle);
