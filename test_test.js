@@ -65,7 +65,6 @@
                 .share-img {
                     width: 32px;
                     display: block;
-                    margin: auto;
                 }
                 .share-img-close {
                     display: none;
