@@ -47,9 +47,9 @@
             share_Style.textContent = `
                 .js-added-share {
                     width: 35px;
-                    height: 90px;
+                    height: 100px;
                     overflow: hidden;
-                    background-color:#000000;
+                    background-color:#3f3f3f;
                     position: fixed;
                     right: 0;
                     bottom: 201px;
