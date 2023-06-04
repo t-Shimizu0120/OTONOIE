@@ -54,9 +54,10 @@
                     position: fixed;
                     right: 20px;
                     bottom: 71px;
+                    cursor: pointer;
                 }
                 js-added-share-label {
-                    cursor: pointer;
+                　　　　
                 }
                 input[name="js-added-share-input"] {
                     display: none;
