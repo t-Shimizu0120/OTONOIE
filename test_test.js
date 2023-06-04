@@ -49,7 +49,7 @@
                     overflow: hidden;
                     background-color:#3f3f3f;
                     position: fixed;
-                    right: 0;
+                    left: 0;
                     top: 201px;
                 }
                 js-added-share-label {
