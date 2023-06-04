@@ -398,6 +398,105 @@ if (locationURL.includes('detail')) {
     
     
     //============================================================================
+    //share
+    //============================================================================
+    //----------------------------------シェアボタン-------------------------------
+    (() => {
+        //コードからリンクを生成
+        const apartmentCode = document.querySelector('p.code').textContent.match(/[0-9]+$/)[0];
+        const detailPageUrl = 'https://www.otonoie.net/detail/index.html?number=' + apartmentCode;
+        //シェア
+        const share = create_Element('div',[
+                {class:'js-added-share'},
+                {id:'share'}
+        ]);
+        //QRコード
+        const share_Qr = (() => {
+            //QRコード生成
+            //const qr_Img = create_Element('img',[
+                //{title:'qrcode'},
+                //{alt:'qrcode'}
+            //]);
+            //qr_Img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=75x75&margin=3`; 
+            const qr_div = create_Element('div',[
+                {class:'js-added-qrcode'},
+                {id:'share-qrcode'}
+            ]);
+            const qr_button = create_Element('a',[
+                {href:''}　//モーダルのリンクを設定する
+            ]);
+            //QRアイコン
+            const qr_img = create_Element('img',[
+                {src:''},
+                {class:'qrcode-img'}
+            ]);
+            qr_button.appendChild(qr_img);
+            qr_div.appendChild(qr_button);
+            
+            return qr_div;
+        })();
+        share.appendChild(share_Qr);
+        
+        //LINE
+        const share_Line = (() => {
+            const line_div = create_Element('div',[
+                {class:'js-added-line'},
+                {id:'share-line'}
+            ]);
+            const line_button = create_Element('a',[
+                {href:'https://social-plugins.line.me/lineit/share?url=' + detailPageUrl}
+            ]);
+            //LINEアイコン
+            const line_img = create_Element('img',[
+                {src:''},
+                {class:'line-img'}
+            ]);
+            line_button.appendChild(line_img);
+            line_div.appendChild(line_button);
+        
+            return line_div;
+        })();
+        share.appendChild(share_Line);
+        
+         //mail
+        const share_Mail = (() => {
+            const mail_Subject = '%E3%80%90%E3%81%8A%E9%83%A8%E5%B1%8B%E6%83%85%E5%A0%B1%E3%80%91';
+            const mail_Body = '%E3%80%90' + '%E7%89%A9%E4%BB%B6%E3%82%B3%E3%83%BC%E3%83%89%EF%BC%9A' + apartmentCode + '%20' + 'bukkennmei' + '%E3%80%91' + '%0d%0a' + detailPageUrl;
+            const mail_div = create_Element('div',[
+                {class:'js-added-mail'},
+                {id:'share-mail'}
+            ]);
+            const mail_button = create_Element('a',[
+                {href:'mailto:?subject=' + mail_Subject + '&amp;body=' + mail_Body}
+            ]);
+            //メールアイコン
+            const mail_img = create_Element('img',[
+                {src:''},
+                {class:'mail-img'}
+            ]);
+            mail_button.appendChild(mail_img);
+            mail_div.appendChild(mail_button);
+        
+            return mail_div;
+        })();
+        share.appendChild(share_Mail);
+        
+        //style設定
+        const headElm = document.querySelector('head');
+        const insertTargetElm = document.querySelector('#pagetop');
+        const shareStyle = document.createElement('style');
+        shareStyle.setAttribute('id','share-style');
+        shareStyle.textContent = `
+        `; 
+        headElm.appendChild(shareStyle);
+        
+        insertTargetElm.before(share);
+    })();
+    //----------------------------------------------------------------------------
+    
+    
+    
+    //============================================================================
     //contens
     //============================================================================
     
@@ -412,110 +511,6 @@ if (locationURL.includes('detail')) {
     
     //----------------------------------初期費用-----------------------------------
     //const initialCost = ;
-    //----------------------------------------------------------------------------
-    
-    //----------------------------------シェア-------------------------------------
-    //コードからURLを生成
-    const apartmentCode = document.querySelector('p.code').textContent.match(/[0-9]+$/)[0];
-    const detailPageUrl = 'https://www.otonoie.net/detail/index.html?number=' + apartmentCode;
-    //コンテナ
-    const share = create_Element('div',[
-        {class:'js-added-share'}
-    ]);
-    
-    //QRコード
-    const share_Qr = (() => {
-        const qr_div = create_Element('div',[
-            {class:'js-added-qrcode'}
-        ]);
-        const qr_Img = create_Element('img',[
-            {title:'qrcode'},
-            {alt:'qrcode'}
-        ]);
-        qr_Img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=75x75&margin=3`; 
-        qr_div.appendChild(qr_Img);
-        
-        //ウィンドウ幅からサイズ調整
-        const qr_Style = document.createElement('style');
-        qr_Style.setAttribute('id','qrcode-style');
-        qr_Style.textContent = `
-            .js-added-qrcode {
-                display: none;
-            }@media screen and (min-width:480px) and (max-width:750px) {
-                .js-added-qrcode {
-                    display: block;
-                }
-            }@media screen and (min-width:750px) {
-                .js-added-qrcode {
-                    display: block;
-                }
-            }
-        `;
-        const headElm = document.querySelector('head');
-        headElm.appendChild(qr_Style);
-        
-        return qr_div;
-    })();
-    
-    //line
-    const share_Line = (() => {
-        const line_div = create_Element('div',[
-            {class:'js-added-line'}
-        ]);
-        const line_button = create_Element('a',[
-            {href:'https://social-plugins.line.me/lineit/share?url=' + detailPageUrl}
-        ]);
-        const line_img = create_Element('img',[
-            {src:'https://www.otonoie.net/otonoie/img/prep/p8238/83560b3f27ae7909e9859b63855b95af.png'},
-            {class:'line-img'}
-        ]);
-        line_button.appendChild(line_img);
-        line_div.appendChild(line_button);
-        
-        //ウィンドウ幅からサイズ調整
-        const line_Style = document.createElement('style');
-        line_Style.setAttribute('id','line-style');
-        line_Style.textContent = `
-            .js-added-line {
-                width: 40%;
-            }@media screen and (min-width:480px) and (max-width:750px) {
-                .js-added-line {
-                    width: 30%;
-                }
-            }@media screen and (min-width:750px) {
-                .js-added-line {
-                    display: none;
-                }
-            }
-        `;
-        const headElm = document.querySelector('head');
-        headElm.appendChild(line_Style);
-        
-        return line_div;
-    })();
-    
-    //mail
-    const share_Mail = (() => {
-        const mail_div = create_Element('div',[
-            {class:'js-added-mail'}
-        ]);
-        const mail_Subject = '%E3%80%90%E3%81%8A%E9%83%A8%E5%B1%8B%E6%83%85%E5%A0%B1%E3%80%91';
-        const mail_Body = '%E3%80%90' + '%E7%89%A9%E4%BB%B6%E3%82%B3%E3%83%BC%E3%83%89%EF%BC%9A' + apartmentCode + '%20' + 'bukkennmei' + '%E3%80%91' + '%0d%0a' + detailPageUrl;
-        const mail_a = create_Element('a',[
-            {href:'mailto:?subject=' + mail_Subject + '&amp;body=' + mail_Body}
-        ]);
-        const mail_img = create_Element('img',[
-            {src:'https://www.otonoie.net/otonoie/img/prep/p8238/83560b3f27ae7909e9859b63855b95af.png'},
-            {class:'mail-img'}
-        ]);
-        mail_a.appendChild(mail_img);
-        mail_div.appendChild(mail_a);
-        
-        return mail_div;
-    })();
-    
-    //share.appendChild(share_Qr);
-    //share.appendChild(share_Line);
     //----------------------------------------------------------------------------
     
     //----------------------------タブインスタンス-----------------------------------
@@ -536,9 +531,9 @@ if (locationURL.includes('detail')) {
             `, 
             add_To_Selector:'div.detail_btm'
         },
-        share_Mail,
-        share_Line,
-        share
+        null,
+        null,
+        null
     );
     //---------------------------------------------------------------
     //===============================================================
@@ -592,10 +587,7 @@ if (locationURL.includes('detail')) {
                 }
             );
         } else {    
-        };
-        
-        
-        
+        };  
     } else {
     };
     //===============================================================
