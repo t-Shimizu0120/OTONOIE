@@ -487,7 +487,10 @@ if (locationURL.includes('detail')) {
         const shareStyle = document.createElement('style');
         shareStyle.setAttribute('id','share-style');
         shareStyle.textContent = `
-            .js-added-share{
+            .js-added-share {
+                display: none;
+            }
+            .js-added-share.show {
                 width:35px;
                 min-height:105px;
                 background-color:#3f3f3f;
@@ -500,6 +503,17 @@ if (locationURL.includes('detail')) {
         
         insertTargetElm.before(share);
     })();
+    
+    // スクロールされたら表示
+    const shareElm = document.querySelector('#share');
+    window.addEventListener("scroll", scroll_event);
+    function scroll_event () {
+        if (window.pageYOffset > 300) {
+            shareElm.classList.add('show');
+        } else if (window.pageYOffset < 300) {
+            shareElm.classList.remove('show');
+        };
+    };
     //----------------------------------------------------------------------------
     
     
