@@ -92,9 +92,9 @@ window.onload=function(){
  
         if (scrollTop > 780) {
             pageTop.classList.add('show');
-        }  else {
+        } else {
             pageTop.classList.remove('show');
         };
     };
     window.addEventListener('scroll', Animation);
-};
+}
