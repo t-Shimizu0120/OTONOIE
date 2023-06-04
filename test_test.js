@@ -46,7 +46,7 @@
             share_Style.setAttribute('id','share-style');
             share_Style.textContent = `
                 .js-added-share {
-                    border-radius: 20% 0 0 20%;
+                    border-radius: 35% 0 0 35%;
                     width: 30px;
                     height: 75px;
                     overflow: hidden;
