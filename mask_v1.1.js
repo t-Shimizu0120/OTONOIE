@@ -488,10 +488,8 @@ if (locationURL.includes('detail')) {
             const clientRect = targetElm.getBoundingClientRect() ;
             const scroll = window.pageYOffset;
             
-            const footerHeight = document.querySelector('footer').offsetHeight;
-            const txtRHeight = document.querySelector('p.txt_r').offsetHeight;
-            const contactAreaHeight = document.querySelector('#contact_area').offsetHeight;
-            if ((clientRect.top + 200) < scroll && scroll < (footerHeight + txtRHeight + contactAreaHeight + 200)) {
+            const detailBoxHeight = document.querySelector('div.result.icon-new').offsetHeight;
+            if ((clientRect.top + 200) < scroll && scroll < (detailBoxHeight)) {
                 share.classList.add('show');
             } else {
                 share.classList.remove('show');
