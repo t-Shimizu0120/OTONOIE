@@ -411,17 +411,6 @@ if (locationURL.includes('detail')) {
                 {class:'js-added-share'},
                 {id:'share'}
         ]);
-        //スクロールイベント
-        window.addEventListener("scroll", function () {
-            const targetElm = document.querySelector("div.detail.clearfix");
-            const clientRect = targetElm.getBoundingClientRect() ;
-            const scroll = window.pageYOffset;
-            if (scroll > clientRect.top) {
-                share.classList.add('show');
-            } else {
-                share.classList.remove('show');
-            };
-        });
         //QRコード
         const share_Qr = (() => {
             //QRコード生成
@@ -493,19 +482,36 @@ if (locationURL.includes('detail')) {
         })();
         share.appendChild(share_Mail);
         
+        //スクロールイベント
+        window.addEventListener("scroll", function () {
+            const targetElm = document.querySelector("div.detail.clearfix");
+            const clientRect = targetElm.getBoundingClientRect() ;
+            const scroll = window.pageYOffset;
+            if ((clientRect.top + 200) < scroll) {
+                share.classList.add('show');
+            } else {
+                share.classList.remove('show');
+            };
+        });
         //style設定
+        const inner_Height = window.innerHeight;
+        const position = inner_Height * 0.4;
         const headElm = document.querySelector('head');
         const shareStyle = document.createElement('style');
         shareStyle.setAttribute('id','share-style');
         shareStyle.textContent = `
             .js-added-share {
+                display: none;
                 width:35px;
                 min-height:105px;
                 background-color:#3f3f3f;
                 position: -webkit-fixed;
                 position: fixed;
-                bottom: 0;
+                top: ${position}px;
                 left: 0;
+            }
+            .js-added-share.show {
+                display: block;
             }
         `; 
         headElm.appendChild(shareStyle);
