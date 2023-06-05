@@ -411,6 +411,17 @@ if (locationURL.includes('detail')) {
                 {class:'js-added-share'},
                 {id:'share'}
         ]);
+        //スクロールイベント
+        window.addEventListener("scroll", function () {
+            const targetElm = document.querySelector("div.detail.clearfix");
+            const clientRect = targetElm.getBoundingClientRect() ;
+            const scroll = window.pageYOffset;
+            if (scroll > clientRect.top) {
+                share.classList.add('show');
+            } else {
+                share.classList.remove('show');
+            };
+        });
         //QRコード
         const share_Qr = (() => {
             //QRコード生成
