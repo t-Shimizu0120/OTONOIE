@@ -487,7 +487,11 @@ if (locationURL.includes('detail')) {
             const targetElm = document.querySelector("div.detail.clearfix");
             const clientRect = targetElm.getBoundingClientRect() ;
             const scroll = window.pageYOffset;
-            if ((clientRect.top + 200) < scroll) {
+            
+            const footerHeight = document.querySelector('footer').offsetHeight;
+            const txtRHeight = document.querySelector('p.txt_r').offsetHeight;
+            const contactAreaHeight = document.querySelector('#contact_area').offsetHeight;
+            if ((clientRect.top + 200) < scroll && scroll < (footerHeight + txtRHeight + contactAreaHeight + 200)) {
                 share.classList.add('show');
             } else {
                 share.classList.remove('show');
