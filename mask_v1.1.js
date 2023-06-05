@@ -494,6 +494,7 @@ if (locationURL.includes('detail')) {
                 position: -webkit-fixed;
                 position: fixed;
                 bottom: 0;
+                left: 0;
             }
         `; 
         headElm.appendChild(shareStyle);
