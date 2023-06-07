@@ -413,26 +413,28 @@ if (locationURL.includes('detail')) {
         ]);
         //QRコード
         const share_Qr = (() => {
+            const qr_div = create_Element('div',[
+                {class:'js-added-qrcode'},
+                {id:'share-qrcode'}
+            ]);
             //QRコード生成
             const qr_img = create_Element('img',[
                 {title:'qrcode'},
                 {alt:'qrcode'}
             ]);
             qr_img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=75x75&margin=3`;
-            const qr_div = create_Element('div',[
-                {class:'js-added-qrcode'},
-                {id:'share-qrcode'}
-            ]);
-            //const qr_button = create_Element('a',[
-                //{href:''}　//モーダルのリンクを設定する
-            //]);
-            //QRアイコン
-            //const qr_img = create_Element('img',[
-                //{src:''},
-                //{class:'qrcode-img'}
-            //]);
-            //qr_button.appendChild(qr_img);
-            //qr_div.appendChild(qr_button);
+            //QRコードテーブル作成
+            const qrcode_table = new AddTable(
+                {
+                    contents_Title:'',
+                    table_BaseId:'qrcode',
+                    table_Contents:[[{th:'携帯表示用QRコード'},{td:[]}]],
+                    add_Styles:`
+                    `, 
+                    add_To_Selector:''
+                }
+            );
+            
             qr_div.appendChild(qr_img);
             
             return qr_div;
