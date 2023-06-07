@@ -497,24 +497,13 @@ if (locationURL.includes('detail')) {
             //};
         //});
         //style設定
-        const inner_Height = window.innerHeight;
-        const position = inner_Height * 0.4;
         const headElm = document.querySelector('head');
         const shareStyle = document.createElement('style');
         shareStyle.setAttribute('id','share-style');
         shareStyle.textContent = `
             .js-added-share {
-                display: none;
-                width:35px;
-                min-height:105px;
-                background-color:#3f3f3f;
-                position: -webkit-fixed;
-                position: fixed;
-                top: ${position}px;
-                left: 0;
             }
             .js-added-share.show {
-                display: block;
             }
         `; 
         headElm.appendChild(shareStyle);
