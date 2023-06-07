@@ -434,8 +434,8 @@ if (locationURL.includes('detail')) {
                     add_To_Selector:''
                 }
             );
-            
-            qr_div.appendChild(qr_img);
+            qrcode_table.querySelector('td').appendChild(qr_img);
+            qr_div.appendChild(qrcode_table);
             
             return qr_div;
         })();
