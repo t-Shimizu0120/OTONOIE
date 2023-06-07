@@ -402,7 +402,7 @@ if (locationURL.includes('detail')) {
     //============================================================================
     //----------------------------------シェアボタン-------------------------------
     (() => {
-        const insertTargetElm = document.querySelector('div.detail_btm');
+        const insertTargetElm = document.querySelector('div.detail_l');
         //コードからリンクを生成
         const apartmentCode = document.querySelector('p.code').textContent.match(/[0-9]+$/)[0];
         const detailPageUrl = 'https://www.otonoie.net/detail/index.html?number=' + apartmentCode;
