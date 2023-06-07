@@ -428,13 +428,15 @@ if (locationURL.includes('detail')) {
                 {
                     contents_Title:'',
                     table_BaseId:'qrcode',
-                    table_Contents:[[{th:'<p>携帯表示用</p><p>QRコード</p>'},{td:[]}]],
+                    table_Contents:[[{th:'携帯表示用QRコード'},{td:['']}]],
                     add_Styles:`
                     `, 
                     add_To_Selector:''
                 }
             );
-            //qrcode_table.querySelector('td').appendChild(qr_img);
+            qrcode_table.querySelector('td').removeChild(qrcode_table.querySelector('ul'));
+            qrcode_table.querySelector('td').appendChild(qr_img);
+            
             qr_div.appendChild(qrcode_table);
             
             return qr_div;
