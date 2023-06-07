@@ -402,7 +402,7 @@ if (locationURL.includes('detail')) {
     //============================================================================
     //----------------------------------シェアボタン-------------------------------
     (() => {
-        const insertTargetElm = document.querySelector('#pagetop');
+        const insertTargetElm = document.querySelector('div.detail_btm');
         //コードからリンクを生成
         const apartmentCode = document.querySelector('p.code').textContent.match(/[0-9]+$/)[0];
         const detailPageUrl = 'https://www.otonoie.net/detail/index.html?number=' + apartmentCode;
@@ -414,25 +414,26 @@ if (locationURL.includes('detail')) {
         //QRコード
         const share_Qr = (() => {
             //QRコード生成
-            //const qr_Img = create_Element('img',[
-                //{title:'qrcode'},
-                //{alt:'qrcode'}
-            //]);
-            //qr_Img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=75x75&margin=3`; 
+            const qr_img = create_Element('img',[
+                {title:'qrcode'},
+                {alt:'qrcode'}
+            ]);
+            qr_img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=75x75&margin=3`;
             const qr_div = create_Element('div',[
                 {class:'js-added-qrcode'},
                 {id:'share-qrcode'}
             ]);
-            const qr_button = create_Element('a',[
-                {href:''}　//モーダルのリンクを設定する
-            ]);
+            //const qr_button = create_Element('a',[
+                //{href:''}　//モーダルのリンクを設定する
+            //]);
             //QRアイコン
-            const qr_img = create_Element('img',[
-                {src:''},
-                {class:'qrcode-img'}
-            ]);
-            qr_button.appendChild(qr_img);
-            qr_div.appendChild(qr_button);
+            //const qr_img = create_Element('img',[
+                //{src:''},
+                //{class:'qrcode-img'}
+            //]);
+            //qr_button.appendChild(qr_img);
+            //qr_div.appendChild(qr_button);
+            qr_div.appendChild(qr_img);
             
             return qr_div;
         })();
@@ -518,7 +519,7 @@ if (locationURL.includes('detail')) {
         `; 
         headElm.appendChild(shareStyle);
         
-        insertTargetElm.before(share);
+        insertTargetElm.appendChild(share);
     })();
     //----------------------------------------------------------------------------
     
