@@ -483,18 +483,18 @@ if (locationURL.includes('detail')) {
         share.appendChild(share_Mail);
         
         //スクロールイベント
-        window.addEventListener("scroll", function () {
-            const targetElm = document.querySelector("div.detail.clearfix");
-            const clientRect = targetElm.getBoundingClientRect() ;
-            const scroll = window.pageYOffset;
+        //window.addEventListener("scroll", function () {
+            //const targetElm = document.querySelector("div.detail.clearfix");
+            //const clientRect = targetElm.getBoundingClientRect() ;
+            //const scroll = window.pageYOffset;
             
-            const detailBoxHeight = document.querySelector('div.result.icon-new').offsetHeight;
-            if ((clientRect.top + 200) < scroll && scroll < (detailBoxHeight)) {
-                share.classList.add('show');
-            } else {
-                share.classList.remove('show');
-            };
-        });
+            //const detailBoxHeight = document.querySelector('div.result.icon-new').offsetHeight;
+            //if ((clientRect.top + 200) < scroll && scroll < (detailBoxHeight)) {
+                //share.classList.add('show');
+            //} else {
+                //share.classList.remove('show');
+            //};
+        //});
         //style設定
         const inner_Height = window.innerHeight;
         const position = inner_Height * 0.4;
