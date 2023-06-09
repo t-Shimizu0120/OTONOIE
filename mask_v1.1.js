@@ -455,6 +455,19 @@ if (locationURL.includes('detail')) {
                     table_BaseId:'qrcode',
                     table_Contents:[[{th:'携帯表示用QRコード'},{td:['']}]],
                     add_Styles:`
+                        #qrcode-table {
+                            border:0 !important;
+                        }
+                        #qrcode-table > tbody > tr > th {
+                            border:0 !important;
+                            font-size:1.2rem !important;
+                        }
+                        #qrcode-table > tbody > tr > td {
+                            border:0 !important;
+                            padding:3px !important;
+                            text-align:center !important;
+                            background-color:#dddddd !important;
+                        }
                     `, 
                     add_To_Selector:''
                 }
@@ -535,19 +548,6 @@ if (locationURL.includes('detail')) {
             .js-added-share {
             }
             .js-added-share.show {
-            }
-            #qrcode-table {
-                border:0 !important;
-            }
-            #qrcode-table > tbody > tr > th {
-                border:0 !important;
-                font-size:1.2rem !important;
-            }
-            #qrcode-table > tbody > tr > td {
-                border:0 !important;
-                padding:3px !important;
-                text-align:center !important;
-                background-color:#dddddd !important;
             }
             .js-added-line {
                 background-color:#06c755 !important;
