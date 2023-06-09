@@ -552,7 +552,7 @@ if (locationURL.includes('detail')) {
             }
             .js-added-line > a {
                 display:block !important;
-                padding:1.2rem !important;
+                padding:0.8rem !important;
                 background:#06c755 !important;
                 font-size:2rem !important;
                 color:#ffffff !important;
