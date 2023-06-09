@@ -532,7 +532,6 @@ if (locationURL.includes('detail')) {
         shareStyle.setAttribute('id','share-style');
         shareStyle.textContent = `
             .js-added-share {
-                padding:0.5rem;
             }
             .js-added-qrcode {
                 display:none !important;
@@ -552,6 +551,7 @@ if (locationURL.includes('detail')) {
                 font-weight:bold;
             }
             .js-added-mail{
+                margin-bottom:0.5rem;
             }
             .js-added-mail > a {
                 display:block !important;
@@ -566,6 +566,7 @@ if (locationURL.includes('detail')) {
             @media screen and (min-width:750px) {
                 .js-added-qrcode {
                     display:block !important;
+                    margin-bottom:0.5rem;
                 }
                 .js-added-line {
                     display:none !important;
