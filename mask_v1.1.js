@@ -514,12 +514,13 @@ if (locationURL.includes('detail')) {
             const mail_button = create_Element('a',[
                 {href:'mailto:?subject=' + mail_Subject + '&amp;body=' + mail_Body}
             ]);
+            mail_button.textContent = 'メールで送る';
             //メールアイコン
-            const mail_img = create_Element('img',[
-                {src:''},
-                {class:'mail-img'}
-            ]);
-            mail_button.appendChild(mail_img);
+            //const mail_img = create_Element('img',[
+                //{src:''},
+                //{class:'mail-img'}
+            //]);
+            //mail_button.appendChild(mail_img);
             mail_div.appendChild(mail_button);
         
             return mail_div;
@@ -544,6 +545,18 @@ if (locationURL.includes('detail')) {
                 display:block !important;
                 padding:0.8rem !important;
                 background:#06c755 !important;
+                font-size:1.6rem !important;
+                color:#ffffff !important;
+                text-decoration:none !important;
+                text-align:center !important;
+                font-weight:bold !important;
+            }
+            .js-added-mail{
+            }
+            .js-added-mail > a {
+                display:block !important;
+                padding:0.8rem !important;
+                background:#3f3f3f !important;
                 font-size:1.6rem !important;
                 color:#ffffff !important;
                 text-decoration:none !important;
