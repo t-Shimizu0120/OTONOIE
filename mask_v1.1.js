@@ -571,7 +571,7 @@ if (locationURL.includes('detail')) {
                 padding:1.2rem;
                 background:#ee7800;
                 font-size:2.0rem;
-                color:#3f3f3f;
+                color:#ffffff;
                 text-decoration:none;
                 text-align:center;
                 font-weight:bold;
