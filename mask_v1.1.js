@@ -60,7 +60,7 @@ if (locationURL.includes('detail')) {
                 for (this.tbody_Attr of obj.tbody_Attrs) {
                     const tbody_AttrName = Object.keys(this.tbody_Attr)[0];
                     const tbody_AttrValue = this.tbody_Attr[tbody_AttrName];
-                    add_Elm_table.setAttribute(tbody_AttrName,tbody_AttrValue);
+                    add_Elm_tbody.setAttribute(tbody_AttrName,tbody_AttrValue);
                 };
                 //tr、th、tdタグの作成・値の代入
                 for (this.tableRow of obj.table_Contents){
@@ -75,7 +75,7 @@ if (locationURL.includes('detail')) {
                             for (this.th_Attr of obj.th_Attrs) {
                                 const th_AttrName = Object.keys(this.th_Attr)[0];
                                 const th_AttrValue = this.th_Attr[th_AttrName];
-                                add_Elm_table.setAttribute(th_AttrName,th_AttrValue);
+                                add_Elm_th.setAttribute(th_AttrName,th_AttrValue);
                             };
                             const add_Elm_th_Value = this.rowItem[items_KeyName];
                             add_Elm_th.textContent = add_Elm_th_Value;
@@ -85,6 +85,11 @@ if (locationURL.includes('detail')) {
                             if (this.rowItem[items_KeyName].length === 0) {
                             } else {
                                 const add_Elm_td = document.createElement(items_KeyName);
+                                for (this.td_Attr of obj.td_Attrs) {
+                                    const td_AttrName = Object.keys(this.td_Attr)[0];
+                                    const td_AttrValue = this.td_Attr[td_AttrName];
+                                    add_Elm_td.setAttribute(td_AttrName,td_AttrValue);
+                                };
                                 const ul = document.createElement('ul');
                                 for(let i = 0; i < this.rowItem[items_KeyName].length; i++) {
                                     const li = document.createElement('li');
