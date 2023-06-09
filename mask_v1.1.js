@@ -481,6 +481,7 @@ if (locationURL.includes('detail')) {
                 {href:'https://social-plugins.line.me/lineit/share?url=' + detailPageUrl}
             ]);
             line_button.textContent = 'LINEで送る';
+            line_button.setAttribute('style','text-decoration:none !important; font-size:1.4rem !important; font-weight:bold !important;');
             //LINEアイコン
             const line_img = create_Element('img',[
                 {src:''},
@@ -540,9 +541,7 @@ if (locationURL.includes('detail')) {
             }
             .js-added-line {
                 background-color:#06c755 !important;
-                text-decoration:none !important;
-                font-size:1.4rem !important;
-                font-weight:bold !important;
+                color:#ffffff !important;
             }
         `; 
         headElm.appendChild(shareStyle);
