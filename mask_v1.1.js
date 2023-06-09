@@ -492,11 +492,11 @@ if (locationURL.includes('detail')) {
             ]);
             line_button.textContent = 'LINEで送る';
             //LINEアイコン
-            const line_img = create_Element('img',[
-                {src:''},
-                {class:'line-img'}
-            ]);
-            line_button.appendChild(line_img);
+            //const line_img = create_Element('img',[
+                //{src:''},
+                //{class:'line-img'}
+            //]);
+            //line_button.appendChild(line_img);
             line_div.appendChild(line_button);
         
             return line_div;
@@ -525,20 +525,6 @@ if (locationURL.includes('detail')) {
             return mail_div;
         })();
         share.appendChild(share_Mail);
-        
-        //スクロールイベント
-        //window.addEventListener("scroll", function () {
-            //const targetElm = document.querySelector("div.detail.clearfix");
-            //const clientRect = targetElm.getBoundingClientRect() ;
-            //const scroll = window.pageYOffset;
-            
-            //const detailBoxHeight = document.querySelector('div.result.icon-new').offsetHeight;
-            //if ((clientRect.top + 200) < scroll && scroll < (detailBoxHeight)) {
-                //share.classList.add('show');
-            //} else {
-                //share.classList.remove('show');
-            //};
-        //});
         //style設定
         const headElm = document.querySelector('head');
         const shareStyle = document.createElement('style');
