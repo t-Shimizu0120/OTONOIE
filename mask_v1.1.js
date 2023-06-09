@@ -538,6 +538,8 @@ if (locationURL.includes('detail')) {
             //return mail_div;
         //})();
         //share.appendChild(share_Mail);
+        //お問い合わせ
+        share.appendChild(inquiry);
         //style設定
         const headElm = document.querySelector('head');
         const shareStyle = document.createElement('style');
