@@ -568,7 +568,7 @@ if (locationURL.includes('detail')) {
             }
             .js-added-inquiry > a {
                 display:block;
-                padding:1rem;
+                padding:1.2rem;
                 background:#ee7800;
                 font-size:1.8rem;
                 color:#ffffff;
