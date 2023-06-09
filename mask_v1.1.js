@@ -532,24 +532,24 @@ if (locationURL.includes('detail')) {
         shareStyle.setAttribute('id','share-style');
         shareStyle.textContent = `
             .js-added-share {
-            }
-            .js-added-share.show {
+                padding:0.5rem;
             }
             .js-added-qrcode {
                 display:none !important;
             }
             .js-added-line {
-                display:block !important;
+                display:block;
+                margin-bottom:0.5rem;
             }
             .js-added-line > a {
-                display:block !important;
-                padding:0.8rem !important;
-                background:#06c755 !important;
-                font-size:1.6rem !important;
-                color:#ffffff !important;
-                text-decoration:none !important;
-                text-align:center !important;
-                font-weight:bold !important;
+                display:block;
+                padding:0.8rem;
+                background:#06c755;
+                font-size:1.6rem;
+                color:#ffffff;
+                text-decoration:none;
+                text-align:center;
+                font-weight:bold;
             }
             .js-added-mail{
             }
