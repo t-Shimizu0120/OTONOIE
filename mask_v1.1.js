@@ -404,20 +404,22 @@ if (locationURL.includes('detail')) {
     
     
     
-    const share_Line = (() => {
-        const line_div = create_Element('div',[
-            {class:'js-added-line'},
-            {id:'share-line'}
+    //=================================================================
+    //お問い合わせボタン
+    //=================================================================
+    const inquiry = (() => {
+        const inquiry_div = create_Element('div',[
+            {class:'js-added-inquiry'},
+            {id:'inquiry'}
         ]);
-        const line_button = create_Element('a',[
-            {href:'https://social-plugins.line.me/lineit/share?url=' + detailPageUrl}
+        const inquiry_button = create_Element('a',[
+            {href:''}
         ]);
-        line_button.textContent = 'LINEで送る';
-        line_div.appendChild(line_button);
+        inquiry_button.textContent = 'お問い合わせ';
+        inquiry_div.appendChild(inquiry_button);
         
-        return line_div;
+        return inquiry_div;
     })();
-    share.appendChild(share_Line);
     
     
     
