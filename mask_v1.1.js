@@ -404,6 +404,23 @@ if (locationURL.includes('detail')) {
     
     
     
+    const share_Line = (() => {
+        const line_div = create_Element('div',[
+            {class:'js-added-line'},
+            {id:'share-line'}
+        ]);
+        const line_button = create_Element('a',[
+            {href:'https://social-plugins.line.me/lineit/share?url=' + detailPageUrl}
+        ]);
+        line_button.textContent = 'LINEで送る';
+        line_div.appendChild(line_button);
+        
+        return line_div;
+    })();
+    share.appendChild(share_Line);
+    
+    
+    
     //============================================================================
     //layout
     //============================================================================
