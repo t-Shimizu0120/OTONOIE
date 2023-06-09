@@ -554,7 +554,7 @@ if (locationURL.includes('detail')) {
                 display:block !important;
                 padding:0.8rem !important;
                 background:#06c755 !important;
-                font-size:2rem !important;
+                font-size:1.6rem !important;
                 color:#ffffff !important;
                 text-decoration:none !important;
                 text-align:center !important;
