@@ -564,6 +564,18 @@ if (locationURL.includes('detail')) {
                 text-align:center;
                 font-weight:bold;
             }
+            .js-added-inquiry {
+            }
+            .js-added-inquiry > a {
+                display:block;
+                padding:0.8rem;
+                background:#3f3f3f;
+                font-size:1.6rem;
+                color:#ffffff;
+                text-decoration:none;
+                text-align:center;
+                font-weight:bold;
+            }
             @media screen and (min-width:750px) {
                 .js-added-qrcode {
                     display:block !important;
