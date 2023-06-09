@@ -480,6 +480,7 @@ if (locationURL.includes('detail')) {
             const line_button = create_Element('a',[
                 {href:'https://social-plugins.line.me/lineit/share?url=' + detailPageUrl}
             ]);
+            line_button.textContent = 'LINEで送る';
             //LINEアイコン
             const line_img = create_Element('img',[
                 {src:''},
