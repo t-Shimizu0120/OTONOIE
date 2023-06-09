@@ -551,6 +551,9 @@ if (locationURL.includes('detail')) {
             }
             .js-added-line {
                 background-color:#06c755 !important;
+            }
+            .js-added-line > a {
+                font-size:1.8rem !important;
                 color:#ffffff !important;
             }
         `; 
