@@ -568,10 +568,10 @@ if (locationURL.includes('detail')) {
             }
             .js-added-inquiry > a {
                 display:block;
-                padding:0.8rem;
-                background:#3f3f3f;
-                font-size:1.6rem;
-                color:#ffffff;
+                padding:1.2rem;
+                background:#ee7800;
+                font-size:2.0rem;
+                color:#3f3f3f;
                 text-decoration:none;
                 text-align:center;
                 font-weight:bold;
