@@ -459,9 +459,6 @@ if (locationURL.includes('detail')) {
                     add_To_Selector:''
                 }
             );
-            qrcode_table.setAttribute('style','border:0 !important;');
-            qrcode_table.querySelector('th').setAttribute('style','border:0 !important; font-size:1.2rem !important;');
-            qrcode_table.querySelector('td').setAttribute('style','border:0 !important; padding: 3px !important; text-align: center !important; background-color:#dddddd !important;');
             qrcode_table.querySelector('td').removeChild(qrcode_table.querySelector('ul'));
             qrcode_table.querySelector('td').appendChild(qr_img);
             
@@ -538,6 +535,19 @@ if (locationURL.includes('detail')) {
             .js-added-share {
             }
             .js-added-share.show {
+            }
+            #qrcode-table {
+                border:0 !important;
+            }
+            #qrcode-table > tbody > tr > th {
+                border:0 !important;
+                font-size:1.2rem !important;
+            }
+            #qrcode-table > tbody > tr > td {
+                border:0 !important;
+                padding:3px !important;
+                text-align:center !important;
+                background-color:#dddddd !important;
             }
             .js-added-line {
                 background-color:#06c755 !important;
