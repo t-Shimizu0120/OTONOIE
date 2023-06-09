@@ -479,7 +479,6 @@ if (locationURL.includes('detail')) {
             return qr_div;
         })();
         share.appendChild(share_Qr);
-        
         //LINE
         const share_Line = (() => {
             const line_div = create_Element('div',[
@@ -501,30 +500,29 @@ if (locationURL.includes('detail')) {
             return line_div;
         })();
         share.appendChild(share_Line);
-        
-         //mail
-        const share_Mail = (() => {
-            const mail_Subject = '%E3%80%90%E3%81%8A%E9%83%A8%E5%B1%8B%E6%83%85%E5%A0%B1%E3%80%91';
-            const mail_Body = '%E3%80%90' + '%E7%89%A9%E4%BB%B6%E3%82%B3%E3%83%BC%E3%83%89%EF%BC%9A' + apartmentCode + '%20' + 'bukkennmei' + '%E3%80%91' + '%0d%0a' + detailPageUrl;
-            const mail_div = create_Element('div',[
-                {class:'js-added-mail'},
-                {id:'share-mail'}
-            ]);
-            const mail_button = create_Element('a',[
-                {href:'mailto:?subject=' + mail_Subject + '&amp;body=' + mail_Body}
-            ]);
-            mail_button.textContent = 'メールで送る';
+        //メール
+        //const share_Mail = (() => {
+            //const mail_Subject = '%E3%80%90%E3%81%8A%E9%83%A8%E5%B1%8B%E6%83%85%E5%A0%B1%E3%80%91';
+            //const mail_Body = '%E3%80%90' + '%E7%89%A9%E4%BB%B6%E3%82%B3%E3%83%BC%E3%83%89%EF%BC%9A' + apartmentCode + '%20' + 'bukkennmei' + '%E3%80%91' + '%0d%0a' + detailPageUrl;
+            //const mail_div = create_Element('div',[
+                //{class:'js-added-mail'},
+                //{id:'share-mail'}
+            //]);
+            //const mail_button = create_Element('a',[
+                //{href:'mailto:?subject=' + mail_Subject + '&amp;body=' + mail_Body}
+            //]);
+            //mail_button.textContent = 'メールで送る';
             //メールアイコン
             //const mail_img = create_Element('img',[
                 //{src:''},
                 //{class:'mail-img'}
             //]);
             //mail_button.appendChild(mail_img);
-            mail_div.appendChild(mail_button);
+            //mail_div.appendChild(mail_button);
         
-            return mail_div;
-        })();
-        share.appendChild(share_Mail);
+            //return mail_div;
+        //})();
+        //share.appendChild(share_Mail);
         //style設定
         const headElm = document.querySelector('head');
         const shareStyle = document.createElement('style');
@@ -549,19 +547,6 @@ if (locationURL.includes('detail')) {
                 text-align:center;
                 font-weight:bold;
             }
-            .js-added-mail{
-                margin-bottom:0.5rem;
-            }
-            .js-added-mail > a {
-                display:block !important;
-                padding:0.8rem !important;
-                background:#3f3f3f !important;
-                font-size:1.6rem !important;
-                color:#ffffff !important;
-                text-decoration:none !important;
-                text-align:center !important;
-                font-weight:bold !important;
-            }
             @media screen and (min-width:750px) {
                 .js-added-qrcode {
                     display:block !important;
@@ -573,6 +558,7 @@ if (locationURL.includes('detail')) {
             }
         `; 
         headElm.appendChild(shareStyle);
+        
         if (window.matchMedia('(min-width:750px)').matches) {
             document.querySelector('div.detail_l').appendChild(share);
         } else {
