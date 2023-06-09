@@ -427,7 +427,6 @@ if (locationURL.includes('detail')) {
     //============================================================================
     //----------------------------------シェア-------------------------------------
     (() => {
-        const insertTargetElm = document.querySelector('div.detail_l');
         //コードからリンクを生成
         const apartmentCode = document.querySelector('p.code').textContent.match(/[0-9]+$/)[0];
         const detailPageUrl = 'https://www.otonoie.net/detail/index.html?number=' + apartmentCode;
@@ -574,8 +573,11 @@ if (locationURL.includes('detail')) {
             }
         `; 
         headElm.appendChild(shareStyle);
-        
-        insertTargetElm.appendChild(share);
+        if (window.matchMedia('(min-width:750px)').matches) {
+            document.querySelector('div.detail_l').appendChild(share);
+        } else {
+            document.querySelector('div.detail_btm').appendChild(share);
+        };
     })();
     //----------------------------------------------------------------------------
     
