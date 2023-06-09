@@ -539,7 +539,10 @@ if (locationURL.includes('detail')) {
             .js-added-share.show {
             }
             .js-added-line {
-                background-color:#06c755;
+                background-color:#06c755 !important;
+                text-decoration:none !important;
+                font-size:1.4rem !important;
+                font-weight:bold !important;
             }
         `; 
         headElm.appendChild(shareStyle);
