@@ -538,6 +538,9 @@ if (locationURL.includes('detail')) {
             }
             .js-added-share.show {
             }
+            .js-added-line {
+                background-color:#06c755;
+            }
         `; 
         headElm.appendChild(shareStyle);
         
