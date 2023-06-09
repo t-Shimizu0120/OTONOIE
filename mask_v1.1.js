@@ -449,8 +449,8 @@ if (locationURL.includes('detail')) {
                     add_To_Selector:''
                 }
             );
-            qrcode_table.querySelector('th').setAttribute('','');
-            qrcode_table.querySelector('td').setAttribute('style','padding: 0 !important; text-align: center !important;');
+            //qrcode_table.querySelector('th').setAttribute('','');
+            //qrcode_table.querySelector('td').setAttribute('style','padding: 0 !important; text-align: center !important;');
             qrcode_table.querySelector('td').removeChild(qrcode_table.querySelector('ul'));
             qrcode_table.querySelector('td').appendChild(qr_img);
             
