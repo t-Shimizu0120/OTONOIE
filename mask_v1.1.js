@@ -72,6 +72,11 @@ if (locationURL.includes('detail')) {
                         //キーの値に応じて要素作成、キーの値でバリューを取得・設定
                         if (items_KeyName === 'th') {
                             const add_Elm_th = document.createElement(items_KeyName);
+                            for (this.th_Attr of obj.th_Attrs) {
+                                const th_AttrName = Object.keys(this.th_Attr)[0];
+                                const th_AttrValue = this.th_Attr[th_AttrName];
+                                add_Elm_table.setAttribute(th_AttrName,th_AttrValue);
+                            };
                             const add_Elm_th_Value = this.rowItem[items_KeyName];
                             add_Elm_th.textContent = add_Elm_th_Value;
                             add_Elm_tr.appendChild(add_Elm_th);
