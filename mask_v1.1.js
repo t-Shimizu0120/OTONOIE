@@ -164,7 +164,7 @@ if (locationURL.includes('detail')) {
                 table_Attrs:[{class:'js-added-table'}],
                 tbody_Attrs:[],
                 th_Attrs:[{class:'js-added-table-th'}],
-                td_Attrs:['js-added-font-size'],
+                td_Attrs:[{class:'js-added-table-td js-added-font-size'}],
 
                 add_To_Selector:''
             };
