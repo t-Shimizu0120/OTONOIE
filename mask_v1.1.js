@@ -57,6 +57,11 @@ if (locationURL.includes('detail')) {
                 };
                 //tbodyタグ作成
                 const add_Elm_tbody = document.createElement('tbody');
+                for (this.tbody_Attr of obj.tbody_Attrs) {
+                    const tbody_AttrName = Object.keys(this.tbody_Attr)[0];
+                    const tbody_AttrValue = this.tbody_Attr[tbody_AttrName];
+                    add_Elm_table.setAttribute(tbody_AttrName,tbody_AttrValue);
+                };
                 //tr、th、tdタグの作成・値の代入
                 for (this.tableRow of obj.table_Contents){
                     //tr作成
@@ -148,7 +153,7 @@ if (locationURL.includes('detail')) {
 
                 table_Attrs:[{class:'js-added-table'}],
                 tbody_Attrs:[],
-                th_Attrs:[],
+                th_Attrs:[{class:'js-added-table-th'}],
                 td_Attrs:['js-added-font-size'],
 
                 add_To_Selector:''
