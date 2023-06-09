@@ -407,8 +407,17 @@ if (locationURL.includes('detail')) {
     //);
     
     
-    
-    
+    //============================================================================
+    //layout
+    //============================================================================
+    //レイアウト変更
+    //class:detail_lの要素
+    const detail_L = document.querySelector('div.detail_l');
+    detail_L.setAttribute('style','width:100% !important;');
+    if (detail_L.querySelectorAll('div.item-img-frame')[1]) {
+        detail_L.removeChild(detail_L.querySelectorAll('div.item-img-frame')[1]);
+    } else {
+    };
     
     //============================================================================
     //share
