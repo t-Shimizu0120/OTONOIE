@@ -132,20 +132,20 @@ if (locationURL.includes('detail')) {
                     font-size:1.2rem; 
                     color:#000;
                 } 
-                table {
+                .js-added-table {
                     width:100%;
                 } 
-                th {
+                .js-added-th {
                     background-color:#dddddd; 
                     color:#3f3f3f; 
                     font-weight:bold; 
                     text-align:center; 
                     vertical-align:middle;
                 } 
-                td {
+                .js-added-td {
                     vertical-align: top;
                 }
-                th, td {
+                .js-added-th, .js-added-td {
                     border: 1px #3f3f3f solid;
                     flex:1 3;
                     padding:1.2rem 1.2rem;
