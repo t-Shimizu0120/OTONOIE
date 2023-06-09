@@ -129,26 +129,25 @@ if (locationURL.includes('detail')) {
             const addStyles = object['add_Styles'];
             const style = `
                 .js-added-font-size {
-                    font-size:1.2rem; 
-                    color:#000;
+                    font-size:1.2rem !important; 
                 } 
                 .js-added-table {
                     width:100%;
+                    border:1px #3f3f3f solid !important;
                 } 
-                .js-added-th {
-                    background-color:#dddddd; 
-                    color:#3f3f3f; 
-                    font-weight:bold; 
-                    text-align:center; 
-                    vertical-align:middle;
+                .js-added-table-th {
+                    background-color:#dddddd !important; 
+                    color:#3f3f3f !important;
+                    text-align:center !important; 
+                    vertical-align:middle !important;
                 } 
-                .js-added-td {
-                    vertical-align: top;
+                .js-added-table-td {
+                    vertical-align: top !important;
                 }
-                .js-added-th, .js-added-td {
-                    border: 1px #3f3f3f solid;
-                    flex:1 3;
-                    padding:1.2rem 1.2rem;
+                .js-added-table-th, .js-added-table-td {
+                    color:#000 !important;
+                    border:1px #3f3f3f solid !important;
+                    padding:1.2rem 1.2rem !important;
                 }
                 ${addStyles}
             `;
