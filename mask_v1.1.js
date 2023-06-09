@@ -132,7 +132,6 @@ if (locationURL.includes('detail')) {
                     font-size:1.2rem !important; 
                 } 
                 .js-added-table {
-                    width:100%;
                     border:1px #3f3f3f solid !important;
                 } 
                 .js-added-table-th {
