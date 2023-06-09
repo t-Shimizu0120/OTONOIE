@@ -20,8 +20,6 @@ if (locationURL.includes('detail')) {
     //class
     //=================================================================
     
-    
-    
     //■テーブル
     class AddTable {
         constructor (object,...args) {
@@ -181,8 +179,6 @@ if (locationURL.includes('detail')) {
         };
 
     };
-    
-    
     
     //■タブコンテンツ
     class AddTabContents {
