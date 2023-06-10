@@ -1,6 +1,3 @@
-//ブレイクポイント
-const mediaQueryList = window.matchMedia('(min-width:750px)');
-
 //URL取得
 const locationURL = location.href;
 //URLで分岐
@@ -606,21 +603,7 @@ if (locationURL.includes('detail')) {
         `; 
         headElm.appendChild(shareStyle);
         
-        //regist listener
-        mediaQueryList.addEventListener('change', listener);
-        listener(mediaQueryList);
-        // listener
-        function listener (event) {
-            if (event.matches) {
-                // PC
-                document.querySelector('div.detail_btm').removeChild(share);
-                document.querySelector('div.detail_l').appendChild(share);
-            } else {
-                // SP
-                document.querySelector('div.detail_l').removeChild(share);
-                document.querySelector('div.detail_btm').appendChild(share);
-            };
-        };
+        
     })();
     //----------------------------------------------------------------------------
     
@@ -801,6 +784,30 @@ if (locationURL.includes('detail')) {
     })();
     //---------------------------------------------------------------
     //===============================================================
+    
+    
+    
+    //=================================================================
+    //レスポンシブ
+    //=================================================================
+    //ブレイクポイント
+    const mediaQueryList = window.matchMedia('(min-width:750px)');
+    //regist listener
+    mediaQueryList.addEventListener('change', listener);
+    listener(mediaQueryList);
+    // listener
+    function listener (event) {
+        if (event.matches) {
+            // PC
+            document.querySelector('div.detail_btm').removeChild(share);
+            document.querySelector('div.detail_l').appendChild(share);
+        } else {
+            // SP
+            document.querySelector('div.detail_l').removeChild(share);
+            document.querySelector('div.detail_btm').appendChild(share);
+        };
+    };
+    //=================================================================
     
     
     
