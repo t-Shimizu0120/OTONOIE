@@ -600,6 +600,9 @@ if (locationURL.includes('detail')) {
                 width:31.8% !important;
                 margin-bottom:0.8rem;
             }
+            #share-2 {
+                
+            }
             .js-added-qrcode {
                 margin-bottom:0.5rem;
             }
@@ -615,22 +618,26 @@ if (locationURL.includes('detail')) {
             }
             
             .js-added-line {
-                margin-bottom:0.5rem;
-            }
-            .js-added-line > a {
-                display:block;
-                background:#06c755;
-                color:#ffffff;
-                font-size:1.6rem;
-                text-decoration:none;
-                text-align:center;
-                font-weight:bold;
-                padding:0.8rem;
+                display:none;
             }
             
             @media screen and (max-width:750px) {
                 #share-1 {
                     display:none !important;
+                }
+                .js-added-line {
+                    display:block;
+                    margin-bottom:0.5rem;
+                }
+                .js-added-line > a {
+                    display:block;
+                    background:#06c755;
+                    color:#ffffff;
+                    font-size:1.6rem;
+                    text-decoration:none;
+                    text-align:center;
+                    font-weight:bold;
+                    padding:0.8rem;
                 }
                 .js-added-inquiry > a {
                     font-size:1.8rem;
