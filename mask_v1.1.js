@@ -638,7 +638,8 @@ if (locationURL.includes('detail')) {
         `; 
         headElm.appendChild(shareStyle);
         
-        
+        document.querySelector('div.detail_l').appendChild(share_1);
+        document.querySelector('div.detail_btm').appendChild(share_2);
     })();
     //----------------------------------------------------------------------------
     
@@ -834,12 +835,8 @@ if (locationURL.includes('detail')) {
     function listener (event) {
         if (event.matches) {
             // PC
-            document.querySelector('div.detail_btm').removeChild(share);
-            document.querySelector('div.detail_l').appendChild(share);
         } else {
             // SP
-            document.querySelector('div.detail_l').removeChild(share);
-            document.querySelector('div.detail_btm').appendChild(share);
         };
     };
     //=================================================================
