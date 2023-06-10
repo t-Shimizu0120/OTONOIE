@@ -772,11 +772,6 @@ if (locationURL.includes('detail')) {
                 overflow:hidden;
                 margin-bottom: 20px;
             }
-            @media screen and (max-width:480px) {
-                .js-added-map {
-                    padding-bottom: 75%;
-                }
-            }
             @media screen and (max-width:750px) {
                 .js-added-map {
                     padding-bottom: 66.667%; 
