@@ -601,7 +601,11 @@ if (locationURL.includes('detail')) {
                 margin-bottom:0.8rem;
             }
             #share-2 {
-                
+                display:block !important;
+                width:70% !important;
+                background-color:#dddddd;
+                margin-bottom:0.8rem;
+                padding:1.2rem 1.5rem 5rem 1.5rem;
             }
             .js-added-qrcode {
                 margin-bottom:0.5rem;
