@@ -3,6 +3,7 @@ const mediaQueryList = window.matchMedia('(min-width:750px)');
 //regist listener
 mediaQueryList.addEventListener('change', listener);
 listener(mediaQueryList);
+
 //URL取得
 const locationURL = location.href;
 //URLで分岐
