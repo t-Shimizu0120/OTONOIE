@@ -598,6 +598,7 @@ if (locationURL.includes('detail')) {
             #share-1 {
                 display:block !important;
                 width: 25% !important;
+                margin-bottom:8px;
             }
             
             .js-added-line {
