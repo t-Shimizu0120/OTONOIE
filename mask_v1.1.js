@@ -602,10 +602,10 @@ if (locationURL.includes('detail')) {
             }
             #share-2 {
                 display:block !important;
-                width:70% !important;
+                width:66% !important;
                 background-color:#dddddd;
                 margin-bottom:0.8rem;
-                padding:1.2rem 1.5rem 5rem 1.5rem;
+                padding:1rem 1.2rem 6rem 1.2rem;
             }
             .js-added-qrcode {
                 margin-bottom:0.5rem;
