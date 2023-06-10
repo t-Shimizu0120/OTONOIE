@@ -599,6 +599,7 @@ if (locationURL.includes('detail')) {
                 display:block !important;
                 width: 25% !important;
             }
+            
             .js-added-line {
                 display:block;
                 margin-bottom:0.5rem;
@@ -613,6 +614,7 @@ if (locationURL.includes('detail')) {
                 text-align:center;
                 font-weight:bold;
             }
+            
             .js-added-inquiry > a {
                 display:block;
                 background:#ffb911;
