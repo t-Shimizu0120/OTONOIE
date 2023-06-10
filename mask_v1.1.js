@@ -629,6 +629,7 @@ if (locationURL.includes('detail')) {
             }
             @media screen and (min-width:750px) {
                 #share-1 {
+                    display:block;
                     width: 25%;
                     height:auto;
                 }
