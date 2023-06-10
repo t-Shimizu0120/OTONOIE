@@ -600,7 +600,9 @@ if (locationURL.includes('detail')) {
                 width: 25% !important;
                 margin-bottom:8px;
             }
-            
+            .js-added-qrcode {
+                margin-bottom:0.5rem;
+            }
             .js-added-line {
                 display:block;
                 margin-bottom:0.5rem;
