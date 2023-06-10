@@ -607,11 +607,11 @@ if (locationURL.includes('detail')) {
                 display:block;
                 background:#ffb911;
                 color:#ffffff;
-                font-size:1.8rem;
                 text-decoration:none;
                 text-align:center;
                 font-weight:bold;
-                padding:1.2rem;
+                font-size:1.8rem;
+                padding:1.4rem;
             }
             
             .js-added-line {
