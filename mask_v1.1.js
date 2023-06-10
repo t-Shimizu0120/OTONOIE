@@ -416,7 +416,7 @@ if (locationURL.includes('detail')) {
         const inquiry_button = create_Element('a',[
             {href:''}
         ]);
-        inquiry_button.textContent = '物件のお問い合わせ';
+        inquiry_button.textContent = 'この物件にお問い合わせ';
         inquiry_div.appendChild(inquiry_button);
         
         return inquiry_div;
@@ -430,7 +430,7 @@ if (locationURL.includes('detail')) {
         const inquiry_button = create_Element('a',[
             {href:''}
         ]);
-        inquiry_button.textContent = '物件のお問い合わせ';
+        inquiry_button.textContent = 'この物件にお問い合わせ';
         inquiry_div.appendChild(inquiry_button);
         
         return inquiry_div;
