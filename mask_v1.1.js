@@ -595,7 +595,7 @@ if (locationURL.includes('detail')) {
         const shareStyle = document.createElement('style');
         shareStyle.setAttribute('id','share-style');
         shareStyle.textContent = `
-            #js-added-share-1 {
+            #share-1 {
                 width: 125px;
                 height:auto;
             }
