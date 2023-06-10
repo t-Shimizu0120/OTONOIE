@@ -1,3 +1,15 @@
+//============================================================================
+//レスポンシブ
+//============================================================================
+//breakpoint
+const mediaQueryList = window.matchMedia('(min-width:750px)');
+//regist listener
+mediaQueryList.addEventListener('change', listener);
+listener(mediaQueryList);
+//============================================================================
+
+
+
 //URL取得
 const locationURL = location.href;
 //URLで分岐
@@ -790,25 +802,6 @@ if (locationURL.includes('detail')) {
     //===============================================================
     
     
-    //============================================================================
-    //レスポンシブ対応
-    //============================================================================
-    //breakpoint
-    const mediaQueryList = window.matchMedia('(min-width:750px)');
-    //regist listener
-    mediaQueryList.addEventListener('change', listener);
-    listener(mediaQueryList);
-    // listener
-    function listener (event) {
-        if (event.matches) {
-        // PC
-            
-        } else {
-        // SP
-    
-        };
-    };
-    //============================================================================
     
 } else if (locationURL.includes('property')) {
 } else {
