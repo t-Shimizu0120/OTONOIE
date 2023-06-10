@@ -614,11 +614,11 @@ if (locationURL.includes('detail')) {
                 font-weight:bold;
             }
             .js-added-inquiry {
+                background:#ff9e25;
             }
             .js-added-inquiry > a {
                 display:block;
                 padding:1.2rem;
-                background:#ee7800;
                 font-size:1.8rem;
                 color:#ffffff;
                 text-decoration:none;
