@@ -767,19 +767,19 @@ if (locationURL.includes('detail')) {
         mapStyle.textContent = `
             .js-added-map {
                 position:relative; 
-                padding-bottom: 75%; 
+                padding-bottom: 56.25%; 
                 height:0; 
                 overflow:hidden;
                 margin-bottom: 20px;
             }
-            @media screen and (min-width:480px) and (max-width:750px) {
+            @media screen and (max-width:480px) {
                 .js-added-map {
-                    padding-bottom: 66.667%; 
+                    padding-bottom: 75%;
                 }
             }
-            @media screen and (min-width:750px) {
+            @media screen and (max-width:750px) {
                 .js-added-map {
-                    padding-bottom: 56.25%;
+                    padding-bottom: 66.667%; 
                 }
             }
         `; 
@@ -833,16 +833,16 @@ if (locationURL.includes('detail')) {
     //レスポンシブ
     //=================================================================
     //ブレイクポイント
-    const mediaQueryList = window.matchMedia('(min-width:750px)');
+    const mediaQueryList = window.matchMedia('(max-width:750px)');
     //regist listener
     mediaQueryList.addEventListener('change', listener);
     listener(mediaQueryList);
     // listener
     function listener (event) {
         if (event.matches) {
-            // PC
-        } else {
             // SP
+        } else {
+            // PC
         };
     };
     //=================================================================
