@@ -407,10 +407,25 @@ if (locationURL.includes('detail')) {
     //=================================================================
     //お問い合わせボタン
     //=================================================================
-    const inquiry = (() => {
+    //上部
+    const inquiry_1 = (() => {
         const inquiry_div = create_Element('div',[
             {class:'js-added-inquiry'},
-            {id:'inquiry'}
+            {id:'inquiry-1'}
+        ]);
+        const inquiry_button = create_Element('a',[
+            {href:''}
+        ]);
+        inquiry_button.textContent = 'お問い合わせ';
+        inquiry_div.appendChild(inquiry_button);
+        
+        return inquiry_div;
+    })();
+    //下部
+    const inquiry_2 = (() => {
+        const inquiry_div = create_Element('div',[
+            {class:'js-added-inquiry'},
+            {id:'inquiry-2'}
         ]);
         const inquiry_button = create_Element('a',[
             {href:''}
