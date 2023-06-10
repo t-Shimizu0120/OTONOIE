@@ -598,11 +598,21 @@ if (locationURL.includes('detail')) {
             #share-1 {
                 display:block !important;
                 width: 31.3% !important;
-                margin-bottom:0.5rem;
+                margin-bottom:0.8rem;
             }
             .js-added-qrcode {
                 margin-bottom:0.5rem;
             }
+            .js-added-inquiry > a {
+                display:block;
+                background:#ffb911;
+                color:#ffffff;
+                text-decoration:none;
+                text-align:center;
+                font-weight:bold;
+                padding:1.2rem;
+            }
+            
             .js-added-line {
                 display:block;
                 margin-bottom:0.5rem;
@@ -618,15 +628,6 @@ if (locationURL.includes('detail')) {
                 font-weight:bold;
             }
             
-            .js-added-inquiry > a {
-                display:block;
-                background:#ffb911;
-                color:#ffffff;
-                text-decoration:none;
-                text-align:center;
-                font-weight:bold;
-                padding:1.2rem;
-            }
             @media screen and (max-width:750px) {
                 #share-1 {
                     display:none !important;
