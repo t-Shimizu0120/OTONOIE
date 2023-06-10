@@ -502,13 +502,9 @@ if (locationURL.includes('detail')) {
             qrcode_table.querySelector('td').removeChild(qrcode_table.querySelector('ul'));
             qrcode_table.querySelector('td').appendChild(qr_img);
             //-----------------------------------------------------------------------
-            //表示幅で処理を分岐
-            if (window.matchMedia('(min-width:750px)').matches) {
-                qr_div.appendChild(qrcode_table);
-            } else {
-                qr_div.appendChild(qr_button);
-                qr_div.appendChild(qr_popover);
-            };
+            qr_div.appendChild(qrcode_table);
+            qr_div.appendChild(qr_button);
+            qr_div.appendChild(qr_popover);
             
             return qr_div;
         })();
@@ -813,8 +809,6 @@ if (locationURL.includes('detail')) {
         };
     };
     //============================================================================
-    
-    
     
 } else if (locationURL.includes('property')) {
 } else {
