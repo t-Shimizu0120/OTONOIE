@@ -607,6 +607,7 @@ if (locationURL.includes('detail')) {
                 display:block;
                 background:#ffb911;
                 color:#ffffff;
+                font-size:2rem;
                 text-decoration:none;
                 text-align:center;
                 font-weight:bold;
@@ -614,18 +615,17 @@ if (locationURL.includes('detail')) {
             }
             
             .js-added-line {
-                display:block;
                 margin-bottom:0.5rem;
             }
             .js-added-line > a {
                 display:block;
-                padding:0.8rem;
                 background:#06c755;
-                font-size:1.6rem;
                 color:#ffffff;
+                font-size:1.6rem;
                 text-decoration:none;
                 text-align:center;
                 font-weight:bold;
+                padding:0.8rem;
             }
             
             @media screen and (max-width:750px) {
