@@ -613,17 +613,14 @@ if (locationURL.includes('detail')) {
                 text-align:center;
                 font-weight:bold;
             }
-            .js-added-inquiry {
-                background:#ffb911;
-            }
             .js-added-inquiry > a {
                 display:block;
-                padding:1.2rem;
-                font-size:1.8rem;
+                background:#ffb911;
                 color:#ffffff;
                 text-decoration:none;
                 text-align:center;
                 font-weight:bold;
+                padding:1.2rem;
             }
             @media screen and (max-width:750px) {
                 #share-1 {
