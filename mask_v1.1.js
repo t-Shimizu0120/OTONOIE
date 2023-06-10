@@ -610,7 +610,7 @@ if (locationURL.includes('detail')) {
                 text-decoration:none;
                 text-align:center;
                 font-weight:bold;
-                font-size:1.8rem;
+                font-size:1.6rem;
                 padding:1.4rem;
             }
             
@@ -631,6 +631,10 @@ if (locationURL.includes('detail')) {
             @media screen and (max-width:750px) {
                 #share-1 {
                     display:none !important;
+                }
+                .js-added-inquiry > a {
+                    font-size:1.8rem;
+                    padding:1.4rem;
                 }
             }
         `; 
