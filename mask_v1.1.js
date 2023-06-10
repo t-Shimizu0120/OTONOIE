@@ -500,7 +500,7 @@ if (locationURL.includes('detail')) {
                         }
                         #qrcode-table > tbody > tr > td {
                             border:0 !important;
-                            padding:3px !important;
+                            padding:0.5rem !important;
                             text-align:center !important;
                             background-color:#dddddd !important;
                         }
