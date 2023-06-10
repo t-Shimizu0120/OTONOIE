@@ -462,6 +462,19 @@ if (locationURL.includes('detail')) {
                 {alt:'qrcode'}
             ]);
             qr_img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=75x75&margin=3`;
+            //----------------------------------sp(幅750未満)-----------------------------
+            //QRポップオーバー作成
+            const qr_button = create_Element('button',[
+                {popovertarget:'qrcode-popover'}
+            ]);
+            qr_button.textContent = 'QRコードを表示';
+            const qr_popover = create_Element('div',[
+                {id:'qrcode-popover'},
+                {popover:''}
+            ]);
+            qr_popover.appendChild(qr_img);
+            //---------------------------------------------------------------------------
+            //----------------------------------pc(幅750以上)-----------------------------
             //QRコードテーブル作成
             const qrcode_table = new AddTable(
                 {
@@ -488,8 +501,14 @@ if (locationURL.includes('detail')) {
             );
             qrcode_table.querySelector('td').removeChild(qrcode_table.querySelector('ul'));
             qrcode_table.querySelector('td').appendChild(qr_img);
-            
-            qr_div.appendChild(qrcode_table);
+            //-----------------------------------------------------------------------
+            //表示幅で処理を分岐
+            if (window.matchMedia('(min-width:750px)').matches) {
+                qr_div.appendChild(qrcode_table);
+            } else {
+                qr_div.appendChild(qr_button);
+                qr_div.appendChild(qr_popover);
+            };
             
             return qr_div;
         })();
