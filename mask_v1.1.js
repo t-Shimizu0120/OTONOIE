@@ -597,7 +597,7 @@ if (locationURL.includes('detail')) {
         shareStyle.textContent = `
             #share-1 {
                 display:block !important;
-                width: 25% !important;
+                width: 31.3% !important;
                 margin-bottom:0.5rem;
             }
             .js-added-qrcode {
