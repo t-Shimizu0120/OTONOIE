@@ -446,9 +446,15 @@ if (locationURL.includes('detail')) {
         const apartmentCode = document.querySelector('p.code').textContent.match(/[0-9]+$/)[0];
         const detailPageUrl = 'https://www.otonoie.net/detail/index.html?number=' + apartmentCode;
         //シェア
-        const share = create_Element('div',[
-                {class:'js-added-share'},
-                {id:'share'}
+        //上部
+        const share_1 = create_Element('div',[
+                {class:'js-added-share-1'},
+                {id:'share-1'}
+        ]);
+        //下部
+        const share_2 = create_Element('div',[
+                {class:'js-added-share-2'},
+                {id:'share-2'}
         ]);
         //QRコード
         const share_Qr = (() => {
