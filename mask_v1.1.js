@@ -596,7 +596,7 @@ if (locationURL.includes('detail')) {
         shareStyle.setAttribute('id','share-style');
         shareStyle.textContent = `
             #share-1 {
-                width: 125px;
+                width: 25%;
                 height:auto;
             }
             .js-added-qrcode {
