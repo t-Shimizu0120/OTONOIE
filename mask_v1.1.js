@@ -542,7 +542,6 @@ if (locationURL.includes('detail')) {
             
             return qr_div;
         })();
-        share_2.appendChild(share_Qr_2);
         //LINE
         const share_Line = (() => {
             const line_div = create_Element('div',[
@@ -563,7 +562,8 @@ if (locationURL.includes('detail')) {
         
             return line_div;
         })();
-        share.appendChild(share_Line);
+        share_2.appendChild(share_Line);
+        share_2.appendChild(share_Qr_2);
         //メール
         //const share_Mail = (() => {
             //const mail_Subject = '%E3%80%90%E3%81%8A%E9%83%A8%E5%B1%8B%E6%83%85%E5%A0%B1%E3%80%91';
@@ -588,7 +588,8 @@ if (locationURL.includes('detail')) {
         //})();
         //share.appendChild(share_Mail);
         //お問い合わせ
-        share.appendChild(inquiry);
+        share_1.appendChild(inquiry_1);
+        share_2.appendChild(inquiry_2);
         //style設定
         const headElm = document.querySelector('head');
         const shareStyle = document.createElement('style');
