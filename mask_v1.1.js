@@ -500,7 +500,7 @@ if (locationURL.includes('detail')) {
                         }
                         #qrcode-table > tbody > tr > td {
                             border:0 !important;
-                            padding:0.5rem !important;
+                            padding:0.8rem !important;
                             text-align:center !important;
                             background-color:#dddddd !important;
                         }
@@ -597,7 +597,7 @@ if (locationURL.includes('detail')) {
         shareStyle.textContent = `
             #share-1 {
                 display:block !important;
-                width:30% !important;
+                width:31.3% !important;
                 margin-bottom:0.8rem;
             }
             .js-added-qrcode {
