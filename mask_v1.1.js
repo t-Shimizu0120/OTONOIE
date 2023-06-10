@@ -614,7 +614,7 @@ if (locationURL.includes('detail')) {
                 font-weight:bold;
             }
             .js-added-inquiry {
-                background:#ff9e25;
+                background:#ffb911;
             }
             .js-added-inquiry > a {
                 display:block;
