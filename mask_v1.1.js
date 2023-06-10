@@ -634,7 +634,7 @@ if (locationURL.includes('detail')) {
                 }
                 .js-added-inquiry > a {
                     font-size:1.8rem;
-                    padding:1.4rem;
+                    padding:1.2rem;
                 }
             }
         `; 
