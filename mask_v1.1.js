@@ -463,15 +463,59 @@ if (locationURL.includes('detail')) {
         //シェア
         //上部
         const share_1 = create_Element('div',[
-                {class:'js-added-share-1'},
+                {class:'js-added-share'},
                 {id:'share-1'}
         ]);
         //下部
         const share_2 = create_Element('div',[
-                {class:'js-added-share-2'},
+                {class:'js-added-share'},
                 {id:'share-2'}
         ]);
         //QRコード
+        //上部
+        const share_Qr_1 = (() => {
+            const qr_div = create_Element('div',[
+                {class:'js-added-qrcode'},
+                {id:'share-qrcode-1'}
+            ]);
+            //QRコード生成
+            const qr_img = create_Element('img',[
+                {title:'qrcode'},
+                {alt:'qrcode'}
+            ]);
+            qr_img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=75x75&margin=3`;
+            //QRコードテーブル作成
+            const qrcode_table = new AddTable(
+                {
+                    contents_Title:'',
+                    table_BaseId:'qrcode',
+                    table_Contents:[[{th:'携帯表示用QRコード'},{td:['']}]],
+                    add_Styles:`
+                        #qrcode-table {
+                            border:0 !important;
+                        }
+                        #qrcode-table > tbody > tr > th {
+                            border:0 !important;
+                            font-size:1.2rem !important;
+                        }
+                        #qrcode-table > tbody > tr > td {
+                            border:0 !important;
+                            padding:3px !important;
+                            text-align:center !important;
+                            background-color:#dddddd !important;
+                        }
+                    `, 
+                    add_To_Selector:''
+                }
+            );
+            qrcode_table.querySelector('td').removeChild(qrcode_table.querySelector('ul'));
+            qrcode_table.querySelector('td').appendChild(qr_img);
+            
+            return qr_div;
+        })();
+        share_1.appendChild(share_Qr_1);
+        
+        
         const share_Qr = (() => {
             const qr_div = create_Element('div',[
                 {class:'js-added-qrcode'},
