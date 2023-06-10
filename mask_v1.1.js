@@ -607,7 +607,7 @@ if (locationURL.includes('detail')) {
                 display:block;
                 background:#ffb911;
                 color:#ffffff;
-                font-size:2rem;
+                font-size:1.8rem;
                 text-decoration:none;
                 text-align:center;
                 font-weight:bold;
