@@ -596,8 +596,7 @@ if (locationURL.includes('detail')) {
         shareStyle.setAttribute('id','share-style');
         shareStyle.textContent = `
             #share-1 {
-                width: 25%;
-                height:auto;
+                display:none;
             }
             .js-added-qrcode {
                 display:none !important;
@@ -629,6 +628,10 @@ if (locationURL.includes('detail')) {
                 font-weight:bold;
             }
             @media screen and (min-width:750px) {
+                #share-1 {
+                    width: 25%;
+                    height:auto;
+                }
                 .js-added-qrcode {
                     display:block !important;
                     margin-bottom:0.5rem;
