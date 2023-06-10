@@ -510,6 +510,7 @@ if (locationURL.includes('detail')) {
             );
             qrcode_table.querySelector('td').removeChild(qrcode_table.querySelector('ul'));
             qrcode_table.querySelector('td').appendChild(qr_img);
+            qr_div.appendChild(qrcode_table);
             
             return qr_div;
         })();
@@ -567,7 +568,6 @@ if (locationURL.includes('detail')) {
             qrcode_table.querySelector('td').removeChild(qrcode_table.querySelector('ul'));
             qrcode_table.querySelector('td').appendChild(qr_img);
             //-----------------------------------------------------------------------
-            qr_div.appendChild(qrcode_table);
             qr_div.appendChild(qr_button);
             qr_div.appendChild(qr_popover);
             
