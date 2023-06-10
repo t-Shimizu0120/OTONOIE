@@ -615,10 +615,17 @@ if (locationURL.includes('detail')) {
         `; 
         headElm.appendChild(shareStyle);
         
-        if (window.matchMedia('(min-width:750px)').matches) {
-            document.querySelector('div.detail_l').appendChild(share);
-        } else {
-            document.querySelector('div.detail_btm').appendChild(share);
+        // listener
+        function listener (event) {
+            if (event.matches) {
+                // PC
+                document.querySelector('div.detail_btm').removeChild(share);
+                document.querySelector('div.detail_l').appendChild(share);
+            } else {
+                // SP
+                document.querySelector('div.detail_l').removeChild(share);
+                document.querySelector('div.detail_btm').appendChild(share);
+            };
         };
     })();
     //----------------------------------------------------------------------------
