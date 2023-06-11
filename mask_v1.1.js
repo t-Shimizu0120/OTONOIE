@@ -663,10 +663,10 @@ if (locationURL.includes('detail')) {
                 display:block !important;
                 width:66% !important;
                 background-color:#dddddd;
-                padding:0.8rem 0.8rem 6.4rem 0.8rem;
+                padding:0.8rem;
                 margin: 0 auto;
             }
-            .js-added-qrcode {
+            .js-added-inquiry {
                 margin-bottom:0.5rem;
             }
             .js-added-inquiry > a {
@@ -682,13 +682,36 @@ if (locationURL.includes('detail')) {
             .js-added-inquiry > a:hover {
                 opacity:.6;
             }
+            .js-added-inquiry-tel {
+                text-align: center;
+                background: none;
+            }
+            .js-added-inquiry-tel > .tel-number {
+                font-weight:bold;
+                color:#000;
+            }
+            #inquiry-tel-1 > .tel-number {
+                font-size:1.6rem;
+            }
+            #inquiry-tel-1 > .tel-time {
+                font-size:1rem;
+            }
+            #inquiry-tel-2 > .tel-number {
+                font-size:2rem;
+            }
+            .js-added-qrcode {
+                margin-bottom:0.5rem;
+            }
             .js-added-line {
                 display:none;
             }
-            
             @media screen and (max-width:750px) {
                 #share-1 {
                     display:none !important;
+                }
+                .js-added-inquiry > a {
+                    font-size:1.8rem;
+                    padding:1.2rem;
                 }
                 .js-added-line {
                     display:block;
@@ -703,10 +726,6 @@ if (locationURL.includes('detail')) {
                     text-align:center;
                     font-weight:bold;
                     padding:0.8rem;
-                }
-                .js-added-inquiry > a {
-                    font-size:1.8rem;
-                    padding:1.2rem;
                 }
             }
         `; 
