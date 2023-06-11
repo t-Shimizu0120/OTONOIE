@@ -666,6 +666,8 @@ if (locationURL.includes('detail')) {
             }
             #share-2 {
                 display:flex; !important;
+                display:-webkit-flex;
+                display :-ms-flexbox;
                 width:100% !important;
                 background-color:#dddddd;
                 padding:0.8rem;
