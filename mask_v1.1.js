@@ -604,8 +604,8 @@ if (locationURL.includes('detail')) {
                 display:block !important;
                 width:66% !important;
                 background-color:#dddddd;
-                margin-bottom:0.8rem;
                 padding:0.8rem 0.8rem 6.4rem 0.8rem;
+                margin: 0 auto;
             }
             .js-added-qrcode {
                 margin-bottom:0.5rem;
