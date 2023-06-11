@@ -422,8 +422,9 @@ if (locationURL.includes('detail')) {
     
     
     //=================================================================
-    //お問い合わせボタン
+    //お問い合わせ
     //=================================================================
+    //--------------------------------フォーム--------------------------
     //上部
     const inquiry_1 = (() => {
         const inquiry_div = create_Element('div',[
@@ -452,8 +453,47 @@ if (locationURL.includes('detail')) {
         
         return inquiry_div;
     })();
-    
-    
+    //-----------------------------------------------------------------
+    //--------------------------------電話-----------------------------
+    //上部
+    const inquiry_Tel_1 = (() => {
+        const inquiry_Tel_div = create_Element('div',[
+            {class:'js-added-inquiry-tel'},
+            {id:'inquiry-tel-1'}
+        ]);
+        const inquiry_Tel_p_Number = create_Element('p',[
+            {class:'tel-number'}
+        ]);
+        inquiry_Tel_p_Number.textContent = 'TEL:03-5948-5411';
+        inquiry_Tel_div.appendChild(inquiry_Tel_p_Number);
+        const inquiry_Tel_p_Time = create_Element('p',[
+            {class:'tel-time'}
+        ]);
+        inquiry_Tel_p_Time.textContent = '受付時間：10：00～17：00（水曜定休）';
+        inquiry_Tel_div.appendChild(inquiry_Tel_p_Time);
+        
+        return inquiry_Tel_div;
+    })();
+    //下部
+    const inquiry_Tel_2 = (() => {
+        const inquiry_Tel_div = create_Element('div',[
+            {class:'js-added-inquiry-tel'},
+            {id:'inquiry-tel-2'}
+        ]);
+        const inquiry_Tel_p_Number = create_Element('p',[
+            {class:'tel-number'}
+        ]);
+        inquiry_Tel_p_Number.textContent = 'TEL:03-5948-5411';
+        inquiry_Tel_div.appendChild(inquiry_Tel_p_Number);
+        const inquiry_Tel_p_Time = create_Element('p',[
+            {class:'tel-time'}
+        ]);
+        inquiry_Tel_p_Time.textContent = '受付時間：10：00～17：00（水曜定休）';
+        inquiry_Tel_div.appendChild(inquiry_Tel_p_Time);
+        
+        return inquiry_Tel_div;
+    })();
+    //-----------------------------------------------------------------
     
     //============================================================================
     //layout
@@ -606,7 +646,9 @@ if (locationURL.includes('detail')) {
         //share.appendChild(share_Mail);
         //お問い合わせ
         share_1.appendChild(inquiry_1);
+        share_1.appendChild(inquiry_Tel_1);
         share_2.appendChild(inquiry_2);
+        share_2.appendChild(inquiry_Tel_2);
         //style設定
         const headElm = document.querySelector('head');
         const shareStyle = document.createElement('style');
