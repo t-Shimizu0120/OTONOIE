@@ -637,7 +637,9 @@ if (locationURL.includes('detail')) {
                 font-size:1.6rem;
                 padding:1.4rem;
             }
-            
+            .js-added-inquiry > a:hover {
+                opacity:.6;
+            }
             .js-added-line {
                 display:none;
             }
