@@ -179,6 +179,23 @@ if (locationURL.includes('detail')) {
         };
 
     };
+    //const ********** = new AddTable(
+        //{
+            //contents_Title:'',
+            //table_BaseId:'',
+            //table_Contents:[
+                  //[{th:''},{td:['']}], ※行
+                  //[{th:''},{td:['']}] ※行
+            //],
+            //add_Styles:`
+            //`, 
+            //add_To_Selector:''
+       //},
+       //*******,
+       //*******
+    //);
+    
+    
     
     //■タブコンテンツ
     class AddTabContents {
