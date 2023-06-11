@@ -544,7 +544,7 @@ if (locationURL.includes('detail')) {
                 {title:'qrcode'},
                 {alt:'qrcode'}
             ]);
-            qr_img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=75x75&margin=3`;
+            qr_img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=65x65&margin=3`;
             //QRコードテーブル作成
             const qrcode_table = new AddTable(
                 {
@@ -562,7 +562,7 @@ if (locationURL.includes('detail')) {
                         }
                         #qrcode-table > tbody > tr > td {
                             border:0 !important;
-                            padding:0.8rem !important;
+                            padding:0.4rem !important;
                             text-align:end !important;
                             background-color:#dddddd !important;
                         }
@@ -705,10 +705,10 @@ if (locationURL.includes('detail')) {
                 font-size:0.8rem;
             }
             #inquiry-tel-2 > .tel-number {
-                font-size:2rem;
+                font-size:1.8rem;
             }
             #inquiry-tel-2 > .tel-time {
-                
+                font-size:1rem;
             }
             .js-added-qrcode {
                 margin-bottom:0.5rem;
