@@ -665,7 +665,7 @@ if (locationURL.includes('detail')) {
                 margin-bottom:0.8rem;
             }
             #share-2 {
-                display:block !important;
+                display:flex; !important;
                 width:100% !important;
                 background-color:#dddddd;
                 padding:0.8rem;
@@ -703,6 +703,8 @@ if (locationURL.includes('detail')) {
             }
             #inquiry-tel-1 > .tel-time {
                 font-size:0.8rem;
+            }
+            #inquiry-tel-2　{
             }
             #inquiry-tel-2 > .tel-number {
                 font-size:1.8rem;
