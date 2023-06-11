@@ -461,6 +461,8 @@ if (locationURL.includes('detail')) {
             {class:'js-added-inquiry-tel'},
             {id:'inquiry-tel-1'}
         ]);
+        const inquiry_Tel_hr = create_Element('hr',[]);
+        inquiry_Tel_div.appendChild(inquiry_Tel_hr);
         const inquiry_Tel_p_Number = create_Element('p',[
             {class:'tel-number'}
         ]);
@@ -480,6 +482,8 @@ if (locationURL.includes('detail')) {
             {class:'js-added-inquiry-tel'},
             {id:'inquiry-tel-2'}
         ]);
+        const inquiry_Tel_hr = create_Element('hr',[]);
+        inquiry_Tel_div.appendChild(inquiry_Tel_hr);
         const inquiry_Tel_p_Number = create_Element('p',[
             {class:'tel-number'}
         ]);
@@ -690,14 +694,20 @@ if (locationURL.includes('detail')) {
                 font-weight:bold;
                 color:#000;
             }
+            .js-added-inquiry-tel > .tel-time {
+                color:#000;
+            }
             #inquiry-tel-1 > .tel-number {
                 font-size:1.6rem;
             }
             #inquiry-tel-1 > .tel-time {
-                font-size:1rem;
+                font-size:0.8rem;
             }
             #inquiry-tel-2 > .tel-number {
                 font-size:2rem;
+            }
+            #inquiry-tel-2 > .tel-time {
+                
             }
             .js-added-qrcode {
                 margin-bottom:0.5rem;
