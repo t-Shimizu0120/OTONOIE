@@ -666,7 +666,7 @@ if (locationURL.includes('detail')) {
             }
             #share-2 {
                 display:block !important;
-                width:66% !important;
+                width:100% !important;
                 background-color:#dddddd;
                 padding:0.8rem;
                 margin: 0 auto;
