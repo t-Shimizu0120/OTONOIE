@@ -554,6 +554,7 @@ if (locationURL.includes('detail')) {
                     add_Styles:`
                         #qrcode-table {
                             border:0 !important;
+                            width:100% !important;
                         }
                         #qrcode-table > tbody > tr > th {
                             border:0 !important;
@@ -562,7 +563,7 @@ if (locationURL.includes('detail')) {
                         #qrcode-table > tbody > tr > td {
                             border:0 !important;
                             padding:0.8rem !important;
-                            text-align:center !important;
+                            text-align:end !important;
                             background-color:#dddddd !important;
                         }
                     `, 
@@ -660,7 +661,7 @@ if (locationURL.includes('detail')) {
         shareStyle.textContent = `
             #share-1 {
                 display:block !important;
-                width:31.8% !important;
+                width:33% !important;
                 margin-bottom:0.8rem;
             }
             #share-2 {
