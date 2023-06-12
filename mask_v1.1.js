@@ -721,7 +721,7 @@ if (locationURL.includes('detail')) {
                 display:-webkit-box;
                 display:-webkit-flex;
                 display :-ms-flexbox;
-                flex-flow:column nowrap;
+                flex-flow:row wrap;
                 justify-content:space-between;
                 flex-grow:1;
             }
