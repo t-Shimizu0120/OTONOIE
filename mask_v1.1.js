@@ -778,8 +778,15 @@ if (locationURL.includes('detail')) {
             #inquiry-tel-2 > .tel-time {
                 font-size:1rem;
             }
-            #inquiry-tel-2 > a {
-                
+            .js-added-inquiry-container > a {
+                display:block;
+                background:#26aaff;
+                color:#ffffff;
+                text-decoration:none;
+                text-align:center;
+                font-weight:bold;
+                font-size:1.6rem;
+                padding:0.8rem;
             }
             .js-added-qrcode {
                 margin-bottom:0.5rem;
