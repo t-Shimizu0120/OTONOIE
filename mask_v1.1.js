@@ -713,8 +713,7 @@ if (locationURL.includes('detail')) {
                 display :-ms-flexbox;
                 flex-flow:column nowrap;
                 justify-content:space-between;
-                flex-grow: 1;
-                padding:0 1.6rem;
+                flex-grow:1;
             }
             .js-added-inquiry {
                 margin-bottom:0.5rem;
@@ -771,7 +770,7 @@ if (locationURL.includes('detail')) {
             }
             #share-qrcode-2-pc {
                 margin-bottom:0 !important;
-                margin-left:1.6rem;
+                margin-left:3.2rem;
                 display:flex !important;
                 display:-webkit-box;
                 display:-webkit-flex;
