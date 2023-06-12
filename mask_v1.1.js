@@ -626,11 +626,11 @@ if (locationURL.includes('detail')) {
                 {alt:'qrcode'}
             ]);
             qr_img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=65x65&margin=3`;
-            const qr_span = create_Element('span',[
+            const qr_p = create_Element('p',[
             ]);
-            qr_span.textContent = '携帯表示用QRコード';
+            qr_p.textContent = '携帯表示用QRコード';
             qr_div.appendChild(qr_img);
-            qr_div.appendChild(qr_span);
+            qr_div.appendChild(qr_p);
             
             return qr_div;
         })();
