@@ -717,7 +717,7 @@ if (locationURL.includes('detail')) {
                 display:-webkit-box;
                 display:-webkit-flex;
                 display :-ms-flexbox;
-                flex-flow:column wrap;
+                flex-flow:column nowrap;
                 justify-content:space-between;
                 flex-grow:1;
             }
@@ -761,12 +761,21 @@ if (locationURL.includes('detail')) {
             }
             #inquiry-tel-2{
                 width:100%;
+                display:flex !important;
+                display:-webkit-box;
+                display:-webkit-flex;
+                display :-ms-flexbox;
+                flex-flow:column wrap;
+                justify-content:space-between;
             }
             #inquiry-tel-2 > .tel-number {
                 font-size:1.8rem;
             }
             #inquiry-tel-2 > .tel-time {
                 font-size:1rem;
+            }
+            #inquiry-tel-2 > a {
+                height:100%;
             }
             .js-added-qrcode {
                 margin-bottom:0.5rem;
