@@ -822,6 +822,12 @@ if (locationURL.includes('detail')) {
                     font-size:1.8rem;
                     padding:1.2rem;
                 }
+                #inquiry-tel-2 > .tel-number {
+                    font-size:1.6rem;
+                }
+                #inquiry-tel-2 > .tel-time {
+                    font-size:0.8rem;
+                }
                 .js-added-inquiry-container > a {
                     display:block;
                     background:#26aaff;
