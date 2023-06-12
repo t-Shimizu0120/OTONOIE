@@ -497,15 +497,14 @@ if (locationURL.includes('detail')) {
         
         return inquiry_Tel_div;
     })();
-    //const inquiry_Tel_2 = (() => {
-        //const inquiry_Tel_button = create_Element('a',[
-            //{href:'tel:0359485411'}
-        //]);
-        //inquiry_Tel_button.textContent = '電話でお問い合わせ';
-        //inquiry_Tel_div.appendChild(inquiry_Tel_button);
+    const inquiry_Tel_Button = (() => {
+        const inquiry_Tel_button = create_Element('a',[
+            {href:'tel:0359485411'}
+        ]);
+        inquiry_Tel_button.textContent = '電話でお問い合わせ';
         
-        //return inquiry_Tel_div;
-    //})();
+        return inquiry_Tel_button;
+    })();
     //-----------------------------------------------------------------
     const inquiry_2_container = (() => {
         const inquiry_2_container_div = create_Element('div',[
@@ -513,6 +512,7 @@ if (locationURL.includes('detail')) {
             {id:'inquiry-container'}
         ]);
         inquiry_2_container_div.appendChild(inquiry_2);
+        inquiry_2_container_div.appendChild(inquiry_Tel_2);
         inquiry_2_container_div.appendChild(inquiry_Tel_2);
         return inquiry_2_container_div;
     })();
@@ -720,7 +720,7 @@ if (locationURL.includes('detail')) {
                 display:-webkit-box;
                 display:-webkit-flex;
                 display :-ms-flexbox;
-                flex-flow:column nowrap;
+                flex-flow:column wrap;
                 justify-content:space-between;
                 flex-grow:1;
             }
