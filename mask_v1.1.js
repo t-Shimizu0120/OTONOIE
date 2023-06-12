@@ -764,14 +764,14 @@ if (locationURL.includes('detail')) {
             #inquiry-tel-2　{
                 width:100%;
             }
-            #inquiry-tel-2 > .tel-number {
+            #inquiry-tel-2 > div > .tel-number {
                 font-size:1.8rem;
+            }
+            #inquiry-tel-2 > div > a {
+                display:none;
             }
             #inquiry-tel-2 > .tel-time {
                 font-size:1rem;
-            }
-            #inquiry-tel-2 > a {
-                display:none;
             }
             .js-added-qrcode {
                 margin-bottom:0.5rem;
