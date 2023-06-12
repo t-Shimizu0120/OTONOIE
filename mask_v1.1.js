@@ -501,7 +501,7 @@ if (locationURL.includes('detail')) {
         const inquiry_Tel_button = create_Element('a',[
             {href:'tel:0359485411'}
         ]);
-        inquiry_Tel_button.textContent = '電話でお問い合わせ';
+        inquiry_Tel_button.textContent = '電話をかける';
         
         return inquiry_Tel_button;
     })();
@@ -787,6 +787,9 @@ if (locationURL.includes('detail')) {
                 font-weight:bold;
                 font-size:1.6rem;
                 padding:0.8rem;
+            }
+            .js-added-inquiry-container > a:hover {
+                opacity:.6;
             }
             .js-added-qrcode {
                 margin-bottom:0.5rem;
