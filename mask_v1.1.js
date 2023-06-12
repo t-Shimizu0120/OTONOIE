@@ -769,6 +769,7 @@ if (locationURL.includes('detail')) {
                 display:none;
             }
             #share-qrcode-2-pc {
+                margin-bottom: 0 !important;
                 display:flex !important;
                 display:-webkit-box;
                 display:-webkit-flex;
