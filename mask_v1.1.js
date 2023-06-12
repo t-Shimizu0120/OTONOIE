@@ -513,7 +513,7 @@ if (locationURL.includes('detail')) {
         ]);
         inquiry_2_container_div.appendChild(inquiry_2);
         inquiry_2_container_div.appendChild(inquiry_Tel_2);
-        inquiry_2_container_div.appendChild(inquiry_Tel_2);
+        inquiry_2_container_div.appendChild(inquiry_Tel_Button);
         return inquiry_2_container_div;
     })();
     
