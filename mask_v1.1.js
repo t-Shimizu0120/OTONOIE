@@ -484,19 +484,11 @@ if (locationURL.includes('detail')) {
             {class:'js-added-inquiry-tel'},
             {id:'inquiry-tel-2'}
         ]);
-        const inquiry_Tel_div2 = create_Element('div',[
-        ]);
         const inquiry_Tel_p_Number = create_Element('p',[
             {class:'tel-number'}
         ]);
         inquiry_Tel_p_Number.textContent = 'TEL:03-5948-5411';
-        inquiry_Tel_div2.appendChild(inquiry_Tel_p_Number);
-        const inquiry_Tel_button = create_Element('a',[
-            {href:'tel:0359485411'}
-        ]);
-        inquiry_Tel_button.textContent = '電話でお問い合わせ';
-        inquiry_Tel_div2.appendChild(inquiry_Tel_button);
-        inquiry_Tel_div.appendChild(inquiry_Tel_div2);
+        inquiry_Tel_div.appendChild(inquiry_Tel_p_Number);
         const inquiry_Tel_p_Time = create_Element('p',[
             {class:'tel-time'}
         ]);
@@ -505,6 +497,15 @@ if (locationURL.includes('detail')) {
         
         return inquiry_Tel_div;
     })();
+    //const inquiry_Tel_2 = (() => {
+        //const inquiry_Tel_button = create_Element('a',[
+            //{href:'tel:0359485411'}
+        //]);
+        //inquiry_Tel_button.textContent = '電話でお問い合わせ';
+        //inquiry_Tel_div.appendChild(inquiry_Tel_button);
+        
+        //return inquiry_Tel_div;
+    //})();
     //-----------------------------------------------------------------
     const inquiry_2_container = (() => {
         const inquiry_2_container_div = create_Element('div',[
@@ -764,11 +765,8 @@ if (locationURL.includes('detail')) {
             #inquiry-tel-2　{
                 width:100%;
             }
-            #inquiry-tel-2 > div > .tel-number {
+            #inquiry-tel-2 > .tel-number {
                 font-size:1.8rem;
-            }
-            #inquiry-tel-2 > div > a {
-                display:none;
             }
             #inquiry-tel-2 > .tel-time {
                 font-size:1rem;
