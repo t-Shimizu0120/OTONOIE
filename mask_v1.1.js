@@ -768,8 +768,9 @@ if (locationURL.includes('detail')) {
                 display:-webkit-box;
                 display:-webkit-flex;
                 display :-ms-flexbox;
-                flex-flow:column wrap;
+                flex-flow:column nowrap;
                 justify-content:space-between;
+                align-items:center;
                 flex-grow:1;
             }
             #inquiry-tel-2 > .tel-number {
@@ -799,7 +800,7 @@ if (locationURL.includes('detail')) {
                 display :-ms-flexbox;
                 flex-flow:column nowrap;
                 justify-content:space-between;
-                align-items: center;
+                align-items:center;
             }
             #share-qrcode-2-pc > img {
                 width:80px;
