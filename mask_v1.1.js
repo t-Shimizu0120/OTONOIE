@@ -498,6 +498,17 @@ if (locationURL.includes('detail')) {
         return inquiry_Tel_div;
     })();
     //-----------------------------------------------------------------
+    const inquiry_2_container = (() => {
+        const inquiry_2_container_div = create_Element('div',[
+            {class:'js-added-inquiry-container'},
+            {id:'inquiry-container'}
+        ]);
+        inquiry_2_container_div.appendChild(inquiry_2);
+        inquiry_2_container_div.appendChild(inquiry_Tel_2);
+        return inquiry_2_container_div;
+    })();
+    
+    
     
     //============================================================================
     //layout
@@ -604,6 +615,11 @@ if (locationURL.includes('detail')) {
             
             return qr_div;
         })();
+        const share_Qr_1_clone = (() ={
+            share_Qr_1.cloneNode(true);
+            share_Qr_1.id += '-clone'
+            share_Qr_1.querySelector('table').id += '-clone'
+        })(); 
         //LINE
         const share_Line = (() => {
             const line_div = create_Element('div',[
@@ -652,8 +668,7 @@ if (locationURL.includes('detail')) {
         //お問い合わせ
         share_1.appendChild(inquiry_1);
         share_1.appendChild(inquiry_Tel_1);
-        share_2.appendChild(inquiry_2);
-        share_2.appendChild(inquiry_Tel_2);
+        share_2.appendChild(inquiry_2_container);
         //style設定
         const headElm = document.querySelector('head');
         const shareStyle = document.createElement('style');
@@ -665,13 +680,25 @@ if (locationURL.includes('detail')) {
                 margin-bottom:0.8rem;
             }
             #share-2 {
-                display:flex; !important;
+                display:flex !important;
+                display:-webkit-box;
                 display:-webkit-flex;
                 display :-ms-flexbox;
+                flex-flow:row wrap;
+                justify-content:space-around;
                 width:100% !important;
                 background-color:#dddddd;
                 padding:0.8rem;
                 margin: 0 auto;
+            }
+            .js-added-inquiry-container{
+                width:66%;
+                display:flex !important;
+                display:-webkit-box;
+                display:-webkit-flex;
+                display :-ms-flexbox;
+                flex-flow:column nowrap;
+                justify-content:space-around;
             }
             .js-added-inquiry {
                 margin-bottom:0.5rem;
@@ -700,6 +727,11 @@ if (locationURL.includes('detail')) {
             .js-added-inquiry-tel > .tel-time {
                 color:#000;
             }
+            #inquiry-2 {
+                width:100%;
+            }
+            #inquiry-tel-1　{
+            }
             #inquiry-tel-1 > .tel-number {
                 font-size:1.6rem;
             }
@@ -707,6 +739,7 @@ if (locationURL.includes('detail')) {
                 font-size:0.8rem;
             }
             #inquiry-tel-2　{
+                width:100%;
             }
             #inquiry-tel-2 > .tel-number {
                 font-size:1.8rem;
@@ -716,6 +749,9 @@ if (locationURL.includes('detail')) {
             }
             .js-added-qrcode {
                 margin-bottom:0.5rem;
+            }
+            #share-qrcode-2 {
+                display:none;
             }
             .js-added-line {
                 display:none;
