@@ -484,6 +484,11 @@ if (locationURL.includes('detail')) {
             {class:'js-added-inquiry-tel'},
             {id:'inquiry-tel-2'}
         ]);
+        const inquiry_Tel_button = create_Element('a',[
+            {href:'tel:0359485411'}
+        ]);
+        inquiry_Tel_button.textContent = '電話でお問い合わせ';
+        inquiry_Tel_div.appendChild(inquiry_Tel_button);
         const inquiry_Tel_p_Number = create_Element('p',[
             {class:'tel-number'}
         ]);
@@ -494,11 +499,6 @@ if (locationURL.includes('detail')) {
         ]);
         inquiry_Tel_p_Time.textContent = '受付時間：10：00～17：00（水曜定休）';
         inquiry_Tel_div.appendChild(inquiry_Tel_p_Time);
-        const inquiry_Tel_button = create_Element('a',[
-            {href:'tel:0359485411'}
-        ]);
-        inquiry_Tel_button.textContent = '電話でお問い合わせ';
-        inquiry_Tel_div.appendChild(inquiry_Tel_button);
         
         return inquiry_Tel_div;
     })();
