@@ -764,7 +764,6 @@ if (locationURL.includes('detail')) {
                 font-size:0.8rem;
             }
             #inquiry-tel-2 {
-                width:100%;
                 display:flex !important;
                 display:-webkit-box;
                 display:-webkit-flex;
