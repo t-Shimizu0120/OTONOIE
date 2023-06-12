@@ -779,14 +779,7 @@ if (locationURL.includes('detail')) {
                 font-size:1rem;
             }
             .js-added-inquiry-container > a {
-                display:block;
-                background:#26aaff;
-                color:#ffffff;
-                text-decoration:none;
-                text-align:center;
-                font-weight:bold;
-                font-size:1.6rem;
-                padding:0.8rem;
+                display:none;
             }
             .js-added-inquiry-container > a:hover {
                 opacity:.6;
@@ -827,6 +820,19 @@ if (locationURL.includes('detail')) {
                 .js-added-inquiry > a {
                     font-size:1.8rem;
                     padding:1.2rem;
+                }
+                .js-added-inquiry-container > a {
+                    display:block;
+                    background:#26aaff;
+                    color:#ffffff;
+                    text-decoration:none;
+                    text-align:center;
+                    font-weight:bold;
+                    font-size:1.6rem;
+                    padding:0.8rem;
+                }
+                #share-qrcode-2-pc {
+                    display:none;
                 }
                 .js-added-line {
                     display:block;
