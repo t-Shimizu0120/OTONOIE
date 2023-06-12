@@ -625,7 +625,7 @@ if (locationURL.includes('detail')) {
                 {title:'qrcode'},
                 {alt:'qrcode'}
             ]);
-            qr_img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=65x65&margin=3`;
+            qr_img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=80x80&margin=3`;
             const qr_p = create_Element('p',[
             ]);
             qr_p.textContent = '携帯表示用QRコード';
@@ -713,7 +713,8 @@ if (locationURL.includes('detail')) {
                 display:-webkit-flex;
                 display :-ms-flexbox;
                 flex-flow:column nowrap;
-                justify-content:space-around;
+                justify-content:space-between;
+                margin-bottom:0.5rem;
             }
             .js-added-inquiry {
                 margin-bottom:0.5rem;
@@ -767,6 +768,25 @@ if (locationURL.includes('detail')) {
             }
             #share-qrcode-2 {
                 display:none;
+            }
+            #share-qrcode-2-pc {
+                margin-bottom:0.5rem;
+                display:flex !important;
+                display:-webkit-box;
+                display:-webkit-flex;
+                display :-ms-flexbox;
+                flex-flow:column nowrap;
+                justify-content:space-between;
+                align-items: center;
+            }
+            #share-qrcode-2-pc > img {
+                width:80px;
+                height:80px;
+            }
+            #share-qrcode-2-pc > p {
+                font-size:0.8rem;
+                color:#000;
+                margin-top:0.5rem;
             }
             .js-added-line {
                 display:none;
