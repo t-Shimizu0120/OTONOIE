@@ -714,6 +714,7 @@ if (locationURL.includes('detail')) {
                 flex-flow:column nowrap;
                 justify-content:space-between;
                 flex-grow: 1;
+                padding:0 1.6rem;
             }
             .js-added-inquiry {
                 margin-bottom:0.5rem;
