@@ -832,7 +832,7 @@ if (locationURL.includes('detail')) {
                     padding:0.8rem;
                 }
                 #share-qrcode-2-pc {
-                    display:none;
+                    display:none !important;
                 }
                 .js-added-line {
                     display:block;
