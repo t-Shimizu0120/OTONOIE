@@ -713,6 +713,7 @@ if (locationURL.includes('detail')) {
                 display :-ms-flexbox;
                 flex-flow:column nowrap;
                 justify-content:space-between;
+                flex-grow: 1;
             }
             .js-added-inquiry {
                 margin-bottom:0.5rem;
