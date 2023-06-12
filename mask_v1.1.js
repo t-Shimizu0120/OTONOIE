@@ -770,6 +770,7 @@ if (locationURL.includes('detail')) {
                 display :-ms-flexbox;
                 flex-flow:column wrap;
                 justify-content:space-between;
+                flex-grow:1;
             }
             #inquiry-tel-2 > .tel-number {
                 font-size:1.8rem;
