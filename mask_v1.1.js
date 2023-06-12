@@ -615,13 +615,25 @@ if (locationURL.includes('detail')) {
             
             return qr_div;
         })();
-        //const share_Qr_1_Clone = (() => {
-            //const share_Qr_1_clone = share_Qr_1.cloneNode(true);
-            //share_Qr_1_clone.id += '-clone';
-            //share_Qr_1_clone.querySelector('table').id += '-clone';
+        const share_Qr_2_pc = (() => {
+            const qr_div = create_Element('div',[
+                {class:'js-added-qrcode'},
+                {id:'share-qrcode-2-pc'}
+            ]);
+            //QRコード生成
+            const qr_img = create_Element('img',[
+                {title:'qrcode'},
+                {alt:'qrcode'}
+            ]);
+            qr_img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=65x65&margin=3`;
+            const qr_span = create_Element('span',[
+            ]);
+            qr_span.textContent = '携帯表示用QRコード';
+            qr_div.appendChild(qr_img);
+            qr_div.appendChild(qr_span);
             
-            //return share_Qr_1_clone;
-        //})();
+            return qr_div;
+        })();
         //LINE
         const share_Line = (() => {
             const line_div = create_Element('div',[
@@ -671,7 +683,7 @@ if (locationURL.includes('detail')) {
         share_1.appendChild(inquiry_1);
         share_1.appendChild(inquiry_Tel_1);
         share_2.appendChild(inquiry_2_container);
-        //share_2.appendChild(share_Qr_1_Clone);
+        share_2.appendChild(share_Qr_2_pc);
         //style設定
         const headElm = document.querySelector('head');
         const shareStyle = document.createElement('style');
