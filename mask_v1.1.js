@@ -828,7 +828,7 @@ if (locationURL.includes('detail')) {
                     text-decoration:none;
                     text-align:center;
                     font-weight:bold;
-                    font-size:1.6rem;
+                    font-size:1.4rem;
                     padding:0.8rem;
                 }
                 #share-qrcode-2-pc {
@@ -842,7 +842,7 @@ if (locationURL.includes('detail')) {
                     display:block;
                     background:#06c755;
                     color:#ffffff;
-                    font-size:1.6rem;
+                    font-size:1.4rem;
                     text-decoration:none;
                     text-align:center;
                     font-weight:bold;
