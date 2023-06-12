@@ -715,7 +715,7 @@ if (locationURL.includes('detail')) {
                 padding:0.8rem 1.6rem;
                 margin: 0 auto;
             }
-            .js-added-inquiry-container{
+            .js-added-inquiry-container {
                 display:flex !important;
                 display:-webkit-box;
                 display:-webkit-flex;
