@@ -700,14 +700,13 @@ if (locationURL.includes('detail')) {
                 display:-webkit-flex;
                 display :-ms-flexbox;
                 flex-flow:row wrap;
-                justify-content:space-around;
+                justify-content:space-between;
                 width:100% !important;
                 background-color:#dddddd;
-                padding:0.8rem;
+                padding:0.8rem 1.6rem;
                 margin: 0 auto;
             }
             .js-added-inquiry-container{
-                width:66%;
                 display:flex !important;
                 display:-webkit-box;
                 display:-webkit-flex;
@@ -769,7 +768,8 @@ if (locationURL.includes('detail')) {
                 display:none;
             }
             #share-qrcode-2-pc {
-                margin-bottom: 0 !important;
+                margin-bottom:0 !important;
+                margin-left:1.6rem;
                 display:flex !important;
                 display:-webkit-box;
                 display:-webkit-flex;
