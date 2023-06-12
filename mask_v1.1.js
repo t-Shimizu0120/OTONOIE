@@ -767,6 +767,9 @@ if (locationURL.includes('detail')) {
             #inquiry-tel-2 > .tel-time {
                 font-size:1rem;
             }
+            #inquiry-tel-2 > a {
+                display:none;
+            }
             .js-added-qrcode {
                 margin-bottom:0.5rem;
             }
