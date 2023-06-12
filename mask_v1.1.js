@@ -615,11 +615,13 @@ if (locationURL.includes('detail')) {
             
             return qr_div;
         })();
-        const share_Qr_1_clone = (() ={
-            share_Qr_1.cloneNode(true);
-            share_Qr_1.id += '-clone'
-            share_Qr_1.querySelector('table').id += '-clone'
-        })(); 
+        //const share_Qr_1_Clone = (() => {
+            //const share_Qr_1_clone = share_Qr_1.cloneNode(true);
+            //share_Qr_1_clone.id += '-clone';
+            //share_Qr_1_clone.querySelector('table').id += '-clone';
+            
+            //return share_Qr_1_clone;
+        //})();
         //LINE
         const share_Line = (() => {
             const line_div = create_Element('div',[
@@ -669,6 +671,7 @@ if (locationURL.includes('detail')) {
         share_1.appendChild(inquiry_1);
         share_1.appendChild(inquiry_Tel_1);
         share_2.appendChild(inquiry_2_container);
+        //share_2.appendChild(share_Qr_1_Clone);
         //style設定
         const headElm = document.querySelector('head');
         const shareStyle = document.createElement('style');
