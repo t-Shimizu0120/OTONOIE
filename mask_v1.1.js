@@ -762,7 +762,7 @@ if (locationURL.includes('detail')) {
             #inquiry-tel-1 > .tel-time {
                 font-size:0.8rem;
             }
-            #inquiry-tel-2　{
+            #inquiry-tel-2{
                 width:100%;
             }
             #inquiry-tel-2 > .tel-number {
