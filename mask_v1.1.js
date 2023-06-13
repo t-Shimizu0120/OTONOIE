@@ -556,6 +556,13 @@ if (locationURL.includes('detail')) {
             const contents_Id = {};
             contents_Id.id = object.popover_Contents + '-popover-contents';
             tab_Obj.content_Attrs.push(contents_Id);
+            const target_Id = object.popover_Contents + '-popover-contents';
+            const button_Target = {};
+            button_Target.popovertarget = target_Id;
+            tab_Obj.button_Attrs.push(button_Target);
+            const button_Close_Target = {};
+            button_Close_Target.popovertarget = target_Id;
+            tab_Obj.button_Close_Attrs.push(button_Close_Target);
             
             tab_Obj.add_To_Selector = object.add_To_Selector;
 
