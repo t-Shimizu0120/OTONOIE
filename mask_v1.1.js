@@ -538,12 +538,12 @@ if (locationURL.includes('detail')) {
             //ベースオブジェクト
             const tab_Obj = {
                 contents_Title:'',
-                tab_Contents:[],
-
-                div_Attrs:[{class:'js-added-tab-contents'}],
-                input_Attrs:[{type:'radio'},{name:'js-added-tab-input'}],
-                label_Attrs:[{class:'js-added-tab-label'}],
-                content_Attrs:[{class:'js-added-tab-content'}],
+                popover_Contents:'',
+                buttonText:'',
+                container_Attrs:[{class:'js-added-tab-contents'}],
+                button_Attrs:[{type:'radio'},{name:'js-added-tab-input'}],
+                content_Attrs:[{class:'js-added-tab-label'}],
+                button_Close_Attrs:[{class:'js-added-tab-content'}],
 
                 add_To_Selector:''
             };
