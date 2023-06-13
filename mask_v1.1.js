@@ -840,7 +840,7 @@ if (locationURL.includes('detail')) {
                 }
                 #share-qrcode-2 {
                     display:block;
-                    flex-grow:1;
+                    flex-basis:49%;
                 }
                 #share-qrcode-2 > button {
                     background:#3f3f3f;
@@ -857,7 +857,7 @@ if (locationURL.includes('detail')) {
                 .js-added-line {
                     display:block;
                     margin-bottom:0.5rem;
-                    flex-grow:1;
+                    flex-basis:49%;
                 }
                 .js-added-line > a {
                     display:block;
