@@ -423,7 +423,7 @@ if (locationURL.includes('detail')) {
     
     //■ポップオーバーコンテンツ
     class AddPopoverContents {
-        constructor (object,...args) {
+        constructor (object,args) {
             if(object.popover_Contents.length === 0) {
                 //コンテンツがない場合、nullを返す
                 return null;
@@ -442,22 +442,37 @@ if (locationURL.includes('detail')) {
                 
                 //コンテナ作成
                 const popoverContents_Container = document.createElement('div');
-                for (this.div_Attr of obj.div_Attrs) {
-                    const div_AttrName = Object.keys(this.div_Attr)[0];
-                    const div_AttrValue = this.div_Attr[div_AttrName];
-                    popoverContents_Container.setAttribute(div_AttrName,div_AttrValue);
+                for (this.container_Attr of obj.container_Attrs) {
+                    const container_AttrName = Object.keys(this.container_Attr)[0];
+                    const container_AttrValue = this.container_Attr[container_AttrName];
+                    popoverContents_Container.setAttribute(container_AttrName,container_AttrValue);
                 };
-                
-                //要素作成
-                let checkedJudge = false;
                 
                 //ボタン作成
                 const popover_Button = document.createElement('button');
+                popover_Button.textContent = obj.popoverButton_Text['buttonText']
                 for (this.button_Attr of obj.button_Attrs) {
                     const button_AttrName = Object.keys(this.button_Attr)[0];
-                    const button_AttrValue = this.div_Attr[button_AttrName];
+                    const button_AttrValue = this.button_Attr[button_AttrName];
                     popover_Button.setAttribute(button_AttrName,button_AttrValue);
                 };
+                
+                //要素作成
+                const popover_Content = document.createElement('div');
+                for (this.content_Attr of obj.content_Attrs) {
+                    const content_AttrName = Object.keys(this.content_Attr)[0];
+                    const content_AttrValue = this.content_Attr[content_AttrName];
+                    popover_Content.setAttribute(content_AttrName,content_AttrValue);
+                };
+                
+                //表示用attributeの設定・コンテンツ要素へ入れる
+                if (args === null) {
+                    //コンテンツが空（null）の場合、disabledを設定
+                    popover_Button.setAttribute('disabled','');
+                } else {
+                    popover_Content.appendChild(args);
+                };
+                
                 
                 
                 
@@ -647,14 +662,11 @@ if (locationURL.includes('detail')) {
             return tab_Obj;
         };
     };
-    //const ********** = new AddTabContents(
+    //const ********** = new AddPopoverContents(
         //{
             //contents_Title:'',
             //contents_BaseId:'',
-            //tab_Contents:[
-                //{tabContentTitle:'',tabContentName:''},
-                //{tabContentTitle:'',tabContentName:''}
-            //],
+            //popoverButton_Text:{buttonText:''},
             //add_Styles:`
             //`, 
             //add_To_Selector:''
