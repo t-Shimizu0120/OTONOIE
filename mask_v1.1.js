@@ -549,13 +549,14 @@ if (locationURL.includes('detail')) {
             };
             //コンテンツ独自のattributeを追加
             tab_Obj.contents_Title = object.contents_Title;
-            const tab_Contents = object.tab_Contents;
-            for (this.tab_Content of tab_Contents) {
-                tab_Obj.tab_Contents.push(this.tab_Content);
-            };
-            const div_Id = {};
-            div_Id.id = object.contents_BaseId + '-tab-contents';
-            tab_Obj.div_Attrs.push(div_Id);
+            const popover_Contents = object.popover_Contents;
+            const container_Id = {};
+            container_Id.id = object.contents_BaseId + '-popover';
+            tab_Obj.container_Attrs.push(container_Id);
+            const contents_Id = {};
+            contents_Id.id = object.popover_Contents + '-popover-contents';
+            tab_Obj.content_Attrs.push(contents_Id);
+            
             tab_Obj.add_To_Selector = object.add_To_Selector;
 
             return tab_Obj;
