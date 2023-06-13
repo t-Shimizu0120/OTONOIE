@@ -840,7 +840,7 @@ if (locationURL.includes('detail')) {
                 }
                 #share-qrcode-2 {
                     display:block;
-                    
+                    flex-grow:1;
                 }
                 #share-qrcode-2 > button {
                     background:#3f3f3f;
@@ -850,7 +850,6 @@ if (locationURL.includes('detail')) {
                     font-weight:bold;
                     padding:0.8rem;
                     border:0;
-                    flex-grow:1;
                 }
                 #share-qrcode-2-pc {
                     display:none !important;
@@ -858,6 +857,7 @@ if (locationURL.includes('detail')) {
                 .js-added-line {
                     display:block;
                     margin-bottom:0.5rem;
+                    flex-grow:1;
                 }
                 .js-added-line > a {
                     display:block;
@@ -868,7 +868,6 @@ if (locationURL.includes('detail')) {
                     text-align:center;
                     font-weight:bold;
                     padding:0.8rem;
-                    flex-grow:1;
                 }
             }
         `; 
