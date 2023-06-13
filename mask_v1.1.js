@@ -448,6 +448,9 @@ if (locationURL.includes('detail')) {
                     popoverContents_Container.setAttribute(div_AttrName,div_AttrValue);
                 };
                 
+                //要素作成
+                let checkedJudge = false;
+                
                 //ボタン作成
                 const popover_Button = document.createElement('button');
                 for (this.button_Attr of obj.button_Attrs) {
@@ -455,9 +458,6 @@ if (locationURL.includes('detail')) {
                     const button_AttrValue = this.div_Attr[button_AttrName];
                     popover_Button.setAttribute(button_AttrName,button_AttrValue);
                 };
-                
-                
-                
                 
                 
                 
