@@ -609,7 +609,7 @@ if (locationURL.includes('detail')) {
                 {title:'qrcode'},
                 {alt:'qrcode'}
             ]);
-            qr_img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=75x75&margin=3`;
+            qr_img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=120x120&margin=3`;
             //ポップオーバー
             const qr_button = create_Element('button',[
                 {popovertarget:'qrcode-popover'}
@@ -619,7 +619,14 @@ if (locationURL.includes('detail')) {
                 {id:'qrcode-popover'},
                 {popover:''}
             ]);
-            qr_popover.appendChild(qr_img);
+            const qr_popover_content = create_Element('div',[
+                {popover:'qrcode-popover-content'}
+            ]);
+            const qr_popover_Text = create_Element('p',[]);
+            qr_popover_Text.textContent = '物件ページのQRコード';
+            qr_popover_content.appendChild(qr_popover_Text);
+            qr_popover_content.appendChild(qr_img);
+            qr_popover.appendChild(qr_popover_content);
             qr_div.appendChild(qr_button);
             qr_div.appendChild(qr_popover);
             
