@@ -450,7 +450,7 @@ if (locationURL.includes('detail')) {
                 
                 //ボタン作成
                 const popover_Button = document.createElement('button');
-                popover_Button.textContent = obj.popover_Contents[0]['buttonText'];
+                popover_Button.textContent = obj['buttonText'];
                 for (this.button_Attr of obj.button_Attrs) {
                     const button_AttrName = Object.keys(this.button_Attr)[0];
                     const button_AttrValue = this.button_Attr[button_AttrName];
@@ -465,95 +465,49 @@ if (locationURL.includes('detail')) {
                     popover_Content.setAttribute(content_AttrName,content_AttrValue);
                 };
                 
+                //クローズボタン
+                const popover_Button_Close = document.createElement('button');
+                popover_Button_Close.textContent = '×';
+                for (this.button_Close_Attr of obj.button_Close_Attrs) {
+                    const button_Close_AttrName = Object.keys(this.button_Close_Attr)[0];
+                    const button_Close_AttrValue = this.button_Close_Attr[button_Close_AttrName];
+                    popover_Button_Close.setAttribute(button_Close_AttrName,button_Close_AttrValue);
+                };
+                
                 //表示用attributeの設定・コンテンツ要素へ入れる
                 if (args === null) {
                     //コンテンツが空（null）の場合、disabledを設定
                     popover_Button.setAttribute('disabled','');
+                    popoverContents_Container.appendChild(popover_Button);
                 } else {
+                    popover_Content.appendChild(popover_Button_Close);
                     popover_Content.appendChild(args);
+                    popoverContents_Container.appendChild(popover_Button);
+                    popoverContents_Container.appendChild(popover_Content);
                 };
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                //コンテンツ作成
-                let checkedJudge = false;
-                for (let i = 0; i < obj.tab_Contents.length; i++) {
-                    //id生成
-                    const input_label_Id = 'id-' + obj.tab_Contents[i]['tabContentName'];
-                    
-                    //input作成
-                    const tab_Input = document.createElement('input');
-                    for (this.input_Attr of obj.input_Attrs) {
-                        const input_AttrName = Object.keys(this.input_Attr)[0];
-                        const input_AttrValue = this.input_Attr[input_AttrName];
-                        tab_Input.setAttribute(input_AttrName,input_AttrValue);
-                    };
-                    tab_Input.setAttribute('id',input_label_Id);
-                    
-                    //label作成
-                    const tab_Label = document.createElement('label');
-                    for (this.label_Attr of obj.label_Attrs) {
-                        const label_AttrName = Object.keys(this.label_Attr)[0];
-                        const label_AttrValue = this.label_Attr[label_AttrName];
-                        tab_Label.setAttribute(label_AttrName,label_AttrValue);
-                    };
-                    tab_Label.setAttribute('for',input_label_Id);
-                    tab_Label.textContent = obj.tab_Contents[i]['tabContentTitle'];
-                    
-                    //content作成
-                    const tab_Content = document.createElement('div');
-                    for (this.content_Attr of obj.content_Attrs) {
-                        const content_AttrName = Object.keys(this.content_Attr)[0];
-                        const content_AttrValue = this.content_Attr[content_AttrName];
-                        tab_Content.setAttribute(content_AttrName,content_AttrValue);
-                    };
-                    
-                    //表示用attributeの設定・コンテンツ要素へ入れる
-                    if (args[i] === null) {
-                        //コンテンツが空（null）の場合、disabledを設定
-                        tab_Input.setAttribute('disabled','');
-                    } else if (checkedJudge === false) {
-                        //コンテンツが空（null）以外の最初のコンテンツにCheckedを設定
-                        tab_Input.setAttribute('checked','');
-                        //Checkedを設定した場合、checkedJudgeをtrueへ変更
-                        checkedJudge = true;
-                        tab_Content.appendChild(args[i]);
-                    } else {
-                        tab_Content.appendChild(args[i]);
-                    };
-                    
-                    tabContents_Container.appendChild(tab_Input);
-                    tabContents_Container.appendChild(tab_Label);
-                    tabContents_Container.appendChild(tab_Content);
-                };
-                
                 if (obj.add_To_Selector === '') {
-                    return tabContents_Container;
+                    return popoverContents_Container;
                 } else {
                     const targetElm = document.querySelector(obj.add_To_Selector);
                     if (obj['contents_Title'] === '') {
-                        targetElm.appendChild(tabContents_Container);
+                        targetElm.appendChild(popoverContents_Container);
                     } else {
                         //タイトル作成
-                        const tab_Contents_Title = document.createElement('h5');
-                        tab_Contents_Title.textContent = obj['contents_Title'];
+                        const popoverContents_Title = document.createElement('h5');
+                        popoverContents_Title.textContent = obj['contents_Title'];
                         
-                        targetElm.appendChild(tab_Contents_Title);
-                        targetElm.appendChild(tabContents_Container);
+                        targetElm.appendChild(popoverContents_Title);
+                        targetElm.appendChild(popoverContents_Container);
                     };
                 };
                 
             };
         };
+        
+        
+        
+        
+        
         //style生成
         setStyle(object) {
             //headタグへ挿入
