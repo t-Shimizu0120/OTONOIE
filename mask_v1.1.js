@@ -513,7 +513,7 @@ if (locationURL.includes('detail')) {
             //headタグへ挿入
             const headElm = document.querySelector('head');
             const addStyleElm = document.createElement('style');
-            addStyleElm.setAttribute('id','tab-style');
+            addStyleElm.setAttribute('id','popover-style');
             //コンテンツ独自のstyleを挿入
             const addStyles = (() => {
                 if (object['add_Styles']) {
