@@ -849,6 +849,8 @@ if (locationURL.includes('detail')) {
                     text-align:center;
                     font-weight:bold;
                     padding:0.8rem;
+                    border:0;
+                    flex-grow:1;
                 }
                 #share-qrcode-2-pc {
                     display:none !important;
@@ -866,6 +868,7 @@ if (locationURL.includes('detail')) {
                     text-align:center;
                     font-weight:bold;
                     padding:0.8rem;
+                    flex-grow:1;
                 }
             }
         `; 
