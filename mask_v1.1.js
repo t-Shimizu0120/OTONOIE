@@ -840,9 +840,11 @@ if (locationURL.includes('detail')) {
                 }
                 #share-qrcode-2 {
                     display:block;
+                    margin-bottom:0.5rem;
                     flex-basis:49%;
                 }
                 #share-qrcode-2 > button {
+                    width:100%;
                     background:#3f3f3f;
                     color:#ffffff;
                     font-size:1.4rem;
@@ -850,6 +852,10 @@ if (locationURL.includes('detail')) {
                     font-weight:bold;
                     padding:0.8rem;
                     border:0;
+                    cursor:pointer;
+                }
+                #share-qrcode-2 > button:hover {
+                    opacity:.6;
                 }
                 #share-qrcode-2-pc {
                     display:none !important;
@@ -868,6 +874,9 @@ if (locationURL.includes('detail')) {
                     text-align:center;
                     font-weight:bold;
                     padding:0.8rem;
+                }
+                .js-added-line > a:hover {
+                    opacity:.6;
                 }
             }
         `; 
