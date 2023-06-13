@@ -620,11 +620,11 @@ if (locationURL.includes('detail')) {
                 {popover:''}
             ]);
             const qr_popover_content = create_Element('div',[
-                {popover:'qrcode-popover-content'}
+                {class:'qrcode-popover-content'}
             ]);
-            const qr_popover_Text = create_Element('p',[]);
-            qr_popover_Text.textContent = '物件ページのQRコード';
-            qr_popover_content.appendChild(qr_popover_Text);
+            const qr_popover_p = create_Element('p',[]);
+            qr_popover_p.textContent = '物件ページのQRコード';
+            qr_popover_content.appendChild(qr_popover_p);
             qr_popover_content.appendChild(qr_img);
             qr_popover.appendChild(qr_popover_content);
             qr_div.appendChild(qr_button);
