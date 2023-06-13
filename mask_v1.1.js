@@ -424,7 +424,7 @@ if (locationURL.includes('detail')) {
     //■ポップオーバーコンテンツ
     class AddPopoverContents {
         constructor (object,args) {
-            if(object.popover_Contents.length === 0) {
+            if(object.popover_Contents === '') {
                 //コンテンツがない場合、nullを返す
                 return null;
             } else {
@@ -450,7 +450,7 @@ if (locationURL.includes('detail')) {
                 
                 //ボタン作成
                 const popover_Button = document.createElement('button');
-                popover_Button.textContent = obj.popoverButton_Text['buttonText']
+                popover_Button.textContent = obj.popover_Contents[0]['buttonText'];
                 for (this.button_Attr of obj.button_Attrs) {
                     const button_AttrName = Object.keys(this.button_Attr)[0];
                     const button_AttrValue = this.button_Attr[button_AttrName];
@@ -666,7 +666,8 @@ if (locationURL.includes('detail')) {
         //{
             //contents_Title:'',
             //contents_BaseId:'',
-            //popoverButton_Text:{buttonText:''},
+            //popover_Contents:'',
+            //buttonText:'',
             //add_Styles:`
             //`, 
             //add_To_Selector:''
