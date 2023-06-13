@@ -838,6 +838,18 @@ if (locationURL.includes('detail')) {
                     font-size:1.4rem;
                     padding:0.8rem;
                 }
+                #share-qrcode-2 {
+                    display:block;
+                    
+                }
+                #share-qrcode-2 > button {
+                    background:#3f3f3f;
+                    color:#ffffff;
+                    font-size:1.4rem;
+                    text-align:center;
+                    font-weight:bold;
+                    padding:0.8rem;
+                }
                 #share-qrcode-2-pc {
                     display:none !important;
                 }
