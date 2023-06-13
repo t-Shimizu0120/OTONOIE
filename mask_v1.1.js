@@ -503,11 +503,6 @@ if (locationURL.includes('detail')) {
                 
             };
         };
-        
-        
-        
-        
-        
         //style生成
         setStyle(object) {
             //headタグへ挿入
@@ -526,68 +521,18 @@ if (locationURL.includes('detail')) {
                     return '';
                 };
             })();
-            //コンテンツ数からタブの幅（％）を設定
-            const tabCount = (() => {
-                if (object['tab_Contents'].length <= 3) {
-                    return 3;
-                } else {
-                    return object['tab_Contents'].length;
-                };
-            })();
-            const tabWidthBase = Math.trunc((100 / Number(tabCount)) * 1000) / 1000;
             //style
             const style = `
-                .js-added-tab-contents {
-                    width:100%;
-                    flex-wrap: wrap;
-                    display: flex;
-                    margin-bottom: 20px;
-                }
-                input[name="js-added-tab-input"] {
-                    display: none;
-                }
-                .js-added-tab-label {
-                    background-color:#dddddd; 
-                    color:#3f3f3f; 
-                    text-align:center;
-                    flex: 0 0 ${tabWidthBase}%; 
-                    padding: 10px 0; 
-                    font-weight:bold;
-                    cursor:pointer;
-                    display: block;
-                    float: left;
-                    order: -1;
-                }
-                input:checked + .js-added-tab-label {
-                    background-color: #3f3f3f;
-                    color: #eee;
-                    pointer-events:none;
-                }
-                input:disabled + .js-added-tab-label {
-                    opacity:.6;
-                    pointer-events:none;
-                }
-                .js-added-tab-label:hover {
-                    opacity:.6;
-                }
-                input:checked + .js-added-tab-label:hover {
-                    opacity:1;
-                }
-                input:disabled + .js-added-tab-label:hover {
-                    opacity:1;
-                }
-                .js-added-tab-content {
-                    display: none;
-                    width: 100%;
-                }
-                input:checked + .js-added-tab-label + .js-added-tab-content {
-                    display: block;
-                }
                 ${addStyles}
             `;
             addStyleElm.textContent = style;
             headElm.appendChild(addStyleElm);
         };
+        
+        
+        
+        
+        
         //attributeオブジェクトの生成
         setAttrs(object) {
             //ベースオブジェクト
