@@ -811,7 +811,10 @@ if (locationURL.includes('detail')) {
                 flex-flow:column nowrap;
                 justify-content:space-between;
             }
-            #inquiry1-box{
+            #qrcode1 {
+                order:0;
+            }
+            #inquiry1-box {
                 order:1;
             }
             .js-added-inquiry-tel {
@@ -831,7 +834,9 @@ if (locationURL.includes('detail')) {
             #inquiry1-tel > .tel-time {
                 font-size:0.8rem;
             }
-            
+            .js-added-qrcode {
+                margin-bottom:0.5rem;
+            }
             
             
             
