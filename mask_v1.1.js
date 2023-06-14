@@ -633,30 +633,6 @@ if (locationURL.includes('detail')) {
        //*******,
        //*******
     //);
-    const inquiry = new AddPopoverContents(
-        {
-            contents_Title:'',
-            contents_BaseId:'inquiry',
-            popover_Contents:'inquiry',
-            popover_Option:'manual',
-            popover_Target_Action:'hide', 
-            buttonText:'この物件にお問い合わせ',
-            add_Styles:`
-                #inquiry-popover {
-                    margin-bottom:0.5rem;
-                }
-                #inquiry-popover > button {
-                    background:#ffb911;
-                    color:#ffffff;
-                    text-align:center;
-                    font-size:1.6rem;
-                    padding:1.4rem;
-                }
-            `, 
-            add_To_Selector:'div.detail_btm'
-        }, 
-        null
-    );
     
     
     
@@ -679,7 +655,7 @@ if (locationURL.includes('detail')) {
                 {id:'inquiry1-box'}
         ]);
         //お問合せボタン１
-        const inquiryForm = document.querySelector('contact_area');
+        const inquiryForm = document.querySelector('#contact_area');
         const inquiry_1 = new AddPopoverContents(
             {
                 contents_Title:'',
@@ -801,6 +777,14 @@ if (locationURL.includes('detail')) {
             .js-added-inquiry-tel > .tel-time {
                 color:#000;
             }
+            #inquiry1-tel > .tel-number {
+                font-size:1.6rem;
+            }
+            #inquiry1-tel > .tel-time {
+                font-size:0.8rem;
+            }
+            
+            
             
             
             
@@ -862,12 +846,7 @@ if (locationURL.includes('detail')) {
             }
             #inquiry-tel-1　{
             }
-            #inquiry-tel-1 > .tel-number {
-                font-size:1.6rem;
-            }
-            #inquiry-tel-1 > .tel-time {
-                font-size:0.8rem;
-            }
+
             #inquiry-tel-2 {
                 display:flex !important;
                 display:-webkit-box;
