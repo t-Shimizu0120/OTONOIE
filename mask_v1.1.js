@@ -534,10 +534,10 @@ if (locationURL.includes('detail')) {
             const popover_Obj = {
                 contents_Title:'',
                 buttonText:'',
-                container_Attrs:[{class:'js-added-tab-contents'}],
-                button_Attrs:[{type:'radio'},{name:'js-added-tab-input'}],
-                content_Attrs:[{class:'js-added-tab-label'}],
-                button_Close_Attrs:[{class:'js-added-tab-content'}],
+                container_Attrs:[{class:'js-added-popover'}],
+                button_Attrs:[],
+                content_Attrs:[{class:'js-added-popover-content'}],
+                button_Close_Attrs:[{class:'js-added-popover-close-button'}],
 
                 add_To_Selector:''
             };
