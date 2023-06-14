@@ -667,15 +667,11 @@ if (locationURL.includes('detail')) {
         //コードからリンクを生成
         const apartmentCode = document.querySelector('p.code').textContent.match(/[0-9]+$/)[0];
         const detailPageUrl = 'https://www.otonoie.net/detail/index.html?number=' + apartmentCode;
+        //----------------------------上部------------------------------
         //上部コンテナ
         const component_1 = create_Element('div',[
                 {class:'js-added-component'},
                 {id:'component-1'}
-        ]);
-        //下部コンテナ
-        const component_2 = create_Element('div',[
-                {class:'js-added-component'},
-                {id:'component-2'}
         ]);
         //お問合せボタン１
         const inquiry_1 = new AddPopoverContents(
@@ -702,6 +698,12 @@ if (locationURL.includes('detail')) {
             },
             null
         );
+        //-----------------------------下部-----------------------------
+        //下部コンテナ
+        const component_2 = create_Element('div',[
+                {class:'js-added-component'},
+                {id:'component-2'}
+        ]);
         //お問合せボタン２
         const inquiry_2 = new AddPopoverContents(
             {
