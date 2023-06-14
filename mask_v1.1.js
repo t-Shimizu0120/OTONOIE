@@ -670,8 +670,13 @@ if (locationURL.includes('detail')) {
         //----------------------------上部------------------------------
         //上部コンテナ
         const component_1 = create_Element('div',[
-                {class:'js-added-component'},
-                {id:'component-1'}
+                {class:'js-added-component-top-l'},
+                {id:'component-top-l'}
+        ]);
+        //お問い合わせコンテナ１
+        const inquiryBox_1 = create_Element('div',[
+                {class:'js-added-inquiry-box1'},
+                {id:'inquiry-box1'}
         ]);
         //お問合せボタン１
         const inquiryForm = document.querySelectorAll('form')[1];
@@ -705,7 +710,8 @@ if (locationURL.includes('detail')) {
             },
             inquiryForm
         );
-        component_1.appendChild(inquiry_1);
+        inquiryBox_1.appendChild(inquiry_1);
+        component_1.appendChild(inquiryBox_1);
         //-----------------------------下部-----------------------------
         //下部コンテナ
         const component_2 = create_Element('div',[
