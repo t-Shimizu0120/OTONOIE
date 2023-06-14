@@ -795,7 +795,7 @@ if (locationURL.includes('detail')) {
             null
         );
         const targetButton = inquiry_2.querySelector('.js-added-popover-button');
-        targetButton.popovertarget = 'inquiry1-popover-contents';
+        targetButton.setAttribute('popovertarget','inquiry1-popover-contents');
         targetButton.removeAttribute('disabled');
         component_2.appendChild(inquiry_2);
         //style設定
