@@ -553,7 +553,7 @@ class AddPopoverContents {
             .js-added-popover-content::backdrop {
                 background-color:#000;
                 opacity:.6;
-                backdrop-filter:blur(3px);
+                backdrop-filter:blur(10px);
             }
             .js-added-popover-close-button {
                 position:absolute;
