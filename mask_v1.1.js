@@ -726,6 +726,193 @@ if (locationURL.includes('detail')) {
             },
             null
         );
+        //style設定
+        const headElm = document.querySelector('head');
+        const componentStyle = document.createElement('style');
+        componentStyle.setAttribute('id','component-style');
+        componentStyle.textContent = `
+            #share-1 {
+                display:block !important;
+                width:33% !important;
+                margin-bottom:0.8rem;
+            }
+            #share-2 {
+                display:flex !important;
+                display:-webkit-box;
+                display:-webkit-flex;
+                display :-ms-flexbox;
+                flex-flow:row wrap;
+                justify-content:space-between;
+                width:100% !important;
+                background-color:#dddddd;
+                padding:0.8rem 1.6rem;
+                margin: 0 auto;
+            }
+            .js-added-inquiry-container {
+                display:flex !important;
+                display:-webkit-box;
+                display:-webkit-flex;
+                display :-ms-flexbox;
+                flex-flow:row wrap;
+                justify-content:space-between;
+                flex-grow:1;
+            }
+            .js-added-inquiry {
+                margin-bottom:0.5rem;
+            }
+            .js-added-inquiry > a {
+                display:block;
+                background:#ffb911;
+                color:#ffffff;
+                text-decoration:none;
+                text-align:center;
+                font-weight:bold;
+                font-size:1.6rem;
+                padding:1.4rem;
+            }
+            .js-added-inquiry > a:hover {
+                opacity:.6;
+            }
+            .js-added-inquiry-tel {
+                text-align: center;
+                background: none;
+            }
+            .js-added-inquiry-tel > .tel-number {
+                font-weight:bold;
+                color:#000;
+            }
+            .js-added-inquiry-tel > .tel-time {
+                color:#000;
+            }
+            #inquiry-2 {
+                width:100%;
+            }
+            #inquiry-tel-1　{
+            }
+            #inquiry-tel-1 > .tel-number {
+                font-size:1.6rem;
+            }
+            #inquiry-tel-1 > .tel-time {
+                font-size:0.8rem;
+            }
+            #inquiry-tel-2 {
+                display:flex !important;
+                display:-webkit-box;
+                display:-webkit-flex;
+                display :-ms-flexbox;
+                flex-flow:column nowrap;
+                justify-content:space-between;
+                align-items:center;
+                flex-grow:1;
+            }
+            #inquiry-tel-2 > .tel-number {
+                font-size:1.8rem;
+            }
+            #inquiry-tel-2 > .tel-time {
+                font-size:1rem;
+            }
+            .js-added-inquiry-container > a {
+                display:none;
+            }
+            .js-added-inquiry-container > a:hover {
+                opacity:.6;
+            }
+            .js-added-qrcode {
+                margin-bottom:0.5rem;
+            }
+            #share-qrcode-2 {
+                display:none;
+            }
+            #share-qrcode-2-pc {
+                margin-bottom:0 !important;
+                margin-left:3.2rem;
+                display:flex !important;
+                display:-webkit-box;
+                display:-webkit-flex;
+                display :-ms-flexbox;
+                flex-flow:column nowrap;
+                justify-content:space-between;
+                align-items:center;
+            }
+            #share-qrcode-2-pc > img {
+                width:80px;
+                height:80px;
+            }
+            #share-qrcode-2-pc > p {
+                font-size:0.8rem;
+                color:#000;
+                margin-top:0.5rem;
+            }
+            .js-added-line {
+                display:none;
+            }
+            @media screen and (max-width:750px) {
+                #share-1 {
+                    display:none !important;
+                }
+                .js-added-inquiry > a {
+                    font-size:1.8rem;
+                    padding:1.2rem;
+                }
+                #inquiry-tel-2 > .tel-number {
+                    font-size:1.6rem;
+                }
+                #inquiry-tel-2 > .tel-time {
+                    font-size:0.8rem;
+                }
+                .js-added-inquiry-container > a {
+                    display:block;
+                    background:#26aaff;
+                    color:#ffffff;
+                    text-decoration:none;
+                    text-align:center;
+                    font-weight:bold;
+                    font-size:1.4rem;
+                    padding:0.8rem;
+                }
+                #share-qrcode-2 {
+                    display:block;
+                    margin-bottom:0.5rem;
+                    flex-basis:calc(50% - 0.4rem);
+                }
+                #share-qrcode-2 > button {
+                    width:100%;
+                    background:#3f3f3f;
+                    color:#ffffff;
+                    font-size:1.4rem;
+                    text-align:center;
+                    font-weight:bold;
+                    padding:0.8rem;
+                    border:0;
+                    cursor:pointer;
+                }
+                #share-qrcode-2 > button:hover {
+                    opacity:.6;
+                }
+                #share-qrcode-2-pc {
+                    display:none !important;
+                }
+                .js-added-line {
+                    display:block;
+                    margin-bottom:0.5rem;
+                    flex-basis:calc(50% - 0.4rem);
+                }
+                .js-added-line > a {
+                    display:block;
+                    background:#06c755;
+                    color:#ffffff;
+                    font-size:1.4rem;
+                    text-decoration:none;
+                    text-align:center;
+                    font-weight:bold;
+                    padding:0.8rem;
+                }
+                .js-added-line > a:hover {
+                    opacity:.6;
+                }
+            }
+        `; 
+        headElm.appendChild(componentStyle);
         
         //document.querySelector('div.detail_l').appendChild(component_1);
         //document.querySelector('div.detail_btm').appendChild(component_2);
