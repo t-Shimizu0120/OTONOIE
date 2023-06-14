@@ -710,10 +710,50 @@ if (locationURL.includes('detail')) {
             return inquiry_Tel_div;
         })();
         inquiryBox_1.appendChild(inquiry_Tel_1);
-        
-        
-        
-        
+        //QRコード１
+        const Qr_1 = (() => {
+            const qr_div = create_Element('div',[
+                {class:'js-added-qrcode'},
+                {id:'qrcode1'}
+            ]);
+            //QRコード生成
+            const qr_img = create_Element('img',[
+                {title:'qrcode1'},
+                {alt:'qrcode1'}
+            ]);
+            qr_img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=65x65&margin=3`;
+            //QRコードテーブル作成
+            const qrcode_table = new AddTable(
+                {
+                    contents_Title:'',
+                    table_BaseId:'qrcode1',
+                    table_Contents:[[{th:'携帯表示用QRコード'},{td:['']}]],
+                    add_Styles:`
+                        #qrcode1-table {
+                            border:0;
+                            width:100%;
+                        }
+                        #qrcode1-table > tbody > tr > th {
+                            border:0;
+                            font-size:1.2rem;
+                        }
+                        #qrcode1-table > tbody > tr > td {
+                            border:0;
+                            padding:0.4rem;
+                            text-align:end;
+                            background-color:#dddddd;
+                        }
+                    `, 
+                    add_To_Selector:''
+                }
+            );
+            qrcode_table.querySelector('td').removeChild(qrcode_table.querySelector('ul'));
+            qrcode_table.querySelector('td').appendChild(qr_img);
+            qr_div.appendChild(qrcode_table);
+            
+            return qr_div;
+        })();
+        component_1.appendChild(Qr_1);
         component_1.appendChild(inquiryBox_1);
         //-----------------------------下部-----------------------------
         //下部コンテナ
