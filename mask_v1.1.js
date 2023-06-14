@@ -633,7 +633,7 @@ if (locationURL.includes('detail')) {
        //*******,
        //*******
     //);
-    const Inquiry_1 = new AddPopoverContents(
+    const inquiry_1 = new AddPopoverContents(
         {
             contents_Title:'',
             contents_BaseId:'inquiry',
@@ -677,7 +677,7 @@ if (locationURL.includes('detail')) {
                 {id:'component-2'}
         ]);
         //お問合せボタン１
-        const Inquiry_1 = new AddPopoverContents(
+        const inquiry_1 = new AddPopoverContents(
             {
                 contents_Title:'',
                 contents_BaseId:'inquiry1',
@@ -702,7 +702,7 @@ if (locationURL.includes('detail')) {
             null
         );
         //お問合せボタン２
-        const Inquiry_2 = new AddPopoverContents(
+        const inquiry_2 = new AddPopoverContents(
             {
                 contents_Title:'',
                 contents_BaseId:'inquiry2',
@@ -716,6 +716,9 @@ if (locationURL.includes('detail')) {
             },
             null
         );
+        
+        //document.querySelector('div.detail_l').appendChild(component_1);
+        //document.querySelector('div.detail_btm').appendChild(component_2);
     })();
     
     
