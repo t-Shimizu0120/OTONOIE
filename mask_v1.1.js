@@ -743,7 +743,7 @@ if (locationURL.includes('detail')) {
         );
         const targetButton = inquiry_2.querySelector('.js-added-popover-button');
         targetButton.popovertarget = 'inquiry1-popover-contents';
-        
+        targetButton.removeAttribute('disabled');
         //style設定
         const headElm = document.querySelector('head');
         const componentStyle = document.createElement('style');
