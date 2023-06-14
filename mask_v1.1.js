@@ -813,12 +813,15 @@ if (locationURL.includes('detail')) {
                 justify-content:space-between;
             }
             #qrcode1 {
+                width:100%;
                 order:0;
             }
             #inquiry1-box {
+                width:100%;
                 order:1;
             }
             .js-added-inquiry-tel {
+                width:100%;
                 text-align: center;
                 background: none;
             }
