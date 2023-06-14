@@ -675,11 +675,11 @@ if (locationURL.includes('detail')) {
         ]);
         //お問い合わせコンテナ１
         const inquiryBox_1 = create_Element('div',[
-                {class:'js-added-inquiry-box1'},
-                {id:'inquiry-box1'}
+                {class:'js-added-inquiry1-box'},
+                {id:'inquiry1-box'}
         ]);
         //お問合せボタン１
-        const inquiryForm = document.querySelectorAll('form')[1];
+        const inquiryForm = document.querySelector('contact_area');
         const inquiry_1 = new AddPopoverContents(
             {
                 contents_Title:'',
