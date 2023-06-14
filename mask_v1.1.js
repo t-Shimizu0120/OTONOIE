@@ -758,7 +758,7 @@ if (locationURL.includes('detail')) {
         const componentStyle = document.createElement('style');
         componentStyle.setAttribute('id','component-style');
         componentStyle.textContent = `
-            #component-1{
+            #component-top-l{
                 width:33%;
                 display:block;
                 margin-bottom:0.8rem;
