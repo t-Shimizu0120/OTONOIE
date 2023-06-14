@@ -674,6 +674,7 @@ if (locationURL.includes('detail')) {
                 {id:'component-1'}
         ]);
         //お問合せボタン１
+        const inquiryForm = document.querySelector('form');
         const inquiry_1 = new AddPopoverContents(
             {
                 contents_Title:'',
@@ -702,8 +703,9 @@ if (locationURL.includes('detail')) {
                 `,
                 add_To_Selector:''
             },
-            null
+            inquiryForm
         );
+        component_1.appendChild(inquiry_1);
         //-----------------------------下部-----------------------------
         //下部コンテナ
         const component_2 = create_Element('div',[
@@ -744,6 +746,7 @@ if (locationURL.includes('detail')) {
         const targetButton = inquiry_2.querySelector('.js-added-popover-button');
         targetButton.popovertarget = 'inquiry1-popover-contents';
         targetButton.removeAttribute('disabled');
+        component_2.appendChild(inquiry_2);
         //style設定
         const headElm = document.querySelector('head');
         const componentStyle = document.createElement('style');
@@ -932,8 +935,8 @@ if (locationURL.includes('detail')) {
         `; 
         headElm.appendChild(componentStyle);
         
-        //document.querySelector('div.detail_l').appendChild(component_1);
-        //document.querySelector('div.detail_btm').appendChild(component_2);
+        document.querySelector('div.detail_l').appendChild(component_1);
+        document.querySelector('div.detail_btm').appendChild(component_2);
     })();
     
     
