@@ -640,12 +640,25 @@ if (locationURL.includes('detail')) {
     //お問い合わせ/共有
     //=================================================================
     (() => {
+        //コードからリンクを生成
+        const apartmentCode = document.querySelector('p.code').textContent.match(/[0-9]+$/)[0];
+        const detailPageUrl = 'https://www.otonoie.net/detail/index.html?number=' + apartmentCode;
+        //上部コンテナ
+        const component_1 = create_Element('div',[
+                {class:'js-added-component'},
+                {id:'component-1'}
+        ]);
+        //下部コンテナ
+        const component_2 = create_Element('div',[
+                {class:'js-added-component'},
+                {id:'component-2'}
+        ]);
         //お問合せボタン１
         const Inquiry = new AddPopoverContents(
             {
                 contents_Title:'',
-                contents_BaseId:'inquiry',
-                popover_Contents:'inquiry',
+                contents_BaseId:'inquiry1',
+                popover_Contents:'inquiry1',
                 popover_Option:'manual',
                 popover_Target_Action:'hide',
                 buttonText:'この物件にお問い合わせ',
@@ -671,6 +684,16 @@ if (locationURL.includes('detail')) {
             null
         );
     })();
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     //上部
     const inquiry_1 = (() => {
         const inquiry_div = create_Element('div',[
