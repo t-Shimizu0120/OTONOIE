@@ -633,20 +633,6 @@ if (locationURL.includes('detail')) {
        //*******,
        //*******
     //);
-    const Inquiry = new AddPopoverContents(
-        {
-            contents_Title:'',
-            contents_BaseId:'inquiry',
-            popover_Contents:'inquiry',
-            popover_Option:'manual',
-            popover_Target_Action:'hide',
-            buttonText:'この物件にお問い合わせ',
-            add_Styles:`
-            `, 
-            add_To_Selector:'div.detail_btm'
-        },
-        null
-    );
     
     
     
@@ -654,7 +640,36 @@ if (locationURL.includes('detail')) {
     //お問い合わせ/共有
     //=================================================================
     (() => {
-        
+        //お問合せボタン１
+        const Inquiry = new AddPopoverContents(
+            {
+                contents_Title:'',
+                contents_BaseId:'inquiry',
+                popover_Contents:'inquiry',
+                popover_Option:'manual',
+                popover_Target_Action:'hide',
+                buttonText:'この物件にお問い合わせ',
+                add_Styles:`
+                `, 
+                add_To_Selector:''
+            },
+            null
+        );
+        //お問合せボタン２
+        const Inquiry = new AddPopoverContents(
+            {
+                contents_Title:'',
+                contents_BaseId:'inquiry2',
+                popover_Contents:'inquiry2',
+                popover_Option:'manual',
+                popover_Target_Action:'hide',
+                buttonText:'この物件にお問い合わせ',
+                add_Styles:`
+                `, 
+                add_To_Selector:''
+            },
+            null
+        );
     })();
     //上部
     const inquiry_1 = (() => {
