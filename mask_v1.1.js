@@ -555,7 +555,7 @@ if (locationURL.includes('detail')) {
                 }
                 .js-added-popover-content::backdrop {
                     background-color:#000;
-                    opacity:.5;
+                    opacity:.6;
                     backdrop-filter:blur(3px);
                 }
                 .js-added-popover-close-button {
