@@ -528,17 +528,11 @@ if (locationURL.includes('detail')) {
             addStyleElm.textContent = style;
             headElm.appendChild(addStyleElm);
         };
-        
-        
-        
-        
-        
         //attributeオブジェクトの生成
         setAttrs(object) {
             //ベースオブジェクト
-            const tab_Obj = {
+            const popover_Obj = {
                 contents_Title:'',
-                popover_Contents:'',
                 buttonText:'',
                 container_Attrs:[{class:'js-added-tab-contents'}],
                 button_Attrs:[{type:'radio'},{name:'js-added-tab-input'}],
@@ -548,25 +542,31 @@ if (locationURL.includes('detail')) {
                 add_To_Selector:''
             };
             //コンテンツ独自のattributeを追加
-            tab_Obj.contents_Title = object.contents_Title;
-            const popover_Contents = object.popover_Contents;
+            popover_Obj.contents_Title = object.contents_Title;
             const container_Id = {};
             container_Id.id = object.contents_BaseId + '-popover';
-            tab_Obj.container_Attrs.push(container_Id);
+            popover_Obj.container_Attrs.push(container_Id);
             const contents_Id = {};
             contents_Id.id = object.popover_Contents + '-popover-contents';
-            tab_Obj.content_Attrs.push(contents_Id);
+            popover_Obj.content_Attrs.push(contents_Id);
             const target_Id = object.popover_Contents + '-popover-contents';
             const button_Target = {};
             button_Target.popovertarget = target_Id;
-            tab_Obj.button_Attrs.push(button_Target);
+            popover_Obj.button_Attrs.push(button_Target);
             const button_Close_Target = {};
             button_Close_Target.popovertarget = target_Id;
-            tab_Obj.button_Close_Attrs.push(button_Close_Target);
+            popover_Obj.button_Close_Attrs.push(button_Close_Target);
+            const popover_Option = {};
+            popover_Option.popover = object.popover_Option;
+            popover_Obj.content_Attrs.push(popover_Option);
+            const popover_Target_Action = {};
+            popover_Target_Action.popovertargetaction = object.popover_Target_Action;
+            popover_Obj.button_Close_Attrs.push(popover_Target_Action);
             
-            tab_Obj.add_To_Selector = object.add_To_Selector;
+            popover_Obj.buttonText　= object.buttonText
+            popover_Obj.add_To_Selector = object.add_To_Selector;
 
-            return tab_Obj;
+            return popover_Obj;
         };
     };
     //const ********** = new AddPopoverContents(
@@ -574,6 +574,8 @@ if (locationURL.includes('detail')) {
             //contents_Title:'',
             //contents_BaseId:'',
             //popover_Contents:'',
+            //popover_Option:'',
+            //popover_Target_Action:'',
             //buttonText:'',
             //add_Styles:`
             //`, 
@@ -582,6 +584,20 @@ if (locationURL.includes('detail')) {
        //*******,
        //*******
     //);
+    const Inquiry = new AddPopoverContents(
+        {
+            contents_Title:'',
+            contents_BaseId:'inquiry',
+            popover_Contents:'inquiry',
+            popover_Option:'manual',
+            popover_Target_Action:'hide',
+            buttonText:'この物件にお問い合わせ',
+            add_Styles:`
+            `, 
+            add_To_Selector:'div.detail_btm'
+        },
+        null
+    );
     
     
     
