@@ -714,7 +714,7 @@ if (locationURL.includes('detail')) {
         })();
         inquiryBox_1.appendChild(inquiry_Tel_1);
         //QRコード１
-        const Qr_1 = (() => {
+        const qr_1 = (() => {
             const qr_div = create_Element('div',[
                 {class:'js-added-qrcode'},
                 {id:'qrcode1'}
@@ -756,7 +756,7 @@ if (locationURL.includes('detail')) {
             
             return qr_div;
         })();
-        component_1.appendChild(Qr_1);
+        component_1.appendChild(qr_1);
         component_1.appendChild(inquiryBox_1);
         //-----------------------------下部-----------------------------
         //下部コンテナ
