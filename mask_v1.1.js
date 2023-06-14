@@ -651,7 +651,7 @@ if (locationURL.includes('detail')) {
         ]);
         //お問い合わせコンテナ１
         const inquiryBox_1 = create_Element('div',[
-                {class:'js-added-inquiry1-box'},
+                {class:'js-added-inquiry-box'},
                 {id:'inquiry1-box'}
         ]);
         //お問合せボタン１
@@ -764,6 +764,15 @@ if (locationURL.includes('detail')) {
             #component-top-l{
                 width:33%;
                 display:block;
+                display:flex !important;
+                display:-webkit-box;
+                display:-webkit-flex;
+                display :-ms-flexbox;
+                flex-flow:column nowrap;
+                justify-content:space-between;
+            }
+            #inquiry1-box{
+                order:1;
             }
             .js-added-inquiry-tel {
                 text-align: center;
