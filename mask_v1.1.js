@@ -803,7 +803,6 @@ if (locationURL.includes('detail')) {
         componentStyle.textContent = `
             #component-top-l{
                 width:33%;
-                display:block;
                 display:flex !important;
                 display:-webkit-box;
                 display:-webkit-flex;
@@ -837,15 +836,18 @@ if (locationURL.includes('detail')) {
             .js-added-qrcode {
                 margin-bottom:0.5rem;
             }
-            
-            
-            
-            
-            #share-1 {
-                display:block !important;
-                width:33% !important;
-                margin-bottom:0.8rem;
+            @media screen and (max-width:750px) {
+                #qrcode1 {
+                    display:none !important;
+                }
+                #inquiry1-box {
+                    display:none !important;
+                }
             }
+            
+            
+            
+
             #share-2 {
                 display:flex !important;
                 display:-webkit-box;
