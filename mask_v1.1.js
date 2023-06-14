@@ -765,6 +765,12 @@ if (locationURL.includes('detail')) {
                 width:33%;
                 display:block;
                 margin-bottom:0.8rem;
+                display:flex !important;
+                display:-webkit-box;
+                display:-webkit-flex;
+                display :-ms-flexbox;
+                flex-flow:column nowrap;
+                justify-content:space-between;
             }
             .js-added-inquiry-tel {
                 text-align: center;
