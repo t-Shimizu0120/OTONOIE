@@ -523,6 +523,55 @@ if (locationURL.includes('detail')) {
             })();
             //style
             const style = `
+                .js-added-popover {
+                }
+                .js-added-popover-button {
+                    width:100%;
+                    text-align:center;
+                    font-weight:bold;
+                    border:0;
+                    cursor:pointer;
+                }
+                .js-added-popover-button:hover {
+                    opacity:.6;
+                }
+                .js-added-popover-button:disabled {
+                    opacity:.6;
+                    pointer-events:none;
+                }
+                .js-added-popover-content {
+                    position:relative;
+                }
+                .js-added-popover-content:popover-open {
+                    animation:appear .8s ease;
+                }
+                @keyframes appear {
+                    0%{
+                        opacity:0;
+                    }
+                    100%{
+                        opacity:1;
+                    }
+                }
+                .js-added-popover-content::backdrop {
+                    background-color:#000;
+                    opacity:.5;
+                    backdrop-filter:blur(3px);
+                }
+                .js-added-popover-close-button {
+                    position:absolute;
+                    right:1.6rem;
+                    top:1.6rem;
+                    width:10%;
+                    text-align:center;
+                    font-weight:bold;
+                    font-size:1.4rem;
+                    border:0;
+                    cursor:pointer;
+                }
+                .js-added-popover-close-button:hover {
+                    opacity:.6;
+                }
                 ${addStyles}
             `;
             addStyleElm.textContent = style;
@@ -535,7 +584,7 @@ if (locationURL.includes('detail')) {
                 contents_Title:'',
                 buttonText:'',
                 container_Attrs:[{class:'js-added-popover'}],
-                button_Attrs:[],
+                button_Attrs:[{class:'js-added-popover-button'}],
                 content_Attrs:[{class:'js-added-popover-content'}],
                 button_Close_Attrs:[{class:'js-added-popover-close-button'}],
 
