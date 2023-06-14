@@ -633,7 +633,7 @@ if (locationURL.includes('detail')) {
        //*******,
        //*******
     //);
-    const inquiry_1 = new AddPopoverContents(
+    const inquiry = new AddPopoverContents(
         {
             contents_Title:'',
             contents_BaseId:'inquiry',
