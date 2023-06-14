@@ -633,7 +633,30 @@ if (locationURL.includes('detail')) {
        //*******,
        //*******
     //);
-    
+    const Inquiry_1 = new AddPopoverContents(
+        {
+            contents_Title:'',
+            contents_BaseId:'inquiry',
+            popover_Contents:'inquiry',
+            popover_Option:'manual',
+            popover_Target_Action:'hide', 
+            buttonText:'この物件にお問い合わせ',
+            add_Styles:`
+                #inquiry-popover {
+                    margin-bottom:0.5rem;
+                }
+                #inquiry-popover > button {
+                    background:#ffb911;
+                    color:#ffffff;
+                    text-align:center;
+                    font-size:1.6rem;
+                    padding:1.4rem;
+                }
+            `, 
+            add_To_Selector:'div.detail_btm'
+        }, 
+        null
+    );
     
     
     //=================================================================
