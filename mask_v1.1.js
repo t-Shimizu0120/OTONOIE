@@ -711,6 +711,16 @@ if (locationURL.includes('detail')) {
                 popover_Target_Action:'hide',
                 buttonText:'この物件にお問い合わせ',
                 add_Styles:`
+                    #inquiry2-popover {
+                        margin-bottom:0.5rem;
+                    }
+                    #inquiry2-popover > button {
+                        background:#ffb911;
+                        color:#ffffff;
+                        text-align:center;
+                        font-size:1.6rem;
+                        padding:1.4rem;
+                    }
                 `, 
                 add_To_Selector:''
             },
