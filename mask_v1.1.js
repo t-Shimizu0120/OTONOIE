@@ -741,6 +741,9 @@ if (locationURL.includes('detail')) {
             },
             null
         );
+        const targetButton = inquiry_2.querySelector('.js-added-popover-button');
+        targetButton.popovertarget = 'inquiry1-popover-contents';
+        
         //style設定
         const headElm = document.querySelector('head');
         const componentStyle = document.createElement('style');
