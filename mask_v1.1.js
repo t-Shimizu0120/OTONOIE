@@ -3,6 +3,7 @@ const telNumber = '03-5948-5411';
 const telNumber_Display = '0359485411';
 //営業時間
 const business_Hours = '受付時間：10：00～17：00（水曜定休）';
+
 //■要素作成関数
 const create_Element = (tagName,attributes) => {
     const add_Elm = document.createElement(tagName);
