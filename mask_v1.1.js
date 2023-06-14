@@ -752,6 +752,11 @@ if (locationURL.includes('detail')) {
         const componentStyle = document.createElement('style');
         componentStyle.setAttribute('id','component-style');
         componentStyle.textContent = `
+            #component-1{
+                width:33%;
+                display:block;
+                margin-bottom:0.8rem;
+            }
             #share-1 {
                 display:block !important;
                 width:33% !important;
