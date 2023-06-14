@@ -543,11 +543,11 @@ if (locationURL.includes('detail')) {
                     position:relative;
                 }
                 .js-added-popover-content:popover-open {
-                    animation:appear .6s ease;
+                    animation:appear .5s ease;
                 }
                 @keyframes appear {
                     0%{
-                        opacity:.3;
+                        opacity:.5;
                     }
                     100%{
                         opacity:1;
