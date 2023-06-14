@@ -711,6 +711,33 @@ if (locationURL.includes('detail')) {
             inquiryForm
         );
         inquiryBox_1.appendChild(inquiry_1);
+        const inquiry_Tel_1 = (() => {
+            const inquiry_Tel_div = create_Element('div',[
+                {class:'js-added-inquiry-tel'},
+                {id:'inquiry1-tel'}
+            ]);
+            const inquiry_Tel_hr_1 = create_Element('hr',[]);
+            inquiry_Tel_div.appendChild(inquiry_Tel_hr_1);
+            const inquiry_Tel_p_Number = create_Element('p',[
+                {class:'tel-number'}
+            ]);
+            inquiry_Tel_p_Number.textContent = 'TEL:03-5948-5411';
+            inquiry_Tel_div.appendChild(inquiry_Tel_p_Number);
+            const inquiry_Tel_p_Time = create_Element('p',[
+                {class:'tel-time'}
+            ]);
+            inquiry_Tel_p_Time.textContent = '受付時間：10：00～17：00（水曜定休）';
+            inquiry_Tel_div.appendChild(inquiry_Tel_p_Time);
+            const inquiry_Tel_hr_2 = create_Element('hr',[]);
+            inquiry_Tel_div.appendChild(inquiry_Tel_hr_2);
+            
+            return inquiry_Tel_div;
+        })();
+        inquiryBox_1.appendChild(inquiry_Tel_1);
+        
+        
+        
+        
         component_1.appendChild(inquiryBox_1);
         //-----------------------------下部-----------------------------
         //下部コンテナ
@@ -763,6 +790,20 @@ if (locationURL.includes('detail')) {
                 display:block;
                 margin-bottom:0.8rem;
             }
+            .js-added-inquiry-tel {
+                text-align: center;
+                background: none;
+            }
+            .js-added-inquiry-tel > .tel-number {
+                font-weight:bold;
+                color:#000;
+            }
+            .js-added-inquiry-tel > .tel-time {
+                color:#000;
+            }
+            
+            
+            
             #share-1 {
                 display:block !important;
                 width:33% !important;
