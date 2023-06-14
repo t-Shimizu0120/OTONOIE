@@ -674,7 +674,7 @@ if (locationURL.includes('detail')) {
                 {id:'component-1'}
         ]);
         //お問合せボタン１
-        const inquiryForm = document.querySelector('form');
+        const inquiryForm = document.querySelectorAll('form')[1];
         const inquiry_1 = new AddPopoverContents(
             {
                 contents_Title:'',
