@@ -693,6 +693,12 @@ if (locationURL.includes('detail')) {
                         font-size:1.6rem;
                         padding:1.4rem;
                     }
+                    @media screen and (max-width:750px) {
+                        #inquiry1-popover > button {
+                            font-size:1.8rem;
+                            padding:1.2rem;
+                        }
+                    }
                 `,
                 add_To_Selector:''
             },
@@ -723,6 +729,12 @@ if (locationURL.includes('detail')) {
                         text-align:center;
                         font-size:1.6rem;
                         padding:1.4rem;
+                    }
+                    @media screen and (max-width:750px) {
+                        #inquiry2-popover > button {
+                            font-size:1.8rem;
+                            padding:1.2rem;
+                        }
                     }
                 `, 
                 add_To_Selector:''
