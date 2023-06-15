@@ -5,21 +5,22 @@ const telNumber_Display = '0359485411';
 const business_Hours = '受付時間：10：00～17：00（水曜定休）';
 //カナ自動入力
 if (document.querySelector('#contact_area') != null) {
-    const targetInput = document.querySelector('#contact_area').querySelectorAll('input');
-    targetInput[0].setAttribute('id','inquiry-name');
-    targetInput[1].setAttribute('id','inquiry-kana');
-    
     const autokana_Elm = document.createElement('script');
     autokana_Elm.setAttribute('defer','');
     autokana_Elm.setAttribute('type','text/javascript');
     autokana_Elm.src = 'https://t-shimizu0120.github.io/OTONOIE/autokana.js';
-    const bodyElm = document.querySelector('body');
-    bodyElm.appendChild(autokana_Elm);
+    const headElm = document.querySelector('head');
+    headElm.appendChild(autokana_Elm);
+    
+    const targetInput = document.querySelector('#contact_area').querySelectorAll('input.input01');
+    targetInput[0].setAttribute('id','inquiry-name');
+    targetInput[1].setAttribute('id','inquiry-kana');
+    
+    document.addEventListener("DOMContentLoaded", function() {
+        AutoKana.bind("#inquiry-name", "#inquiry-kana", { katakana: true });
+    });
 } else {
 };
-document.addEventListener("DOMContentLoaded", function() {
-    AutoKana.bind("#name", "#furigana");
-});
 
 
 //■要素作成関数
