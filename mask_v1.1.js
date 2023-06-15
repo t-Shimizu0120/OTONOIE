@@ -1,6 +1,9 @@
+//=================================================================
+//基本データ
+//=================================================================
 //電話番号
-const telNumber = '03-5948-5411';
-const telNumber_Display = '0359485411';
+const telNumber = '0359485411';
+const telNumber_Display = '03-5948-5411';
 //営業時間
 const business_Hours = '受付時間：10：00～17：00（水曜定休）';
 //カナ自動入力
@@ -721,7 +724,7 @@ if (locationURL.includes('detail')) {
             const inquiry_Tel_p_Number = create_Element('p',[
                 {class:'tel-number'}
             ]);
-            inquiry_Tel_p_Number.textContent = 'TEL:' + telNumber;
+            inquiry_Tel_p_Number.textContent = 'TEL:' + telNumber_Display;
             inquiry_Tel_div.appendChild(inquiry_Tel_p_Number);
             const inquiry_Tel_p_Time = create_Element('p',[
                 {class:'tel-time'}
@@ -834,7 +837,7 @@ if (locationURL.includes('detail')) {
             const inquiry_Tel_p_Number = create_Element('p',[
                 {class:'tel-number'}
             ]);
-            inquiry_Tel_p_Number.textContent = 'TEL:' + telNumber;
+            inquiry_Tel_p_Number.textContent = 'TEL:' + telNumber_Display;
             inquiry_Tel_div.appendChild(inquiry_Tel_p_Number);
             const inquiry_Tel_p_Time = create_Element('p',[
                 {class:'tel-time'}
@@ -848,7 +851,7 @@ if (locationURL.includes('detail')) {
         //電話をかけるボタン
         const inquiry_Tel_Button = (() => {
             const inquiry_Tel_button = create_Element('a',[
-                {href:'tel:' + telNumber_Display}
+                {href:'tel:' + telNumber}
             ]);
             inquiry_Tel_button.textContent = '電話をかける';
         
