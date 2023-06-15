@@ -599,12 +599,12 @@ class AddPopoverContents {
             }
             .js-added-popover-close-button {
                 position:absolute;
-                right:1.6rem;
-                top:1.6rem;
+                right:0;
+                top:0;
                 width:10%;
                 text-align:center;
                 font-weight:bold;
-                font-size:1.4rem;
+                font-size:2.4rem;
                 border:0;
                 cursor:pointer;
             }
