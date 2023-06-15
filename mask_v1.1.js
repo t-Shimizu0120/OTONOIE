@@ -792,6 +792,7 @@ if (locationURL.includes('detail')) {
         ]);
         //お問合せボタン２
         const inquiryForm = document.querySelector('#contact_area');
+        const handlingOfPersonalInformation = inquiryForm.nextElementSibling;
         const inquiry_2 = new AddPopoverContents(
             {
                 contents_Title:'',
@@ -822,6 +823,7 @@ if (locationURL.includes('detail')) {
             },
             inquiryForm
         );
+        inquiry_2.querySelector('#inquiry2-popover-contents').appendChild(handlingOfPersonalInformation);
         inquiryBox_2.appendChild(inquiry_2);
         //電話番号
         const inquiry_Tel_2 = (() => {
