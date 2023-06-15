@@ -1011,12 +1011,6 @@ if (locationURL.includes('detail')) {
                 margin-top:0.5rem;
             }
             @media screen and (max-width:750px) {
-                #qrcode1 {
-                    display:none !important;
-                }
-                #inquiry1-box {
-                    display:none !important;
-                }
                 #inquiry2-popover > button {
                     font-size:1.8rem;
                     padding:1.2rem;
@@ -1046,6 +1040,27 @@ if (locationURL.includes('detail')) {
         
         document.querySelector('div.detail_l').appendChild(component_1);
         document.querySelector('div.detail_btm').appendChild(component_2);
+        
+        //--------------------------レスポンシブ------------------------------
+        //ブレイクポイント
+        const mediaQueryList = window.matchMedia('(max-width:750px)');
+        //regist listener
+        mediaQueryList.addEventListener('change', listener);
+        listener(mediaQueryList);
+        // listener
+        function listener (event) {
+            if (event.matches) {
+                // SP
+                component_1.removeChild(qr_1);
+                component_1.removeChild(inquiryBox_1);
+            } else {
+                // PC
+                component_1.appendChild(qr_1);
+                component_1.appendChild(inquiryBox_1);
+            };
+        };
+        //--------------------------------------------------------------------
+        
     })();
     
     
