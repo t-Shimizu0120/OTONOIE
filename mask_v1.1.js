@@ -899,6 +899,81 @@ if (locationURL.includes('detail')) {
         })();
         component_2.appendChild(inquiryBox_2);
         component_2.appendChild(qr_2);
+        //-------------------------------共有----------------------------------
+        //共有コンテナ
+        const share_container = create_Element('div',[
+            {class:'js-added-share'},
+            {id:'share'}
+        ]);
+        //LINE
+        const share_Line = (() => {
+            const line_div = create_Element('div',[
+                {class:'js-added-line'},
+                {id:'share-line'}
+            ]);
+            const line_button = create_Element('a',[
+                {href:'https://social-plugins.line.me/lineit/share?url=' + detailPageUrl}
+            ]);
+            line_button.textContent = 'LINE共有';
+            //LINEアイコン
+            //const line_img = create_Element('img',[
+                //{src:''},
+                //{class:'line-img'}
+            //]);
+            //line_button.appendChild(line_img);
+            line_div.appendChild(line_button);
+        
+            return line_div;
+        })();
+        share_container.appendChild(share_Line);
+        //QRコード生成
+        const qr_img = create_Element('img',[
+            {title:'qrcode'},
+            {alt:'qrcode'}
+        ]);
+        qr_img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=120x120&margin=3`;
+        const qr_popover_p = create_Element('p',[]);
+        qr_popover_p.textContent = '物件ページのQRコード';
+        const share_qr = new AddPopoverContents(
+            {
+                contents_Title:'',
+                contents_BaseId:'share-qrcode',
+                popover_Contents:'share-qrcode',
+                popover_Option:'manual',
+                popover_Target_Action:'hide',
+                buttonText:'QRコードを表示',
+                add_Styles:`
+                `, 
+                add_To_Selector:''
+            },
+            qr_img
+        );
+        share_qr.querySelector('#share-qrcode-popover-contents').appendChild(qr_popover_p);
+        share_container.appendChild(share_qr);
+        //メール
+        //const share_Mail = (() => {
+            //const mail_Subject = '%E3%80%90%E3%81%8A%E9%83%A8%E5%B1%8B%E6%83%85%E5%A0%B1%E3%80%91';
+            //const mail_Body = '%E3%80%90' + '%E7%89%A9%E4%BB%B6%E3%82%B3%E3%83%BC%E3%83%89%EF%BC%9A' + apartmentCode + '%20' + 'bukkennmei' + '%E3%80%91' + '%0d%0a' + detailPageUrl;
+            //const mail_div = create_Element('div',[
+                //{class:'js-added-mail'},
+                //{id:'share-mail'}
+            //]);
+            //const mail_button = create_Element('a',[
+                //{href:'mailto:?subject=' + mail_Subject + '&amp;body=' + mail_Body}
+            //]);
+            //mail_button.textContent = 'メールで送る';
+            //メールアイコン
+            //const mail_img = create_Element('img',[
+                //{src:''},
+                //{class:'mail-img'}
+            //]);
+            //mail_button.appendChild(mail_img);
+            //mail_div.appendChild(mail_button);
+        
+            //return mail_div;
+        //})();
+        //share.appendChild(share_Mail);
+        //---------------------------------------------------------------------
         //style設定
         const headElm = document.querySelector('head');
         const componentStyle = document.createElement('style');
@@ -1034,6 +1109,7 @@ if (locationURL.includes('detail')) {
         
         document.querySelector('div.detail_l').appendChild(component_1);
         document.querySelector('div.detail_btm').appendChild(component_2);
+        document.querySelector('div.detail_btm').appendChild(share_container);
         
         //--------------------------レスポンシブ------------------------------
         //ブレイクポイント
