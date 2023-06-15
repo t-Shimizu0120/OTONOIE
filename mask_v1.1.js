@@ -15,9 +15,9 @@ if (document.querySelector('#contact_area') != null) {
     targetInput[0].setAttribute('id','inquiry-name');
     targetInput[1].setAttribute('id','inquiry-kana');
     
-    (() => {
-        AutoKana.bind("#inquiry-name", "#inquiry-kana", { katakana: true });
-    })();
+    document.addEventListener("DOMContentLoaded", function() {
+        AutoKana.bind('#inquiry-name', '#inquiry-kana', { katakana: true });
+    });
 } else {
 };
 
