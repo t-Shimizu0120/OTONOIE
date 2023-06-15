@@ -985,7 +985,14 @@ if (locationURL.includes('detail')) {
                 flex-grow:1;
             }
             #inquiry2-box > a {
-                display:none;
+                display:block;
+                background:#26aaff;
+                color:#ffffff;
+                text-decoration:none;
+                text-align:center;
+                font-weight:bold;
+                font-size:1.4rem;
+                padding:0.8rem;
             }
             #inquiry2-box > a:hover {
                 opacity:.6;
@@ -1021,19 +1028,6 @@ if (locationURL.includes('detail')) {
                 #inquiry2-tel > .tel-time {
                     font-size:0.8rem;
                 }
-                #inquiry2-box > a {
-                    display:block;
-                    background:#26aaff;
-                    color:#ffffff;
-                    text-decoration:none;
-                    text-align:center;
-                    font-weight:bold;
-                    font-size:1.4rem;
-                    padding:0.8rem;
-                }
-                #qrcode2 {
-                    display:none !important;
-                }
             }
         `; 
         headElm.appendChild(componentStyle);
@@ -1053,10 +1047,14 @@ if (locationURL.includes('detail')) {
                 // SP
                 component_1.removeChild(qr_1);
                 component_1.removeChild(inquiryBox_1);
+                component_2.removeChild(qr_2);
+                inquiryBox_2.appendChild(inquiry_Tel_Button);
             } else {
                 // PC
                 component_1.appendChild(qr_1);
                 component_1.appendChild(inquiryBox_1);
+                component_2.appendChild(qr_2);
+                inquiryBox_2.removeChild(inquiry_Tel_Button);
             };
         };
         //--------------------------------------------------------------------
