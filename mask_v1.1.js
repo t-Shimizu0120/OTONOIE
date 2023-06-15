@@ -705,9 +705,13 @@ if (locationURL.includes('detail')) {
                 `,
                 add_To_Selector:''
             },
-            inquiryForm
+            null
         );
+        const targetButton = inquiry_1.querySelector('.js-added-popover-button');
+        targetButton.setAttribute('popovertarget','inquiry2-popover-contents');
+        targetButton.removeAttribute('disabled');
         inquiryBox_1.appendChild(inquiry_1);
+        //電話番号
         const inquiry_Tel_1 = (() => {
             const inquiry_Tel_div = create_Element('div',[
                 {class:'js-added-inquiry-tel'},
@@ -788,6 +792,7 @@ if (locationURL.includes('detail')) {
                 {id:'inquiry2-box'}
         ]);
         //お問合せボタン２
+        const inquiryForm = document.querySelector('#contact_area');
         const inquiry_2 = new AddPopoverContents(
             {
                 contents_Title:'',
@@ -816,12 +821,40 @@ if (locationURL.includes('detail')) {
                 `, 
                 add_To_Selector:''
             },
-            null
+            inquiryForm
         );
-        const targetButton = inquiry_2.querySelector('.js-added-popover-button');
-        targetButton.setAttribute('popovertarget','inquiry1-popover-contents');
-        targetButton.removeAttribute('disabled');
-        component_2.appendChild(inquiry_2);
+        inquiryBox_2.appendChild(inquiry_2);
+        //電話番号
+        const inquiry_Tel_2 = (() => {
+            const inquiry_Tel_div = create_Element('div',[
+                {class:'js-added-inquiry-tel'},
+                {id:'inquiry2-tel'}
+            ]);
+            const inquiry_Tel_p_Number = create_Element('p',[
+                {class:'tel-number'}
+            ]);
+            inquiry_Tel_p_Number.textContent = 'TEL:' + telNumber;
+            inquiry_Tel_div.appendChild(inquiry_Tel_p_Number);
+            const inquiry_Tel_p_Time = create_Element('p',[
+                {class:'tel-time'}
+            ]);
+            inquiry_Tel_p_Time.textContent = business_Hours;
+            inquiry_Tel_div.appendChild(inquiry_Tel_p_Time);
+        
+            return inquiry_Tel_div;
+        })();
+        inquiryBox_2.appendChild(inquiry_Tel_2);
+        //電話をかけるボタン
+        const inquiry_Tel_Button = (() => {
+            const inquiry_Tel_button = create_Element('a',[
+                {href:'tel:' + telNumber_Display}
+            ]);
+            inquiry_Tel_button.textContent = '電話をかける';
+        
+            return inquiry_Tel_button;
+        })();
+        inquiryBox_2.appendChild(inquiry_Tel_Button);
+        
         //style設定
         const headElm = document.querySelector('head');
         const componentStyle = document.createElement('style');
