@@ -917,6 +917,72 @@ if (locationURL.includes('detail')) {
             .js-added-qrcode {
                 margin-bottom:0.5rem;
             }
+            #component-middle {
+                width:100%;
+                display:flex !important;
+                display:-webkit-box;
+                display:-webkit-flex;
+                display :-ms-flexbox;
+                flex-flow:row nowrap;
+                justify-content:space-between;
+                background-color:#dddddd;
+                padding:0.8rem 1.6rem;
+                margin: 0 auto;
+            }
+            #inquiry2-box {
+                display:flex !important;
+                display:-webkit-box;
+                display:-webkit-flex;
+                display :-ms-flexbox;
+                flex-flow:row wrap;
+                justify-content:space-between;
+                flex-grow:1;
+            }
+            #inquiry2-popover {
+                width:100%;
+            }
+            #inquiry2-tel > .tel-number {
+                font-size:1.8rem;
+            }
+            #inquiry2-tel > .tel-time {
+                font-size:1rem;
+            }
+            #inquiry2-tel {
+                display:flex !important;
+                display:-webkit-box;
+                display:-webkit-flex;
+                display :-ms-flexbox;
+                flex-flow:column nowrap;
+                justify-content:space-between;
+                align-items:center;
+                flex-grow:1;
+            }
+            #inquiry2-box > a {
+                display:none;
+            }
+            #inquiry2-box > a:hover {
+                opacity:.6;
+            }
+            #qrcode2 {
+                margin-bottom:0 !important;
+                margin-left:3.2rem;
+                display:flex !important;
+                display:-webkit-box;
+                display:-webkit-flex;
+                display :-ms-flexbox;
+                flex-flow:column nowrap;
+                justify-content:space-between;
+                align-items:center;
+            }
+            #qrcode2 > img {
+                width:80px;
+                height:80px;
+            }
+            #qrcode2 > p {
+                font-size:0.8rem;
+                color:#000;
+                margin-top:0.5rem;
+            }
             @media screen and (max-width:750px) {
                 #qrcode1 {
                     display:none !important;
@@ -924,21 +990,30 @@ if (locationURL.includes('detail')) {
                 #inquiry1-box {
                     display:none !important;
                 }
+                #inquiry2-popover > button {
+                    font-size:1.8rem;
+                    padding:1.2rem;
+                }
+                #inquiry2-tel > .tel-number {
+                    font-size:1.6rem;
+                }
+                #inquiry2-tel > .tel-time {
+                    font-size:0.8rem;
+                }
+                #inquiry2-box > a {
+                    display:block;
+                    background:#26aaff;
+                    color:#ffffff;
+                    text-decoration:none;
+                    text-align:center;
+                    font-weight:bold;
+                    font-size:1.4rem;
+                    padding:0.8rem;
+                }
+                #qrcode2 {
+                    display:none !important;
+                }
             }
-            #component-middle {
-                width:100%;
-                display:flex !important;
-                display:-webkit-box;
-                display:-webkit-flex;
-                display :-ms-flexbox;
-                flex-flow:row wrap;
-                justify-content:space-between;
-                background-color:#dddddd;
-                padding:0.8rem 1.6rem;
-                margin: 0 auto;
-            }
-            
-            
             
             
             
@@ -997,7 +1072,6 @@ if (locationURL.includes('detail')) {
             }
             #inquiry-tel-1　{
             }
-
             #inquiry-tel-2 {
                 display:flex !important;
                 display:-webkit-box;
@@ -1045,74 +1119,6 @@ if (locationURL.includes('detail')) {
                 font-size:0.8rem;
                 color:#000;
                 margin-top:0.5rem;
-            }
-            .js-added-line {
-                display:none;
-            }
-            @media screen and (max-width:750px) {
-                #share-1 {
-                    display:none !important;
-                }
-                .js-added-inquiry > a {
-                    font-size:1.8rem;
-                    padding:1.2rem;
-                }
-                #inquiry-tel-2 > .tel-number {
-                    font-size:1.6rem;
-                }
-                #inquiry-tel-2 > .tel-time {
-                    font-size:0.8rem;
-                }
-                .js-added-inquiry-container > a {
-                    display:block;
-                    background:#26aaff;
-                    color:#ffffff;
-                    text-decoration:none;
-                    text-align:center;
-                    font-weight:bold;
-                    font-size:1.4rem;
-                    padding:0.8rem;
-                }
-                #share-qrcode-2 {
-                    display:block;
-                    margin-bottom:0.5rem;
-                    flex-basis:calc(50% - 0.4rem);
-                }
-                #share-qrcode-2 > button {
-                    width:100%;
-                    background:#3f3f3f;
-                    color:#ffffff;
-                    font-size:1.4rem;
-                    text-align:center;
-                    font-weight:bold;
-                    padding:0.8rem;
-                    border:0;
-                    cursor:pointer;
-                }
-                #share-qrcode-2 > button:hover {
-                    opacity:.6;
-                }
-                #share-qrcode-2-pc {
-                    display:none !important;
-                }
-                .js-added-line {
-                    display:block;
-                    margin-bottom:0.5rem;
-                    flex-basis:calc(50% - 0.4rem);
-                }
-                .js-added-line > a {
-                    display:block;
-                    background:#06c755;
-                    color:#ffffff;
-                    font-size:1.4rem;
-                    text-decoration:none;
-                    text-align:center;
-                    font-weight:bold;
-                    padding:0.8rem;
-                }
-                .js-added-line > a:hover {
-                    opacity:.6;
-                }
             }
         `; 
         headElm.appendChild(componentStyle);
