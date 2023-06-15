@@ -1125,12 +1125,14 @@ if (locationURL.includes('detail')) {
                 component_1.removeChild(inquiryBox_1);
                 component_2.removeChild(qr_2);
                 inquiryBox_2.appendChild(inquiry_Tel_Button);
+                document.querySelector('div.detail_btm').appendChild(share_container);
             } else {
                 // PC
                 component_1.appendChild(qr_1);
                 component_1.appendChild(inquiryBox_1);
                 component_2.appendChild(qr_2);
                 inquiryBox_2.removeChild(inquiry_Tel_Button);
+                document.querySelector('div.detail_btm').removeChild(share_container);
             };
         };
         //--------------------------------------------------------------------
