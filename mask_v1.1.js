@@ -7,8 +7,7 @@ const business_Hours = '受付時間：10：00～17：00（水曜定休）';
 if (document.querySelector('#contact_area') != null) {
     const autokana_Elm = document.createElement('script');
     autokana_Elm.setAttribute('defer','');
-    autokana_Elm.setAttribute('type','text/javascript');
-    autokana_Elm.src = 'https://t-shimizu0120.github.io/OTONOIE/autokana.js';
+    autokana_Elm.src = 'https://cdn.jsdelivr.net/npm/vanilla-autokana@1.3.0/dist/autokana.min.js';
     const headElm = document.querySelector('head');
     headElm.appendChild(autokana_Elm);
     
@@ -16,9 +15,9 @@ if (document.querySelector('#contact_area') != null) {
     targetInput[0].setAttribute('id','inquiry-name');
     targetInput[1].setAttribute('id','inquiry-kana');
     
-    document.addEventListener("DOMContentLoaded", function() {
+    (() => {
         AutoKana.bind("#inquiry-name", "#inquiry-kana", { katakana: true });
-    });
+    })();
 } else {
 };
 
