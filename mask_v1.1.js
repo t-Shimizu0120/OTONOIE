@@ -949,6 +949,9 @@ if (locationURL.includes('detail')) {
                         font-size:1.2rem;
                         padding:0.6rem;
                     }
+                    #share-qrcode-popover-contents {
+                        width:80%;
+                    };
                 `, 
                 add_To_Selector:''
             },
