@@ -947,7 +947,7 @@ if (locationURL.includes('detail')) {
                         background:#3f3f3f;
                         color:#ffffff;
                         font-size:1.2rem;
-                        padding:0.8rem;
+                        padding:0.6rem;
                     }
                 `, 
                 add_To_Selector:''
@@ -1113,6 +1113,21 @@ if (locationURL.includes('detail')) {
             }
             #share-qrcode-popover {
                 flex-basis:calc(50% - 0.4rem);
+            }
+            #share-line {
+                flex-basis:calc(50% - 0.4rem);
+            }
+            #share-line > a {
+                background:#06c755;
+                color:#ffffff;
+                font-size:1.2rem;
+                text-decoration:none;
+                text-align:center;
+                font-weight:bold;
+                padding:0.6rem;
+            }
+            #share-line > a:hover {
+                opacity:.6;
             }
             @media screen and (max-width:750px) {
                 #inquiry2-popover > button {
