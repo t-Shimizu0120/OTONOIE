@@ -15,6 +15,13 @@ const telNumber = '0359485411';
 const telNumber_Display = '03-5948-5411';
 //営業時間
 const business_Hours = '受付時間：10：00～17：00（水曜定休）';
+
+//=================================================================
+//コンテンツコントロール
+//=================================================================
+const initialCost_Control = '表示';
+const map_Control = '表示';
+
 //カナ自動入力
 //if (document.querySelector('#contact_area') != null) {
     //const autokana_Elm = document.createElement('script');
