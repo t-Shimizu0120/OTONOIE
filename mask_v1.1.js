@@ -931,7 +931,7 @@ if (locationURL.includes('detail')) {
             {title:'qrcode'},
             {alt:'qrcode'}
         ]);
-        qr_img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=120x120&margin=3`;
+        qr_img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=150x150&margin=3`;
         const qr_popover_p = create_Element('p',[]);
         qr_popover_p.textContent = '物件ページのQRコード';
         const share_qr = new AddPopoverContents(
