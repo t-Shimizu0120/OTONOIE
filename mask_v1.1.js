@@ -604,7 +604,7 @@ class AddPopoverContents {
                 width:10%;
                 text-align:center;
                 font-weight:bold;
-                font-size:2.4rem;
+                font-size:3.2rem;
                 border:0;
                 cursor:pointer;
             }
