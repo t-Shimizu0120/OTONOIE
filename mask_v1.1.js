@@ -676,7 +676,6 @@ if (locationURL.includes('detail')) {
                 {id:'inquiry1-box'}
         ]);
         //お問合せボタン１
-        const inquiryForm = document.querySelector('#contact_area');
         const inquiry_1 = new AddPopoverContents(
             {
                 contents_Title:'',
@@ -784,7 +783,7 @@ if (locationURL.includes('detail')) {
         //下部コンテナ
         const component_2 = create_Element('div',[
                 {class:'js-added-component'},
-                {id:'component-2'}
+                {id:'component-middle'}
         ]);
         //お問い合わせコンテナ２
         const inquiryBox_2 = create_Element('div',[
@@ -854,7 +853,27 @@ if (locationURL.includes('detail')) {
             return inquiry_Tel_button;
         })();
         inquiryBox_2.appendChild(inquiry_Tel_Button);
-        
+        const qr_2 = (() => {
+            const qr_div = create_Element('div',[
+                {class:'js-added-qrcode'},
+                {id:'qrcode2'}
+            ]);
+            //QRコード生成
+            const qr_img = create_Element('img',[
+                {title:'qrcode2'},
+                {alt:'qrcode2'}
+            ]);
+            qr_img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=80x80&margin=3`;
+            const qr_p = create_Element('p',[
+            ]);
+            qr_p.textContent = '携帯表示用QRコード';
+            qr_div.appendChild(qr_img);
+            qr_div.appendChild(qr_p);
+            
+            return qr_div;
+        })();
+        component_2.appendChild(inquiryBox_2);
+        component_2.appendChild(qr_2);
         //style設定
         const headElm = document.querySelector('head');
         const componentStyle = document.createElement('style');
@@ -906,7 +925,18 @@ if (locationURL.includes('detail')) {
                     display:none !important;
                 }
             }
-            
+            #component-middle {
+                width:100%;
+                display:flex !important;
+                display:-webkit-box;
+                display:-webkit-flex;
+                display :-ms-flexbox;
+                flex-flow:row wrap;
+                justify-content:space-between;
+                background-color:#dddddd;
+                padding:0.8rem 1.6rem;
+                margin: 0 auto;
+            }
             
             
             
