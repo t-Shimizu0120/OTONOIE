@@ -1092,6 +1092,28 @@ if (locationURL.includes('detail')) {
                 color:#000;
                 margin-top:0.5rem;
             }
+            #share {
+                background:#dddddd;
+                margin-bottom:5rem;
+                display:flex !important;
+                display:-webkit-box;
+                display:-webkit-flex;
+                display :-ms-flexbox;
+                flex-flow:row nowrap;
+                justify-content:space-between;
+                align-items:center;
+                padding:0.8rem 1.6rem;
+                margin: 0 auto;
+            }
+            #share-qrcode-popover {
+                flex-basis:calc(50% - 0.4rem);
+            }
+            #share-qrcode-popover > button {
+                background:#3f3f3f;
+                color:#ffffff;
+                font-size:1.4rem;
+                padding:0.8rem;
+            }
             @media screen and (max-width:750px) {
                 #inquiry2-popover > button {
                     font-size:1.8rem;
