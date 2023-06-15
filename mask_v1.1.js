@@ -943,6 +943,12 @@ if (locationURL.includes('detail')) {
                 popover_Target_Action:'hide',
                 buttonText:'QRコードを表示',
                 add_Styles:`
+                    #share-qrcode-popover > button {
+                        background:#3f3f3f;
+                        color:#ffffff;
+                        font-size:1.2rem;
+                        padding:0.8rem;
+                    }
                 `, 
                 add_To_Selector:''
             },
@@ -1107,12 +1113,6 @@ if (locationURL.includes('detail')) {
             }
             #share-qrcode-popover {
                 flex-basis:calc(50% - 0.4rem);
-            }
-            #share-qrcode-popover > button {
-                background:#3f3f3f;
-                color:#ffffff;
-                font-size:1.4rem;
-                padding:0.8rem;
             }
             @media screen and (max-width:750px) {
                 #inquiry2-popover > button {
