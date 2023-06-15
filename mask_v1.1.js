@@ -4,6 +4,8 @@
 //サイト名
 const siteName = 'otonoie';
 const siteNameJp = 'オトノイエ';
+//URL
+const siteUrl = 'https://www.otonoie.net';
 //会社名
 const companyName = '株式会社トータルメディエイト';
 //所在地
