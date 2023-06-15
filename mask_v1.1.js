@@ -601,7 +601,6 @@ class AddPopoverContents {
                 position:absolute;
                 right:0;
                 top:0;
-                width:10%;
                 text-align:center;
                 font-weight:bold;
                 font-size:3.2rem;
