@@ -897,7 +897,6 @@ if (locationURL.includes('detail')) {
                 order:1;
             }
             .js-added-inquiry-tel {
-                width:100%;
                 text-align: center;
                 background: none;
             }
@@ -907,6 +906,9 @@ if (locationURL.includes('detail')) {
             }
             .js-added-inquiry-tel > .tel-time {
                 color:#000;
+            }
+            #inquiry1-tel {
+                width:100%;
             }
             #inquiry1-tel > .tel-number {
                 font-size:1.6rem;
