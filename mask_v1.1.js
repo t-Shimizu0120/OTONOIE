@@ -1100,8 +1100,6 @@ if (locationURL.includes('detail')) {
             }
             #share {
                 background:#dddddd;
-                margin-top:5rem;
-                margin-bottom:5rem;
                 display:flex !important;
                 display:-webkit-box;
                 display:-webkit-flex;
