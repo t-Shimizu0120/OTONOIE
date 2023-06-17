@@ -703,12 +703,12 @@ if (locationURL.includes('detail')) {
         //お問合せボタン１
         const inquiry_1_pc = (() => {
             const inquiry_button = create_Element('button',[
-                {class:'js-added-popover-button'}
+                {class:'js-added-inquiry-button'},
+                {onclick:"location.href=''"}
             ]);
             return inquiry_button;
         })();
         inquiry_1_pc.textContent = 'この物件にお問い合わせ';
-        inquiry_1_pc.onclick = 'location.href=""';
         inquiryBox_1.appendChild(inquiry_1_pc);
         const inquiry_1 = new AddPopoverContents(
             {
@@ -1016,13 +1016,21 @@ if (locationURL.includes('detail')) {
                 width:100%;
                 order:1;
             }
-            #inquiry1-box > button {
+            .js-added-inquiry-button {
                 background:#ffb911;
                 color:#ffffff;
                 text-align:center;
                 font-size:1.6rem;
                 padding:1.4rem;
                 margin-bottom:0.5rem;
+                width:100%;
+                text-align:center;
+                font-weight:bold;
+                border:0;
+                cursor:pointer;
+            }
+            .js-added-inquiry-button:hover {
+                opacity:.6;
             }
             .js-added-inquiry-tel {
                 text-align: center;
@@ -1152,7 +1160,7 @@ if (locationURL.includes('detail')) {
                 opacity:.6;
             }
             @media screen and (max-width:750px) {
-                #inquiry1-box > button {
+                .js-added-inquiry-button {
                     font-size:1.8rem;
                     padding:1.2rem;
                 }
