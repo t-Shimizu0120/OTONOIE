@@ -1220,6 +1220,7 @@ if (locationURL.includes('detail')) {
                 // SP
                 component_1.removeChild(qr_1);
                 component_1.removeChild(inquiryBox_1);
+                inquiryBox_1.appendChild(inquiry_1);
                 component_2.removeChild(qr_2);
                 inquiryBox_2.removeChild(inquiry_2_pc);
                 inquiryBox_2.appendChild(inquiry_2);
