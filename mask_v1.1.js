@@ -720,7 +720,6 @@ if (locationURL.includes('detail')) {
                 buttonText:'この物件にお問い合わせ',
                 add_Styles:`
                     #inquiry1-popover {
-                        margin-bottom:0.5rem;
                     }
                     #inquiry1-popover > button {
                         background:#ffb911;
@@ -1037,7 +1036,6 @@ if (locationURL.includes('detail')) {
                 text-align:center;
                 font-size:1.6rem;
                 padding:1.4rem;
-                margin-bottom:0.5rem;
                 width:100%;
                 text-align:center;
                 font-weight:bold;
@@ -1047,6 +1045,12 @@ if (locationURL.includes('detail')) {
             }
             .js-added-inquiry-button:hover {
                 opacity:.6;
+            }
+            #inquiry1-popover {
+                order:1;
+            }
+            #inquiry1-tel {
+                order:2;
             }
             .js-added-inquiry-tel {
                 text-align: center;
@@ -1092,9 +1096,11 @@ if (locationURL.includes('detail')) {
                 flex-flow:row wrap;
                 justify-content:space-between;
                 flex-grow:1;
+                order:0;
             }
             #inquiry2-popover {
                 width:100%;
+                order:1;
             }
             #inquiry2-tel > .tel-number {
                 font-size:1.8rem;
@@ -1111,6 +1117,7 @@ if (locationURL.includes('detail')) {
                 justify-content:space-between;
                 align-items:center;
                 flex-grow:1;
+                order:2;
             }
             #inquiry2-box > a {
                 display:block;
@@ -1121,6 +1128,7 @@ if (locationURL.includes('detail')) {
                 font-weight:bold;
                 font-size:1.4rem;
                 padding:0.8rem;
+                order:3;
             }
             #inquiry2-box > a:hover {
                 opacity:.6;
@@ -1135,6 +1143,7 @@ if (locationURL.includes('detail')) {
                 flex-flow:column nowrap;
                 justify-content:space-between;
                 align-items:center;
+                order:1;
             }
             #qrcode2 > img {
                 width:80px;
@@ -1211,7 +1220,7 @@ if (locationURL.includes('detail')) {
                 // SP
                 component_1.removeChild(qr_1);
                 component_1.removeChild(inquiryBox_1);
-                inquiry_2_pc
+                //inquiry_2_pc
                 component_2.removeChild(qr_2);
                 inquiryBox_2.appendChild(inquiry_Tel_Button);
                 document.querySelector('div.detail_btm').appendChild(share_container);
@@ -1222,7 +1231,7 @@ if (locationURL.includes('detail')) {
                 inquiryBox_1.removeChild(inquiry_1);
                 component_2.appendChild(qr_2);
                 inquiryBox_2.removeChild(inquiry_Tel_Button);
-                inquiryBox_2.removeChild(inquiry_2);
+                //inquiryBox_2.removeChild(inquiry_2);
                 document.querySelector('div.detail_btm').removeChild(share_container);
             };
         };
