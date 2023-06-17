@@ -695,16 +695,33 @@ if (locationURL.includes('detail')) {
     //管理費
     const managementPrice = summary[3].textContent.replace(',','').replace('円','') / 10000;
     
-    //=================================================================
-    //家賃・礼敷等
-    //=================================================================
     (() => {
-        const summaryPrice = '';
-    })();
-    //=================================================================
-    //お問い合わせ/共有
-    //=================================================================
-    (() => {
+        //=================================================================
+        //家賃・礼敷等
+        //=================================================================
+        const summaryPrice = (() => {
+            const summaryPrice_div = create_Element('div',[
+                {class:'js-added-component-top-l js-added-summary-price'},
+                {id:'summary-price'}
+            ]);
+            const rentPrice_dt = create_Element('dt',[]);
+            rentPrice_dt.textContent = '賃料';
+            const rentPrice_dd = create_Element('dd',[]);
+            rentPrice_dd.textContent = rentPrice + '万円';
+            const managementPrice_dt = create_Element('dt',[]);
+            managementPrice_dt.textContent = '管理費・共益費等';
+            const managementPrice_dd = create_Element('dd',[]);
+            managementPrice_dd.textContent = managementPrice + '万円';
+            summaryPrice_div.appendChild(rentPrice_dt);
+            summaryPrice_div.appendChild(rentPrice_dd);
+            summaryPrice_div.appendChild(managementPrice_dt);
+            summaryPrice_div.appendChild(managementPrice_dd);
+            
+            return summaryPrice_div;
+        })();
+        //=================================================================
+        //お問い合わせ/共有
+        //=================================================================
         //----------------------------上部------------------------------
         //上部コンテナ
         const component_1 = create_Element('div',[
@@ -826,6 +843,7 @@ if (locationURL.includes('detail')) {
             
             return qr_div;
         })();
+        component_1.appendChild(summaryPrice);
         component_1.appendChild(qr_1);
         component_1.appendChild(inquiryBox_1);
         //-----------------------------下部-----------------------------
