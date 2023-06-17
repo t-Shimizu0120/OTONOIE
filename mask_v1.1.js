@@ -681,14 +681,30 @@ class AddPopoverContents {
 const locationURL = location.href;
 //URLで分岐
 if (locationURL.includes('detail')) {
+    //=================================================================
+    //掲載データ
+    //=================================================================
+    //物件コード
+    const apartmentCode = document.querySelector('p.code').textContent.match(/[0-9]+$/)[0];
+    //物件URL
+    const detailPageUrl = 'https://www.otonoie.net/detail/index.html?number=' + apartmentCode;
+    //上部右側データ
+    const summary = document.querySelector('div.detail_r').querySelector('dl.clearfix').querySelectorAll('dd');
+    //賃料
+    const rentPrice = summary[2].textContent.replace(',','').replace('円','')　/ 10000;
+    //管理費
+    const managementPrice = summary[3].textContent.replace(',','').replace('円','') / 10000;
     
+    //=================================================================
+    //家賃・礼敷等
+    //=================================================================
+    (() => {
+        const summaryPrice = '';
+    })();
     //=================================================================
     //お問い合わせ/共有
     //=================================================================
     (() => {
-        //コードからリンクを生成
-        const apartmentCode = document.querySelector('p.code').textContent.match(/[0-9]+$/)[0];
-        const detailPageUrl = 'https://www.otonoie.net/detail/index.html?number=' + apartmentCode;
         //----------------------------上部------------------------------
         //上部コンテナ
         const component_1 = create_Element('div',[
