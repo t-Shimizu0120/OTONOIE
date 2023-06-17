@@ -1412,8 +1412,8 @@ if (locationURL.includes('detail')) {
             
                 const map_Elm = create_Element('iframe',[
                     {width:'100%'},
-                    {height:'auto'},
-                    {style:'border:0; position:absolute; top:-180px; left:0; width:100%; height:calc(100% + 180px + 180px);'},
+                    {height:'calc(100% + 180px + 180px);'},
+                    {style:'border:0; position:absolute; top:-180px; left:0;'},
                     {loading:'lazy'},
                     {allowfullscreen:''},
                     {referrerpolicy:'no-referrer-when-downgrade'}
