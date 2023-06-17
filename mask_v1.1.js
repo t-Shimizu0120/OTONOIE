@@ -3,6 +3,7 @@
 //=================================================================
 const settings = {};
 //サイト名
+settings['company_data'] = {};
 settings['company_data']['site_name'] = 'otonoie';
 settings['company_data']['site_namejp'] = 'オトノイエ';
 //URL
