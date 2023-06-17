@@ -44,6 +44,8 @@
 //} else {
 //};
 
+const settings = JSON.parse(document.querySelector('script#site-settings').textContent);
+
 
 //■要素作成関数
 const create_Element = (tagName,attributes) => {
