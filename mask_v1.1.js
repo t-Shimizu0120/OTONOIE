@@ -825,6 +825,15 @@ if (locationURL.includes('detail')) {
                 {id:'inquiry2-box'}
         ]);
         //お問合せボタン２
+        const inquiry_2_pc = (() => {
+            const inquiry_button = create_Element('button',[
+                {class:'js-added-inquiry-button'},
+                {onclick:"location.href=''"}
+            ]);
+            return inquiry_button;
+        })();
+        inquiry_2_pc.textContent = 'この物件にお問い合わせ';
+        inquiryBox_2.appendChild(inquiry_2_pc);
         const inquiryForm = document.querySelector('#contact_area');
         const handlingOfPersonalInformation = inquiryForm.nextElementSibling;
         const inquiry_2 = new AddPopoverContents(
@@ -1015,6 +1024,12 @@ if (locationURL.includes('detail')) {
             #inquiry1-box {
                 width:100%;
                 order:1;
+                display:flex !important;
+                display:-webkit-box;
+                display:-webkit-flex;
+                display :-ms-flexbox;
+                flex-flow:column nowrap;
+                justify-content:space-between;
             }
             .js-added-inquiry-button {
                 background:#ffb911;
@@ -1028,6 +1043,7 @@ if (locationURL.includes('detail')) {
                 font-weight:bold;
                 border:0;
                 cursor:pointer;
+                order:0;
             }
             .js-added-inquiry-button:hover {
                 opacity:.6;
@@ -1045,6 +1061,7 @@ if (locationURL.includes('detail')) {
             }
             #inquiry1-tel {
                 width:100%;
+                order:1;
             }
             #inquiry1-tel > .tel-number {
                 font-size:1.6rem;
@@ -1194,6 +1211,7 @@ if (locationURL.includes('detail')) {
                 // SP
                 component_1.removeChild(qr_1);
                 component_1.removeChild(inquiryBox_1);
+                inquiry_2_pc
                 component_2.removeChild(qr_2);
                 inquiryBox_2.appendChild(inquiry_Tel_Button);
                 document.querySelector('div.detail_btm').appendChild(share_container);
@@ -1201,8 +1219,10 @@ if (locationURL.includes('detail')) {
                 // PC
                 component_1.appendChild(qr_1);
                 component_1.appendChild(inquiryBox_1);
+                inquiryBox_1.removeChild(inquiry_1);
                 component_2.appendChild(qr_2);
                 inquiryBox_2.removeChild(inquiry_Tel_Button);
+                inquiryBox_2.removeChild(inquiry_2);
                 document.querySelector('div.detail_btm').removeChild(share_container);
             };
         };
