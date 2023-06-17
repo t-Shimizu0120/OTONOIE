@@ -1,30 +1,30 @@
-////=================================================================
-////基本データ
-////=================================================================
-////サイト名
-//const siteName = 'otonoie';
-//const siteNameJp = 'オトノイエ';
-////URL
-//const siteUrl = 'https://www.otonoie.net';
-////会社名
-//const companyName = '株式会社トータルメディエイト';
-////所在地
-//const companyAddress = '東京都北区上十条2-25-4 榎本ビル1F';
-////電話番号
-//const telNumber = '0359485411';
-//const telNumber_Display = '03-5948-5411';
-////営業時間
-//const business_Hours = '受付時間：10：00～17：00（水曜定休）';
-
-////=================================================================
-////コンテンツコントロール
-////=================================================================
-////初期費用表示（初期費用を表示させるかどうか）
-//const initialCost_Control = 'true';
+//=================================================================
+//基本データ
+//=================================================================
+const settings = {};
+//サイト名
+settings['company_data']['site_name'] = 'otonoie';
+settings['company_data']['site_namejp'] = 'オトノイエ';
+//URL
+settings['company_data']['site_url'] = 'https://www.otonoie.net';
+//会社名
+settings['company_data']['company_name'] = '株式会社トータルメディエイト';
+//所在地
+settings['company_data']['company_address'] = '東京都北区上十条2-25-4 榎本ビル1F';
+//電話番号
+settings['company_data']['tel_number'] = '0359485411';
+settings['company_data']['telNumber_display'] = '03-5948-5411';
+//営業時間
+settings['company_data']['business_hours'] = '受付時間：10：00～17：00（水曜定休）';
+//=================================================================
+//コンテンツコントロール
+//=================================================================
+//初期費用表示（初期費用を表示させるかどうか）
+settings['site_control']['initialcost'] = 'true';
 ////地図表示（地図を表示させるかどうか）
-//const map_Control = 'false';
+settings['site_control']['map'] = 'false';
 ////地図完全住所表示（地図を完全住所で表示させるかどうか）
-//const mapAddress_Control = 'false';
+settings['site_control']['map_full_address'] = 'false';
 
 //カナ自動入力
 //if (document.querySelector('#contact_area') != null) {
@@ -44,7 +44,6 @@
 //} else {
 //};
 
-const settings = JSON.parse(document.querySelector('script#site-settings').textContent);
 
 
 //■要素作成関数
