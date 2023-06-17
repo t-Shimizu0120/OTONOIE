@@ -701,6 +701,15 @@ if (locationURL.includes('detail')) {
                 {id:'inquiry1-box'}
         ]);
         //お問合せボタン１
+        const inquiry_1_pc (() => {
+            const inquiry_div = create_Element('a',[
+                {class:'js-added-popover-button'},
+                {href:''}
+            ]);
+            return inquiry_div;
+        })();
+        inquiry_1_pc.textContent = 'この物件にお問い合わせ';
+        inquiryBox_1.appendChild(inquiry_1_pc);
         const inquiry_1 = new AddPopoverContents(
             {
                 contents_Title:'',
