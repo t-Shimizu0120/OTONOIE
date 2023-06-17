@@ -701,12 +701,12 @@ if (locationURL.includes('detail')) {
                 {id:'inquiry1-box'}
         ]);
         //お問合せボタン１
-        const inquiry_1_pc (() => {
-            const inquiry_div = create_Element('a',[
+        const inquiry_1_pc = (() => {
+            const inquiry_a = create_Element('a',[
                 {class:'js-added-popover-button'},
                 {href:''}
             ]);
-            return inquiry_div;
+            return inquiry_a;
         })();
         inquiry_1_pc.textContent = 'この物件にお問い合わせ';
         inquiryBox_1.appendChild(inquiry_1_pc);
