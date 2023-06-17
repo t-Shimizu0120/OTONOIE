@@ -1366,7 +1366,7 @@ if (locationURL.includes('detail')) {
             insertTargetElm.appendChild(content_Map);
         })();
     //---------------------------------------------------------------
-    } else if (map_Control === 'false') {
+    } else if (settings['site_control']['map'] === 'false') {
     } else {
     };
     //===============================================================
