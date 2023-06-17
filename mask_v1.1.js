@@ -1220,8 +1220,9 @@ if (locationURL.includes('detail')) {
                 // SP
                 component_1.removeChild(qr_1);
                 component_1.removeChild(inquiryBox_1);
-                //inquiry_2_pc
                 component_2.removeChild(qr_2);
+                inquiryBox_2.removeChild(inquiry_2_pc);
+                inquiryBox_2.appendChild(inquiry_2);
                 inquiryBox_2.appendChild(inquiry_Tel_Button);
                 document.querySelector('div.detail_btm').appendChild(share_container);
             } else {
@@ -1230,8 +1231,9 @@ if (locationURL.includes('detail')) {
                 component_1.appendChild(inquiryBox_1);
                 inquiryBox_1.removeChild(inquiry_1);
                 component_2.appendChild(qr_2);
+                inquiryBox_2.appendChild(inquiry_2_pc);
+                inquiryBox_2.removeChild(inquiry_2);
                 inquiryBox_2.removeChild(inquiry_Tel_Button);
-                //inquiryBox_2.removeChild(inquiry_2);
                 document.querySelector('div.detail_btm').removeChild(share_container);
             };
         };
