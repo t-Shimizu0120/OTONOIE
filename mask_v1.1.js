@@ -743,12 +743,12 @@ if (locationURL.includes('detail')) {
             const inquiry_Tel_p_Number = create_Element('p',[
                 {class:'tel-number'}
             ]);
-            inquiry_Tel_p_Number.textContent = 'TEL:' + telNumber_Display;
+            inquiry_Tel_p_Number.textContent = 'TEL:' + settings['company_data']['telNumber_display'];
             inquiry_Tel_div.appendChild(inquiry_Tel_p_Number);
             const inquiry_Tel_p_Time = create_Element('p',[
                 {class:'tel-time'}
             ]);
-            inquiry_Tel_p_Time.textContent = business_Hours;
+            inquiry_Tel_p_Time.textContent = settings['company_data']['business_hours'];
             inquiry_Tel_div.appendChild(inquiry_Tel_p_Time);
             const inquiry_Tel_hr_2 = create_Element('hr',[]);
             inquiry_Tel_div.appendChild(inquiry_Tel_hr_2);
@@ -856,12 +856,12 @@ if (locationURL.includes('detail')) {
             const inquiry_Tel_p_Number = create_Element('p',[
                 {class:'tel-number'}
             ]);
-            inquiry_Tel_p_Number.textContent = 'TEL:' + telNumber_Display;
+            inquiry_Tel_p_Number.textContent = 'TEL:' + settings['company_data']['telNumber_display'];
             inquiry_Tel_div.appendChild(inquiry_Tel_p_Number);
             const inquiry_Tel_p_Time = create_Element('p',[
                 {class:'tel-time'}
             ]);
-            inquiry_Tel_p_Time.textContent = business_Hours;
+            inquiry_Tel_p_Time.textContent = settings['company_data']['business_hours'];
             inquiry_Tel_div.appendChild(inquiry_Tel_p_Time);
         
             return inquiry_Tel_div;
@@ -870,7 +870,7 @@ if (locationURL.includes('detail')) {
         //電話をかけるボタン
         const inquiry_Tel_Button = (() => {
             const inquiry_Tel_button = create_Element('a',[
-                {href:'tel:' + telNumber}
+                {href:'tel:' + settings['company_data']['tel_number']}
             ]);
             inquiry_Tel_button.textContent = '電話をかける';
         
@@ -1293,7 +1293,7 @@ if (locationURL.includes('detail')) {
     
     
     //=============================周辺概要===========================
-    if (map_Control === 'true') {
+    if (settings['site_control']['map'] === 'true') {
         //----------------------------タイトル-----------------------------
         (() => {
             const surroundingEnvironmentTitle = document.createElement('h5');
