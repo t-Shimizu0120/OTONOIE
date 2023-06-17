@@ -704,6 +704,12 @@ if (locationURL.includes('detail')) {
                 {class:'js-added-component-top-l js-added-summary-price'},
                 {id:'summary-price'}
             ]);
+            const summaryPrice_dl_1 = create_Element('dl',[
+                {class:'js-added-summary-price-wrap'}
+            ]);
+            const summaryPrice_dl_2 = create_Element('dl',[
+                {class:'js-added-summary-price-wrap'}
+            ]);
             const rentPrice_dt = create_Element('dt',[]);
             rentPrice_dt.textContent = '賃料';
             const rentPrice_dd = create_Element('dd',[]);
@@ -712,10 +718,12 @@ if (locationURL.includes('detail')) {
             managementPrice_dt.textContent = '管理費・共益費等';
             const managementPrice_dd = create_Element('dd',[]);
             managementPrice_dd.textContent = managementPrice + '万円';
-            summaryPrice_div.appendChild(rentPrice_dt);
-            summaryPrice_div.appendChild(rentPrice_dd);
-            summaryPrice_div.appendChild(managementPrice_dt);
-            summaryPrice_div.appendChild(managementPrice_dd);
+            summaryPrice_dl_1.appendChild(rentPrice_dt);
+            summaryPrice_dl_1.appendChild(rentPrice_dd);
+            summaryPrice_dl_1.appendChild(managementPrice_dt);
+            summaryPrice_dl_1.appendChild(managementPrice_dd);
+            summaryPrice_div.appendChild(summaryPrice_dl_1);
+            summaryPrice_div.appendChild(summaryPrice_dl_2);
             
             return summaryPrice_div;
         })();
