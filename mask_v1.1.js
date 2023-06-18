@@ -735,12 +735,19 @@ if (locationURL.includes('detail')) {
         //=================================================================
         //お問い合わせ/共有
         //=================================================================
+        //問い合わせフォーム用ポップオーバー
         const popover_Content_div = create_Element('div',[
                 {class:'js-added-popover-content'},
                 {id:'inquiry-popover-contents'},
-                {popover:'manual'},
-                {popovertargetaction:'hide'}
+                {popover:'manual'}
         ]);
+        //クローズボタン
+        const popover_Close_Button = document.createElement('button');
+        popover_Close_Button.textContent = '×';
+        popover_Close_Button.setAttribute('class','js-added-popover-close-button');
+        popover_Close_Button.setAttribute('popovertarget','inquiry-popover-contents');
+        popover_Close_Button.setAttribute('popovertargetaction','hide');
+        popover_Content_div.appendChild(popover_Close_Button);
         //----------------------------上部------------------------------
         //上部コンテナ
         const component_1 = create_Element('div',[
