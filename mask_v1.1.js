@@ -735,6 +735,12 @@ if (locationURL.includes('detail')) {
         //=================================================================
         //お問い合わせ/共有
         //=================================================================
+        const popover_Content_div = create_Element('div',[
+                {class:'js-added-popover-content'},
+                {id:'inquiry-popover-contents'},
+                {popover:'manual'},
+                {popovertargetaction:'hide'}
+        ]);
         //----------------------------上部------------------------------
         //上部コンテナ
         const component_1 = create_Element('div',[
@@ -1277,7 +1283,18 @@ if (locationURL.includes('detail')) {
             
             if (event.matches) {
                 // SP
-                //component_1.removeChild(qr_1);
+                component_1.removeChild(qr_1);
+                inquiryBox_1.removeChild(inquiry_1_pc);
+                inquiryBox_1.removeChild(inquiry_Tel_1);
+                inquiryBox_1.appendChild(inquiry_1);
+                inquiryBox_2.removeChild(inquiry_2_pc);
+                inquiryBox_2.appendChild(inquiry_2);
+                inquiryBox_2.appendChild(inquiry_Tel_Button);
+                component_2.removeChild(qr_2);
+                
+                document.querySelector('div.detail_btm').appendChild(share_container);
+                
+                //inquiry_2.querySelector('#inquiry-popover-contents').appendChild(inquiryForm);
                 //component_1.removeChild(inquiryBox_1);
                 //inquiryBox_1.appendChild(inquiry_1);
                 //component_2.removeChild(qr_2);
