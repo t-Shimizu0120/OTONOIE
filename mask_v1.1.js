@@ -745,7 +745,7 @@ if (locationURL.includes('detail')) {
         const inquiry_1_pc = (() => {
             const inquiry_button = create_Element('button',[
                 {class:'js-added-inquiry-button'},
-                {onclick:"location.href=''"}
+                {onclick:"location.href='#contact_area'"}
             ]);
             return inquiry_button;
         })();
@@ -869,7 +869,7 @@ if (locationURL.includes('detail')) {
         const inquiry_2_pc = (() => {
             const inquiry_button = create_Element('button',[
                 {class:'js-added-inquiry-button'},
-                {onclick:"location.href=''"}
+                {onclick:"location.href='#contact_area'"}
             ]);
             return inquiry_button;
         })();
