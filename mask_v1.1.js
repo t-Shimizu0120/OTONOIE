@@ -691,10 +691,15 @@ if (locationURL.includes('detail')) {
     //上部右側データ
     const summary = document.querySelector('div.detail_r').querySelector('dl.clearfix').querySelectorAll('dd');
     //賃料
-    const rentPrice = summary[2].textContent.replace(',','').replace('円','')　/ 10000;
+    const rentPrice = summary[2].textContent.replace(',','').replace('円','');
+    const rentPrice_Jp = summary[2].textContent.replace(',','').replace('円','')　/ 10000;
     //管理費
-    const managementPrice = summary[3].textContent.replace(',','').replace('円','') / 10000;
-    
+    const managementPrice = summary[3].textContent.replace(',','').replace('円','');
+    const managementPrice_Jp = summary[3].textContent.replace(',','').replace('円','') / 10000;
+    //問い合わせフォーム
+    const inquiryForm = document.querySelector('#contact_area');
+    //個人情報の取り扱い
+    const handlingOfPersonalInformation = inquiryForm.nextElementSibling;
     (() => {
         //=================================================================
         //家賃・礼敷等
@@ -713,11 +718,11 @@ if (locationURL.includes('detail')) {
             const rentPrice_dt = create_Element('dt',[]);
             rentPrice_dt.textContent = '賃料';
             const rentPrice_dd = create_Element('dd',[]);
-            rentPrice_dd.textContent = rentPrice + '万円';
+            rentPrice_dd.textContent = rentPrice_Jp + '万円';
             const managementPrice_dt = create_Element('dt',[]);
             managementPrice_dt.textContent = '管理費・共益費等';
             const managementPrice_dd = create_Element('dd',[]);
-            managementPrice_dd.textContent = managementPrice + '万円';
+            managementPrice_dd.textContent = managementPrice_Jp + '万円';
             summaryPrice_dl_1.appendChild(rentPrice_dt);
             summaryPrice_dl_1.appendChild(rentPrice_dd);
             summaryPrice_dl_1.appendChild(managementPrice_dt);
@@ -875,8 +880,6 @@ if (locationURL.includes('detail')) {
         })();
         inquiry_2_pc.textContent = 'この物件にお問い合わせ';
         inquiryBox_2.appendChild(inquiry_2_pc);
-        const inquiryForm = document.querySelector('#contact_area');
-        const handlingOfPersonalInformation = inquiryForm.nextElementSibling;
         const inquiry_2 = new AddPopoverContents(
             {
                 contents_Title:'',
