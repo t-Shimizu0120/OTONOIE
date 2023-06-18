@@ -748,6 +748,7 @@ if (locationURL.includes('detail')) {
         popover_Close_Button.setAttribute('popovertarget','inquiry-popover-contents');
         popover_Close_Button.setAttribute('popovertargetaction','hide');
         popover_Content_div.appendChild(popover_Close_Button);
+        document.querySelector('div.result.icon-new').after(popover_Content_div);
         //----------------------------上部------------------------------
         //上部コンテナ
         const component_1 = create_Element('div',[
@@ -769,38 +770,38 @@ if (locationURL.includes('detail')) {
         })();
         inquiry_1_pc.textContent = 'この物件にお問い合わせ';
         inquiryBox_1.appendChild(inquiry_1_pc);
-        const inquiry_1 = new AddPopoverContents(
-            {
-                contents_Title:'',
-                contents_BaseId:'inquiry1',
-                popover_Contents:'inquiry1',
-                popover_Option:'manual',
-                popover_Target_Action:'hide',
-                buttonText:'この物件にお問い合わせ',
-                add_Styles:`
-                    #inquiry1-popover {
-                    }
-                    #inquiry1-popover > button {
-                        background:#ffb911;
-                        color:#ffffff;
-                        text-align:center;
-                        font-size:1.6rem;
-                        padding:1.4rem;
-                    }
-                    @media screen and (max-width:750px) {
-                        #inquiry1-popover > button {
-                            font-size:1.8rem;
-                            padding:1.2rem;
-                        }
-                    }
-                `,
-                add_To_Selector:''
-            },
-            null
-        );
-        const targetButton_1 = inquiry_1.querySelector('.js-added-popover-button');
-        targetButton_1.setAttribute('popovertarget','inquiry-popover-contents');
-        targetButton_1.removeAttribute('disabled');
+        //const inquiry_1 = new AddPopoverContents(
+            //{
+                //contents_Title:'',
+                //contents_BaseId:'inquiry1',
+                //popover_Contents:'inquiry1',
+                //popover_Option:'manual',
+                //popover_Target_Action:'hide',
+                //buttonText:'この物件にお問い合わせ',
+                //add_Styles:`
+                    //#inquiry1-popover {
+                    //}
+                    //#inquiry1-popover > button {
+                        //background:#ffb911;
+                        //color:#ffffff;
+                        //text-align:center;
+                        //font-size:1.6rem;
+                        //padding:1.4rem;
+                    //}
+                    //@media screen and (max-width:750px) {
+                        //#inquiry1-popover > button {
+                            //font-size:1.8rem;
+                            //padding:1.2rem;
+                        //}
+                    //}
+                //`,
+                //add_To_Selector:''
+            //},
+            //null
+        //);
+        //const targetButton_1 = inquiry_1.querySelector('.js-added-popover-button');
+        //targetButton_1.setAttribute('popovertarget','inquiry-popover-contents');
+        //targetButton_1.removeAttribute('disabled');
         //inquiryBox_1.appendChild(inquiry_1);
         //電話番号
         const inquiry_Tel_1 = (() => {
@@ -893,39 +894,39 @@ if (locationURL.includes('detail')) {
         })();
         inquiry_2_pc.textContent = 'この物件にお問い合わせ';
         inquiryBox_2.appendChild(inquiry_2_pc);
-        const inquiry_2 = new AddPopoverContents(
-            {
-                contents_Title:'',
-                contents_BaseId:'inquiry2',
-                popover_Contents:'inquiry2',
-                popover_Option:'manual',
-                popover_Target_Action:'hide',
-                buttonText:'この物件にお問い合わせ',
-                add_Styles:`
-                    #inquiry2-popover {
-                        margin-bottom:0.5rem;
-                    }
-                    #inquiry2-popover > button {
-                        background:#ffb911;
-                        color:#ffffff;
-                        text-align:center;
-                        font-size:1.6rem;
-                        padding:1.4rem;
-                    }
-                    @media screen and (max-width:750px) {
-                        #inquiry2-popover > button {
-                            font-size:1.8rem;
-                            padding:1.2rem;
-                        }
-                    }
-                `, 
-                add_To_Selector:''
-            },
-            null
-        );
-        const targetButton_2 = inquiry_2.querySelector('.js-added-popover-button');
-        targetButton_2.setAttribute('popovertarget','inquiry-popover-contents');
-        targetButton_2.removeAttribute('disabled');
+        //const inquiry_2 = new AddPopoverContents(
+            //{
+                //contents_Title:'',
+                //contents_BaseId:'inquiry2',
+                //popover_Contents:'inquiry2',
+                //popover_Option:'manual',
+                //popover_Target_Action:'hide',
+                //buttonText:'この物件にお問い合わせ',
+                //add_Styles:`
+                    //#inquiry2-popover {
+                        //margin-bottom:0.5rem;
+                    //}
+                    //#inquiry2-popover > button {
+                        //background:#ffb911;
+                        //color:#ffffff;
+                        //text-align:center;
+                        //font-size:1.6rem;
+                        //padding:1.4rem;
+                    //}
+                    //@media screen and (max-width:750px) {
+                        //#inquiry2-popover > button {
+                            //font-size:1.8rem;
+                            //padding:1.2rem;
+                        //}
+                    //}
+                //`, 
+                //add_To_Selector:''
+            //},
+            //null
+        //);
+        //const targetButton_2 = inquiry_2.querySelector('.js-added-popover-button');
+        //targetButton_2.setAttribute('popovertarget','inquiry-popover-contents');
+        //targetButton_2.removeAttribute('disabled');
         //inquiry_2.querySelector('#inquiry2-popover-contents').appendChild(handlingOfPersonalInformation);
         //inquiryBox_2.appendChild(inquiry_2);
         //電話番号
@@ -1267,7 +1268,7 @@ if (locationURL.includes('detail')) {
         popover_Content_div
         document.querySelector('div.detail_l').appendChild(component_1);
         document.querySelector('div.detail_btm').appendChild(component_2);
-        //document.querySelector('div.detail_btm').appendChild(share_container);
+        document.querySelector('div.detail_btm').appendChild(share_container);
         
         //--------------------------レスポンシブ------------------------------
         //ブレイクポイント
@@ -1290,18 +1291,18 @@ if (locationURL.includes('detail')) {
             
             if (event.matches) {
                 // SP
-                component_1.removeChild(qr_1);
-                inquiryBox_1.removeChild(inquiry_1_pc);
-                inquiryBox_1.removeChild(inquiry_Tel_1);
-                inquiryBox_1.appendChild(inquiry_1);
-                inquiryBox_2.removeChild(inquiry_2_pc);
-                inquiryBox_2.appendChild(inquiry_2);
-                inquiryBox_2.appendChild(inquiry_Tel_Button);
-                component_2.removeChild(qr_2);
-                popover_Content_div.appendChild(inquiryForm);
-                popover_Content_div.appendChild(handlingOfPersonalInformation);
-                document.querySelector('div.result.icon-new').after(popover_Content_div);
-                document.querySelector('div.detail_btm').appendChild(share_container);
+                //component_1.removeChild(qr_1);
+                //inquiryBox_1.removeChild(inquiry_1_pc);
+                //inquiryBox_1.removeChild(inquiry_Tel_1);
+                //inquiryBox_1.appendChild(inquiry_1);
+                //inquiryBox_2.removeChild(inquiry_2_pc);
+                //inquiryBox_2.appendChild(inquiry_2);
+                //inquiryBox_2.appendChild(inquiry_Tel_Button);
+                //component_2.removeChild(qr_2);
+                //popover_Content_div.appendChild(inquiryForm);
+                //popover_Content_div.appendChild(handlingOfPersonalInformation);
+                ////document.querySelector('div.result.icon-new').after(popover_Content_div);
+                //document.querySelector('div.detail_btm').appendChild(share_container);
                 
                 //inquiry_2.querySelector('#inquiry-popover-contents').appendChild(inquiryForm);
                 //component_1.removeChild(inquiryBox_1);
