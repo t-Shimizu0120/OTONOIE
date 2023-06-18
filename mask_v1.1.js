@@ -1038,7 +1038,7 @@ if (locationURL.includes('detail')) {
             }
             #component-middle {
                 width:100%;
-                display:flex !important;
+                display:flex;
                 display:-webkit-box;
                 display:-webkit-flex;
                 display :-ms-flexbox;
@@ -1048,11 +1048,8 @@ if (locationURL.includes('detail')) {
                 padding:0.8rem 1.6rem;
                 margin: 0 auto;
             }
-            
-            
-            
             #inquiry2-box {
-                display:flex !important;
+                display:flex;
                 display:-webkit-box;
                 display:-webkit-flex;
                 display :-ms-flexbox;
@@ -1068,7 +1065,7 @@ if (locationURL.includes('detail')) {
                 font-size:1rem;
             }
             #inquiry2-tel {
-                display:flex !important;
+                display:flex;
                 display:-webkit-box;
                 display:-webkit-flex;
                 display :-ms-flexbox;
@@ -1079,24 +1076,12 @@ if (locationURL.includes('detail')) {
                 order:1;
             }
             #inquiry2-box > a {
-                display:none !important;
-                background:#26aaff;
-                color:#ffffff;
-                text-decoration:none;
-                text-align:center;
-                font-weight:bold;
-                font-size:1.4rem;
-                padding:0.8rem;
-                order:2;
-            }
-            #inquiry2-box > a:hover {
-                opacity:.6;
+                display:none;
             }
             #qrcode2 {
-                display:block;
                 margin-bottom:0 !important;
                 margin-left:3.2rem;
-                display:flex !important;
+                display:flex;
                 display:-webkit-box;
                 display:-webkit-flex;
                 display :-ms-flexbox;
@@ -1115,16 +1100,7 @@ if (locationURL.includes('detail')) {
                 margin-top:0.5rem;
             }
             #share {
-                background:#dddddd;
-                display:flex !important;
-                display:-webkit-box;
-                display:-webkit-flex;
-                display :-ms-flexbox;
-                flex-flow:row nowrap;
-                justify-content:space-between;
-                align-items:center;
-                padding:0.8rem 1.6rem;
-                margin: 0 auto;
+                display:none;
             }
             #share-qrcode-popover {
                 flex-basis:calc(50% - 0.4rem);
@@ -1133,7 +1109,7 @@ if (locationURL.includes('detail')) {
                 flex-basis:calc(50% - 0.4rem);
             }
             #share-line > a {
-                display:block !important;
+                display:block;
                 background:#06c755;
                 color:#ffffff;
                 font-size:1.2rem;
@@ -1156,20 +1132,39 @@ if (locationURL.includes('detail')) {
                 #inquiry1-box {
                     display:none;
                 }
-                
-                
-                
-                
-                
-                #inquiry2-popover > button {
-                    font-size:1.8rem;
-                    padding:1.2rem;
-                }
                 #inquiry2-tel > .tel-number {
                     font-size:1.6rem;
                 }
                 #inquiry2-tel > .tel-time {
                     font-size:0.8rem;
+                }
+                #qrcode2 {
+                    display:none;
+                }
+                #inquiry2-box > a {
+                    background:#26aaff;
+                    color:#ffffff;
+                    text-decoration:none;
+                    text-align:center;
+                    font-weight:bold;
+                    font-size:1.4rem;
+                    padding:0.8rem;
+                    order:2;
+                }
+                #inquiry2-box > a:hover {
+                    opacity:.6;
+                }
+                #share {
+                    background:#dddddd;
+                    display:flex;
+                    display:-webkit-box;
+                    display:-webkit-flex;
+                    display :-ms-flexbox;
+                    flex-flow:row nowrap;
+                    justify-content:space-between;
+                    align-items:center;
+                    padding:0.8rem 1.6rem;
+                    margin: 0 auto;
                 }
             }
         `; 
