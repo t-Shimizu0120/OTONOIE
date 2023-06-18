@@ -761,48 +761,15 @@ if (locationURL.includes('detail')) {
                 {id:'inquiry1-box'}
         ]);
         //お問合せボタン１
-        const inquiry_1_pc = (() => {
+        const inquiry_1 = (() => {
             const inquiry_button = create_Element('button',[
                 {class:'js-added-inquiry-button'},
                 {onclick:"location.href='#contact_area'"}
             ]);
             return inquiry_button;
         })();
-        inquiry_1_pc.textContent = 'この物件にお問い合わせ';
-        inquiryBox_1.appendChild(inquiry_1_pc);
-        //const inquiry_1 = new AddPopoverContents(
-            //{
-                //contents_Title:'',
-                //contents_BaseId:'inquiry1',
-                //popover_Contents:'inquiry1',
-                //popover_Option:'manual',
-                //popover_Target_Action:'hide',
-                //buttonText:'この物件にお問い合わせ',
-                //add_Styles:`
-                    //#inquiry1-popover {
-                    //}
-                    //#inquiry1-popover > button {
-                        //background:#ffb911;
-                        //color:#ffffff;
-                        //text-align:center;
-                        //font-size:1.6rem;
-                        //padding:1.4rem;
-                    //}
-                    //@media screen and (max-width:750px) {
-                        //#inquiry1-popover > button {
-                            //font-size:1.8rem;
-                            //padding:1.2rem;
-                        //}
-                    //}
-                //`,
-                //add_To_Selector:''
-            //},
-            //null
-        //);
-        //const targetButton_1 = inquiry_1.querySelector('.js-added-popover-button');
-        //targetButton_1.setAttribute('popovertarget','inquiry-popover-contents');
-        //targetButton_1.removeAttribute('disabled');
-        //inquiryBox_1.appendChild(inquiry_1);
+        inquiry_1.textContent = 'この物件にお問い合わせ';
+        inquiryBox_1.appendChild(inquiry_1);
         //電話番号
         const inquiry_Tel_1 = (() => {
             const inquiry_Tel_div = create_Element('div',[
@@ -885,50 +852,15 @@ if (locationURL.includes('detail')) {
                 {id:'inquiry2-box'}
         ]);
         //お問合せボタン２
-        const inquiry_2_pc = (() => {
+        const inquiry_2 = (() => {
             const inquiry_button = create_Element('button',[
                 {class:'js-added-inquiry-button'},
                 {onclick:"location.href='#contact_area'"}
             ]);
             return inquiry_button;
         })();
-        inquiry_2_pc.textContent = 'この物件にお問い合わせ';
-        inquiryBox_2.appendChild(inquiry_2_pc);
-        //const inquiry_2 = new AddPopoverContents(
-            //{
-                //contents_Title:'',
-                //contents_BaseId:'inquiry2',
-                //popover_Contents:'inquiry2',
-                //popover_Option:'manual',
-                //popover_Target_Action:'hide',
-                //buttonText:'この物件にお問い合わせ',
-                //add_Styles:`
-                    //#inquiry2-popover {
-                        //margin-bottom:0.5rem;
-                    //}
-                    //#inquiry2-popover > button {
-                        //background:#ffb911;
-                        //color:#ffffff;
-                        //text-align:center;
-                        //font-size:1.6rem;
-                        //padding:1.4rem;
-                    //}
-                    //@media screen and (max-width:750px) {
-                        //#inquiry2-popover > button {
-                            //font-size:1.8rem;
-                            //padding:1.2rem;
-                        //}
-                    //}
-                //`, 
-                //add_To_Selector:''
-            //},
-            //null
-        //);
-        //const targetButton_2 = inquiry_2.querySelector('.js-added-popover-button');
-        //targetButton_2.setAttribute('popovertarget','inquiry-popover-contents');
-        //targetButton_2.removeAttribute('disabled');
-        //inquiry_2.querySelector('#inquiry2-popover-contents').appendChild(handlingOfPersonalInformation);
-        //inquiryBox_2.appendChild(inquiry_2);
+        inquiry_2.textContent = 'この物件にお問い合わせ';
+        inquiryBox_2.appendChild(inquiry_2);
         //電話番号
         const inquiry_Tel_2 = (() => {
             const inquiry_Tel_div = create_Element('div',[
@@ -958,7 +890,7 @@ if (locationURL.includes('detail')) {
         
             return inquiry_Tel_button;
         })();
-        //inquiryBox_2.appendChild(inquiry_Tel_Button);
+        inquiryBox_2.appendChild(inquiry_Tel_Button);
         const qr_2 = (() => {
             const qr_div = create_Element('div',[
                 {class:'js-added-qrcode'},
@@ -996,12 +928,6 @@ if (locationURL.includes('detail')) {
                 {href:'https://social-plugins.line.me/lineit/share?url=' + detailPageUrl}
             ]);
             line_button.textContent = 'LINE共有';
-            //LINEアイコン
-            //const line_img = create_Element('img',[
-                //{src:''},
-                //{class:'line-img'}
-            //]);
-            //line_button.appendChild(line_img);
             line_div.appendChild(line_button);
         
             return line_div;
@@ -1040,29 +966,6 @@ if (locationURL.includes('detail')) {
         );
         share_qr.querySelector('#share-qrcode-popover-contents').appendChild(qr_popover_p);
         share_container.appendChild(share_qr);
-        //メール
-        //const share_Mail = (() => {
-            //const mail_Subject = '%E3%80%90%E3%81%8A%E9%83%A8%E5%B1%8B%E6%83%85%E5%A0%B1%E3%80%91';
-            //const mail_Body = '%E3%80%90' + '%E7%89%A9%E4%BB%B6%E3%82%B3%E3%83%BC%E3%83%89%EF%BC%9A' + apartmentCode + '%20' + 'bukkennmei' + '%E3%80%91' + '%0d%0a' + detailPageUrl;
-            //const mail_div = create_Element('div',[
-                //{class:'js-added-mail'},
-                //{id:'share-mail'}
-            //]);
-            //const mail_button = create_Element('a',[
-                //{href:'mailto:?subject=' + mail_Subject + '&amp;body=' + mail_Body}
-            //]);
-            //mail_button.textContent = 'メールで送る';
-            //メールアイコン
-            //const mail_img = create_Element('img',[
-                //{src:''},
-                //{class:'mail-img'}
-            //]);
-            //mail_button.appendChild(mail_img);
-            //mail_div.appendChild(mail_button);
-        
-            //return mail_div;
-        //})();
-        //share.appendChild(share_Mail);
         //---------------------------------------------------------------------
         //style設定
         const headElm = document.querySelector('head');
@@ -1107,12 +1010,6 @@ if (locationURL.includes('detail')) {
             }
             .js-added-inquiry-button:hover {
                 opacity:.6;
-            }
-            #inquiry1-popover {
-                order:1;
-            }
-            #inquiry1-tel {
-                order:2;
             }
             .js-added-inquiry-tel {
                 text-align: center;
@@ -1160,10 +1057,6 @@ if (locationURL.includes('detail')) {
                 flex-grow:1;
                 order:0;
             }
-            #inquiry2-popover {
-                width:100%;
-                order:1;
-            }
             #inquiry2-tel > .tel-number {
                 font-size:1.8rem;
             }
@@ -1179,10 +1072,10 @@ if (locationURL.includes('detail')) {
                 justify-content:space-between;
                 align-items:center;
                 flex-grow:1;
-                order:2;
+                order:1;
             }
             #inquiry2-box > a {
-                display:block;
+                display:none !important;
                 background:#26aaff;
                 color:#ffffff;
                 text-decoration:none;
@@ -1190,12 +1083,13 @@ if (locationURL.includes('detail')) {
                 font-weight:bold;
                 font-size:1.4rem;
                 padding:0.8rem;
-                order:3;
+                order:2;
             }
             #inquiry2-box > a:hover {
                 opacity:.6;
             }
             #qrcode2 {
+                display:block;
                 margin-bottom:0 !important;
                 margin-left:3.2rem;
                 display:flex !important;
