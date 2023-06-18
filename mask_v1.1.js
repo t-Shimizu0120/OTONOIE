@@ -1058,6 +1058,9 @@ if (locationURL.includes('detail')) {
                 flex-grow:1;
                 order:0;
             }
+            #inquiry2-box > button {
+                    margin-bottom:0.5rem;
+            }
             #inquiry2-tel > .tel-number {
                 font-size:1.8rem;
             }
@@ -1142,6 +1145,7 @@ if (locationURL.includes('detail')) {
                     display:none;
                 }
                 #inquiry2-box > a {
+                    display:block;
                     background:#26aaff;
                     color:#ffffff;
                     text-decoration:none;
