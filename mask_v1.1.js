@@ -1199,6 +1199,12 @@ if (locationURL.includes('detail')) {
             
             if (event.matches) {
                 // SP
+                if (popover_Content_div.querySelector('#contact_area')) {
+                } else {
+                    popover_Content_div.appendChild(inquiryForm);
+                    popover_Content_div.appendChild(handlingOfPersonalInformation);
+                };
+                
                 //component_1.removeChild(qr_1);
                 //inquiryBox_1.removeChild(inquiry_1_pc);
                 //inquiryBox_1.removeChild(inquiry_Tel_1);
@@ -1224,6 +1230,14 @@ if (locationURL.includes('detail')) {
                 //document.querySelector('div.detail_btm').appendChild(share_container);
             } else {
                 // PC
+                if (popover_Content_div.querySelector('#contact_area')) {
+                    popover_Content_div.removeChild(inquiryForm);
+                    popover_Content_div.removeChild(handlingOfPersonalInformation);
+                    
+                    document.querySelector('div.result.icon-new').after(inquiryForm);
+                    document.querySelector('div.result.icon-new').after(handlingOfPersonalInformation);
+                } else {
+                };
                 //component_1.appendChild(qr_1);
                 //inquiryBox_1.removeChild(inquiry_1);
                 //component_1.appendChild(inquiryBox_1);
