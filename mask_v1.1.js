@@ -788,7 +788,7 @@ if (locationURL.includes('detail')) {
         const targetButton_1 = inquiry_1.querySelector('.js-added-popover-button');
         targetButton_1.setAttribute('popovertarget','inquiry-popover-contents');
         targetButton_1.removeAttribute('disabled');
-        inquiryBox_1.appendChild(inquiry_1);
+        //inquiryBox_1.appendChild(inquiry_1);
         //電話番号
         const inquiry_Tel_1 = (() => {
             const inquiry_Tel_div = create_Element('div',[
@@ -857,8 +857,8 @@ if (locationURL.includes('detail')) {
             return qr_div;
         })();
         component_1.appendChild(summaryPrice);
-        //component_1.appendChild(qr_1);
-        //component_1.appendChild(inquiryBox_1);
+        component_1.appendChild(qr_1);
+        component_1.appendChild(inquiryBox_1);
         //-----------------------------下部-----------------------------
         //下部コンテナ
         const component_2 = create_Element('div',[
@@ -910,11 +910,11 @@ if (locationURL.includes('detail')) {
             },
             null
         );
-        const targetButton_2 = inquiry_1.querySelector('.js-added-popover-button');
+        const targetButton_2 = inquiry_2.querySelector('.js-added-popover-button');
         targetButton_2.setAttribute('popovertarget','inquiry-popover-contents');
         targetButton_2.removeAttribute('disabled');
         //inquiry_2.querySelector('#inquiry2-popover-contents').appendChild(handlingOfPersonalInformation);
-        inquiryBox_2.appendChild(inquiry_2);
+        //inquiryBox_2.appendChild(inquiry_2);
         //電話番号
         const inquiry_Tel_2 = (() => {
             const inquiry_Tel_div = create_Element('div',[
@@ -944,7 +944,7 @@ if (locationURL.includes('detail')) {
         
             return inquiry_Tel_button;
         })();
-        inquiryBox_2.appendChild(inquiry_Tel_Button);
+        //inquiryBox_2.appendChild(inquiry_Tel_Button);
         const qr_2 = (() => {
             const qr_div = create_Element('div',[
                 {class:'js-added-qrcode'},
@@ -964,8 +964,8 @@ if (locationURL.includes('detail')) {
             
             return qr_div;
         })();
-        //component_2.appendChild(inquiryBox_2);
-        //component_2.appendChild(qr_2);
+        component_2.appendChild(inquiryBox_2);
+        component_2.appendChild(qr_2);
         //-------------------------------共有----------------------------------
         //共有コンテナ
         const share_container = create_Element('div',[
@@ -1264,30 +1264,49 @@ if (locationURL.includes('detail')) {
         listener(mediaQueryList);
         // listener
         function listener (event) {
+            
+            
+        //component_1.appendChild(qr_1);
+        //component_1.appendChild(inquiryBox_1);
+        //inquiry_2.querySelector('#inquiry2-popover-contents').appendChild(handlingOfPersonalInformation);
+        //component_2.appendChild(inquiryBox_2);
+        //component_2.appendChild(qr_2);
+        //document.querySelector('div.detail_btm').appendChild(share_container);
+            
+            
+            
             if (event.matches) {
                 // SP
-                component_1.removeChild(qr_1);
-                component_1.removeChild(inquiryBox_1);
-                inquiryBox_1.appendChild(inquiry_1);
-                component_2.removeChild(qr_2);
-                inquiryBox_2.removeChild(inquiry_2_pc);
-                inquiryBox_2.appendChild(inquiry_2);
-                inquiryBox_2.appendChild(inquiry_Tel_Button);
-                inquiry_2.querySelector('#inquiry2-popover-contents').appendChild(inquiryForm);
-                inquiry_2.querySelector('#inquiry2-popover-contents').appendChild(handlingOfPersonalInformation);
-                document.querySelector('div.detail_btm').appendChild(share_container);
+                //component_1.removeChild(qr_1);
+                //component_1.removeChild(inquiryBox_1);
+                //inquiryBox_1.appendChild(inquiry_1);
+                //component_2.removeChild(qr_2);
+                //inquiryBox_2.removeChild(inquiry_2_pc);
+                //inquiryBox_2.appendChild(inquiry_2);
+                //inquiryBox_2.appendChild(inquiry_Tel_Button);
+                //inquiry_2.querySelector('#inquiry2-popover-contents').appendChild(inquiryForm);
+                //inquiry_2.querySelector('#inquiry2-popover-contents').appendChild(handlingOfPersonalInformation);
+                //document.querySelector('div.detail_btm').appendChild(share_container);
             } else {
                 // PC
-                component_1.appendChild(qr_1);
-                component_1.appendChild(inquiryBox_1);
-                inquiryBox_1.removeChild(inquiry_1);
-                component_2.appendChild(qr_2);
-                inquiryBox_2.appendChild(inquiry_2_pc);
-                inquiryBox_2.removeChild(inquiry_2);
-                inquiryBox_2.removeChild(inquiry_Tel_Button);
-                inquiry_2.querySelector('#inquiry2-popover-contents').removeChild(inquiryForm);
-                inquiry_2.querySelector('#inquiry2-popover-contents').removeChild(handlingOfPersonalInformation);
-                document.querySelector('div.detail_btm').removeChild(share_container);
+                //component_1.appendChild(qr_1);
+                //inquiryBox_1.removeChild(inquiry_1);
+                //component_1.appendChild(inquiryBox_1);
+                //inquiryBox_2.removeChild(inquiry_2);
+                //inquiryBox_2.removeChild(inquiry_Tel_Button);
+                //component_2.appendChild(inquiryBox_2);
+                //component_2.appendChild(qr_2);
+                
+                //component_1.appendChild(qr_1);
+                //component_1.appendChild(inquiryBox_1);
+                //inquiryBox_1.removeChild(inquiry_1);
+                //component_2.appendChild(qr_2);
+                //inquiryBox_2.appendChild(inquiry_2_pc);
+                //inquiryBox_2.removeChild(inquiry_2);
+                //inquiryBox_2.removeChild(inquiry_Tel_Button);
+                //inquiry_2.querySelector('#inquiry2-popover-contents').removeChild(inquiryForm);
+                //inquiry_2.querySelector('#inquiry2-popover-contents').removeChild(handlingOfPersonalInformation);
+                //document.querySelector('div.detail_btm').removeChild(share_container);
             };
         };
         //--------------------------------------------------------------------
