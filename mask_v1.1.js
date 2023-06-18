@@ -974,7 +974,7 @@ if (locationURL.includes('detail')) {
         componentStyle.textContent = `        
             #component-top-l{
                 width:33%;
-                display:flex !important;
+                display:flex;
                 display:-webkit-box;
                 display:-webkit-flex;
                 display :-ms-flexbox;
@@ -982,13 +982,14 @@ if (locationURL.includes('detail')) {
                 justify-content:space-between;
             }
             #qrcode1 {
+                display:block;
                 width:100%;
                 order:0;
             }
             #inquiry1-box {
                 width:100%;
                 order:1;
-                display:flex !important;
+                display:flex;
                 display:-webkit-box;
                 display:-webkit-flex;
                 display :-ms-flexbox;
@@ -1047,6 +1048,9 @@ if (locationURL.includes('detail')) {
                 padding:0.8rem 1.6rem;
                 margin: 0 auto;
             }
+            
+            
+            
             #inquiry2-box {
                 display:flex !important;
                 display:-webkit-box;
@@ -1146,6 +1150,17 @@ if (locationURL.includes('detail')) {
                     font-size:1.8rem;
                     padding:1.2rem;
                 }
+                #qrcode1 {
+                    display:none;
+                }
+                #inquiry1-box {
+                    display:none;
+                }
+                
+                
+                
+                
+                
                 #inquiry2-popover > button {
                     font-size:1.8rem;
                     padding:1.2rem;
