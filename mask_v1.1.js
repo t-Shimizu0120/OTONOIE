@@ -1061,12 +1061,6 @@ if (locationURL.includes('detail')) {
             #inquiry2-box > button {
                     margin-bottom:0.5rem;
             }
-            #inquiry2-tel > .tel-number {
-                font-size:1.8rem;
-            }
-            #inquiry2-tel > .tel-time {
-                font-size:1rem;
-            }
             #inquiry2-tel {
                 display:flex;
                 display:-webkit-box;
@@ -1077,6 +1071,12 @@ if (locationURL.includes('detail')) {
                 align-items:center;
                 flex-grow:1;
                 order:1;
+            }
+            #inquiry2-tel > .tel-number {
+                font-size:1.8rem;
+            }
+            #inquiry2-tel > .tel-time {
+                font-size:1rem;
             }
             #inquiry2-box > a {
                 display:none;
