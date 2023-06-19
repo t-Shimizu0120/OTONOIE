@@ -1101,51 +1101,6 @@ if (locationURL.includes('detail')) {
         //---------------------------------------------------------------------
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-
-        
-        
-        
-        
-        
         //--------------------------レスポンシブ------------------------------
         //ブレイクポイント
         const mediaQueryList = window.matchMedia('(max-width:750px)');
@@ -1160,11 +1115,20 @@ if (locationURL.includes('detail')) {
                 } else {
                     popover_Content_div.appendChild(inquiry_wrap);
                 };
-                if (inquiry_1.hasAttribute('onclick') == true && inquiry_2.hasAttribute('onclick') == true) {
-                    inquiry_1.removeAttribute('onclick');
+                if (component_1.getElementById('inquiry1-box')) {
+                    component_1.removeChild(component_1.getElementById('inquiry1-box'));
+                } else {
+                };
+                if (component_1.getElementById('qrcode1')) {
+                    component_1.removeChild(component_1.getElementById('qrcode1'));
+                } else {
+                };
+                if (component_2.getElementById('qrcode2')) {
+                    component_2.removeChild(component_2.getElementById('qrcode2'));
+                } else {
+                };
+                if (inquiry_2.hasAttribute('onclick') == true) {
                     inquiry_2.removeAttribute('onclick');
-                    inquiry_1.setAttribute('popovertarget','inquiry-popover-contents');
-                    inquiry_1.setAttribute('popovertargetaction','show');
                     inquiry_2.setAttribute('popovertarget','inquiry-popover-contents');
                     inquiry_2.setAttribute('popovertargetaction','show');
                 } else {
@@ -1189,8 +1153,7 @@ if (locationURL.includes('detail')) {
                 const inquiry_1 = (() => {
                     const inquiry_button = create_Element('button',[
                         {class:'js-added-inquiry-button'},
-                        {popovertarget:'inquiry-popover-contents'},
-                        {popovertargetaction:'show'}
+                        {onclick:'location.href=\'#contact_area\''}
                     ]);
                     return inquiry_button;
                 })();
@@ -1300,12 +1263,9 @@ if (locationURL.includes('detail')) {
                     popover_Content_div.before(inquiry_wrap);
                 } else {
                 };
-                if (inquiry_1.hasAttribute('popovertarget') == true && inquiry_2.hasAttribute('popovertarget') == true) {
-                    inquiry_1.removeAttribute('popovertarget');
-                    inquiry_1.removeAttribute('popovertargetaction');
+                if (inquiry_2.hasAttribute('popovertarget') == true) {
                     inquiry_2.removeAttribute('popovertarget');
                     inquiry_2.removeAttribute('popovertargetaction');
-                    inquiry_1.setAttribute('onclick','location.href=\'#contact_area\'');
                     inquiry_2.setAttribute('onclick','location.href=\'#contact_area\'');
                 } else {
                 };
