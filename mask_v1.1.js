@@ -1096,6 +1096,9 @@ if (locationURL.includes('detail')) {
                 color:#000;
                 margin-top:0.5rem;
             }
+            #inquiry-popover-content-wrap {
+                padding:1.2rem;
+            }
             #share {
                 display:none;
             }
@@ -1199,6 +1202,15 @@ if (locationURL.includes('detail')) {
                 };
             } else {
                 // PC
+                if (popover_Content_div.matches(':popover-open') == true && share_qr.querySelector('#share-qrcode-popover-contents').matches(':popover-open') == true) {
+                    popover_Content_div.hidePopover();
+                    share_qr.querySelector('#share-qrcode-popover-contents').hidePopover();
+                } else if (popover_Content_div.matches(':popover-open')) {
+                    popover_Content_div.hidePopover();
+                } else if (share_qr.querySelector('#share-qrcode-popover-contents').matches(':popover-open')) {
+                    share_qr.querySelector('#share-qrcode-popover-contents').hidePopover();
+                } else {
+                };
                 if (popover_Content_div.querySelector('#contact_area')) {
                     popover_Content_div.before(inquiryForm);
                     popover_Content_div.before(handlingOfPersonalInformation);
