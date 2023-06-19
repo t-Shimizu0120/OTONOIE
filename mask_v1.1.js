@@ -1197,7 +1197,9 @@ if (locationURL.includes('detail')) {
                     inquiry_1.removeAttribute('onclick');
                     inquiry_2.removeAttribute('onclick');
                     inquiry_1.setAttribute('popovertarget','inquiry-popover-contents');
+                    inquiry_1.setAttribute('popovertargetaction','show');
                     inquiry_2.setAttribute('popovertarget','inquiry-popover-contents');
+                    inquiry_2.setAttribute('popovertargetaction','show');
                 } else {
                 };
             } else {
@@ -1209,7 +1211,9 @@ if (locationURL.includes('detail')) {
                 };
                 if (inquiry_1.hasAttribute('popovertarget') == true && inquiry_2.hasAttribute('popovertarget') == true) {
                     inquiry_1.removeAttribute('popovertarget');
+                    inquiry_1.removeAttribute('popovertargetaction');
                     inquiry_2.removeAttribute('popovertarget');
+                    inquiry_2.removeAttribute('popovertargetaction');
                     inquiry_1.setAttribute('onclick','location.href=\'#contact_area\'');
                     inquiry_2.setAttribute('onclick','location.href=\'#contact_area\'');
                 } else {
