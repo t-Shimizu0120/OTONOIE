@@ -1231,9 +1231,6 @@ if (locationURL.includes('detail')) {
             } else {
                 // PC
                 if (popover_Content_div.querySelector('#contact_area')) {
-                    popover_Content_div.removeChild(inquiryForm);
-                    popover_Content_div.removeChild(handlingOfPersonalInformation);
-                    
                     document.querySelector('div.result.icon-new').after(inquiryForm);
                     document.querySelector('div.result.icon-new').after(handlingOfPersonalInformation);
                 } else {
