@@ -1147,11 +1147,16 @@ if (locationURL.includes('detail')) {
                     display:none;
                 }
                 #inquiry2-box > a {
-                    display:block;
+                    display:flex;
+                    display:-webkit-box;
+                    display:-webkit-flex;
+                    display :-ms-flexbox;
+                    flex-flow:row nowrap;
                     background:#26aaff;
                     color:#ffffff;
                     text-decoration:none;
-                    text-align:center;
+                    justify-content:center;
+                    align-items:center;
                     font-weight:bold;
                     font-size:1.2rem;
                     padding:0.6rem;
