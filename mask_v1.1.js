@@ -1153,8 +1153,8 @@ if (locationURL.includes('detail')) {
                     text-decoration:none;
                     text-align:center;
                     font-weight:bold;
-                    font-size:1.4rem;
-                    padding:0.8rem;
+                    font-size:1.2rem;
+                    padding:0.6rem;
                     order:2;
                 }
                 #inquiry2-box > a:hover {
