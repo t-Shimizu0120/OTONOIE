@@ -1202,13 +1202,14 @@ if (locationURL.includes('detail')) {
                 };
             } else {
                 // PC
-                if (popover_Content_div.matches(':popover-open') == true && share_qr.querySelector('#share-qrcode-popover-contents').matches(':popover-open') == true) {
-                    popover_Content_div.hidePopover();
-                    share_qr.querySelector('#share-qrcode-popover-contents').hidePopover();
-                } else if (popover_Content_div.matches(':popover-open')) {
-                    popover_Content_div.hidePopover();
-                } else if (share_qr.querySelector('#share-qrcode-popover-contents').matches(':popover-open')) {
-                    share_qr.querySelector('#share-qrcode-popover-contents').hidePopover();
+                if (document.querySelectorAll('.js-added-popover-content').length !== 0) {
+                    const popoverElm = document.querySelectorAll('.js-added-popover-content');
+                    for (popoverItem of popoverElm) {
+                        if (popoverItem.matches(':popover-open')) {
+                            popoverItem.hidePopover();
+                        } else {
+                        };
+                    };
                 } else {
                 };
                 if (popover_Content_div.querySelector('#contact_area')) {
