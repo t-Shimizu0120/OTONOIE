@@ -695,6 +695,30 @@ if (locationURL.includes('detail')) {
     const handlingOfPersonalInformation = inquiryForm.nextElementSibling;
     (() => {
         //=================================================================
+        //コンテナ
+        //=================================================================
+        //----------------------------上部---------------------------------
+        const component_1 = create_Element('div',[
+                {class:'js-added-component-top-l'},
+                {id:'component-top-l'}
+        ]);
+        document.querySelector('div.detail_l').appendChild(component_1);
+        //-----------------------------------------------------------------
+        //----------------------------中部---------------------------------
+        const component_2 = create_Element('div',[
+                {class:'js-added-component'},
+                {id:'component-middle'}
+        ]);
+        document.querySelector('div.detail_btm').appendChild(component_2);
+        //-----------------------------------------------------------------
+        //----------------------------シェア-------------------------------
+        const share_container = create_Element('div',[
+            {class:'js-added-share'},
+            {id:'share'}
+        ]);
+        document.querySelector('div.detail_btm').appendChild(share_container);
+        //-----------------------------------------------------------------
+        //=================================================================
         //家賃・礼敷等
         //=================================================================
         const summaryPrice = (() => {
@@ -725,15 +749,18 @@ if (locationURL.includes('detail')) {
             
             return summaryPrice_div;
         })();
-        //=================================================================
-        //お問い合わせ/共有
-        //=================================================================
+        component_1.appendChild(summaryPrice);
+        //===============================================================
+        //お問い合わせ
+        //===============================================================
+        //----------------------------フォーム----------------------------
         //問い合わせフォーム用ポップオーバー
         const popover_Content_div = create_Element('div',[
                 {class:'js-added-popover-content'},
                 {id:'inquiry-popover-contents'},
                 {popover:'manual'}
         ]);
+        document.querySelector('#content').querySelector('div.inner').appendChild(popover_Content_div);
         //クローズボタン
         const popover_Close_Button = document.createElement('button');
         popover_Close_Button.textContent = '×';
@@ -741,119 +768,31 @@ if (locationURL.includes('detail')) {
         popover_Close_Button.setAttribute('popovertarget','inquiry-popover-contents');
         popover_Close_Button.setAttribute('popovertargetaction','hide');
         popover_Content_div.appendChild(popover_Close_Button);
-        document.querySelector('#content').querySelector('div.inner').appendChild(popover_Content_div);
         //問い合わせフォームWRAP
         const inquiry_wrap = create_Element('div',[
                 {class:'js-added-popover-content-wrap'},
                 {id:'inquiry-popover-content-wrap'}
         ]);
-        //----------------------------上部------------------------------
-        //上部コンテナ
-        const component_1 = create_Element('div',[
-                {class:'js-added-component-top-l'},
-                {id:'component-top-l'}
-        ]);
-        //お問い合わせコンテナ１
-        const inquiryBox_1 = create_Element('div',[
-                {class:'js-added-inquiry-box'},
-                {id:'inquiry1-box'}
-        ]);
-        //お問合せボタン１
-        const inquiry_1 = (() => {
-            const inquiry_button = create_Element('button',[
-                {class:'js-added-inquiry-button'},
-                {onclick:"location.href='#contact_area'"}
-            ]);
-            return inquiry_button;
-        })();
-        inquiry_1.textContent = 'この物件にお問い合わせ';
-        inquiryBox_1.appendChild(inquiry_1);
-        //電話番号
-        const inquiry_Tel_1 = (() => {
-            const inquiry_Tel_div = create_Element('div',[
-                {class:'js-added-inquiry-tel'},
-                {id:'inquiry1-tel'}
-            ]);
-            const inquiry_Tel_hr_1 = create_Element('hr',[]);
-            inquiry_Tel_div.appendChild(inquiry_Tel_hr_1);
-            const inquiry_Tel_p_Number = create_Element('p',[
-                {class:'tel-number'}
-            ]);
-            inquiry_Tel_p_Number.textContent = 'TEL:' + settings['company_data']['telNumber_display'];
-            inquiry_Tel_div.appendChild(inquiry_Tel_p_Number);
-            const inquiry_Tel_p_Time = create_Element('p',[
-                {class:'tel-time'}
-            ]);
-            inquiry_Tel_p_Time.textContent = settings['company_data']['business_hours'];
-            inquiry_Tel_div.appendChild(inquiry_Tel_p_Time);
-            const inquiry_Tel_hr_2 = create_Element('hr',[]);
-            inquiry_Tel_div.appendChild(inquiry_Tel_hr_2);
-            
-            return inquiry_Tel_div;
-        })();
-        inquiryBox_1.appendChild(inquiry_Tel_1);
-        //QRコード１
-        const qr_1 = (() => {
-            const qr_div = create_Element('div',[
-                {class:'js-added-qrcode'},
-                {id:'qrcode1'}
-            ]);
-            //QRコード生成
-            const qr_img = create_Element('img',[
-                {title:'qrcode1'},
-                {alt:'qrcode1'}
-            ]);
-            qr_img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=65x65&margin=3`;
-            //QRコードテーブル作成
-            const qrcode_table = new AddTable(
-                {
-                    contents_Title:'',
-                    table_BaseId:'qrcode1',
-                    table_Contents:[[{th:'携帯表示用QRコード'},{td:['']}]],
-                    add_Styles:`
-                        #qrcode1-table {
-                            border:0 !important;
-                            width:100% !important;
-                        }
-                        #qrcode1-table > tbody > tr > th {
-                            border:0 !important;
-                            font-size:1.2rem !important;
-                        }
-                        #qrcode1-table > tbody > tr > td {
-                            border:0 !important;
-                            padding:0.4rem !important;
-                            text-align:end !important;
-                            background-color:#dddddd !important;
-                        }
-                    `, 
-                    add_To_Selector:''
-                }
-            );
-            qrcode_table.querySelector('td').removeChild(qrcode_table.querySelector('ul'));
-            qrcode_table.querySelector('td').appendChild(qr_img);
-            qr_div.appendChild(qrcode_table);
-            
-            return qr_div;
-        })();
-        component_1.appendChild(summaryPrice);
-        component_1.appendChild(qr_1);
-        component_1.appendChild(inquiryBox_1);
-        //-----------------------------下部-----------------------------
-        //下部コンテナ
-        const component_2 = create_Element('div',[
-                {class:'js-added-component'},
-                {id:'component-middle'}
-        ]);
-        //お問い合わせコンテナ２
+        inquiry_wrap.appendChild(inquiryForm);
+        inquiry_wrap.appendChild(handlingOfPersonalInformation);
+        popover_Content_div.appendChild(inquiry_wrap);
+        //-----------------------------------------------------------------
+        //--------------------------コンポーネント１------------------------
+        //※別処理（matchMedia）
+        //-----------------------------------------------------------------
+        //--------------------------コンポーネント２-------------------------
+        //お問い合わせWRAP２
         const inquiryBox_2 = create_Element('div',[
                 {class:'js-added-inquiry-box'},
                 {id:'inquiry2-box'}
         ]);
+        component_2.appendChild(inquiryBox_2);
         //お問合せボタン２
         const inquiry_2 = (() => {
             const inquiry_button = create_Element('button',[
                 {class:'js-added-inquiry-button'},
-                {onclick:"location.href='#contact_area'"}
+                {popovertarget:'inquiry-popover-contents'},
+                {popovertargetaction:'show'}
             ]);
             return inquiry_button;
         })();
@@ -889,34 +828,12 @@ if (locationURL.includes('detail')) {
             return inquiry_Tel_button;
         })();
         inquiryBox_2.appendChild(inquiry_Tel_Button);
-        const qr_2 = (() => {
-            const qr_div = create_Element('div',[
-                {class:'js-added-qrcode'},
-                {id:'qrcode2'}
-            ]);
-            //QRコード生成
-            const qr_img = create_Element('img',[
-                {title:'qrcode2'},
-                {alt:'qrcode2'}
-            ]);
-            qr_img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=80x80&margin=3`;
-            const qr_p = create_Element('p',[
-            ]);
-            qr_p.textContent = '携帯表示用QRコード';
-            qr_div.appendChild(qr_img);
-            qr_div.appendChild(qr_p);
-            
-            return qr_div;
-        })();
-        component_2.appendChild(inquiryBox_2);
-        component_2.appendChild(qr_2);
-        //-------------------------------共有----------------------------------
-        //共有コンテナ
-        const share_container = create_Element('div',[
-            {class:'js-added-share'},
-            {id:'share'}
-        ]);
-        //LINE
+        
+        //-----------------------------------------------------------------
+        //=================================================================
+        //共有
+        //=================================================================
+        //-----------------------------LINE--------------------------------
         const share_Line = (() => {
             const line_div = create_Element('div',[
                 {class:'js-added-line'},
@@ -931,7 +848,8 @@ if (locationURL.includes('detail')) {
             return line_div;
         })();
         share_container.appendChild(share_Line);
-        //QRコード生成
+        //-----------------------------------------------------------------
+        //----------------------------QRコード------------------------------
         const qr_img = create_Element('img',[
             {title:'qrcode'},
             {alt:'qrcode'}
@@ -966,7 +884,7 @@ if (locationURL.includes('detail')) {
         share_qr.querySelector('#share-qrcode-popover-contents').appendChild(qr_popover_p);
         share_container.appendChild(share_qr);
         //---------------------------------------------------------------------
-        //style設定
+        //----------------------------STYLE------------------------------------
         const headElm = document.querySelector('head');
         const componentStyle = document.createElement('style');
         componentStyle.setAttribute('id','component-style');
@@ -1180,10 +1098,159 @@ if (locationURL.includes('detail')) {
             }
         `; 
         headElm.appendChild(componentStyle);
-        popover_Content_div
-        document.querySelector('div.detail_l').appendChild(component_1);
-        document.querySelector('div.detail_btm').appendChild(component_2);
-        document.querySelector('div.detail_btm').appendChild(share_container);
+        //---------------------------------------------------------------------
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        //--------------------------コンポーネント１---------------------------
+        //お問い合わせWRAP１
+        const inquiryBox_1 = create_Element('div',[
+                {class:'js-added-inquiry-box'},
+                {id:'inquiry1-box'}
+        ]);
+        component_1.appendChild(inquiryBox_1);
+        //お問合せボタン１
+        const inquiry_1 = (() => {
+            const inquiry_button = create_Element('button',[
+                {class:'js-added-inquiry-button'},
+                {popovertarget:'inquiry-popover-contents'},
+                {popovertargetaction:'show'}
+            ]);
+            return inquiry_button;
+        })();
+        inquiry_1.textContent = 'この物件にお問い合わせ';
+        inquiryBox_1.appendChild(inquiry_1);
+        //電話番号１
+        const inquiry_Tel_1 = (() => {
+            const inquiry_Tel_div = create_Element('div',[
+                {class:'js-added-inquiry-tel'},
+                {id:'inquiry1-tel'}
+            ]);
+            const inquiry_Tel_hr_1 = create_Element('hr',[]);
+            inquiry_Tel_div.appendChild(inquiry_Tel_hr_1);
+            const inquiry_Tel_p_Number = create_Element('p',[
+                {class:'tel-number'}
+            ]);
+            inquiry_Tel_p_Number.textContent = 'TEL:' + settings['company_data']['telNumber_display'];
+            inquiry_Tel_div.appendChild(inquiry_Tel_p_Number);
+            const inquiry_Tel_p_Time = create_Element('p',[
+                {class:'tel-time'}
+            ]);
+            inquiry_Tel_p_Time.textContent = settings['company_data']['business_hours'];
+            inquiry_Tel_div.appendChild(inquiry_Tel_p_Time);
+            const inquiry_Tel_hr_2 = create_Element('hr',[]);
+            inquiry_Tel_div.appendChild(inquiry_Tel_hr_2);
+            
+            return inquiry_Tel_div;
+        })();
+        inquiryBox_1.appendChild(inquiry_Tel_1);
+        //QRコード１
+        const qr_1 = (() => {
+            const qr_div = create_Element('div',[
+                {class:'js-added-qrcode'},
+                {id:'qrcode1'}
+            ]);
+            //QRコード生成
+            const qr_img = create_Element('img',[
+                {title:'qrcode1'},
+                {alt:'qrcode1'}
+            ]);
+            qr_img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=65x65&margin=3`;
+            //QRコードテーブル作成
+            const qrcode_table = new AddTable(
+                {
+                    contents_Title:'',
+                    table_BaseId:'qrcode1',
+                    table_Contents:[[{th:'携帯表示用QRコード'},{td:['']}]],
+                    add_Styles:`
+                        #qrcode1-table {
+                            border:0 !important;
+                            width:100% !important;
+                        }
+                        #qrcode1-table > tbody > tr > th {
+                            border:0 !important;
+                            font-size:1.2rem !important;
+                        }
+                        #qrcode1-table > tbody > tr > td {
+                            border:0 !important;
+                            padding:0.4rem !important;
+                            text-align:end !important;
+                            background-color:#dddddd !important;
+                        }
+                    `, 
+                    add_To_Selector:''
+                }
+            );
+            qrcode_table.querySelector('td').removeChild(qrcode_table.querySelector('ul'));
+            qrcode_table.querySelector('td').appendChild(qr_img);
+            qr_div.appendChild(qrcode_table);
+            
+            return qr_div;
+        })();
+        component_1.appendChild(qr_1);
+        //-----------------------------------------------------------------
+        
+        
+        
+        
+        
+        
+        
+        //QRコード
+        const qr_2 = (() => {
+            const qr_div = create_Element('div',[
+                {class:'js-added-qrcode'},
+                {id:'qrcode2'}
+            ]);
+            //QRコード生成
+            const qr_img = create_Element('img',[
+                {title:'qrcode2'},
+                {alt:'qrcode2'}
+            ]);
+            qr_img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=80x80&margin=3`;
+            const qr_p = create_Element('p',[
+            ]);
+            qr_p.textContent = '携帯表示用QRコード';
+            qr_div.appendChild(qr_img);
+            qr_div.appendChild(qr_p);
+            
+            return qr_div;
+        })();
+        component_2.appendChild(qr_2);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
         
         //--------------------------レスポンシブ------------------------------
         //ブレイクポイント
@@ -1195,12 +1262,12 @@ if (locationURL.includes('detail')) {
         function listener (event) {
             if (event.matches) {
                 // SP
-                if (popover_Content_div.querySelector('#contact_area')) {
-                } else {
-                    inquiry_wrap.appendChild(inquiryForm);
-                    inquiry_wrap.appendChild(handlingOfPersonalInformation);
-                    popover_Content_div.appendChild(inquiry_wrap);
-                };
+                //if (popover_Content_div.querySelector('#contact_area')) {
+                //} else {
+                    //inquiry_wrap.appendChild(inquiryForm);
+                    //inquiry_wrap.appendChild(handlingOfPersonalInformation);
+                    //popover_Content_div.appendChild(inquiry_wrap);
+                //};
                 if (inquiry_1.hasAttribute('onclick') == true && inquiry_2.hasAttribute('onclick') == true) {
                     inquiry_1.removeAttribute('onclick');
                     inquiry_2.removeAttribute('onclick');
