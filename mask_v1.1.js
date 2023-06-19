@@ -582,8 +582,6 @@ class AddPopoverContents {
                 pointer-events:none;
             }
             .js-added-popover-content {
-                position:relative;
-                overscroll-behavior:contain;
             }
             .js-added-popover-content:popover-open {
                 animation:appear .5s ease;
@@ -749,6 +747,11 @@ if (locationURL.includes('detail')) {
         popover_Close_Button.setAttribute('popovertargetaction','hide');
         popover_Content_div.appendChild(popover_Close_Button);
         document.querySelector('#content').querySelector('div.inner').appendChild(popover_Content_div);
+        //問い合わせフォームWRAP
+        const inquiry_wrap = create_Element('div',[
+                {class:'js-added-popover-content-wrap'},
+                {id:'inquiry-popover-content-wrap'}
+        ]);
         //----------------------------上部------------------------------
         //上部コンテナ
         const component_1 = create_Element('div',[
@@ -1190,8 +1193,9 @@ if (locationURL.includes('detail')) {
                 // SP
                 if (popover_Content_div.querySelector('#contact_area')) {
                 } else {
-                    popover_Content_div.appendChild(inquiryForm);
-                    popover_Content_div.appendChild(handlingOfPersonalInformation);
+                    inquiry_wrap.appendChild(inquiryForm);
+                    inquiry_wrap.appendChild(handlingOfPersonalInformation);
+                    popover_Content_div.appendChild(inquiry_wrap);
                 };
                 if (inquiry_1.hasAttribute('onclick') == true && inquiry_2.hasAttribute('onclick') == true) {
                     inquiry_1.removeAttribute('onclick');
@@ -1207,6 +1211,7 @@ if (locationURL.includes('detail')) {
                 if (popover_Content_div.querySelector('#contact_area')) {
                     popover_Content_div.before(inquiryForm);
                     popover_Content_div.before(handlingOfPersonalInformation);
+                    popover_Content_div.removeChild(inquiry_wrap);
                 } else {
                 };
                 if (inquiry_1.hasAttribute('popovertarget') == true && inquiry_2.hasAttribute('popovertarget') == true) {
