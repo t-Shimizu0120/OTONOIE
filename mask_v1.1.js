@@ -748,7 +748,7 @@ if (locationURL.includes('detail')) {
         popover_Close_Button.setAttribute('popovertarget','inquiry-popover-contents');
         popover_Close_Button.setAttribute('popovertargetaction','hide');
         popover_Content_div.appendChild(popover_Close_Button);
-        document.querySelector('div.result.icon-new').after(popover_Content_div);
+        document.querySelector('div.inner').appendChild(popover_Content_div);
         //----------------------------上部------------------------------
         //上部コンテナ
         const component_1 = create_Element('div',[
