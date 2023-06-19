@@ -16,7 +16,7 @@ settings['company_data']['company_address'] = '東京都北区上十条2-25-4 �
 settings['company_data']['tel_number'] = '0359485411';
 settings['company_data']['telNumber_display'] = '03-5948-5411';
 //営業時間
-settings['company_data']['business_hours'] = '受付時間／10:00～17:00（水曜定休）';
+settings['company_data']['business_hours'] = '受付時間 10:00～17:00（水曜定休）';
 //=================================================================
 //コンテンツコントロール
 //=================================================================
@@ -806,7 +806,7 @@ if (locationURL.includes('detail')) {
             const inquiry_Tel_p_Number = create_Element('p',[
                 {class:'tel-number'}
             ]);
-            inquiry_Tel_p_Number.textContent = 'TEL／' + settings['company_data']['telNumber_display'];
+            inquiry_Tel_p_Number.textContent = 'TEL ' + settings['company_data']['telNumber_display'];
             inquiry_Tel_div.appendChild(inquiry_Tel_p_Number);
             const inquiry_Tel_p_Time = create_Element('p',[
                 {class:'tel-time'}
@@ -891,7 +891,7 @@ if (locationURL.includes('detail')) {
             const inquiry_Tel_p_Number = create_Element('p',[
                 {class:'tel-number'}
             ]);
-            inquiry_Tel_p_Number.textContent = 'TEL／' + settings['company_data']['telNumber_display'];
+            inquiry_Tel_p_Number.textContent = 'TEL ' + settings['company_data']['telNumber_display'];
             inquiry_Tel_div.appendChild(inquiry_Tel_p_Number);
             const inquiry_Tel_p_Time = create_Element('p',[
                 {class:'tel-time'}
