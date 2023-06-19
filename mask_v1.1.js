@@ -583,6 +583,7 @@ class AddPopoverContents {
             }
             .js-added-popover-content {
                 position:relative;
+                overscroll-behavior:contain;
             }
             .js-added-popover-content:popover-open {
                 animation:appear .5s ease;
@@ -598,7 +599,6 @@ class AddPopoverContents {
             .js-added-popover-content::backdrop {
                 background-color:#000;
                 opacity:.6;
-                backdrop-filter:blur(10px);
             }
             .js-added-popover-close-button {
                 position:absolute;
