@@ -1210,6 +1210,13 @@ if (locationURL.includes('detail')) {
                     inquiry_2.setAttribute('popovertargetaction','show');
                 } else {
                 };
+                //ポップオーバーコントロール
+                //const popoverButtons = document.querySelectorAll('button[popovertargetaction="show"]');
+                //for (button of popoverButtons) {
+                    //button.addEventListener('click', (e) => {
+                        
+                    //});
+                //};
             } else {
                 // PC
                 if (document.querySelectorAll('.js-added-popover-content').length !== 0) {
