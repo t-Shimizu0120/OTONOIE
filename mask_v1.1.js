@@ -584,15 +584,6 @@ class AddPopoverContents {
             .js-added-popover-content {
             }
             .js-added-popover-content:popover-open {
-                animation:appear .5s ease;
-            }
-            @keyframes appear {
-                0%{
-                    opacity:.5;
-                }
-                100%{
-                    opacity:1;
-                }
             }
             .js-added-popover-content::backdrop {
                 background-color:#000;
