@@ -1115,15 +1115,15 @@ if (locationURL.includes('detail')) {
                 } else {
                     popover_Content_div.appendChild(inquiry_wrap);
                 };
-                if (component_1.getElementById('inquiry1-box')) {
+                if (component_1.querySelector('#inquiry1-box')) {
                     component_1.removeChild(component_1.getElementById('inquiry1-box'));
                 } else {
                 };
-                if (component_1.getElementById('qrcode1')) {
+                if (component_1.querySelector('#qrcode1')) {
                     component_1.removeChild(component_1.getElementById('qrcode1'));
                 } else {
                 };
-                if (component_2.getElementById('qrcode2')) {
+                if (component_2.querySelector('#qrcode2')) {
                     component_2.removeChild(component_2.getElementById('qrcode2'));
                 } else {
                 };
