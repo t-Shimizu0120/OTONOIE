@@ -1186,17 +1186,6 @@ if (locationURL.includes('detail')) {
         listener(mediaQueryList);
         // listener
         function listener (event) {
-            
-            
-        //component_1.appendChild(qr_1);
-        //component_1.appendChild(inquiryBox_1);
-        //inquiry_2.querySelector('#inquiry2-popover-contents').appendChild(handlingOfPersonalInformation);
-        //component_2.appendChild(inquiryBox_2);
-        //component_2.appendChild(qr_2);
-        //document.querySelector('div.detail_btm').appendChild(share_container);
-            
-            
-            
             if (event.matches) {
                 // SP
                 if (popover_Content_div.querySelector('#contact_area')) {
@@ -1211,29 +1200,6 @@ if (locationURL.includes('detail')) {
                     inquiry_2.setAttribute('popovertarget','inquiry-popover-contents');
                 } else {
                 };
-                //component_1.removeChild(qr_1);
-                //inquiryBox_1.removeChild(inquiry_1_pc);
-                //inquiryBox_1.removeChild(inquiry_Tel_1);
-                //inquiryBox_1.appendChild(inquiry_1);
-                //inquiryBox_2.removeChild(inquiry_2_pc);
-                //inquiryBox_2.appendChild(inquiry_2);
-                //inquiryBox_2.appendChild(inquiry_Tel_Button);
-                //component_2.removeChild(qr_2);
-                //popover_Content_div.appendChild(inquiryForm);
-                //popover_Content_div.appendChild(handlingOfPersonalInformation);
-                ////document.querySelector('div.result.icon-new').after(popover_Content_div);
-                //document.querySelector('div.detail_btm').appendChild(share_container);
-                
-                //inquiry_2.querySelector('#inquiry-popover-contents').appendChild(inquiryForm);
-                //component_1.removeChild(inquiryBox_1);
-                //inquiryBox_1.appendChild(inquiry_1);
-                //component_2.removeChild(qr_2);
-                //inquiryBox_2.removeChild(inquiry_2_pc);
-                //inquiryBox_2.appendChild(inquiry_2);
-                //inquiryBox_2.appendChild(inquiry_Tel_Button);
-                //inquiry_2.querySelector('#inquiry2-popover-contents').appendChild(inquiryForm);
-                //inquiry_2.querySelector('#inquiry2-popover-contents').appendChild(handlingOfPersonalInformation);
-                //document.querySelector('div.detail_btm').appendChild(share_container);
             } else {
                 // PC
                 if (popover_Content_div.querySelector('#contact_area')) {
@@ -1248,28 +1214,9 @@ if (locationURL.includes('detail')) {
                     inquiry_2.setAttribute('onclick','location.href=\'#contact_area\'');
                 } else {
                 };
-                //component_1.appendChild(qr_1);
-                //inquiryBox_1.removeChild(inquiry_1);
-                //component_1.appendChild(inquiryBox_1);
-                //inquiryBox_2.removeChild(inquiry_2);
-                //inquiryBox_2.removeChild(inquiry_Tel_Button);
-                //component_2.appendChild(inquiryBox_2);
-                //component_2.appendChild(qr_2);
-                
-                //component_1.appendChild(qr_1);
-                //component_1.appendChild(inquiryBox_1);
-                //inquiryBox_1.removeChild(inquiry_1);
-                //component_2.appendChild(qr_2);
-                //inquiryBox_2.appendChild(inquiry_2_pc);
-                //inquiryBox_2.removeChild(inquiry_2);
-                //inquiryBox_2.removeChild(inquiry_Tel_Button);
-                //inquiry_2.querySelector('#inquiry2-popover-contents').removeChild(inquiryForm);
-                //inquiry_2.querySelector('#inquiry2-popover-contents').removeChild(handlingOfPersonalInformation);
-                //document.querySelector('div.detail_btm').removeChild(share_container);
             };
         };
         //--------------------------------------------------------------------
-        
     })();
     
     
