@@ -632,15 +632,18 @@ class AddPopoverContents {
         const button_Target = {};
         button_Target.popovertarget = target_Id;
         popover_Obj.button_Attrs.push(button_Target);
+        const popover_Target_Action_Open = {};
+        popover_Target_Action_Open.popovertargetaction = object.popover_Target_Action_Open;
+        popover_Obj.button_Attrs.push(popover_Target_Action_Open);
         const button_Close_Target = {};
         button_Close_Target.popovertarget = target_Id;
         popover_Obj.button_Close_Attrs.push(button_Close_Target);
         const popover_Option = {};
         popover_Option.popover = object.popover_Option;
         popover_Obj.content_Attrs.push(popover_Option);
-        const popover_Target_Action = {};
-        popover_Target_Action.popovertargetaction = object.popover_Target_Action;
-        popover_Obj.button_Close_Attrs.push(popover_Target_Action);
+        const popover_Target_Action_Close = {};
+        popover_Target_Action_Close.popovertargetaction = object.popover_Target_Action_Close;
+        popover_Obj.button_Close_Attrs.push(popover_Target_Action_Close);
         
         popover_Obj.buttonText　= object.buttonText
         popover_Obj.add_To_Selector = object.add_To_Selector;
@@ -654,7 +657,8 @@ class AddPopoverContents {
         //contents_BaseId:'',
         //popover_Contents:'',
         //popover_Option:'',
-        //popover_Target_Action:'',
+        //popover_Target_Action_Open:'',
+        //popover_Target_Action_Close:'',
         //buttonText:'',
         //add_Styles:`
         //`, 
@@ -941,7 +945,8 @@ if (locationURL.includes('detail')) {
                 contents_BaseId:'share-qrcode',
                 popover_Contents:'share-qrcode',
                 popover_Option:'manual',
-                popover_Target_Action:'hide',
+                popover_Target_Action_Open:'show',
+                popover_Target_Action_Close:'hide',
                 buttonText:'QRコードを表示',
                 add_Styles:`
                     #share-qrcode-popover > button {
