@@ -554,8 +554,13 @@ class AddPopoverContents {
             
         };
     };
+    //表示の際の処理
     clickHandlerValid (e) {
         document.querySelector('button.js-added-popover-content-backside-button').classList.add('valid');
+    };
+    //非表示の際の処理
+    clickHandlerInvalid (e) {
+        document.querySelector('button.js-added-popover-content-backside-button').classList.remove('valid');
     };
     //style生成
     setStyle(object) {
