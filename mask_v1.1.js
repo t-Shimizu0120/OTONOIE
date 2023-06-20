@@ -522,6 +522,8 @@ class AddPopoverContents {
                 popover_Backside_Button_Close.setAttribute(button_Close_AttrName,button_Close_AttrValue);
             };
             popover_Backside_Button_Close.setAttribute('class','js-added-popover-content-backside-button');
+            popover_Backside_Button_Close.addEventListener('click', (e) => this.clickHandlerInvalid(e));
+            popover_Button_Close.addEventListener('click', (e) => this.clickHandlerInvalid(e));
             document.querySelector('body').appendChild(popover_Backside_Button_Close);
             popover_Button_Close.appendChild(closeIcon);
             
@@ -652,6 +654,7 @@ class AddPopoverContents {
                 left:0;
                 background-color:transparent;
                 z-index:-1;
+                border:0;
             }
             .js-added-popover-content-backside-button.valid {
                 z-index:1000;
