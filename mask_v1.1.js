@@ -498,6 +498,7 @@ class AddPopoverContents {
                 const button_AttrValue = this.button_Attr[button_AttrName];
                 popover_Button.setAttribute(button_AttrName,button_AttrValue);
             };
+            popover_Button.addEventListener('click', (e) => this.clickHandler(e));
             
             //要素作成
             const popover_Content = document.createElement('div');
@@ -546,6 +547,9 @@ class AddPopoverContents {
             };
             
         };
+    };
+    clickHandler(e) {
+        document.querySelector('div.js-added-popover-content-backside').classList.add('valid');
     };
     //style生成
     setStyle(object) {
@@ -1283,10 +1287,10 @@ if (locationURL.includes('detail')) {
                 } else {
                 };
                 //ポップオーバーコントロール
-                const qr_button = share_qr.querySelector('button[popovertargetaction="show"]');
-                qr_button.addEventListener('click', () => {
-                    document.querySelector('body').prepend(popover_Backside_Elm);
-                });
+                //const qr_button = share_qr.querySelector('button[popovertargetaction="show"]');
+                //qr_button.addEventListener('click', () => {
+                    //document.querySelector('body').prepend(popover_Backside_Elm);
+                //});
                 //const popoverButtons = document.querySelectorAll('button[popovertargetaction="show"]');
                 //for (button of popoverButtons) {
                     //button.addEventListener('click', () => {
