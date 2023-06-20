@@ -1006,8 +1006,21 @@ if (locationURL.includes('detail')) {
                         padding:0.6rem;
                     }
                     #share-qrcode-popover-contents {
-                        width:80%;
-                    };
+                        width:calc(12rem + 150px);
+                        margin:auto;
+                        padding:3.2rem;
+                        text-align:center;
+                    }
+                    #share-qrcode-popover-contents > img {
+                        margin-top:1.6rem;
+                        width:150px;
+                        height:150px;
+                    }
+                    #share-qrcode-popover-contents > p {
+                        margin-top:1.6rem;
+                        font-size:1.4rem;
+                        color:#000;
+                    }
                 `, 
                 add_To_Selector:''
             },
@@ -1048,7 +1061,6 @@ if (locationURL.includes('detail')) {
             .js-added-inquiry-button {
                 background:#ffb911;
                 color:#ffffff;
-                text-align:center;
                 font-size:1.6rem;
                 padding:1.4rem;
                 width:100%;
@@ -1258,8 +1270,8 @@ if (locationURL.includes('detail')) {
                 //ポップオーバーコントロール
                 //const popoverButtons = document.querySelectorAll('button[popovertargetaction="show"]');
                 //for (button of popoverButtons) {
-                    //button.addEventListener('click', (e) => {
-                        
+                    //button.addEventListener('click', () => {
+                        //document.querySelector('body').setAttribute('inert','')
                     //});
                 //};
             } else {
