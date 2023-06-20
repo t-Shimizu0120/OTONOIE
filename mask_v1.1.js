@@ -555,7 +555,7 @@ class AddPopoverContents {
         };
     };
     clickHandler(e) {
-        document.querySelector('div.js-added-popover-content-backside-button').classList.add('valid');
+        document.querySelector('button.js-added-popover-content-backside-button').classList.add('valid');
     };
     //style生成
     setStyle(object) {
