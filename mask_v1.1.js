@@ -758,7 +758,7 @@ if (locationURL.includes('detail')) {
         const popover_Content_div = create_Element('div',[
                 {class:'js-added-popover-content'},
                 {id:'inquiry-popover-contents'},
-                {popover:'manual'}
+                {popover:'auto'}
         ]);
         document.querySelector('#content').querySelector('div.inner').appendChild(popover_Content_div);
         //クローズボタン
@@ -965,7 +965,7 @@ if (locationURL.includes('detail')) {
                 contents_Title:'',
                 contents_BaseId:'share-qrcode',
                 popover_Contents:'share-qrcode',
-                popover_Option:'manual',
+                popover_Option:'auto',
                 popover_Target_Action_Open:'show',
                 popover_Target_Action_Close:'hide',
                 buttonText:'QRコードを表示',
