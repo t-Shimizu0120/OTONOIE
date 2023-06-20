@@ -509,6 +509,9 @@ class AddPopoverContents {
             };
             
             //クローズボタン
+            //ポップオーバー背面クローズボタン
+            const popover_Backside_Button_Close = document.createElement('button');
+            //クローズボタン（×ボタン）
             const closeIcon = document.createElement('span');
             closeIcon.setAttribute('class','icon-close');
             const popover_Button_Close = document.createElement('button');
@@ -516,7 +519,10 @@ class AddPopoverContents {
                 const button_Close_AttrName = Object.keys(this.button_Close_Attr)[0];
                 const button_Close_AttrValue = this.button_Close_Attr[button_Close_AttrName];
                 popover_Button_Close.setAttribute(button_Close_AttrName,button_Close_AttrValue);
+                popover_Backside_Button_Close.setAttribute(button_Close_AttrName,button_Close_AttrValue);
             };
+            popover_Backside_Button_Close.setAttribute('class','js-added-popover-content-backside-button');
+            document.querySelector('body').appendChild(popover_Backside_Button_Close);
             popover_Button_Close.appendChild(closeIcon);
             
             //表示用attributeの設定・コンテンツ要素へ入れる
@@ -633,7 +639,7 @@ class AddPopoverContents {
                 left:auto;
                 right:21%;
             }
-            .js-added-popover-content-backside {
+            .js-added-popover-content-backside-button {
                 width:100vw;
                 height:100vh;
                 position:fixed;
@@ -641,7 +647,7 @@ class AddPopoverContents {
                 left:0;
                 z-index:-1;
             }
-            .js-added-popover-content-backside.valid {
+            .js-added-popover-content-backside-button.valid {
                 z-index:1000;
             }
             ${addStyles}
@@ -760,13 +766,6 @@ if (locationURL.includes('detail')) {
         ]);
         document.querySelector('div.detail_btm').appendChild(share_container);
         //-----------------------------------------------------------------
-        //=================================================================
-        //ポップオーバー用背面要素
-        //================================================================
-        const popover_Backside_Elm = create_Element('div',[
-            {class:'js-added-popover-content-backside'}
-        ]);
-        document.querySelector('body').appendChild(popover_Backside_Elm);
         //=================================================================
         //家賃・礼敷等
         //=================================================================
