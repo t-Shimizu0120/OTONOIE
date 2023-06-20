@@ -629,6 +629,14 @@ class AddPopoverContents {
                 left:auto;
                 right:21%;
             }
+            .js-added-popover-content-backside{
+                width:100vw;
+                height:100vh;
+                position:fixed;
+                top:0;
+                left:0;
+                z-index:-1;
+            }
             ${addStyles}
         `;
         addStyleElm.textContent = style;
@@ -745,6 +753,13 @@ if (locationURL.includes('detail')) {
         ]);
         document.querySelector('div.detail_btm').appendChild(share_container);
         //-----------------------------------------------------------------
+        //=================================================================
+        //ポップオーバー用背面要素
+        //================================================================
+        const popover_Backside_Elm = create_Element('div',[
+            {class:'js-added-popover-content-backside'}
+        ]);
+        document.querySelector('body').appendChild(popover_Backside_Elm);
         //=================================================================
         //家賃・礼敷等
         //=================================================================
@@ -1268,6 +1283,10 @@ if (locationURL.includes('detail')) {
                 } else {
                 };
                 //ポップオーバーコントロール
+                const qr_button = share_qr.querySelector('button[popovertargetaction="show"]');
+                qr_button.addEventListener('click', () => {
+                    document.querySelector('body').prepend(popover_Backside_Elm);
+                });
                 //const popoverButtons = document.querySelectorAll('button[popovertargetaction="show"]');
                 //for (button of popoverButtons) {
                     //button.addEventListener('click', () => {
