@@ -1035,10 +1035,11 @@ if (locationURL.includes('detail')) {
                         padding:0.6rem;
                     }
                     #share-qrcode-popover-contents {
-                        width:calc(12rem + 150px);
+                        width:calc(9.6rem + 150px);
                         margin:auto;
                         padding:3.2rem;
                         text-align:center;
+                        border:0;
                     }
                     #share-qrcode-popover-contents > img {
                         margin-top:1.6rem;
