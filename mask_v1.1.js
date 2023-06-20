@@ -498,7 +498,7 @@ class AddPopoverContents {
                 const button_AttrValue = this.button_Attr[button_AttrName];
                 popover_Button.setAttribute(button_AttrName,button_AttrValue);
             };
-            popover_Button.addEventListener('click', (e) => this.clickHandler(e));
+            popover_Button.addEventListener('click', (e) => this.clickHandlerValid(e));
             
             //要素作成
             const popover_Content = document.createElement('div');
@@ -554,7 +554,7 @@ class AddPopoverContents {
             
         };
     };
-    clickHandler(e) {
+    clickHandlerValid (e) {
         document.querySelector('button.js-added-popover-content-backside-button').classList.add('valid');
     };
     //style生成
@@ -645,6 +645,7 @@ class AddPopoverContents {
                 position:fixed;
                 top:0;
                 left:0;
+                background-color:transparent;
                 z-index:-1;
             }
             .js-added-popover-content-backside-button.valid {
