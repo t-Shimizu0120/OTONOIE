@@ -508,13 +508,15 @@ class AddPopoverContents {
             };
             
             //クローズボタン
+            const closeIcon = document.createElement('span');
+            closeIcon.setAttribute('class','icon-close');
             const popover_Button_Close = document.createElement('button');
-            popover_Button_Close.textContent = '×';
             for (this.button_Close_Attr of obj.button_Close_Attrs) {
                 const button_Close_AttrName = Object.keys(this.button_Close_Attr)[0];
                 const button_Close_AttrValue = this.button_Close_Attr[button_Close_AttrName];
                 popover_Button_Close.setAttribute(button_Close_AttrName,button_Close_AttrValue);
             };
+            popover_Button_Close.appendChild(closeIcon);
             
             //表示用attributeの設定・コンテンツ要素へ入れる
             if (args === null) {
@@ -601,6 +603,30 @@ class AddPopoverContents {
             }
             .js-added-popover-close-button:hover {
                 opacity:.6;
+            }
+            .icon-close {
+                display:block;
+                width:2.6rem;
+                height:2.6rem;
+                position:relative;
+            }
+            .icon-close::before, .icon-close::after{
+                content:"";
+                display:block;
+                width:80%;
+                height:2px;
+                background:#000;
+                transform:rotate(45deg);
+                transform-origin:0% 50%;
+                position:absolute;
+                top:calc(21% - 1px);
+                left:21%;
+            }
+            .icon-close::after{
+                transform:rotate(-45deg);
+                transform-origin:100% 50%;
+                left:auto;
+                right:21%;
             }
             ${addStyles}
         `;
@@ -762,8 +788,10 @@ if (locationURL.includes('detail')) {
         ]);
         document.querySelector('#content').querySelector('div.inner').appendChild(popover_Content_div);
         //クローズボタン
+        const closeIcon = document.createElement('span');
+        closeIcon.setAttribute('class','icon-close');
         const popover_Close_Button = document.createElement('button');
-        popover_Close_Button.textContent = '×';
+        popover_Close_Button.appendChild(closeIcon);
         popover_Close_Button.setAttribute('class','js-added-popover-close-button');
         popover_Close_Button.setAttribute('popovertarget','inquiry-popover-contents');
         popover_Close_Button.setAttribute('popovertargetaction','hide');
@@ -991,8 +1019,8 @@ if (locationURL.includes('detail')) {
         const headElm = document.querySelector('head');
         const componentStyle = document.createElement('style');
         componentStyle.setAttribute('id','component-style');
-        componentStyle.textContent = `        
-            #component-top-l{
+        componentStyle.textContent = ` 
+            #component-top-l {
                 width:33%;
                 display:flex;
                 display:-webkit-box;
