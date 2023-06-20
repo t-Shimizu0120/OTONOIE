@@ -615,7 +615,7 @@ class AddPopoverContents {
                 height:2.6rem;
                 position:relative;
             }
-            .icon-close::before, .icon-close::after{
+            .icon-close::before, .icon-close::after {
                 content:"";
                 display:block;
                 width:80%;
@@ -627,19 +627,22 @@ class AddPopoverContents {
                 top:calc(21% - 1px);
                 left:21%;
             }
-            .icon-close::after{
+            .icon-close::after {
                 transform:rotate(-45deg);
                 transform-origin:100% 50%;
                 left:auto;
                 right:21%;
             }
-            .js-added-popover-content-backside{
+            .js-added-popover-content-backside {
                 width:100vw;
                 height:100vh;
                 position:fixed;
                 top:0;
                 left:0;
                 z-index:-1;
+            }
+            .js-added-popover-content-backside.valid {
+                z-index:1000;
             }
             ${addStyles}
         `;
