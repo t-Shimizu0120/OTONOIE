@@ -600,6 +600,7 @@ class AddPopoverContents {
                 border:0;
                 cursor:pointer;
                 background-color:transparent;
+                padding:0;
             }
             .js-added-popover-close-button:hover {
                 opacity:.6;
