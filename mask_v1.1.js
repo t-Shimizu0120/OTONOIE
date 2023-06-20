@@ -555,7 +555,7 @@ class AddPopoverContents {
         };
     };
     clickHandler(e) {
-        document.querySelector('div.js-added-popover-content-backside').classList.add('valid');
+        document.querySelector('div.js-added-popover-content-backside-button').classList.add('valid');
     };
     //style生成
     setStyle(object) {
@@ -1289,10 +1289,6 @@ if (locationURL.includes('detail')) {
                 } else {
                 };
                 //ポップオーバーコントロール
-                //const qr_button = share_qr.querySelector('button[popovertargetaction="show"]');
-                //qr_button.addEventListener('click', () => {
-                    //document.querySelector('body').prepend(popover_Backside_Elm);
-                //});
                 //const popoverButtons = document.querySelectorAll('button[popovertargetaction="show"]');
                 //for (button of popoverButtons) {
                     //button.addEventListener('click', () => {
