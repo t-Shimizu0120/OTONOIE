@@ -781,6 +781,11 @@ if (locationURL.includes('detail')) {
                 {id:'component-wrap-top'}
         ]);
         document.querySelector('div.detail_l').appendChild(componentWrap_top);
+        const component_Summary = create_Element('div',[
+                {class:'js-added-component-top-l-summary'},
+                {id:'component-top-l-summary'}
+        ]);
+        componentWrap_top.appendChild(component_Summary);
         const component_1 = create_Element('div',[
                 {class:'js-added-component-top-l'},
                 {id:'component-top-l'}
@@ -806,6 +811,9 @@ if (locationURL.includes('detail')) {
         addDetailStyleElm.setAttribute('id','base-detail-style');
         const detailStyle = `
             #component-wrap-top {
+                
+            }
+            #component-top-l-summary {
                 
             }
             #component-top-l {
