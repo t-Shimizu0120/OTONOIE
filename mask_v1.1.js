@@ -558,11 +558,13 @@ class AddPopoverContents {
     };
     //表示の際の処理
     clickHandlerValid (e) {
-        document.querySelector('button.js-added-popover-content-backside-button').classList.add('valid');
+        const targetSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.target.popovertarget + '"]';
+        document.querySelector(targetSelector).classList.add('valid');
     };
     //非表示の際の処理
     clickHandlerInvalid (e) {
-        document.querySelector('button.js-added-popover-content-backside-button').classList.remove('valid');
+        const targetSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.target.popovertarget + '"]';
+        document.querySelector(targetSelector).classList.remove('valid');
     };
     //style生成
     setStyle(object) {
@@ -1307,12 +1309,16 @@ if (locationURL.includes('detail')) {
             } else {
                 // PC
                 if (document.querySelectorAll('.js-added-popover-content').length !== 0) {
-                    const popoverElm = document.querySelectorAll('.js-added-popover-content');
-                    for (popoverItem of popoverElm) {
-                        if (popoverItem.matches(':popover-open')) {
-                            popoverItem.hidePopover();
+                    const popoverElms = document.querySelectorAll('.js-added-popover-content');
+                    for (popoverElm of popoverElms) {
+                        if (popoverElm.matches(':popover-open')) {
+                            popoverElm.hidePopover();
                         } else {
                         };
+                    };
+                    const popover_Backside_Buttons_Valid = document.querySelectorAll('button.js-added-popover-content-backside-button.valid');
+                    for (Backside_Button of popover_Backside_Buttons_Valid) {
+                        Backside_Button.classList.remove('valid');
                     };
                 } else {
                 };
