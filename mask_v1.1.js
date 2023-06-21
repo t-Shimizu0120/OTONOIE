@@ -841,6 +841,18 @@ if (locationURL.includes('detail')) {
                 display:none;
             }
             @media screen and (max-width:750px) {
+                #component-top-l-summary {
+                    
+                }
+                #component-top-l {
+                    width:100%;
+                    display:flex;
+                    display:-webkit-box;
+                    display:-webkit-flex;
+                    display :-ms-flexbox;
+                    flex-flow:row nowrap;
+                    justify-content:space-between;
+                }
                 #share {
                     background:#dddddd;
                     display:flex;
