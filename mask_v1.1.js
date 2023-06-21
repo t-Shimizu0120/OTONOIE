@@ -28,6 +28,24 @@ settings['site_control']['map'] = 'false';
 ////地図完全住所表示（地図を完全住所で表示させるかどうか）
 settings['site_control']['map_full_address'] = 'false';
 
+//=================================================================
+//ベースstyle
+//=================================================================
+(() => {
+    const addStyleElm = document.createElement('style');
+    addStyleElm.setAttribute('id','base-style');
+    const style = `
+        @media screen and (max-width:750px) {
+            header {
+                position:initial;
+            }
+        }
+    `;
+    addStyleElm.textContent = style;
+    const headElm = document.querySelector('head');
+    headElm.appendChild(addStyleElm);
+})();
+
 //カナ自動入力
 //if (document.querySelector('#contact_area') != null) {
     //const autokana_Elm = document.createElement('script');
