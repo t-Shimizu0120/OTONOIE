@@ -821,8 +821,22 @@ if (locationURL.includes('detail')) {
                 padding:0.8rem 1.6rem;
                 margin: 0 auto;
             }
+            #share {
+                display:none;
+            }
             @media screen and (max-width:750px) {
-                
+                #share {
+                    background:#dddddd;
+                    display:flex;
+                    display:-webkit-box;
+                    display:-webkit-flex;
+                    display :-ms-flexbox;
+                    flex-flow:row nowrap;
+                    justify-content:space-between;
+                    align-items:center;
+                    padding:0.8rem 1.6rem;
+                    margin: 0 auto;
+                }
             }
         `;
         addDetailStyleElm.textContent = detailStyle;
@@ -1230,9 +1244,6 @@ if (locationURL.includes('detail')) {
             #inquiry-popover-content-wrap {
                 padding:1.2rem;
             }
-            #share {
-                display:none;
-            }
             #share-qrcode-popover {
                 flex-basis:calc(50% - 0.4rem);
             }
@@ -1290,18 +1301,6 @@ if (locationURL.includes('detail')) {
                 }
                 #inquiry2-box > a:hover {
                     opacity:.6;
-                }
-                #share {
-                    background:#dddddd;
-                    display:flex;
-                    display:-webkit-box;
-                    display:-webkit-flex;
-                    display :-ms-flexbox;
-                    flex-flow:row nowrap;
-                    justify-content:space-between;
-                    align-items:center;
-                    padding:0.8rem 1.6rem;
-                    margin: 0 auto;
                 }
             }
         `; 
