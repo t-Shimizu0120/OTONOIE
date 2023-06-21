@@ -800,6 +800,15 @@ if (locationURL.includes('detail')) {
         const addDetailStyleElm = document.createElement('style');
         addDetailStyleElm.setAttribute('id','base-detail-style');
         const detailStyle = `
+            #component-top-l {
+                width:33%;
+                display:flex;
+                display:-webkit-box;
+                display:-webkit-flex;
+                display :-ms-flexbox;
+                flex-flow:column nowrap;
+                justify-content:space-between;
+            }
             @media screen and (max-width:750px) {
                 
             }
