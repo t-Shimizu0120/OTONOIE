@@ -796,6 +796,15 @@ if (locationURL.includes('detail')) {
         ]);
         document.querySelector('div.detail_btm').appendChild(share_container);
         //-----------------------------------------------------------------
+        //--------------------ベースstyle（detailページ）----------------------
+        const addDetailStyleElm = document.createElement('style');
+        addDetailStyleElm.setAttribute('id','base-detail-style');
+        const detailStyle = `
+        `;
+        addDetailStyleElm.textContent = detailStyle;
+        const detailHeadElm = document.querySelector('head');
+        detailHeadElm.appendChild(addDetailStyleElm);
+        //-----------------------------------------------------------------
         //=================================================================
         //家賃・礼敷等
         //=================================================================
