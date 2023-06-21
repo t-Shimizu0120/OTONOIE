@@ -852,6 +852,9 @@ if (locationURL.includes('detail')) {
                     display :-ms-flexbox;
                     flex-flow:row nowrap;
                     justify-content:space-between;
+                    background-color:#dddddd;
+                    padding:0.8rem 1.6rem;
+                    margin: 0 auto;
                 }
                 #share {
                     background:#dddddd;
