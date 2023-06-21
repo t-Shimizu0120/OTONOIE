@@ -776,11 +776,16 @@ if (locationURL.includes('detail')) {
         //コンテナ
         //=================================================================
         //----------------------------上部---------------------------------
+        const componentWrap_top = create_Element('div',[
+                {class:'js-added-component-wrap-top'},
+                {id:'component-wrap-top'}
+        ]);
+        document.querySelector('div.detail_l').appendChild(componentWrap_top);
         const component_1 = create_Element('div',[
                 {class:'js-added-component-top-l'},
                 {id:'component-top-l'}
         ]);
-        document.querySelector('div.detail_l').appendChild(component_1);
+        componentWrap_top.appendChild(component_1);
         //-----------------------------------------------------------------
         //----------------------------中部---------------------------------
         const component_2 = create_Element('div',[
@@ -800,6 +805,9 @@ if (locationURL.includes('detail')) {
         const addDetailStyleElm = document.createElement('style');
         addDetailStyleElm.setAttribute('id','base-detail-style');
         const detailStyle = `
+            #component-wrap-top {
+                
+            }
             #component-top-l {
                 width:33%;
                 display:flex;
