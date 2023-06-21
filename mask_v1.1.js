@@ -558,12 +558,12 @@ class AddPopoverContents {
     };
     //表示の際の処理
     clickHandlerValid (e) {
-        const targetSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.target.popovertarget + '"]';
+        const targetSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.target.getAttribute('popovertarget') + '"]';
         document.querySelector(targetSelector).classList.add('valid');
     };
     //非表示の際の処理
     clickHandlerInvalid (e) {
-        const targetSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.target.popovertarget + '"]';
+        const targetSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.target.getAttribute('popovertarget') + '"]';
         document.querySelector(targetSelector).classList.remove('valid');
     };
     //style生成
