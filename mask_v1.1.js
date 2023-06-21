@@ -39,6 +39,9 @@ settings['site_control']['map_full_address'] = 'false';
             header {
                 position:initial;
             }
+            #content_wrap {
+                padding:0;
+            }
         }
     `;
     addStyleElm.textContent = style;
@@ -639,7 +642,7 @@ class AddPopoverContents {
                 padding:0;
             }
             .js-added-popover-close-button:hover {
-                opacity:.6;
+                opacity:.5;
             }
             .icon-close {
                 display:block;
