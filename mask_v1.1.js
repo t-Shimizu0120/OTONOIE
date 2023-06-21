@@ -890,7 +890,7 @@ if (locationURL.includes('detail')) {
             
             return summaryPrice_div;
         })();
-        component_1.appendChild(summaryPrice);
+        component_Summary.appendChild(summaryPrice);
         //===============================================================
         //お問い合わせ
         //===============================================================
@@ -1287,7 +1287,7 @@ if (locationURL.includes('detail')) {
                 #qrcode1 {
                     display:none;
                 }
-                #inquiry1-box {
+                #inquiry1-tel {
                     display:none;
                 }
                 #inquiry2-tel > .tel-number {
