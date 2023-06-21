@@ -809,6 +809,18 @@ if (locationURL.includes('detail')) {
                 flex-flow:column nowrap;
                 justify-content:space-between;
             }
+            #component-middle {
+                width:100%;
+                display:flex;
+                display:-webkit-box;
+                display:-webkit-flex;
+                display :-ms-flexbox;
+                flex-flow:row nowrap;
+                justify-content:space-between;
+                background-color:#dddddd;
+                padding:0.8rem 1.6rem;
+                margin: 0 auto;
+            }
             @media screen and (max-width:750px) {
                 
             }
@@ -1107,15 +1119,6 @@ if (locationURL.includes('detail')) {
         const componentStyle = document.createElement('style');
         componentStyle.setAttribute('id','component-style');
         componentStyle.textContent = ` 
-            #component-top-l {
-                width:33%;
-                display:flex;
-                display:-webkit-box;
-                display:-webkit-flex;
-                display :-ms-flexbox;
-                flex-flow:column nowrap;
-                justify-content:space-between;
-            }
             #qrcode1 {
                 display:block;
                 width:100%;
@@ -1169,18 +1172,6 @@ if (locationURL.includes('detail')) {
             }
             .js-added-qrcode {
                 margin-bottom:0.5rem;
-            }
-            #component-middle {
-                width:100%;
-                display:flex;
-                display:-webkit-box;
-                display:-webkit-flex;
-                display :-ms-flexbox;
-                flex-flow:row nowrap;
-                justify-content:space-between;
-                background-color:#dddddd;
-                padding:0.8rem 1.6rem;
-                margin: 0 auto;
             }
             #inquiry2-box {
                 display:flex;
