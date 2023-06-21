@@ -668,16 +668,16 @@ class AddPopoverContents {
                 right:21%;
             }
             .js-added-popover-content-backside-button {
+                z-index:-1;
+            }
+            .js-added-popover-content-backside-button.valid {
                 width:100vw;
                 height:100vh;
                 position:fixed;
                 top:0;
                 left:0;
                 background-color:transparent;
-                z-index:-1;
                 border:0;
-            }
-            .js-added-popover-content-backside-button.valid {
                 z-index:1000;
             }
             ${addStyles}
