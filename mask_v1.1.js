@@ -27,9 +27,8 @@ settings['site_control']['initialcost'] = 'true';
 settings['site_control']['map'] = 'false';
 ////地図完全住所表示（地図を完全住所で表示させるかどうか）
 settings['site_control']['map_full_address'] = 'false';
-
 //=================================================================
-//ベースstyle
+//ベースstyle（全ページ共通）
 //=================================================================
 (() => {
     const addStyleElm = document.createElement('style');
