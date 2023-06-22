@@ -796,11 +796,6 @@ if (locationURL.includes('detail')) {
                 {id:'component-top-r-roomplan-slider'}
         ]);
         componentWrap_top.appendChild(component_roomPlan_Slider);
-        const component_Point = create_Element('div',[
-                {class:'js-added-component-top-b-point'},
-                {id:'component-top-b-point'}
-        ]);
-        componentWrap_top.appendChild(component_Point);
         //-----------------------------------------------------------------
         //----------------------------中部---------------------------------
         const component_2 = create_Element('div',[
@@ -857,10 +852,6 @@ if (locationURL.includes('detail')) {
                 order:2;
                 flex-grow:1;
                 flex-basis:;
-            }
-            #component-top-b-point {
-                width:100%;
-                order:3;
             }
             #component-middle {
                 width:100%;
