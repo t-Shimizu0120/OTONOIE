@@ -781,11 +781,11 @@ if (locationURL.includes('detail')) {
                 {id:'component-wrap-top'}
         ]);
         document.querySelector('div.detail_l').appendChild(componentWrap_top);
-        const component_Summary = create_Element('div',[
-                {class:'js-added-component-top-l-summary'},
-                {id:'component-top-l-summary'}
-        ]);
-        componentWrap_top.appendChild(component_Summary);
+        //const component_Summary = create_Element('div',[
+                //{class:'js-added-component-top-l-summary'},
+                //{id:'component-top-l-summary'}
+        //]);
+        //componentWrap_top.appendChild(component_Summary);
         const component_1 = create_Element('div',[
                 {class:'js-added-component-top-l'},
                 {id:'component-top-l'}
@@ -826,41 +826,31 @@ if (locationURL.includes('detail')) {
                 display:-webkit-box;
                 display:-webkit-flex;
                 display :-ms-flexbox;
-                flex-flow:column wrap;
+                flex-flow:row wrap;
                 justify-content:space-between;
-            }
-            #component-top-l-summary {
-                width:33%;
-                display:flex;
-                display:-webkit-box;
-                display:-webkit-flex;
-                display :-ms-flexbox;
-                flex-flow:column nowrap;
-                justify-content:space-between;
-                flex-basis:;
-                order:0;
             }
             #component-top-l {
-                width:33%;
                 display:flex;
                 display:-webkit-box;
                 display:-webkit-flex;
                 display :-ms-flexbox;
                 flex-flow:column nowrap;
                 justify-content:space-between;
-                flex-basis:;
-                order:1;
+                flex-grow:0;
+                flex-basis:33%;
+                order:0;
             }
             #component-top-r-roomplan-slider {
-                width:calc(67% - 0.6rem);
+                background:#3f3f3f;
                 margin-left:0.6rem;
-                order:2;
+                padding-bottom:.7rem;
+                order:1;
                 flex-grow:1;
-                flex-basis:;
+                flex-basis:auto;
             }
             #component-top-b-point {
-                width:100%;
-                order:3;
+                flex-basis:100%;
+                order:2;
             }
             #component-middle {
                 width:100%;
@@ -878,16 +868,14 @@ if (locationURL.includes('detail')) {
                 display:none;
             }
             @media screen and (max-width:750px) {
-                #component-top-l-summary {
+                #component-wrap-top {
                     width:100%;
                     display:flex;
                     display:-webkit-box;
                     display:-webkit-flex;
                     display :-ms-flexbox;
-                    flex-flow:row nowrap;
+                    flex-flow:column nowrap;
                     justify-content:space-between;
-                    padding:0.8rem 0rem;
-                    margin: 0 auto;
                 }
                 #component-top-l {
                     width:100%;
@@ -895,14 +883,20 @@ if (locationURL.includes('detail')) {
                     display:-webkit-box;
                     display:-webkit-flex;
                     display :-ms-flexbox;
-                    flex-flow:row nowrap;
+                    flex-flow:column nowrap;
                     justify-content:space-between;
-                    background-color:#dddddd;
-                    padding:0.8rem 1.6rem;
-                    margin: 0 auto;
+                    order:0;
                 }
                 #component-top-r-roomplan-slider {
+                    margin-left:0;
+                    padding-bottom:0;
                     width:100%;
+                    flex-grow:0;
+                    order:1;
+                }
+                #component-top-b-point {
+                    width:100%;
+                    order:2;
                 }
                 #share {
                     background:#dddddd;
@@ -953,7 +947,8 @@ if (locationURL.includes('detail')) {
             
             return summaryPrice_div;
         })();
-        component_Summary.appendChild(summaryPrice);
+        component_1.appendChild(summaryPrice);
+        //component_Summary.appendChild(summaryPrice);
         //===============================================================
         //お問い合わせ
         //===============================================================
