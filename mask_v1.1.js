@@ -187,24 +187,24 @@ class AddTable {
         const addStyles = object['add_Styles'];
         const style = `
             .js-added-font-size {
-                font-size:1.2rem !important; 
+                font-size:1.2rem; 
             } 
             .js-added-table {
-                border:1px #3f3f3f solid !important;
+                border:1px #3f3f3f solid;
             } 
             .js-added-table-th {
-                background-color:#dddddd !important; 
-                color:#3f3f3f !important;
-                text-align:center !important; 
-                vertical-align:middle !important;
+                background-color:#dddddd; 
+                color:#3f3f3f;
+                text-align:center; 
+                vertical-align:middle;
             } 
             .js-added-table-td {
-                vertical-align: top !important;
+                vertical-align: top;
             }
             .js-added-table-th, .js-added-table-td {
-                color:#000 !important;
-                border:1px #3f3f3f solid !important;
-                padding:1.2rem 1.2rem !important;
+                color:#000;
+                border:1px #3f3f3f solid;
+                padding:1.2rem 1.2rem;
             }
             ${addStyles}
         `;
