@@ -1015,18 +1015,18 @@ if (locationURL.includes('detail')) {
                     table_Contents:[[{th:'携帯表示用QRコード'},{td:['']}]],
                     add_Styles:`
                         #qrcode1-table {
-                            border:0 !important;
-                            width:100% !important;
+                            border:0;
+                            width:100%;
                         }
                         #qrcode1-table > tbody > tr > th {
-                            border:0 !important;
-                            font-size:1.2rem !important;
+                            border:0;
+                            font-size:1.2rem;
                         }
                         #qrcode1-table > tbody > tr > td {
-                            border:0 !important;
-                            padding:0.4rem !important;
-                            text-align:end !important;
-                            background-color:#dddddd !important;
+                            border:0;
+                            padding:0.4rem;
+                            text-align:end;
+                            background-color:#dddddd;
                         }
                     `, 
                     add_To_Selector:''
