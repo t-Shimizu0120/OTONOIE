@@ -395,7 +395,7 @@ class AddTabContents {
                 color:#3f3f3f; 
                 text-align:center;
                 flex: 0 0 ${tabWidthBase}%; 
-                padding: 10px 0; 
+                padding: 1rem 0; 
                 font-weight:bold;
                 cursor:pointer;
                 display: block;
