@@ -857,13 +857,7 @@ if (locationURL.includes('detail')) {
             }
             @media screen and (max-width:750px) {
                 #component-wrap-top {
-                    width:100%;
-                    display:flex;
-                    display:-webkit-box;
-                    display:-webkit-flex;
-                    display :-ms-flexbox;
                     flex-flow:column nowrap;
-                    justify-content:space-between;
                 }
                 #component-top-l {
                     width:100%;
