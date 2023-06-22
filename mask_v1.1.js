@@ -1024,7 +1024,7 @@ if (locationURL.includes('detail')) {
                         }
                         #qrcode1-table > tbody > tr > td {
                             border:0;
-                            padding:0.4rem;
+                            padding:0.6rem;
                             text-align:end;
                             background-color:#dddddd;
                         }
