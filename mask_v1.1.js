@@ -781,11 +781,6 @@ if (locationURL.includes('detail')) {
                 {id:'component-wrap-top'}
         ]);
         document.querySelector('div.detail_l').appendChild(componentWrap_top);
-        //const component_Summary = create_Element('div',[
-                //{class:'js-added-component-top-l-summary'},
-                //{id:'component-top-l-summary'}
-        //]);
-        //componentWrap_top.appendChild(component_Summary);
         const component_1 = create_Element('div',[
                 {class:'js-added-component-top-l'},
                 {id:'component-top-l'}
@@ -948,7 +943,6 @@ if (locationURL.includes('detail')) {
             return summaryPrice_div;
         })();
         component_1.appendChild(summaryPrice);
-        //component_Summary.appendChild(summaryPrice);
         //===============================================================
         //お問い合わせ
         //===============================================================
@@ -1395,6 +1389,7 @@ if (locationURL.includes('detail')) {
         function listener (event) {
             if (event.matches) {
                 // SP
+                componentWrap_top.appendChild(inquiryBox_1);
                 if (popover_Content_div.querySelector('#contact_area')) {
                 } else {
                     popover_Content_div.appendChild(inquiry_wrap);
@@ -1408,15 +1403,9 @@ if (locationURL.includes('detail')) {
                     inquiry_2.setAttribute('popovertargetaction','show');
                 } else {
                 };
-                //ポップオーバーコントロール
-                //const popoverButtons = document.querySelectorAll('button[popovertargetaction="show"]');
-                //for (button of popoverButtons) {
-                    //button.addEventListener('click', () => {
-                        //document.querySelector('body').setAttribute('inert','')
-                    //});
-                //};
             } else {
                 // PC
+                component_1.appendChild(inquiryBox_1);
                 if (document.querySelectorAll('.js-added-popover-content').length !== 0) {
                     const popoverElms = document.querySelectorAll('.js-added-popover-content');
                     for (popoverElm of popoverElms) {
