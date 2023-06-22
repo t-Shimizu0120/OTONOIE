@@ -861,12 +861,6 @@ if (locationURL.includes('detail')) {
                 }
                 #component-top-l {
                     width:100%;
-                    display:flex;
-                    display:-webkit-box;
-                    display:-webkit-flex;
-                    display :-ms-flexbox;
-                    flex-flow:column nowrap;
-                    justify-content:space-between;
                     order:0;
                 }
                 #component-top-r-roomplan-slider {
