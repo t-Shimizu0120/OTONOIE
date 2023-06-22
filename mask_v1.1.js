@@ -921,7 +921,7 @@ if (locationURL.includes('detail')) {
         //=================================================================
         const summaryPrice = (() => {
             const summaryPrice_div = create_Element('div',[
-                {class:'js-added-component-top-l js-added-summary-price'},
+                {class:'js-added-summary-price'},
                 {id:'summary-price'}
             ]);
             const summaryPrice_dl_1 = create_Element('dl',[
@@ -1338,6 +1338,9 @@ if (locationURL.includes('detail')) {
                 opacity:.6;
             }
             @media screen and (max-width:750px) {
+                #inquiry1-box {
+                    padding:0.8rem 1.6rem;
+                }
                 .js-added-inquiry-button {
                     font-size:1.8rem;
                     padding:1.2rem;
