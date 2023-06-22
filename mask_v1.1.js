@@ -836,7 +836,9 @@ if (locationURL.includes('detail')) {
                 display:-webkit-flex;
                 display :-ms-flexbox;
                 flex-flow:column nowrap;
+                flex-basis:50%;
                 justify-content:space-between;
+                order:0;
             }
             #component-top-l {
                 width:33%;
@@ -845,14 +847,20 @@ if (locationURL.includes('detail')) {
                 display:-webkit-flex;
                 display :-ms-flexbox;
                 flex-flow:column nowrap;
+                flex-basis:50%;
                 justify-content:space-between;
+                order:1;
             }
             #component-top-r-roomplan-slider {
                 width:calc(67% - 0.6rem);
                 margin-left:0.6rem;
+                order:3;
+                flex-grow:1;
+                flex-basis:100%;
             }
             #component-top-b-point {
                 width:100%;
+                order:2;
             }
             #component-middle {
                 width:100%;
