@@ -47,7 +47,6 @@ settings['site_control']['map_full_address'] = 'false';
     const headElm = document.querySelector('head');
     headElm.appendChild(addStyleElm);
 })();
-
 //カナ自動入力
 //if (document.querySelector('#contact_area') != null) {
     //const autokana_Elm = document.createElement('script');
@@ -65,10 +64,10 @@ settings['site_control']['map_full_address'] = 'false';
     //});
 //} else {
 //};
-
-
-
-//■要素作成関数
+//=================================================================
+//関数
+//=================================================================
+//要素作成
 const create_Element = (tagName,attributes) => {
     const add_Elm = document.createElement(tagName);
     for (attribute of attributes) {
@@ -78,13 +77,10 @@ const create_Element = (tagName,attributes) => {
     };
     return add_Elm;
 };
-
-
-
 //=================================================================
 //class
 //=================================================================   
-//■テーブル
+//テーブル
 class AddTable {
     constructor (object,...args) {
         //コンテンツの有無を判定
@@ -242,6 +238,7 @@ class AddTable {
     };
 
 };
+//--------------------draft--------------------
 //const ********** = new AddTable(
     //{
         //contents_Title:'',
@@ -257,10 +254,8 @@ class AddTable {
     //*******,
     //*******
 //);
-
-
-
-//■タブコンテンツ
+//--------------------------------------------------
+//タブコンテンツ
 class AddTabContents {
     constructor (object,...args) {
         if(object.tab_Contents.length === 0) {
@@ -465,6 +460,7 @@ class AddTabContents {
         return tab_Obj;
     };
 };
+//--------------------draft--------------------
 //const ********** = new AddTabContents(
     //{
         //contents_Title:'',
@@ -480,10 +476,8 @@ class AddTabContents {
    //*******,
    //*******
 //);
-    
-    
-    
-//■ポップオーバーコンテンツ
+//--------------------------------------------------
+//ポップオーバーコンテンツ
 class AddPopoverContents {
     constructor (object,args) {
         if(object.popover_Contents === '') {
@@ -729,6 +723,7 @@ class AddPopoverContents {
         return popover_Obj;
     };
 };
+//--------------------draft--------------------
 //const ********** = new AddPopoverContents(
     //{
         //contents_Title:'',
@@ -745,9 +740,7 @@ class AddPopoverContents {
    //*******,
    //*******
 //);
-
-
-
+//--------------------------------------------------
 //URL取得
 const locationURL = location.href;
 //URLで分岐
