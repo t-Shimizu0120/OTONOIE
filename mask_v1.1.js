@@ -1340,6 +1340,7 @@ if (locationURL.includes('detail')) {
             @media screen and (max-width:750px) {
                 #inquiry1-box {
                     padding:0.8rem 1.6rem;
+                    background-color:#dddddd;
                 }
                 .js-added-inquiry-button {
                     font-size:1.8rem;
