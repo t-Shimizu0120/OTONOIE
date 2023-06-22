@@ -1200,11 +1200,14 @@ if (locationURL.includes('detail')) {
         const headElm = document.querySelector('head');
         const componentStyle = document.createElement('style');
         componentStyle.setAttribute('id','component-style');
-        componentStyle.textContent = ` 
+        componentStyle.textContent = `
+            #summary-price {
+                order:0;
+            }
             #qrcode1 {
                 display:block;
                 width:100%;
-                order:0;
+                order:1;
             }
             #inquiry1-box {
                 width:100%;
@@ -1214,7 +1217,7 @@ if (locationURL.includes('detail')) {
                 display :-ms-flexbox;
                 flex-flow:column nowrap;
                 justify-content:space-between;
-                order:1;
+                order:2;
             }
             .js-added-inquiry-button {
                 background:#ffb911;
