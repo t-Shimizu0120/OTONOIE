@@ -826,7 +826,7 @@ if (locationURL.includes('detail')) {
                 display:-webkit-box;
                 display:-webkit-flex;
                 display :-ms-flexbox;
-                flex-flow:column nowrap;
+                flex-flow:column wrap;
                 justify-content:space-between;
             }
             #component-top-l-summary {
