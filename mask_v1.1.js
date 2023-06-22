@@ -635,7 +635,7 @@ class AddPopoverContents {
                 padding:0;
             }
             .js-added-popover-close-button:hover {
-                opacity:.5;
+                opacity:.6;
             }
             .icon-close {
                 display:block;
