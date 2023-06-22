@@ -1338,6 +1338,7 @@ if (locationURL.includes('detail')) {
                 #inquiry1-box {
                     padding:0.8rem 1.6rem;
                     background-color:#dddddd;
+                    order:3;
                 }
                 .js-added-inquiry-button {
                     font-size:1.8rem;
