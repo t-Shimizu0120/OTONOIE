@@ -964,6 +964,7 @@ if (locationURL.includes('detail')) {
         const inquiry_1 = (() => {
             const inquiry_button = create_Element('button',[
                 {class:'js-added-inquiry-button'},
+                {id:'inquiry-button1'},
                 {popovertarget:'inquiry-popover-contents'},
                 {popovertargetaction:'show'}
             ]);
@@ -1051,6 +1052,7 @@ if (locationURL.includes('detail')) {
         const inquiry_2 = (() => {
             const inquiry_button = create_Element('button',[
                 {class:'js-added-inquiry-button'},
+                {id:'inquiry-button2'},
                 {popovertarget:'inquiry-popover-contents'},
                 {popovertargetaction:'show'}
             ]);
@@ -1188,6 +1190,7 @@ if (locationURL.includes('detail')) {
             #qrcode1 {
                 display:block;
                 width:100%;
+                margin-bottom:0.5rem;
                 order:1;
             }
             #inquiry1-box {
@@ -1210,10 +1213,12 @@ if (locationURL.includes('detail')) {
                 font-weight:bold;
                 border:0;
                 cursor:pointer;
-                order:0;
             }
             .js-added-inquiry-button:hover {
                 opacity:.6;
+            }
+            #inquiry-button1 {
+                order:0;
             }
             .js-added-inquiry-tel {
                 text-align: center;
@@ -1236,9 +1241,6 @@ if (locationURL.includes('detail')) {
             #inquiry1-tel > .tel-time {
                 font-size:0.8rem;
             }
-            .js-added-qrcode {
-                margin-bottom:0.5rem;
-            }
             #inquiry2-box {
                 display:flex;
                 display:-webkit-box;
@@ -1247,6 +1249,30 @@ if (locationURL.includes('detail')) {
                 flex-flow:row wrap;
                 justify-content:space-between;
                 flex-grow:1;
+                order:0;
+            }
+            #qrcode2 {
+                margin-bottom:0;
+                margin-left:3.2rem;
+                display:flex;
+                display:-webkit-box;
+                display:-webkit-flex;
+                display :-ms-flexbox;
+                flex-flow:column nowrap;
+                justify-content:space-between;
+                align-items:center;
+                order:1;
+            }
+            #qrcode2 > img {
+                width:80px;
+                height:80px;
+            }
+            #qrcode2 > p {
+                font-size:0.8rem;
+                color:#000;
+                margin-top:0.5rem;
+            }
+            #inquiry-button2 {
                 order:0;
             }
             #inquiry2-box > button {
@@ -1271,27 +1297,6 @@ if (locationURL.includes('detail')) {
             }
             #inquiry2-box > a {
                 display:none;
-            }
-            #qrcode2 {
-                margin-bottom:0 !important;
-                margin-left:3.2rem;
-                display:flex;
-                display:-webkit-box;
-                display:-webkit-flex;
-                display :-ms-flexbox;
-                flex-flow:column nowrap;
-                justify-content:space-between;
-                align-items:center;
-                order:1;
-            }
-            #qrcode2 > img {
-                width:80px;
-                height:80px;
-            }
-            #qrcode2 > p {
-                font-size:0.8rem;
-                color:#000;
-                margin-top:0.5rem;
             }
             #inquiry-popover-content-wrap {
                 padding:1.2rem;
@@ -1328,6 +1333,9 @@ if (locationURL.includes('detail')) {
                 #qrcode1 {
                     display:none;
                 }
+                #qrcode2 {
+                    display:none;
+                }
                 #inquiry1-tel {
                     display:none;
                 }
@@ -1336,9 +1344,6 @@ if (locationURL.includes('detail')) {
                 }
                 #inquiry2-tel > .tel-time {
                     font-size:0.8rem;
-                }
-                #qrcode2 {
-                    display:none;
                 }
                 #inquiry2-box > a {
                     display:flex;
