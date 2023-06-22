@@ -1250,7 +1250,7 @@ if (locationURL.includes('detail')) {
                 order:0;
             }
             #inquiry2-box > button {
-                    margin-bottom:0.5rem;
+                margin-bottom:0.5rem;
             }
             #inquiry2-tel {
                 display:flex;
