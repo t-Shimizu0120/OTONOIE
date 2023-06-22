@@ -1214,13 +1214,13 @@ if (locationURL.includes('detail')) {
             }
             #inquiry1-box {
                 width:100%;
-                order:1;
                 display:flex;
                 display:-webkit-box;
                 display:-webkit-flex;
                 display :-ms-flexbox;
                 flex-flow:column nowrap;
                 justify-content:space-between;
+                order:1;
             }
             .js-added-inquiry-button {
                 background:#ffb911;
