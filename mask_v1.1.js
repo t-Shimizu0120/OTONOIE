@@ -1406,6 +1406,9 @@ if (locationURL.includes('detail')) {
                     padding:1.2rem;
                 }
             }
+            @media screen and (max-width:375px) {
+                
+            }
         `; 
         headElm.appendChild(componentStyle);
         //---------------------------------------------------------------------
