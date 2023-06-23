@@ -996,6 +996,16 @@ if (locationURL.includes('detail')) {
             return inquiry_Tel_div;
         })();
         inquiryBox_1.appendChild(inquiry_Tel_1);
+        //電話をかけるボタン
+        const inquiry_Tel_Button = (() => {
+            const inquiry_Tel_button = create_Element('a',[
+                {href:'tel:' + settings['company_data']['tel_number']}
+            ]);
+            inquiry_Tel_button.textContent = '電話をかける';
+        
+            return inquiry_Tel_button;
+        })();
+        inquiryBox_1.appendChild(inquiry_Tel_Button);
         //QRコード１
         const qr_1 = (() => {
             const qr_div = create_Element('div',[
@@ -1081,15 +1091,15 @@ if (locationURL.includes('detail')) {
         })();
         inquiryBox_2.appendChild(inquiry_Tel_2);
         //電話をかけるボタン
-        const inquiry_Tel_Button = (() => {
-            const inquiry_Tel_button = create_Element('a',[
-                {href:'tel:' + settings['company_data']['tel_number']}
-            ]);
-            inquiry_Tel_button.textContent = '電話をかける';
+        //const inquiry_Tel_Button = (() => {
+            //const inquiry_Tel_button = create_Element('a',[
+                //{href:'tel:' + settings['company_data']['tel_number']}
+            //]);
+            //inquiry_Tel_button.textContent = '電話をかける';
         
-            return inquiry_Tel_button;
-        })();
-        inquiryBox_2.appendChild(inquiry_Tel_Button);
+            //return inquiry_Tel_button;
+        //})();
+        //inquiryBox_2.appendChild(inquiry_Tel_Button);
         //QRコード
         const qr_2 = (() => {
             const qr_div = create_Element('div',[
@@ -1321,8 +1331,13 @@ if (locationURL.includes('detail')) {
                     display:none;
                 }
                 #inquiry1-box {
-                    padding:0.8rem 1.6rem;
-                    background-color:#dddddd;
+                    display:flex;
+                    display:-webkit-box;
+                    display:-webkit-flex;
+                    display :-ms-flexbox;
+                    flex-flow:row nowrap;
+                    justify-content:space-between;
+                    padding:0 1.6rem;
                     order:3;
                 }
                 #inquiry1-tel {
