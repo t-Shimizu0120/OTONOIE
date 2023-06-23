@@ -762,10 +762,10 @@ class AddPopoverContents {
 const locationURL = location.href;
 //URLで分岐
 if (locationURL.includes('detail')) {
-    const headElm = document.querySelector('head');
     //=================================================================
     //既存Style変更（Detailページ）
     //=================================================================
+    const headElm = document.querySelector('head');
     const addChangeDefaultStyleElm = document.createElement('style');
     addChangeDefaultStyleElm.setAttribute('id','detail-change-default-style');
     const detailStyle = `
