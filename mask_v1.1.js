@@ -22,6 +22,17 @@ settings['company_data']['business_hours'] = '受付時間 10:00～17:00（水�
 //=================================================================
 //マスク適用
 settings['mask'] = 'true';
+//MEDIA設定
+settings['media'] = {};
+//サイズ設定
+//sp
+settings['media']['s'] = 'max-width:350px';
+//tablet
+settings['media']['m'] = 'max-width:750px';
+//pc-s
+settings['media']['l'] = '';
+//pc-l
+settings['media']['ll'] = '';
 //コントロール用配列
 settings['site_control'] = {};
 //初期費用表示（初期費用を表示させるかどうか）
