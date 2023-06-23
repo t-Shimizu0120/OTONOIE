@@ -769,6 +769,19 @@ if (locationURL.includes('detail')) {
     const addChangeDefaultStyleElm = document.createElement('style');
     addChangeDefaultStyleElm.setAttribute('id','detail-change-default-style');
     const detailStyle = `
+        input[class="btn_reset"], input[class="btn_submit"] {
+            border-radius:2px !important;
+            font-size:1.4rem;
+            padding:1rem 0;
+        }
+        @media screen and (${settings['media']['m']}) {
+            
+        }
+        @media screen and (${settings['media']['s']}) {
+            input[class="btn_reset"], input[class="btn_submit"] {
+                font-size:1.2rem;
+            }
+        }
     `;
     addChangeDefaultStyleElm.textContent = detailStyle;
     headElm.appendChild(addChangeDefaultStyleElm);
@@ -1231,14 +1244,7 @@ if (locationURL.includes('detail')) {
         //----------------------------STYLE------------------------------------
         const componentStyle = document.createElement('style');
         componentStyle.setAttribute('id','component-style');
-        componentStyle.textContent = `
-            input[type="reset"], input[type="submit"]{
-                border-radius:2px !important;
-                font-size:1.4rem;
-                padding:1rem 0;
-            }
-
-            
+        componentStyle.textContent = `            
             .js-added-inquiry-button, #inquiry1-box > a, #inquiry2-box > a, #share-line > a, #share-qrcode-popover > button {
                 border-radius:2px;
             }
@@ -1447,11 +1453,6 @@ if (locationURL.includes('detail')) {
                 }
             }
             @media screen and (${settings['media']['s']}) {
-                input[type="reset"], input[type="submit"]{
-                    font-size:1.2rem;
-                }
-
-                
                 .js-added-inquiry-button {
                     font-size:1.2rem;
                 }
