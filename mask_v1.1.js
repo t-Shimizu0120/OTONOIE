@@ -1184,6 +1184,31 @@ if (locationURL.includes('detail')) {
         const componentStyle = document.createElement('style');
         componentStyle.setAttribute('id','component-style');
         componentStyle.textContent = `
+            .js-added-inquiry-button {
+                background:#ffb911;
+                color:#ffffff;
+                font-size:1.6rem;
+                padding:1.4rem;
+                width:100%;
+                text-align:center;
+                font-weight:bold;
+                border:0;
+                cursor:pointer;
+            }
+            .js-added-inquiry-button:hover {
+                opacity:.6;
+            }
+            .js-added-inquiry-tel {
+                text-align: center;
+                background: none;
+            }
+            .js-added-inquiry-tel > .tel-number {
+                font-weight:bold;
+                color:#000;
+            }
+            .js-added-inquiry-tel > .tel-time {
+                color:#000;
+            }
             #summary-price {
                 order:0;
             }
@@ -1203,33 +1228,8 @@ if (locationURL.includes('detail')) {
                 justify-content:space-between;
                 order:2;
             }
-            .js-added-inquiry-button {
-                background:#ffb911;
-                color:#ffffff;
-                font-size:1.6rem;
-                padding:1.4rem;
-                width:100%;
-                text-align:center;
-                font-weight:bold;
-                border:0;
-                cursor:pointer;
-            }
-            .js-added-inquiry-button:hover {
-                opacity:.6;
-            }
             #inquiry-button1 {
                 order:0;
-            }
-            .js-added-inquiry-tel {
-                text-align: center;
-                background: none;
-            }
-            .js-added-inquiry-tel > .tel-number {
-                font-weight:bold;
-                color:#000;
-            }
-            .js-added-inquiry-tel > .tel-time {
-                color:#000;
             }
             #inquiry1-tel {
                 width:100%;
@@ -1279,13 +1279,6 @@ if (locationURL.includes('detail')) {
                 margin-bottom:0.5rem;
             }
             #inquiry2-tel {
-                display:flex;
-                display:-webkit-box;
-                display:-webkit-flex;
-                display :-ms-flexbox;
-                flex-flow:column nowrap;
-                justify-content:space-between;
-                align-items:center;
                 flex-grow:1;
                 order:1;
             }
