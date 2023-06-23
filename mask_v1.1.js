@@ -780,13 +780,13 @@ if (locationURL.includes('detail')) {
         ]);
         componentWrap_top.appendChild(component_1);
         const component_roomPlan_Slider = create_Element('div',[
-                {class:'js-added-component-top-r-roomplan-slider'},
-                {id:'component-top-r-roomplan-slider'}
+                {class:'js-added-component-top-r'},
+                {id:'component-top-r'}
         ]);
         componentWrap_top.appendChild(component_roomPlan_Slider);
         const component_Point = create_Element('div',[
-                {class:'js-added-component-top-b-point'},
-                {id:'component-top-b-point'}
+                {class:'js-added-component-top-b'},
+                {id:'component-top-b'}
         ]);
         componentWrap_top.appendChild(component_Point);
         //-----------------------------------------------------------------
@@ -828,15 +828,15 @@ if (locationURL.includes('detail')) {
                 flex-basis:33%;
                 order:0;
             }
-            #component-top-r-roomplan-slider {
+            #component-top-r {
                 background:#3f3f3f;
-                margin-left:0.6rem;
+                margin-left:.6rem;
                 padding-bottom:.7rem;
                 order:1;
                 flex-grow:1;
                 flex-basis:auto;
             }
-            #component-top-b-point {
+            #component-top-b {
                 flex-basis:100%;
                 order:2;
             }
@@ -863,14 +863,14 @@ if (locationURL.includes('detail')) {
                     width:100%;
                     order:0;
                 }
-                #component-top-r-roomplan-slider {
+                #component-top-r {
                     margin-left:0;
                     padding-bottom:0;
                     width:100%;
                     flex-grow:0;
                     order:1;
                 }
-                #component-top-b-point {
+                #component-top-b {
                     width:100%;
                     order:2;
                 }
@@ -1292,7 +1292,7 @@ if (locationURL.includes('detail')) {
                 display:none;
             }
             #inquiry-popover-content-wrap {
-                padding:1.2rem;
+                padding:0;
             }
             #share-qrcode-popover {
                 flex-basis:calc(50% - 0.4rem);
@@ -1356,6 +1356,9 @@ if (locationURL.includes('detail')) {
                 }
                 #inquiry2-box > a:hover {
                     opacity:.6;
+                }
+                #inquiry-popover-content-wrap {
+                    padding:1.2rem;
                 }
             }
         `; 
