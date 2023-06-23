@@ -1160,7 +1160,7 @@ if (locationURL.includes('detail')) {
                         background:#3f3f3f;
                         color:#ffffff;
                         font-size:1.2rem;
-                        padding:0.6rem;
+                        padding:0.6rem 0;
                     }
                     #share-qrcode-popover-contents {
                         width:calc(9.6rem + 150px);
@@ -1316,7 +1316,7 @@ if (locationURL.includes('detail')) {
                 text-decoration:none;
                 text-align:center;
                 font-weight:bold;
-                padding:0.6rem;
+                padding:0.6rem 0;
             }
             #share-line > a:hover {
                 opacity:.6;
