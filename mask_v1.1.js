@@ -762,6 +762,16 @@ class AddPopoverContents {
 const locationURL = location.href;
 //URLで分岐
 if (locationURL.includes('detail')) {
+    const headElm = document.querySelector('head');
+    //=================================================================
+    //既存Style変更（Detailページ）
+    //=================================================================
+    const addChangeDefaultStyleElm = document.createElement('style');
+    addChangeDefaultStyleElm.setAttribute('id','detail-change-default-style');
+    const detailStyle = `
+    `;
+    addChangeDefaultStyleElm.textContent = detailStyle;
+    headElm.appendChild(addChangeDefaultStyleElm);
     //=================================================================
     //掲載データ
     //=================================================================
@@ -912,8 +922,7 @@ if (locationURL.includes('detail')) {
             }
         `;
         addDetailStyleElm.textContent = detailStyle;
-        const detailHeadElm = document.querySelector('head');
-        detailHeadElm.appendChild(addDetailStyleElm);
+        headElm.appendChild(addDetailStyleElm);
         //-----------------------------------------------------------------
         //=================================================================
         //家賃・礼敷等
@@ -1220,7 +1229,6 @@ if (locationURL.includes('detail')) {
         share_container.appendChild(share_qr);
         //---------------------------------------------------------------------
         //----------------------------STYLE------------------------------------
-        const headElm = document.querySelector('head');
         const componentStyle = document.createElement('style');
         componentStyle.setAttribute('id','component-style');
         componentStyle.textContent = `
