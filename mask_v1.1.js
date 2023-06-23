@@ -56,6 +56,9 @@ settings['site_control']['map_full_address'] = 'false';
                 padding:0;
             }
         }
+        @media screen and (${settings['media']['s']}) {
+            
+        }
     `;
     addStyleElm.textContent = style;
     const headElm = document.querySelector('head');
