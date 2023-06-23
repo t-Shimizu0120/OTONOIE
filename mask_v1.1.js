@@ -1424,10 +1424,10 @@ if (locationURL.includes('detail')) {
                     opacity:.6;
                 }
                 #qrcode2 {
-                    padding:0.5rem;
+                    display:none;
                 }
                 #inquiry2-tel {
-                    display:none;
+                    padding:0.5rem 0;
                 }
                 #inquiry2-tel > .tel-number {
                     font-size:1.6rem;
