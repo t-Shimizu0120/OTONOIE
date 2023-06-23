@@ -1315,8 +1315,7 @@ if (locationURL.includes('detail')) {
             }
             @media screen and (max-width:750px) {
                 .js-added-inquiry-button {
-                    font-size:1.8rem;
-                    padding:1.2rem;
+                    padding:1rem;
                 }
                 #qrcode1 {
                     display:none;
