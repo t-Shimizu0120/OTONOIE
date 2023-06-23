@@ -1192,6 +1192,9 @@ if (locationURL.includes('detail')) {
         const componentStyle = document.createElement('style');
         componentStyle.setAttribute('id','component-style');
         componentStyle.textContent = `
+            input[type="reset"], input[type="submit"]{
+                border-radius:2px !important;
+            }
             .js-added-inquiry-button, #inquiry1-box > a, #inquiry2-box > a, #share-line > a, #share-qrcode-popover > button {
                 border-radius:2px;
             }
