@@ -952,8 +952,8 @@ if (locationURL.includes('detail')) {
                 {class:'js-added-popover-content-wrap'},
                 {id:'inquiry-popover-content-wrap'}
         ]);
-        inquiry_wrap.appendChild(inquiryForm);
-        inquiry_wrap.appendChild(handlingOfPersonalInformation);
+        inquiry_wrap.appendChild(inquiryForm.cloneNode(true));
+        inquiry_wrap.appendChild(handlingOfPersonalInformation.cloneNode(true));
         popover_Content_div.appendChild(inquiry_wrap);
         //-----------------------------------------------------------------
         //--------------------------コンポーネント１------------------------
@@ -1309,7 +1309,7 @@ if (locationURL.includes('detail')) {
                 display:none;
             }
             #inquiry-popover-content-wrap {
-                padding:0;
+                padding:1.2rem;
             }
             #share-line {
                 flex-basis:calc(50% - 0.4rem);
@@ -1401,9 +1401,6 @@ if (locationURL.includes('detail')) {
                 #inquiry2-box > a:hover {
                     opacity:.6;
                 }
-                #inquiry-popover-content-wrap {
-                    padding:1.2rem;
-                }
             }
             @media screen and (max-width:350px) {
                 .js-added-inquiry-button {
@@ -1419,7 +1416,6 @@ if (locationURL.includes('detail')) {
                     font-size:1.2rem;
                     flex-basis:100%;
                 }
-                
             }
         `; 
         headElm.appendChild(componentStyle);
@@ -1435,10 +1431,10 @@ if (locationURL.includes('detail')) {
             if (event.matches) {
                 // SP
                 componentWrap_top.appendChild(inquiryBox_1);
-                if (popover_Content_div.querySelector('#contact_area')) {
-                } else {
-                    popover_Content_div.appendChild(inquiry_wrap);
-                };
+                //if (popover_Content_div.querySelector('#contact_area')) {
+                //} else {
+                    //popover_Content_div.appendChild(inquiry_wrap);
+                //};
                 if (inquiry_1.hasAttribute('onclick') == true && inquiry_2.hasAttribute('onclick') == true) {
                     inquiry_1.removeAttribute('onclick');
                     inquiry_2.removeAttribute('onclick');
@@ -1468,10 +1464,10 @@ if (locationURL.includes('detail')) {
                     };
                 } else {
                 };
-                if (popover_Content_div.querySelector('#contact_area')) {
-                    popover_Content_div.before(inquiry_wrap);
-                } else {
-                };
+                //if (popover_Content_div.querySelector('#contact_area')) {
+                    //popover_Content_div.before(inquiry_wrap);
+                //} else {
+                //};
                 if (inquiry_1.hasAttribute('popovertarget') == true && inquiry_2.hasAttribute('popovertarget') == true) {
                     inquiry_1.removeAttribute('popovertarget');
                     inquiry_1.removeAttribute('popovertargetaction');
