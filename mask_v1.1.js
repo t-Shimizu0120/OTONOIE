@@ -1200,6 +1200,8 @@ if (locationURL.includes('detail')) {
                 font-size:1.4rem;
                 padding:1rem 0;
             }
+
+            
             .js-added-inquiry-button, #inquiry1-box > a, #inquiry2-box > a, #share-line > a, #share-qrcode-popover > button {
                 border-radius:2px;
             }
@@ -1411,6 +1413,8 @@ if (locationURL.includes('detail')) {
                 input[type="reset"], input[type="submit"]{
                     font-size:1.2rem;
                 }
+
+                
                 .js-added-inquiry-button {
                     font-size:1.2rem;
                 }
