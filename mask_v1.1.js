@@ -1148,6 +1148,9 @@ if (locationURL.includes('detail')) {
                 popover_Target_Action_Close:'hide',
                 buttonText:'QRコードを表示',
                 add_Styles:`
+                    #share-qrcode-popover {
+                        flex-basis:calc(50% - 0.4rem);
+                    }
                     #share-qrcode-popover > button {
                         background:#3f3f3f;
                         color:#ffffff;
@@ -1294,9 +1297,6 @@ if (locationURL.includes('detail')) {
             #inquiry-popover-content-wrap {
                 padding:0;
             }
-            #share-qrcode-popover {
-                flex-basis:calc(50% - 0.4rem);
-            }
             #share-line {
                 flex-basis:calc(50% - 0.4rem);
             }
@@ -1314,11 +1314,6 @@ if (locationURL.includes('detail')) {
                 opacity:.6;
             }
             @media screen and (max-width:750px) {
-                #inquiry1-box {
-                    padding:0.8rem 1.6rem;
-                    background-color:#dddddd;
-                    order:3;
-                }
                 .js-added-inquiry-button {
                     font-size:1.8rem;
                     padding:1.2rem;
@@ -1326,10 +1321,15 @@ if (locationURL.includes('detail')) {
                 #qrcode1 {
                     display:none;
                 }
-                #qrcode2 {
-                    display:none;
+                #inquiry1-box {
+                    padding:0.8rem 1.6rem;
+                    background-color:#dddddd;
+                    order:3;
                 }
                 #inquiry1-tel {
+                    display:none;
+                }
+                #qrcode2 {
                     display:none;
                 }
                 #inquiry2-tel > .tel-number {
@@ -1364,7 +1364,6 @@ if (locationURL.includes('detail')) {
         `; 
         headElm.appendChild(componentStyle);
         //---------------------------------------------------------------------
-        
         //--------------------------レスポンシブ------------------------------
         //ブレイクポイント
         const mediaQueryList = window.matchMedia('(max-width:750px)');
