@@ -24,7 +24,7 @@ settings['company_data']['business_hours'] = '受付時間 10:00～17:00（水�
 settings['mask'] = 'true';
 //MEDIA設定
 settings['media'] = {};
-//サイズ設定
+//ブレイクポイント設定
 //sp
 settings['media']['s'] = 'max-width:350px';
 //tablet
