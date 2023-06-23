@@ -1346,6 +1346,7 @@ if (locationURL.includes('detail')) {
                 margin-bottom:0.5rem;
             }
             #inquiry2-tel {
+                padding:0.925rem 0;
                 flex-grow:1;
                 order:1;
             }
@@ -1423,6 +1424,9 @@ if (locationURL.includes('detail')) {
                     opacity:.6;
                 }
                 #qrcode2 {
+                    padding:0.5rem;
+                }
+                #inquiry2-tel {
                     display:none;
                 }
                 #inquiry2-tel > .tel-number {
