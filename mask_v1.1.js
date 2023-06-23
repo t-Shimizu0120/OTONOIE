@@ -1463,7 +1463,7 @@ if (locationURL.includes('detail')) {
         //---------------------------------------------------------------------
         //--------------------------レスポンシブ------------------------------
         //ブレイクポイント
-        const mediaQueryList = window.matchMedia(settings['media']['m']);
+        const mediaQueryList = window.matchMedia(`(${settings['media']['m']})`);
         //regist listener
         mediaQueryList.addEventListener('change', listener);
         listener(mediaQueryList);
@@ -1726,7 +1726,7 @@ if (locationURL.includes('detail')) {
     //レスポンシブ
     //=================================================================
     //ブレイクポイント
-    const mediaQueryList = window.matchMedia(settings['media']['m']);
+    const mediaQueryList = window.matchMedia(`(${settings['media']['m']})`);
     //regist listener
     mediaQueryList.addEventListener('change', listener);
     listener(mediaQueryList);
