@@ -1381,14 +1381,15 @@ if (locationURL.includes('detail')) {
                     display:-webkit-flex;
                     display :-ms-flexbox;
                     flex-flow:row nowrap;
+                    flex-basis:33%;
                     background:#26aaff;
                     color:#ffffff;
                     text-decoration:none;
                     justify-content:center;
                     align-items:center;
                     font-weight:bold;
-                    font-size:1.2rem;
-                    padding:0.6rem;
+                    font-size:1.4rem;
+                    padding:1rem 0;
                     order:2;
                 }
                 #inquiry2-box > a:hover {
