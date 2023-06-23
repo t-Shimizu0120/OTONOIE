@@ -1192,6 +1192,9 @@ if (locationURL.includes('detail')) {
         const componentStyle = document.createElement('style');
         componentStyle.setAttribute('id','component-style');
         componentStyle.textContent = `
+            .js-added-inquiry-button, #inquiry1-box > a, #inquiry2-box > a, #share-line > a, #share-qrcode-popover > button {
+                border-radius:2px;
+            }
             .js-added-inquiry-button {
                 background:#ffb911;
                 color:#ffffff;
