@@ -874,6 +874,9 @@ if (locationURL.includes('detail')) {
                     width:100%;
                     order:2;
                 }
+                #component-middle {
+                    padding:0.4rem 0.8rem;
+                }
                 #share {
                     background:#dddddd;
                     display:flex;
@@ -883,7 +886,7 @@ if (locationURL.includes('detail')) {
                     flex-flow:row nowrap;
                     justify-content:space-between;
                     align-items:center;
-                    padding:0.8rem 1.6rem;
+                    padding:0.4rem 0.8rem;
                     margin: 0 auto;
                 }
             }
@@ -1341,7 +1344,8 @@ if (locationURL.includes('detail')) {
                     display :-ms-flexbox;
                     flex-flow:row nowrap;
                     justify-content:space-between;
-                    padding:0 1.6rem;
+                    background:#dddddd;
+                    padding:0.4rem 0.8rem;
                     order:3;
                 }
                 #inquiry-button1 {
