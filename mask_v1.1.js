@@ -1346,7 +1346,7 @@ if (locationURL.includes('detail')) {
                 margin-bottom:0.5rem;
             }
             #inquiry2-tel {
-                padding:0.925rem 0;
+                padding-top:0.925rem;
                 flex-grow:1;
                 order:1;
             }
@@ -1427,7 +1427,7 @@ if (locationURL.includes('detail')) {
                     display:none;
                 }
                 #inquiry2-tel {
-                    padding:0.5rem 0;
+                    padding-top:0.5rem;
                 }
                 #inquiry2-tel > .tel-number {
                     font-size:1.6rem;
