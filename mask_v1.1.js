@@ -1094,15 +1094,7 @@ if (locationURL.includes('detail')) {
         })();
         inquiryBox_2.appendChild(inquiry_Tel_2);
         //電話をかけるボタン
-        //const inquiry_Tel_Button = (() => {
-            //const inquiry_Tel_button = create_Element('a',[
-                //{href:'tel:' + settings['company_data']['tel_number']}
-            //]);
-            //inquiry_Tel_button.textContent = '電話をかける';
-        
-            //return inquiry_Tel_button;
-        //})();
-        //inquiryBox_2.appendChild(inquiry_Tel_Button);
+        inquiryBox_2.appendChild(inquiry_Tel_Button.cloneNode(true));
         //QRコード
         const qr_2 = (() => {
             const qr_div = create_Element('div',[
