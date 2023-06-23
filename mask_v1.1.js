@@ -1201,7 +1201,7 @@ if (locationURL.includes('detail')) {
                 background:#ffb911;
                 color:#ffffff;
                 font-size:1.6rem;
-                padding:1.4rem;
+                padding:1.4rem 0;
                 width:100%;
                 text-align:center;
                 font-weight:bold;
@@ -1253,6 +1253,9 @@ if (locationURL.includes('detail')) {
             }
             #inquiry1-tel > .tel-time {
                 font-size:0.8rem;
+            }
+            #inquiry1-box > a {
+                display:none;
             }
             #inquiry2-box {
                 display:flex;
@@ -1325,7 +1328,8 @@ if (locationURL.includes('detail')) {
             }
             @media screen and (max-width:750px) {
                 .js-added-inquiry-button {
-                    padding:1rem;
+                    font-size:1.4rem;
+                    padding:1rem 0;
                 }
                 #qrcode1 {
                     display:none;
@@ -1340,8 +1344,31 @@ if (locationURL.includes('detail')) {
                     padding:0 1.6rem;
                     order:3;
                 }
+                #inquiry-button1 {
+                    flex-basis:calc(67% - 0.8rem);
+                }
                 #inquiry1-tel {
                     display:none;
+                }
+                #inquiry1-box > a {
+                    display:flex;
+                    display:-webkit-box;
+                    display:-webkit-flex;
+                    display :-ms-flexbox;
+                    flex-flow:row nowrap;
+                    flex-basis:33%;
+                    background:#26aaff;
+                    color:#ffffff;
+                    text-decoration:none;
+                    justify-content:center;
+                    align-items:center;
+                    font-weight:bold;
+                    font-size:1.4rem;
+                    padding:1rem 0;
+                    order:1;
+                }
+                #inquiry1-box > a:hover {
+                    opacity:.6;
                 }
                 #qrcode2 {
                     display:none;
