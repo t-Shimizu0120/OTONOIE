@@ -1399,7 +1399,16 @@ if (locationURL.includes('detail')) {
                     padding:1.2rem;
                 }
             }
-            @media screen and (max-width:375px) {
+            @media screen and (max-width:350px) {
+                .js-added-inquiry-button {
+                    font-size:1.2rem;
+                }
+                #inquiry1-box > a {
+                    font-size:1.2rem;
+                }
+                #inquiry2-box > a {
+                    font-size:1.2rem;
+                }
                 
             }
         `; 
