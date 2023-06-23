@@ -48,7 +48,7 @@ settings['site_control']['map_full_address'] = 'false';
     const addStyleElm = document.createElement('style');
     addStyleElm.setAttribute('id','base-style');
     const style = `
-        @media screen and (max-width:750px) {
+        @media screen and (${settings['media']['m']}) {
             header {
                 position:initial;
             }
