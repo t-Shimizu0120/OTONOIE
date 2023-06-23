@@ -1409,8 +1409,12 @@ if (locationURL.includes('detail')) {
                 #inquiry1-box > a {
                     font-size:1.2rem;
                 }
+                #inquiry2-tel {
+                    display:none;
+                }
                 #inquiry2-box > a {
                     font-size:1.2rem;
+                    flex-basis:100%;
                 }
                 
             }
