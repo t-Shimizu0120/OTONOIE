@@ -1034,9 +1034,10 @@ if (locationURL.includes('detail')) {
         const inquiry_1 = (() => {
             const inquiry_button = create_Element('button',[
                 {class:'js-added-inquiry-button'},
-                {id:'inquiry-button1'},
-                {popovertarget:'inquiry-popover-contents'},
-                {popovertargetaction:'show'}
+		{id:'inquiry-button1'}
+                //{id:'inquiry-button1'},
+                //{popovertarget:'inquiry-popover-contents'},
+                //{popovertargetaction:'show'}
             ]);
             return inquiry_button;
         })();
@@ -1138,9 +1139,10 @@ if (locationURL.includes('detail')) {
         const inquiry_2 = (() => {
             const inquiry_button = create_Element('button',[
                 {class:'js-added-inquiry-button'},
-                {id:'inquiry-button2'},
-                {popovertarget:'inquiry-popover-contents'},
-                {popovertargetaction:'show'}
+		{id:'inquiry-button2'}
+                //{id:'inquiry-button2'},
+                //{popovertarget:'inquiry-popover-contents'},
+                //{popovertargetaction:'show'}
             ]);
             return inquiry_button;
         })();
@@ -1518,12 +1520,9 @@ if (locationURL.includes('detail')) {
 		} else {
 		};
 		for (targetInquiryButton of targetInquiryButtons) {
-		    if (targetInquiryButton.hasAttribute('onclick') == true) {
-		        targetInquiryButton.removeAttribute('onclick');
-			targetInquiryButton.setAttribute('popovertarget','inquiry-popover-contents');
-			targetInquiryButton.setAttribute('popovertargetaction','show');
-		    } else {
-		    };
+		    targetInquiryButton.setAttribute('onclick','');
+		    targetInquiryButton.setAttribute('popovertarget','inquiry-popover-contents');
+		    targetInquiryButton.setAttribute('popovertargetaction','show');
 		};
 		//if (inquiry_1.hasAttribute('onclick') == true && inquiry_2.hasAttribute('onclick') == true) {
                     //inquiry_1.removeAttribute('onclick');
@@ -1547,12 +1546,9 @@ if (locationURL.includes('detail')) {
 		    //
 		//};
 		for (targetInquiryButton of targetInquiryButtons) {
-		    if (targetInquiryButton.hasAttribute('popovertarget') == true) {
-		        targetInquiryButton.removeAttribute('popovertarget');
-			targetInquiryButton.removeAttribute('popovertargetaction');
-			targetInquiryButton.setAttribute('onclick','location.href=\'#contact_area\'');
-		    } else {
-		    };
+		    targetInquiryButton.setAttribute('popovertarget','');
+		    targetInquiryButton.setAttribute('popovertargetaction','');
+		    targetInquiryButton.setAttribute('onclick','location.href=\'#contact_area\'');
 		};
                 //if (inquiry_1.hasAttribute('popovertarget') == true && inquiry_2.hasAttribute('popovertarget') == true) {
                     //inquiry_1.removeAttribute('popovertarget');
