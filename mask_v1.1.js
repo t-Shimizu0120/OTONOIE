@@ -1551,14 +1551,9 @@ if (locationURL.includes('detail')) {
                     inquiry_2.setAttribute('onclick','location.href=\'#contact_area\'');
                 } else {
                 };
-		const inquiryShowButtons = document.getElementsByClassName('js-added-inquiry-button');
-		for (showButton of inquiryShowButtons) {
-		    showButton.removeEventListener('click', bodyScrollPrevent(true));
-		};
-		const inquiryHideButtons = document.getElementsByClassName('js-added-popover-close-button');
-		for (hideButton of inquiryHideButtons) {
-		    hideButton.removeEventListener('click', bodyScrollPrevent(false));
-		}; 
+		inquiryBox_1.removeEventListener('click', () => bodyScrollPrevent(true));
+		inquiryBox_2.removeEventListener('click', () => bodyScrollPrevent(true));
+		popover_Close_Button.removeEventListener('click', () => bodyScrollPrevent(false));
             };
         };
         //--------------------------------------------------------------------
