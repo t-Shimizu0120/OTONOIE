@@ -1511,7 +1511,7 @@ if (locationURL.includes('detail')) {
                 // SP
                 componentWrap_top.appendChild(inquiryBox_1);
 		if (body.hasAttribute('style') == true && body.getAttribute('style') !== '') {
-		    body.removeAttribute('style');
+		    body.setAttribute('style','');
 		} else {
 		};
 		if (popoverElms.length !== 0) {
@@ -1530,7 +1530,7 @@ if (locationURL.includes('detail')) {
                 // PC
                 component_1.appendChild(inquiryBox_1);
 		if (body.hasAttribute('style') == true && body.getAttribute('style') !== '') {
-		    body.removeAttribute('style');
+		    body.setAttribute('style','');
 		} else {
 		};
 		if (popoverElms.length !== 0) {
