@@ -1508,8 +1508,8 @@ if (locationURL.includes('detail')) {
         // listener
         function listener (event) {
 	    const body = document.getElementsByTagName('body')[0];
-            const targetInquiryButtons = docoment.querySelectorAll('.js-added-inquiry-button');
-	    const targetPopoverCloseButtons = docoment.querySelectorAll('.js-added-popover-close-button.match-media-target-close-btn');
+            const targetInquiryButtons = document.querySelectorAll('.js-added-inquiry-button');
+	    const targetPopoverCloseButtons = document.querySelectorAll('.js-added-popover-close-button.match-media-target-close-btn');
             if (event.matches) {
                 // SP
                 componentWrap_top.appendChild(inquiryBox_1);
