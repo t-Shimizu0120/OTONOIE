@@ -1504,6 +1504,7 @@ if (locationURL.includes('detail')) {
         // listener
         function listener (event) {
 	    const body = document.getElementsByTagName('body')[0];
+	    const popoverElms = document.querySelectorAll('.js-added-popover-content');
             const targetInquiryButtons = document.querySelectorAll('.js-added-inquiry-button');
 	    const targetPopoverCloseButtons = document.querySelectorAll('.js-added-popover-close-button.match-media-target-close-btn');
             if (event.matches) {
@@ -1513,7 +1514,7 @@ if (locationURL.includes('detail')) {
 		    body.removeAttribute('style');
 		} else {
 		};
-		if (document.querySelectorAll('.js-added-popover-content').length !== 0) {
+		if (popoverElms.length !== 0) {
 		    for (targetInquiryButton of targetInquiryButtons) {
 		        targetInquiryButton.setAttribute('onclick','');
 		        targetInquiryButton.setAttribute('popovertarget','inquiry-popover-contents');
@@ -1532,13 +1533,12 @@ if (locationURL.includes('detail')) {
 		    body.removeAttribute('style');
 		} else {
 		};
-		if (document.querySelectorAll('.js-added-popover-content').length !== 0) {
+		if (popoverElms.length !== 0) {
 		    for (targetInquiryButton of targetInquiryButtons) {
 		        targetInquiryButton.setAttribute('popovertarget','');
 		        targetInquiryButton.setAttribute('popovertargetaction','');
 		        targetInquiryButton.setAttribute('onclick','location.href=\'#contact_area\'');
 		    };
-                    const popoverElms = document.querySelectorAll('.js-added-popover-content');
                     for (popoverElm of popoverElms) {
                         if (popoverElm.matches(':popover-open')) {
                             popoverElm.hidePopover();
