@@ -1513,11 +1513,14 @@ if (locationURL.includes('detail')) {
 		    body.removeAttribute('style');
 		} else {
 		};
-		for (targetInquiryButton of targetInquiryButtons) {
-		    targetInquiryButton.setAttribute('onclick','');
-		    targetInquiryButton.setAttribute('popovertarget','inquiry-popover-contents');
-		    targetInquiryButton.setAttribute('popovertargetaction','show');
-		};
+		if (document.querySelectorAll('.js-added-popover-content').length !== 0) {
+		    for (targetInquiryButton of targetInquiryButtons) {
+		        targetInquiryButton.setAttribute('onclick','');
+		        targetInquiryButton.setAttribute('popovertarget','inquiry-popover-contents');
+		        targetInquiryButton.setAttribute('popovertargetaction','show');
+		    };
+                } else {
+                };
             } else {
                 // PC
                 component_1.appendChild(inquiryBox_1);
@@ -1525,17 +1528,12 @@ if (locationURL.includes('detail')) {
 		    body.removeAttribute('style');
 		} else {
 		};
-                
-		
-		//for (targetPopoverButton of targetPopoverButtons) {
-		    //
-		//};
-		for (targetInquiryButton of targetInquiryButtons) {
-		    targetInquiryButton.setAttribute('popovertarget','');
-		    targetInquiryButton.setAttribute('popovertargetaction','');
-		    targetInquiryButton.setAttribute('onclick','location.href=\'#contact_area\'');
-		};
 		if (document.querySelectorAll('.js-added-popover-content').length !== 0) {
+		    for (targetInquiryButton of targetInquiryButtons) {
+		        targetInquiryButton.setAttribute('popovertarget','');
+		        targetInquiryButton.setAttribute('popovertargetaction','');
+		        targetInquiryButton.setAttribute('onclick','location.href=\'#contact_area\'');
+		    };
                     const popoverElms = document.querySelectorAll('.js-added-popover-content');
                     for (popoverElm of popoverElms) {
                         if (popoverElm.matches(':popover-open')) {
