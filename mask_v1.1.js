@@ -26,7 +26,7 @@ settings['mask'] = 'true';
 settings['media'] = {};
 //ブレイクポイント設定
 //sp
-settings['media']['s'] = 'max-width:348px';
+settings['media']['s'] = 'max-width:360px';
 //tablet
 settings['media']['m'] = 'max-width:750px';
 //pc-s
