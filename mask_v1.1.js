@@ -108,7 +108,7 @@ let bodyScrollPrevent = (flag) => {
 		body.style.top = scrollPosition + 'px';
 	} else {
 		body.style.paddingRight = '';
-		scrollPosition = parseInt(body.style.top.replace(/[^0-9]/g, ''));
+		scrollPosition = body.style.top.replace('px', '').replace('-', '');
 		body.style.position = '';
 		body.style.width = '';
 		body.style.top = '';
