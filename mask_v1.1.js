@@ -1516,7 +1516,7 @@ if (locationURL.includes('detail')) {
 		} else {
 		};
 		if (inquiry_1.hasAttribute('onclick') == true && inquiry_2.hasAttribute('onclick') == true) {
-                    inquiry_1.setAttribute('onclick','bodyScrollPrevent(true);');
+                    inquiry_1.removeAttribute('onclick');
                     inquiry_2.removeAttribute('onclick');
                     inquiry_1.setAttribute('popovertarget','inquiry-popover-contents');
                     inquiry_1.setAttribute('popovertargetaction','show');
