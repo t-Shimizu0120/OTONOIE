@@ -95,7 +95,7 @@ const create_Element = (tagName,attributes) => {
     return add_Elm;
 };
 //スクロール制御（POPOVER）
-function bodyScrollPrevent = (flag) => {
+let bodyScrollPrevent = (flag) => {
 	let scrollPosition;
 	const body = document.getElementsByTagName('body')[0];
 	//スクロールバーの幅
@@ -610,11 +610,13 @@ class AddPopoverContents {
     };
     //表示の際の処理
     clickHandlerValid (e) {
+	bodyScrollPrevent(true);
         const targetSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.currentTarget.getAttribute('popovertarget') + '"]';
-        document.querySelector(targetSelector).classList.add('valid');
+	document.querySelector(targetSelector).classList.add('valid');
     };
     //非表示の際の処理
     clickHandlerInvalid (e) {
+	bodyScrollPrevent(false);
         const targetSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.currentTarget.getAttribute('popovertarget') + '"]';
         document.querySelector(targetSelector).classList.remove('valid');
     };
