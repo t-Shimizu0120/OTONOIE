@@ -1035,9 +1035,6 @@ if (locationURL.includes('detail')) {
             const inquiry_button = create_Element('button',[
                 {class:'js-added-inquiry-button'},
 		{id:'inquiry-button1'}
-                //{id:'inquiry-button1'},
-                //{popovertarget:'inquiry-popover-contents'},
-                //{popovertargetaction:'show'}
             ]);
             return inquiry_button;
         })();
@@ -1140,9 +1137,6 @@ if (locationURL.includes('detail')) {
             const inquiry_button = create_Element('button',[
                 {class:'js-added-inquiry-button'},
 		{id:'inquiry-button2'}
-                //{id:'inquiry-button2'},
-                //{popovertarget:'inquiry-popover-contents'},
-                //{popovertargetaction:'show'}
             ]);
             return inquiry_button;
         })();
@@ -1524,15 +1518,6 @@ if (locationURL.includes('detail')) {
 		    targetInquiryButton.setAttribute('popovertarget','inquiry-popover-contents');
 		    targetInquiryButton.setAttribute('popovertargetaction','show');
 		};
-		//if (inquiry_1.hasAttribute('onclick') == true && inquiry_2.hasAttribute('onclick') == true) {
-                    //inquiry_1.removeAttribute('onclick');
-                    //inquiry_2.removeAttribute('onclick');
-                    //inquiry_1.setAttribute('popovertarget','inquiry-popover-contents');
-                    //inquiry_1.setAttribute('popovertargetaction','show');
-                    //inquiry_2.setAttribute('popovertarget','inquiry-popover-contents');
-                    //inquiry_2.setAttribute('popovertargetaction','show');
-                //} else {
-                //};
             } else {
                 // PC
                 component_1.appendChild(inquiryBox_1);
@@ -1550,19 +1535,7 @@ if (locationURL.includes('detail')) {
 		    targetInquiryButton.setAttribute('popovertargetaction','');
 		    targetInquiryButton.setAttribute('onclick','location.href=\'#contact_area\'');
 		};
-                //if (inquiry_1.hasAttribute('popovertarget') == true && inquiry_2.hasAttribute('popovertarget') == true) {
-                    //inquiry_1.removeAttribute('popovertarget');
-                    //inquiry_1.removeAttribute('popovertargetaction');
-                    //inquiry_2.removeAttribute('popovertarget');
-                    //inquiry_2.removeAttribute('popovertargetaction');
-                    //inquiry_1.setAttribute('onclick','location.href=\'#contact_area\'');
-                    //inquiry_2.setAttribute('onclick','location.href=\'#contact_area\'');
-                //} else {
-                //};
-		
-                
-		
-                if (document.querySelectorAll('.js-added-popover-content').length !== 0) {
+		if (document.querySelectorAll('.js-added-popover-content').length !== 0) {
                     const popoverElms = document.querySelectorAll('.js-added-popover-content');
                     for (popoverElm of popoverElms) {
                         if (popoverElm.matches(':popover-open')) {
