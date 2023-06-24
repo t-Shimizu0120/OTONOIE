@@ -1543,9 +1543,9 @@ if (locationURL.includes('detail')) {
 		};
                 
 		
-		for (targetPopoverButton of targetPopoverButtons) {
-			
-		};
+		//for (targetPopoverButton of targetPopoverButtons) {
+		    //
+		//};
 		for (targetInquiryButton of targetInquiryButtons) {
 		    if (targetInquiryButton.hasAttribute('popovertarget') == true) {
 		        targetInquiryButton.removeAttribute('popovertarget');
