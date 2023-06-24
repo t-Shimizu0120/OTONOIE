@@ -1010,7 +1010,7 @@ if (locationURL.includes('detail')) {
         closeIcon.setAttribute('class','icon-close');
         const popover_Close_Button = document.createElement('button');
         popover_Close_Button.appendChild(closeIcon);
-        popover_Close_Button.setAttribute('class','js-added-popover-close-button');
+        popover_Close_Button.setAttribute('class','js-added-popover-close-button match-media-target-close-btn');
         popover_Close_Button.setAttribute('popovertarget','inquiry-popover-contents');
         popover_Close_Button.setAttribute('popovertargetaction','hide');
 	popover_Content_div.appendChild(popover_Close_Button);
@@ -1508,6 +1508,8 @@ if (locationURL.includes('detail')) {
         // listener
         function listener (event) {
 	    const body = document.getElementsByTagName('body')[0];
+            const targetInquiryButtons = docoment.querySelectorAll('.js-added-inquiry-button');
+	    const targetPopoverCloseButtons = docoment.querySelectorAll('.js-added-popover-close-button.match-media-target-close-btn');
             if (event.matches) {
                 // SP
                 componentWrap_top.appendChild(inquiryBox_1);
@@ -1515,18 +1517,55 @@ if (locationURL.includes('detail')) {
 		    body.removeAttribute('style');
 		} else {
 		};
-		if (inquiry_1.hasAttribute('onclick') == true && inquiry_2.hasAttribute('onclick') == true) {
-                    inquiry_1.removeAttribute('onclick');
-                    inquiry_2.removeAttribute('onclick');
-                    inquiry_1.setAttribute('popovertarget','inquiry-popover-contents');
-                    inquiry_1.setAttribute('popovertargetaction','show');
-                    inquiry_2.setAttribute('popovertarget','inquiry-popover-contents');
-                    inquiry_2.setAttribute('popovertargetaction','show');
-                } else {
-                };
+		for (targetInquiryButton of targetInquiryButtons) {
+		    if (targetInquiryButton.hasAttribute('onclick') == true) {
+		        targetInquiryButton.removeAttribute('onclick');
+			targetInquiryButton.setAttribute('popovertarget','inquiry-popover-contents');
+			targetInquiryButton.setAttribute('popovertargetaction','show');
+		    } else {
+		    };
+		};
+		//if (inquiry_1.hasAttribute('onclick') == true && inquiry_2.hasAttribute('onclick') == true) {
+                    //inquiry_1.removeAttribute('onclick');
+                    //inquiry_2.removeAttribute('onclick');
+                    //inquiry_1.setAttribute('popovertarget','inquiry-popover-contents');
+                    //inquiry_1.setAttribute('popovertargetaction','show');
+                    //inquiry_2.setAttribute('popovertarget','inquiry-popover-contents');
+                    //inquiry_2.setAttribute('popovertargetaction','show');
+                //} else {
+                //};
             } else {
                 // PC
                 component_1.appendChild(inquiryBox_1);
+		if (body.hasAttribute('style') == true && body.getAttribute('style') !== '') {
+		    body.removeAttribute('style');
+		} else {
+		};
+                
+		
+		for (targetPopoverButton of targetPopoverButtons) {
+			
+		};
+		for (targetInquiryButton of targetInquiryButtons) {
+		    if (targetInquiryButton.hasAttribute('popovertarget') == true) {
+		        targetInquiryButton.removeAttribute('popovertarget');
+			targetInquiryButton.removeAttribute('popovertargetaction');
+			targetInquiryButton.setAttribute('onclick','location.href=\'#contact_area\'');
+		    } else {
+		    };
+		};
+                //if (inquiry_1.hasAttribute('popovertarget') == true && inquiry_2.hasAttribute('popovertarget') == true) {
+                    //inquiry_1.removeAttribute('popovertarget');
+                    //inquiry_1.removeAttribute('popovertargetaction');
+                    //inquiry_2.removeAttribute('popovertarget');
+                    //inquiry_2.removeAttribute('popovertargetaction');
+                    //inquiry_1.setAttribute('onclick','location.href=\'#contact_area\'');
+                    //inquiry_2.setAttribute('onclick','location.href=\'#contact_area\'');
+                //} else {
+                //};
+		
+                
+		
                 if (document.querySelectorAll('.js-added-popover-content').length !== 0) {
                     const popoverElms = document.querySelectorAll('.js-added-popover-content');
                     for (popoverElm of popoverElms) {
@@ -1542,19 +1581,6 @@ if (locationURL.includes('detail')) {
                         };
                     } else {
                     };
-                } else {
-                };
-		if (body.hasAttribute('style') == true && body.getAttribute('style') !== '') {
-		    body.removeAttribute('style');
-		} else {
-		};
-                if (inquiry_1.hasAttribute('popovertarget') == true && inquiry_2.hasAttribute('popovertarget') == true) {
-                    inquiry_1.removeAttribute('popovertarget');
-                    inquiry_1.removeAttribute('popovertargetaction');
-                    inquiry_2.removeAttribute('popovertarget');
-                    inquiry_2.removeAttribute('popovertargetaction');
-                    inquiry_1.setAttribute('onclick','location.href=\'#contact_area\'');
-                    inquiry_2.setAttribute('onclick','location.href=\'#contact_area\'');
                 } else {
                 };
 	    };
