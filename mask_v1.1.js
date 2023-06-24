@@ -634,6 +634,7 @@ class AddPopoverContents {
                 pointer-events:none;
             }
             .js-added-popover-content {
+                border:0;
             }
             .js-added-popover-content:popover-open {
             }
