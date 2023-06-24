@@ -687,7 +687,8 @@ class AddPopoverContents {
                 position:fixed;
                 top:0;
                 left:0;
-                background-color:transparent;
+                background-color:#000;
+                opacity:.3;
                 border:0;
                 z-index:1000;
             }
