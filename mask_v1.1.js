@@ -1013,6 +1013,7 @@ if (locationURL.includes('detail')) {
         popover_Close_Button.setAttribute('class','js-added-popover-close-button');
         popover_Close_Button.setAttribute('popovertarget','inquiry-popover-contents');
         popover_Close_Button.setAttribute('popovertargetaction','hide');
+	popover_Close_Button.addEventListener('click', bodyScrollPrevent(false));
         popover_Content_div.appendChild(popover_Close_Button);
         //問い合わせフォームWRAP
         const inquiry_wrap = create_Element('div',[
@@ -1041,6 +1042,7 @@ if (locationURL.includes('detail')) {
             return inquiry_button;
         })();
         inquiry_1.textContent = 'この物件にお問い合わせ';
+	inquiry_1.addEventListener('click', bodyScrollPrevent(true));
         inquiryBox_1.appendChild(inquiry_1);
         //電話番号１
         const inquiry_Tel_1 = (() => {
@@ -1145,6 +1147,7 @@ if (locationURL.includes('detail')) {
             return inquiry_button;
         })();
         inquiry_2.textContent = 'この物件にお問い合わせ';
+	inquiry_2.addEventListener('click', bodyScrollPrevent(true));
         inquiryBox_2.appendChild(inquiry_2);
         //電話番号
         const inquiry_Tel_2 = (() => {
@@ -1548,6 +1551,14 @@ if (locationURL.includes('detail')) {
                     inquiry_2.setAttribute('onclick','location.href=\'#contact_area\'');
                 } else {
                 };
+		const inquiryShowButtons = document.getElementsByClassName('js-added-inquiry-button');
+		for (showButton of inquiryShowButtons) {
+		    showButton.removeEventListener('click', bodyScrollPrevent(true));
+		};
+		const inquiryHideButtons = document.getElementsByClassName('js-added-popover-close-button');
+		for (hideButton of inquiryHideButtons) {
+		    hideButton.removeEventListener('click', bodyScrollPrevent(false));
+		}; 
             };
         };
         //--------------------------------------------------------------------
