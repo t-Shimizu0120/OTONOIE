@@ -1507,10 +1507,15 @@ if (locationURL.includes('detail')) {
         listener(mediaQueryList);
         // listener
         function listener (event) {
+	    const body = document.getElementsByTagName('body')[0];
             if (event.matches) {
                 // SP
                 componentWrap_top.appendChild(inquiryBox_1);
-                if (inquiry_1.hasAttribute('onclick') == true && inquiry_2.hasAttribute('onclick') == true) {
+		if (body.hasAttribute('style') == true && body.getAttribute('style') !== '') {
+		    body.removeAttribute('style');
+		} else {
+		};
+		if (inquiry_1.hasAttribute('onclick') == true && inquiry_2.hasAttribute('onclick') == true) {
                     inquiry_1.removeAttribute('onclick');
                     inquiry_2.removeAttribute('onclick');
                     inquiry_1.setAttribute('popovertarget','inquiry-popover-contents');
@@ -1539,8 +1544,10 @@ if (locationURL.includes('detail')) {
                     };
                 } else {
                 };
-		const body = document.getElementsByTagName('body')[0];
-	        if (body.hasAttribute)
+		if (body.hasAttribute('style') == true && body.getAttribute('style') !== '') {
+		    body.removeAttribute('style');
+		} else {
+		};
                 if (inquiry_1.hasAttribute('popovertarget') == true && inquiry_2.hasAttribute('popovertarget') == true) {
                     inquiry_1.removeAttribute('popovertarget');
                     inquiry_1.removeAttribute('popovertargetaction');
