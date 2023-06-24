@@ -94,6 +94,27 @@ const create_Element = (tagName,attributes) => {
     };
     return add_Elm;
 };
+//スクロール制御（POPOVER）
+function bodyScrollPrevent = (flag) => {
+	let scrollPosition;
+	const body = document.getElementsByTagName('body')[0];
+	//スクロールバーの幅
+	const scrollBarWidth = window.innerWidth - document.body.clientWidth;
+	if (flag) {
+		body.style.paddingRight = scrollBarWidth + 'px';
+		scrollPosition = -window.pageYOffset;
+		body.style.position = 'fixed';
+		body.style.width = '100%';
+		body.style.top = scrollPosition + 'px';
+	} else {
+		body.style.paddingRight = '';
+		scrollPosition = parseInt(body.style.top.replace(/[^0-9]/g, ''));
+		body.style.position = '';
+		body.style.width = '';
+		body.style.top = '';
+		window.scrollTo(0, scrollPosition);
+	};
+};
 //=================================================================
 //class
 //=================================================================   
