@@ -1518,6 +1518,10 @@ if (locationURL.includes('detail')) {
 		        targetInquiryButton.setAttribute('onclick','');
 		        targetInquiryButton.setAttribute('popovertarget','inquiry-popover-contents');
 		        targetInquiryButton.setAttribute('popovertargetaction','show');
+			targetInquiryButton.addEventListener('click', () => bodyScrollPrevent(true));
+		    };
+		    for (targetPopoverCloseButton of targetPopoverCloseButtons) {
+			targetPopoverCloseButton.addEventListener('click', () => bodyScrollPrevent(false));
 		    };
                 } else {
                 };
