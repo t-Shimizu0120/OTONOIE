@@ -1516,13 +1516,12 @@ if (locationURL.includes('detail')) {
 		};
 		if (popoverElms.length !== 0) {
 		    for (targetInquiryButton of targetInquiryButtons) {
-		        targetInquiryButton.setAttribute('onclick','');
+			targetInquiryButton.setAttribute('onclick','bodyScrollPrevent(true);');
 		        targetInquiryButton.setAttribute('popovertarget','inquiry-popover-contents');
 		        targetInquiryButton.setAttribute('popovertargetaction','show');
-			targetInquiryButton.addEventListener('click', () => bodyScrollPrevent(true));
 		    };
 		    for (targetPopoverCloseButton of targetPopoverCloseButtons) {
-			targetPopoverCloseButton.addEventListener('click', () => bodyScrollPrevent(false));
+			targetPopoverCloseButton.setAttribute('onclick','bodyScrollPrevent(false);');
 		    };
                 } else {
                 };
