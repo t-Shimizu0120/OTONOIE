@@ -1564,7 +1564,7 @@ if (locationURL.includes('detail')) {
 		    window.scrollTo(0, scrollPosition);
 		} else {
 		};
-		function backsideButton_control(e) {
+		let backsideButton_control = function (e) {
                     const targetButtonSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.currentTarget.getAttribute('popovertarget') + '"]';
                     document.querySelector(targetButtonSelector).classList.add('valid');
                 };
