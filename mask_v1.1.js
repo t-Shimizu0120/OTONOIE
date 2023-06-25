@@ -1564,7 +1564,7 @@ if (locationURL.includes('detail')) {
 		    window.scrollTo(0, scrollPosition);
 		} else {
 		};
-                function backsideButton_control(e) {
+		function backsideButton_control(e) {
                     const targetButtonSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.currentTarget.getAttribute('popovertarget') + '"]';
                     document.querySelector(targetButtonSelector).classList.add('valid');
                 };
@@ -1578,7 +1578,7 @@ if (locationURL.includes('detail')) {
 		    for (targetPopoverCloseButton of targetPopoverCloseButtons) {
 		        targetPopoverCloseButton.setAttribute('onclick','bodyScrollPrevent(false);');
 		    };
-                    for (targetPopoverBacksideCloseButton of targetPopoverBacksideCloseButtons) {
+		    for (targetPopoverBacksideCloseButton of targetPopoverBacksideCloseButtons) {
                         targetPopoverBacksideCloseButton.setAttribute('onclick','bodyScrollPrevent(false);');
 		    };
                 } else {
