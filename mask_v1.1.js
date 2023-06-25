@@ -1397,7 +1397,7 @@ if (locationURL.includes('detail')) {
 	    #inquiry-popover-contents {
                 top:1.2rem;
                 width:94%;
-		height:calc(100vh - 2.4rem);
+		height:calc(100svh - 2.4rem);
 		margin:0 auto;
                 border:0;
                 overflow-y: scroll;
