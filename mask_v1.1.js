@@ -1542,8 +1542,13 @@ if (locationURL.includes('detail')) {
         `; 
         headElm.appendChild(componentStyle);
         //---------------------------------------------------------------------
-        //--------------------------レスポンシブ------------------------------
-        //ブレイクポイント
+        //--------------------------レスポンシブ--------------------------------
+        //関数
+	let backsideButton_control = function (e) {
+            const targetButtonSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.currentTarget.getAttribute('popovertarget') + '"]';
+            document.querySelector(targetButtonSelector).classList.add('valid');
+        };
+	//ブレイクポイント
         const mediaQueryList = window.matchMedia(`(${settings['media']['m']})`);
         //regist listener
         mediaQueryList.addEventListener('change', listener);
@@ -1555,10 +1560,6 @@ if (locationURL.includes('detail')) {
             const targetInquiryButtons = document.querySelectorAll('.js-added-inquiry-button');
 	    const targetPopoverCloseButtons = document.querySelectorAll('.js-added-popover-close-button.match-media-target-close-btn');
             const targetPopoverBacksideCloseButtons = document.querySelectorAll('.js-added-popover-content-backside-button.match-media-target-close-btn');
-            let backsideButton_control = function (e) {
-                const targetButtonSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.currentTarget.getAttribute('popovertarget') + '"]';
-                document.querySelector(targetButtonSelector).classList.add('valid');
-            };
 	    if (event.matches) {
                 // SP
                 componentWrap_top.appendChild(inquiryBox_1);
