@@ -1576,10 +1576,10 @@ if (locationURL.includes('detail')) {
                         targetInquiryButton.addEventListener('click',backsideButton_control(e));
 		    };
 		    for (targetPopoverCloseButton of targetPopoverCloseButtons) {
-			targetPopoverCloseButton.setAttribute('onclick','bodyScrollPrevent(false);');
+		        targetPopoverCloseButton.setAttribute('onclick','bodyScrollPrevent(false);');
 		    };
                     for (targetPopoverBacksideCloseButton of targetPopoverBacksideCloseButtons) {
-			targetPopoverBacksideCloseButton.setAttribute('onclick','bodyScrollPrevent(false);');
+                        targetPopoverBacksideCloseButton.setAttribute('onclick','bodyScrollPrevent(false);');
 		    };
                 } else {
                 };
