@@ -1236,7 +1236,6 @@ if (locationURL.includes('detail')) {
                         margin:auto;
                         padding:3.2rem;
                         text-align:center;
-                        border:0;
                     }
                     #share-qrcode-popover-contents > img {
                         margin-top:1.6rem;
