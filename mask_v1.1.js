@@ -1511,7 +1511,9 @@ if (locationURL.includes('detail')) {
                 // SP
                 componentWrap_top.appendChild(inquiryBox_1);
 		if (body.hasAttribute('style') == true && body.getAttribute('style') !== '') {
+		    scrollPosition = body.style.top.replace('px','').replace('-','');
 		    body.setAttribute('style','');
+		    window.scrollTo(0, scrollPosition);
 		} else {
 		};
 		if (popoverElms.length !== 0) {
@@ -1529,7 +1531,9 @@ if (locationURL.includes('detail')) {
                 // PC
                 component_1.appendChild(inquiryBox_1);
 		if (body.hasAttribute('style') == true && body.getAttribute('style') !== '') {
+		    scrollPosition = body.style.top.replace('px','').replace('-','');
 		    body.setAttribute('style','');
+		    window.scrollTo(0, scrollPosition);
 		} else {
 		};
 		if (popoverElms.length !== 0) {
