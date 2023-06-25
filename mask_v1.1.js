@@ -1379,6 +1379,11 @@ if (locationURL.includes('detail')) {
             #inquiry2-box > a {
                 display:none;
             }
+	    #inquiry-popover-contents{
+                top:1.8rem;
+                width:94%;
+		margin:0 auto;
+	    }
             #inquiry-popover-content-wrap {
                 padding:1.2rem;
             }
