@@ -1555,7 +1555,11 @@ if (locationURL.includes('detail')) {
             const targetInquiryButtons = document.querySelectorAll('.js-added-inquiry-button');
 	    const targetPopoverCloseButtons = document.querySelectorAll('.js-added-popover-close-button.match-media-target-close-btn');
             const targetPopoverBacksideCloseButtons = document.querySelectorAll('.js-added-popover-content-backside-button.match-media-target-close-btn');
-            if (event.matches) {
+            let backsideButton_control = function (e) {
+                const targetButtonSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.currentTarget.getAttribute('popovertarget') + '"]';
+                document.querySelector(targetButtonSelector).classList.add('valid');
+            };
+	    if (event.matches) {
                 // SP
                 componentWrap_top.appendChild(inquiryBox_1);
 		if (body.hasAttribute('style') == true && body.getAttribute('style') !== '') {
@@ -1564,16 +1568,12 @@ if (locationURL.includes('detail')) {
 		    window.scrollTo(0, scrollPosition);
 		} else {
 		};
-		let backsideButton_control = function (e) {
-                    const targetButtonSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.currentTarget.getAttribute('popovertarget') + '"]';
-                    document.querySelector(targetButtonSelector).classList.add('valid');
-                };
 		if (popoverElms.length !== 0) {
 		    for (targetInquiryButton of targetInquiryButtons) {
 			targetInquiryButton.setAttribute('onclick','bodyScrollPrevent(true);');
 		        targetInquiryButton.setAttribute('popovertarget','inquiry-popover-contents');
 		        targetInquiryButton.setAttribute('popovertargetaction','show');
-                        targetInquiryButton.addEventListener('click',backsideButton_control(e));
+                        targetInquiryButton.addEventListener('click',backsideButton_control);
 		    };
 		    for (targetPopoverCloseButton of targetPopoverCloseButtons) {
 		        targetPopoverCloseButton.setAttribute('onclick','bodyScrollPrevent(false);');
@@ -1597,8 +1597,7 @@ if (locationURL.includes('detail')) {
 		        targetInquiryButton.setAttribute('popovertarget','');
 		        targetInquiryButton.setAttribute('popovertargetaction','');
 		        targetInquiryButton.setAttribute('onclick','location.href=\'#contact_area\'');
-
-
+		        targetInquiryButton.removeEventListener('click',backsideButton_control);
 		    };
                     for (popoverElm of popoverElms) {
                         if (popoverElm.matches(':popover-open')) {
