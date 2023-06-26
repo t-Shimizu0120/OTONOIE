@@ -1381,7 +1381,6 @@ if (locationURL.includes('detail')) {
                 margin-bottom:0.5rem;
             }
             #inquiry2-tel {
-                padding-top:0.925rem;
                 flex-grow:1;
                 order:1;
             }
