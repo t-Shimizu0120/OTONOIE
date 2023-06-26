@@ -1567,7 +1567,7 @@ if (locationURL.includes('detail')) {
         //---------------------------------------------------------------------
         //--------------------------レスポンシブ--------------------------------
         //関数
-	let backsideButton_control = function (e) {
+	const backsideButton_control = function (e) {
             const targetButtonSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.currentTarget.getAttribute('popovertarget') + '"]';
             document.querySelector(targetButtonSelector).classList.add('valid');
         };
