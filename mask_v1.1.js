@@ -703,7 +703,7 @@ class AddPopoverContents {
                 right:21%;
             }
             .js-added-popover-content-backside-button {
-                z-index:-2;
+                z-index:-50000;
             }
             .js-added-popover-content-backside-button.valid {
                 width:100vw;
@@ -714,7 +714,7 @@ class AddPopoverContents {
                 background-color:#000;
                 opacity:.3;
                 border:0;
-                z-index:5000;
+                z-index:50000;
             }
             ${addStyles}
         `;
@@ -1433,7 +1433,7 @@ if (locationURL.includes('detail')) {
                 opacity:.6;
             }
 	    .js-added-popover-content-backside-button {
-                z-index:-2;
+                z-index:-50000;
             }
             .js-added-popover-content-backside-button.valid {
                 width:100vw;
@@ -1444,7 +1444,7 @@ if (locationURL.includes('detail')) {
                 background-color:#000;
                 opacity:.3;
                 border:0;
-                z-index:5000;
+                z-index:50000;
             }
             @media screen and (${settings['media']['m']}) {
                 .js-added-inquiry-button {
