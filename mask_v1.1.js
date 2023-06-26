@@ -96,8 +96,8 @@ const create_Element = (tagName,attributes) => {
 };
 //スクロール制御（POPOVER）
 const bodyScrollPrevent = (flag) => {
-	let scrollPosition;
-	const body = document.getElementsByTagName('body')[0];
+    let scrollPosition;
+    const body = document.getElementsByTagName('body')[0];
 	//スクロールバーの幅
 	const scrollBarWidth = window.innerWidth - document.body.clientWidth;
 	if (flag) {
@@ -114,6 +114,9 @@ const bodyScrollPrevent = (flag) => {
 		body.style.top = '';
 		window.scrollTo(0, scrollPosition);
 	};
+};
+const focusControl = () => {
+	
 };
 //=================================================================
 //class
