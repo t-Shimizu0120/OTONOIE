@@ -95,7 +95,7 @@ const create_Element = (tagName,attributes) => {
     return add_Elm;
 };
 //スクロール制御（POPOVER）
-let bodyScrollPrevent = (flag) => {
+const bodyScrollPrevent = (flag) => {
 	let scrollPosition;
 	const body = document.getElementsByTagName('body')[0];
 	//スクロールバーの幅
