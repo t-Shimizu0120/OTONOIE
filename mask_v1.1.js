@@ -1308,6 +1308,20 @@ if (locationURL.includes('detail')) {
             .js-added-inquiry-tel > .tel-time {
                 color:#000;
             }
+	    .js-added-popover-content-backside-button {
+                z-index:-50000;
+            }
+            .js-added-popover-content-backside-button.valid {
+                width:100vw;
+                height:100vh;
+                position:fixed;
+                top:0;
+                left:0;
+                background-color:#000;
+                opacity:.3;
+                border:0;
+                z-index:50000;
+            }
             #summary-price {
                 order:0;
             }
@@ -1331,7 +1345,6 @@ if (locationURL.includes('detail')) {
                 order:0;
             }
             #inquiry1-tel {
-                width:100%;
                 order:1;
             }
             #inquiry1-tel > .tel-number {
@@ -1431,20 +1444,6 @@ if (locationURL.includes('detail')) {
             #share-line > a:hover {
                 opacity:.6;
             }
-	    .js-added-popover-content-backside-button {
-                z-index:-50000;
-            }
-            .js-added-popover-content-backside-button.valid {
-                width:100vw;
-                height:100vh;
-                position:fixed;
-                top:0;
-                left:0;
-                background-color:#000;
-                opacity:.3;
-                border:0;
-                z-index:50000;
-            }
             @media screen and (${settings['media']['m']}) {
                 .js-added-inquiry-button {
                     font-size:1.4rem;
@@ -1458,16 +1457,20 @@ if (locationURL.includes('detail')) {
                     display:-webkit-box;
                     display:-webkit-flex;
                     display :-ms-flexbox;
-                    flex-flow:row nowrap;
+                    flex-flow:row wrap;
                     justify-content:space-between;
                     background:#dddddd;
                     padding:0.4rem 0.8rem;
                     order:3;
                 }
-                #inquiry-button1 {
-                    flex-basis:calc(67% - 0.8rem);
+		#inquiry1-box > button {
+                    margin-bottom:0.5rem;
                 }
-                #inquiry1-tel {
+		#inquiry1-tel {
+		    flex-grow:1;
+                    order:1;
+                }
+		#inquiry1-tel > hr {
                     display:none;
                 }
                 #inquiry1-box > a {
@@ -1485,16 +1488,13 @@ if (locationURL.includes('detail')) {
                     font-weight:bold;
                     font-size:1.4rem;
                     padding:1rem 0;
-                    order:1;
+                    order:2;
                 }
                 #inquiry1-box > a:hover {
                     opacity:.6;
                 }
                 #qrcode2 {
                     display:none;
-                }
-                #inquiry2-tel {
-                    padding-top:0.5rem;
                 }
                 #inquiry2-tel > .tel-number {
                     font-size:1.6rem;
@@ -1527,8 +1527,22 @@ if (locationURL.includes('detail')) {
                 .js-added-inquiry-button {
                     font-size:1.2rem;
                 }
+		#inquiry1-box {
+                    flex-flow:row nowrap;
+                }
+		#inquiry-button1 {
+                    flex-basis:calc(67% - 0.8rem);
+		    order:0;
+                }
+		#inquiry1-box > button {
+                    margin-bottom:0;
+                }
+		#inquiry1-tel {
+                    display:none;
+                }
                 #inquiry1-box > a {
                     font-size:1.2rem;
+		    order:1;
                 }
 		#inquiry2-box {
                     flex-flow:row nowrap;
