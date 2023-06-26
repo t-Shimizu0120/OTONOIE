@@ -26,7 +26,7 @@ settings['mask'] = 'true';
 settings['media'] = {};
 //ブレイクポイント設定
 //sp
-settings['media']['s'] = 'max-width:372px';
+settings['media']['s'] = 'max-width:375px';
 //tablet
 settings['media']['m'] = 'max-width:750px';
 //pc-s
@@ -240,7 +240,7 @@ class AddTable {
                 vertical-align:middle;
             } 
             .js-added-table-td {
-                vertical-align: top;
+                vertical-align:top;
             }
             .js-added-table-th, .js-added-table-td {
                 color:#000;
@@ -424,28 +424,28 @@ class AddTabContents {
         const style = `
             .js-added-tab-contents {
                 width:100%;
-                flex-wrap: wrap;
-                display: flex;
-                margin-bottom: 20px;
+		display:flex;
+                flex-wrap:nowrap;
+                margin-bottom:20px;
             }
             input[name="js-added-tab-input"] {
-                display: none;
+                display:none;
             }
             .js-added-tab-label {
                 background-color:#dddddd; 
                 color:#3f3f3f; 
                 text-align:center;
                 flex: 0 0 ${tabWidthBase}%; 
-                padding: 1rem 0; 
+                padding:1rem 0; 
                 font-weight:bold;
                 cursor:pointer;
-                display: block;
-                float: left;
-                order: -1;
+                display:block;
+                float:left;
+                order:-1;
             }
             input:checked + .js-added-tab-label {
-                background-color: #3f3f3f;
-                color: #eee;
+                background-color:#3f3f3f;
+                color:#eee;
                 pointer-events:none;
             }
             input:disabled + .js-added-tab-label {
@@ -462,11 +462,11 @@ class AddTabContents {
                 opacity:1;
             }
             .js-added-tab-content {
-                display: none;
-                width: 100%;
+                display:none;
+                width:100%;
             }
             input:checked + .js-added-tab-label + .js-added-tab-content {
-                display: block;
+                display:block;
             }
             ${addStyles}
         `;
@@ -799,12 +799,12 @@ if (locationURL.includes('detail')) {
     addChangeDefaultStyleElm.setAttribute('id','detail-change-default-style');
     const detailStyle = `
         input[class="btn_reset"], input[class="btn_submit"] {
-            border-radius:2px !important;
             font-size:1.4rem;
+	    border-radius:2px !important;
             padding:1rem 0;
         }
         @media screen and (${settings['media']['s']}) {
-            input[class="btn_reset"], input[class="btn_submit"] {
+	    input[class="btn_reset"], input[class="btn_submit"] {
                 font-size:1.2rem;
             }
         }
@@ -922,7 +922,7 @@ if (locationURL.includes('detail')) {
                 justify-content:space-between;
                 background-color:#dddddd;
                 padding:0.8rem 1.6rem;
-                margin: 0 auto;
+                margin:0 auto;
             }
             #share {
                 display:none;
@@ -961,7 +961,7 @@ if (locationURL.includes('detail')) {
                     justify-content:space-between;
                     align-items:center;
                     padding:0.4rem 0.8rem;
-                    margin: 0 auto;
+                    margin:0 auto;
                 }
             }
 	    @media screen and (${settings['media']['l']}) { 
@@ -1459,6 +1459,7 @@ if (locationURL.includes('detail')) {
                 border:0;
                 z-index:50000;
             }
+     
 	    @media screen and (${settings['media']['s']}) {
                 .js-added-inquiry-button {
                     font-size:1.2rem;
@@ -1466,7 +1467,7 @@ if (locationURL.includes('detail')) {
                 #inquiry1-box > a {
                     font-size:1.2rem;
                 }
-                #inquiry2-tel {
+		#inquiry2-tel {
                     display:none;
                 }
                 #inquiry2-box > a {
@@ -1474,7 +1475,7 @@ if (locationURL.includes('detail')) {
                     flex-basis:100%;
                 }
             }
-            @media screen and (${settings['media']['m']}) {
+	    @media screen and (${settings['media']['m']}) {
                 .js-added-inquiry-button {
                     font-size:1.4rem;
                     padding:1rem 0;
