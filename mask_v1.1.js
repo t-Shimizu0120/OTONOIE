@@ -48,6 +48,8 @@ settings['site_control']['map_full_address'] = 'false';
     const addStyleElm = document.createElement('style');
     addStyleElm.setAttribute('id','base-style');
     const style = `
+        @media screen and (${settings['media']['s']}) { 
+        }
         @media screen and (${settings['media']['m']}) {
             header {
                 position:initial;
@@ -56,8 +58,9 @@ settings['site_control']['map_full_address'] = 'false';
                 padding:0;
             }
         }
-        @media screen and (${settings['media']['s']}) {
-            
+	@media screen and (${settings['media']['l']}) { 
+        }
+	@media screen and (${settings['media']['ll']}) { 
         }
     `;
     addStyleElm.textContent = style;
@@ -800,13 +803,16 @@ if (locationURL.includes('detail')) {
             font-size:1.4rem;
             padding:1rem 0;
         }
-        @media screen and (${settings['media']['m']}) {
-            
-        }
         @media screen and (${settings['media']['s']}) {
             input[class="btn_reset"], input[class="btn_submit"] {
                 font-size:1.2rem;
             }
+        }
+        @media screen and (${settings['media']['m']}) {
+        }
+	@media screen and (${settings['media']['l']}) { 
+        }
+	@media screen and (${settings['media']['ll']}) { 
         }
     `;
     addChangeDefaultStyleElm.textContent = detailStyle;
@@ -921,6 +927,8 @@ if (locationURL.includes('detail')) {
             #share {
                 display:none;
             }
+	    @media screen and (${settings['media']['s']}) {
+            }
             @media screen and (${settings['media']['m']}) {
                 #component-wrap-top {
                     flex-flow:column nowrap;
@@ -956,8 +964,9 @@ if (locationURL.includes('detail')) {
                     margin: 0 auto;
                 }
             }
-            @media screen and (${settings['media']['s']}) {
-                
+	    @media screen and (${settings['media']['l']}) { 
+            }
+    	    @media screen and (${settings['media']['ll']}) { 
             }
         `;
         addDetailStyleElm.textContent = detailStyle;
@@ -1122,11 +1131,13 @@ if (locationURL.includes('detail')) {
                             text-align:end;
                             background-color:#dddddd;
                         }
-                        @media screen and (${settings['media']['m']}) {
-                            
-                        }
                         @media screen and (${settings['media']['s']}) {
-                            
+                        }
+                        @media screen and (${settings['media']['m']}) {
+                        }
+	                @media screen and (${settings['media']['l']}) { 
+                        }
+    	                @media screen and (${settings['media']['ll']}) { 
                         }
                     `, 
                     add_To_Selector:''
@@ -1262,11 +1273,13 @@ if (locationURL.includes('detail')) {
                         font-size:1.4rem;
                         color:#000;
                     }
-                    @media screen and (${settings['media']['m']}) {
-                            
-                    }
                     @media screen and (${settings['media']['s']}) {
-                        
+                    }
+                    @media screen and (${settings['media']['m']}) {
+                    }
+	            @media screen and (${settings['media']['l']}) { 
+                    }
+    	            @media screen and (${settings['media']['ll']}) { 
                     }
                 `, 
                 add_To_Selector:''
@@ -1446,6 +1459,21 @@ if (locationURL.includes('detail')) {
                 border:0;
                 z-index:50000;
             }
+	    @media screen and (${settings['media']['s']}) {
+                .js-added-inquiry-button {
+                    font-size:1.2rem;
+                }
+                #inquiry1-box > a {
+                    font-size:1.2rem;
+                }
+                #inquiry2-tel {
+                    display:none;
+                }
+                #inquiry2-box > a {
+                    font-size:1.2rem;
+                    flex-basis:100%;
+                }
+            }
             @media screen and (${settings['media']['m']}) {
                 .js-added-inquiry-button {
                     font-size:1.4rem;
@@ -1524,20 +1552,9 @@ if (locationURL.includes('detail')) {
                     opacity:.6;
                 }
             }
-            @media screen and (${settings['media']['s']}) {
-                .js-added-inquiry-button {
-                    font-size:1.2rem;
-                }
-                #inquiry1-box > a {
-                    font-size:1.2rem;
-                }
-                #inquiry2-tel {
-                    display:none;
-                }
-                #inquiry2-box > a {
-                    font-size:1.2rem;
-                    flex-basis:100%;
-                }
+	    @media screen and (${settings['media']['l']}) { 
+            }
+    	    @media screen and (${settings['media']['ll']}) { 
             }
         `; 
         headElm.appendChild(componentStyle);
@@ -1668,11 +1685,13 @@ if (locationURL.includes('detail')) {
                 #extra-data-tab-contents{
                     margin-top: 20px;
                 }
-                @media screen and (${settings['media']['m']}) {
-                    
+		@media screen and (${settings['media']['s']}) {  
                 }
-                @media screen and (${settings['media']['s']}) {
-                    
+                @media screen and (${settings['media']['m']}) {
+                }
+		@media screen and (${settings['media']['l']}) { 
+                }
+    	        @media screen and (${settings['media']['ll']}) { 
                 }
             `, 
             add_To_Selector:'div.detail_btm'
@@ -1728,11 +1747,13 @@ if (locationURL.includes('detail')) {
                             margin-top:10px;
                             margin-bottom:10px;
                         }
-                        @media screen and (${settings['media']['m']}) {
-                            
+                        @media screen and (${settings['media']['s']}) {  
                         }
-                        @media screen and (${settings['media']['s']}) {
-                            
+                        @media screen and (${settings['media']['m']}) {
+                        }
+		        @media screen and (${settings['media']['l']}) { 
+                        }
+    	                @media screen and (${settings['media']['ll']}) { 
                         }
                     `, 
                     add_To_Selector:'div.detail_btm'
@@ -1769,13 +1790,16 @@ if (locationURL.includes('detail')) {
                     overflow:hidden;
                     margin-bottom: 20px;
                 }
+                @media screen and (${settings['media']['s']}) {  
+                }
                 @media screen and (${settings['media']['m']}) {
-                    .js-added-map {
+		    .js-added-map {
                         padding-bottom: 66.667%; 
                     }
                 }
-                @media screen and (${settings['media']['s']}) {
-                    
+		@media screen and (${settings['media']['l']}) { 
+                }
+    	        @media screen and (${settings['media']['ll']}) { 
                 }
             `;  
             headElm.appendChild(mapStyle);
