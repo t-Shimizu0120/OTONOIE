@@ -1530,12 +1530,22 @@ if (locationURL.includes('detail')) {
                 #inquiry1-box > a {
                     font-size:1.2rem;
                 }
+		#inquiry2-box {
+                    flex-flow:row nowrap;
+                }
+		#inquiry-button2 {
+                    flex-basis:calc(67% - 0.8rem);
+		    order:0;
+                }
+		#inquiry2-box > button {
+                    margin-bottom:0;
+                }
                 #inquiry2-tel {
                     display:none;
                 }
                 #inquiry2-box > a {
                     font-size:1.2rem;
-                    flex-basis:100%;
+		    order:1;
                 }
             }
         `; 
