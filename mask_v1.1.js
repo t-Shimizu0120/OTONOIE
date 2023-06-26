@@ -26,7 +26,7 @@ settings['mask'] = 'true';
 settings['media'] = {};
 //ブレイクポイント設定
 //sp
-settings['media']['s'] = 'max-width:375px';
+settings['media']['s'] = 'max-width:372px';
 //tablet
 settings['media']['m'] = 'max-width:750px';
 //pc-s
@@ -48,8 +48,6 @@ settings['site_control']['map_full_address'] = 'false';
     const addStyleElm = document.createElement('style');
     addStyleElm.setAttribute('id','base-style');
     const style = `
-        @media screen and (${settings['media']['s']}) { 
-        }
         @media screen and (${settings['media']['m']}) {
             header {
                 position:initial;
@@ -58,9 +56,8 @@ settings['site_control']['map_full_address'] = 'false';
                 padding:0;
             }
         }
-	@media screen and (${settings['media']['l']}) { 
-        }
-	@media screen and (${settings['media']['ll']}) { 
+        @media screen and (${settings['media']['s']}) {
+            
         }
     `;
     addStyleElm.textContent = style;
@@ -240,7 +237,7 @@ class AddTable {
                 vertical-align:middle;
             } 
             .js-added-table-td {
-                vertical-align:top;
+                vertical-align: top;
             }
             .js-added-table-th, .js-added-table-td {
                 color:#000;
@@ -424,28 +421,28 @@ class AddTabContents {
         const style = `
             .js-added-tab-contents {
                 width:100%;
-		display:flex;
-                flex-wrap:nowrap;
-                margin-bottom:20px;
+                flex-wrap: wrap;
+                display: flex;
+                margin-bottom: 20px;
             }
             input[name="js-added-tab-input"] {
-                display:none;
+                display: none;
             }
             .js-added-tab-label {
                 background-color:#dddddd; 
                 color:#3f3f3f; 
                 text-align:center;
                 flex: 0 0 ${tabWidthBase}%; 
-                padding:1rem 0; 
+                padding: 1rem 0; 
                 font-weight:bold;
                 cursor:pointer;
-                display:block;
-                float:left;
-                order:-1;
+                display: block;
+                float: left;
+                order: -1;
             }
             input:checked + .js-added-tab-label {
-                background-color:#3f3f3f;
-                color:#eee;
+                background-color: #3f3f3f;
+                color: #eee;
                 pointer-events:none;
             }
             input:disabled + .js-added-tab-label {
@@ -462,11 +459,11 @@ class AddTabContents {
                 opacity:1;
             }
             .js-added-tab-content {
-                display:none;
-                width:100%;
+                display: none;
+                width: 100%;
             }
             input:checked + .js-added-tab-label + .js-added-tab-content {
-                display:block;
+                display: block;
             }
             ${addStyles}
         `;
@@ -799,20 +796,17 @@ if (locationURL.includes('detail')) {
     addChangeDefaultStyleElm.setAttribute('id','detail-change-default-style');
     const detailStyle = `
         input[class="btn_reset"], input[class="btn_submit"] {
+            border-radius:2px !important;
             font-size:1.4rem;
-	    border-radius:2px !important;
             padding:1rem 0;
         }
+        @media screen and (${settings['media']['m']}) {
+            
+        }
         @media screen and (${settings['media']['s']}) {
-	    input[class="btn_reset"], input[class="btn_submit"] {
+            input[class="btn_reset"], input[class="btn_submit"] {
                 font-size:1.2rem;
             }
-        }
-        @media screen and (${settings['media']['m']}) {
-        }
-	@media screen and (${settings['media']['l']}) { 
-        }
-	@media screen and (${settings['media']['ll']}) { 
         }
     `;
     addChangeDefaultStyleElm.textContent = detailStyle;
@@ -922,12 +916,10 @@ if (locationURL.includes('detail')) {
                 justify-content:space-between;
                 background-color:#dddddd;
                 padding:0.8rem 1.6rem;
-                margin:0 auto;
+                margin: 0 auto;
             }
             #share {
                 display:none;
-            }
-	    @media screen and (${settings['media']['s']}) {
             }
             @media screen and (${settings['media']['m']}) {
                 #component-wrap-top {
@@ -961,12 +953,11 @@ if (locationURL.includes('detail')) {
                     justify-content:space-between;
                     align-items:center;
                     padding:0.4rem 0.8rem;
-                    margin:0 auto;
+                    margin: 0 auto;
                 }
             }
-	    @media screen and (${settings['media']['l']}) { 
-            }
-    	    @media screen and (${settings['media']['ll']}) { 
+            @media screen and (${settings['media']['s']}) {
+                
             }
         `;
         addDetailStyleElm.textContent = detailStyle;
@@ -1131,13 +1122,11 @@ if (locationURL.includes('detail')) {
                             text-align:end;
                             background-color:#dddddd;
                         }
-                        @media screen and (${settings['media']['s']}) {
-                        }
                         @media screen and (${settings['media']['m']}) {
+                            
                         }
-	                @media screen and (${settings['media']['l']}) { 
-                        }
-    	                @media screen and (${settings['media']['ll']}) { 
+                        @media screen and (${settings['media']['s']}) {
+                            
                         }
                     `, 
                     add_To_Selector:''
@@ -1273,13 +1262,11 @@ if (locationURL.includes('detail')) {
                         font-size:1.4rem;
                         color:#000;
                     }
-                    @media screen and (${settings['media']['s']}) {
-                    }
                     @media screen and (${settings['media']['m']}) {
+                            
                     }
-	            @media screen and (${settings['media']['l']}) { 
-                    }
-    	            @media screen and (${settings['media']['ll']}) { 
+                    @media screen and (${settings['media']['s']}) {
+                        
                     }
                 `, 
                 add_To_Selector:''
@@ -1459,23 +1446,7 @@ if (locationURL.includes('detail')) {
                 border:0;
                 z-index:50000;
             }
-     
-	    @media screen and (${settings['media']['s']}) {
-                .js-added-inquiry-button {
-                    font-size:1.2rem;
-                }
-                #inquiry1-box > a {
-                    font-size:1.2rem;
-                }
-		#inquiry2-tel {
-                    display:none;
-                }
-                #inquiry2-box > a {
-                    font-size:1.2rem;
-                    flex-basis:100%;
-                }
-            }
-	    @media screen and (${settings['media']['m']}) {
+            @media screen and (${settings['media']['m']}) {
                 .js-added-inquiry-button {
                     font-size:1.4rem;
                     padding:1rem 0;
@@ -1553,9 +1524,20 @@ if (locationURL.includes('detail')) {
                     opacity:.6;
                 }
             }
-	    @media screen and (${settings['media']['l']}) { 
-            }
-    	    @media screen and (${settings['media']['ll']}) { 
+            @media screen and (${settings['media']['s']}) {
+                .js-added-inquiry-button {
+                    font-size:1.2rem;
+                }
+                #inquiry1-box > a {
+                    font-size:1.2rem;
+                }
+                #inquiry2-tel {
+                    display:none;
+                }
+                #inquiry2-box > a {
+                    font-size:1.2rem;
+                    flex-basis:100%;
+                }
             }
         `; 
         headElm.appendChild(componentStyle);
@@ -1686,13 +1668,11 @@ if (locationURL.includes('detail')) {
                 #extra-data-tab-contents{
                     margin-top: 20px;
                 }
-		@media screen and (${settings['media']['s']}) {  
-                }
                 @media screen and (${settings['media']['m']}) {
+                    
                 }
-		@media screen and (${settings['media']['l']}) { 
-                }
-    	        @media screen and (${settings['media']['ll']}) { 
+                @media screen and (${settings['media']['s']}) {
+                    
                 }
             `, 
             add_To_Selector:'div.detail_btm'
@@ -1748,13 +1728,11 @@ if (locationURL.includes('detail')) {
                             margin-top:10px;
                             margin-bottom:10px;
                         }
-                        @media screen and (${settings['media']['s']}) {  
-                        }
                         @media screen and (${settings['media']['m']}) {
+                            
                         }
-		        @media screen and (${settings['media']['l']}) { 
-                        }
-    	                @media screen and (${settings['media']['ll']}) { 
+                        @media screen and (${settings['media']['s']}) {
+                            
                         }
                     `, 
                     add_To_Selector:'div.detail_btm'
@@ -1791,16 +1769,13 @@ if (locationURL.includes('detail')) {
                     overflow:hidden;
                     margin-bottom: 20px;
                 }
-                @media screen and (${settings['media']['s']}) {  
-                }
                 @media screen and (${settings['media']['m']}) {
-		    .js-added-map {
+                    .js-added-map {
                         padding-bottom: 66.667%; 
                     }
                 }
-		@media screen and (${settings['media']['l']}) { 
-                }
-    	        @media screen and (${settings['media']['ll']}) { 
+                @media screen and (${settings['media']['s']}) {
+                    
                 }
             `;  
             headElm.appendChild(mapStyle);
