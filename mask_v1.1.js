@@ -115,8 +115,25 @@ const bodyScrollPrevent = (flag) => {
 		window.scrollTo(0, scrollPosition);
 	};
 };
-const focusControl = () => {
-	
+const focusControl = function (e,targetElm,firstElmSelector,lastElmSelector) {
+    //フォーカスが当たっている要素
+    const activeElm = document.activeElement;
+	const firstElm = targetElm.querySelector(firstElmSelector);
+	const lastElm = targetElm.querySelectorAll(lastElmSelector)[targetElm.querySelectorAll(lastElmSelector).length -1];
+    //タブキーを押されたかどうか
+    const tabKey = (9 === e.keyCode);
+    //シフトキーが押されたかどうか
+    const shiftKey = e.shiftKey;
+    //最後の要素でタブキーが押された場合、最初の要素にフォーカスを当てる
+    if(!shiftKey && tabKey && lastElm === activeElm) {
+        firstElm.focus();
+	} else {
+	};
+    //最初の要素でタブキー+シフトキーが押された場合、最後の要素にフォーカスを当てる
+    if(shiftKey && tabKey && firstElm === activeElm) {
+        lastElm.focus();
+	} else {
+    };
 };
 //=================================================================
 //class
