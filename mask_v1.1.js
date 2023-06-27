@@ -146,6 +146,7 @@ const popoverFocusControl = (popoverElm) => {
                     focusableElements[focusedItemIndex + 1].focus();
                 };
             };
+        } else {
         };
     };
 };
