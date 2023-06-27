@@ -788,253 +788,253 @@ class AddTable {
     //=================================================================
     //既存Style変更（Detailページ）
     //=================================================================
-    const headElm = document.querySelector('head');
-    const bodyElm = document.querySelector('body');
-    const addChangeDefaultStyleElm = document.createElement('style');
-    addChangeDefaultStyleElm.setAttribute('id','detail-change-default-style');
-    const detailStyle = `
-    input[class="btn_reset"], input[class="btn_submit"] {
-    border-radius:2px !important;
-    font-size:1.4rem;
-    padding:1rem 0;
-    }
-    @media screen and (${settings['media']['m']}) {
-    
-    }
-    @media screen and (${settings['media']['s']}) {
-    input[class="btn_reset"], input[class="btn_submit"] {
-    font-size:1.2rem;
-    }
-    }
-    `;
-    addChangeDefaultStyleElm.textContent = detailStyle;
-    headElm.appendChild(addChangeDefaultStyleElm);
-    //=================================================================
-    //掲載データ
-    //=================================================================
-    //物件コード
-    const apartmentCode = document.querySelector('p.code').textContent.match(/[0-9]+$/)[0];
-    //物件URL
-    const detailPageUrl = 'https://www.otonoie.net/detail/index.html?number=' + apartmentCode;
-    //上部右側データ
-    const summary = document.querySelector('div.detail_r').querySelector('dl.clearfix').querySelectorAll('dd');
-    //賃料
-    const rentPrice = summary[2].textContent.replace(',','').replace('円','');
-    const rentPrice_Jp = summary[2].textContent.replace(',','').replace('円','')　/ 10000;
-    //管理費
-    const managementPrice = summary[3].textContent.replace(',','').replace('円','');
-    const managementPrice_Jp = summary[3].textContent.replace(',','').replace('円','') / 10000;
-    //問い合わせフォーム
-    const inquiryForm = document.querySelector('#contact_area');
-    //個人情報の取り扱い
-    const handlingOfPersonalInformation = inquiryForm.nextElementSibling;
-    (() => {
-    //=================================================================
-    //コンテナ
-    //=================================================================
-    //----------------------------上部---------------------------------
-    const componentWrap_top = create_Element('div',[
-    {class:'js-added-component-wrap-top'},
-    {id:'component-wrap-top'}
-    ]);
-    document.querySelector('div.detail_l').appendChild(componentWrap_top);
-    const component_1 = create_Element('div',[
-    {class:'js-added-component-top-l'},
-    {id:'component-top-l'}
-    ]);
-    componentWrap_top.appendChild(component_1);
-    const component_roomPlan_Slider = create_Element('div',[
-    {class:'js-added-component-top-r'},
-    {id:'component-top-r'}
-    ]);
-    componentWrap_top.appendChild(component_roomPlan_Slider);
-    const component_Point = create_Element('div',[
-    {class:'js-added-component-top-b'},
-    {id:'component-top-b'}
-    ]);
-    componentWrap_top.appendChild(component_Point);
-    //-----------------------------------------------------------------
-    //----------------------------中部---------------------------------
-    const component_2 = create_Element('div',[
-    {class:'js-added-component'},
-    {id:'component-middle'}
-    ]);
-    document.querySelector('div.detail_btm').appendChild(component_2);
-    //-----------------------------------------------------------------
-    //----------------------------シェア-------------------------------
-    const share_container = create_Element('div',[
-    {class:'js-added-share'},
-    {id:'share'}
-    ]);
-    document.querySelector('div.detail_btm').appendChild(share_container);
-    //-----------------------------------------------------------------
-    //--------------------ベースstyle（detailページ）----------------------
-    const addDetailStyleElm = document.createElement('style');
-    addDetailStyleElm.setAttribute('id','base-detail-style');
-    const detailStyle = `
-    #component-wrap-top {
-    width:100%;
-    display:flex;
-    display:-webkit-box;
-    display:-webkit-flex;
-    display :-ms-flexbox;
-    flex-flow:row wrap;
-    justify-content:space-between;
-    }
-    #component-top-l {
-    display:flex;
-    display:-webkit-box;
-    display:-webkit-flex;
-    display :-ms-flexbox;
-    flex-flow:column nowrap;
-    justify-content:space-between;
-    flex-grow:0;
-    flex-basis:33%;
-    order:0;
-    }
-    #component-top-r {
-    background:#3f3f3f;
-    margin-left:.6rem;
-    padding-bottom:.7rem;
-    order:1;
-    flex-grow:1;
-    flex-basis:auto;
-    }
-    #component-top-b {
-    flex-basis:100%;
-    order:2;
-    }
-    #component-middle {
-    width:100%;
-    display:flex;
-    display:-webkit-box;
-    display:-webkit-flex;
-    display :-ms-flexbox;
-    flex-flow:row nowrap;
-    justify-content:space-between;
-    background-color:#dddddd;
-    padding:0.8rem 1.6rem;
-    margin: 0 auto;
-    }
-    #share {
-    display:none;
-    }
-    @media screen and (${settings['media']['m']}) {
-    #component-wrap-top {
-    flex-flow:column nowrap;
-    }
-    #component-top-l {
-    width:100%;
-    order:0;
-    }
-    #component-top-r {
-    margin-left:0;
-    padding-bottom:0;
-    width:100%;
-    flex-grow:0;
-    order:1;
-    }
-    #component-top-b {
-    width:100%;
-    order:2;
-    }
-    #component-middle {
-    padding:0.4rem 0.8rem;
-    }
-    #share {
-    background:#dddddd;
-    display:flex;
-    display:-webkit-box;
-    display:-webkit-flex;
-    display :-ms-flexbox;
-    flex-flow:row nowrap;
-    justify-content:space-between;
-    align-items:center;
-    padding:0.4rem 0.8rem;
-    margin: 0 auto;
-    }
-    }
-    @media screen and (${settings['media']['s']}) {
-    
-    }
-    `;
-    addDetailStyleElm.textContent = detailStyle;
-    headElm.appendChild(addDetailStyleElm);
-    //-----------------------------------------------------------------
-    //=================================================================
-    //家賃・礼敷等
-    //=================================================================
-    const summaryPrice = (() => {
-    const summaryPrice_div = create_Element('div',[
-    {class:'js-added-summary-price'},
-    {id:'summary-price'}
-    ]);
-    const summaryPrice_dl_1 = create_Element('dl',[
-    {class:'js-added-summary-price-wrap'}
-    ]);
-    const summaryPrice_dl_2 = create_Element('dl',[
-    {class:'js-added-summary-price-wrap'}
-    ]);
-    const rentPrice_dt = create_Element('dt',[]);
-    rentPrice_dt.textContent = '賃料';
-    const rentPrice_dd = create_Element('dd',[]);
-    rentPrice_dd.textContent = rentPrice_Jp + '万円';
-    const managementPrice_dt = create_Element('dt',[]);
-    managementPrice_dt.textContent = '管理費・共益費等';
-    const managementPrice_dd = create_Element('dd',[]);
-    managementPrice_dd.textContent = managementPrice_Jp + '万円';
-    summaryPrice_dl_1.appendChild(rentPrice_dt);
-    summaryPrice_dl_1.appendChild(rentPrice_dd);
-    summaryPrice_dl_1.appendChild(managementPrice_dt);
-    summaryPrice_dl_1.appendChild(managementPrice_dd);
-    summaryPrice_div.appendChild(summaryPrice_dl_1);
-    summaryPrice_div.appendChild(summaryPrice_dl_2);
-    
-    return summaryPrice_div;
-    })();
-    component_1.appendChild(summaryPrice);
-    //===============================================================
-    //お問い合わせ
-    //===============================================================
-    //----------------------------フォーム----------------------------
-    //問い合わせフォーム用ポップオーバー
-    const popover_Content_div = create_Element('div',[
-    {class:'js-added-popover-content'},
-    {id:'inquiry-popover-contents'},
-    {popover:'auto'}
-    ]);
-    document.querySelector('#content').querySelector('div.inner').appendChild(popover_Content_div);
-    //ポップオーバー背面クローズボタン
-    const popover_Backside_Button_Close = document.createElement('button');
-    popover_Backside_Button_Close.setAttribute('class','js-added-popover-content-backside-button match-media-target-close-btn');
-    popover_Backside_Button_Close.setAttribute('popovertarget','inquiry-popover-contents');
-    popover_Backside_Button_Close.setAttribute('popovertargetaction','hide');
-    popover_Backside_Button_Close.addEventListener('click', (e) => {
-    const targetSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.currentTarget.getAttribute('popovertarget') + '"]';
-    document.querySelector(targetSelector).classList.remove('valid');
-    });
-    bodyElm.appendChild(popover_Backside_Button_Close);
-    //クローズボタン（×ボタン）
-    const closeIcon = document.createElement('span');
-    closeIcon.setAttribute('class','icon-close');
-    const popover_Close_Button = document.createElement('button');
-    popover_Close_Button.appendChild(closeIcon);
-    popover_Close_Button.setAttribute('class','js-added-popover-close-button match-media-target-close-btn');
-    popover_Close_Button.setAttribute('popovertarget','inquiry-popover-contents');
-    popover_Close_Button.setAttribute('popovertargetaction','hide');
-    popover_Close_Button.addEventListener('click', (e) => {
-    const targetSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.currentTarget.getAttribute('popovertarget') + '"]';
-    document.querySelector(targetSelector).classList.remove('valid');
-    });
-    popover_Content_div.appendChild(popover_Close_Button);
-    //問い合わせフォームWRAP
-    const inquiry_wrap = create_Element('div',[
-    {class:'js-added-popover-content-wrap'},
-    {id:'inquiry-popover-content-wrap'}
-    ]);
-    inquiry_wrap.appendChild(inquiryForm.cloneNode(true));
-    inquiry_wrap.appendChild(handlingOfPersonalInformation.cloneNode(true));
-    popover_Content_div.appendChild(inquiry_wrap);
+        const headElm = document.querySelector('head');
+        const bodyElm = document.querySelector('body');
+        const addChangeDefaultStyleElm = document.createElement('style');
+        addChangeDefaultStyleElm.setAttribute('id','detail-change-default-style');
+        const detailStyle = `
+            input[class="btn_reset"], input[class="btn_submit"] {
+                border-radius:2px !important;
+                font-size:1.4rem;
+                padding:1rem 0;
+            }
+            @media screen and (${settings['media']['m']}) {
+            
+            }
+            @media screen and (${settings['media']['s']}) {
+                input[class="btn_reset"], input[class="btn_submit"] {
+                    font-size:1.2rem;
+                }
+            }
+        `;
+        addChangeDefaultStyleElm.textContent = detailStyle;
+        headElm.appendChild(addChangeDefaultStyleElm);
+        //=================================================================
+        //掲載データ
+        //=================================================================
+        //物件コード
+        const apartmentCode = document.querySelector('p.code').textContent.match(/[0-9]+$/)[0];
+        //物件URL
+        const detailPageUrl = 'https://www.otonoie.net/detail/index.html?number=' + apartmentCode;
+        //上部右側データ
+        const summary = document.querySelector('div.detail_r').querySelector('dl.clearfix').querySelectorAll('dd');
+        //賃料
+        const rentPrice = summary[2].textContent.replace(',','').replace('円','');
+        const rentPrice_Jp = summary[2].textContent.replace(',','').replace('円','')　/ 10000;
+        //管理費
+        const managementPrice = summary[3].textContent.replace(',','').replace('円','');
+        const managementPrice_Jp = summary[3].textContent.replace(',','').replace('円','') / 10000;
+        //問い合わせフォーム
+        const inquiryForm = document.querySelector('#contact_area');
+        //個人情報の取り扱い
+        const handlingOfPersonalInformation = inquiryForm.nextElementSibling;
+        (() => {
+        //=================================================================
+        //コンテナ
+        //=================================================================
+        //----------------------------上部---------------------------------
+        const componentWrap_top = create_Element('div',[
+            {class:'js-added-component-wrap-top'},
+            {id:'component-wrap-top'}
+        ]);
+        document.querySelector('div.detail_l').appendChild(componentWrap_top);
+        const component_1 = create_Element('div',[
+            {class:'js-added-component-top-l'},
+            {id:'component-top-l'}
+        ]);
+        componentWrap_top.appendChild(component_1);
+        const component_roomPlan_Slider = create_Element('div',[
+            {class:'js-added-component-top-r'},
+            {id:'component-top-r'}
+        ]);
+        componentWrap_top.appendChild(component_roomPlan_Slider);
+        const component_Point = create_Element('div',[
+            {class:'js-added-component-top-b'},
+            {id:'component-top-b'}
+        ]);
+        componentWrap_top.appendChild(component_Point);
+        //-----------------------------------------------------------------
+        //----------------------------中部---------------------------------
+        const component_2 = create_Element('div',[
+            {class:'js-added-component'},
+            {id:'component-middle'}
+        ]);
+        document.querySelector('div.detail_btm').appendChild(component_2);
+        //-----------------------------------------------------------------
+        //----------------------------シェア-------------------------------
+        const share_container = create_Element('div',[
+            {class:'js-added-share'},
+            {id:'share'}
+        ]);
+        document.querySelector('div.detail_btm').appendChild(share_container);
+        //-----------------------------------------------------------------
+        //--------------------ベースstyle（detailページ）----------------------
+        const addDetailStyleElm = document.createElement('style');
+        addDetailStyleElm.setAttribute('id','base-detail-style');
+        const detailStyle = `
+            #component-wrap-top {
+                width:100%;
+                display:flex;
+                display:-webkit-box;
+                display:-webkit-flex;
+                display :-ms-flexbox;
+                flex-flow:row wrap;
+                justify-content:space-between;
+            }
+            #component-top-l {
+                display:flex;
+                display:-webkit-box;
+                display:-webkit-flex;
+                display :-ms-flexbox;
+                flex-flow:column nowrap;
+                justify-content:space-between;
+                flex-grow:0;
+                flex-basis:33%;
+                order:0;
+            }
+            #component-top-r {
+                background:#3f3f3f;
+                margin-left:.6rem;
+                padding-bottom:.7rem;
+                order:1;
+                flex-grow:1;
+                flex-basis:auto;
+            }
+            #component-top-b {
+                flex-basis:100%;
+                order:2;
+            }
+            #component-middle {
+                width:100%;
+                display:flex;
+                display:-webkit-box;
+                display:-webkit-flex;
+                display :-ms-flexbox;
+                flex-flow:row nowrap;
+                justify-content:space-between;
+                background-color:#dddddd;
+                padding:0.8rem 1.6rem;
+                margin: 0 auto;
+            }
+            #share {
+                display:none;
+            }
+            @media screen and (${settings['media']['m']}) {
+                #component-wrap-top {
+                    flex-flow:column nowrap;
+                }
+                #component-top-l {
+                    width:100%;
+                    order:0;
+                }
+                #component-top-r {
+                    margin-left:0;
+                    padding-bottom:0;
+                    width:100%;
+                    flex-grow:0;
+                    order:1;
+                }
+                #component-top-b {
+                    width:100%;
+                    order:2;
+                }
+                #component-middle {
+                    padding:0.4rem 0.8rem;
+                }
+                #share {
+                    background:#dddddd;
+                    display:flex;
+                    display:-webkit-box;
+                    display:-webkit-flex;
+                    display :-ms-flexbox;
+                    flex-flow:row nowrap;
+                    justify-content:space-between;
+                    align-items:center;
+                    padding:0.4rem 0.8rem;
+                    margin: 0 auto;
+                }
+            }
+            @media screen and (${settings['media']['s']}) {
+                
+            }
+        `;
+        addDetailStyleElm.textContent = detailStyle;
+        headElm.appendChild(addDetailStyleElm);
+        //-----------------------------------------------------------------
+        //=================================================================
+        //家賃・礼敷等
+        //=================================================================
+        const summaryPrice = (() => {
+            const summaryPrice_div = create_Element('div',[
+                {class:'js-added-summary-price'},
+                {id:'summary-price'}
+            ]);
+            const summaryPrice_dl_1 = create_Element('dl',[
+                {class:'js-added-summary-price-wrap'}
+            ]);
+            const summaryPrice_dl_2 = create_Element('dl',[
+                {class:'js-added-summary-price-wrap'}
+            ]);
+            const rentPrice_dt = create_Element('dt',[]);
+            rentPrice_dt.textContent = '賃料';
+            const rentPrice_dd = create_Element('dd',[]);
+            rentPrice_dd.textContent = rentPrice_Jp + '万円';
+            const managementPrice_dt = create_Element('dt',[]);
+            managementPrice_dt.textContent = '管理費・共益費等';
+            const managementPrice_dd = create_Element('dd',[]);
+            managementPrice_dd.textContent = managementPrice_Jp + '万円';
+            summaryPrice_dl_1.appendChild(rentPrice_dt);
+            summaryPrice_dl_1.appendChild(rentPrice_dd);
+            summaryPrice_dl_1.appendChild(managementPrice_dt);
+            summaryPrice_dl_1.appendChild(managementPrice_dd);
+            summaryPrice_div.appendChild(summaryPrice_dl_1);
+            summaryPrice_div.appendChild(summaryPrice_dl_2);
+        
+            return summaryPrice_div;
+        })();
+        component_1.appendChild(summaryPrice);
+        //===============================================================
+        //お問い合わせ
+        //===============================================================
+        //----------------------------フォーム----------------------------
+        //問い合わせフォーム用ポップオーバー
+        const popover_Content_div = create_Element('div',[
+            {class:'js-added-popover-content'},
+            {id:'inquiry-popover-contents'},
+            {popover:'auto'}
+        ]);
+        document.querySelector('#content').querySelector('div.inner').appendChild(popover_Content_div);
+        //ポップオーバー背面クローズボタン
+        const popover_Backside_Button_Close = document.createElement('button');
+        popover_Backside_Button_Close.setAttribute('class','js-added-popover-content-backside-button match-media-target-close-btn');
+        popover_Backside_Button_Close.setAttribute('popovertarget','inquiry-popover-contents');
+        popover_Backside_Button_Close.setAttribute('popovertargetaction','hide');
+        popover_Backside_Button_Close.addEventListener('click', (e) => {
+            const targetSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.currentTarget.getAttribute('popovertarget') + '"]';
+            document.querySelector(targetSelector).classList.remove('valid');
+        });
+        bodyElm.appendChild(popover_Backside_Button_Close);
+        //クローズボタン（×ボタン）
+        const closeIcon = document.createElement('span');
+        closeIcon.setAttribute('class','icon-close');
+        const popover_Close_Button = document.createElement('button');
+        popover_Close_Button.appendChild(closeIcon);
+        popover_Close_Button.setAttribute('class','js-added-popover-close-button match-media-target-close-btn');
+        popover_Close_Button.setAttribute('popovertarget','inquiry-popover-contents');
+        popover_Close_Button.setAttribute('popovertargetaction','hide');
+        popover_Close_Button.addEventListener('click', (e) => {
+            const targetSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.currentTarget.getAttribute('popovertarget') + '"]';
+            document.querySelector(targetSelector).classList.remove('valid');
+        });
+        popover_Content_div.appendChild(popover_Close_Button);
+        //問い合わせフォームWRAP
+        const inquiry_wrap = create_Element('div',[
+            {class:'js-added-popover-content-wrap'},
+            {id:'inquiry-popover-content-wrap'}
+        ]);
+        inquiry_wrap.appendChild(inquiryForm.cloneNode(true));
+        inquiry_wrap.appendChild(handlingOfPersonalInformation.cloneNode(true));
+        popover_Content_div.appendChild(inquiry_wrap);
     //-----------------------------------------------------------------
     //--------------------------コンポーネント１------------------------
     //お問い合わせWRAP１
