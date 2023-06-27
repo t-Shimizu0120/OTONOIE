@@ -829,740 +829,740 @@ class AddTable {
         //個人情報の取り扱い
         const handlingOfPersonalInformation = inquiryForm.nextElementSibling;
         (() => {
-        //=================================================================
-        //コンテナ
-        //=================================================================
-        //----------------------------上部---------------------------------
-        const componentWrap_top = create_Element('div',[
-            {class:'js-added-component-wrap-top'},
-            {id:'component-wrap-top'}
-        ]);
-        document.querySelector('div.detail_l').appendChild(componentWrap_top);
-        const component_1 = create_Element('div',[
-            {class:'js-added-component-top-l'},
-            {id:'component-top-l'}
-        ]);
-        componentWrap_top.appendChild(component_1);
-        const component_roomPlan_Slider = create_Element('div',[
-            {class:'js-added-component-top-r'},
-            {id:'component-top-r'}
-        ]);
-        componentWrap_top.appendChild(component_roomPlan_Slider);
-        const component_Point = create_Element('div',[
-            {class:'js-added-component-top-b'},
-            {id:'component-top-b'}
-        ]);
-        componentWrap_top.appendChild(component_Point);
-        //-----------------------------------------------------------------
-        //----------------------------中部---------------------------------
-        const component_2 = create_Element('div',[
-            {class:'js-added-component'},
-            {id:'component-middle'}
-        ]);
-        document.querySelector('div.detail_btm').appendChild(component_2);
-        //-----------------------------------------------------------------
-        //----------------------------シェア-------------------------------
-        const share_container = create_Element('div',[
-            {class:'js-added-share'},
-            {id:'share'}
-        ]);
-        document.querySelector('div.detail_btm').appendChild(share_container);
-        //-----------------------------------------------------------------
-        //--------------------ベースstyle（detailページ）----------------------
-        const addDetailStyleElm = document.createElement('style');
-        addDetailStyleElm.setAttribute('id','base-detail-style');
-        const detailStyle = `
-            #component-wrap-top {
-                width:100%;
-                display:flex;
-                display:-webkit-box;
-                display:-webkit-flex;
-                display :-ms-flexbox;
-                flex-flow:row wrap;
-                justify-content:space-between;
-            }
-            #component-top-l {
-                display:flex;
-                display:-webkit-box;
-                display:-webkit-flex;
-                display :-ms-flexbox;
-                flex-flow:column nowrap;
-                justify-content:space-between;
-                flex-grow:0;
-                flex-basis:33%;
-                order:0;
-            }
-            #component-top-r {
-                background:#3f3f3f;
-                margin-left:.6rem;
-                padding-bottom:.7rem;
-                order:1;
-                flex-grow:1;
-                flex-basis:auto;
-            }
-            #component-top-b {
-                flex-basis:100%;
-                order:2;
-            }
-            #component-middle {
-                width:100%;
-                display:flex;
-                display:-webkit-box;
-                display:-webkit-flex;
-                display :-ms-flexbox;
-                flex-flow:row nowrap;
-                justify-content:space-between;
-                background-color:#dddddd;
-                padding:0.8rem 1.6rem;
-                margin: 0 auto;
-            }
-            #share {
-                display:none;
-            }
-            @media screen and (${settings['media']['m']}) {
+            //=================================================================
+            //コンテナ
+            //=================================================================
+            //----------------------------上部---------------------------------
+            const componentWrap_top = create_Element('div',[
+                {class:'js-added-component-wrap-top'},
+                {id:'component-wrap-top'}
+            ]);
+            document.querySelector('div.detail_l').appendChild(componentWrap_top);
+            const component_1 = create_Element('div',[
+                {class:'js-added-component-top-l'},
+                {id:'component-top-l'}
+            ]);
+            componentWrap_top.appendChild(component_1);
+            const component_roomPlan_Slider = create_Element('div',[
+                {class:'js-added-component-top-r'},
+                {id:'component-top-r'}
+            ]);
+            componentWrap_top.appendChild(component_roomPlan_Slider);
+            const component_Point = create_Element('div',[
+                {class:'js-added-component-top-b'},
+                {id:'component-top-b'}
+            ]);
+            componentWrap_top.appendChild(component_Point);
+            //-----------------------------------------------------------------
+            //----------------------------中部---------------------------------
+            const component_2 = create_Element('div',[
+                {class:'js-added-component'},
+                {id:'component-middle'}
+            ]);
+            document.querySelector('div.detail_btm').appendChild(component_2);
+            //-----------------------------------------------------------------
+            //----------------------------シェア-------------------------------
+            const share_container = create_Element('div',[
+                {class:'js-added-share'},
+                {id:'share'}
+            ]);
+            document.querySelector('div.detail_btm').appendChild(share_container);
+            //-----------------------------------------------------------------
+            //--------------------ベースstyle（detailページ）----------------------
+            const addDetailStyleElm = document.createElement('style');
+            addDetailStyleElm.setAttribute('id','base-detail-style');
+            const detailStyle = `
                 #component-wrap-top {
-                    flex-flow:column nowrap;
+                    width:100%;
+                    display:flex;
+                    display:-webkit-box;
+                    display:-webkit-flex;
+                    display :-ms-flexbox;
+                    flex-flow:row wrap;
+                    justify-content:space-between;
                 }
                 #component-top-l {
-                    width:100%;
+                    display:flex;
+                    display:-webkit-box;
+                    display:-webkit-flex;
+                    display :-ms-flexbox;
+                    flex-flow:column nowrap;
+                    justify-content:space-between;
+                    flex-grow:0;
+                    flex-basis:33%;
                     order:0;
                 }
                 #component-top-r {
-                    margin-left:0;
-                    padding-bottom:0;
-                    width:100%;
-                    flex-grow:0;
+                    background:#3f3f3f;
+                    margin-left:.6rem;
+                    padding-bottom:.7rem;
                     order:1;
+                    flex-grow:1;
+                    flex-basis:auto;
                 }
                 #component-top-b {
-                    width:100%;
+                    flex-basis:100%;
                     order:2;
                 }
                 #component-middle {
-                    padding:0.4rem 0.8rem;
-                }
-                #share {
-                    background:#dddddd;
+                    width:100%;
                     display:flex;
                     display:-webkit-box;
                     display:-webkit-flex;
                     display :-ms-flexbox;
                     flex-flow:row nowrap;
                     justify-content:space-between;
-                    align-items:center;
-                    padding:0.4rem 0.8rem;
+                    background-color:#dddddd;
+                    padding:0.8rem 1.6rem;
                     margin: 0 auto;
                 }
-            }
-            @media screen and (${settings['media']['s']}) {
-                
-            }
-        `;
-        addDetailStyleElm.textContent = detailStyle;
-        headElm.appendChild(addDetailStyleElm);
-        //-----------------------------------------------------------------
-        //=================================================================
-        //家賃・礼敷等
-        //=================================================================
-        const summaryPrice = (() => {
-            const summaryPrice_div = create_Element('div',[
-                {class:'js-added-summary-price'},
-                {id:'summary-price'}
+                #share {
+                    display:none;
+                }
+                @media screen and (${settings['media']['m']}) {
+                    #component-wrap-top {
+                        flex-flow:column nowrap;
+                    }
+                    #component-top-l {
+                        width:100%;
+                        order:0;
+                    }
+                    #component-top-r {
+                        margin-left:0;
+                        padding-bottom:0;
+                        width:100%;
+                        flex-grow:0;
+                        order:1;
+                    }
+                    #component-top-b {
+                        width:100%;
+                        order:2;
+                    }
+                    #component-middle {
+                        padding:0.4rem 0.8rem;
+                    }
+                    #share {
+                        background:#dddddd;
+                        display:flex;
+                        display:-webkit-box;
+                        display:-webkit-flex;
+                        display :-ms-flexbox;
+                        flex-flow:row nowrap;
+                        justify-content:space-between;
+                        align-items:center;
+                        padding:0.4rem 0.8rem;
+                        margin: 0 auto;
+                    }
+                }
+                @media screen and (${settings['media']['s']}) {
+                    
+                }
+            `;
+            addDetailStyleElm.textContent = detailStyle;
+            headElm.appendChild(addDetailStyleElm);
+            //-----------------------------------------------------------------
+            //=================================================================
+            //家賃・礼敷等
+            //=================================================================
+            const summaryPrice = (() => {
+                const summaryPrice_div = create_Element('div',[
+                    {class:'js-added-summary-price'},
+                    {id:'summary-price'}
+                ]);
+                const summaryPrice_dl_1 = create_Element('dl',[
+                    {class:'js-added-summary-price-wrap'}
+                ]);
+                const summaryPrice_dl_2 = create_Element('dl',[
+                    {class:'js-added-summary-price-wrap'}
+                ]);
+                const rentPrice_dt = create_Element('dt',[]);
+                rentPrice_dt.textContent = '賃料';
+                const rentPrice_dd = create_Element('dd',[]);
+                rentPrice_dd.textContent = rentPrice_Jp + '万円';
+                const managementPrice_dt = create_Element('dt',[]);
+                managementPrice_dt.textContent = '管理費・共益費等';
+                const managementPrice_dd = create_Element('dd',[]);
+                managementPrice_dd.textContent = managementPrice_Jp + '万円';
+                summaryPrice_dl_1.appendChild(rentPrice_dt);
+                summaryPrice_dl_1.appendChild(rentPrice_dd);
+                summaryPrice_dl_1.appendChild(managementPrice_dt);
+                summaryPrice_dl_1.appendChild(managementPrice_dd);
+                summaryPrice_div.appendChild(summaryPrice_dl_1);
+                summaryPrice_div.appendChild(summaryPrice_dl_2);
+            
+                return summaryPrice_div;
+            })();
+            component_1.appendChild(summaryPrice);
+            //===============================================================
+            //お問い合わせ
+            //===============================================================
+            //----------------------------フォーム----------------------------
+            //問い合わせフォーム用ポップオーバー
+            const popover_Content_div = create_Element('div',[
+                {class:'js-added-popover-content'},
+                {id:'inquiry-popover-contents'},
+                {popover:'auto'}
             ]);
-            const summaryPrice_dl_1 = create_Element('dl',[
-                {class:'js-added-summary-price-wrap'}
+            document.querySelector('#content').querySelector('div.inner').appendChild(popover_Content_div);
+            //ポップオーバー背面クローズボタン
+            const popover_Backside_Button_Close = document.createElement('button');
+            popover_Backside_Button_Close.setAttribute('class','js-added-popover-content-backside-button match-media-target-close-btn');
+            popover_Backside_Button_Close.setAttribute('popovertarget','inquiry-popover-contents');
+            popover_Backside_Button_Close.setAttribute('popovertargetaction','hide');
+            popover_Backside_Button_Close.addEventListener('click', (e) => {
+                const targetSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.currentTarget.getAttribute('popovertarget') + '"]';
+                document.querySelector(targetSelector).classList.remove('valid');
+            });
+            bodyElm.appendChild(popover_Backside_Button_Close);
+            //クローズボタン（×ボタン）
+            const closeIcon = document.createElement('span');
+            closeIcon.setAttribute('class','icon-close');
+            const popover_Close_Button = document.createElement('button');
+            popover_Close_Button.appendChild(closeIcon);
+            popover_Close_Button.setAttribute('class','js-added-popover-close-button match-media-target-close-btn');
+            popover_Close_Button.setAttribute('popovertarget','inquiry-popover-contents');
+            popover_Close_Button.setAttribute('popovertargetaction','hide');
+            popover_Close_Button.addEventListener('click', (e) => {
+                const targetSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.currentTarget.getAttribute('popovertarget') + '"]';
+                document.querySelector(targetSelector).classList.remove('valid');
+            });
+            popover_Content_div.appendChild(popover_Close_Button);
+            //問い合わせフォームWRAP
+            const inquiry_wrap = create_Element('div',[
+                {class:'js-added-popover-content-wrap'},
+                {id:'inquiry-popover-content-wrap'}
             ]);
-            const summaryPrice_dl_2 = create_Element('dl',[
-                {class:'js-added-summary-price-wrap'}
+            inquiry_wrap.appendChild(inquiryForm.cloneNode(true));
+            inquiry_wrap.appendChild(handlingOfPersonalInformation.cloneNode(true));
+            popover_Content_div.appendChild(inquiry_wrap);
+            //-----------------------------------------------------------------
+            //--------------------------コンポーネント１------------------------
+            //お問い合わせWRAP１
+            const inquiryBox_1 = create_Element('div',[
+                {class:'js-added-inquiry-box'},
+                {id:'inquiry1-box'}
             ]);
-            const rentPrice_dt = create_Element('dt',[]);
-            rentPrice_dt.textContent = '賃料';
-            const rentPrice_dd = create_Element('dd',[]);
-            rentPrice_dd.textContent = rentPrice_Jp + '万円';
-            const managementPrice_dt = create_Element('dt',[]);
-            managementPrice_dt.textContent = '管理費・共益費等';
-            const managementPrice_dd = create_Element('dd',[]);
-            managementPrice_dd.textContent = managementPrice_Jp + '万円';
-            summaryPrice_dl_1.appendChild(rentPrice_dt);
-            summaryPrice_dl_1.appendChild(rentPrice_dd);
-            summaryPrice_dl_1.appendChild(managementPrice_dt);
-            summaryPrice_dl_1.appendChild(managementPrice_dd);
-            summaryPrice_div.appendChild(summaryPrice_dl_1);
-            summaryPrice_div.appendChild(summaryPrice_dl_2);
+            component_1.appendChild(inquiryBox_1);
+            //お問合せボタン１
+            const inquiry_1 = (() => {
+                const inquiry_button = create_Element('button',[
+                    {class:'js-added-inquiry-button'},
+                    {id:'inquiry-button1'}
+                ]);
+                return inquiry_button;
+            })();
+            inquiry_1.textContent = 'この物件にお問い合わせ';
+            inquiryBox_1.appendChild(inquiry_1);
+            //電話番号１
+            const inquiry_Tel_1 = (() => {
+                const inquiry_Tel_div = create_Element('div',[
+                    {class:'js-added-inquiry-tel'},
+                    {id:'inquiry1-tel'}
+                ]);
+                const inquiry_Tel_hr_1 = create_Element('hr',[]);
+                inquiry_Tel_div.appendChild(inquiry_Tel_hr_1);
+                const inquiry_Tel_p_Number = create_Element('p',[
+                    {class:'tel-number'}
+                ]);
+                inquiry_Tel_p_Number.textContent = 'TEL ' + settings['company_data']['telNumber_display'];
+                inquiry_Tel_div.appendChild(inquiry_Tel_p_Number);
+                const inquiry_Tel_p_Time = create_Element('p',[
+                    {class:'tel-time'}
+                ]);
+                inquiry_Tel_p_Time.textContent = settings['company_data']['business_hours'];
+                inquiry_Tel_div.appendChild(inquiry_Tel_p_Time);
+                const inquiry_Tel_hr_2 = create_Element('hr',[]);
+                inquiry_Tel_div.appendChild(inquiry_Tel_hr_2);
+    
+                return inquiry_Tel_div;
+            })();
+            inquiryBox_1.appendChild(inquiry_Tel_1);
+            //電話をかけるボタン
+            const inquiry_Tel_Button = (() => {
+                const inquiry_Tel_button = create_Element('a',[
+                    {href:'tel:' + settings['company_data']['tel_number']}
+                ]);
+                inquiry_Tel_button.textContent = '電話をかける';
+    
+                return inquiry_Tel_button;
+            })();
+            inquiryBox_1.appendChild(inquiry_Tel_Button);
+            //QRコード１
+            const qr_1 = (() => {
+                const qr_div = create_Element('div',[
+                    {class:'js-added-qrcode'},
+                    {id:'qrcode1'}
+                ]);
+                //QRコード生成
+                const qr_img = create_Element('img',[
+                    {title:'qrcode1'},
+                    {alt:'qrcode1'}
+                ]);
+                qr_img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=65x65&margin=3`;
+                //QRコードテーブル作成
+                const qrcode_table = new AddTable(
+                    {
+                        contents_Title:'',
+                        table_BaseId:'qrcode1',
+                        table_Contents:[[{th:'携帯表示用QRコード'},{td:['']}]],
+                        add_Styles:`
+                            #qrcode1-table {
+                                border:0;
+                                width:100%;
+                            }
+                            #qrcode1-table > tbody > tr > th {
+                                border:0;
+                                font-size:1.2rem;
+                            }
+                            #qrcode1-table > tbody > tr > td {
+                                border:0;
+                                padding:0.6rem;
+                                text-align:end;
+                                background-color:#dddddd;
+                            }
+                            @media screen and (${settings['media']['m']}) {
+                            
+                            }
+                            @media screen and (${settings['media']['s']}) {
+                            
+                            }
+                        `, 
+                        add_To_Selector:''
+                    }
+                );
+                qrcode_table.querySelector('td').removeChild(qrcode_table.querySelector('ul'));
+                qrcode_table.querySelector('td').appendChild(qr_img);
+                qr_div.appendChild(qrcode_table);
         
-            return summaryPrice_div;
-        })();
-        component_1.appendChild(summaryPrice);
-        //===============================================================
-        //お問い合わせ
-        //===============================================================
-        //----------------------------フォーム----------------------------
-        //問い合わせフォーム用ポップオーバー
-        const popover_Content_div = create_Element('div',[
-            {class:'js-added-popover-content'},
-            {id:'inquiry-popover-contents'},
-            {popover:'auto'}
-        ]);
-        document.querySelector('#content').querySelector('div.inner').appendChild(popover_Content_div);
-        //ポップオーバー背面クローズボタン
-        const popover_Backside_Button_Close = document.createElement('button');
-        popover_Backside_Button_Close.setAttribute('class','js-added-popover-content-backside-button match-media-target-close-btn');
-        popover_Backside_Button_Close.setAttribute('popovertarget','inquiry-popover-contents');
-        popover_Backside_Button_Close.setAttribute('popovertargetaction','hide');
-        popover_Backside_Button_Close.addEventListener('click', (e) => {
-            const targetSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.currentTarget.getAttribute('popovertarget') + '"]';
-            document.querySelector(targetSelector).classList.remove('valid');
-        });
-        bodyElm.appendChild(popover_Backside_Button_Close);
-        //クローズボタン（×ボタン）
-        const closeIcon = document.createElement('span');
-        closeIcon.setAttribute('class','icon-close');
-        const popover_Close_Button = document.createElement('button');
-        popover_Close_Button.appendChild(closeIcon);
-        popover_Close_Button.setAttribute('class','js-added-popover-close-button match-media-target-close-btn');
-        popover_Close_Button.setAttribute('popovertarget','inquiry-popover-contents');
-        popover_Close_Button.setAttribute('popovertargetaction','hide');
-        popover_Close_Button.addEventListener('click', (e) => {
-            const targetSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.currentTarget.getAttribute('popovertarget') + '"]';
-            document.querySelector(targetSelector).classList.remove('valid');
-        });
-        popover_Content_div.appendChild(popover_Close_Button);
-        //問い合わせフォームWRAP
-        const inquiry_wrap = create_Element('div',[
-            {class:'js-added-popover-content-wrap'},
-            {id:'inquiry-popover-content-wrap'}
-        ]);
-        inquiry_wrap.appendChild(inquiryForm.cloneNode(true));
-        inquiry_wrap.appendChild(handlingOfPersonalInformation.cloneNode(true));
-        popover_Content_div.appendChild(inquiry_wrap);
-    //-----------------------------------------------------------------
-    //--------------------------コンポーネント１------------------------
-    //お問い合わせWRAP１
-    const inquiryBox_1 = create_Element('div',[
-    {class:'js-added-inquiry-box'},
-    {id:'inquiry1-box'}
-    ]);
-    component_1.appendChild(inquiryBox_1);
-    //お問合せボタン１
-    const inquiry_1 = (() => {
-    const inquiry_button = create_Element('button',[
-    {class:'js-added-inquiry-button'},
-    {id:'inquiry-button1'}
-    ]);
-    return inquiry_button;
-    })();
-    inquiry_1.textContent = 'この物件にお問い合わせ';
-    inquiryBox_1.appendChild(inquiry_1);
-    //電話番号１
-    const inquiry_Tel_1 = (() => {
-    const inquiry_Tel_div = create_Element('div',[
-    {class:'js-added-inquiry-tel'},
-    {id:'inquiry1-tel'}
-    ]);
-    const inquiry_Tel_hr_1 = create_Element('hr',[]);
-    inquiry_Tel_div.appendChild(inquiry_Tel_hr_1);
-    const inquiry_Tel_p_Number = create_Element('p',[
-    {class:'tel-number'}
-    ]);
-    inquiry_Tel_p_Number.textContent = 'TEL ' + settings['company_data']['telNumber_display'];
-    inquiry_Tel_div.appendChild(inquiry_Tel_p_Number);
-    const inquiry_Tel_p_Time = create_Element('p',[
-    {class:'tel-time'}
-    ]);
-    inquiry_Tel_p_Time.textContent = settings['company_data']['business_hours'];
-    inquiry_Tel_div.appendChild(inquiry_Tel_p_Time);
-    const inquiry_Tel_hr_2 = create_Element('hr',[]);
-    inquiry_Tel_div.appendChild(inquiry_Tel_hr_2);
-    
-    return inquiry_Tel_div;
-    })();
-    inquiryBox_1.appendChild(inquiry_Tel_1);
-    //電話をかけるボタン
-    const inquiry_Tel_Button = (() => {
-    const inquiry_Tel_button = create_Element('a',[
-    {href:'tel:' + settings['company_data']['tel_number']}
-    ]);
-    inquiry_Tel_button.textContent = '電話をかける';
-    
-    return inquiry_Tel_button;
-    })();
-    inquiryBox_1.appendChild(inquiry_Tel_Button);
-    //QRコード１
-    const qr_1 = (() => {
-    const qr_div = create_Element('div',[
-    {class:'js-added-qrcode'},
-    {id:'qrcode1'}
-    ]);
-    //QRコード生成
-    const qr_img = create_Element('img',[
-    {title:'qrcode1'},
-    {alt:'qrcode1'}
-    ]);
-    qr_img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=65x65&margin=3`;
-    //QRコードテーブル作成
-    const qrcode_table = new AddTable(
-    {
-    contents_Title:'',
-    table_BaseId:'qrcode1',
-    table_Contents:[[{th:'携帯表示用QRコード'},{td:['']}]],
-    add_Styles:`
-    #qrcode1-table {
-    border:0;
-    width:100%;
-    }
-    #qrcode1-table > tbody > tr > th {
-    border:0;
-    font-size:1.2rem;
-    }
-    #qrcode1-table > tbody > tr > td {
-    border:0;
-    padding:0.6rem;
-    text-align:end;
-    background-color:#dddddd;
-    }
-    @media screen and (${settings['media']['m']}) {
-    
-    }
-    @media screen and (${settings['media']['s']}) {
-    
-    }
-    `, 
-    add_To_Selector:''
-    }
-    );
-    qrcode_table.querySelector('td').removeChild(qrcode_table.querySelector('ul'));
-    qrcode_table.querySelector('td').appendChild(qr_img);
-    qr_div.appendChild(qrcode_table);
-    
-    return qr_div;
-    })();
-    component_1.appendChild(qr_1);
-    //-----------------------------------------------------------------
-    //--------------------------コンポーネント２-------------------------
-    //お問い合わせWRAP２
-    const inquiryBox_2 = create_Element('div',[
-    {class:'js-added-inquiry-box'},
-    {id:'inquiry2-box'}
-    ]);
-    component_2.appendChild(inquiryBox_2);
-    //お問合せボタン２
-    const inquiry_2 = (() => {
-    const inquiry_button = create_Element('button',[
-    {class:'js-added-inquiry-button'},
-    {id:'inquiry-button2'}
-    ]);
-    return inquiry_button;
-    })();
-    inquiry_2.textContent = 'この物件にお問い合わせ';
-    inquiryBox_2.appendChild(inquiry_2);
-    //電話番号
-    const inquiry_Tel_2 = (() => {
-    const inquiry_Tel_div = create_Element('div',[
-    {class:'js-added-inquiry-tel'},
-    {id:'inquiry2-tel'}
-    ]);
-    const inquiry_Tel_p_Number = create_Element('p',[
-    {class:'tel-number'}
-    ]);
-    inquiry_Tel_p_Number.textContent = 'TEL ' + settings['company_data']['telNumber_display'];
-    inquiry_Tel_div.appendChild(inquiry_Tel_p_Number);
-    const inquiry_Tel_p_Time = create_Element('p',[
-    {class:'tel-time'}
-    ]);
-    inquiry_Tel_p_Time.textContent = settings['company_data']['business_hours'];
-    inquiry_Tel_div.appendChild(inquiry_Tel_p_Time);
-    
-    return inquiry_Tel_div;
-    })();
-    inquiryBox_2.appendChild(inquiry_Tel_2);
-    //電話をかけるボタン
-    inquiryBox_2.appendChild(inquiry_Tel_Button.cloneNode(true));
-    //QRコード
-    const qr_2 = (() => {
-    const qr_div = create_Element('div',[
-    {class:'js-added-qrcode'},
-    {id:'qrcode2'}
-    ]);
-    //QRコード生成
-    const qr_img = create_Element('img',[
-    {title:'qrcode2'},
-    {alt:'qrcode2'}
-    ]);
-    qr_img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=80x80&margin=3`;
-    const qr_p = create_Element('p',[]);
-    qr_p.textContent = '携帯表示用QRコード';
-    qr_div.appendChild(qr_img);
-    qr_div.appendChild(qr_p);
-    
-    return qr_div;
-    })();
-    component_2.appendChild(qr_2);
-    //-----------------------------------------------------------------
-    //=================================================================
-    //共有
-    //=================================================================
-    //-----------------------------LINE--------------------------------
-    const share_Line = (() => {
-    const line_div = create_Element('div',[
-    {class:'js-added-line'},
-    {id:'share-line'}
-    ]);
-    const line_button = create_Element('a',[
-    {href:'https://social-plugins.line.me/lineit/share?url=' + detailPageUrl}
-    ]);
-    line_button.textContent = 'LINE共有';
-    line_div.appendChild(line_button);
-    
-    return line_div;
-    })();
-    share_container.appendChild(share_Line);
-    //-----------------------------------------------------------------
-    //----------------------------QRコード------------------------------
-    const qr_img = create_Element('img',[
-    {title:'qrcode'},
-    {alt:'qrcode'}
-    ]);
-    qr_img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=120x120&margin=3`;
-    const qr_popover_p = create_Element('p',[]);
-    qr_popover_p.textContent = '物件ページのQRコード';
-    const share_qr = new AddPopoverContents(
-    {
-    contents_Title:'',
-    contents_BaseId:'share-qrcode',
-    popover_Contents:'share-qrcode',
-    popover_Option:'auto',
-    popover_Target_Action_Open:'show',
-    popover_Target_Action_Close:'hide',
-    buttonText:'QRコードを表示',
-    add_Styles:`
-    #share-qrcode-popover {
-    flex-basis:calc(50% - 0.4rem);
-    }
-    #share-qrcode-popover > button {
-    background:#3f3f3f;
-    color:#ffffff;
-    font-size:1.2rem;
-    padding:0.6rem 0;
-    }
-    #share-qrcode-popover-contents {
-    width:calc(9.6rem + 120px);
-    margin:auto;
-    padding:3.2rem;
-    text-align:center;
-    }
-    #share-qrcode-popover-contents > img {
-    margin-top:1.6rem;
-    width:120px;
-    height:120px;
-    }
-    #share-qrcode-popover-contents > p {
-    margin-top:1.4rem;
-    font-size:1.4rem;
-    color:#000;
-    }
-    @media screen and (${settings['media']['m']}) {
-    
-    }
-    @media screen and (${settings['media']['s']}) {
-    
-    }
-    `, 
-    add_To_Selector:''
-    },
-    qr_img
-    );
-    share_qr.querySelector('#share-qrcode-popover-contents').appendChild(qr_popover_p);
-    share_container.appendChild(share_qr);
-    //---------------------------------------------------------------------
-    //----------------------------STYLE------------------------------------
-    const componentStyle = document.createElement('style');
-    componentStyle.setAttribute('id','component-style');
-    componentStyle.textContent = `            
-    .js-added-inquiry-button, #inquiry1-box > a, #inquiry2-box > a, #share-line > a, #share-qrcode-popover > button {
-    border-radius:2px;
-    }
-    .js-added-inquiry-button {
-    background:#ffb911;
-    color:#ffffff;
-    font-size:1.6rem;
-    padding:1.4rem 0;
-    width:100%;
-    text-align:center;
-    font-weight:bold;
-    border:0;
-    cursor:pointer;
-    }
-    .js-added-inquiry-button:hover {
-    opacity:.6;
-    }
-    .js-added-inquiry-tel {
-    text-align: center;
-    background: none;
-    }
-    .js-added-inquiry-tel > .tel-number {
-    font-weight:bold;
-    color:#000;
-    }
-    .js-added-inquiry-tel > .tel-time {
-    color:#000;
-    }
-    .js-added-popover-content-backside-button {
-    z-index:-50000;
-    }
-    .js-added-popover-content-backside-button.valid {
-    width:100vw;
-    height:100vh;
-    position:fixed;
-    top:0;
-    left:0;
-    background-color:#000;
-    opacity:.3;
-    border:0;
-    z-index:50000;
-    }
-    #summary-price {
-    order:0;
-    }
-    #qrcode1 {
-    display:block;
-    width:100%;
-    margin-bottom:0.5rem;
-    order:1;
-    }
-    #inquiry1-box {
-    width:100%;
-    display:flex;
-    display:-webkit-box;
-    display:-webkit-flex;
-    display :-ms-flexbox;
-    flex-flow:column nowrap;
-    justify-content:space-between;
-    order:2;
-    }
-    #inquiry-button1 {
-    order:0;
-    }
-    #inquiry1-tel {
-    order:1;
-    }
-    #inquiry1-tel > .tel-number {
-    font-size:1.6rem;
-    }
-    #inquiry1-tel > .tel-time {
-    font-size:0.8rem;
-    }
-    #inquiry1-box > a {
-    display:none;
-    }
-    #inquiry2-box {
-    display:flex;
-    display:-webkit-box;
-    display:-webkit-flex;
-    display :-ms-flexbox;
-    flex-flow:row wrap;
-    justify-content:space-between;
-    flex-grow:1;
-    order:0;
-    }
-    #qrcode2 {
-    margin-bottom:0;
-    margin-left:3.2rem;
-    display:flex;
-    display:-webkit-box;
-    display:-webkit-flex;
-    display :-ms-flexbox;
-    flex-flow:column nowrap;
-    justify-content:space-between;
-    align-items:center;
-    order:1;
-    }
-    #qrcode2 > img {
-    width:80px;
-    height:80px;
-    }
-    #qrcode2 > p {
-    font-size:0.8rem;
-    color:#000;
-    margin-top:0.5rem;
-    }
-    #inquiry-button2 {
-    order:0;
-    }
-    #inquiry2-box > button {
-    margin-bottom:0.5rem;
-    }
-    #inquiry2-tel {
-    flex-grow:1;
-    order:1;
-    }
-    #inquiry2-tel > .tel-number {
-    font-size:1.8rem;
-    }
-    #inquiry2-tel > .tel-time {
-    font-size:1rem;
-    }
-    #inquiry2-box > a {
-    display:none;
-    }
-    #inquiry-popover-contents {
-    top:1.2rem;
-    width:94%;
-    height:calc(100dvh - 2.4rem);
-    margin:0 auto;
-    border:0;
-    overflow-y: scroll;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    }
-    #inquiry-popover-contents::-webkit-scrollbar {
-    display:none;
-    }  
-    #inquiry-popover-contents:popover-open {
-    }
-    #inquiry-popover-contents::backdrop {
-    background-color:#000;
-    opacity:.6;
-    }
-    #inquiry-popover-content-wrap {
-    padding:1.2rem;
-    }
-    #share-line {
-    flex-basis:calc(50% - 0.4rem);
-    }
-    #share-line > a {
-    display:block;
-    background:#06c755;
-    color:#ffffff;
-    font-size:1.2rem;
-    text-decoration:none;
-    text-align:center;
-    font-weight:bold;
-    padding:0.6rem 0;
-    }
-    #share-line > a:hover {
-    opacity:.6;
-    }
-    @media screen and (${settings['media']['m']}) {
-    .js-added-inquiry-button {
-    font-size:1.4rem;
-    padding:1rem 0;
-    }
-    #qrcode1 {
-    display:none;
-    }
-    #inquiry1-box {
-    display:flex;
-    display:-webkit-box;
-    display:-webkit-flex;
-    display :-ms-flexbox;
-    flex-flow:row wrap;
-    justify-content:space-between;
-    background:#dddddd;
-    padding:0.4rem 0.8rem;
-    order:3;
-    }
-    #inquiry1-box > button {
-    margin-bottom:0.5rem;
-    }
-    #inquiry1-tel {
-    flex-grow:1;
-    order:1;
-    }
-    #inquiry1-tel > hr {
-    display:none;
-    }
-    #inquiry1-box > a {
-    display:flex;
-    display:-webkit-box;
-    display:-webkit-flex;
-    display :-ms-flexbox;
-    flex-flow:row nowrap;
-    flex-basis:33%;
-    background:#26aaff;
-    color:#ffffff;
-    text-decoration:none;
-    justify-content:center;
-    align-items:center;
-    font-weight:bold;
-    font-size:1.4rem;
-    padding:1rem 0;
-    order:2;
-    }
-    #inquiry1-box > a:hover {
-    opacity:.6;
-    }
-    #qrcode2 {
-    display:none;
-    }
-    #inquiry2-tel > .tel-number {
-    font-size:1.6rem;
-    }
-    #inquiry2-tel > .tel-time {
-    font-size:0.8rem;
-    }
-    #inquiry2-box > a {
-    display:flex;
-    display:-webkit-box;
-    display:-webkit-flex;
-    display :-ms-flexbox;
-    flex-flow:row nowrap;
-    flex-basis:33%;
-    background:#26aaff;
-    color:#ffffff;
-    text-decoration:none;
-    justify-content:center;
-    align-items:center;
-    font-weight:bold;
-    font-size:1.4rem;
-    padding:1rem 0;
-    order:2;
-    }
-    #inquiry2-box > a:hover {
-    opacity:.6;
-    }
-    }
-    @media screen and (${settings['media']['s']}) {
-    .js-added-inquiry-button {
-    font-size:1.2rem;
-    }
-    #inquiry1-box {
-    flex-flow:row nowrap;
-    }
-    #inquiry-button1 {
-    flex-basis:calc(67% - 0.8rem);
-    order:0;
-    }
-    #inquiry1-box > button {
-    margin-bottom:0;
-    }
-    #inquiry1-tel {
-    display:none;
-    }
-    #inquiry1-box > a {
-    font-size:1.2rem;
-    order:1;
-    }
-    #inquiry2-box {
-    flex-flow:row nowrap;
-    }
-    #inquiry-button2 {
-    flex-basis:calc(67% - 0.8rem);
-    order:0;
-    }
-    #inquiry2-box > button {
-    margin-bottom:0;
-    }
-    #inquiry2-tel {
-    display:none;
-    }
-    #inquiry2-box > a {
-    font-size:1.2rem;
-    order:1;
-    }
-    }
-    `; 
-    headElm.appendChild(componentStyle);
-    //---------------------------------------------------------------------
+                return qr_div;
+            })();
+            component_1.appendChild(qr_1);
+            //-----------------------------------------------------------------
+            //--------------------------コンポーネント２-------------------------
+            //お問い合わせWRAP２
+            const inquiryBox_2 = create_Element('div',[
+                {class:'js-added-inquiry-box'},
+                {id:'inquiry2-box'}
+            ]);
+            component_2.appendChild(inquiryBox_2);
+            //お問合せボタン２
+            const inquiry_2 = (() => {
+                const inquiry_button = create_Element('button',[
+                    {class:'js-added-inquiry-button'},
+                    {id:'inquiry-button2'}
+                ]);
+                return inquiry_button;
+            })();
+            inquiry_2.textContent = 'この物件にお問い合わせ';
+            inquiryBox_2.appendChild(inquiry_2);
+            //電話番号
+            const inquiry_Tel_2 = (() => {
+                const inquiry_Tel_div = create_Element('div',[
+                    {class:'js-added-inquiry-tel'},
+                    {id:'inquiry2-tel'}
+                ]);
+                const inquiry_Tel_p_Number = create_Element('p',[
+                    {class:'tel-number'}
+                ]);
+                inquiry_Tel_p_Number.textContent = 'TEL ' + settings['company_data']['telNumber_display'];
+                inquiry_Tel_div.appendChild(inquiry_Tel_p_Number);
+                const inquiry_Tel_p_Time = create_Element('p',[
+                    {class:'tel-time'}
+                ]);
+                inquiry_Tel_p_Time.textContent = settings['company_data']['business_hours'];
+                inquiry_Tel_div.appendChild(inquiry_Tel_p_Time);
+                
+                return inquiry_Tel_div;
+            })();
+            inquiryBox_2.appendChild(inquiry_Tel_2);
+            //電話をかけるボタン
+            inquiryBox_2.appendChild(inquiry_Tel_Button.cloneNode(true));
+            //QRコード
+            const qr_2 = (() => {
+                const qr_div = create_Element('div',[
+                    {class:'js-added-qrcode'},
+                    {id:'qrcode2'}
+                ]);
+                //QRコード生成
+                const qr_img = create_Element('img',[
+                    {title:'qrcode2'},
+                    {alt:'qrcode2'}
+                ]);
+                qr_img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=80x80&margin=3`;
+                const qr_p = create_Element('p',[]);
+                qr_p.textContent = '携帯表示用QRコード';
+                qr_div.appendChild(qr_img);
+                qr_div.appendChild(qr_p);
+                
+                return qr_div;
+            })();
+            component_2.appendChild(qr_2);
+            //-----------------------------------------------------------------
+            //=================================================================
+            //共有
+            //=================================================================
+            //-----------------------------LINE--------------------------------
+            const share_Line = (() => {
+                const line_div = create_Element('div',[
+                    {class:'js-added-line'},
+                    {id:'share-line'}
+                ]);
+                const line_button = create_Element('a',[
+                    {href:'https://social-plugins.line.me/lineit/share?url=' + detailPageUrl}
+                ]);
+                line_button.textContent = 'LINE共有';
+                line_div.appendChild(line_button);
+                
+                return line_div;
+            })();
+            share_container.appendChild(share_Line);
+            //-----------------------------------------------------------------
+            //----------------------------QRコード------------------------------
+            const qr_img = create_Element('img',[
+                {title:'qrcode'},
+                {alt:'qrcode'}
+            ]);
+            qr_img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=120x120&margin=3`;
+            const qr_popover_p = create_Element('p',[]);
+            qr_popover_p.textContent = '物件ページのQRコード';
+            const share_qr = new AddPopoverContents(
+                {
+                    contents_Title:'',
+                    contents_BaseId:'share-qrcode',
+                    popover_Contents:'share-qrcode',
+                    popover_Option:'auto',
+                    popover_Target_Action_Open:'show',
+                    popover_Target_Action_Close:'hide',
+                    buttonText:'QRコードを表示',
+                    add_Styles:`
+                        #share-qrcode-popover {
+                            flex-basis:calc(50% - 0.4rem);
+                        }
+                        #share-qrcode-popover > button {
+                            background:#3f3f3f;
+                            color:#ffffff;
+                            font-size:1.2rem;
+                            padding:0.6rem 0;
+                        }
+                        #share-qrcode-popover-contents {
+                            width:calc(9.6rem + 120px);
+                            margin:auto;
+                            padding:3.2rem;
+                            text-align:center;
+                        }
+                        #share-qrcode-popover-contents > img {
+                            margin-top:1.6rem;
+                            width:120px;
+                            height:120px;
+                        }
+                        #share-qrcode-popover-contents > p {
+                            margin-top:1.4rem;
+                            font-size:1.4rem;
+                            color:#000;
+                        }
+                        @media screen and (${settings['media']['m']}) {
+                        
+                        }
+                        @media screen and (${settings['media']['s']}) {
+                        
+                        }
+                    `, 
+                    add_To_Selector:''
+                },
+                qr_img
+            );
+            share_qr.querySelector('#share-qrcode-popover-contents').appendChild(qr_popover_p);
+            share_container.appendChild(share_qr);
+            //---------------------------------------------------------------------
+            //----------------------------STYLE------------------------------------
+            const componentStyle = document.createElement('style');
+            componentStyle.setAttribute('id','component-style');
+            componentStyle.textContent = `            
+                .js-added-inquiry-button, #inquiry1-box > a, #inquiry2-box > a, #share-line > a, #share-qrcode-popover > button {
+                    border-radius:2px;
+                }
+                .js-added-inquiry-button {
+                    background:#ffb911;
+                    color:#ffffff;
+                    font-size:1.6rem;
+                    padding:1.4rem 0;
+                    width:100%;
+                    text-align:center;
+                    font-weight:bold;
+                    border:0;
+                    cursor:pointer;
+                }
+                .js-added-inquiry-button:hover {
+                    opacity:.6;
+                }
+                .js-added-inquiry-tel {
+                    text-align: center;
+                    background: none;
+                }
+                .js-added-inquiry-tel > .tel-number {
+                    font-weight:bold;
+                    color:#000;
+                }
+                .js-added-inquiry-tel > .tel-time {
+                    color:#000;
+                }
+                .js-added-popover-content-backside-button {
+                    z-index:-50000;
+                }
+                .js-added-popover-content-backside-button.valid {
+                    width:100vw;
+                    height:100vh;
+                    position:fixed;
+                    top:0;
+                    left:0;
+                    background-color:#000;
+                    opacity:.3;
+                    border:0;
+                    z-index:50000;
+                }
+                #summary-price {
+                    order:0;
+                }
+                #qrcode1 {
+                    display:block;
+                    width:100%;
+                    margin-bottom:0.5rem;
+                    order:1;
+                }
+                #inquiry1-box {
+                    width:100%;
+                    display:flex;
+                    display:-webkit-box;
+                    display:-webkit-flex;
+                    display :-ms-flexbox;
+                    flex-flow:column nowrap;
+                    justify-content:space-between;
+                    order:2;
+                }
+                #inquiry-button1 {
+                    order:0;
+                }
+                #inquiry1-tel {
+                    order:1;
+                }
+                #inquiry1-tel > .tel-number {
+                    font-size:1.6rem;
+                }
+                #inquiry1-tel > .tel-time {
+                    font-size:0.8rem;
+                }
+                #inquiry1-box > a {
+                    display:none;
+                }
+                #inquiry2-box {
+                    display:flex;
+                    display:-webkit-box;
+                    display:-webkit-flex;
+                    display :-ms-flexbox;
+                    flex-flow:row wrap;
+                    justify-content:space-between;
+                    flex-grow:1;
+                    order:0;
+                }
+                #qrcode2 {
+                    margin-bottom:0;
+                    margin-left:3.2rem;
+                    display:flex;
+                    display:-webkit-box;
+                    display:-webkit-flex;
+                    display :-ms-flexbox;
+                    flex-flow:column nowrap;
+                    justify-content:space-between;
+                    align-items:center;
+                    order:1;
+                }
+                #qrcode2 > img {
+                    width:80px;
+                    height:80px;
+                }
+                #qrcode2 > p {
+                    font-size:0.8rem;
+                    color:#000;
+                    margin-top:0.5rem;
+                }
+                #inquiry-button2 {
+                    order:0;
+                }
+                #inquiry2-box > button {
+                    margin-bottom:0.5rem;
+                }
+                #inquiry2-tel {
+                    flex-grow:1;
+                    order:1;
+                }
+                #inquiry2-tel > .tel-number {
+                    font-size:1.8rem;
+                }
+                #inquiry2-tel > .tel-time {
+                    font-size:1rem;
+                }
+                #inquiry2-box > a {
+                    display:none;
+                }
+                #inquiry-popover-contents {
+                    top:1.2rem;
+                    width:94%;
+                    height:calc(100dvh - 2.4rem);
+                    margin:0 auto;
+                    border:0;
+                    overflow-y: scroll;
+                    -ms-overflow-style: none;
+                    scrollbar-width: none;
+                }
+                #inquiry-popover-contents::-webkit-scrollbar {
+                    display:none;
+                }  
+                #inquiry-popover-contents:popover-open {
+                }
+                #inquiry-popover-contents::backdrop {
+                    background-color:#000;
+                    opacity:.6;
+                }
+                #inquiry-popover-content-wrap {
+                    padding:1.2rem;
+                }
+                #share-line {
+                    flex-basis:calc(50% - 0.4rem);
+                }
+                #share-line > a {
+                    display:block;
+                    background:#06c755;
+                    color:#ffffff;
+                    font-size:1.2rem;
+                    text-decoration:none;
+                    text-align:center;
+                    font-weight:bold;
+                    padding:0.6rem 0;
+                }
+                #share-line > a:hover {
+                    opacity:.6;
+                }
+                @media screen and (${settings['media']['m']}) {
+                    .js-added-inquiry-button {
+                        font-size:1.4rem;
+                        padding:1rem 0;
+                    }
+                    #qrcode1 {
+                        display:none;
+                    }
+                    #inquiry1-box {
+                        display:flex;
+                        display:-webkit-box;
+                        display:-webkit-flex;
+                        display :-ms-flexbox;
+                        flex-flow:row wrap;
+                        justify-content:space-between;
+                        background:#dddddd;
+                        padding:0.4rem 0.8rem;
+                        order:3;
+                    }
+                    #inquiry1-box > button {
+                        margin-bottom:0.5rem;
+                    }
+                    #inquiry1-tel {
+                        flex-grow:1;
+                        order:1;
+                    }
+                    #inquiry1-tel > hr {
+                        display:none;
+                    }
+                    #inquiry1-box > a {
+                        display:flex;
+                        display:-webkit-box;
+                        display:-webkit-flex;
+                        display :-ms-flexbox;
+                        flex-flow:row nowrap;
+                        flex-basis:33%;
+                        background:#26aaff;
+                        color:#ffffff;
+                        text-decoration:none;
+                        justify-content:center;
+                        align-items:center;
+                        font-weight:bold;
+                        font-size:1.4rem;
+                        padding:1rem 0;
+                        order:2;
+                    }
+                    #inquiry1-box > a:hover {
+                        opacity:.6;
+                    }
+                    #qrcode2 {
+                        display:none;
+                    }
+                    #inquiry2-tel > .tel-number {
+                        font-size:1.6rem;
+                    }
+                    #inquiry2-tel > .tel-time {
+                        font-size:0.8rem;
+                    }
+                    #inquiry2-box > a {
+                        display:flex;
+                        display:-webkit-box;
+                        display:-webkit-flex;
+                        display :-ms-flexbox;
+                        flex-flow:row nowrap;
+                        flex-basis:33%;
+                        background:#26aaff;
+                        color:#ffffff;
+                        text-decoration:none;
+                        justify-content:center;
+                        align-items:center;
+                        font-weight:bold;
+                        font-size:1.4rem;
+                        padding:1rem 0;
+                        order:2;
+                    }
+                    #inquiry2-box > a:hover {
+                        opacity:.6;
+                    }
+                }
+                @media screen and (${settings['media']['s']}) {
+                    .js-added-inquiry-button {
+                        font-size:1.2rem;
+                    }
+                    #inquiry1-box {
+                        flex-flow:row nowrap;
+                    }
+                    #inquiry-button1 {
+                        flex-basis:calc(67% - 0.8rem);
+                        order:0;
+                    }
+                    #inquiry1-box > button {
+                        margin-bottom:0;
+                    }
+                    #inquiry1-tel {
+                        display:none;
+                    }
+                    #inquiry1-box > a {
+                        font-size:1.2rem;
+                        order:1;
+                    }
+                    #inquiry2-box {
+                        flex-flow:row nowrap;
+                    }
+                    #inquiry-button2 {
+                        flex-basis:calc(67% - 0.8rem);
+                        order:0;
+                    }
+                    #inquiry2-box > button {
+                        margin-bottom:0;
+                    }
+                    #inquiry2-tel {
+                        display:none;
+                    }
+                    #inquiry2-box > a {
+                        font-size:1.2rem;
+                        order:1;
+                    }
+                }
+            `; 
+            headElm.appendChild(componentStyle);
+            //---------------------------------------------------------------------
     //--------------------------レスポンシブ--------------------------------
     //関数
     const backsideButton_control = function (e) {
