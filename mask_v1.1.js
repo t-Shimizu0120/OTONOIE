@@ -1008,7 +1008,7 @@ if (locationURL.includes('detail')) {
         document.querySelector('#content').querySelector('div.inner').appendChild(popover_Content_div);
         //ポップオーバー背面クローズボタン
         const popover_Backside_Button_Close = document.createElement('button');
-	popover_Backside_Button_Close.setAttribute('class','js-added-popover-content-backside-button match-media-target-close-btn');
+	    popover_Backside_Button_Close.setAttribute('class','js-added-popover-content-backside-button match-media-target-close-btn');
         popover_Backside_Button_Close.setAttribute('popovertarget','inquiry-popover-contents');
         popover_Backside_Button_Close.setAttribute('popovertargetaction','hide');
         popover_Backside_Button_Close.addEventListener('click', (e) => {
@@ -1028,7 +1028,7 @@ if (locationURL.includes('detail')) {
 	    const targetSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.currentTarget.getAttribute('popovertarget') + '"]';
             document.querySelector(targetSelector).classList.remove('valid');
         });
-	popover_Content_div.appendChild(popover_Close_Button);
+	    popover_Content_div.appendChild(popover_Close_Button);
         //問い合わせフォームWRAP
         const inquiry_wrap = create_Element('div',[
                 {class:'js-added-popover-content-wrap'},
@@ -1054,7 +1054,7 @@ if (locationURL.includes('detail')) {
             return inquiry_button;
         })();
         inquiry_1.textContent = 'この物件にお問い合わせ';
-	inquiryBox_1.appendChild(inquiry_1);
+	    inquiryBox_1.appendChild(inquiry_1);
         //電話番号１
         const inquiry_Tel_1 = (() => {
             const inquiry_Tel_div = create_Element('div',[
@@ -1156,7 +1156,7 @@ if (locationURL.includes('detail')) {
             return inquiry_button;
         })();
         inquiry_2.textContent = 'この物件にお問い合わせ';
-	inquiryBox_2.appendChild(inquiry_2);
+	    inquiryBox_2.appendChild(inquiry_2);
         //電話番号
         const inquiry_Tel_2 = (() => {
             const inquiry_Tel_div = create_Element('div',[
@@ -1567,11 +1567,11 @@ if (locationURL.includes('detail')) {
         //---------------------------------------------------------------------
         //--------------------------レスポンシブ--------------------------------
         //関数
-	const backsideButton_control = function (e) {
+	    const backsideButton_control = function (e) {
             const targetButtonSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.currentTarget.getAttribute('popovertarget') + '"]';
             document.querySelector(targetButtonSelector).classList.add('valid');
         };
-	//ブレイクポイント
+	    //ブレイクポイント
         const mediaQueryList = window.matchMedia(`(${settings['media']['m']})`);
         //regist listener
         mediaQueryList.addEventListener('change', listener);
@@ -1580,66 +1580,66 @@ if (locationURL.includes('detail')) {
         function listener (event) {
 	    const body = document.getElementsByTagName('body')[0];
 	    const popoverElms = document.querySelectorAll('.js-added-popover-content');
-            const targetInquiryButtons = document.querySelectorAll('.js-added-inquiry-button');
+        const targetInquiryButtons = document.querySelectorAll('.js-added-inquiry-button');
 	    const targetPopoverCloseButtons = document.querySelectorAll('.js-added-popover-close-button.match-media-target-close-btn');
-            const targetPopoverBacksideCloseButtons = document.querySelectorAll('.js-added-popover-content-backside-button.match-media-target-close-btn');
+        const targetPopoverBacksideCloseButtons = document.querySelectorAll('.js-added-popover-content-backside-button.match-media-target-close-btn');
 	    if (event.matches) {
-                // SP
-                componentWrap_top.appendChild(inquiryBox_1);
-		if (body.hasAttribute('style') == true && body.getAttribute('style') !== '') {
-		    scrollPosition = body.style.top.replace('px','').replace('-','');
-		    body.setAttribute('style','');
-		    window.scrollTo(0, scrollPosition);
-		} else {
-		};
-		if (popoverElms.length !== 0) {
-		    for (targetInquiryButton of targetInquiryButtons) {
-			targetInquiryButton.setAttribute('onclick','bodyScrollPrevent(true);');
-		        targetInquiryButton.setAttribute('popovertarget','inquiry-popover-contents');
-		        targetInquiryButton.setAttribute('popovertargetaction','show');
-                        targetInquiryButton.addEventListener('click',backsideButton_control);
+            // SP
+            componentWrap_top.appendChild(inquiryBox_1);
+		    if (body.hasAttribute('style') == true && body.getAttribute('style') !== '') {
+		        scrollPosition = body.style.top.replace('px','').replace('-','');
+		        body.setAttribute('style','');
+		        window.scrollTo(0, scrollPosition);
+		    } else {
 		    };
-		    for (targetPopoverCloseButton of targetPopoverCloseButtons) {
-		        targetPopoverCloseButton.setAttribute('onclick','bodyScrollPrevent(false);');
+		    if (popoverElms.length !== 0) {
+		        for (targetInquiryButton of targetInquiryButtons) {
+			        targetInquiryButton.setAttribute('onclick','bodyScrollPrevent(true);');
+		            targetInquiryButton.setAttribute('popovertarget','inquiry-popover-contents');
+		            targetInquiryButton.setAttribute('popovertargetaction','show');
+                    targetInquiryButton.addEventListener('click',backsideButton_control);
+		        };
+		        for (targetPopoverCloseButton of targetPopoverCloseButtons) {
+		            targetPopoverCloseButton.setAttribute('onclick','bodyScrollPrevent(false);');
+		        };
+		        for (targetPopoverBacksideCloseButton of targetPopoverBacksideCloseButtons) {
+                    targetPopoverBacksideCloseButton.setAttribute('onclick','bodyScrollPrevent(false);');
+		        };
+            } else {
+            };
+        } else {
+            // PC
+            component_1.appendChild(inquiryBox_1);
+		    if (body.hasAttribute('style') == true && body.getAttribute('style') !== '') {
+		        scrollPosition = body.style.top.replace('px','').replace('-','');
+		        body.setAttribute('style','');
+		        window.scrollTo(0, scrollPosition);
+		    } else {
 		    };
-		    for (targetPopoverBacksideCloseButton of targetPopoverBacksideCloseButtons) {
-                        targetPopoverBacksideCloseButton.setAttribute('onclick','bodyScrollPrevent(false);');
-		    };
+		    if (popoverElms.length !== 0) {
+		        for (targetInquiryButton of targetInquiryButtons) {
+		            targetInquiryButton.setAttribute('popovertarget','');
+		            targetInquiryButton.setAttribute('popovertargetaction','');
+		            targetInquiryButton.setAttribute('onclick','location.href=\'#contact_area\'');
+		            targetInquiryButton.removeEventListener('click',backsideButton_control);
+		        };
+                for (popoverElm of popoverElms) {
+                    if (popoverElm.matches(':popover-open')) {
+                        popoverElm.hidePopover();
+                    } else {
+                    };
+                };
+                if (document.querySelectorAll('button.js-added-popover-content-backside-button.valid').length !== 0) {
+                    const popover_Backside_Buttons_Valid = document.querySelectorAll('button.js-added-popover-content-backside-button.valid');
+                    for (Backside_Button of popover_Backside_Buttons_Valid) {
+                        Backside_Button.classList.remove('valid');
+                    };
                 } else {
                 };
             } else {
-                // PC
-                component_1.appendChild(inquiryBox_1);
-		if (body.hasAttribute('style') == true && body.getAttribute('style') !== '') {
-		    scrollPosition = body.style.top.replace('px','').replace('-','');
-		    body.setAttribute('style','');
-		    window.scrollTo(0, scrollPosition);
-		} else {
-		};
-		if (popoverElms.length !== 0) {
-		    for (targetInquiryButton of targetInquiryButtons) {
-		        targetInquiryButton.setAttribute('popovertarget','');
-		        targetInquiryButton.setAttribute('popovertargetaction','');
-		        targetInquiryButton.setAttribute('onclick','location.href=\'#contact_area\'');
-		        targetInquiryButton.removeEventListener('click',backsideButton_control);
-		    };
-                    for (popoverElm of popoverElms) {
-                        if (popoverElm.matches(':popover-open')) {
-                            popoverElm.hidePopover();
-                        } else {
-                        };
-                    };
-                    if (document.querySelectorAll('button.js-added-popover-content-backside-button.valid').length !== 0) {
-                        const popover_Backside_Buttons_Valid = document.querySelectorAll('button.js-added-popover-content-backside-button.valid');
-                        for (Backside_Button of popover_Backside_Buttons_Valid) {
-                            Backside_Button.classList.remove('valid');
-                        };
-                    } else {
-                    };
-                } else {
-                };
+            };
 	    };
-        };
+		};
         //--------------------------------------------------------------------
     })();
     
