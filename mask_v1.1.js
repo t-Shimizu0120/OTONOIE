@@ -515,270 +515,270 @@ class AddTable {
     //--------------------------------------------------
     //ポップオーバーコンテンツ
     class AddPopoverContents {
-    constructor (object,args) {
-    if(object.popover_Contents === '') {
-    //コンテンツがない場合、nullを返す
-    return null;
-    } else {
-    //別のポップオーバーがあるかどうかを判定
-    if (document.querySelector('#popover-style') != null) {
-    //あればスタイルを追加
-    const style = document.querySelector('#popover-style');
-    style.textContent += object['add_Styles'];
-    } else {
-    //無ければ作成
-    this.setStyle(object);
-    };
-    //attributeオブジェクトを作成
-    const obj = this.setAttrs(object);
-    
-    //コンテナ作成
-    const popoverContents_Container = document.createElement('div');
-    for (this.container_Attr of obj.container_Attrs) {
-    const container_AttrName = Object.keys(this.container_Attr)[0];
-    const container_AttrValue = this.container_Attr[container_AttrName];
-    popoverContents_Container.setAttribute(container_AttrName,container_AttrValue);
-    };
-    
-    //ボタン作成
-    const popover_Button = document.createElement('button');
-    popover_Button.textContent = obj['buttonText'];
-    for (this.button_Attr of obj.button_Attrs) {
-    const button_AttrName = Object.keys(this.button_Attr)[0];
-    const button_AttrValue = this.button_Attr[button_AttrName];
-    popover_Button.setAttribute(button_AttrName,button_AttrValue);
-    };
-    popover_Button.addEventListener('click', (e) => this.clickHandlerValid(e));
-    
-    //要素作成
-    const popover_Content = document.createElement('div');
-    for (this.content_Attr of obj.content_Attrs) {
-    const content_AttrName = Object.keys(this.content_Attr)[0];
-    const content_AttrValue = this.content_Attr[content_AttrName];
-    popover_Content.setAttribute(content_AttrName,content_AttrValue);
-    };
-    
-    //クローズボタン
-    //ポップオーバー背面クローズボタン
-    const popover_Backside_Button_Close = document.createElement('button');
-    //クローズボタン（×ボタン）
-    const closeIcon = document.createElement('span');
-    closeIcon.setAttribute('class','icon-close');
-    const popover_Button_Close = document.createElement('button');
-    for (this.button_Close_Attr of obj.button_Close_Attrs) {
-    const button_Close_AttrName = Object.keys(this.button_Close_Attr)[0];
-    const button_Close_AttrValue = this.button_Close_Attr[button_Close_AttrName];
-    popover_Button_Close.setAttribute(button_Close_AttrName,button_Close_AttrValue);
-    popover_Backside_Button_Close.setAttribute(button_Close_AttrName,button_Close_AttrValue);
-    };
-    popover_Backside_Button_Close.setAttribute('class','js-added-popover-content-backside-button');
-    popover_Backside_Button_Close.addEventListener('click', (e) => this.clickHandlerInvalid(e));
-    popover_Button_Close.addEventListener('click', (e) => this.clickHandlerInvalid(e));
-    document.querySelector('body').appendChild(popover_Backside_Button_Close);
-    popover_Button_Close.appendChild(closeIcon);
-    
-    //表示用attributeの設定・コンテンツ要素へ入れる
-    if (args === null) {
-    //コンテンツが空（null）の場合、disabledを設定
-    popover_Button.setAttribute('disabled','');
-    popoverContents_Container.appendChild(popover_Button);
-    } else {
-    popover_Content.appendChild(popover_Button_Close);
-    popover_Content.appendChild(args);
-    popoverContents_Container.appendChild(popover_Button);
-    popoverContents_Container.appendChild(popover_Content);
-    };
-    if (obj.add_To_Selector === '') {
-    return popoverContents_Container;
-    } else {
-    const targetElm = document.querySelector(obj.add_To_Selector);
-    if (obj['contents_Title'] === '') {
-    targetElm.appendChild(popoverContents_Container);
-    } else {
-    //タイトル作成
-    const popoverContents_Title = document.createElement('h5');
-    popoverContents_Title.textContent = obj['contents_Title'];
-    
-    targetElm.appendChild(popoverContents_Title);
-    targetElm.appendChild(popoverContents_Container);
-    };
-    };
-    
-    };
-    };
-    //表示の際の処理
-    clickHandlerValid (e) {
-    bodyScrollPrevent(true);
-    const targetSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.currentTarget.getAttribute('popovertarget') + '"]';
-    document.querySelector(targetSelector).classList.add('valid');
-    };
-    //非表示の際の処理
-    clickHandlerInvalid (e) {
-    bodyScrollPrevent(false);
-    const targetSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.currentTarget.getAttribute('popovertarget') + '"]';
-    document.querySelector(targetSelector).classList.remove('valid');
-    };
-    //style生成
-    setStyle(object) {
-    //headタグへ挿入
-    const headElm = document.querySelector('head');
-    const addStyleElm = document.createElement('style');
-    addStyleElm.setAttribute('id','popover-style');
-    //コンテンツ独自のstyleを挿入
-    const addStyles = (() => {
-    if (object['add_Styles']) {
-    if (object['add_Styles'] !== '') {
-    return object['add_Styles'];
-    } else {
-    return '';
-    };
-    } else {
-    return '';
-    };
-    })();
-    //style
-    const style = `
-    .js-added-popover {
-    }
-    .js-added-popover-button {
-    width:100%;
-    text-align:center;
-    font-weight:bold;
-    border:0;
-    cursor:pointer;
-    }
-    .js-added-popover-button:hover {
-    opacity:.6;
-    }
-    .js-added-popover-button:disabled {
-    opacity:.6;
-    pointer-events:none;
-    }
-    .js-added-popover-content {
-    border:0;
-    }
-    .js-added-popover-content:popover-open {
-    }
-    .js-added-popover-content::backdrop {
-    background-color:#000;
-    opacity:.6;
-    }
-    .js-added-popover-close-button {
-    position:absolute;
-    right:.6rem;
-    top:.6rem;
-    text-align:center;
-    border:0;
-    cursor:pointer;
-    background-color:transparent;
-    padding:0;
-    }
-    .js-added-popover-close-button:hover {
-    opacity:.6;
-    }
-    .icon-close {
-    display:block;
-    width:2.6rem;
-    height:2.6rem;
-    position:relative;
-    }
-    .icon-close::before, .icon-close::after {
-    content:"";
-    display:block;
-    width:80%;
-    height:2px;
-    background:#000;
-    transform:rotate(45deg);
-    transform-origin:0% 50%;
-    position:absolute;
-    top:calc(21% - 1px);
-    left:21%;
-    }
-    .icon-close::after {
-    transform:rotate(-45deg);
-    transform-origin:100% 50%;
-    left:auto;
-    right:21%;
-    }
-    .js-added-popover-content-backside-button {
-    z-index:-50000;
-    }
-    .js-added-popover-content-backside-button.valid {
-    width:100vw;
-    height:100vh;
-    position:fixed;
-    top:0;
-    left:0;
-    background-color:#000;
-    opacity:.3;
-    border:0;
-    z-index:50000;
-    }
-    ${addStyles}
-    `;
-    addStyleElm.textContent = style;
-    headElm.appendChild(addStyleElm);
-    };
-    //attributeオブジェクトの生成
-    setAttrs(object) {
-    //ベースオブジェクト
-    const popover_Obj = {
-    contents_Title:'',
-    buttonText:'',
-    container_Attrs:[{class:'js-added-popover'}],
-    button_Attrs:[{class:'js-added-popover-button'}],
-    content_Attrs:[{class:'js-added-popover-content'}],
-    button_Close_Attrs:[{class:'js-added-popover-close-button'}],
-    
-    add_To_Selector:''
-    };
-    //コンテンツ独自のattributeを追加
-    popover_Obj.contents_Title = object.contents_Title;
-    const container_Id = {};
-    container_Id.id = object.contents_BaseId + '-popover';
-    popover_Obj.container_Attrs.push(container_Id);
-    const contents_Id = {};
-    contents_Id.id = object.popover_Contents + '-popover-contents';
-    popover_Obj.content_Attrs.push(contents_Id);
-    const target_Id = object.popover_Contents + '-popover-contents';
-    const button_Target = {};
-    button_Target.popovertarget = target_Id;
-    popover_Obj.button_Attrs.push(button_Target);
-    const popover_Target_Action_Open = {};
-    popover_Target_Action_Open.popovertargetaction = object.popover_Target_Action_Open;
-    popover_Obj.button_Attrs.push(popover_Target_Action_Open);
-    const button_Close_Target = {};
-    button_Close_Target.popovertarget = target_Id;
-    popover_Obj.button_Close_Attrs.push(button_Close_Target);
-    const popover_Option = {};
-    popover_Option.popover = object.popover_Option;
-    popover_Obj.content_Attrs.push(popover_Option);
-    const popover_Target_Action_Close = {};
-    popover_Target_Action_Close.popovertargetaction = object.popover_Target_Action_Close;
-    popover_Obj.button_Close_Attrs.push(popover_Target_Action_Close);
-    
-    popover_Obj.buttonText　= object.buttonText
-    popover_Obj.add_To_Selector = object.add_To_Selector;
-    
-    return popover_Obj;
-    };
+        constructor (object,args) {
+            if(object.popover_Contents === '') {
+                //コンテンツがない場合、nullを返す
+                return null;
+            } else {
+                //別のポップオーバーがあるかどうかを判定
+                if (document.querySelector('#popover-style') != null) {
+                    //あればスタイルを追加
+                    const style = document.querySelector('#popover-style');
+                    style.textContent += object['add_Styles'];
+                } else {
+                    //無ければ作成
+                    this.setStyle(object);
+                };
+                //attributeオブジェクトを作成
+                const obj = this.setAttrs(object);
+                
+                //コンテナ作成
+                const popoverContents_Container = document.createElement('div');
+                for (this.container_Attr of obj.container_Attrs) {
+                    const container_AttrName = Object.keys(this.container_Attr)[0];
+                    const container_AttrValue = this.container_Attr[container_AttrName];
+                    popoverContents_Container.setAttribute(container_AttrName,container_AttrValue);
+                };
+                
+                //ボタン作成
+                const popover_Button = document.createElement('button');
+                popover_Button.textContent = obj['buttonText'];
+                for (this.button_Attr of obj.button_Attrs) {
+                    const button_AttrName = Object.keys(this.button_Attr)[0];
+                    const button_AttrValue = this.button_Attr[button_AttrName];
+                    popover_Button.setAttribute(button_AttrName,button_AttrValue);
+                };
+                popover_Button.addEventListener('click', (e) => this.clickHandlerValid(e));
+                
+                //要素作成
+                const popover_Content = document.createElement('div');
+                for (this.content_Attr of obj.content_Attrs) {
+                    const content_AttrName = Object.keys(this.content_Attr)[0];
+                    const content_AttrValue = this.content_Attr[content_AttrName];
+                    popover_Content.setAttribute(content_AttrName,content_AttrValue);
+                };
+                
+                //クローズボタン
+                //ポップオーバー背面クローズボタン
+                const popover_Backside_Button_Close = document.createElement('button');
+                //クローズボタン（×ボタン）
+                const closeIcon = document.createElement('span');
+                closeIcon.setAttribute('class','icon-close');
+                const popover_Button_Close = document.createElement('button');
+                for (this.button_Close_Attr of obj.button_Close_Attrs) {
+                    const button_Close_AttrName = Object.keys(this.button_Close_Attr)[0];
+                    const button_Close_AttrValue = this.button_Close_Attr[button_Close_AttrName];
+                    popover_Button_Close.setAttribute(button_Close_AttrName,button_Close_AttrValue);
+                    popover_Backside_Button_Close.setAttribute(button_Close_AttrName,button_Close_AttrValue);
+                };
+                popover_Backside_Button_Close.setAttribute('class','js-added-popover-content-backside-button');
+                popover_Backside_Button_Close.addEventListener('click', (e) => this.clickHandlerInvalid(e));
+                popover_Button_Close.addEventListener('click', (e) => this.clickHandlerInvalid(e));
+                document.querySelector('body').appendChild(popover_Backside_Button_Close);
+                popover_Button_Close.appendChild(closeIcon);
+                
+                //表示用attributeの設定・コンテンツ要素へ入れる
+                if (args === null) {
+                    //コンテンツが空（null）の場合、disabledを設定
+                    popover_Button.setAttribute('disabled','');
+                    popoverContents_Container.appendChild(popover_Button);
+                } else {
+                    popover_Content.appendChild(popover_Button_Close);
+                    popover_Content.appendChild(args);
+                    popoverContents_Container.appendChild(popover_Button);
+                    popoverContents_Container.appendChild(popover_Content);
+                };
+                if (obj.add_To_Selector === '') {
+                    return popoverContents_Container;
+                } else {
+                    const targetElm = document.querySelector(obj.add_To_Selector);
+                    if (obj['contents_Title'] === '') {
+                        targetElm.appendChild(popoverContents_Container);
+                    } else {
+                        //タイトル作成
+                        const popoverContents_Title = document.createElement('h5');
+                        popoverContents_Title.textContent = obj['contents_Title'];
+                    
+                        targetElm.appendChild(popoverContents_Title);
+                        targetElm.appendChild(popoverContents_Container);
+                    };
+                };
+            
+            };
+        };
+        //表示の際の処理
+        clickHandlerValid (e) {
+            bodyScrollPrevent(true);
+            const targetSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.currentTarget.getAttribute('popovertarget') + '"]';
+            document.querySelector(targetSelector).classList.add('valid');
+        };
+        //非表示の際の処理
+        clickHandlerInvalid (e) {
+            bodyScrollPrevent(false);
+            const targetSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.currentTarget.getAttribute('popovertarget') + '"]';
+            document.querySelector(targetSelector).classList.remove('valid');
+        };
+        //style生成
+        setStyle(object) {
+            //headタグへ挿入
+            const headElm = document.querySelector('head');
+            const addStyleElm = document.createElement('style');
+            addStyleElm.setAttribute('id','popover-style');
+            //コンテンツ独自のstyleを挿入
+            const addStyles = (() => {
+                if (object['add_Styles']) {
+                    if (object['add_Styles'] !== '') {
+                        return object['add_Styles'];
+                    } else {
+                        return '';
+                    };
+                } else {
+                    return '';
+                };
+            })();
+            //style
+            const style = `
+                .js-added-popover {
+                }
+                .js-added-popover-button {
+                    width:100%;
+                    text-align:center;
+                    font-weight:bold;
+                    border:0;
+                    cursor:pointer;
+                }
+                .js-added-popover-button:hover {
+                    opacity:.6;
+                }
+                .js-added-popover-button:disabled {
+                    opacity:.6;
+                    pointer-events:none;
+                }
+                .js-added-popover-content {
+                    border:0;
+                }
+                .js-added-popover-content:popover-open {
+                }
+                .js-added-popover-content::backdrop {
+                    background-color:#000;
+                    opacity:.6;
+                }
+                .js-added-popover-close-button {
+                    position:absolute;
+                    right:.6rem;
+                    top:.6rem;
+                    text-align:center;
+                    border:0;
+                    cursor:pointer;
+                    background-color:transparent;
+                    padding:0;
+                }
+                .js-added-popover-close-button:hover {
+                    opacity:.6;
+                }
+                .icon-close {
+                    display:block;
+                    width:2.6rem;
+                    height:2.6rem;
+                    position:relative;
+                }
+                .icon-close::before, .icon-close::after {
+                    content:"";
+                    display:block;
+                    width:80%;
+                    height:2px;
+                    background:#000;
+                    transform:rotate(45deg);
+                    transform-origin:0% 50%;
+                    position:absolute;
+                    top:calc(21% - 1px);
+                    left:21%;
+                }
+                .icon-close::after {
+                    transform:rotate(-45deg);
+                    transform-origin:100% 50%;
+                    left:auto;
+                    right:21%;
+                }
+                .js-added-popover-content-backside-button {
+                    z-index:-50000;
+                }
+                .js-added-popover-content-backside-button.valid {
+                    width:100vw;
+                    height:100vh;
+                    position:fixed;
+                    top:0;
+                    left:0;
+                    background-color:#000;
+                    opacity:.3;
+                    border:0;
+                    z-index:50000;
+                }
+                ${addStyles}
+            `;
+            addStyleElm.textContent = style;
+            headElm.appendChild(addStyleElm);
+        };
+        //attributeオブジェクトの生成
+        setAttrs(object) {
+            //ベースオブジェクト
+            const popover_Obj = {
+                contents_Title:'',
+                buttonText:'',
+                container_Attrs:[{class:'js-added-popover'}],
+                button_Attrs:[{class:'js-added-popover-button'}],
+                content_Attrs:[{class:'js-added-popover-content'}],
+                button_Close_Attrs:[{class:'js-added-popover-close-button'}],
+                
+                add_To_Selector:''
+            };
+            //コンテンツ独自のattributeを追加
+            popover_Obj.contents_Title = object.contents_Title;
+            const container_Id = {};
+            container_Id.id = object.contents_BaseId + '-popover';
+            popover_Obj.container_Attrs.push(container_Id);
+            const contents_Id = {};
+            contents_Id.id = object.popover_Contents + '-popover-contents';
+            popover_Obj.content_Attrs.push(contents_Id);
+            const target_Id = object.popover_Contents + '-popover-contents';
+            const button_Target = {};
+            button_Target.popovertarget = target_Id;
+            popover_Obj.button_Attrs.push(button_Target);
+            const popover_Target_Action_Open = {};
+            popover_Target_Action_Open.popovertargetaction = object.popover_Target_Action_Open;
+            popover_Obj.button_Attrs.push(popover_Target_Action_Open);
+            const button_Close_Target = {};
+            button_Close_Target.popovertarget = target_Id;
+            popover_Obj.button_Close_Attrs.push(button_Close_Target);
+            const popover_Option = {};
+            popover_Option.popover = object.popover_Option;
+            popover_Obj.content_Attrs.push(popover_Option);
+            const popover_Target_Action_Close = {};
+            popover_Target_Action_Close.popovertargetaction = object.popover_Target_Action_Close;
+            popover_Obj.button_Close_Attrs.push(popover_Target_Action_Close);
+            
+            popover_Obj.buttonText　= object.buttonText
+            popover_Obj.add_To_Selector = object.add_To_Selector;
+            
+            return popover_Obj;
+        };
     };
     //--------------------draft--------------------
     //const ********** = new AddPopoverContents(
-    //{
-    //contents_Title:'',
-    //contents_BaseId:'',
-    //popover_Contents:'',
-    //popover_Option:'',
-    //popover_Target_Action_Open:'',
-    //popover_Target_Action_Close:'',
-    //buttonText:'',
-    //add_Styles:`
-    //`, 
-    //add_To_Selector:''
-    //},
-    //*******,
-    //*******
+        //{
+            //contents_Title:'',
+            //contents_BaseId:'',
+            //popover_Contents:'',
+            //popover_Option:'',
+            //popover_Target_Action_Open:'',
+            //popover_Target_Action_Close:'',
+            //buttonText:'',
+            //add_Styles:`
+            //`, 
+            //add_To_Selector:''
+        //},
+        //*******,
+        //*******
     //);
     //--------------------------------------------------
     //URL取得
