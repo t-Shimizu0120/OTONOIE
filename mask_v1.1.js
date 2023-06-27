@@ -1643,127 +1643,127 @@ class AddTable {
     
     
     
-    //============================================================================
-    //layout
-    //============================================================================
-    //レイアウト変更
-    //class:detail_lの要素
-    const detail_L = document.querySelector('div.detail_l');
-    detail_L.setAttribute('style','width:100% !important;');
-    if (detail_L.querySelectorAll('div.item-img-frame')[1]) {
-    detail_L.removeChild(detail_L.querySelectorAll('div.item-img-frame')[1]);
-    } else {
-    };
+        //============================================================================
+        //layout
+        //============================================================================
+        //レイアウト変更
+        //class:detail_lの要素
+        const detail_L = document.querySelector('div.detail_l');
+        detail_L.setAttribute('style','width:100% !important;');
+        if (detail_L.querySelectorAll('div.item-img-frame')[1]) {
+            detail_L.removeChild(detail_L.querySelectorAll('div.item-img-frame')[1]);
+        } else {
+        };
     
     
     
-    //============================================================================
-    //contens
-    //============================================================================
+        //============================================================================
+        //contens
+        //============================================================================
     
-    //==============================タブコンテンツ=================================
-    //挿入要素
-    const insertTargetElm = document.querySelector('div.detail_btm');
-    //----------------------------------アクセス-----------------------------------
-    const content_access = (() => {
-    return null;
-    })();
-    //-----------------------------------------------------------------------------
+        //==============================タブコンテンツ=================================
+        //挿入要素
+        const insertTargetElm = document.querySelector('div.detail_btm');
+        //----------------------------------アクセス-----------------------------------
+        const content_access = (() => {
+            return null;
+        })();
+        //-----------------------------------------------------------------------------
+        
+        //----------------------------------初期費用-----------------------------------
+        //const initialCost = ;
+        //----------------------------------------------------------------------------
+        
+        //----------------------------タブインスタンス-----------------------------------
+        //インスタンス生成・挿入
+        const content_Access = new AddTabContents(
+            {
+                contents_Title:'',
+                contents_BaseId:'extra-data',
+                tab_Contents:[
+                    {tabContentTitle:'路線情報',tabContentName:'route-information'},
+                    {tabContentTitle:'初期費用',tabContentName:'initial-cost'},
+                    {tabContentTitle:'シェア',tabContentName:'share'}
+                ],
+                add_Styles:`
+                    #extra-data-tab-contents{
+                        margin-top: 20px;
+                    }
+                    @media screen and (${settings['media']['m']}) {
+                    
+                    }
+                    @media screen and (${settings['media']['s']}) {
+                    
+                    }
+                `, 
+                add_To_Selector:'div.detail_btm'
+            },
+            null,
+            null,
+            null
+        );
+        //---------------------------------------------------------------
+        //===============================================================
     
-    //----------------------------------初期費用-----------------------------------
-    //const initialCost = ;
-    //----------------------------------------------------------------------------
-    
-    //----------------------------タブインスタンス-----------------------------------
-    //インスタンス生成・挿入
-    const content_Access = new AddTabContents(
-    {
-    contents_Title:'',
-    contents_BaseId:'extra-data',
-    tab_Contents:[
-    {tabContentTitle:'路線情報',tabContentName:'route-information'},
-    {tabContentTitle:'初期費用',tabContentName:'initial-cost'},
-    {tabContentTitle:'シェア',tabContentName:'share'}
-    ],
-    add_Styles:`
-    #extra-data-tab-contents{
-    margin-top: 20px;
-    }
-    @media screen and (${settings['media']['m']}) {
-    
-    }
-    @media screen and (${settings['media']['s']}) {
-    
-    }
-    `, 
-    add_To_Selector:'div.detail_btm'
-    },
-    null,
-    null,
-    null
-    );
-    //---------------------------------------------------------------
-    //===============================================================
     
     
-    
-    //=============================追加項目===========================
-    if (document.querySelector('span#extra-json') != null) {
-    //#extra-jsonがある場合、json取得
-    const extraJson = document.querySelector('span#extra-json').textContent;
-    const extraJson_Obj = JSON.parse(extraJson);
-    
-    //周辺環境
-    if (extraJson_Obj['surroundingInformation']) {
-    //jsonに周辺環境キーがある場合、周辺環境テーブル用のコンテンツの作成
-    const surroundingInformationContents = (() =>{
-    //周辺環境リスト
-    const surroundingList = extraJson_Obj['surroundingInformation'];
-    const outputList = [];
-    if (surroundingList.length === 0) {
-    //キー名'surroundingInformation'値（リスト）が０個の場合
-    return outputList;
-    } else {
-    //キー名'surroundingInformation'値（リスト）が１個以上の場合
-    //リストの値を整形
-    const surroundingInformationRegex = /[（].+[）]/g;
-    for(surroundingItem of surroundingList) {
-    const targetText = surroundingItem.match(surroundingInformationRegex)[0];
-    const category = targetText.replace('（','').replace('）','');
-    const information = surroundingItem.replace(targetText,'');
-    const surroundingObj = `■ ${category}：${information}`;
-    outputList.push(surroundingObj);
-    };
-    //周辺環境コンテンツ生成
-    return [[{th:'周辺施設'},{td:outputList}]];
-    };
-    })();
-    //周辺環境インスタンス生成
-    const content_SurroundingInformation = new AddTable(
-    {
-    contents_Title:'',
-    table_BaseId:'surrounding-information',
-    table_Contents:surroundingInformationContents,
-    add_Styles:`
-    .js-added-table {
-    margin-top:10px;
-    margin-bottom:10px;
-    }
-    @media screen and (${settings['media']['m']}) {
-    
-    }
-    @media screen and (${settings['media']['s']}) {
-    
-    }
-    `, 
-    add_To_Selector:'div.detail_btm'
-    }
-    );
-    } else {    
-    };  
-    } else {
-    };
-    //===============================================================
+        //=============================追加項目===========================
+        if (document.querySelector('span#extra-json') != null) {
+            //#extra-jsonがある場合、json取得
+            const extraJson = document.querySelector('span#extra-json').textContent;
+            const extraJson_Obj = JSON.parse(extraJson);
+        
+            //周辺環境
+            if (extraJson_Obj['surroundingInformation']) {
+                //jsonに周辺環境キーがある場合、周辺環境テーブル用のコンテンツの作成
+                const surroundingInformationContents = (() =>{
+                    //周辺環境リスト
+                    const surroundingList = extraJson_Obj['surroundingInformation'];
+                    const outputList = [];
+                    if (surroundingList.length === 0) {
+                        //キー名'surroundingInformation'値（リスト）が０個の場合
+                        return outputList;
+                    } else {
+                        //キー名'surroundingInformation'値（リスト）が１個以上の場合
+                        //リストの値を整形
+                        const surroundingInformationRegex = /[（].+[）]/g;
+                        for(surroundingItem of surroundingList) {
+                            const targetText = surroundingItem.match(surroundingInformationRegex)[0];
+                            const category = targetText.replace('（','').replace('）','');
+                            const information = surroundingItem.replace(targetText,'');
+                            const surroundingObj = `■ ${category}：${information}`;
+                            outputList.push(surroundingObj);
+                        };
+                        //周辺環境コンテンツ生成
+                        return [[{th:'周辺施設'},{td:outputList}]];
+                    };
+                })();
+                //周辺環境インスタンス生成
+                const content_SurroundingInformation = new AddTable(
+                    {
+                        contents_Title:'',
+                        table_BaseId:'surrounding-information',
+                        table_Contents:surroundingInformationContents,
+                        add_Styles:`
+                            .js-added-table {
+                                margin-top:10px;
+                                margin-bottom:10px;
+                            }
+                            @media screen and (${settings['media']['m']}) {
+                            
+                            }
+                            @media screen and (${settings['media']['s']}) {
+                            
+                            }
+                        `, 
+                        add_To_Selector:'div.detail_btm'
+                    }
+                );
+            } else {    
+            };  
+        } else {
+        };
+        //===============================================================
     
     
     
