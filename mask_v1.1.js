@@ -1563,83 +1563,83 @@ class AddTable {
             `; 
             headElm.appendChild(componentStyle);
             //---------------------------------------------------------------------
-    //--------------------------レスポンシブ--------------------------------
-    //関数
-    const backsideButton_control = function (e) {
-    const targetButtonSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.currentTarget.getAttribute('popovertarget') + '"]';
-    document.querySelector(targetButtonSelector).classList.add('valid');
-    };
-    //ブレイクポイント
-    const mediaQueryList = window.matchMedia(`(${settings['media']['m']})`);
-    //regist listener
-    mediaQueryList.addEventListener('change', listener);
-    listener(mediaQueryList);
-    // listener
-    function listener (event) {
-    const body = document.getElementsByTagName('body')[0];
-    const popoverElms = document.querySelectorAll('.js-added-popover-content');
-    const targetInquiryButtons = document.querySelectorAll('.js-added-inquiry-button');
-    const targetPopoverCloseButtons = document.querySelectorAll('.js-added-popover-close-button.match-media-target-close-btn');
-    const targetPopoverBacksideCloseButtons = document.querySelectorAll('.js-added-popover-content-backside-button.match-media-target-close-btn');
-    if (event.matches) {
-    // SP
-    componentWrap_top.appendChild(inquiryBox_1);
-    if (body.hasAttribute('style') == true && body.getAttribute('style') !== '') {
-    scrollPosition = body.style.top.replace('px','').replace('-','');
-    body.setAttribute('style','');
-    window.scrollTo(0, scrollPosition);
-    } else {
-    };
-    if (popoverElms.length !== 0) {
-    for (targetInquiryButton of targetInquiryButtons) {
-    targetInquiryButton.setAttribute('onclick','bodyScrollPrevent(true);');
-    targetInquiryButton.setAttribute('popovertarget','inquiry-popover-contents');
-    targetInquiryButton.setAttribute('popovertargetaction','show');
-    targetInquiryButton.addEventListener('click',backsideButton_control);
-    };
-    for (targetPopoverCloseButton of targetPopoverCloseButtons) {
-    targetPopoverCloseButton.setAttribute('onclick','bodyScrollPrevent(false);');
-    };
-    for (targetPopoverBacksideCloseButton of targetPopoverBacksideCloseButtons) {
-    targetPopoverBacksideCloseButton.setAttribute('onclick','bodyScrollPrevent(false);');
-    };
-    } else {
-    };
-    } else {
-    // PC
-    component_1.appendChild(inquiryBox_1);
-    if (body.hasAttribute('style') == true && body.getAttribute('style') !== '') {
-    scrollPosition = body.style.top.replace('px','').replace('-','');
-    body.setAttribute('style','');
-    window.scrollTo(0, scrollPosition);
-    } else {
-    };
-    if (popoverElms.length !== 0) {
-    for (targetInquiryButton of targetInquiryButtons) {
-    targetInquiryButton.setAttribute('popovertarget','');
-    targetInquiryButton.setAttribute('popovertargetaction','');
-    targetInquiryButton.setAttribute('onclick','location.href=\'#contact_area\'');
-    targetInquiryButton.removeEventListener('click',backsideButton_control);
-    };
-    for (popoverElm of popoverElms) {
-    if (popoverElm.matches(':popover-open')) {
-    popoverElm.hidePopover();
-    } else {
-    };
-    };
-    if (document.querySelectorAll('button.js-added-popover-content-backside-button.valid').length !== 0) {
-    const popover_Backside_Buttons_Valid = document.querySelectorAll('button.js-added-popover-content-backside-button.valid');
-    for (Backside_Button of popover_Backside_Buttons_Valid) {
-    Backside_Button.classList.remove('valid');
-    };
-    } else {
-    };
-    } else {
-    };
-    };
-    };
-    //--------------------------------------------------------------------
-    })();
+            //--------------------------レスポンシブ--------------------------------
+            //関数
+            const backsideButton_control = function (e) {
+                const targetButtonSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.currentTarget.getAttribute('popovertarget') + '"]';
+                document.querySelector(targetButtonSelector).classList.add('valid');
+            };
+            //ブレイクポイント
+            const mediaQueryList = window.matchMedia(`(${settings['media']['m']})`);
+            //regist listener
+            mediaQueryList.addEventListener('change', listener);
+            listener(mediaQueryList);
+            // listener
+            function listener (event) {
+                const body = document.getElementsByTagName('body')[0];
+                const popoverElms = document.querySelectorAll('.js-added-popover-content');
+                const targetInquiryButtons = document.querySelectorAll('.js-added-inquiry-button');
+                const targetPopoverCloseButtons = document.querySelectorAll('.js-added-popover-close-button.match-media-target-close-btn');
+                const targetPopoverBacksideCloseButtons = document.querySelectorAll('.js-added-popover-content-backside-button.match-media-target-close-btn');
+                if (event.matches) {
+                    // SP
+                    componentWrap_top.appendChild(inquiryBox_1);
+                    if (body.hasAttribute('style') == true && body.getAttribute('style') !== '') {
+                        scrollPosition = body.style.top.replace('px','').replace('-','');
+                        body.setAttribute('style','');
+                        window.scrollTo(0, scrollPosition);
+                    } else {
+                    };
+                    if (popoverElms.length !== 0) {
+                        for (targetInquiryButton of targetInquiryButtons) {
+                            targetInquiryButton.setAttribute('onclick','bodyScrollPrevent(true);');
+                            targetInquiryButton.setAttribute('popovertarget','inquiry-popover-contents');
+                            targetInquiryButton.setAttribute('popovertargetaction','show');
+                            targetInquiryButton.addEventListener('click',backsideButton_control);
+                        };
+                        for (targetPopoverCloseButton of targetPopoverCloseButtons) {
+                            targetPopoverCloseButton.setAttribute('onclick','bodyScrollPrevent(false);');
+                        };
+                        for (targetPopoverBacksideCloseButton of targetPopoverBacksideCloseButtons) {
+                            targetPopoverBacksideCloseButton.setAttribute('onclick','bodyScrollPrevent(false);');
+                        };
+                    } else {
+                    };
+                } else {
+                    // PC
+                    component_1.appendChild(inquiryBox_1);
+                    if (body.hasAttribute('style') == true && body.getAttribute('style') !== '') {
+                        scrollPosition = body.style.top.replace('px','').replace('-','');
+                        body.setAttribute('style','');
+                        window.scrollTo(0, scrollPosition);
+                    } else {
+                    };
+                    if (popoverElms.length !== 0) {
+                        for (targetInquiryButton of targetInquiryButtons) {
+                            targetInquiryButton.setAttribute('popovertarget','');
+                            targetInquiryButton.setAttribute('popovertargetaction','');
+                            targetInquiryButton.setAttribute('onclick','location.href=\'#contact_area\'');
+                            targetInquiryButton.removeEventListener('click',backsideButton_control);
+                        };
+                        for (popoverElm of popoverElms) {
+                            if (popoverElm.matches(':popover-open')) {
+                                popoverElm.hidePopover();
+                            } else {
+                            };
+                        };
+                        if (document.querySelectorAll('button.js-added-popover-content-backside-button.valid').length !== 0) {
+                            const popover_Backside_Buttons_Valid = document.querySelectorAll('button.js-added-popover-content-backside-button.valid');
+                            for (Backside_Button of popover_Backside_Buttons_Valid) {
+                                Backside_Button.classList.remove('valid');
+                            };
+                        } else {
+                        };
+                    } else {
+                    };
+                };
+            };
+            //--------------------------------------------------------------------
+        })();
     
     
     
