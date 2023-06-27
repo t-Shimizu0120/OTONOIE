@@ -115,7 +115,10 @@ const bodyScrollPrevent = (flag) => {
         window.scrollTo(0, scrollPosition);
     };
 };
-const focusControl = function (e) {
+const popoverFocusControl = (popoverElm) => {
+    
+};
+    function (e) {
     //popover内のフォーカス可能な要素の一覧
     const focusableElementsSelector = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, [tabindex="0"], [contenteditable]';
     // タブキーが押された時
