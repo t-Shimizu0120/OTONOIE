@@ -115,6 +115,62 @@ const bodyScrollPrevent = (flag) => {
         window.scrollTo(0, scrollPosition);
     };
 };
+const focusControl = function (e) {
+    //popover内のフォーカス可能な要素の一覧
+    const focusableElementsSelector = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, [tabindex="0"], [contenteditable]';
+    // タブキーが押された時
+    if (e.key === 'Tab') {
+        e.preventDefault();
+        popoverTargetId = e.currentTarget.getAttribute('popovertarget');
+        popoverTargetElm = document.querySelector(popoverTargetId);
+        // モーダル要素内のフォーカス可能な要素の一覧を取得
+        const focusableElements = Array.from(
+            popoverTargetElm.querySelectorAll(focusableElementsSelector)
+        );
+        // 現在のフォーカス位置を取得
+        const focusedItemIndex = focusableElements.indexOf(document.activeElement);
+        // shiftキーと同時に押されてた場合
+        if (e.shiftKey) {
+            if (focusedItemIndex === 0) {
+                // 現在のフォーカスが最初の要素の場合、最後の要素にフォーカスを移動
+                focusableElements[focusableElements.length - 1].focus();
+            } else {
+                // 現在のフォーカスが最初の要素以外の場合、前の要素にフォーカスを移動
+                focusableElements[focusedItemIndex - 1].focus();
+            }
+        } else {
+            if (focusedItemIndex === focusableElements.length - 1) {
+                // 現在のフォーカスが最後の要素の場合、最初の要素にフォーカスを移動
+                focusableElements[0].focus();
+            } else {
+                // 現在のフォーカスが最後の要素以外の場合、次の要素にフォーカスを移動
+                focusableElements[focusedItemIndex + 1].focus();
+            };
+        };
+    };
+    
+    //フォーカスが当たっている要素
+    const activeElm = document.activeElement;
+    //モーダル内でフォーカスを当てたい最初の要素
+    const firstElm = drawerElements[0];
+    //モーダル内でフォーカスを当てたい最後の要素
+        var lastEl = drawerElements[drawerElements.length - 1];
+        //タブキーを押されたかどうか
+        var tabKey = (9 === event.keyCode);
+        //シフトキーが押されたかどうか
+        var shiftKey = event.shiftKey;
+        //最後の要素でタブキーが押された場合、最初の要素にフォーカスを当てる
+        if(!shiftKey && tabKey && lastEl === activeEl) {
+            event.preventDefault();
+            firstEl.focus();
+        }
+        //最初の要素でタブキー+シフトキーが押された場合、最後の要素にフォーカスを当てる
+        if(shiftKey && tabKey && firstEl === activeEl) {
+            event.preventDefault();
+            lastEl.focus();
+        }
+
+});
 //=================================================================
 //class
 //=================================================================   
