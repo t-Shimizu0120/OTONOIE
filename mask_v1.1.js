@@ -107,12 +107,15 @@ const bodyScrollPrevent = (flag) => {
         body.style.width = '100%';
         body.style.top = scrollPosition + 'px';
     } else {
-        body.style.paddingRight = '';
-        scrollPosition = body.style.top.replace('px','').replace('-','');
-        body.style.position = '';
-        body.style.width = '';
-        body.style.top = '';
-        window.scrollTo(0, scrollPosition);
+        if (body.hasAttribute('style') == true && body.getAttribute('style') !== '') {
+            body.style.paddingRight = '';
+            scrollPosition = body.style.top.replace('px','').replace('-','');
+            body.style.position = '';
+            body.style.width = '';
+            body.style.top = '';
+            window.scrollTo(0, scrollPosition);
+        } else {
+        };
     };
 };
 const popoverFocusControl = (popoverElm) => {
@@ -1620,12 +1623,7 @@ if (locationURL.includes('detail')) {
             if (event.matches) {
                 // SP
                 componentWrap_top.appendChild(inquiryBox_1);
-                if (body.hasAttribute('style') == true && body.getAttribute('style') !== '') {
-                    scrollPosition = body.style.top.replace('px','').replace('-','');
-                    body.setAttribute('style','');
-                    window.scrollTo(0, scrollPosition);
-                } else {
-                };
+                bodyScrollPrevent(false);
                 if (popoverElms.length !== 0) {
                     for (targetInquiryButton of targetInquiryButtons) {
                         targetInquiryButton.setAttribute('onclick','bodyScrollPrevent(true);');
@@ -1644,12 +1642,7 @@ if (locationURL.includes('detail')) {
             } else {
                 // PC
                 component_1.appendChild(inquiryBox_1);
-                if (body.hasAttribute('style') == true && body.getAttribute('style') !== '') {
-                    scrollPosition = body.style.top.replace('px','').replace('-','');
-                    body.setAttribute('style','');
-                    window.scrollTo(0, scrollPosition);
-                } else {
-                };
+                bodyScrollPrevent(false);
                 if (popoverElms.length !== 0) {
                     for (targetInquiryButton of targetInquiryButtons) {
                         targetInquiryButton.setAttribute('popovertarget','');
