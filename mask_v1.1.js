@@ -595,6 +595,7 @@ class AddPopoverContents {
                 const content_AttrValue = this.content_Attr[content_AttrName];
                 popover_Content.setAttribute(content_AttrName,content_AttrValue);
             };
+            popoverFocusControl(popover_Content);
             
             //クローズボタン
             //ポップオーバー背面クローズボタン
