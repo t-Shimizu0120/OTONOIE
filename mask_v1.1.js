@@ -1039,6 +1039,7 @@ if (locationURL.includes('detail')) {
             {popover:'auto'}
         ]);
         document.querySelector('#content').querySelector('div.inner').appendChild(popover_Content_div);
+        popoverFocusControl(popover_Content_div);
         //ポップオーバー背面クローズボタン
         const popover_Backside_Button_Close = document.createElement('button');
         popover_Backside_Button_Close.setAttribute('class','js-added-popover-content-backside-button match-media-target-close-btn');
