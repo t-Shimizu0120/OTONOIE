@@ -117,7 +117,7 @@ const bodyScrollPrevent = (flag) => {
 };
 const popoverFocusControl = (popoverElm) => {
     //popover内のフォーカス可能な要素の一覧
-    const focusableElementsSelector = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, [tabindex="0"], [contenteditable]';
+    const focusableElementsSelector = 'a[href], area[href], input:not([disabled], [type="hidden"]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, [tabindex="0"], [contenteditable]';
     popoverElm.addEventListener("keydown", function (e) {
         // タブキーが押された時
         if (e.key === 'Tab') {
