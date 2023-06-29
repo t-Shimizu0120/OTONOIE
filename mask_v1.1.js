@@ -1605,7 +1605,7 @@ if (locationURL.includes('detail')) {
         //---------------------------------------------------------------------
         //--------------------------レスポンシブ--------------------------------
         //関数
-        const backsideButton_control = function (e) {
+        const backsideButton_control = (e) => {
             const targetButtonSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.currentTarget.getAttribute('popovertarget') + '"]';
             document.querySelector(targetButtonSelector).classList.add('valid');
         };
@@ -1630,7 +1630,7 @@ if (locationURL.includes('detail')) {
                         targetInquiryButton.setAttribute('onclick','bodyScrollPrevent(true);');
                         targetInquiryButton.setAttribute('popovertarget','inquiry-popover-contents');
                         targetInquiryButton.setAttribute('popovertargetaction','show');
-                        targetInquiryButton.addEventListener('click',backsideButton_control);
+                        targetInquiryButton.addEventListener('click', (e) => backsideButton_control(e));
                     };
                     for (targetPopoverCloseButton of targetPopoverCloseButtons) {
                         targetPopoverCloseButton.setAttribute('onclick','bodyScrollPrevent(false);');
