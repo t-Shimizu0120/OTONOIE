@@ -1654,8 +1654,8 @@ if (locationURL.includes('detail')) {
                     };
                     if (document.querySelectorAll('button.js-added-popover-content-backside-button.valid').length !== 0) {
                         const popover_Backside_Buttons_Valid = document.querySelectorAll('button.js-added-popover-content-backside-button.valid');
-                        for (Backside_Button of popover_Backside_Buttons_Valid) {
-                            Backside_Button.classList.remove('valid');
+                        for (backside_Button of popover_Backside_Buttons_Valid) {
+                            backside_Button.classList.remove('valid');
                         };
                     } else {
                     };
