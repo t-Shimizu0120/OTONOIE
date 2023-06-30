@@ -1036,6 +1036,19 @@ if (locationURL.includes('detail')) {
         //お問い合わせ
         //===============================================================
         //----------------------------フォーム----------------------------
+        //関数
+        //popoverが開いた時の処理
+        const popoverProcess_Open = function (e) {
+            bodyScrollPrevent(true);
+            const targetButtonSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.currentTarget.getAttribute('popovertarget') + '"]';
+            document.querySelector(targetButtonSelector).classList.add('valid');
+        };
+        //popoverが閉じた時の処理
+        const popoverProcess_Close = function (e) {
+            bodyScrollPrevent(false);
+            const targetButtonSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.currentTarget.getAttribute('popovertarget') + '"]';
+            document.querySelector(targetButtonSelector).classList.remove('valid');
+        };
         //問い合わせフォーム用ポップオーバー
         const popover_Content_div = create_Element('div',[
             {class:'js-added-popover-content'},
@@ -1049,10 +1062,7 @@ if (locationURL.includes('detail')) {
         popover_Backside_Button_Close.setAttribute('class','js-added-popover-content-backside-button match-media-target-close-btn');
         popover_Backside_Button_Close.setAttribute('popovertarget','inquiry-popover-contents');
         popover_Backside_Button_Close.setAttribute('popovertargetaction','hide');
-        popover_Backside_Button_Close.addEventListener('click', (e) => {
-            const targetSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.currentTarget.getAttribute('popovertarget') + '"]';
-            document.querySelector(targetSelector).classList.remove('valid');
-        });
+        popover_Backside_Button_Close.addEventListener('click',popoverProcess_Close);
         bodyElm.appendChild(popover_Backside_Button_Close);
         //クローズボタン（×ボタン）
         const closeIcon = document.createElement('span');
@@ -1062,10 +1072,7 @@ if (locationURL.includes('detail')) {
         popover_Close_Button.setAttribute('class','js-added-popover-close-button match-media-target-close-btn');
         popover_Close_Button.setAttribute('popovertarget','inquiry-popover-contents');
         popover_Close_Button.setAttribute('popovertargetaction','hide');
-        popover_Close_Button.addEventListener('click', (e) => {
-            const targetSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.currentTarget.getAttribute('popovertarget') + '"]';
-            document.querySelector(targetSelector).classList.remove('valid');
-        });
+        popover_Close_Button.addEventListener('click',popoverProcess_Close);
         popover_Content_div.appendChild(popover_Close_Button);
         //問い合わせフォームWRAP
         const inquiry_wrap = create_Element('div',[
@@ -1604,11 +1611,6 @@ if (locationURL.includes('detail')) {
         headElm.appendChild(componentStyle);
         //---------------------------------------------------------------------
         //--------------------------レスポンシブ--------------------------------
-        //関数
-        const backsideButton_control = function (e) {
-            const targetButtonSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.currentTarget.getAttribute('popovertarget') + '"]';
-            document.querySelector(targetButtonSelector).classList.add('valid');
-        };
         //ブレイクポイント
         const mediaQueryList = window.matchMedia(`(${settings['media']['m']})`);
         //regist listener
@@ -1616,7 +1618,6 @@ if (locationURL.includes('detail')) {
         listener(mediaQueryList);
         // listener
         function listener (event) {
-            const body = document.getElementsByTagName('body')[0];
             const popoverElms = document.querySelectorAll('.js-added-popover-content');
             const targetInquiryButtons = document.querySelectorAll('.js-added-inquiry-button');
             const targetPopoverCloseButtons = document.querySelectorAll('.js-added-popover-close-button.match-media-target-close-btn');
@@ -1627,16 +1628,10 @@ if (locationURL.includes('detail')) {
                 bodyScrollPrevent(false);
                 if (popoverElms.length !== 0) {
                     for (targetInquiryButton of targetInquiryButtons) {
-                        targetInquiryButton.setAttribute('onclick','bodyScrollPrevent(true);');
                         targetInquiryButton.setAttribute('popovertarget','inquiry-popover-contents');
                         targetInquiryButton.setAttribute('popovertargetaction','show');
-                        targetInquiryButton.addEventListener('click',backsideButton_control);
-                    };
-                    for (targetPopoverCloseButton of targetPopoverCloseButtons) {
-                        targetPopoverCloseButton.setAttribute('onclick','bodyScrollPrevent(false);');
-                    };
-                    for (targetPopoverBacksideCloseButton of targetPopoverBacksideCloseButtons) {
-                        targetPopoverBacksideCloseButton.setAttribute('onclick','bodyScrollPrevent(false);');
+                        targetInquiryButton.setAttribute('onclick','');
+                        targetInquiryButton.addEventListener('click',popoverProcess_Open);
                     };
                 } else {
                 };
@@ -1649,7 +1644,7 @@ if (locationURL.includes('detail')) {
                         targetInquiryButton.setAttribute('popovertarget','');
                         targetInquiryButton.setAttribute('popovertargetaction','');
                         targetInquiryButton.setAttribute('onclick','location.href=\'#contact_area\'');
-                        targetInquiryButton.removeEventListener('click',backsideButton_control);
+                        targetInquiryButton.removeEventListener('click',popoverProcess_Open);
                     };
                     for (popoverElm of popoverElms) {
                         if (popoverElm.matches(':popover-open')) {
