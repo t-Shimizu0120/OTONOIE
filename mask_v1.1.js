@@ -100,7 +100,9 @@ settings['site_control']['map_full_address'] = 'false';
             }
         }
         @media screen and (${settings['media']['s']}) {
-            
+            #pagetop {
+                right:20px;
+            }
         }
     `;
     addStyleElm.textContent = style;
