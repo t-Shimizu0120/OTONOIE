@@ -1587,6 +1587,7 @@ if (locationURL.includes('detail')) {
                     margin-bottom:0.5rem;
                 }
                 #inquiry1-tel {
+                    padding-top:0.2rem;
                     flex-grow:1;
                     order:1;
                 }
@@ -1615,6 +1616,9 @@ if (locationURL.includes('detail')) {
                 }
                 #qrcode2 {
                     display:none;
+                }
+                #inquiry2-tel {
+                    padding-top:0.2rem;
                 }
                 #inquiry2-tel > .tel-number {
                     font-size:1.6rem;
