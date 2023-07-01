@@ -1362,7 +1362,7 @@ if (locationURL.includes('detail')) {
                         background:#3f3f3f;
                         color:#ffffff;
                         font-size:1.2rem;
-                        padding:0.8rem 0;
+                        padding:1rem 0;
                     }
                     #share-qrcode-popover-contents {
                         width:calc(9.6rem + 120px);
@@ -1385,7 +1385,7 @@ if (locationURL.includes('detail')) {
                     }
                     @media screen and (${settings['media']['s']}) {
                         #share-qrcode-popover > button {
-                            padding:0.6rem 0;
+                            padding:0.8rem 0;
                         }
                     }
                 `, 
@@ -1559,7 +1559,7 @@ if (locationURL.includes('detail')) {
                 text-decoration:none;
                 text-align:center;
                 font-weight:bold;
-                padding:0.8rem 0;
+                padding:1rem 0;
             }
             #share-line > a:hover {
                 opacity:.6;
@@ -1567,7 +1567,7 @@ if (locationURL.includes('detail')) {
             @media screen and (${settings['media']['m']}) {
                 .js-added-inquiry-button {
                     font-size:1.4rem;
-                    padding:1rem 0;
+                    padding:1.2rem 0;
                 }
                 #qrcode1 {
                     display:none;
@@ -1607,7 +1607,7 @@ if (locationURL.includes('detail')) {
                     align-items:center;
                     font-weight:bold;
                     font-size:1.4rem;
-                    padding:1rem 0;
+                    padding:1.2rem 0;
                     order:2;
                 }
                 #inquiry1-box > a:hover {
@@ -1636,7 +1636,7 @@ if (locationURL.includes('detail')) {
                     align-items:center;
                     font-weight:bold;
                     font-size:1.4rem;
-                    padding:1rem 0;
+                    padding:1.2rem 0;
                     order:2;
                 }
                 #inquiry2-box > a:hover {
@@ -1646,6 +1646,7 @@ if (locationURL.includes('detail')) {
             @media screen and (${settings['media']['s']}) {
                 .js-added-inquiry-button {
                     font-size:1.2rem;
+                    padding:1rem 0;
                 }
                 #inquiry1-box {
                     flex-flow:row nowrap;
@@ -1662,6 +1663,7 @@ if (locationURL.includes('detail')) {
                 }
                 #inquiry1-box > a {
                     font-size:1.2rem;
+                    padding:1rem 0;
                     order:1;
                 }
                 #inquiry2-box {
@@ -1679,10 +1681,11 @@ if (locationURL.includes('detail')) {
                 }
                 #inquiry2-box > a {
                     font-size:1.2rem;
+                    padding:1rem 0;
                     order:1;
                 }
                 #share-line > a {
-                    padding:0.6rem 0;
+                    padding:0.8rem 0;
                 }
             }
         `; 
