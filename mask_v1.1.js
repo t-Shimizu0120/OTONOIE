@@ -48,6 +48,49 @@ settings['site_control']['map_full_address'] = 'false';
     const addStyleElm = document.createElement('style');
     addStyleElm.setAttribute('id','base-style');
     const style = `
+        #pagetop {
+            position:fixed;
+            right:30px;
+            bottom:20px;
+        }
+        #pagetop:hover {
+            opacity:.8;
+        }
+        .js-added-pagetop {
+            width:75px;
+            height:50px;
+            padding:.7rem 0;
+            color:#fff;
+            background:#000;
+            border:0;
+            border-radius:2px;
+            display:flex;
+            display:-webkit-box;
+            display:-webkit-flex;
+            display:-ms-flexbox;
+            flex-flow:column nowrap;
+            justify-content:space-between;
+            align-items:center;
+            z-index:500;
+            opacity:.6;
+        }
+        .js-added-pagetop:hover {
+            text-decoration:none;
+        }
+        .js-added-pagetop-arrow {
+            height:20px;
+            width:20px;
+            border-top:4px solid #fff;
+            border-right:4px solid #fff;
+            transform:translateY(20%) rotate(-45deg);
+            order:0;
+        }
+        .js-added-pagetop > p {
+            color:#fff;
+            font-size:0.7rem;
+            font-weight:bold;
+            order:1;
+        }
         @media screen and (${settings['media']['m']}) {
             header {
                 position:initial;
@@ -160,14 +203,14 @@ const popoverFocusControl = (popoverElm) => {
     const pageTopElm = document.getElementById('pagetop');
     const pageTop_a = pageTopElm.querySelector('a');
     pageTop_a.removeChild(pageTop_a.querySelector('img'));
-    pageTop_a.setAttribute('class','pagetop');
+    pageTop_a.setAttribute('class','js-added-pagetop');
     const pageTop_div = create_Element('div',[
-        {class:'pagetop_arrow'}
+        {class:'js-added-pagetop-arrow'}
     ]);
     const pageTop_p = create_Element('p',[]);
-    pageTop_p.textContent = 'ページTOPへ';
-    pageTop_div.appendChild(pageTop_p);
+    pageTop_p.textContent = 'ページTOP';
     pageTop_a.appendChild(pageTop_div);
+    pageTop_a.appendChild(pageTop_p);
 })(); 
 //=================================================================
 //class
