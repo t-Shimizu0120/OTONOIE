@@ -68,7 +68,7 @@ settings['site_control']['map_full_address'] = 'false';
         .js-added-pagetop {
             width:75px;
             height:50px;
-            padding:.7rem 0;
+            padding:0.7rem 0;
             color:#fff;
             background:#000;
             border:0;
@@ -1362,7 +1362,7 @@ if (locationURL.includes('detail')) {
                         background:#3f3f3f;
                         color:#ffffff;
                         font-size:1.2rem;
-                        padding:0.6rem 0;
+                        padding:0.8rem 0;
                     }
                     #share-qrcode-popover-contents {
                         width:calc(9.6rem + 120px);
@@ -1384,7 +1384,9 @@ if (locationURL.includes('detail')) {
                     
                     }
                     @media screen and (${settings['media']['s']}) {
-                    
+                        #share-qrcode-popover > button {
+                            padding:0.6rem 0;
+                        }
                     }
                 `, 
                 add_To_Selector:''
@@ -1557,7 +1559,7 @@ if (locationURL.includes('detail')) {
                 text-decoration:none;
                 text-align:center;
                 font-weight:bold;
-                padding:0.6rem 0;
+                padding:0.8rem 0;
             }
             #share-line > a:hover {
                 opacity:.6;
@@ -1678,6 +1680,9 @@ if (locationURL.includes('detail')) {
                 #inquiry2-box > a {
                     font-size:1.2rem;
                     order:1;
+                }
+                #share-line > a {
+                    padding:0.6rem 0;
                 }
             }
         `; 
