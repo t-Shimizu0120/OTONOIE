@@ -48,6 +48,15 @@ settings['site_control']['map_full_address'] = 'false';
     const addStyleElm = document.createElement('style');
     addStyleElm.setAttribute('id','base-style');
     const style = `
+        ::-webkit-scrollbar{
+           width: 10px;
+        }
+        ::-webkit-scrollbar-track{
+           background-color: #ccc;
+        }
+        ::-webkit-scrollbar-thumb{
+           background-color: #17585d;
+        }
         #pagetop {
             position:fixed;
             right:30px;
