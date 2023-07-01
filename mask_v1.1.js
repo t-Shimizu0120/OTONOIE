@@ -1650,7 +1650,6 @@ if (locationURL.includes('detail')) {
             @media screen and (${settings['media']['s']}) {
                 .js-added-inquiry-button {
                     font-size:1.2rem;
-                    padding:1rem 0;
                 }
                 #inquiry1-box {
                     flex-flow:row nowrap;
@@ -1667,7 +1666,6 @@ if (locationURL.includes('detail')) {
                 }
                 #inquiry1-box > a {
                     font-size:1.2rem;
-                    padding:1rem 0;
                     order:1;
                 }
                 #inquiry2-box {
@@ -1685,7 +1683,6 @@ if (locationURL.includes('detail')) {
                 }
                 #inquiry2-box > a {
                     font-size:1.2rem;
-                    padding:1rem 0;
                     order:1;
                 }
                 #share-line > a {
