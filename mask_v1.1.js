@@ -96,7 +96,7 @@ settings['site_control']['map_full_address'] = 'false';
         }
         .js-added-pagetop > p {
             color:#fff;
-            font-size:.7rem;
+            font-size:.8rem;
             font-weight:bold;
             order:1;
         }
