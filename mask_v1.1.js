@@ -152,6 +152,7 @@ const create_Element = (tagName,attributes) => {
 const bodyScrollPrevent = (flag) => {
     let scrollPosition;
     const body = document.getElementsByTagName('body')[0];
+    const pageTop_Button = document.getElementById('pagetop');
     //スクロールバーの幅
     const scrollBarWidth = window.innerWidth - document.body.clientWidth;
     if (flag) {
@@ -160,6 +161,7 @@ const bodyScrollPrevent = (flag) => {
         body.style.position = 'fixed';
         body.style.width = '100%';
         body.style.top = scrollPosition + 'px';
+        pageTop_Button.style.marginRight = scrollBarWidth + 'px';
     } else {
         if (body.hasAttribute('style') == true && body.getAttribute('style') !== '') {
             body.style.paddingRight = '';
@@ -167,6 +169,7 @@ const bodyScrollPrevent = (flag) => {
             body.style.position = '';
             body.style.width = '';
             body.style.top = '';
+            pageTop_Button.style.marginRight = '';
             window.scrollTo(0, scrollPosition);
         } else {
         };
