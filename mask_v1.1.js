@@ -154,6 +154,22 @@ const popoverFocusControl = (popoverElm) => {
     });
 };
 //=================================================================
+//pagetopボタン
+//=================================================================
+(() => {
+    const pageTopElm = document.getElementById('pagetop');
+    const pageTop_a = pageTopElm.querySelector('a');
+    pageTop_a.removeChild(pageTop_a.querySelector('img'));
+    pageTop_a.setAttribute('class','pagetop');
+    const pageTop_div = create_Element('div',[
+        {class:'pagetop_arrow'}
+    ]);
+    const pageTop_p = create_Element('p',[]);
+    pageTop_p.textContent = 'ページTOPへ';
+    pageTop_div.appendChild(pageTop_p);
+    pageTop_a.appendChild(pageTop_div);
+})(); 
+//=================================================================
 //class
 //=================================================================   
 //テーブル
