@@ -55,7 +55,7 @@ settings['site_control']['map_full_address'] = 'false';
            background-color:#dddddd;
         }
         ::-webkit-scrollbar-thumb{
-           background-color: #3f3f3f;
+           background-color:#3f3f3f;
         }
         #pagetop {
             position:fixed;
