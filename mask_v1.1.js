@@ -49,13 +49,13 @@ settings['site_control']['map_full_address'] = 'false';
     addStyleElm.setAttribute('id','base-style');
     const style = `
         ::-webkit-scrollbar{
-           width: 10px;
+           width:8px;
         }
         ::-webkit-scrollbar-track{
-           background-color: #ccc;
+           background-color:#dddddd;
         }
         ::-webkit-scrollbar-thumb{
-           background-color: #17585d;
+           background-color: #3f3f3f;
         }
         #pagetop {
             position:fixed;
