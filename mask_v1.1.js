@@ -1163,7 +1163,6 @@ if (locationURL.includes('detail')) {
             {class:'js-added-popover-bottom-buttons-wrap'},
             {id:'inquiry-popover-bottom-buttons-wrap'}
         ]);
-        inquiry_Bottom_Buttons_wrap.appendChild(popover_Close_Button);
         //問い合わせフォームWRAP
         const inquiry_wrap = create_Element('div',[
             {class:'js-added-popover-content-wrap'},
@@ -1174,6 +1173,8 @@ if (locationURL.includes('detail')) {
         inquiry_wrap.querySelector('#month').id += '-invalid';
         inquiry_wrap.querySelector('textarea').id += 'textarea-invalid';
         inquiry_wrap.appendChild(handlingOfPersonalInformation.cloneNode(true));
+        inquiry_Bottom_Buttons_wrap.appendChild(inquiry_wrap.querySelector('ul.owner_form_btns'));
+        inquiry_Bottom_Buttons_wrap.appendChild(popover_Close_Button);
         popover_Content_div.appendChild(inquiry_wrap);
         popover_Content_div.appendChild(inquiry_Bottom_Buttons_wrap);
         //-----------------------------------------------------------------
