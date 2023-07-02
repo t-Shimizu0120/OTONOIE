@@ -908,7 +908,7 @@ if (locationURL.includes('detail')) {
         input[class="btn_reset"], input[class="btn_submit"] {
             border-radius:2px !important;
             font-size:1.4rem;
-            padding:1rem 0;
+            padding:1.2rem 0;
         }
         @media screen and (${settings['media']['m']}) {
         
