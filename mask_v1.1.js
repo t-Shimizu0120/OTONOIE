@@ -1596,6 +1596,9 @@ if (locationURL.includes('detail')) {
                     justify-content:space-between;
                     background:#dddddd;
                     padding:0.4rem 0.8rem;
+                    position:fixed;
+                    width:94%;
+                    bottom:1.2rem;
                 }
                 .js-added-popover-bottom-buttons-wrap > ul.owner_form_btns {
                     display:flex;
