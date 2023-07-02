@@ -1587,9 +1587,32 @@ if (locationURL.includes('detail')) {
                 opacity:.6;
             }
             @media screen and (${settings['media']['m']}) {
+                .js-added-popover-bottom-buttons-wrap {
+                    display:flex;
+                    display:-webkit-box;
+                    display:-webkit-flex;
+                    display :-ms-flexbox;
+                    flex-flow:row nowrap;
+                    justify-content:space-between;
+                    background:#dddddd;
+                    padding:0.4rem 0.8rem;
+                }
+                .js-added-popover-bottom-buttons-wrap > ul.owner_form_btns {
+                    display:flex;
+                    display:-webkit-box;
+                    display:-webkit-flex;
+                    display :-ms-flexbox;
+                    flex-flow:row nowrap;
+                    justify-content:space-between;
+                    flex-grow:1;
+                    margin:0;
+                    order:0;
+                }
                 #inquiry-popover-bottom-buttons-wrap > .js-added-popover-close-button.match-media-target-close-btn {
+                    position:initial;
                     top:initial;
                     right:initial;
+                    order:1;
                 }
                 .js-added-inquiry-button {
                     font-size:1.4rem;
