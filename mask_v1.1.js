@@ -1723,7 +1723,7 @@ if (locationURL.includes('detail')) {
                 // SP
                 componentWrap_top.appendChild(inquiryBox_1);
                 bodyScrollPrevent(false);
-                if (popoverElms.length !== 0) {
+                if (popoverElms) {
                     for (targetInquiryButton of targetInquiryButtons) {
                         targetInquiryButton.setAttribute('popovertarget','inquiry-popover-contents');
                         targetInquiryButton.setAttribute('popovertargetaction','show');
@@ -1736,7 +1736,7 @@ if (locationURL.includes('detail')) {
                 // PC
                 component_1.appendChild(inquiryBox_1);
                 bodyScrollPrevent(false);
-                if (inquiry_wrap.querySelector('#year').length !== 0 && inquiry_wrap.querySelector('#month').length !== 0 && inquiry_wrap.querySelector('textarea').id === '') {
+                if (inquiry_wrap.querySelector('#year')　&& inquiry_wrap.querySelector('#month')) {
                     inquiry_wrap.querySelector('#year').id += '-clone';
                     inquiry_wrap.querySelector('#month').id += '-clone';
                     inquiry_wrap.querySelector('textarea').id += 'textarea-clone';
@@ -1745,7 +1745,7 @@ if (locationURL.includes('detail')) {
                     inquiryForm.querySelector('textarea').id = '';
                 } else {
                 };
-                if (popoverElms.length !== 0) {
+                if (popoverElms) {
                     for (targetInquiryButton of targetInquiryButtons) {
                         targetInquiryButton.setAttribute('popovertarget','');
                         targetInquiryButton.setAttribute('popovertargetaction','');
