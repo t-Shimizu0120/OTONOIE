@@ -1608,6 +1608,15 @@ if (locationURL.includes('detail')) {
                     margin:0;
                     order:0;
                 }
+                #inquiry-popover-bottom-buttons-wrap > ul.owner_form_btns > li {
+                    margin-right:0;
+                }
+                #inquiry-popover-bottom-buttons-wrap > ul.owner_form_btns > li {
+                    flex-basis:33%;
+                }
+                #inquiry-popover-bottom-buttons-wrap > ul.owner_form_btns > li + li {
+                    flex-basis:calc(67% - 0.8rem);
+                }
                 #inquiry-popover-bottom-buttons-wrap > .js-added-popover-close-button.match-media-target-close-btn {
                     position:initial;
                     top:initial;
