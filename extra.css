@@ -1,1 +1,3 @@
-
+#pagetop > a > img {
+    display:none;
+}
