@@ -1115,23 +1115,23 @@ if (locationURL.includes('detail')) {
             bodyScrollPrevent(true);
             const targetButtonSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.currentTarget.getAttribute('popovertarget') + '"]';
             document.querySelector(targetButtonSelector).classList.add('valid');
-            inquiry_wrap.querySelector('#year-clone').id = 'year';
-            inquiry_wrap.querySelector('#month-clone').id = 'month';
+            inquiry_wrap.querySelector('#year-invalid').id = 'year';
+            inquiry_wrap.querySelector('#month-invalid').id = 'month';
             inquiry_wrap.querySelector('textarea').id = '';
-            inquiryForm.querySelector('#year').id += '-clone';
-            inquiryForm.querySelector('#month').id += '-clone';
-            inquiryForm.querySelector('textarea').id += 'textarea-clone';
+            inquiryForm.querySelector('#year').id += '-invalid';
+            inquiryForm.querySelector('#month').id += '-invalid';
+            inquiryForm.querySelector('textarea').id += 'textarea-invalid';
         };
         //popoverが閉じた時の処理
         const popoverProcess_Close = function (e) {
             bodyScrollPrevent(false);
             const targetButtonSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.currentTarget.getAttribute('popovertarget') + '"]';
             document.querySelector(targetButtonSelector).classList.remove('valid');
-            inquiry_wrap.querySelector('#year').id += '-clone';
-            inquiry_wrap.querySelector('#month').id += '-clone';
-            inquiry_wrap.querySelector('textarea').id += 'textarea-clone';
-            inquiryForm.querySelector('#year-clone').id = 'year';
-            inquiryForm.querySelector('#month-clone').id = 'month';
+            inquiry_wrap.querySelector('#year').id += '-invalid';
+            inquiry_wrap.querySelector('#month').id += '-invalid';
+            inquiry_wrap.querySelector('textarea').id += 'textarea-invalid';
+            inquiryForm.querySelector('#year-invalid').id = 'year';
+            inquiryForm.querySelector('#month-invalid').id = 'month';
             inquiryForm.querySelector('textarea').id = '';
         };
         //問い合わせフォーム用ポップオーバー
@@ -1165,9 +1165,9 @@ if (locationURL.includes('detail')) {
             {id:'inquiry-popover-content-wrap'}
         ]);
         inquiry_wrap.appendChild(inquiryForm.cloneNode(true));
-        inquiry_wrap.querySelector('#year').id += '-clone';
-        inquiry_wrap.querySelector('#month').id += '-clone';
-        inquiry_wrap.querySelector('textarea').id += 'textarea-clone';
+        inquiry_wrap.querySelector('#year').id += '-invalid';
+        inquiry_wrap.querySelector('#month').id += '-invalid';
+        inquiry_wrap.querySelector('textarea').id += 'textarea-invalid';
         inquiry_wrap.appendChild(handlingOfPersonalInformation.cloneNode(true));
         popover_Content_div.appendChild(inquiry_wrap);
         //-----------------------------------------------------------------
@@ -1737,11 +1737,11 @@ if (locationURL.includes('detail')) {
                 component_1.appendChild(inquiryBox_1);
                 bodyScrollPrevent(false);
                 if (inquiry_wrap.querySelector('#year')　&& inquiry_wrap.querySelector('#month')) {
-                    inquiry_wrap.querySelector('#year').id += '-clone';
-                    inquiry_wrap.querySelector('#month').id += '-clone';
-                    inquiry_wrap.querySelector('textarea').id += 'textarea-clone';
-                    inquiryForm.querySelector('#year-clone').id = 'year';
-                    inquiryForm.querySelector('#month-clone').id = 'month';
+                    inquiry_wrap.querySelector('#year').id += '-invalid';
+                    inquiry_wrap.querySelector('#month').id += '-invalid';
+                    inquiry_wrap.querySelector('textarea').id += 'textarea-invalid';
+                    inquiryForm.querySelector('#year-invalid').id = 'year';
+                    inquiryForm.querySelector('#month-invalid').id = 'month';
                     inquiryForm.querySelector('textarea').id = '';
                 } else {
                 };
