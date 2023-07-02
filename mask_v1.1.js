@@ -1153,6 +1153,9 @@ if (locationURL.includes('detail')) {
             {id:'inquiry-popover-content-wrap'}
         ]);
         inquiry_wrap.appendChild(inquiryForm.cloneNode(true));
+        inquiry_wrap.querySelector('#year').id += '-c';
+        inquiry_wrap.querySelector('#month').id += '-c';
+        inquiry_wrap.querySelector('textarea').id += 'textarea-c';
         inquiry_wrap.appendChild(handlingOfPersonalInformation.cloneNode(true));
         popover_Content_div.appendChild(inquiry_wrap);
         //-----------------------------------------------------------------
