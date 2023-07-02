@@ -1158,7 +1158,12 @@ if (locationURL.includes('detail')) {
         popover_Close_Button.setAttribute('popovertarget','inquiry-popover-contents');
         popover_Close_Button.setAttribute('popovertargetaction','hide');
         popover_Close_Button.addEventListener('click',popoverProcess_Close);
-        popover_Content_div.appendChild(popover_Close_Button);
+        //下部ボタンWRAP
+        const inquiry_Bottom_Buttons_wrap = create_Element('div',[
+            {class:'js-added-popover-bottom-buttons-wrap'},
+            {id:'inquiry-popover-bottom-buttons-wrap'}
+        ]);
+        inquiry_Bottom_Buttons_wrap.appendChild(popover_Close_Button);
         //問い合わせフォームWRAP
         const inquiry_wrap = create_Element('div',[
             {class:'js-added-popover-content-wrap'},
@@ -1170,6 +1175,7 @@ if (locationURL.includes('detail')) {
         inquiry_wrap.querySelector('textarea').id += 'textarea-invalid';
         inquiry_wrap.appendChild(handlingOfPersonalInformation.cloneNode(true));
         popover_Content_div.appendChild(inquiry_wrap);
+        popover_Content_div.appendChild(inquiry_Bottom_Buttons_wrap);
         //-----------------------------------------------------------------
         //--------------------------コンポーネント１------------------------
         //お問い合わせWRAP１
@@ -1580,6 +1586,10 @@ if (locationURL.includes('detail')) {
                 opacity:.6;
             }
             @media screen and (${settings['media']['m']}) {
+                #inquiry-popover-bottom-buttons-wrap > .js-added-popover-close-button.match-media-target-close-btn {
+                    top:initial;
+                    right:initial;
+                }
                 .js-added-inquiry-button {
                     font-size:1.4rem;
                     padding:1.2rem 0;
