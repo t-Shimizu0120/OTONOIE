@@ -1586,6 +1586,7 @@ if (locationURL.includes('detail')) {
             #inquiry-popover-content-wrap {
                 padding:0;
                 border:3px #dfdfdf solid;
+                height: calc(100dvh - 7.8rem);
                 overflow:scroll;
                 -ms-overflow-style:none;
                 scrollbar-width:none;
