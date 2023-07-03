@@ -1566,10 +1566,10 @@ if (locationURL.includes('detail')) {
                 width:94%;
                 height:calc(100dvh - 2.4rem);
                 margin:0 auto;
-                border:0;
-                overflow-y: scroll;
-                -ms-overflow-style: none;
-                scrollbar-width: none;
+                border:3px #dfdfdf solid;
+                overflow-y:scroll;
+                -ms-overflow-style:none;
+                scrollbar-width:none;
             }
             #inquiry-popover-contents::-webkit-scrollbar {
                 display:none;
@@ -1581,7 +1581,7 @@ if (locationURL.includes('detail')) {
                 opacity:.6;
             }
             #inquiry-popover-content-wrap {
-                padding:1.2rem 1.2rem 5rem 1.2rem;
+                padding:0;
             }
             #share-line {
                 flex-basis:calc(50% - 0.4rem);
