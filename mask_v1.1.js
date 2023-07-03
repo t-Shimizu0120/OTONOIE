@@ -1119,7 +1119,7 @@ if (locationURL.includes('detail')) {
             inquiry_wrap.querySelector('#year-invalid').id = 'year';
             inquiry_wrap.querySelector('#month-invalid').id = 'month';
             inquiry_wrap.querySelector('textarea').id = '';
-            inquiryForm.querySelector('#contact_area').id += '-invalid';
+            inquiryForm.id += '-invalid';
             inquiryForm.querySelector('#year').id += '-invalid';
             inquiryForm.querySelector('#month').id += '-invalid';
             inquiryForm.querySelector('textarea').id += 'textarea-invalid';
@@ -1133,7 +1133,7 @@ if (locationURL.includes('detail')) {
             inquiry_wrap.querySelector('#year').id += '-invalid';
             inquiry_wrap.querySelector('#month').id += '-invalid';
             inquiry_wrap.querySelector('textarea').id += 'textarea-invalid';
-            inquiryForm.querySelector('#contact_area-invalid').id = 'contact_area';
+            inquiryForm.id = 'contact_area';
             inquiryForm.querySelector('#year-invalid').id = 'year';
             inquiryForm.querySelector('#month-invalid').id = 'month';
             inquiryForm.querySelector('textarea').id = '';
@@ -1792,7 +1792,7 @@ if (locationURL.includes('detail')) {
                     inquiry_wrap.querySelector('#year').id += '-invalid';
                     inquiry_wrap.querySelector('#month').id += '-invalid';
                     inquiry_wrap.querySelector('textarea').id += 'textarea-invalid';
-                    inquiryForm.querySelector('#contact_area-invalid').id = 'contact_area';
+                    inquiryForm.id = 'contact_area';
                     inquiryForm.querySelector('#year-invalid').id = 'year';
                     inquiryForm.querySelector('#month-invalid').id = 'month';
                     inquiryForm.querySelector('textarea').id = '';
