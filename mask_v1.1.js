@@ -1616,7 +1616,7 @@ if (locationURL.includes('detail')) {
                     flex-flow:row nowrap;
                     justify-content:space-between;
                     background:#dddddd;
-                    padding:0.4rem 0.8rem;
+                    padding:0.3rem;
                     position:fixed;
                     width:94%;
                     bottom:1.2rem;
@@ -1640,7 +1640,7 @@ if (locationURL.includes('detail')) {
                     flex-basis:33%;
                 }
                 #inquiry-popover-bottom-buttons-wrap > ul.owner_form_btns > li + li {
-                    flex-basis:calc(67% - 0.8rem);
+                    flex-basis:calc(67% - 0.3rem);
                 }
                 #inquiry-popover-bottom-buttons-wrap > .js-added-popover-close-button.match-media-target-close-btn {
                     position:initial;
