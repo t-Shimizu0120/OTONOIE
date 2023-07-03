@@ -1575,9 +1575,7 @@ if (locationURL.includes('detail')) {
                 height:calc(100dvh - 2.4rem);
                 margin:0 auto;
                 border:0;
-                overflow-y:scroll; //================
-                -ms-overflow-style:none; //===============
-                scrollbar-width:none; //==============
+                background-color: transparent;
             }
             #inquiry-popover-contents::-webkit-scrollbar {
                 display:none;
