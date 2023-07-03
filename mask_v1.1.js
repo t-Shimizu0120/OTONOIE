@@ -1573,7 +1573,7 @@ if (locationURL.includes('detail')) {
                 opacity:.6;
             }
             #inquiry-popover-content-wrap {
-                padding:1.2rem 1.2rem 6rem 1.2rem;
+                padding:1.2rem 1.2rem 5rem 1.2rem;
             }
             #share-line {
                 flex-basis:calc(50% - 0.4rem);
