@@ -1636,7 +1636,7 @@ if (locationURL.includes('detail')) {
                     font-size:1.4rem;
                     padding:1.2rem 0;
                 }
-                .txt_r{
+                #inquiry-popover-content-wrap > #contact_area > .txt_r{
                     margin-top:-5rem;
                 }
                 #qrcode1 {
