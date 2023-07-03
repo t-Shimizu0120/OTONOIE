@@ -1573,7 +1573,7 @@ if (locationURL.includes('detail')) {
                 opacity:.6;
             }
             #inquiry-popover-content-wrap {
-                padding:1.2rem 1.2rem 7rem 1.2rem;
+                padding:1.2rem 1.2rem 6rem 1.2rem;
             }
             #share-line {
                 flex-basis:calc(50% - 0.4rem);
@@ -1604,6 +1604,7 @@ if (locationURL.includes('detail')) {
                     position:fixed;
                     width:94%;
                     bottom:1.2rem;
+                    left:3%;
                 }
                 .js-added-popover-bottom-buttons-wrap > ul.owner_form_btns {
                     display:flex;
