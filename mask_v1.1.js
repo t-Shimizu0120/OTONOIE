@@ -1635,6 +1635,9 @@ if (locationURL.includes('detail')) {
                     font-size:1.4rem;
                     padding:1.2rem 0;
                 }
+                .txt_r{
+                    margin-top:-5rem;
+                }
                 #qrcode1 {
                     display:none;
                 }
