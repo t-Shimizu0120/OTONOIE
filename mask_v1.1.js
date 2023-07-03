@@ -58,6 +58,12 @@ settings['site_control']['map_full_address'] = 'false';
         ::-webkit-scrollbar-thumb{
            background-color:#3f3f3f;
         }
+        .result .detail {
+            border:3px #dfdfdf solid;
+        }
+        .owner-form {
+            border:3px #dfdfdf solid;
+        }
         #pagetop {
             position:fixed;
             right:30px;
@@ -906,12 +912,6 @@ if (locationURL.includes('detail')) {
     const addChangeDefaultStyleElm = document.createElement('style');
     addChangeDefaultStyleElm.setAttribute('id','detail-change-default-style');
     const detailStyle = `
-        .result .detail {
-            border:3px #dfdfdf solid;
-        }
-        .owner-form {
-            border:3px #dfdfdf solid;
-        }
         input[class="btn_reset"], input[class="btn_submit"] {
             border-radius:2px !important;
             font-size:1.4rem;
