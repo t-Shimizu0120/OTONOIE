@@ -1115,9 +1115,11 @@ if (locationURL.includes('detail')) {
             bodyScrollPrevent(true);
             const targetButtonSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.currentTarget.getAttribute('popovertarget') + '"]';
             document.querySelector(targetButtonSelector).classList.add('valid');
+            inquiry_wrap.querySelector('#contact_area-invalid').id = 'contact_area';
             inquiry_wrap.querySelector('#year-invalid').id = 'year';
             inquiry_wrap.querySelector('#month-invalid').id = 'month';
             inquiry_wrap.querySelector('textarea').id = '';
+            inquiryForm.querySelector('#contact_area').id += '-invalid';
             inquiryForm.querySelector('#year').id += '-invalid';
             inquiryForm.querySelector('#month').id += '-invalid';
             inquiryForm.querySelector('textarea').id += 'textarea-invalid';
@@ -1127,9 +1129,11 @@ if (locationURL.includes('detail')) {
             bodyScrollPrevent(false);
             const targetButtonSelector = 'button.js-added-popover-content-backside-button[popovertarget="' + e.currentTarget.getAttribute('popovertarget') + '"]';
             document.querySelector(targetButtonSelector).classList.remove('valid');
+            inquiry_wrap.querySelector('#contact_area').id += '-invalid';
             inquiry_wrap.querySelector('#year').id += '-invalid';
             inquiry_wrap.querySelector('#month').id += '-invalid';
             inquiry_wrap.querySelector('textarea').id += 'textarea-invalid';
+            inquiryForm.querySelector('#contact_area-invalid').id = 'contact_area';
             inquiryForm.querySelector('#year-invalid').id = 'year';
             inquiryForm.querySelector('#month-invalid').id = 'month';
             inquiryForm.querySelector('textarea').id = '';
@@ -1169,6 +1173,7 @@ if (locationURL.includes('detail')) {
             {id:'inquiry-popover-content-wrap'}
         ]);
         inquiry_wrap.appendChild(inquiryForm.cloneNode(true));
+        inquiry_wrap.querySelector('#contact_area').id += '-invalid';
         inquiry_wrap.querySelector('#year').id += '-invalid';
         inquiry_wrap.querySelector('#month').id += '-invalid';
         inquiry_wrap.querySelector('textarea').id += 'textarea-invalid';
@@ -1783,9 +1788,11 @@ if (locationURL.includes('detail')) {
                 component_1.appendChild(inquiryBox_1);
                 bodyScrollPrevent(false);
                 if (inquiry_wrap.querySelector('#year')　&& inquiry_wrap.querySelector('#month')) {
+                    inquiry_wrap.querySelector('#contact_area').id += '-invalid';
                     inquiry_wrap.querySelector('#year').id += '-invalid';
                     inquiry_wrap.querySelector('#month').id += '-invalid';
                     inquiry_wrap.querySelector('textarea').id += 'textarea-invalid';
+                    inquiryForm.querySelector('#contact_area-invalid').id = 'contact_area';
                     inquiryForm.querySelector('#year-invalid').id = 'year';
                     inquiryForm.querySelector('#month-invalid').id = 'month';
                     inquiryForm.querySelector('textarea').id = '';
