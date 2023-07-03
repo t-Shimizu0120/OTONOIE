@@ -1575,11 +1575,8 @@ if (locationURL.includes('detail')) {
                 height:calc(100dvh - 2.4rem);
                 margin:0 auto;
                 border:0;
-                background-color: transparent;
+                background-color:transparent;
             }
-            #inquiry-popover-contents::-webkit-scrollbar {
-                display:none;
-            }  
             #inquiry-popover-contents:popover-open {
             }
             #inquiry-popover-contents::backdrop {
@@ -1589,6 +1586,12 @@ if (locationURL.includes('detail')) {
             #inquiry-popover-content-wrap {
                 padding:0;
                 border:3px #dfdfdf solid;
+                overflow:scroll;
+                -ms-overflow-style:none;
+                scrollbar-width:none;
+            }
+            #inquiry-popover-content-wrap::-webkit-scrollbar {
+                display:none;
             }
             #share-line {
                 flex-basis:calc(50% - 0.4rem);
