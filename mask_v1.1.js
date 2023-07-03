@@ -50,6 +50,7 @@ settings['site_control']['map_full_address'] = 'false';
     const style = `
         ::-webkit-scrollbar{
            width:8px;
+           height:8px;
         }
         ::-webkit-scrollbar-track{
            background-color:#dddddd;
