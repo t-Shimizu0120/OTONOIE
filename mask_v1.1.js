@@ -1574,7 +1574,7 @@ if (locationURL.includes('detail')) {
                 width:94%;
                 height:calc(100dvh - 2.4rem);
                 margin:0 auto;
-                border:3px #dfdfdf solid;
+                border:0;
                 overflow-y:scroll; //================
                 -ms-overflow-style:none; //===============
                 scrollbar-width:none; //==============
@@ -1590,6 +1590,7 @@ if (locationURL.includes('detail')) {
             }
             #inquiry-popover-content-wrap {
                 padding:0;
+                border:3px #dfdfdf solid;
             }
             #share-line {
                 flex-basis:calc(50% - 0.4rem);
