@@ -1189,7 +1189,7 @@ if (locationURL.includes('detail')) {
         popover_Content_div.appendChild(inquiry_wrap);
         inquiry_wrap.querySelector('.form-table.owner-form').appendChild(handlingOfPersonalInformation.cloneNode(true));
         inquiry_wrap.querySelector('form').appendChild(inquiry_Bottom_Buttons_wrap);
-        const inquiry_Bottom_Buttons_wrap_client_h = inquiry_Bottom_Buttons_wrap.clientHeight;
+        //const inquiry_Bottom_Buttons_wrap_client_h = inquiry_Bottom_Buttons_wrap.clientHeight;
         //-----------------------------------------------------------------
         //--------------------------コンポーネント１------------------------
         //お問い合わせWRAP１
