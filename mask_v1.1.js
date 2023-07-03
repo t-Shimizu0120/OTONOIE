@@ -1741,6 +1741,9 @@ if (locationURL.includes('detail')) {
                 }
             }
             @media screen and (${settings['media']['s']}) {
+                #inquiry-popover-content-wrap {
+                    height: calc(100dvh - 7.5rem);
+                }
                 .js-added-inquiry-button {
                     font-size:1.2rem;
                 }
