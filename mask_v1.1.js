@@ -1434,7 +1434,15 @@ if (locationURL.includes('detail')) {
         //----------------------------STYLE------------------------------------
         const componentStyle = document.createElement('style');
         componentStyle.setAttribute('id','component-style');
-        componentStyle.textContent = `            
+        componentStyle.textContent = `
+            #contact_area-invalid h4 {
+                font-size: 1.6rem;
+                font-weight: bold;
+                color: #424242;
+                border-left: 4px solid #82b822;
+                padding: 5px;
+                margin-bottom: 15px;
+            }
             .js-added-inquiry-button, #inquiry1-box > a, #inquiry2-box > a, #share-line > a, #share-qrcode-popover > button {
                 border-radius:2px;
             }
