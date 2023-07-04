@@ -1759,8 +1759,7 @@ if (locationURL.includes('detail')) {
                     flex-flow:row nowrap;
                 }
                 #inquiry-button1 {
-                    flex-basis:66%;
-                    margin-right:0.3rem;
+                    flex-basis:calc(67% - 0.6rem);
                     order:0;
                 }
                 #inquiry1-box > button {
@@ -1777,8 +1776,7 @@ if (locationURL.includes('detail')) {
                     flex-flow:row nowrap;
                 }
                 #inquiry-button2 {
-                    flex-basis:66%;
-                    margin-right:0.3rem;
+                    flex-basis:calc(67% - 0.6rem);
                     order:0;
                 }
                 #inquiry2-box > button {
