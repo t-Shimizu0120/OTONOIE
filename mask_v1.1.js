@@ -800,6 +800,7 @@ class AddPopoverContents {
                 width:2.6rem;
                 height:2.6rem;
                 position:relative;
+                margin:auto;
             }
             .icon-close::before, .icon-close::after {
                 content:"";
@@ -1633,7 +1634,7 @@ if (locationURL.includes('detail')) {
                     display :-ms-flexbox;
                     flex-flow:row nowrap;
                     justify-content:space-between;
-                    flex-grow:1;
+                    flex-basis:calc(85% - 3px);
                     margin:0;
                     order:0;
                 }
@@ -1650,6 +1651,7 @@ if (locationURL.includes('detail')) {
                     position:initial;
                     top:initial;
                     right:initial;
+                    flex-basis:15%;
                     order:1;
                 }
                 .js-added-inquiry-button {
