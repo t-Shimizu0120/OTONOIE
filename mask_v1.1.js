@@ -1678,14 +1678,14 @@ if (locationURL.includes('detail')) {
                     flex-flow:row wrap;
                     justify-content:space-between;
                     background:#dddddd;
-                    padding:0.3rem 0.3rem;
+                    padding:0.3rem;
                     order:3;
                 }
                 #inquiry1-box > button {
-                    margin-bottom:0.3rem;
+                    margin-bottom:0.6rem;
                 }
                 #inquiry1-tel {
-                    margin-right:0.3rem;
+                    margin-right:0.6rem;
                     flex-grow:1;
                     order:1;
                 }
@@ -1716,10 +1716,10 @@ if (locationURL.includes('detail')) {
                     display:none;
                 }
                 #inquiry2-box > button {
-                    margin-bottom:0.3rem;
+                    margin-bottom:0.6rem;
                 }
                 #inquiry2-tel {
-                    margin-right:0.3rem;
+                    margin-right:0.6rem;
                 }
                 #inquiry2-tel > .tel-number {
                     font-size:1.6rem;
