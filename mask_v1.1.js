@@ -1652,6 +1652,8 @@ if (locationURL.includes('detail')) {
                     top:initial;
                     right:initial;
                     flex-basis:15%;
+                    border-radius:2px;
+                    background-color:#9fadb2;
                     order:1;
                 }
                 .js-added-inquiry-button {
