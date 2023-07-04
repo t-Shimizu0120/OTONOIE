@@ -1059,7 +1059,7 @@ if (locationURL.includes('detail')) {
                     order:2;
                 }
                 #component-middle {
-                    padding:0.4rem 0.8rem;
+                    padding:0.3rem 0.3rem;
                 }
                 #share {
                     background:#dddddd;
@@ -1070,7 +1070,7 @@ if (locationURL.includes('detail')) {
                     flex-flow:row nowrap;
                     justify-content:space-between;
                     align-items:center;
-                    padding:0.4rem 0.8rem;
+                    padding:0.3rem 0.3rem;
                     margin: 0 auto;
                 }
             }
@@ -1393,7 +1393,7 @@ if (locationURL.includes('detail')) {
                 buttonText:'QRコードを表示',
                 add_Styles:`
                     #share-qrcode-popover {
-                        flex-basis:calc(50% - 0.4rem);
+                        flex-basis:calc(50% - 0.15rem);
                     }
                     #share-qrcode-popover > button {
                         background:#3f3f3f;
@@ -1556,7 +1556,7 @@ if (locationURL.includes('detail')) {
                 order:0;
             }
             #inquiry2-box > button {
-                margin-bottom:0.5rem;
+                margin-bottom:0.4rem;
             }
             #inquiry2-tel {
                 flex-grow:1;
@@ -1597,7 +1597,7 @@ if (locationURL.includes('detail')) {
                 display:none;
             }
             #share-line {
-                flex-basis:calc(50% - 0.4rem);
+                flex-basis:calc(50% - 0.15rem);
             }
             #share-line > a {
                 display:block;
@@ -1678,14 +1678,14 @@ if (locationURL.includes('detail')) {
                     flex-flow:row wrap;
                     justify-content:space-between;
                     background:#dddddd;
-                    padding:0.4rem 0.8rem;
+                    padding:0.3rem 0.3rem;
                     order:3;
                 }
                 #inquiry1-box > button {
-                    margin-bottom:0.5rem;
+                    margin-bottom:0.3rem;
                 }
                 #inquiry1-tel {
-                    padding-top:0.2rem;
+                    margin-right:0.3rem;
                     flex-grow:1;
                     order:1;
                 }
@@ -1715,8 +1715,11 @@ if (locationURL.includes('detail')) {
                 #qrcode2 {
                     display:none;
                 }
+                #inquiry2-box > button {
+                    margin-bottom:0.3rem;
+                }
                 #inquiry2-tel {
-                    padding-top:0.2rem;
+                    margin-right:0.3rem;
                 }
                 #inquiry2-tel > .tel-number {
                     font-size:1.6rem;
@@ -1756,7 +1759,7 @@ if (locationURL.includes('detail')) {
                     flex-flow:row nowrap;
                 }
                 #inquiry-button1 {
-                    flex-basis:calc(67% - 0.8rem);
+                    flex-basis:calc(67% - 0.3rem);
                     order:0;
                 }
                 #inquiry1-box > button {
@@ -1773,7 +1776,7 @@ if (locationURL.includes('detail')) {
                     flex-flow:row nowrap;
                 }
                 #inquiry-button2 {
-                    flex-basis:calc(67% - 0.8rem);
+                    flex-basis:calc(67% - 0.3rem);
                     order:0;
                 }
                 #inquiry2-box > button {
