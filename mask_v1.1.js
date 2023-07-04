@@ -1393,7 +1393,7 @@ if (locationURL.includes('detail')) {
                 buttonText:'QRコードを表示',
                 add_Styles:`
                     #share-qrcode-popover {
-                        flex-basis:calc(50% - 0.15rem);
+                        flex-basis:calc(50% - 0.3rem);
                     }
                     #share-qrcode-popover > button {
                         background:#3f3f3f;
@@ -1597,7 +1597,7 @@ if (locationURL.includes('detail')) {
                 display:none;
             }
             #share-line {
-                flex-basis:calc(50% - 0.15rem);
+                flex-basis:calc(50% - 0.3rem);
             }
             #share-line > a {
                 display:block;
