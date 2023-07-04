@@ -1168,6 +1168,7 @@ if (locationURL.includes('detail')) {
         popover_Close_Button.setAttribute('class','js-added-popover-close-button match-media-target-close-btn');
         popover_Close_Button.setAttribute('popovertarget','inquiry-popover-contents');
         popover_Close_Button.setAttribute('popovertargetaction','hide');
+        popover_Close_Button.setAttribute('type','button');
         popover_Close_Button.addEventListener('click',popoverProcess_Close);
         //下部ボタンWRAP
         const inquiry_Bottom_Buttons_wrap = create_Element('div',[
@@ -1185,11 +1186,10 @@ if (locationURL.includes('detail')) {
         inquiry_wrap.querySelector('#month').id += '-invalid';
         inquiry_wrap.querySelector('textarea').id += 'textarea-invalid';
         inquiry_Bottom_Buttons_wrap.appendChild(inquiry_wrap.querySelector('ul.owner_form_btns'));
-        //inquiry_Bottom_Buttons_wrap.appendChild(popover_Close_Button);
-        popover_Content_div.appendChild(inquiry_wrap);
-        popover_Content_div.appendChild(popover_Close_Button);
+        inquiry_Bottom_Buttons_wrap.appendChild(popover_Close_Button);
         inquiry_wrap.querySelector('.form-table.owner-form').appendChild(handlingOfPersonalInformation.cloneNode(true));
         inquiry_wrap.querySelector('form').appendChild(inquiry_Bottom_Buttons_wrap);
+        popover_Content_div.appendChild(inquiry_wrap);
         //const inquiry_Bottom_Buttons_wrap_client_h = inquiry_Bottom_Buttons_wrap.clientHeight;
         //-----------------------------------------------------------------
         //--------------------------コンポーネント１------------------------
