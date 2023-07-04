@@ -1059,7 +1059,7 @@ if (locationURL.includes('detail')) {
                     order:2;
                 }
                 #component-middle {
-                    padding:0.3rem 0.3rem;
+                    padding:0.3rem;
                 }
                 #share {
                     background:#dddddd;
@@ -1070,7 +1070,7 @@ if (locationURL.includes('detail')) {
                     flex-flow:row nowrap;
                     justify-content:space-between;
                     align-items:center;
-                    padding:0.3rem 0.3rem;
+                    padding:0.3rem;
                     margin: 0 auto;
                 }
             }
