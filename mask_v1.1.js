@@ -1634,7 +1634,7 @@ if (locationURL.includes('detail')) {
                     display :-ms-flexbox;
                     flex-flow:row nowrap;
                     justify-content:space-between;
-                    flex-basis:calc(85% - 3px);
+                    flex-basis:calc(85% - 0.6rem);
                     margin:0;
                     order:0;
                 }
@@ -1645,7 +1645,7 @@ if (locationURL.includes('detail')) {
                     flex-basis:33%;
                 }
                 #inquiry-popover-bottom-buttons-wrap > ul.owner_form_btns > li + li {
-                    flex-basis:calc(67% - 0.3rem);
+                    flex-basis:calc(67% - 0.6rem);
                 }
                 #inquiry-popover-bottom-buttons-wrap > .js-added-popover-close-button.match-media-target-close-btn {
                     position:initial;
