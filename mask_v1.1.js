@@ -42,6 +42,16 @@ settings['site_control']['map'] = 'false';
 ////地図完全住所表示（地図を完全住所で表示させるかどうか）
 settings['site_control']['map_full_address'] = 'false';
 //=================================================================
+//cssへメディアを追加
+//=================================================================
+(() => {
+    const root = document.querySelector(':root');
+    root.style.setProperty('--media-width-s',settings['media']['s'].replace('max-width:',''));
+    root.style.setProperty('--media-width-m',settings['media']['m'].replace('max-width:',''));
+    root.style.setProperty('--media-width-l',settings['media']['l'].replace('max-width:',''));
+    root.style.setProperty('--media-width-ll',settings['media']['ll'].replace('max-width:',''));
+})();
+//=================================================================
 //ベースstyle（全ページ共通）
 //=================================================================
 (() => {
