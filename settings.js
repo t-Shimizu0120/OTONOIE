@@ -46,7 +46,7 @@ settings['site_control']['map'] = 'false';
 ////地図完全住所表示（地図を完全住所で表示させるかどうか）
 settings['site_control']['map_full_address'] = 'false';
 //=================================================================
-//cssへ追加
+//style設定
 //=================================================================
 (() => {
     const root = document.querySelector(':root');
