@@ -1,10 +1,10 @@
 /*root*/
 :root {
     /*media*/
-    --media-width-s:;
-    --media-width-m:;
-    --media-width-l:;
-    --media-width-ll:;
+    --media-bp-s:;
+    --media-bp-m:;
+    --media-bp-l:;
+    --media-bp-ll:;
     /*color*/
     --color-white:#fff;
     --color-black:#000;
@@ -97,7 +97,7 @@
 #pagetop > a > img {
     display:none;
 }
-@media screen and (max-width:calc(var(--media-width-m) * 1px)) {
+@media screen and (max-width:calc(var(--media-bp-m) * 1px)) {
     header {
         position:initial;
     }
@@ -105,7 +105,7 @@
         padding:0;
     }
 }
-@media screen and (max-width:calc(var(--media-width-s) * 1px)) {
+@media screen and (max-width:calc(var(--media-bp-s) * 1px)) {
     #pagetop {
         right:20px;
     }
