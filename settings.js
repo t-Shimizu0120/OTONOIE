@@ -20,15 +20,15 @@ settings['company_data']['business_hours'] = '受付時間 10:00～17:00（水�
 //=================================================================
 //コンテンツコントロール
 //=================================================================
-const breakpoint_s = '375px';
-const breakpoint_m = '750px';
-const breakpoint_l = '';
-const breakpoint_ll = '';
 //マスク適用
 settings['mask'] = 'true';
 //MEDIA設定
 settings['media'] = {};
 //ブレイクポイント設定
+const breakpoint_s = '375px';
+const breakpoint_m = '750px';
+const breakpoint_l = '';
+const breakpoint_ll = '';
 //sp
 settings['media']['s'] = `max-width:${breakpoint_s}`;
 //tablet
