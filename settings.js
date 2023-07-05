@@ -55,3 +55,16 @@ settings['site_control']['map_full_address'] = 'false';
     root.style.setProperty('--media-bp-l',breakpoint_l);
     root.style.setProperty('--media-bp-ll',breakpoint_ll);
 })();
+//=================================================================
+//関数
+//=================================================================
+//要素作成
+const create_Element = (tagName,attributes) => {
+    const add_Elm = document.createElement(tagName);
+    for (attribute of attributes) {
+        const attrName = Object.keys(attribute)[0];
+        const attrValue = attribute[attrName];
+        add_Elm.setAttribute(attrName,attrValue);
+    };
+    return add_Elm;
+};
