@@ -2,7 +2,7 @@
 :root {
     /*media*/
     --media-width-s:;
-    --media-width-m:;
+    --media-width-m:750px;
     --media-width-l:;
     --media-width-ll:;
     /*color*/
