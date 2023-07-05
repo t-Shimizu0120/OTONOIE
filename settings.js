@@ -95,3 +95,39 @@ const bodyScrollPrevent = (flag) => {
         };
     };
 };
+//フォーカス制御（POPOVER）
+const popoverFocusControl = (popoverElm) => {
+    //popover内のフォーカス可能な要素の一覧
+    const focusableElementsSelector = 'a[href], area[href], input:not([disabled], [type="hidden"]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, [tabindex="0"], [contenteditable]';
+    popoverElm.addEventListener("keydown", function (e) {
+        // タブキーが押された時
+        if (e.key === 'Tab') {
+            e.preventDefault();
+            // popover要素内のフォーカス可能な要素の一覧を取得
+            const focusableElements = Array.from(
+                popoverElm.querySelectorAll(focusableElementsSelector)
+            );
+            // 現在のフォーカス位置を取得
+            const focusedItemIndex = focusableElements.indexOf(document.activeElement);
+            // shiftキーと同時に押されてた場合
+            if (e.shiftKey) {
+                if (focusedItemIndex === 0) {
+                    // 現在のフォーカスが最初の要素の場合、最後の要素にフォーカスを移動
+                    focusableElements[focusableElements.length - 1].focus();
+                } else {
+                    // 現在のフォーカスが最初の要素以外の場合、前の要素にフォーカスを移動
+                    focusableElements[focusedItemIndex - 1].focus();
+                };
+            } else {
+                if (focusedItemIndex === focusableElements.length - 1) {
+                    // 現在のフォーカスが最後の要素の場合、最初の要素にフォーカスを移動
+                    focusableElements[0].focus();
+                } else {
+                    // 現在のフォーカスが最後の要素以外の場合、次の要素にフォーカスを移動
+                    focusableElements[focusedItemIndex + 1].focus();
+                };
+            };
+        } else {
+        };
+    });
+};
