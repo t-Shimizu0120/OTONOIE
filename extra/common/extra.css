@@ -12,11 +12,11 @@
     --color-f7f4f4:#f7f4f4;
     /*border*/
     --border-none:0;
-    --border-1:1rem;
-    --border-2:2rem;
-    --border-3:3rem;
-    --border-4:4rem;
-    --border-5:5rem;
+    --border-1:0.1rem;
+    --border-2:0.2rem;
+    --border-3:0.3rem;
+    --border-4:0.4rem;
+    --border-5:0.5rem;
     /*button*/
     --button-border:var(--border-none);
     --button-border-radius:var(--border-2);
