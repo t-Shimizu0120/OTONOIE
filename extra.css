@@ -1,10 +1,41 @@
-/*------------------------*/
-/*@メディアはjsで設定*/
+/*root*/
+:root {
+    /*media*/
+    --media-width-s:;
+    --media-width-m:;
+    --media-width-l:;
+    --media-width-ll:;
+    /*color*/
+    --color-white:#fff;
+    --color-black:#000;
+    --color-dfdfdf:#dfdfdf;
+    --color-f7f4f4:#f7f4f4;
+    /*border*/
+    --border-none:0;
+    --border-1:1rem;
+    --border-2:2rem;
+    --border-3:3rem;
+    --border-4:4rem;
+    --border-5:5rem;
+    /*button*/
+    --button-border:var(--border-none);
+    --button-border-radius:var(--border-2);
+    --button-opacity:.6;
+    /*content*/
+    --content-outline-border-width:var(--border-3);
+    --content-outline-border-color:var(--color-dfdfdf);
+    --content-outline-border-style:solid;
+    --content-outline-border:var(--content-outline-border-width) var(--content-outline-border-color) var(--content-outline-border-style);
+    --content-outline-background-color:var(--color-f7f4f4);
+    /*pagetop*/
+    --pagetop-color:var(--color-white);
+    --pagetop-background:var(--color-black);
+}
 /*------------------------*/
 /*スクロールバー*/
 ::-webkit-scrollbar{
-    width:8px;
-    height:8px;
+    width:0.8rem;
+    height:0.8rem;
 }
 ::-webkit-scrollbar-track{
     background-color:#dddddd;
@@ -14,10 +45,10 @@
 }
 /*外枠*/
 .result .detail {
-    border:3px #dfdfdf solid;
+    border:var(--content-outline-border);
 }
 .owner-form {
-    border:3px #dfdfdf solid;
+    border:var(--content-outline-border);
 }
 /*ページトップボタン*/
 #pagetop {
@@ -32,10 +63,10 @@
     width:75px;
     height:50px;
     padding:0.7rem 0;
-    color:#fff;
-    background:#000;
-    border:0;
-    border-radius:2px;
+    color:var(--pagetop-color);
+    background:var(--pagetop-background);
+    border:var(--button-border);
+    border-radius:var(--button-border-radius);
     display:flex;
     display:-webkit-box;
     display:-webkit-flex;
@@ -44,25 +75,38 @@
     justify-content:space-between;
     align-items:center;
     z-index:500;
-    opacity:.6;
+    opacity:var(--button-opacity);
 }
 .js-added-pagetop:hover {
     text-decoration:none;
 }
 .js-added-pagetop-arrow {
-    height:20px;
-    width:20px;
-    border-top:4px solid #fff;
-    border-right:4px solid #fff;
+    height:2rem;
+    width:2rem;
+    border-top:0.4rem solid var(--pagetop-color);
+    border-right:0.4rem solid var(--pagetop-color);
     transform:translateY(20%) rotate(-45deg);
     order:0;
 }
 .js-added-pagetop > p {
-    color:#fff;
+    color:var(--pagetop-color);
     font-size:1rem;
     font-weight:bold;
     order:1;
 }
 #pagetop > a > img {
     display:none;
+}
+@media screen and (max-width:var(--media-width-m)) {
+    header {
+        position:initial;
+    }
+    #content_wrap {
+        padding:0;
+    }
+}
+@media screen and (max-width:var(--media-width-s)) {
+    #pagetop {
+        right:20px;
+    }
 }
