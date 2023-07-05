@@ -20,8 +20,8 @@ settings['company_data']['business_hours'] = '受付時間 10:00～17:00（水�
 //=================================================================
 //コンテンツコントロール
 //=================================================================
-const breakpoint_s = 375;
-const breakpoint_m = 750;
+const breakpoint_s = '375px';
+const breakpoint_m = '750px';
 const breakpoint_l = '';
 const breakpoint_ll = '';
 //マスク適用
@@ -30,13 +30,13 @@ settings['mask'] = 'true';
 settings['media'] = {};
 //ブレイクポイント設定
 //sp
-settings['media']['s'] = `max-width:${breakpoint_s}px`;
+settings['media']['s'] = `max-width:${breakpoint_s}`;
 //tablet
-settings['media']['m'] = `max-width:${breakpoint_m}px`;
+settings['media']['m'] = `max-width:${breakpoint_m}`;
 //pc-s
-settings['media']['l'] = ``;
+settings['media']['l'] = `max-width:${breakpoint_l}`;
 //pc-l
-settings['media']['ll'] = ``;
+settings['media']['ll'] = `max-width:${breakpoint_ll}`;
 //コントロール用配列
 settings['site_control'] = {};
 //初期費用表示（初期費用を表示させるかどうか）
@@ -46,7 +46,7 @@ settings['site_control']['map'] = 'false';
 ////地図完全住所表示（地図を完全住所で表示させるかどうか）
 settings['site_control']['map_full_address'] = 'false';
 //=================================================================
-//cssへメディアを追加
+//cssへ追加
 //=================================================================
 (() => {
     const root = document.querySelector(':root');
