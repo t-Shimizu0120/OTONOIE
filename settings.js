@@ -68,3 +68,30 @@ const create_Element = (tagName,attributes) => {
     };
     return add_Elm;
 };
+//スクロール制御（POPOVER）
+const bodyScrollPrevent = (flag) => {
+    let scrollPosition;
+    const body = document.getElementsByTagName('body')[0];
+    const pageTop_Button = document.getElementById('pagetop');
+    //スクロールバーの幅
+    const scrollBarWidth = window.innerWidth - document.body.clientWidth;
+    if (flag) {
+        body.style.paddingRight = scrollBarWidth + 'px';
+        scrollPosition = -window.pageYOffset;
+        body.style.position = 'fixed';
+        body.style.width = '100%';
+        body.style.top = scrollPosition + 'px';
+        pageTop_Button.style.marginRight = scrollBarWidth + 'px';
+    } else {
+        if (body.hasAttribute('style') == true && body.getAttribute('style') !== '') {
+            body.style.paddingRight = '';
+            scrollPosition = body.style.top.replace('px','').replace('-','');
+            body.style.position = '';
+            body.style.width = '';
+            body.style.top = '';
+            pageTop_Button.style.marginRight = '';
+            window.scrollTo(0, scrollPosition);
+        } else {
+        };
+    };
+};
