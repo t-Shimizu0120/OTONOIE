@@ -97,6 +97,8 @@
 #pagetop > a > img {
     display:none;
 }
+
+/*@media--m*/
 @media screen and (max-width:750px) {
     header {
         position:initial;
@@ -105,6 +107,8 @@
         padding:0;
     }
 }
+
+/*@media--s*/
 @media screen and (max-width:375px) {
     #pagetop {
         right:20px;
