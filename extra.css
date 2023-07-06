@@ -52,10 +52,18 @@
     /*pagetop*/
     --pagetop-right:calc(var(--volume-30) * 1rem);
     --pagetop-bottom:calc(var(--volume-20) * 1rem);
+    --pagetop-padding:calc(var(--volume-7) * 1rem) 0;
     --pagetop-color:var(--color-white);
     --pagetop-background:var(--color-black);
     --pagetop-border:var(--volume-0);
     --pagetop-border-radius:calc(var(--volume-2) * 1rem);
+    --pagetop-opacity:var(--volume-6);
+    --pagetop-hover-opacity:var(--volume-8);
+    --pagetop-inner-icon-width:calc(var(--volume-20) * 1rem);
+    --pagetop-inner-icon-height:calc(var(--volume-20) * 1rem);
+    --pagetop-inner-icon-border:calc(var(--volume-4) * 1rem) solid var(--pagetop-color);
+    --pagetop-inner-font-size:calc(var(--volume-10) * 1rem);
+    --pagetop-inner-font-weight:bold;
 }
 /*============================================================================*/
 /*スクロールバー*/
@@ -83,12 +91,12 @@
     bottom:var(--pagetop-bottom);
 }
 #pagetop:hover {
-    opacity:var(--volume-8);
+    opacity:var(--pagetop-hover-opacity);
 }
 .js-added-pagetop {
-    width:75px;
-    height:50px;
-    padding:calc(var(--volume-7) * 1rem) 0;
+    width:7.5rem;
+    height:5rem;
+    padding:var(--pagetop-padding);
     color:var(--pagetop-color);
     background:var(--pagetop-background);
     border:var(--pagetop-border);
@@ -101,23 +109,23 @@
     justify-content:space-between;
     align-items:center;
     z-index:500;
-    opacity:var(--volume-6);
+    opacity:var(--pagetop-opacity);
 }
 .js-added-pagetop:hover {
     text-decoration:none;
 }
 .js-added-pagetop-arrow {
-    height:calc(var(--volume-20) * 1rem);
-    width:calc(var(--volume-20) * 1rem);
-    border-top:calc(var(--volume-4) * 1rem) solid var(--pagetop-color);
-    border-right:calc(var(--volume-4) * 1rem) solid var(--pagetop-color);
+    height:var(--pagetop-inner-icon-height);
+    width:var(--pagetop-inner-icon-width);
+    border-top:var(--pagetop-inner-icon-border);
+    border-right:var(--pagetop-inner-icon-border);
     transform:translateY(20%) rotate(-45deg);
     order:0;
 }
 .js-added-pagetop > p {
     color:var(--pagetop-color);
-    font-size:calc(var(--volume-10) * 1rem);
-    font-weight:bold;
+    font-size:var(--pagetop-inner-font-size);
+    font-weight:var(--pagetop-inner-font-weight);
     order:1;
 }
 #pagetop > a > img {
@@ -132,13 +140,14 @@
     /*============================================================================*/
     /*root*/
     :root {
+        --content-wrap-padding:var(--volume-0);
     }
     /*============================================================================*/
     header {
         position:initial;
     }
     #content_wrap {
-        padding:var(--volume-0);
+        padding:var(--content-wrap-padding);
     }
 }
 
