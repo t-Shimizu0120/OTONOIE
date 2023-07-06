@@ -71,7 +71,7 @@
     --table-th-background-color:var(--color-dddddd);
     --table-td-background-color:transparent;
     --table-border-width:calc(var(--volume-2) * 1rem);
-    --table-border-color:var(--color-3f3f3f);
+    --table-border-color:var(--color-dfdfdf);
     --table-border-style:solid;
     --table-border:var(--table-border-width) var(--table-border-color) var(--table-border-style);
     --table-th-font-size:;
