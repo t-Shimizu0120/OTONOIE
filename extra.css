@@ -13,6 +13,7 @@
     --color-f7f4f4:#f7f4f4;
     --color-dddddd:#dddddd;
     --color-3f3f3f:#3f3f3f;
+    --color-afafaf:#afafaf;
     /*volume*/
     --volume-none:none;
     --volume-0:0;
@@ -70,8 +71,8 @@
     --table-td-color:var(--color-3f3f3f);
     --table-th-background-color:var(--color-dddddd);
     --table-td-background-color:transparent;
-    --table-border-width:calc(var(--volume-2) * 1rem);
-    --table-border-color:var(--color-dfdfdf);
+    --table-border-width:calc(var(--volume-1) * 1rem);
+    --table-border-color:var(--color-afafaf);
     --table-border-style:solid;
     --table-border:var(--table-border-width) var(--table-border-color) var(--table-border-style);
     --table-th-font-size:;
