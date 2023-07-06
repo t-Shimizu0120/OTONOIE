@@ -1,1 +1,5 @@
-
+if (settings['mask']) {
+    
+} else {
+    
+};
