@@ -159,12 +159,7 @@ class AddTable {
             //attribute用のオブジェクトの作成
             const obj = this.setAttrs(object);
             //テーブルタグのattribute設定
-            const add_Elm_table = document.createElement('table');
-            for (this.table_Attr of obj.table_Attrs) {
-                const table_AttrName = Object.keys(this.table_Attr)[0];
-                const table_AttrValue = this.table_Attr[table_AttrName];
-                add_Elm_table.setAttribute(table_AttrName,table_AttrValue);
-            };
+            const add_Elm_table = create_Element('style',obj.table_Attrs);
             //tbodyタグ作成
             const add_Elm_tbody = document.createElement('tbody');
             for (this.tbody_Attr of obj.tbody_Attrs) {
