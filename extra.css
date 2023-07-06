@@ -65,21 +65,18 @@
     --pagetop-inner-font-size:calc(var(--volume-10) * 1rem);
     --pagetop-inner-font-weight:bold;
     /*table*/
-    --table-th-color:var();
-    --table-th-color:var();
-    --table-td-color:var();
-    --table-th-background-color:var();
-    --table-td-background-color:var();
-    
+    --table-color:var(--color-3f3f3f);
+    --table-th-color:var(--color-3f3f3f);
+    --table-td-color:var(--color-3f3f3f);
+    --table-th-background-color:var(--color-dddddd);
+    --table-td-background-color:transparent;
     --table-border-width:calc(var(--volume-2) * 1rem);
     --table-border-color:var(--color-3f3f3f);
     --table-border-style:solid;
     --table-border:var(--table-border-width) var(--table-border-color) var(--table-border-style);
-    
-    --table-th-font-size:var();
-    --table-td-font-size:var();
-    --table-padding:var();
-    
+    --table-th-font-size:;
+    --table-td-font-size:;
+    --table-padding:calc(var(--volume-12) * 1rem);
 }
 /*============================================================================*/
 /*スクロールバー*/
@@ -147,8 +144,25 @@
 #pagetop > a > img {
     display:none;
 }
-
-
+/*テーブル*/
+.js-added-table {
+    border:var(--table-border);
+}
+.js-added-table-th {
+    background-color:var(--table-th-background-color);
+    color:var(--table-th-color);
+    border:var(--table-border);
+    padding:var(--table-padding);
+    text-align:center; 
+    vertical-align:middle;
+}
+.js-added-table-td {
+    background-color:var(--table-td-background-color);
+    color:var(--table-td-color);
+    border:var(--table-border);
+    padding:var(--table-padding);
+    vertical-align: top;
+}
 /*============================================================================*/
 /*@media--m*/
 /*============================================================================*/
