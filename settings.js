@@ -313,3 +313,16 @@ ${addStyles}
     //*******
 //);
 //--------------------------------------------------
+const aaa = new AddTable(
+    {
+        contents_Title:'',
+        table_BaseId:'',
+        table_Contents:[
+            [{th:'概要'},{td:['あああああ']}]
+        ],
+        add_Styles:`
+        `, 
+        add_To_Selector:'.detail_btm'
+    },
+    null
+);
