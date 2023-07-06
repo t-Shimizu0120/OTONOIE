@@ -46,7 +46,7 @@ settings['site_control']['map'] = 'false';
 ////地図完全住所表示（地図を完全住所で表示させるかどうか）
 settings['site_control']['map_full_address'] = 'false';
 //=================================================================
-//スクロールジャンクの回避
+//スクロールジャンク対策
 //=================================================================
 document.addEventListener('mousewheel', function() {}, {passive: true});
 //=================================================================
@@ -135,3 +135,181 @@ const popoverFocusControl = (popoverElm) => {
         };
     });
 };
+//=================================================================
+//class
+//=================================================================   
+//テーブル
+class AddTable {
+    constructor (object,...args) {
+        //コンテンツの有無を判定
+        if(object.table_Contents.length === 0) {
+            //無い場合はnullを返す
+            return null;
+        } else {
+            //ある場合は処理継続
+            //styleタグの有無を判定
+            if (document.querySelector('#table-style') != null) {
+                //あれば追加
+                const style = document.querySelector('#table-style');
+                style.textContent += object['add_Styles'];
+            } else {
+                //無ければ作成・追加
+                this.setStyle(object);
+            };
+            //attribute用のオブジェクトの作成
+            const obj = this.setAttrs(object);
+            //コンテンツタイトルの作成
+            if (obj['contents_Title'] === '') {
+            } else {
+                const table_Contents_Title = document.createElement('h5');
+                table_Contents_Title.textContent = obj['contents_Title'];
+            };
+            //テーブルタグのattribute設定
+            const add_Elm_table = document.createElement('table');
+            for (this.table_Attr of obj.table_Attrs) {
+                const table_AttrName = Object.keys(this.table_Attr)[0];
+                const table_AttrValue = this.table_Attr[table_AttrName];
+                add_Elm_table.setAttribute(table_AttrName,table_AttrValue);
+            };
+            //tbodyタグ作成
+            const add_Elm_tbody = document.createElement('tbody');
+            for (this.tbody_Attr of obj.tbody_Attrs) {
+                const tbody_AttrName = Object.keys(this.tbody_Attr)[0];
+                const tbody_AttrValue = this.tbody_Attr[tbody_AttrName];
+                add_Elm_tbody.setAttribute(tbody_AttrName,tbody_AttrValue);
+            };
+            //tr、th、tdタグの作成・値の代入
+            for (this.tableRow of obj.table_Contents){
+                //tr作成
+                const add_Elm_tr = document.createElement('tr');
+                for (this.rowItem of this.tableRow) {
+                    //キー名を取得
+                    const items_KeyName = Object.keys(this.rowItem)[0];
+                    //キーの値に応じて要素作成、キーの値でバリューを取得・設定
+                    if (items_KeyName === 'th') {
+                        const add_Elm_th = document.createElement(items_KeyName);
+                        for (this.th_Attr of obj.th_Attrs) {
+                            const th_AttrName = Object.keys(this.th_Attr)[0];
+                            const th_AttrValue = this.th_Attr[th_AttrName];
+                            add_Elm_th.setAttribute(th_AttrName,th_AttrValue);
+                        };
+                        const add_Elm_th_Value = this.rowItem[items_KeyName];
+                        add_Elm_th.textContent = add_Elm_th_Value;
+                        add_Elm_tr.appendChild(add_Elm_th);
+                    //tdの場合、リストを作成
+                    } else if (items_KeyName === 'td') {
+                        if (this.rowItem[items_KeyName].length === 0) {
+                        } else {
+                            const add_Elm_td = document.createElement(items_KeyName);
+                            for (this.td_Attr of obj.td_Attrs) {
+                                const td_AttrName = Object.keys(this.td_Attr)[0];
+                                const td_AttrValue = this.td_Attr[td_AttrName];
+                                add_Elm_td.setAttribute(td_AttrName,td_AttrValue);
+                            };
+                            const ul = document.createElement('ul');
+                            for(let i = 0; i < this.rowItem[items_KeyName].length; i++) {
+                                const li = document.createElement('li');
+                                li.textContent = this.rowItem[items_KeyName][i];
+                                ul.appendChild(li);
+                            };
+                            add_Elm_td.appendChild(ul);
+                            add_Elm_tr.appendChild(add_Elm_td);
+                        };
+                    };
+                };
+                //tbodyへtrを追加
+                add_Elm_tbody.appendChild(add_Elm_tr);
+            };
+            //tbodyをtableへ追加
+            add_Elm_table.appendChild(add_Elm_tbody);
+    
+            //追加先の設定があれば追加する
+            if (obj.add_To_Selector === '') {
+                return add_Elm_table;
+            } else {
+                const targetElm = document.querySelector(obj.add_To_Selector);
+                if (obj['contents_Title'] === '') {
+                    targetElm.appendChild(add_Elm_table);
+                } else {
+                    targetElm.appendChild(table_Contents_Title);
+                    targetElm.appendChild(add_Elm_table);
+                };
+            };
+        };
+    };
+    setStyle(object) {
+        //styleタグの追加
+        const headElm = document.querySelector('head');
+        const addStyleElm = create_Element('style',[
+            {id:'table-style'}
+        ]);
+        const addStyles = object['add_Styles'];
+        const style = `
+.js-added-font-size {
+    font-size:calc(var(--volume-12) * 1rem); 
+}
+.js-added-table {
+    border:1px #3f3f3f solid;
+}
+.js-added-table-th {
+    background-color:#dddddd; 
+    color:#3f3f3f;
+    text-align:center; 
+    vertical-align:middle;
+}
+.js-added-table-td {
+    vertical-align: top;
+}
+.js-added-table-th, .js-added-table-td {
+    color:#000;
+    border:1px #3f3f3f solid;
+    padding:1.2rem 1.2rem;
+}
+${addStyles}
+        `;
+        addStyleElm.textContent = style;
+        headElm.appendChild(addStyleElm);
+    };
+    setAttrs(object) {
+        //attributeオブジェクトの作成
+        const table_Obj = {
+            contents_Title:'',
+            table_Contents:[],
+            
+            table_Attrs:[{class:'js-added-table'}],
+            tbody_Attrs:[],
+            th_Attrs:[{class:'js-added-table-th'}],
+            td_Attrs:[{class:'js-added-table-td js-added-font-size'}],
+            add_To_Selector:''
+        };
+        table_Obj.contents_Title = object.contents_Title;
+        const table_Contents = object.table_Contents;
+        for (this.table_Content of table_Contents) {
+            table_Obj.table_Contents.push(this.table_Content);
+        };
+        //ベースIdからidを生成
+        const table_Id = {};
+        table_Id.id = object.table_BaseId + '-table';
+        table_Obj.table_Attrs.push(table_Id);
+        table_Obj.add_To_Selector = object.add_To_Selector;
+        
+        return table_Obj;
+    };
+};
+//--------------------draft--------------------
+//const ********** = new AddTable(
+    //{
+        //contents_Title:'',
+        //table_BaseId:'',
+        //table_Contents:[
+            //[{th:''},{td:['']}], ※行
+            //[{th:''},{td:['']}] ※行
+        //],
+        //add_Styles:`
+        //`, 
+        //add_To_Selector:''
+    //},
+    //*******,
+    //*******
+//);
+//--------------------------------------------------
