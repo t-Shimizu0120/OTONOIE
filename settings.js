@@ -158,12 +158,6 @@ class AddTable {
             };
             //attribute用のオブジェクトの作成
             const obj = this.setAttrs(object);
-            //コンテンツタイトルの作成
-            if (obj['contents_Title'] === '') {
-            } else {
-                const table_Contents_Title = document.createElement('h5');
-                table_Contents_Title.textContent = obj['contents_Title'];
-            };
             //テーブルタグのattribute設定
             const add_Elm_table = document.createElement('table');
             for (this.table_Attr of obj.table_Attrs) {
@@ -222,19 +216,7 @@ class AddTable {
             };
             //tbodyをtableへ追加
             add_Elm_table.appendChild(add_Elm_tbody);
-    
-            //追加先の設定があれば追加する
-            if (obj.add_To_Selector === '') {
-                return add_Elm_table;
-            } else {
-                const targetElm = document.querySelector(obj.add_To_Selector);
-                if (obj['contents_Title'] === '') {
-                    targetElm.appendChild(add_Elm_table);
-                } else {
-                    targetElm.appendChild(table_Contents_Title);
-                    targetElm.appendChild(add_Elm_table);
-                };
-            };
+            return add_Elm_table;
         };
     };
     setStyle(object) {
