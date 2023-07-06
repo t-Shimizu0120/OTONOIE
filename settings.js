@@ -140,7 +140,7 @@ const popoverFocusControl = (popoverElm) => {
 //=================================================================   
 //テーブル
 class AddTable {
-    constructor (object,...args) {
+    constructor (object) {
         //コンテンツの有無を判定
         if(object.table_Contents.length === 0) {
             //無い場合はnullを返す
@@ -179,15 +179,10 @@ class AddTable {
                     } else if (items_KeyName === 'td') {
                         if (this.rowItem[items_KeyName].length === 0) {
                         } else {
-                            const add_Elm_td = document.createElement(items_KeyName);
-                            for (this.td_Attr of obj.td_Attrs) {
-                                const td_AttrName = Object.keys(this.td_Attr)[0];
-                                const td_AttrValue = this.td_Attr[td_AttrName];
-                                add_Elm_td.setAttribute(td_AttrName,td_AttrValue);
-                            };
-                            const ul = document.createElement('ul');
+                            const add_Elm_td = create_Element(items_KeyName,obj.td_Attrs);
+                            const ul = create_Element('ul',[]);
                             for(let i = 0; i < this.rowItem[items_KeyName].length; i++) {
-                                const li = document.createElement('li');
+                                const li = create_Element('li',[]);
                                 li.textContent = this.rowItem[items_KeyName][i];
                                 ul.appendChild(li);
                             };
@@ -247,9 +242,7 @@ class AddTable {
         //],
         //add_Styles:`
         //`
-    //},
-    //*******,
-    //*******
+    //}
 //);
 //--------------------------------------------------
 const aaa = new AddTable(
@@ -260,7 +253,6 @@ const aaa = new AddTable(
         ],
         add_Styles:`
         `
-    },
-    null
+    }
 );
 document.querySelector('.detail_btm').appendChild(aaa);
