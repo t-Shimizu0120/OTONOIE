@@ -246,10 +246,10 @@ class AddTable {
         const addStyles = object['add_Styles'];
         const style = `
 .js-added-font-size {
-    font-size:calc(var(--volume-12) * 1rem); 
+    font-size:calc(var(--volume-30) * 1rem); 
 }
 .js-added-table {
-    border:1px #3f3f3f solid;
+    border:var(--content-outline-border);
 }
 .js-added-table-th {
     background-color:#dddddd; 
