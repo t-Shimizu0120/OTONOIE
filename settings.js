@@ -263,4 +263,4 @@ const aaa = new AddTable(
     },
     null
 );
-document.querySelector('detail_btm').appendChild(aaa);
+document.querySelector('.detail_btm').appendChild(aaa);
