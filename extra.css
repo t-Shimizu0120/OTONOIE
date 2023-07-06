@@ -38,6 +38,11 @@
     --volume-30:3;
     --volume-40:4;
     --volume-50:5;
+    /*scrollbar*/
+    --scrollbar-color-track:var(--color-dddddd);
+    --scrollbar-color-thumb:var(--color-3f3f3f);
+    --scrollbar-width:calc(var(--volume-8) * 1rem);
+    --scrollbar-height:calc(var(--volume-8) * 1rem);
     /*content*/
     --content-background-color:var(--color-f7f4f4);
     --content-outline-border-width:calc(var(--volume-3) * 1rem);
@@ -55,14 +60,14 @@
 /*============================================================================*/
 /*スクロールバー*/
 ::-webkit-scrollbar{
-    width:calc(var(--volume-8) * 1rem);
-    height:calc(var(--volume-8) * 1rem);
+    width:var(--scrollbar-width);
+    height:var(--scrollbar-height);
 }
 ::-webkit-scrollbar-track{
-    background-color:var(--color-dddddd);
+    background-color:var(--scrollbar-color-track);
 }
 ::-webkit-scrollbar-thumb{
-    background-color:var(--color-3f3f3f);
+    background-color:var(--scrollbar-color-thumb);
 }
 /*外枠*/
 .result .detail {
