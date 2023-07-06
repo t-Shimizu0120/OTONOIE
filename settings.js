@@ -251,16 +251,16 @@ class AddTable {
     setAttrs(object) {
         //attributeオブジェクトの作成
         const table_Obj = {
-            contents_Title:'',
+            //contents_Title:'',
             table_Contents:[],
             
             table_Attrs:[{class:'js-added-table'}],
             tbody_Attrs:[],
             th_Attrs:[{class:'js-added-table-th'}],
             td_Attrs:[{class:'js-added-table-td'}],
-            add_To_Selector:''
+            //add_To_Selector:''
         };
-        table_Obj.contents_Title = object.contents_Title;
+        //table_Obj.contents_Title = object.contents_Title;
         const table_Contents = object.table_Contents;
         for (this.table_Content of table_Contents) {
             table_Obj.table_Contents.push(this.table_Content);
@@ -269,7 +269,7 @@ class AddTable {
         const table_Id = {};
         table_Id.id = object.table_BaseId + '-table';
         table_Obj.table_Attrs.push(table_Id);
-        table_Obj.add_To_Selector = object.add_To_Selector;
+        //table_Obj.add_To_Selector = object.add_To_Selector;
         
         return table_Obj;
     };
@@ -277,7 +277,7 @@ class AddTable {
 //--------------------draft--------------------
 //const ********** = new AddTable(
     //{
-        //contents_Title:'',
+        ////contents_Title:'',
         //table_BaseId:'',
         //table_Contents:[
             //[{th:''},{td:['']}], ※行
@@ -285,7 +285,7 @@ class AddTable {
         //],
         //add_Styles:`
         //`, 
-        //add_To_Selector:''
+        ////add_To_Selector:''
     //},
     //*******,
     //*******
