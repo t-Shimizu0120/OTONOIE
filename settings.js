@@ -423,7 +423,6 @@ class AddTabContents {
             input:checked + .js-added-tab-label + .js-added-tab-content {
                 display: block;
             }
-            ${addStyles}
         `;
         addStyleElm.textContent = style;
         headElm.appendChild(addStyleElm);
