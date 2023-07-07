@@ -247,14 +247,3 @@ class AddTable {
     //}
 //);
 //--------------------------------------------------
-const aaa = new AddTable(
-    {
-        table_BaseId:'',
-        table_Contents:[
-            [{th:'概要'},{td:['あああああ']}]
-        ],
-        add_Styles:`
-        `
-    }
-);
-document.querySelector('.detail_btm').appendChild(aaa);
