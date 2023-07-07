@@ -150,7 +150,7 @@ class AddTable {
         } else {
             //ある場合は処理継続
             //styleタグの有無を判定
-            if (document.querySelector('#table-style') != null) {
+            if (document.querySelector('#table-style') !== null) {
                 //あれば追加
                 const style = document.querySelector('#table-style');
                 style.textContent += object['add_Styles'];
@@ -202,15 +202,21 @@ class AddTable {
         };
     };
     setStyle(object) {
-        //styleタグの追加
-        const headElm = document.querySelector('head');
-        const addStyleElm = create_Element('style',[
-            {id:'table-style'}
-        ]);
-        const addStyles = object['add_Styles'];
-        const style = `${addStyles}`;
-        addStyleElm.textContent = style;
-        headElm.appendChild(addStyleElm);
+        if (object['add_Styles']) {
+            if (object['add_Styles'] !== '') {
+                //styleタグの追加
+                const headElm = document.querySelector('head');
+                const addStyleElm = create_Element('style',[
+                    {id:'table-style'}
+                ]);
+                const addStyles = object['add_Styles'];
+                const style = `${addStyles}`;
+                addStyleElm.textContent = style;
+                headElm.appendChild(addStyleElm);
+            } else {
+            };
+        } else {
+        };
     };
     setAttrs(object) {
         //attributeオブジェクトの作成
