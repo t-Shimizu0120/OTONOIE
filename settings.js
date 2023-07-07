@@ -423,7 +423,7 @@ class AddTabContents {
                 display: block;
             }
         `;
-        addStyleElm.textContent = style;
+        addStyleElm.textContent += style;
         headElm.appendChild(addStyleElm);
     };
     //attributeオブジェクトの生成
