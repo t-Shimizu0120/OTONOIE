@@ -346,43 +346,6 @@ class AddTabContents {
     };
     //style生成
     setStyle(object) {
-
-
-        
-        //styleタグの有無を判定
-        if (document.querySelector('#tab-style') !== null) {
-            //あれば追加
-            if (object['add_Styles']) {
-                if (object['add_Styles'] !== '') {
-                    document.querySelector('#tab-style').textContent += object['add_Styles'];
-                } else {
-                };
-            } else {
-            };
-        } else {
-            //無ければ作成
-            if (object['add_Styles']) {
-                if (object['add_Styles'] !== '') {
-                    //styleタグ作成
-                    const headElm = document.querySelector('head');
-                    const addStyleElm = create_Element('style',[
-                        {id:'table-style'}
-                    ]);
-                    addStyleElm.textContent += object['add_Styles'];
-                    headElm.appendChild(addStyleElm);
-                } else {
-                };
-            } else {
-            };
-        };
-
-
-        
-        //styleタグの追加
-        const headElm = document.querySelector('head');
-        const addStyleElm = create_Element('style',[
-            {id:'tab-style'}
-        ]);
         //コンテンツ数からタブの幅（％）を設定
         const tabCount = (() => {
             if (object['tab_Contents'].length <= 3) {
@@ -393,23 +356,42 @@ class AddTabContents {
         })();
         const tabWidthBase = Math.trunc((100 / Number(tabCount)) * 1000) / 1000;
         const containerId = object['contents_BaseId'] + '-tab-contents';
-        addStyleElm.textContent += `
+        //styleタグの有無を判定
+        if (document.querySelector('#tab-style') !== null) {
+            //あれば追加
+            document.querySelector('#tab-style').textContent += `
 #${containerId} > label {
     flex: 0 0 ${tabWidthBase}%;
 }
-        `;
-        if (object['add_Styles']) {
-            if (object['add_Styles'] !== '') {
-                addStyleElm.textContent += object['add_Styles'];
+            `;
+            if (object['add_Styles']) {
+                if (object['add_Styles'] !== '') {
+                    document.querySelector('#tab-style').textContent += object['add_Styles'];
+                } else {
+                };
             } else {
             };
         } else {
+            //無ければ作成
+            //styleタグの追加
+            const headElm = document.querySelector('head');
+            const addStyleElm = create_Element('style',[
+                {id:'tab-style'}
+            ]);
+            addStyleElm.textContent += `
+#${containerId} > label {
+    flex: 0 0 ${tabWidthBase}%;
+}
+            `;
+            if (object['add_Styles']) {
+                if (object['add_Styles'] !== '') {
+                    addStyleElm.textContent += object['add_Styles'];
+                } else {
+                };
+            } else {
+            };
+            headElm.appendChild(addStyleElm);
         };
-        headElm.appendChild(addStyleElm);
-
-
-
-        
         //style
         const style = `
             .js-added-tab-contents {
