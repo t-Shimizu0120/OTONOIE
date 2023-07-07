@@ -473,3 +473,19 @@ class AddTabContents {
     //*******
 //);
 //--------------------------------------------------
+const bbb = new AddTabContents(
+    {
+        contents_Title:'',
+        contents_BaseId:'aaaaaaa',
+        tab_Contents:[
+            {tabContentTitle:'aaa',tabContentName:'aaa'},
+            {tabContentTitle:'sss',tabContentName:'sss'}
+        ],
+        add_Styles:`
+        `, 
+        add_To_Selector:''
+    },
+    null,
+    null
+);
+document.querySelector('.detail_btm').appendChild(bbb);
