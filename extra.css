@@ -44,11 +44,13 @@
     --button-border:;
     --button-border-radius:calc(var(--volume-2) * 1rem);
     --button-padding:;
-    --button-font-size-s:;
-    --button-font-size-m:;
-    --button-font-size-l:;
-    --button-font-size-ll:;
-    --button-font-size-xl:;
+    --button-font-size-xs:calc(var(--volume-8) * 1rem);
+    --button-font-size-ss:calc(var(--volume-10) * 1rem);
+    --button-font-size-s:calc(var(--volume-12) * 1rem);
+    --button-font-size-m:calc(var(--volume-14) * 1rem);
+    --button-font-size-l:calc(var(--volume-16) * 1rem);
+    --button-font-size-ll:calc(var(--volume-18) * 1rem);
+    --button-font-size-xl:calc(var(--volume-20) * 1rem);
     --button-font-weight:;
     /*opacity*/
     --opacity-hover:var(--volume-6);
