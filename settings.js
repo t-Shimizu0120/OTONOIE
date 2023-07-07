@@ -160,7 +160,7 @@ class AddTable {
             };
             //attribute用のオブジェクトの作成
             const obj = this.setAttrs(object);
-            //テーブルタグのattribute設定
+            //テーブルタグ作成
             const add_Elm_table = create_Element('table',obj.table_Attrs);
             //tbodyタグ作成
             const add_Elm_tbody = create_Element('tbody',obj.tbody_Attrs);
@@ -265,7 +265,6 @@ class AddTabContents {
             };
             //attributeオブジェクトを作成
             const obj = this.setAttrs(object);
-        
             //コンテナ作成
             const tabContents_Container = document.createElement('div');
             //add_tabContents.setAttribute('class','js-added-tab-contents');
@@ -274,7 +273,6 @@ class AddTabContents {
                 const div_AttrValue = this.div_Attr[div_AttrName];
                 tabContents_Container.setAttribute(div_AttrName,div_AttrValue);
             };
-        
             //コンテンツ作成
             let checkedJudge = false;
             for (let i = 0; i < obj.tab_Contents.length; i++) {
