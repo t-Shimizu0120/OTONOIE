@@ -264,51 +264,28 @@ class AddTabContents {
             //コンテンツがない場合、nullを返す
             return null;
         } else {
+            //ある場合は処理継続
             //style設定
             this.setStyle(object);
             //attributeオブジェクトを作成
             const obj = this.setAttrs(object);
             //コンテナ作成
-            const tabContents_Container = document.createElement('div');
-            //add_tabContents.setAttribute('class','js-added-tab-contents');
-            for (this.div_Attr of obj.div_Attrs) {
-                const div_AttrName = Object.keys(this.div_Attr)[0];
-                const div_AttrValue = this.div_Attr[div_AttrName];
-                tabContents_Container.setAttribute(div_AttrName,div_AttrValue);
-            };
+            const tabContents_Container = create_Element('div',obj.div_Attrs);
             //コンテンツ作成
             let checkedJudge = false;
             for (let i = 0; i < obj.tab_Contents.length; i++) {
                 //id生成
                 const input_label_Id = 'id-' + obj.tab_Contents[i]['tabContentName'];
-        
                 //input作成
-                const tab_Input = document.createElement('input');
-                for (this.input_Attr of obj.input_Attrs) {
-                    const input_AttrName = Object.keys(this.input_Attr)[0];
-                    const input_AttrValue = this.input_Attr[input_AttrName];
-                    tab_Input.setAttribute(input_AttrName,input_AttrValue);
-                };
+                const tab_Input = create_Element('input',obj.input_Attrs);
                 tab_Input.setAttribute('id',input_label_Id);
-        
                 //label作成
-                const tab_Label = document.createElement('label');
-                for (this.label_Attr of obj.label_Attrs) {
-                    const label_AttrName = Object.keys(this.label_Attr)[0];
-                    const label_AttrValue = this.label_Attr[label_AttrName];
-                    tab_Label.setAttribute(label_AttrName,label_AttrValue);
-                };
+                const tab_Label = create_Element('label',obj.label_Attrs);
                 tab_Label.setAttribute('for',input_label_Id);
                 tab_Label.textContent = obj.tab_Contents[i]['tabContentTitle'];
-        
                 //content作成
-                const tab_Content = document.createElement('div');
-                for (this.content_Attr of obj.content_Attrs) {
-                    const content_AttrName = Object.keys(this.content_Attr)[0];
-                    const content_AttrValue = this.content_Attr[content_AttrName];
-                    tab_Content.setAttribute(content_AttrName,content_AttrValue);
-                };
-        
+                const tab_Content = create_Element('div',obj.content_Attrs);
+                
                 //表示用attributeの設定・コンテンツ要素へ入れる
                 if (args[i] === null) {
                     //コンテンツが空（null）の場合、disabledを設定
@@ -326,22 +303,8 @@ class AddTabContents {
                 tabContents_Container.appendChild(tab_Label);
                 tabContents_Container.appendChild(tab_Content);
             };
-        
-            if (obj.add_To_Selector === '') {
-                return tabContents_Container;
-            } else {
-                const targetElm = document.querySelector(obj.add_To_Selector);
-                if (obj['contents_Title'] === '') {
-                    targetElm.appendChild(tabContents_Container);
-                } else {
-                    //タイトル作成
-                    const tab_Contents_Title = document.createElement('h5');
-                    tab_Contents_Title.textContent = obj['contents_Title'];
-                    
-                    targetElm.appendChild(tab_Contents_Title);
-                    targetElm.appendChild(tabContents_Container);
-                };
-            };
+            
+            return tabContents_Container;
         };
     };
     //style生成
