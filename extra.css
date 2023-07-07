@@ -6,15 +6,6 @@
     --media-bp-m:;
     --media-bp-l:;
     --media-bp-ll:;
-    /*color*/
-    --color-white:#fff;
-    --color-black:#000;
-    --color-eee:#eee;
-    --color-dfdfdf:#dfdfdf;
-    --color-f7f4f4:#f7f4f4;
-    --color-dddddd:#dddddd;
-    --color-3f3f3f:#3f3f3f;
-    --color-afafaf:#afafaf;
     /*volume*/
     --volume-none:none;
     --volume-0:0;
@@ -40,6 +31,15 @@
     --volume-30:3;
     --volume-40:4;
     --volume-50:5;
+    /*color*/
+    --color-white:#fff;
+    --color-black:#000;
+    --color-eee:#eee;
+    --color-dfdfdf:#dfdfdf;
+    --color-f7f4f4:#f7f4f4;
+    --color-dddddd:#dddddd;
+    --color-3f3f3f:#3f3f3f;
+    --color-afafaf:#afafaf;
     /*button*/
     --button-border-style:none;
     --button-border:;
