@@ -50,13 +50,15 @@
     --border-width-l:calc(var(--border-width-m) + var(--border-width-volatility));
     --border-width-ll:calc(var(--border-width-l) + var(--border-width-volatility));
     /*font-size*/
-    --font-size-xs:calc(var(--volume-8) * 1rem);
-    --font-size-ss:calc(var(--volume-10) * 1rem);
-    --font-size-s:calc(var(--volume-12) * 1rem);
-    --font-size-m:calc(var(--volume-14) * 1rem);
-    --font-size-l:calc(var(--volume-16) * 1rem);
-    --font-size-ll:calc(var(--volume-18) * 1rem);
-    --font-size-xl:calc(var(--volume-20) * 1rem);
+    --font-size-volatility:calc(var(--volume-2) * 1rem);
+    --font-size-base:calc(var(--volume-8) * 1rem);
+    --font-size-xs:calc(var(--font-size-base) + var(--font-size-volatility));
+    --font-size-ss:calc(var(--font-size-xs) + var(--font-size-volatility));
+    --font-size-s:calc(var(--font-size-ss) + var(--font-size-volatility));
+    --font-size-m:calc(var(--font-size-s) + var(--font-size-volatility));
+    --font-size-l:calc(var(--font-size-m) + var(--font-size-volatility));
+    --font-size-ll:calc(var(--font-size-l) + var(--font-size-volatility));
+    --font-size-xl:calc(var(--font-size-ll) + var(--font-size-volatility));
     /*<------------------------------------------------------>*/
     /*button*/
     --button-style-border:var(--volume-0);
@@ -94,7 +96,7 @@
     /*content*/
     --content-color:;
     --content-background-color:var(--color-f7f4f4);
-    --content-outline-border-width:calc(var(--volume-3) * 1rem);
+    --content-outline-border-width:var(--border-width-m);
     --content-outline-border-color:var(--color-dfdfdf);
     --content-outline-border-style:solid;
     --content-outline-border:var(--content-outline-border-width) var(--content-outline-border-color) var(--content-outline-border-style);
