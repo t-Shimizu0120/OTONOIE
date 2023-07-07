@@ -40,6 +40,9 @@
     --volume-30:3;
     --volume-40:4;
     --volume-50:5;
+    /*opacity*/
+    --opacity-hover:var(--volume-6);
+    --opacity-disabled:var(--volume-6);
     /*scrollbar*/
     --scrollbar-color-track:var(--color-dddddd);
     --scrollbar-color-thumb:var(--color-3f3f3f);
