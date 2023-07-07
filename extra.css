@@ -79,6 +79,9 @@
     --table-td-font-size:;
     --table-padding:calc(var(--volume-12) * 1rem);
     /*tabcontents*/
+    --tab-contents-width:100%;
+    --tab-contents-margin:;
+    --tab-contents-padding:;
 }
 /*============================================================================*/
 /*スクロールバー*/
@@ -174,11 +177,15 @@
 
 
 .js-added-tab-contents {
-    width:100%;
-    flex-wrap: wrap;
-    display: flex;
-    margin-bottom: 20px;
+    width:var(--tab-contents-width);
+    display:flex;
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    flex-flow:row wrap;
 }
+
+
 input[name="js-added-tab-input"] {
     display: none;
 }
