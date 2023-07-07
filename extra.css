@@ -61,7 +61,7 @@
     --font-size-xl:calc(var(--font-size-ll) + var(--font-size-volatility));
     /*<------------------------------------------------------>*/
     /*button*/
-    --button-style-border:var(--volume-0);
+    --button-style-border:var(--border-width-none);
     --button-style-border-radius:calc(var(--volume-2) * 1rem);
     --button-style-padding-s-s:;
     --button-style-padding-s-m:;
