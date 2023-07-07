@@ -41,6 +41,15 @@
     --volume-40:4;
     --volume-50:5;
     /*button*/
+    --button-border:;
+    --button-border-radius:;
+    --button-padding:;
+    --button-font-size-s:;
+    --button-font-size-m:;
+    --button-font-size-l:;
+    --button-font-size-ll:;
+    --button-font-size-xl:;
+    --button-font-weight:;
     /*opacity*/
     --opacity-hover:var(--volume-6);
     --opacity-disabled:var(--volume-6);
