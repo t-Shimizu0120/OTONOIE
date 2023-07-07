@@ -40,6 +40,7 @@
     --volume-30:3;
     --volume-40:4;
     --volume-50:5;
+    /*button*/
     /*opacity*/
     --opacity-hover:var(--volume-6);
     --opacity-disabled:var(--volume-6);
