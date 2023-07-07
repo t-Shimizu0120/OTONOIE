@@ -151,7 +151,7 @@ class AddTable {
             //ある場合は処理継続
             //style設定
             this.setStyle(object);
-            //attribute用のオブジェクトの作成
+            //attributeオブジェクトを作成
             const obj = this.setAttrs(object);
             //テーブルタグ作成
             const add_Elm_table = create_Element('table',obj.table_Attrs);
@@ -264,24 +264,8 @@ class AddTabContents {
             //コンテンツがない場合、nullを返す
             return null;
         } else {
-
-            
-
-
-            
-            //別のタブがあるかどうかを判定
-            if (document.querySelector('#tab-style') != null) {
-                //あればスタイルを追加
-                const style = document.querySelector('#tab-style');
-                style.textContent += object['add_Styles'];
-            } else {
-                //無ければ作成
-                this.setStyle(object);
-            };
-
-            
-
-            
+            //style設定
+            this.setStyle(object);
             //attributeオブジェクトを作成
             const obj = this.setAttrs(object);
             //コンテナ作成
@@ -362,19 +346,34 @@ class AddTabContents {
     };
     //style生成
     setStyle(object) {
+
+
+        
         //styleタグの有無を判定
-        if (document.querySelector('#table-style') !== null) {
+        if (document.querySelector('#tab-style') !== null) {
             //あれば追加
             if (object['add_Styles']) {
                 if (object['add_Styles'] !== '') {
-                    document.querySelector('#table-style').textContent += object['add_Styles'];
+                    document.querySelector('#tab-style').textContent += object['add_Styles'];
                 } else {
                 };
             } else {
             };
         } else {
-            //無ければ作成・追加
-            this.setStyle(object);
+            //無ければ作成
+            if (object['add_Styles']) {
+                if (object['add_Styles'] !== '') {
+                    //styleタグ作成
+                    const headElm = document.querySelector('head');
+                    const addStyleElm = create_Element('style',[
+                        {id:'table-style'}
+                    ]);
+                    addStyleElm.textContent += object['add_Styles'];
+                    headElm.appendChild(addStyleElm);
+                } else {
+                };
+            } else {
+            };
         };
 
 
@@ -407,6 +406,9 @@ class AddTabContents {
         } else {
         };
         headElm.appendChild(addStyleElm);
+
+
+
         
         //style
         const style = `
