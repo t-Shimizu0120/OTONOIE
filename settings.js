@@ -443,20 +443,15 @@ class AddTabContents {
     };
     //attributeオブジェクトの生成
     setAttrs(object) {
-        //ベースオブジェクト
+        //attributeオブジェクトの作成
         const tab_Obj = {
-            contents_Title:'',
             tab_Contents:[],
             
             div_Attrs:[{class:'js-added-tab-contents'}],
             input_Attrs:[{type:'radio'},{name:'js-added-tab-input'}],
             label_Attrs:[{class:'js-added-tab-label'}],
             content_Attrs:[{class:'js-added-tab-content'}],
-            
-            add_To_Selector:''
         };
-        //コンテンツ独自のattributeを追加
-        tab_Obj.contents_Title = object.contents_Title;
         const tab_Contents = object.tab_Contents;
         for (this.tab_Content of tab_Contents) {
             tab_Obj.tab_Contents.push(this.tab_Content);
@@ -464,7 +459,6 @@ class AddTabContents {
         const div_Id = {};
         div_Id.id = object.contents_BaseId + '-tab-contents';
         tab_Obj.div_Attrs.push(div_Id);
-        tab_Obj.add_To_Selector = object.add_To_Selector;
     
         return tab_Obj;
     };
@@ -472,15 +466,13 @@ class AddTabContents {
 //--------------------draft--------------------
 //const ********** = new AddTabContents(
     //{
-        //contents_Title:'',
         //contents_BaseId:'',
         //tab_Contents:[
             //{tabContentTitle:'',tabContentName:''},
             //{tabContentTitle:'',tabContentName:''}
         //],
         //add_Styles:`
-        //`, 
-        //add_To_Selector:''
+        //`
     //},
     //*******,
     //*******
@@ -488,15 +480,13 @@ class AddTabContents {
 //--------------------------------------------------
 const bbb = new AddTabContents(
     {
-        contents_Title:'',
         contents_BaseId:'aaaaaaa',
         tab_Contents:[
             {tabContentTitle:'aaa',tabContentName:'aaa'},
             {tabContentTitle:'sss',tabContentName:'sss'}
         ],
         add_Styles:`
-        `, 
-        add_To_Selector:''
+        `
     },
     null,
     null
