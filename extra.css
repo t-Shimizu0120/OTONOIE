@@ -41,6 +41,7 @@
     --volume-40:4;
     --volume-50:5;
     /*button*/
+    --button-border-style:none;
     --button-border:;
     --button-border-radius:calc(var(--volume-2) * 1rem);
     --button-padding-xs:calc(var(--volume-8) * 1rem);
