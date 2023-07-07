@@ -42,10 +42,10 @@
     --color-3f3f3f:#3f3f3f;
     --color-afafaf:#afafaf;
     /*border-width*/
-    --border-width-base:calc(var(--volume-1) * 1rem);
     --border-width-volatility:calc(var(--volume-1) * 1rem);
     --border-width-none:0;
-    --border-width-s:var(--border-width-base); 
+    --border-width-base:calc(var(--volume-1) * 1rem);
+    --border-width-s:calc(var(--border-width-base) + var(--border-width-volatility));
     --border-width-m:calc(var(--border-width-s) + var(--border-width-volatility));
     --border-width-l:calc(var(--border-width-m) + var(--border-width-volatility));
     --border-width-ll:calc(var(--border-width-l) + var(--border-width-volatility));
