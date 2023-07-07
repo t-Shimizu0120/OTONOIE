@@ -149,20 +149,8 @@ class AddTable {
             return null;
         } else {
             //ある場合は処理継続
-            //styleタグの有無を判定
-            if (document.querySelector('#table-style') !== null) {
-                //あれば追加
-                if (object['add_Styles']) {
-                    if (object['add_Styles'] !== '') {
-                        document.querySelector('#table-style').textContent += object['add_Styles'];
-                    } else {
-                    };
-                } else {
-                };
-            } else {
-                //無ければ作成・追加
-                this.setStyle(object);
-            };
+            //style設定
+            this.setStyle(object);
             //attribute用のオブジェクトの作成
             const obj = this.setAttrs(object);
             //テーブルタグ作成
@@ -207,18 +195,31 @@ class AddTable {
         };
     };
     setStyle(object) {
-        if (object['add_Styles']) {
-            if (object['add_Styles'] !== '') {
-                //styleタグの追加
-                const headElm = document.querySelector('head');
-                const addStyleElm = create_Element('style',[
-                    {id:'table-style'}
-                ]);
-                addStyleElm.textContent += object['add_Styles'];
-                headElm.appendChild(addStyleElm);
+        //styleタグの有無を判定
+        if (document.querySelector('#table-style') !== null) {
+            //あれば追加
+            if (object['add_Styles']) {
+                if (object['add_Styles'] !== '') {
+                    document.querySelector('#table-style').textContent += object['add_Styles'];
+                } else {
+                };
             } else {
             };
         } else {
+            //無ければ作成
+            if (object['add_Styles']) {
+                if (object['add_Styles'] !== '') {
+                    //styleタグ作成
+                    const headElm = document.querySelector('head');
+                    const addStyleElm = create_Element('style',[
+                        {id:'table-style'}
+                    ]);
+                    addStyleElm.textContent += object['add_Styles'];
+                    headElm.appendChild(addStyleElm);
+                } else {
+                };
+            } else {
+            };
         };
     };
     setAttrs(object) {
@@ -263,6 +264,11 @@ class AddTabContents {
             //コンテンツがない場合、nullを返す
             return null;
         } else {
+
+            
+
+
+            
             //別のタブがあるかどうかを判定
             if (document.querySelector('#tab-style') != null) {
                 //あればスタイルを追加
@@ -272,6 +278,10 @@ class AddTabContents {
                 //無ければ作成
                 this.setStyle(object);
             };
+
+            
+
+            
             //attributeオブジェクトを作成
             const obj = this.setAttrs(object);
             //コンテナ作成
@@ -352,6 +362,23 @@ class AddTabContents {
     };
     //style生成
     setStyle(object) {
+        //styleタグの有無を判定
+        if (document.querySelector('#table-style') !== null) {
+            //あれば追加
+            if (object['add_Styles']) {
+                if (object['add_Styles'] !== '') {
+                    document.querySelector('#table-style').textContent += object['add_Styles'];
+                } else {
+                };
+            } else {
+            };
+        } else {
+            //無ければ作成・追加
+            this.setStyle(object);
+        };
+
+
+        
         //styleタグの追加
         const headElm = document.querySelector('head');
         const addStyleElm = create_Element('style',[
