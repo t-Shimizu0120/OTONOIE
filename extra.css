@@ -167,6 +167,63 @@
 .js-added-table-td > ul > li{
     color:var(--table-td-color);
 }
+
+
+
+
+
+.js-added-tab-contents {
+    width:100%;
+    flex-wrap: wrap;
+    display: flex;
+    margin-bottom: 20px;
+}
+input[name="js-added-tab-input"] {
+    display: none;
+}
+.js-added-tab-label {
+    background-color:#dddddd; 
+    color:#3f3f3f; 
+    text-align:center;
+    padding: 1rem 0; 
+    font-weight:bold;
+    cursor:pointer;
+    display: block;
+    float: left;
+    order: -1;
+}
+input:checked + .js-added-tab-label {
+    background-color: #3f3f3f;
+    color: #eee;
+    pointer-events:none;
+}
+input:disabled + .js-added-tab-label {
+    opacity:.6;
+    pointer-events:none;
+}
+.js-added-tab-label:hover {
+    opacity:.6;
+}
+input:checked + .js-added-tab-label:hover {
+    opacity:1;
+}
+input:disabled + .js-added-tab-label:hover {
+    opacity:1;
+}
+.js-added-tab-content {
+    display: none;
+    width: 100%;
+}
+input:checked + .js-added-tab-label + .js-added-tab-content {
+    display: block;
+}
+
+
+
+
+
+
+
 /*============================================================================*/
 /*@media--m*/
 /*============================================================================*/
