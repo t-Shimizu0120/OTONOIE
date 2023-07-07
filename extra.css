@@ -80,6 +80,7 @@
     --scrollbar-width:calc(var(--volume-8) * 1rem);
     --scrollbar-height:calc(var(--volume-8) * 1rem);
     /*content*/
+    --content-color:;
     --content-background-color:var(--color-f7f4f4);
     --content-outline-border-width:calc(var(--volume-3) * 1rem);
     --content-outline-border-color:var(--color-dfdfdf);
@@ -127,6 +128,7 @@
     --tab-contents-label-font-weight:bold;
 }
 /*============================================================================*/
+/*----------共通----------*/
 /*スクロールバー*/
 ::-webkit-scrollbar{
     width:var(--scrollbar-width);
@@ -137,13 +139,6 @@
 }
 ::-webkit-scrollbar-thumb{
     background-color:var(--scrollbar-color-thumb);
-}
-/*外枠*/
-.result .detail {
-    border:var(--content-outline-border);
-}
-.owner-form {
-    border:var(--content-outline-border);
 }
 /*ページトップボタン*/
 #pagetop {
@@ -191,6 +186,14 @@
 }
 #pagetop > a > img {
     display:none;
+}
+/*-----------------------*/
+/*外枠*/
+.result .detail {
+    border:var(--content-outline-border);
+}
+.owner-form {
+    border:var(--content-outline-border);
 }
 /*テーブル*/
 .js-added-table {
