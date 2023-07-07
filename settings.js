@@ -209,9 +209,7 @@ class AddTable {
                 const addStyleElm = create_Element('style',[
                     {id:'table-style'}
                 ]);
-                const addStyles = object['add_Styles'];
-                const style = `${addStyles}`;
-                addStyleElm.textContent = style;
+                addStyleElm.textContent += object['add_Styles'];
                 headElm.appendChild(addStyleElm);
             } else {
             };
@@ -349,22 +347,11 @@ class AddTabContents {
     };
     //style生成
     setStyle(object) {
-        //headタグへ挿入
+        //styleタグの追加
         const headElm = document.querySelector('head');
-        const addStyleElm = document.createElement('style');
-        addStyleElm.setAttribute('id','tab-style');
-        //コンテンツ独自のstyleを挿入
-        const addStyles = (() => {
-            if (object['add_Styles']) {
-                if (object['add_Styles'] !== '') {
-                    return object['add_Styles'];
-                } else {
-                    return '';
-                };
-            } else {
-                return '';
-            };
-        })();
+        const addStyleElm = create_Element('style',[
+            {id:'tab-style'}
+        ]);
         //コンテンツ数からタブの幅（％）を設定
         const tabCount = (() => {
             if (object['tab_Contents'].length <= 3) {
@@ -374,6 +361,20 @@ class AddTabContents {
             };
         })();
         const tabWidthBase = Math.trunc((100 / Number(tabCount)) * 1000) / 1000;
+        const containerId = object['contents_BaseId'] + '-tab-contents';
+        addStyleElm.textContent += `
+            #${containerId} > label {
+            flex: 0 0 ${tabWidthBase}%;
+        }`;
+        if (object['add_Styles']) {
+            if (object['add_Styles'] !== '') {
+                addStyleElm.textContent += object['add_Styles'];
+            } else {
+            };
+        } else {
+        };
+        headElm.appendChild(addStyleElm);
+        
         //style
         const style = `
             .js-added-tab-contents {
