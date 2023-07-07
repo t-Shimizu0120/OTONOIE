@@ -152,8 +152,13 @@ class AddTable {
             //styleタグの有無を判定
             if (document.querySelector('#table-style') !== null) {
                 //あれば追加
-                const style = document.querySelector('#table-style');
-                style.textContent += object['add_Styles'];
+                if (object['add_Styles']) {
+                    if (object['add_Styles'] !== '') {
+                        document.querySelector('#table-style').textContent += object['add_Styles'];
+                    } else {
+                    };
+                } else {
+                };
             } else {
                 //無ければ作成・追加
                 this.setStyle(object);
@@ -363,9 +368,10 @@ class AddTabContents {
         const tabWidthBase = Math.trunc((100 / Number(tabCount)) * 1000) / 1000;
         const containerId = object['contents_BaseId'] + '-tab-contents';
         addStyleElm.textContent += `
-            #${containerId} > label {
-            flex: 0 0 ${tabWidthBase}%;
-        }`;
+#${containerId} > label {
+    flex: 0 0 ${tabWidthBase}%;
+}
+        `;
         if (object['add_Styles']) {
             if (object['add_Styles'] !== '') {
                 addStyleElm.textContent += object['add_Styles'];
@@ -423,8 +429,6 @@ class AddTabContents {
                 display: block;
             }
         `;
-        addStyleElm.textContent += style;
-        headElm.appendChild(addStyleElm);
     };
     //attributeオブジェクトの生成
     setAttrs(object) {
