@@ -40,9 +40,21 @@
     --color-dddddd:#dddddd;
     --color-3f3f3f:#3f3f3f;
     --color-afafaf:#afafaf;
+    /*border-width*/
+    --border-width-none:0;
+    --border-width-s:calc(var(--volume-1) * 1rem); 
+    --border-width-m:calc(var(--volume-2) * 1rem);
+    --border-width-l:calc(var(--volume-3) * 1rem);
+    --border-width-ll:calc(var(--volume-5) * 1rem);
+    /*font-size*/
+    --font-size-xs:calc(var(--volume-8) * 1rem);
+    --font-size-ss:calc(var(--volume-10) * 1rem);
+    --font-size-s:calc(var(--volume-12) * 1rem);
+    --font-size-m:calc(var(--volume-14) * 1rem);
+    --font-size-l:calc(var(--volume-16) * 1rem);
+    --font-size-ll:calc(var(--volume-18) * 1rem);
+    --font-size-xl:calc(var(--volume-20) * 1rem);
     /*button*/
-    --button-border-style:none;
-    --button-border:;
     --button-border-radius:calc(var(--volume-2) * 1rem);
     --button-padding-xs:calc(var(--volume-8) * 1rem);
     --button-padding-ss:calc(var(--volume-10) * 1rem);
@@ -58,7 +70,6 @@
     --button-font-size-l:calc(var(--volume-16) * 1rem);
     --button-font-size-ll:calc(var(--volume-18) * 1rem);
     --button-font-size-xl:calc(var(--volume-20) * 1rem);
-    --button-font-weight:normal;
     --button-font-weight:bold;
     /*opacity*/
     --opacity-hover:var(--volume-6);
