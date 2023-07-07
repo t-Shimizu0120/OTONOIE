@@ -43,7 +43,13 @@
     /*button*/
     --button-border:;
     --button-border-radius:calc(var(--volume-2) * 1rem);
-    --button-padding:;
+    --button-padding-xs:calc(var(--volume-8) * 1rem);
+    --button-padding-ss:calc(var(--volume-10) * 1rem);
+    --button-padding-s:calc(var(--volume-12) * 1rem);
+    --button-padding-m:calc(var(--volume-14) * 1rem);
+    --button-padding-l:calc(var(--volume-16) * 1rem);
+    --button-padding-ll:calc(var(--volume-18) * 1rem);
+    --button-padding-xl:calc(var(--volume-20) * 1rem);
     --button-font-size-xs:calc(var(--volume-8) * 1rem);
     --button-font-size-ss:calc(var(--volume-10) * 1rem);
     --button-font-size-s:calc(var(--volume-12) * 1rem);
@@ -51,7 +57,8 @@
     --button-font-size-l:calc(var(--volume-16) * 1rem);
     --button-font-size-ll:calc(var(--volume-18) * 1rem);
     --button-font-size-xl:calc(var(--volume-20) * 1rem);
-    --button-font-weight:;
+    --button-font-weight:normal;
+    --button-font-weight:bold;
     /*opacity*/
     --opacity-hover:var(--volume-6);
     --opacity-disabled:var(--volume-6);
