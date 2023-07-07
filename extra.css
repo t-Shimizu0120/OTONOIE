@@ -78,6 +78,7 @@
     --table-th-font-size:;
     --table-td-font-size:;
     --table-padding:calc(var(--volume-12) * 1rem);
+    /*tabcontents*/
 }
 /*============================================================================*/
 /*スクロールバー*/
