@@ -9,6 +9,7 @@
     /*color*/
     --color-white:#fff;
     --color-black:#000;
+    --color-eee:#eee;
     --color-dfdfdf:#dfdfdf;
     --color-f7f4f4:#f7f4f4;
     --color-dddddd:#dddddd;
@@ -82,6 +83,14 @@
     --tab-contents-width:100%;
     --tab-contents-margin:;
     --tab-contents-padding:;
+    --tab-contents-label-color:var(--color-3f3f3f);
+    --tab-contents-label-checked-color:var(--color-eee);
+    --tab-contents-label-background-color:var(--color-dddddd);
+    --tab-contents-label-checked-background-color:var(--color-3f3f3f);
+    --tab-contents-label-margin:;
+    --tab-contents-label-padding:calc(var(--volume-10) * 1rem) 0;
+    --tab-contents-label-font-size:;
+    --tab-contents-label-font-weight:bold;
 }
 /*============================================================================*/
 /*スクロールバー*/
@@ -171,11 +180,6 @@
 .js-added-table-td > ul > li{
     color:var(--table-td-color);
 }
-
-
-
-
-
 .js-added-tab-contents {
     width:var(--tab-contents-width);
     display:flex;
@@ -184,31 +188,33 @@
     display:-ms-flexbox;
     flex-flow:row wrap;
 }
-
-
 input[name="js-added-tab-input"] {
-    display: none;
+    display:none;
 }
 .js-added-tab-label {
-    background-color:#dddddd; 
-    color:#3f3f3f; 
+    background-color:var(--tab-contents-label-background-color); 
+    color:var(--tab-contents-label-color); 
     text-align:center;
-    padding: 1rem 0; 
-    font-weight:bold;
+    padding:var(--tab-contents-label-padding);
+    font-weight:var(--tab-contents-label-font-weight);
     cursor:pointer;
     display: block;
     float: left;
     order: -1;
 }
 input:checked + .js-added-tab-label {
-    background-color: #3f3f3f;
-    color: #eee;
+    background-color:var(--tab-contents-label-checked-background-color);
+    color:var(--tab-contents-label-checked-color);
     pointer-events:none;
 }
 input:disabled + .js-added-tab-label {
     opacity:.6;
     pointer-events:none;
 }
+
+
+
+
 .js-added-tab-label:hover {
     opacity:.6;
 }
