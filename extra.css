@@ -88,21 +88,7 @@
 
 
     
-    /*pagetop*/
-    --pagetop-right:calc(var(--volume-30) * 1rem);
-    --pagetop-bottom:calc(var(--volume-20) * 1rem);
-    --pagetop-padding:calc(var(--volume-7) * 1rem) 0;
-    --pagetop-color:var(--color-white);
-    --pagetop-background:var(--color-black);
-    --pagetop-border:var(--volume-0);
-    --pagetop-border-radius:calc(var(--volume-2) * 1rem);
-    --pagetop-opacity:var(--volume-6);
-    --pagetop-hover-opacity:var(--volume-8);
-    --pagetop-inner-icon-width:calc(var(--volume-20) * 1rem);
-    --pagetop-inner-icon-height:calc(var(--volume-20) * 1rem);
-    --pagetop-inner-icon-border:calc(var(--volume-4) * 1rem) solid var(--pagetop-color);
-    --pagetop-inner-font-size:calc(var(--volume-10) * 1rem);
-    --pagetop-inner-font-weight:bold;
+
     /*table*/
     --table-color:var(--color-3f3f3f);
     --table-th-color:var(--color-3f3f3f);
@@ -144,20 +130,20 @@
 /*ページトップボタン*/
 #pagetop {
     position:fixed;
-    right:var(--pagetop-right);
-    bottom:var(--pagetop-bottom);
+    right:calc(var(--volume-30) * 1rem);
+    bottom:calc(var(--volume-20) * 1rem);
 }
 #pagetop:hover {
-    opacity:var(--pagetop-hover-opacity);
+    opacity:var(--volume-8);
 }
 .js-added-pagetop {
     width:7.5rem;
     height:5rem;
-    padding:var(--pagetop-padding);
-    color:var(--pagetop-color);
-    background:var(--pagetop-background);
-    border:var(--pagetop-border);
-    border-radius:var(--pagetop-border-radius);
+    padding:calc(var(--volume-7) * 1rem) 0;
+    color:var(--color-white);
+    background:var(--color-black);
+    border:var(--volume-0);
+    border-radius:calc(var(--volume-2) * 1rem);
     display:flex;
     display:-webkit-box;
     display:-webkit-flex;
@@ -166,23 +152,23 @@
     justify-content:space-between;
     align-items:center;
     z-index:500;
-    opacity:var(--pagetop-opacity);
+    opacity:var(--volume-6);
 }
 .js-added-pagetop:hover {
     text-decoration:none;
 }
 .js-added-pagetop-arrow {
-    height:var(--pagetop-inner-icon-height);
-    width:var(--pagetop-inner-icon-width);
-    border-top:var(--pagetop-inner-icon-border);
-    border-right:var(--pagetop-inner-icon-border);
+    height:calc(var(--volume-20) * 1rem);
+    width:calc(var(--volume-20) * 1rem);
+    border-top:calc(var(--volume-4) * 1rem) solid var(--color-white);
+    border-right:calc(var(--volume-4) * 1rem) solid var(--color-white);
     transform:translateY(20%) rotate(-45deg);
     order:0;
 }
 .js-added-pagetop > p {
-    color:var(--pagetop-color);
-    font-size:var(--pagetop-inner-font-size);
-    font-weight:var(--pagetop-inner-font-weight);
+    color:var(--color-white);
+    font-size:calc(var(--volume-10) * 1rem);
+    font-weight:bold;
     order:1;
 }
 #pagetop > a > img {
