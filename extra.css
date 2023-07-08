@@ -35,12 +35,13 @@
     /*color*/
     --color-white:#fff;
     --color-black:#000;
-    --color-eee:#eee;
-    --color-dfdfdf:#dfdfdf;
-    --color-f7f4f4:#f7f4f4;
+    --color-border-light:#dfdfdf;
+    --color-border-dark:;
+    --color-background-light:#f7f4f4;
+    --color-background-dark:#3f3f3f;
     --color-dddddd:#dddddd;
-    --color-3f3f3f:#3f3f3f;
     --color-afafaf:#afafaf;
+    --color-eee:#eee;
     /*border-width*/
     --border-width-volatility:calc(var(--volume-1) * 1rem);
     --border-width-none:0;
@@ -71,7 +72,7 @@
     --button-style-padding-l:calc(var(--button-style-padding-m) + var(--button-style-padding-volatility)) 0;
     --button-style-padding-ll:calc(var(--button-style-padding-l) + var(--button-style-padding-volatility)) 0;
     --button-style-font-size-volatility:calc(var(--volume-2) * 1rem);
-    --button-style-font-size-base:calc(var(--volume-8) * 1rem);
+    --button-style-font-size-base:var(--font-size-base);
     --button-style-font-size-ss:calc(var(--button-style-font-size-base) + var(--button-style-font-size-volatility));
     --button-style-font-size-s:calc(var(--button-style-font-size-ss) + var(--button-style-font-size-volatility));
     --button-style-font-size-m:calc(var(--button-style-font-size-s) + var(--button-style-font-size-volatility));
@@ -84,16 +85,11 @@
     --button-disabled-opacity:var(--volume-6);
     --button-disabled-pointer-events:none;
     /*a*/
-    /*scrollbar*/
-    --scrollbar-color-track:var(--color-dddddd);
-    --scrollbar-color-thumb:var(--color-3f3f3f);
-    --scrollbar-width:calc(var(--volume-8) * 1rem);
-    --scrollbar-height:calc(var(--volume-8) * 1rem);
     /*content*/
     --content-color:;
-    --content-background-color:var(--color-f7f4f4);
+    --content-background-color:var(--color-background-light);
     --content-outline-border-width:var(--border-width-m);
-    --content-outline-border-color:var(--color-dfdfdf);
+    --content-outline-border-color:var(--color-border-light);
     --content-outline-border-style:solid;
     --content-outline-border:var(--content-outline-border-width) var(--content-outline-border-color) var(--content-outline-border-style);
     /*pagetop*/
@@ -141,14 +137,13 @@
 /*----------共通----------*/
 /*スクロールバー*/
 ::-webkit-scrollbar{
-    width:var(--scrollbar-width);
-    height:var(--scrollbar-height);
+    width:calc(var(--volume-8) * 1rem);
 }
 ::-webkit-scrollbar-track{
-    background-color:var(--scrollbar-color-track);
+    background-color:var(--color-background-light);
 }
 ::-webkit-scrollbar-thumb{
-    background-color:var(--scrollbar-color-thumb);
+    background-color:var(--color-background-dark);
 }
 /*ページトップボタン*/
 #pagetop {
