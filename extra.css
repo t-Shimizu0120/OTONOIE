@@ -92,6 +92,8 @@
     --content-outline-border-color:var(--color-border-light);
     --content-outline-border-style:solid;
     --content-outline-border:var(--content-outline-border-width) var(--content-outline-border-color) var(--content-outline-border-style);
+    
+    
     /*pagetop*/
     --pagetop-right:calc(var(--volume-30) * 1rem);
     --pagetop-bottom:calc(var(--volume-20) * 1rem);
