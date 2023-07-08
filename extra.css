@@ -114,12 +114,20 @@
     /*tabcontents*/
     --tab-contents-width:100%;
     --tab-contents-margin:;
+    --tab-contents-style-padding-volatility:calc(var(--volume-2) * 1rem);
+    --tab-contents-style-padding-base:calc(var(--volume-8) * 1rem) 0;
+    --tab-contents-style-padding-ss:calc(var(--tab-contents-style-padding-base) + var(--tab-contents-style-padding-volatility)) 0;
+    --tab-contents-style-padding-s:calc(var(--tab-contents-style-padding-ss) + var(--tab-contents-style-padding-volatility)) 0;
+    --tab-contents-style-padding-m:calc(var(--tab-contents-style-padding-s) + var(--tab-contents-style-padding-volatility)) 0;
+    --tab-contents-style-padding-l:calc(var(--tab-contents-style-padding-m) + var(--tab-contents-style-padding-volatility)) 0;
+    --tab-contents-style-padding-ll:calc(var(--tab-contents-style-padding-l) + var(--tab-contents-style-padding-volatility)) 0;
     --tab-contents-padding:;
     --tab-contents-label-color:var(--color-background-dark);
     --tab-contents-label-checked-color:var(--color-dddddd);
     --tab-contents-label-background-color:var(--color-dddddd);
     --tab-contents-label-checked-background-color:var(--color-background-dark);
     --tab-contents-label-margin:;
+    --tab-contents-label-padding:var(--tab-contents-style-padding-ss);
     --tab-contents-label-font-size-volatility:calc(var(--volume-2) * 1rem);
     --tab-contents-label-font-size-base:var(--font-size-base);
     --tab-contents-label-font-size-ss:calc(var(--tab-contents-label-font-size-base) + var(--tab-contents-label-font-size-volatility));
@@ -129,14 +137,6 @@
     --tab-contents-label-font-size-ll:calc(var(--tab-contents-label-font-size-l) + var(--tab-contents-label-font-size-volatility));
     --tab-contents-label-font-size:--table-style-font-size-s;
     --tab-contents-label-font-weight:bold;
-    --tab-contents-style-padding-volatility:calc(var(--volume-2) * 1rem);
-    --tab-contents-style-padding-base:calc(var(--volume-8) * 1rem) 0;
-    --tab-contents-style-padding-ss:calc(var(--tab-contents-style-padding-base) + var(--tab-contents-style-padding-volatility)) 0;
-    --tab-contents-style-padding-s:calc(var(--tab-contents-style-padding-ss) + var(--tab-contents-style-padding-volatility)) 0;
-    --tab-contents-style-padding-m:calc(var(--tab-contents-style-padding-s) + var(--tab-contents-style-padding-volatility)) 0;
-    --tab-contents-style-padding-l:calc(var(--tab-contents-style-padding-m) + var(--tab-contents-style-padding-volatility)) 0;
-    --tab-contents-style-padding-ll:calc(var(--tab-contents-style-padding-l) + var(--tab-contents-style-padding-volatility)) 0;
-    --tab-contents-label-padding:var(--tab-contents-style-padding-ss);
 }
 /*============================================================================*/
 /*----------共通----------*/
@@ -228,13 +228,6 @@
 .js-added-table-td > ul > li{
     color:var(--table-td-color);
 }
-
-
-
-
-
-
-
 .js-added-tab-contents {
     width:var(--tab-contents-width);
     display:flex;
@@ -243,6 +236,10 @@
     display:-ms-flexbox;
     flex-flow:row wrap;
 }
+
+
+
+
 input[name="js-added-tab-input"] {
     display:none;
 }
