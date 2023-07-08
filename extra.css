@@ -126,6 +126,7 @@
 /*スクロールバー*/
 ::-webkit-scrollbar{
     width:calc(var(--volume-8) * 1rem);
+    height:calc(var(--volume-8) * 1rem);
 }
 ::-webkit-scrollbar-track{
     background-color:var(--color-background-light);
