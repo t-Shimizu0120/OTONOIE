@@ -85,14 +85,8 @@
     --button-disabled-opacity:var(--volume-6);
     --button-disabled-pointer-events:none;
     /*a*/
-    /*content*/
-    --content-color:;
-    --content-background-color:var(--color-background-light);
-    --content-outline-border-width:var(--border-width-m);
-    --content-outline-border-color:var(--color-border-light);
-    --content-outline-border-style:solid;
-    --content-outline-border:var(--content-outline-border-width) var(--content-outline-border-color) var(--content-outline-border-style);
-    
+
+
     
     /*pagetop*/
     --pagetop-right:calc(var(--volume-30) * 1rem);
@@ -197,11 +191,16 @@
 /*-----------------------*/
 /*外枠*/
 .result .detail {
-    border:var(--content-outline-border);
+    border:var(--border-width-m) var(--color-border-light) solid;
 }
 .owner-form {
-    border:var(--content-outline-border);
+    border:var(--border-width-m) var(--color-border-light) solid;
 }
+
+
+
+
+
 /*テーブル*/
 .js-added-table {
     border:var(--table-border);
