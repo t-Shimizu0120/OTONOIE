@@ -95,8 +95,15 @@
     --table-border-color:var(--color-afafaf);
     --table-border-style:solid;
     --table-border:var(--table-border-width) var(--table-border-color) var(--table-border-style);
-    --table-th-font-size:;
-    --table-td-font-size:;
+    --table-style-font-size-volatility:calc(var(--volume-2) * 1rem);
+    --table-style-font-size-base:var(--font-size-base);
+    --table-style-font-size-ss:calc(var(--table-style-font-size-base) + var(--table-style-font-size-volatility));
+    --table-style-font-size-s:calc(var(--table-style-font-size-ss) + var(--table-style-font-size-volatility));
+    --table-style-font-size-m:calc(var(--table-style-font-size-s) + var(--table-style-font-size-volatility));
+    --table-style-font-size-l:calc(var(--table-style-font-size-m) + var(--table-style-font-size-volatility));
+    --table-style-font-size-ll:calc(var(--table-style-font-size-l) + var(--table-style-font-size-volatility));
+    --table-th-font-size:--table-style-font-size-s;
+    --table-td-font-size:--table-style-font-size-s;
     --table-style-padding-volatility:calc(var(--volume-2) * 1rem);
     --table-style-padding-base:calc(var(--volume-8) * 1rem);
     --table-style-padding-ss:calc(var(--table-style-padding-base) + var(--table-style-padding-volatility));
@@ -104,22 +111,32 @@
     --table-style-padding-m:calc(var(--table-style-padding-s) + var(--table-style-padding-volatility));
     --table-style-padding-l:calc(var(--table-style-padding-m) + var(--table-style-padding-volatility));
     --table-style-padding-ll:calc(var(--table-style-padding-l) + var(--table-style-padding-volatility));
-
-
-
-    
     /*tabcontents*/
     --tab-contents-width:100%;
     --tab-contents-margin:;
     --tab-contents-padding:;
-    --tab-contents-label-color:var(--color-3f3f3f);
-    --tab-contents-label-checked-color:var(--color-eee);
+    --tab-contents-label-color:var(--color-background-dark);
+    --tab-contents-label-checked-color:var(--color-dddddd);
     --tab-contents-label-background-color:var(--color-dddddd);
-    --tab-contents-label-checked-background-color:var(--color-3f3f3f);
+    --tab-contents-label-checked-background-color:var(--color-background-dark);
     --tab-contents-label-margin:;
-    --tab-contents-label-padding:calc(var(--volume-10) * 1rem) 0;
-    --tab-contents-label-font-size:;
+    --tab-contents-label-font-size-volatility:calc(var(--volume-2) * 1rem);
+    --tab-contents-label-font-size-base:var(--font-size-base);
+    --tab-contents-label-font-size-ss:calc(var(--tab-contents-label-font-size-base) + var(--tab-contents-label-font-size-volatility));
+    --tab-contents-label-font-size-s:calc(var(--tab-contents-label-font-size-ss) + var(--tab-contents-label-font-size-volatility));
+    --tab-contents-label-font-size-m:calc(var(--tab-contents-label-font-size-s) + var(--tab-contents-label-font-size-volatility));
+    --tab-contents-label-font-size-l:calc(var(--tab-contents-label-font-size-m) + var(--tab-contents-label-font-size-volatility));
+    --tab-contents-label-font-size-ll:calc(var(--tab-contents-label-font-size-l) + var(--tab-contents-label-font-size-volatility));
+    --tab-contents-label-font-size:--table-style-font-size-s;
     --tab-contents-label-font-weight:bold;
+    --tab-contents-style-padding-volatility:calc(var(--volume-2) * 1rem);
+    --tab-contents-style-padding-base:calc(var(--volume-8) * 1rem) 0;
+    --tab-contents-style-padding-ss:calc(var(--tab-contents-style-padding-base) + var(--tab-contents-style-padding-volatility)) 0;
+    --tab-contents-style-padding-s:calc(var(--tab-contents-style-padding-ss) + var(--tab-contents-style-padding-volatility)) 0;
+    --tab-contents-style-padding-m:calc(var(--tab-contents-style-padding-s) + var(--tab-contents-style-padding-volatility)) 0;
+    --tab-contents-style-padding-l:calc(var(--tab-contents-style-padding-m) + var(--tab-contents-style-padding-volatility)) 0;
+    --tab-contents-style-padding-ll:calc(var(--tab-contents-style-padding-l) + var(--tab-contents-style-padding-volatility)) 0;
+    --tab-contents-label-padding:var(--tab-contents-style-padding-ss);
 }
 /*============================================================================*/
 /*----------共通----------*/
