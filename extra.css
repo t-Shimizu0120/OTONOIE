@@ -7,21 +7,38 @@
     --media-bp-m:;
     --media-bp-l:;
     --media-bp-ll:;
+    /*color-settings*/
+    --color-theme-bg-light:#f7f4f4;
+    --color-theme-bg-dark:#3f3f3f;
+    --color-theme-border-light:#dfdfdf;
+    --color-theme-border-dark:;
+    --color-transparent:transparent;
+    --color-white:#fff;
+    --color-black:#000;
+    /*--color-border-light:#dfdfdf;*/
+    /*--color-border-dark:;*/
+    /*--color-background-light:#f7f4f4;*/
+    /*--color-background-dark:#3f3f3f;*/
+    --color-dddddd:#dddddd;
+    --color-afafaf:#afafaf;
+    --color-eee:#eee;
     /*color*/
-    --color:;
+    --color:var(--color-transparent, transparent);
+    /*background-color*/
+    --background-color:transparent;
     /*width*/
-    --width:0;
+    --width:initial;
     /*height*/
-    --height:0;
+    --height:initial;
     /*margin*/
     --margin:0;
     /*padding*/
     --padding:0;
     /*border*/
-    --border-width:0;
-    --border-color:;
+    --border-width:var(--width, initial);
+    --border-color:var(--color, transparent);
     --border-style:solid;
-    --border:var(--border-width, 0) var(--border-color, #) var(--border-style, solid);
+    --border:var(--border-width) var(--border-color) var(--border-style, solid);
     /*border-radius*/
     --border-radius:0;
 
@@ -54,17 +71,6 @@
     --volume-30:3;
     --volume-40:4;
     --volume-50:5;
-    /*color*/
-    --color-transparent:transparent;
-    --color-white:#fff;
-    --color-black:#000;
-    --color-border-light:#dfdfdf;
-    --color-border-dark:;
-    --color-background-light:#f7f4f4;
-    --color-background-dark:#3f3f3f;
-    --color-dddddd:#dddddd;
-    --color-afafaf:#afafaf;
-    --color-eee:#eee;
     /*border-width*/
     --border-width-volatility:calc(var(--volume-1) * 1rem);
     --border-width-none:0;
