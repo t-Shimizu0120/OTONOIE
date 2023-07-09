@@ -405,58 +405,28 @@ class AddPopoverContents {
             this.setStyle(object);
             //attributeオブジェクトを作成
             const obj = this.setAttrs(object);
-            
-
-            
-
-            
-            
             //コンテナ作成
-            const popoverContents_Container = document.createElement('div');
-            for (this.container_Attr of obj.container_Attrs) {
-                const container_AttrName = Object.keys(this.container_Attr)[0];
-                const container_AttrValue = this.container_Attr[container_AttrName];
-                popoverContents_Container.setAttribute(container_AttrName,container_AttrValue);
-            };
-            
+            const popoverContents_Container = create_Element('div',obj.container_Attrs);
             //ボタン作成
-            const popover_Button = document.createElement('button');
+            const popover_Button = create_Element('button',obj.button_Attrs);
             popover_Button.textContent = obj['buttonText'];
-            for (this.button_Attr of obj.button_Attrs) {
-                const button_AttrName = Object.keys(this.button_Attr)[0];
-                const button_AttrValue = this.button_Attr[button_AttrName];
-                popover_Button.setAttribute(button_AttrName,button_AttrValue);
-            };
             popover_Button.addEventListener('click', (e) => this.clickHandlerValid(e));
-            
             //要素作成
-            const popover_Content = document.createElement('div');
-            for (this.content_Attr of obj.content_Attrs) {
-                const content_AttrName = Object.keys(this.content_Attr)[0];
-                const content_AttrValue = this.content_Attr[content_AttrName];
-                popover_Content.setAttribute(content_AttrName,content_AttrValue);
-            };
+            const popover_Content = create_Element('div',obj.content_Attrs);
             popoverFocusControl(popover_Content);
-            
             //クローズボタン
             //ポップオーバー背面クローズボタン
-            const popover_Backside_Button_Close = document.createElement('button');
-            //クローズボタン（×ボタン）
-            const closeIcon = document.createElement('span');
-            closeIcon.setAttribute('class','icon-close');
-            const popover_Button_Close = document.createElement('button');
-            for (this.button_Close_Attr of obj.button_Close_Attrs) {
-                const button_Close_AttrName = Object.keys(this.button_Close_Attr)[0];
-                const button_Close_AttrValue = this.button_Close_Attr[button_Close_AttrName];
-                popover_Button_Close.setAttribute(button_Close_AttrName,button_Close_AttrValue);
-                popover_Backside_Button_Close.setAttribute(button_Close_AttrName,button_Close_AttrValue);
-            };
+            const popover_Backside_Button_Close = create_Element('button',obj.button_Close_Attrs);
             popover_Backside_Button_Close.setAttribute('class','js-added-popover-content-backside-button');
             popover_Backside_Button_Close.addEventListener('click', (e) => this.clickHandlerInvalid(e));
-            popover_Button_Close.addEventListener('click', (e) => this.clickHandlerInvalid(e));
             document.querySelector('body').appendChild(popover_Backside_Button_Close);
+            //クローズボタン（×ボタン）
+            const closeIcon = create_Element('span',[
+                {class:'icon-close'}
+            ]);
+            const popover_Button_Close = create_Element('button',obj.button_Close_Attrs);
+            popover_Button_Close.addEventListener('click', (e) => this.clickHandlerInvalid(e));
             popover_Button_Close.appendChild(closeIcon);
-            
             //表示用attributeの設定・コンテンツ要素へ入れる
             if (args === null) {
                 //コンテンツが空（null）の場合、disabledを設定
@@ -468,22 +438,8 @@ class AddPopoverContents {
                 popoverContents_Container.appendChild(popover_Button);
                 popoverContents_Container.appendChild(popover_Content);
             };
-            if (obj.add_To_Selector === '') {
-                return popoverContents_Container;
-            } else {
-                const targetElm = document.querySelector(obj.add_To_Selector);
-                if (obj['contents_Title'] === '') {
-                    targetElm.appendChild(popoverContents_Container);
-                } else {
-                    //タイトル作成
-                    const popoverContents_Title = document.createElement('h5');
-                    popoverContents_Title.textContent = obj['contents_Title'];
-                
-                    targetElm.appendChild(popoverContents_Title);
-                    targetElm.appendChild(popoverContents_Container);
-                };
-            };
-        
+            
+            return popoverContents_Container;
         };
     };
     //表示の際の処理
