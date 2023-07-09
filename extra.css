@@ -24,9 +24,9 @@
     --color-eee:#eee;
     /*<------------------------------------------------------>*/
     /*color*/
-    --color:var(--color-theme-dark, #3f3f3f);
+    --color:var(--color-theme-dark,#3f3f3f);
     /*background-color*/
-    --background-color:var(--color-theme-light, #f7f4f4);
+    --background-color:var(--color-theme-light,#f7f4f4);
     /*width*/
     --width:initial;
     /*height*/
@@ -36,10 +36,10 @@
     /*padding*/
     --padding:0;
     /*border*/
-    --border-width:var(--width, initial);
-    --border-color:var(--color-theme-border-light, #dfdfdf);
+    --border-width:var(--width,initial);
+    --border-color:var(--color-theme-border-light,#dfdfdf);
     --border-style:solid;
-    --border:var(--border-width) var(--border-color) var(--border-style, solid);
+    --border:var(--border-width) var(--border-color) var(--border-style,solid);
     /*border-radius*/
     --border-radius:0;
     /*font-size*/
