@@ -50,22 +50,17 @@
     --border-radius:0.2rem;
     --opacity:0.6;
     
-    --button-border-radius:var(--border-radius);
+    --button-border-radius:var(--border-radius,0.2rem);
     --button-font-weight:bold;
     --button-text-align:center;
     --button-style-cursor:pointer;
-    --button-hover-opacity:var(--opacity);
-    --button-disabled-opacity:var(--opacity);
+    --button-hover-opacity:var(--opacity,0.6);
+    --button-disabled-opacity:var(--opacity,0.6);
     --button-disabled-pointer-events:none;
-
-
-
-
-
-
-    
     /*a*/
     /*table*/
+    --color:;
+    
     --table-color:var(--color-background-dark);
     --table-th-color:var(--color-background-dark);
     --table-td-color:var(--color-background-dark);
