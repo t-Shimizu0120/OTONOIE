@@ -138,6 +138,9 @@
     --tab-contents-label-font-size:--table-style-font-size-s;
     --tab-contents-label-font-weight:bold;
     --tab-contents-label-cursor:pointer;
+    /*popovercontents*/
+    --popover-contents-button-width:100%;
+    --popover-contents-button-font-weight:bold;
 }
 /*============================================================================*/
 /*----------共通----------*/
@@ -229,6 +232,7 @@
 .js-added-table-td > ul > li{
     color:var(--table-td-color);
 }
+/*タブコンテンツ*/
 .js-added-tab-contents {
     width:var(--tab-contents-width);
     display:flex;
@@ -276,6 +280,92 @@ input:disabled + .js-added-tab-label:hover {
 input:checked + .js-added-tab-label + .js-added-tab-content {
     display: block;
 }
+/*ポップオーバーコンテンツ*/
+.js-added-popover {
+}
+.js-added-popover-button {
+    width:var(--popover-contents-button-width);
+    text-align:center;
+    font-weight:var(--popover-contents-button-font-weight);
+    border:0;
+    cursor:pointer;
+}
+
+
+
+            .js-added-popover-button:hover {
+                opacity:.6;
+            }
+            .js-added-popover-button:disabled {
+                opacity:.6;
+                pointer-events:none;
+            }
+            .js-added-popover-content {
+                border:0;
+            }
+            .js-added-popover-content:popover-open {
+            }
+            .js-added-popover-content::backdrop {
+                background-color:#000;
+                opacity:.6;
+            }
+            .js-added-popover-close-button {
+                position:absolute;
+                right:.6rem;
+                top:.6rem;
+                text-align:center;
+                border:0;
+                cursor:pointer;
+                background-color:transparent;
+                padding:0;
+            }
+            .js-added-popover-close-button:hover {
+                opacity:.6;
+            }
+            .icon-close {
+                display:block;
+                width:2.6rem;
+                height:2.6rem;
+                position:relative;
+                margin:auto;
+            }
+            .icon-close::before, .icon-close::after {
+                content:"";
+                display:block;
+                width:80%;
+                height:2px;
+                background:#000;
+                transform:rotate(45deg);
+                transform-origin:0% 50%;
+                position:absolute;
+                top:calc(21% - 1px);
+                left:21%;
+            }
+            .icon-close::after {
+                transform:rotate(-45deg);
+                transform-origin:100% 50%;
+                left:auto;
+                right:21%;
+            }
+            .js-added-popover-content-backside-button {
+                z-index:-50000;
+            }
+            .js-added-popover-content-backside-button.valid {
+                width:100vw;
+                height:100vh;
+                position:fixed;
+                top:0;
+                left:0;
+                background-color:#000;
+                opacity:.3;
+                border:0;
+                z-index:50000;
+            }
+
+
+
+
+
 
 /*============================================================================*/
 /*@media--m*/
