@@ -27,16 +27,8 @@
     --color:var(--color-theme-dark,#3f3f3f);
     /*background-color*/
     --background-color:var(--color-theme-light,#f7f4f4);
-    /*width*/
-    --width:initial;
-    /*height*/
-    --height:initial;
-    /*margin*/
-    --margin:0;
-    /*padding*/
-    --padding:0;
     /*border*/
-    --border-width:var(--width,initial);
+    --border-width:0.3rem;
     --border-color:var(--color-theme-border-light,#dfdfdf);
     --border-style:solid;
     --border:var(--border-width) var(--border-color) var(--border-style,solid);
@@ -46,31 +38,33 @@
     --font-size:initial;
     /*font-weight*/
     --font-weight:initial;
-
+    /*margin*/
+    --margin:0;
+    /*padding*/
+    --padding:0;
+    /*opacity*/
+    --opacity:1;
     
     
     /*button*/
-    --button-style-border:var(--border-width-none);
-    --button-style-border-radius:calc(var(--volume-2) * 1rem);
-    --button-style-padding-volatility:calc(var(--volume-2) * 1rem);
-    --button-style-padding-base:calc(var(--volume-8) * 1rem) 0;
-    --button-style-padding-ss:calc(var(--button-style-padding-base) + var(--button-style-padding-volatility)) 0;
-    --button-style-padding-s:calc(var(--button-style-padding-ss) + var(--button-style-padding-volatility)) 0;
-    --button-style-padding-m:calc(var(--button-style-padding-s) + var(--button-style-padding-volatility)) 0;
-    --button-style-padding-l:calc(var(--button-style-padding-m) + var(--button-style-padding-volatility)) 0;
-    --button-style-padding-ll:calc(var(--button-style-padding-l) + var(--button-style-padding-volatility)) 0;
-    --button-style-font-size-volatility:calc(var(--volume-2) * 1rem);
-    --button-style-font-size-base:var(--font-size-base);
-    --button-style-font-size-ss:calc(var(--button-style-font-size-base) + var(--button-style-font-size-volatility));
-    --button-style-font-size-s:calc(var(--button-style-font-size-ss) + var(--button-style-font-size-volatility));
-    --button-style-font-size-m:calc(var(--button-style-font-size-s) + var(--button-style-font-size-volatility));
-    --button-style-font-size-l:calc(var(--button-style-font-size-m) + var(--button-style-font-size-volatility));
-    --button-style-font-size-ll:calc(var(--button-style-font-size-l) + var(--button-style-font-size-volatility));
-    --button-style-font-weight:bold;
-    --button-style-text-align:center;
+    --border-width:0;
+    --border-color:transparent;
+    --border-radius:0.2rem;
+    --font-size:1rem;
+    --margin:0;
+    --padding:0;
+    --opacity:0.6;
+    
+    --button-border:var(--border);
+    --button-border-radius:var(--border-radius);
+    --button-font-size:var(--font-size);
+    --button-margin:var(--margin);
+    --button-padding:var(--padding);
+    --button-font-weight:bold;
+    --button-text-align:center;
     --button-style-cursor:pointer;
-    --button-hover-opacity:var(--volume-6);
-    --button-disabled-opacity:var(--volume-6);
+    --button-hover-opacity:var(--opacity);
+    --button-disabled-opacity:var(--opacity);
     --button-disabled-pointer-events:none;
     /*a*/
     /*table*/
