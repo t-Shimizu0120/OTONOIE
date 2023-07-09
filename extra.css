@@ -8,8 +8,10 @@
     --media-bp-l:;
     --media-bp-ll:;
     /*color-settings*/
-    --color-theme-light:#f7f4f4;
-    --color-theme-dark:#3f3f3f;
+    --color-theme-light:#dfdfdf;
+    --color-theme-dark:#2f2f2f;
+    --color-theme-bg-light:#f7f4f4;
+    --color-theme-bg-dark:#3f3f3f;
     --color-theme-border-light:#dfdfdf;
     --color-theme-border-dark:#2f2f2f;
     --color-transparent:transparent;
