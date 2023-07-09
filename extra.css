@@ -321,7 +321,7 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
 .js-added-popover-close-button {
     position:absolute;
     right:var(--popover-close-button-right);
-    top:var(--popover-close-button-top);;
+    top:var(--popover-close-button-top);
     text-align:var(--button-style-text-align);
     border:var(--button-style-border);
     cursor:var(--button-style-cursor);
