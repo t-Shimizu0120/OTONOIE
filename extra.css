@@ -142,9 +142,13 @@
     --popover-button-width:100%;
     --popover-close-button-right:calc(var(--volume-6) * 1rem);
     --popover-close-button-top:calc(var(--volume-6) * 1rem);
+    --popover-backside-button-left:var(--volume-0);
+    --popover-backside-button-top:var(--volume-0);
+    --popover-backside-button-opacity:var(--volume-3);
     --popover-contents-border:var(--border-width-none);
     --popover-contents-backdrop-color:var(--color-black);
     --popover-contents-backdrop-opacity:var(--volume-6);
+    
 }
 /*============================================================================*/
 /*----------共通----------*/
@@ -352,17 +356,17 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
 .js-added-popover-content-backside-button {
     z-index:-50000;
 }
-            .js-added-popover-content-backside-button.valid {
-                width:100vw;
-                height:100vh;
-                position:fixed;
-                top:0;
-                left:0;
+.js-added-popover-content-backside-button.valid {
+    width:100vw;
+    height:100vh;
+    position:fixed;
+    top:var(--popover-backside-button-top);
+    left:var(--popover-backside-button-left);
                 background-color:#000;
-                opacity:.3;
+    opacity:var(--popover-backside-button-opacity);
                 border:0;
-                z-index:50000;
-            }
+    z-index:50000;
+}
 
 
 
