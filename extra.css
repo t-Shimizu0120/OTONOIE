@@ -33,6 +33,7 @@
     --volume-40:4;
     --volume-50:5;
     /*color*/
+    --color-transparent:transparent;
     --color-white:#fff;
     --color-black:#000;
     --color-border-light:#dfdfdf;
@@ -145,6 +146,8 @@
     --popover-backside-button-left:var(--volume-0);
     --popover-backside-button-top:var(--volume-0);
     --popover-backside-button-opacity:var(--volume-3);
+    --popover-backside-button-color:var(--color-black);
+    --popover-backside-button-border:var(--border-width-none);
     --popover-contents-border:var(--border-width-none);
     --popover-contents-backdrop-color:var(--color-black);
     --popover-contents-backdrop-opacity:var(--volume-6);
@@ -319,11 +322,11 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
     position:absolute;
     right:var(--popover-close-button-right);
     top:var(--popover-close-button-top);;
-    text-align:center;
-                border:0;
+    text-align:var(--button-style-text-align);
+    border:var(--button-style-border);
     cursor:var(--button-style-cursor);
-    background-color:transparent;
-                padding:0;
+    background-color:var(--color-transparent);
+    padding:var(--volume-0);
 }
 .js-added-popover-close-button:hover {
     opacity:var(--button-hover-opacity);
@@ -362,9 +365,9 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
     position:fixed;
     top:var(--popover-backside-button-top);
     left:var(--popover-backside-button-left);
-                background-color:#000;
+    background-color:var(--popover-backside-button-color);
     opacity:var(--popover-backside-button-opacity);
-                border:0;
+    border:var(--popover-backside-button-border);
     z-index:50000;
 }
 
