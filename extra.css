@@ -7,6 +7,27 @@
     --media-bp-m:;
     --media-bp-l:;
     --media-bp-ll:;
+    /*color*/
+    --color:;
+    /*width*/
+    --width:0;
+    /*height*/
+    --height:0;
+    /*margin*/
+    --margin:0;
+    /*padding*/
+    --padding:0;
+    /*border*/
+    --border-width:0;
+    --border-color:;
+    --border-style:solid;
+    --border:var(--border-width, 0) var(--border-color, #) var(--border-style, solid);
+
+
+
+
+
+    
     /*volume*/
     --volume-none:none;
     --volume-0:0;
