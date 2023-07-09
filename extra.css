@@ -139,8 +139,12 @@
     --tab-contents-label-font-weight:bold;
     --tab-contents-label-cursor:pointer;
     /*popovercontents*/
-    --popover-contents-button-width:100%;
-    --popover-contents-button-font-weight:bold;
+    --popover-button-width:100%;
+    --popover-close-button-right:calc(var(--volume-6) * 1rem);
+    --popover-close-button-top:calc(var(--volume-6) * 1rem);
+    --popover-contents-border:var(--border-width-none);
+    --popover-contents-backdrop-color:var(--color-black);
+    --popover-contents-backdrop-opacity:var(--volume-6);
 }
 /*============================================================================*/
 /*----------共通----------*/
@@ -285,43 +289,41 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
 }
 .js-added-popover-button {
     width:var(--popover-contents-button-width);
-    text-align:center;
-    font-weight:var(--popover-contents-button-font-weight);
-    border:0;
-    cursor:pointer;
+    text-align:var(--button-style-text-align);
+    font-weight:var(--button-style-font-weight);
+    border:var(--button-style-border);
+    border-radius:var(--button-style-border-radius);
+    cursor:var(--button-style-cursor);
 }
-
-
-
-            .js-added-popover-button:hover {
-                opacity:.6;
-            }
-            .js-added-popover-button:disabled {
-                opacity:.6;
-                pointer-events:none;
-            }
-            .js-added-popover-content {
+.js-added-popover-button:hover {
+    opacity:var(--button-hover-opacity);
+}
+.js-added-popover-button:disabled {
+    opacity:var(--button-disabled-opacity);
+    pointer-events:var(--button-disabled-pointer-events);
+}
+.js-added-popover-content {
+    border:var(--popover-contents-border);
+}
+.js-added-popover-content:popover-open {
+}
+.js-added-popover-content::backdrop {
+    background-color:var(--popover-contents-backdrop-color);
+    opacity:var(--popover-contents-backdrop-opacity);
+}
+.js-added-popover-close-button {
+    position:absolute;
+    right:var(--popover-close-button-right);
+    top:var(--popover-close-button-top);;
+    text-align:center;
                 border:0;
-            }
-            .js-added-popover-content:popover-open {
-            }
-            .js-added-popover-content::backdrop {
-                background-color:#000;
-                opacity:.6;
-            }
-            .js-added-popover-close-button {
-                position:absolute;
-                right:.6rem;
-                top:.6rem;
-                text-align:center;
-                border:0;
-                cursor:pointer;
+    cursor:var(--button-style-cursor);
                 background-color:transparent;
                 padding:0;
-            }
-            .js-added-popover-close-button:hover {
-                opacity:.6;
-            }
+}
+.js-added-popover-close-button:hover {
+    opacity:var(--button-hover-opacity);
+}
             .icon-close {
                 display:block;
                 width:2.6rem;
