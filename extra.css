@@ -26,14 +26,14 @@
     --color-eee:#eee;
     /*<------------------------------------------------------>*/
     /*color*/
-    --color:var(--color-theme-dark,#3f3f3f);
+    --color:var(--color-theme-dark,#2f2f2f);
     /*background-color*/
-    --background-color:var(--color-theme-light,#f7f4f4);
+    --background-color:var(--color-theme-bg-light,#f7f4f4);
     /*border*/
     --border-width:0.3rem;
     --border-color:var(--color-theme-border-light,#dfdfdf);
     --border-style:solid;
-    --border:var(--border-width) var(--border-color) var(--border-style,solid);
+    --border:var(--border-width,0.3rem) var(--border-color) var(--border-style,solid);
     /*border-radius*/
     --border-radius:0;
     /*font-size*/
