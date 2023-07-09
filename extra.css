@@ -22,7 +22,8 @@
     --border-color:;
     --border-style:solid;
     --border:var(--border-width, 0) var(--border-color, #) var(--border-style, solid);
-
+    /*border-radius*/
+    --border-radius:0;
 
 
 
