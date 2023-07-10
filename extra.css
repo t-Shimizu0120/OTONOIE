@@ -210,22 +210,25 @@
     display:none;
 }
 /*-----------------------*/
-
-
-
-
-
-    
-
-
-    
 /*外枠*/
 .result .detail {
-    border:var(--border-width-m) var(--color-border-light) solid;
+    --border-width:0.3rem;
+    
+    border:var(--border-light);
 }
 .owner-form {
-    border:var(--border-width-m) var(--color-border-light) solid;
+    --border-width:0.3rem;
+    
+    border:var(--border-light);
 }
+
+
+
+
+
+
+
+
 /*テーブル*/
 .js-added-table {
     border:var(--table-border);
