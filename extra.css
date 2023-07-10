@@ -30,7 +30,7 @@
     --border-color-dark:var(--color-theme-border-dark);
     --border-style:solid;
     --border-light:var(--border-width) var(--border-color-light) var(--border-style);
-    --border-dark:var(--border-width) var(--border-color-dark) var(--border-style);;
+    --border-dark:var(--border-width) var(--border-color-dark) var(--border-style);
     /*font-size*/
     --font-size:1.2rem;
     /*margin*/
