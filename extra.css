@@ -8,11 +8,12 @@
     --media-bp-l:;
     --media-bp-ll:;
     /*color-settings*/
-    --color-white:#fff;
-    --color-black:#000;
     --color-dddddd:#dddddd;
     --color-afafaf:#afafaf;
     --color-eee:#eee;
+    
+    --color-white:#fff;
+    --color-black:#000;
     --color-bg-light:var(--color-white,);
     --color-bg-dark:var(--color-black);
     --color-theme-light:#f7f4f4;
@@ -22,8 +23,8 @@
     --color-theme-border-light:#dfdfdf;
     --color-theme-border-dark:#2f2f2f;
     --color-transparent:transparent;
-    --color-table-bg:var(--color-dddddd);
-    --color-table-border:var(--color-afafaf);
+    --color-table-bg-light:var(--color-dddddd);
+    --color-table-border-light:var(--color-afafaf);
 
     /*<------------------------------------------------------>*/
     /*<-----------------------others------------------------->*/
@@ -59,7 +60,7 @@
     --table-border-width:0.1rem;
     --table-border-color:var(--color-table-border);
     --table-border-style:solid;
-    --table-border:var(--table-border-width) var(--table-border-color) var(--table-border-style);
+    --table-border-light:var(--table-border-width) var(--table-border-color) var(--table-border-style);
 
 
 
@@ -205,18 +206,16 @@
     
     border:var(--border-light);
 }
-
-
-
-
-
-
-
-
 /*テーブル*/
 .js-added-table {
     border:var(--table-border);
 }
+
+
+
+
+
+
 .js-added-table-th {
     background-color:var(--table-th-background-color);
     color:var(--table-th-color);
