@@ -77,7 +77,7 @@
     --tab-contents-label-disabled-opacity:0.6;
     --tab-contents-label-cursor:pointer;
     --tab-contents-label-disabled-pointer-events:none;
-    --tab-contents-labeltext-decoration:none;
+    --tab-contents-label-text-decoration:none;
     --tab-contents-border:0;
 
     
@@ -239,53 +239,57 @@
 input[name="js-added-tab-input"] {
     display:none;
 }
-
-
-
-
-
-
 .js-added-tab-label {
+    --padding:1rem 0;
     
     background-color:var(--tab-contents-label-background-color); 
     color:var(--tab-contents-label-color); 
-    text-align:center;
-    padding:var(--tab-contents-label-padding);
+    text-align:var(--tab-contents-label-text-align);
+    padding:var(--padding);
     font-weight:var(--tab-contents-label-font-weight);
     cursor:var(--tab-contents-label-cursor);
-    display: block;
-    float: left;
-    order: -1;
+    display:block;
+    float:left;
+    order:-1;
 }
-
-
-
-
 input:checked + .js-added-tab-label {
+    --pointer-events:none;
+    
     background-color:var(--tab-contents-label-checked-background-color);
     color:var(--tab-contents-label-checked-color);
-    pointer-events:none;
+    pointer-events:var(--pointer-events);
 }
 input:disabled + .js-added-tab-label {
-    opacity:var(--volume-6);
-    pointer-events:none;
+    opacity:var(--tab-contents-label-disabled-opacity);
+    pointer-events:var(--tab-contents-label-disabled-pointer-events);
 }
 .js-added-tab-label:hover {
-    opacity:var(--volume-6);
+    opacity:var(--tab-contents-label-hover-opacity);
 }
 input:checked + .js-added-tab-label:hover {
-    opacity:var(--volume-10);
+    --opacity:1;
+    
+    opacity:var(--opacity);
 }
 input:disabled + .js-added-tab-label:hover {
-    opacity:var(--volume-10);
+    --opacity:1;
+    
+    opacity:var(--opacity);
 }
 .js-added-tab-content {
+    --width:100%;
+    
     display:none;
-    width:var(--tab-contents-width);
+    width:var(--width);
 }
 input:checked + .js-added-tab-label + .js-added-tab-content {
     display: block;
 }
+
+
+
+
+
 /*ポップオーバーコンテンツ*/
 .js-added-popover {
 }
