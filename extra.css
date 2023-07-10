@@ -213,7 +213,7 @@
 }
 /*テーブル*/
 .js-added-table {
-    border:var(--table-border);
+    border:var(--table-border-light);
 }
 
 
