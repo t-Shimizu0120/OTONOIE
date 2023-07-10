@@ -10,6 +10,9 @@
     /*color-settings*/
     --color-white:#fff;
     --color-black:#000;
+    --color-dddddd:#dddddd;
+    --color-afafaf:#afafaf;
+    --color-eee:#eee;
     --color-bg-light:var(--color-white,);
     --color-bg-dark:var(--color-black);
     --color-theme-light:#f7f4f4;
@@ -19,9 +22,9 @@
     --color-theme-border-light:#dfdfdf;
     --color-theme-border-dark:#2f2f2f;
     --color-transparent:transparent;
-    --color-dddddd:#dddddd;
-    --color-afafaf:#afafaf;
-    --color-eee:#eee;
+    --color-table-bg:var(--color-dddddd);
+    --color-table-border:var(--color-afafaf);
+
     /*<------------------------------------------------------>*/
     /*<-----------------------others------------------------->*/
     /*border*/
@@ -47,27 +50,19 @@
     --button-disabled-opacity:0.6;
     --button-disabled-pointer-events:none;
     --button-text-decoration:none;
-
-
-
-
-
-
-    
-    
-    /*a*/
     /*table*/
     --color:;
-    
-    --table-color:var(--color-background-dark);
-    --table-th-color:var(--color-background-dark);
-    --table-td-color:var(--color-background-dark);
-    --table-th-background-color:var(--color-dddddd);
-    --table-td-background-color:transparent;
-    --table-border-width:calc(var(--volume-1) * 1rem);
-    --table-border-color:var(--color-afafaf);
+    --table-color:var(--color-theme-font-dark);
+    --table-th-color:var(--color-theme-font-dark);
+    --table-td-color:var(--color-theme-font-dark);
+    --table-th-background-color:var(--color-table-bg);
+    --table-td-background-color:var(--color-transparent);
+    --table-border-width:0.1rem;
+    --table-border-color:var(--color-table-border);
     --table-border-style:solid;
     --table-border:var(--table-border-width) var(--table-border-color) var(--table-border-style);
+    
+    
     --table-style-font-size-volatility:calc(var(--volume-2) * 1rem);
     --table-style-font-size-base:var(--font-size-base);
     --table-style-font-size-ss:calc(var(--table-style-font-size-base) + var(--table-style-font-size-volatility));
@@ -84,6 +79,16 @@
     --table-style-padding-m:calc(var(--table-style-padding-s) + var(--table-style-padding-volatility));
     --table-style-padding-l:calc(var(--table-style-padding-m) + var(--table-style-padding-volatility));
     --table-style-padding-ll:calc(var(--table-style-padding-l) + var(--table-style-padding-volatility));
+
+
+
+
+
+
+    
+    
+    /*a*/
+    
     /*tabcontents*/
     --tab-contents-width:100%;
     --tab-contents-margin:;
