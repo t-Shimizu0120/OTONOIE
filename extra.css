@@ -299,6 +299,8 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
     pointer-events:var(--button-disabled-pointer-events);
 }
 .js-added-popover-content {
+    --popover-contents-background-color:var(--color-white);
+    
     border:var(--popover-contents-border);
     background-color:var(--popover-contents-background-color);
 }
