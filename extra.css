@@ -79,25 +79,17 @@
     --tab-contents-label-disabled-pointer-events:none;
     --tab-contents-label-text-decoration:none;
     --tab-contents-border:0;
-
-    
-
-
-
-    
     /*popovercontents*/
-    --popover-button-width:100%;
-    --popover-close-button-right:calc(var(--volume-6) * 1rem);
-    --popover-close-button-top:calc(var(--volume-6) * 1rem);
-    --popover-backside-button-left:var(--volume-0);
-    --popover-backside-button-top:var(--volume-0);
-    --popover-backside-button-opacity:var(--volume-3);
+    --popover-close-button-right:0.6rem;
+    --popover-close-button-top:0.6rem;
+    --popover-backside-button-left:0;
+    --popover-backside-button-top:0;
+    --popover-backside-button-opacity:0.3;
     --popover-backside-button-color:var(--color-black);
-    --popover-backside-button-border:var(--border-width-none);
-    --popover-contents-border:var(--border-width-none);
+    --popover-backside-button-border:0;
+    --popover-contents-border:0;
     --popover-contents-backdrop-color:var(--color-black);
-    --popover-contents-backdrop-opacity:var(--volume-6);
-    
+    --popover-contents-backdrop-opacity:0.6;
 }
 /*============================================================================*/
 /*----------共通----------*/
