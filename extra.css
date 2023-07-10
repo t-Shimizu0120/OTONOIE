@@ -56,16 +56,13 @@
     --table-color:var(--color-theme-font-dark);
     --table-th-color:var(--color-theme-font-dark);
     --table-td-color:var(--color-theme-font-dark);
-    --table-th-background-color-light:var(--color-table-bg-light);
-    --table-th-background-color-dark:var(--color-table-bg-dark);
+    --table-th-background-color:var(--color-table-bg-light);
     --table-td-background-color:var(--color-transparent);
     --table-border-width:0.1rem;
-    --table-border-color-light:var(--color-table-border-light);
-    --table-border-color-dark:var(--color-table-border-dark);
+    --table-border-color:var(--color-table-border-light);
     --table-border-style:solid;
-    --table-border-light:var(--table-border-width) var(--table-border-color-light) var(--table-border-style);
-    --table-border-dark:var(--table-border-width) var(--table-border-color-dark) var(--table-border-style);
-
+    --table-border:var(--table-border-width) var(--table-border-color) var(--table-border-style);
+    
 
 
 
@@ -213,32 +210,36 @@
 }
 /*テーブル*/
 .js-added-table {
-    border:var(--table-border-light);
+    border:var(--table-border);
 }
-
-
-
-
-
-
 .js-added-table-th {
+    --padding:1.2rem;
+    --text-align:center;
+    --vertical-align:middle;
+    
     background-color:var(--table-th-background-color);
     color:var(--table-th-color);
     border:var(--table-border);
-    padding:var(--table-style-padding-s);
-    text-align:center; 
-    vertical-align:middle;
+    padding:var(--padding);
+    text-align:var(--text-align); 
+    vertical-align:var(--vertical-align);
 }
 .js-added-table-td {
+    --padding:1.2rem;
+    --vertical-align:top;
+    
     background-color:var(--table-td-background-color);
     color:var(--table-td-color);
     border:var(--table-border);
-    padding:var(--table-style-padding-s);
-    vertical-align: top;
+    padding:var(--padding);
+    vertical-align:var(--vertical-align);
 }
 .js-added-table-td > ul > li{
     color:var(--table-td-color);
 }
+
+
+
 /*タブコンテンツ*/
 .js-added-tab-contents {
     width:var(--tab-contents-width);
