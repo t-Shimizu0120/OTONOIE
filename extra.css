@@ -82,15 +82,16 @@
     /*popovercontents*/
     --popover-close-button-right:0.6rem;
     --popover-close-button-top:0.6rem;
-    --popover-backside-button-left:0;
-    --popover-backside-button-top:0;
-    --popover-backside-button-opacity:0.3;
-    --popover-backside-button-background-color:var(--color-black);
-    --popover-backside-button-border:0;
     --popover-contents-border:0;
     --popover-contents-background-color:var(--color-transparent);
     --popover-contents-backdrop-color:var(--color-black);
     --popover-contents-backdrop-opacity:0.6;
+    --popover-backside-button-left:0;
+    --popover-backside-button-top:0;
+    --popover-backside-button-opacity:0.8;
+    --popover-backside-button-background-color:var(--color-black);
+    --popover-backside-button-border:0;
+    --popover-backside-button-cursor:default;
 }
 /*============================================================================*/
 /*----------共通----------*/
@@ -307,8 +308,6 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
 .js-added-popover-content:popover-open {
 }
 .js-added-popover-content::backdrop {
-    background-color:var(--popover-contents-backdrop-color);
-    opacity:var(--popover-contents-backdrop-opacity);
 }
 .js-added-popover-close-button {
     --padding:0;
@@ -374,9 +373,9 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
     background-color:var(--popover-backside-button-background-color);
     opacity:var(--popover-backside-button-opacity);
     border:var(--popover-backside-button-border);
+    cursor:var(--popover-backside-button-cursor);
     z-index:var(--z-index);
 }
-
 /*============================================================================*/
 /*@media--m*/
 /*============================================================================*/
