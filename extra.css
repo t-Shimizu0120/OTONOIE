@@ -24,8 +24,9 @@
     --color-theme-border-dark:#2f2f2f;
     --color-transparent:transparent;
     --color-table-bg-light:var(--color-dddddd);
+    --color-table-bg-dark:;
     --color-table-border-light:var(--color-afafaf);
-
+    --color-table-border-dark:;
     /*<------------------------------------------------------>*/
     /*<-----------------------others------------------------->*/
     /*border*/
@@ -55,12 +56,16 @@
     --table-color:var(--color-theme-font-dark);
     --table-th-color:var(--color-theme-font-dark);
     --table-td-color:var(--color-theme-font-dark);
-    --table-th-background-color:var(--color-table-bg);
+    --table-th-background-color-light:var(--color-table-bg-light);
+    --table-th-background-color-dark:var(--color-table-bg-dark);
     --table-td-background-color:var(--color-transparent);
     --table-border-width:0.1rem;
-    --table-border-color:var(--color-table-border);
+    --table-border-color-light:var(--color-table-border-light);
+    --table-border-color-dark:var(--color-table-border-dark);
     --table-border-style:solid;
-    --table-border-light:var(--table-border-width) var(--table-border-color) var(--table-border-style);
+    --table-border-light:var(--table-border-width) var(--table-border-color-light) var(--table-border-style);
+    --table-border-dark:var(--table-border-width) var(--table-border-color-dark) var(--table-border-style);
+
 
 
 
