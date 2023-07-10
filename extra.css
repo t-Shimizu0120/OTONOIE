@@ -27,6 +27,8 @@
     --color-table-bg-dark:;
     --color-table-border-light:var(--color-afafaf);
     --color-table-border-dark:;
+    --color-tab-label-bg-light:#dfdfdf;
+    --color-tab-label-bg-dark:#2f2f2f;
     /*<------------------------------------------------------>*/
     /*<-----------------------others------------------------->*/
     /*border*/
@@ -62,42 +64,28 @@
     --table-border-color:var(--color-table-border-light);
     --table-border-style:solid;
     --table-border:var(--table-border-width) var(--table-border-color) var(--table-border-style);
-    
-
-
-
-
-    
-    
-    /*a*/
-    
     /*tabcontents*/
-    --tab-contents-width:100%;
-    --tab-contents-margin:;
-    --tab-contents-style-padding-volatility:calc(var(--volume-2) * 1rem);
-    --tab-contents-style-padding-base:calc(var(--volume-8) * 1rem) 0;
-    --tab-contents-style-padding-ss:calc(var(--tab-contents-style-padding-base) + var(--tab-contents-style-padding-volatility)) 0;
-    --tab-contents-style-padding-s:calc(var(--tab-contents-style-padding-ss) + var(--tab-contents-style-padding-volatility)) 0;
-    --tab-contents-style-padding-m:calc(var(--tab-contents-style-padding-s) + var(--tab-contents-style-padding-volatility)) 0;
-    --tab-contents-style-padding-l:calc(var(--tab-contents-style-padding-m) + var(--tab-contents-style-padding-volatility)) 0;
-    --tab-contents-style-padding-ll:calc(var(--tab-contents-style-padding-l) + var(--tab-contents-style-padding-volatility)) 0;
-    --tab-contents-padding:;
-    --tab-contents-label-color:var(--color-background-dark);
-    --tab-contents-label-checked-color:var(--color-dddddd);
-    --tab-contents-label-background-color:var(--color-dddddd);
-    --tab-contents-label-checked-background-color:var(--color-background-dark);
-    --tab-contents-label-margin:;
-    --tab-contents-label-padding:var(--tab-contents-style-padding-ss);
-    --tab-contents-label-font-size-volatility:calc(var(--volume-2) * 1rem);
-    --tab-contents-label-font-size-base:var(--font-size-base);
-    --tab-contents-label-font-size-ss:calc(var(--tab-contents-label-font-size-base) + var(--tab-contents-label-font-size-volatility));
-    --tab-contents-label-font-size-s:calc(var(--tab-contents-label-font-size-ss) + var(--tab-contents-label-font-size-volatility));
-    --tab-contents-label-font-size-m:calc(var(--tab-contents-label-font-size-s) + var(--tab-contents-label-font-size-volatility));
-    --tab-contents-label-font-size-l:calc(var(--tab-contents-label-font-size-m) + var(--tab-contents-label-font-size-volatility));
-    --tab-contents-label-font-size-ll:calc(var(--tab-contents-label-font-size-l) + var(--tab-contents-label-font-size-volatility));
-    --tab-contents-label-font-size:--table-style-font-size-s;
+    --tab-contents-label-color:var(--color-theme-font-dark);
+    --tab-contents-label-checked-color:var(--color-theme-font-light);
+    --tab-contents-label-background-color:var(--color-tab-label-bg-light);
+    --tab-contents-label-checked-background-color:var(--color-tab-label-bg-dark);
+    --tab-contents-label-border:0;
+    --tab-contents-label-border-radius:0;
     --tab-contents-label-font-weight:bold;
+    --tab-contents-label-text-align:center;
+    --tab-contents-label-hover-opacity:0.6;
+    --tab-contents-label-disabled-opacity:0.6;
     --tab-contents-label-cursor:pointer;
+    --tab-contents-label-disabled-pointer-events:none;
+    --tab-contents-labeltext-decoration:none;
+    
+    --tab-contents-border:0;
+
+    
+
+
+
+    
     /*popovercontents*/
     --popover-button-width:100%;
     --popover-close-button-right:calc(var(--volume-6) * 1rem);
@@ -237,22 +225,29 @@
 .js-added-table-td > ul > li{
     color:var(--table-td-color);
 }
-
-
-
 /*タブコンテンツ*/
 .js-added-tab-contents {
-    width:var(--tab-contents-width);
+    --width:100%;
+    --flex-flow:row wrap;
+    
+    width:var(--width);
     display:flex;
     display:-webkit-box;
     display:-webkit-flex;
     display:-ms-flexbox;
-    flex-flow:row wrap;
+    flex-flow:var(--flex-flow);
 }
 input[name="js-added-tab-input"] {
     display:none;
 }
+
+
+
+
+
+
 .js-added-tab-label {
+    
     background-color:var(--tab-contents-label-background-color); 
     color:var(--tab-contents-label-color); 
     text-align:center;
@@ -263,6 +258,10 @@ input[name="js-added-tab-input"] {
     float: left;
     order: -1;
 }
+
+
+
+
 input:checked + .js-added-tab-label {
     background-color:var(--tab-contents-label-checked-background-color);
     color:var(--tab-contents-label-checked-color);
