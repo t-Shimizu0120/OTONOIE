@@ -46,7 +46,7 @@
     --padding:0;
     /*button*/
     --button-border:0;
-    --button-border-radius:2rem;
+    --button-border-radius:0.2rem;
     --button-font-weight:bold;
     --button-text-align:center;
     --button-cursor:pointer;
