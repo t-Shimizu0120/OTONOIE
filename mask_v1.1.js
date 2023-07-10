@@ -1198,7 +1198,8 @@ if (locationURL.includes('detail')) {
         inquiry_wrap.querySelector('textarea').id += 'textarea-invalid';
         inquiry_Bottom_Buttons_wrap.appendChild(inquiry_wrap.querySelector('ul.owner_form_btns'));
         inquiry_Bottom_Buttons_wrap.appendChild(popover_Close_Button);
-        inquiry_wrap.querySelector('.form-table.owner-form').appendChild(handlingOfPersonalInformation.cloneNode(true));
+        //inquiry_wrap.querySelector('.form-table.owner-form').appendChild(handlingOfPersonalInformation.cloneNode(true));
+        inquiry_wrap.querySelector('form').appendChild(handlingOfPersonalInformation.cloneNode(true));
         inquiry_wrap.querySelector('form').appendChild(inquiry_Bottom_Buttons_wrap);
         popover_Content_div.appendChild(inquiry_wrap);
         //const inquiry_Bottom_Buttons_wrap_client_h = inquiry_Bottom_Buttons_wrap.clientHeight;
