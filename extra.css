@@ -35,7 +35,7 @@
     --border-light:var(--border-width) var(--border-color-light) var(--border-style);
     --border-dark:var(--border-width) var(--border-color-dark) var(--border-style);
     /*font-size*/
-    --font-size:1.2rem;
+    --font-size:1rem;
     /*margin*/
     --margin:0;
     /*padding*/
@@ -51,7 +51,6 @@
     --button-disabled-pointer-events:none;
     --button-text-decoration:none;
     /*table*/
-    --color:;
     --table-color:var(--color-theme-font-dark);
     --table-th-color:var(--color-theme-font-dark);
     --table-td-color:var(--color-theme-font-dark);
@@ -61,26 +60,6 @@
     --table-border-color:var(--color-table-border);
     --table-border-style:solid;
     --table-border:var(--table-border-width) var(--table-border-color) var(--table-border-style);
-    
-    
-    --table-style-font-size-volatility:calc(var(--volume-2) * 1rem);
-    --table-style-font-size-base:var(--font-size-base);
-    --table-style-font-size-ss:calc(var(--table-style-font-size-base) + var(--table-style-font-size-volatility));
-    --table-style-font-size-s:calc(var(--table-style-font-size-ss) + var(--table-style-font-size-volatility));
-    --table-style-font-size-m:calc(var(--table-style-font-size-s) + var(--table-style-font-size-volatility));
-    --table-style-font-size-l:calc(var(--table-style-font-size-m) + var(--table-style-font-size-volatility));
-    --table-style-font-size-ll:calc(var(--table-style-font-size-l) + var(--table-style-font-size-volatility));
-    --table-th-font-size:--table-style-font-size-s;
-    --table-td-font-size:--table-style-font-size-s;
-    --table-style-padding-volatility:calc(var(--volume-2) * 1rem);
-    --table-style-padding-base:calc(var(--volume-8) * 1rem);
-    --table-style-padding-ss:calc(var(--table-style-padding-base) + var(--table-style-padding-volatility));
-    --table-style-padding-s:calc(var(--table-style-padding-ss) + var(--table-style-padding-volatility));
-    --table-style-padding-m:calc(var(--table-style-padding-s) + var(--table-style-padding-volatility));
-    --table-style-padding-l:calc(var(--table-style-padding-m) + var(--table-style-padding-volatility));
-    --table-style-padding-ll:calc(var(--table-style-padding-l) + var(--table-style-padding-volatility));
-
-
 
 
 
