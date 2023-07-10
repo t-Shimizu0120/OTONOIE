@@ -386,7 +386,9 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
         position:initial;
     }
     #content_wrap {
-        padding:var(--volume-0);
+        --padding:0;
+        
+        padding:var(--padding);
     }
 }
 
