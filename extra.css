@@ -1,64 +1,60 @@
 /*============================================================================*/
 /*root*/
 :root {
-    /*<-----------------------SETTINGS------------------------->*/
+    /*<-----------------------color------------------------->*/
     /*media*/
     --media-bp-s:;
     --media-bp-m:;
     --media-bp-l:;
     --media-bp-ll:;
     /*color-settings*/
-    --color-theme-light:#dfdfdf;
-    --color-theme-dark:#2f2f2f;
-    --color-theme-bg-light:#f7f4f4;
-    --color-theme-bg-dark:#3f3f3f;
+    --color-white:#fff;
+    --color-black:#000;
+    --color-bg-light:var(--color-white,);
+    --color-bg-dark:var(--color-black);
+    --color-theme-light:#f7f4f4;
+    --color-theme-dark:#3f3f3f;
+    --color-theme-font-light:#dfdfdf;
+    --color-theme-font-dark:#2f2f2f;
     --color-theme-border-light:#dfdfdf;
     --color-theme-border-dark:#2f2f2f;
     --color-transparent:transparent;
-    --color-white:#fff;
-    --color-black:#000;
-    /*--color-border-light:#dfdfdf;*/
-    /*--color-border-dark:;*/
-    /*--color-background-light:#f7f4f4;*/
-    /*--color-background-dark:#3f3f3f;*/
     --color-dddddd:#dddddd;
     --color-afafaf:#afafaf;
     --color-eee:#eee;
     /*<------------------------------------------------------>*/
-    /*color*/
-    --color:var(--color-theme-dark,#2f2f2f);
-    /*background-color*/
-    --background-color:var(--color-theme-bg-light,#f7f4f4);
+    /*<-----------------------others------------------------->*/
     /*border*/
-    --border-width:0.3rem;
-    --border-color:var(--color-theme-border-light,#dfdfdf);
+    --border-width:0.1rem;
+    --border-color-light:var(--color-theme-border-light);
+    --border-color-dark:var(--color-theme-border-dark);
     --border-style:solid;
-    --border:var(--border-width,0.3rem) var(--border-color) var(--border-style,solid);
-    /*border-radius*/
-    --border-radius:0;
+    --border-light:var(--border-width) var(--border-color-light) var(--border-style);
+    --border-dark:var(--border-width) var(--border-color-dark) var(--border-style);;
     /*font-size*/
-    --font-size:initial;
-    /*font-weight*/
-    --font-weight:initial;
+    --font-size:1.2rem;
     /*margin*/
     --margin:0;
     /*padding*/
     --padding:0;
-    /*opacity*/
-    --opacity:1;
-    
-    
     /*button*/
-    --border-radius:0.2rem;
-    --opacity:0.6;
-    
-    --button-border-radius:var(--border-radius,0.2rem);
+    --button-border:0;
+    --button-border-radius:2rem;
     --button-font-weight:bold;
     --button-text-align:center;
-    --button-style-cursor:pointer;
-    --button-hover-opacity:var(--opacity,0.6);
-    --button-disabled-opacity:var(--opacity,0.6);
+    --button-cursor:pointer;
+    --button-hover-opacity:0.6;
+    --button-disabled-opacity:0.6;
     --button-disabled-pointer-events:none;
+    --button-text-decoration:none;
+
+
+
+
+
+
+    
+    
     /*a*/
     /*table*/
     --color:;
@@ -133,63 +129,96 @@
 /*----------共通----------*/
 /*スクロールバー*/
 ::-webkit-scrollbar{
-    width:calc(var(--volume-8) * 1rem);
-    height:calc(var(--volume-8) * 1rem);
+    width:0.8rem;
+    height:0.8rem;
 }
 ::-webkit-scrollbar-track{
-    background-color:var(--color-background-light);
+    background-color:var(--color-theme-border-light);
 }
 ::-webkit-scrollbar-thumb{
-    background-color:var(--color-background-dark);
+    background-color:var(--color-theme-border-dark);
 }
 /*ページトップボタン*/
 #pagetop {
+    --right:3rem;
+    --bottom:2rem;
+    
     position:fixed;
-    right:calc(var(--volume-30) * 1rem);
-    bottom:calc(var(--volume-20) * 1rem);
+    right:var(--right);
+    bottom:var(--bottom);
 }
 #pagetop:hover {
-    opacity:var(--volume-8);
+    --button-hover-opacity:0.8;
+    
+    opacity:var(--button-hover-opacity);
 }
 .js-added-pagetop {
-    width:7.5rem;
-    height:5rem;
-    padding:calc(var(--volume-7) * 1rem) 0;
+    --width:7.5rem;
+    --height:5rem;
+    --padding:0.7rem 0;
+    --flex-flow:column nowrap;
+    --justify-content:space-between;
+    --align-items:center;
+    --z-index:500;
+    --opacity:0.6;
+
+    width:var(--width);
+    height:var(--height);
+    padding:var(--padding);
     color:var(--color-white);
     background:var(--color-black);
-    border:var(--volume-0);
-    border-radius:calc(var(--volume-2) * 1rem);
+    border:var(--button-border);
+    border-radius:var(--button-border-radius);
     display:flex;
     display:-webkit-box;
     display:-webkit-flex;
     display:-ms-flexbox;
-    flex-flow:column nowrap;
-    justify-content:space-between;
-    align-items:center;
-    z-index:500;
-    opacity:var(--volume-6);
+    flex-flow:var(--flex-flow);
+    justify-content:var(--justify-content);
+    align-items:var(--align-items);
+    z-index:var(--z-index);
+    opacity:var(--opacity);
+    cursor:var(--button-cursor);
 }
 .js-added-pagetop:hover {
-    text-decoration:none;
+    text-decoration:var(--button-text-decoration);
 }
 .js-added-pagetop-arrow {
-    height:calc(var(--volume-20) * 1rem);
-    width:calc(var(--volume-20) * 1rem);
-    border-top:calc(var(--volume-4) * 1rem) solid var(--color-white);
-    border-right:calc(var(--volume-4) * 1rem) solid var(--color-white);
+    --width:2rem;
+    --height:2rem;
+    --border-top:0.4rem solid var(--color-white);
+    --border-right:0.4rem solid var(--color-white);
+    --order:0;
+    
+    width:var(--width);
+    height:var(--height);
+    border-top:var(--border-top);
+    border-right:var(--border-right);
     transform:translateY(20%) rotate(-45deg);
-    order:0;
+    order:var(--order);
 }
 .js-added-pagetop > p {
+    --font-size:1rem;
+    --order:1;
+    
     color:var(--color-white);
-    font-size:calc(var(--volume-10) * 1rem);
-    font-weight:bold;
-    order:1;
+    font-size:var(--font-size);
+    font-weight:var(--button-font-weight);
+    order:var(--order);
 }
 #pagetop > a > img {
     display:none;
 }
 /*-----------------------*/
+
+
+
+
+
+    
+
+
+    
 /*外枠*/
 .result .detail {
     border:var(--border-width-m) var(--color-border-light) solid;
@@ -379,6 +408,6 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
     }
     /*============================================================================*/
     #pagetop {
-        right:calc(var(--volume-20) * 1rem);
+        --right:2rem;
     }
 }
