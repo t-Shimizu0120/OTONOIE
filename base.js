@@ -16,5 +16,4 @@ if (settings['mask']) {
         pageTop_a.appendChild(pageTop_p);
     })();
 } else {
-    
 };
