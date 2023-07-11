@@ -6,9 +6,9 @@ if (settings['mask']) {
         const pageTopElm = document.getElementById('pagetop');
         const pageTop_a = pageTopElm.querySelector('a');
         pageTop_a.removeChild(pageTop_a.querySelector('img'));
-        pageTop_a.setAttribute('class','js-added-pagetop');
+        pageTop_a.setAttribute('class','js-added-component--button js-added-pagetop');
         const pageTop_div = create_Element('div',[
-            {class:'js-added-pagetop-arrow'}
+            {class:'icom--arrow'}
         ]);
         const pageTop_p = create_Element('p',[]);
         pageTop_p.textContent = 'ページTOP';
