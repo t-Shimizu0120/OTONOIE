@@ -95,6 +95,15 @@
 }
 /*============================================================================*/
 /*----------共通----------*/
+/*問い合わせ「リセット」「入力内容の確認へ」ボタン*/
+input[class="btn_reset"], input[class="btn_submit"] {
+    --font-size:1.4rem;
+    --padding:1.2rem 0;
+    
+    border-radius:var(--button-border-radius) !important;
+    font-size:var(--font-size);
+    padding:var(--padding);
+}
 /*スクロールバー*/
 ::-webkit-scrollbar{
     width:0.8rem;
@@ -406,5 +415,8 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
     /*============================================================================*/
     #pagetop {
         --right:2rem;
+    }
+    input[class="btn_reset"], input[class="btn_submit"] {
+        --font-size:1.2rem;
     }
 }
