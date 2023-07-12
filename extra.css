@@ -110,6 +110,64 @@
     text-decoration:var(--button-text-decoration);
     pointer-events:var(--button-disabled-pointer-events);
 }
+/*テーブル*/
+    --table-color:var(--color-theme-font-dark);
+
+    --table-th-color:var(--color-theme-font-dark);
+    --table-td-color:var(--color-theme-font-dark);
+    --table-th-background-color:var(--color-table-bg-light);
+    --table-td-background-color:var(--color-transparent);
+    --table-border-width:0.1rem;
+    --table-border-color:var(--color-table-border-light);
+    --table-border-style:solid;
+    --table-border:var(--table-border-width) var(--table-border-color) var(--table-border-style);
+
+.component--table {
+    color:var(--table-color);
+    border:var();
+}
+
+.component--table > th {
+    
+}
+
+.component--table > td {
+    
+}
+
+.component--table > td  > ul > li {
+    
+}
+
+.js-added-table {
+    border:var(--table-border);
+}
+.js-added-table-th {
+    --padding:1.2rem;
+    --text-align:center;
+    --vertical-align:middle;
+    
+    background-color:var(--table-th-background-color);
+    color:var(--table-th-color);
+    border:var(--table-border);
+    padding:var(--padding);
+    text-align:var(--text-align); 
+    vertical-align:var(--vertical-align);
+}
+.js-added-table-td {
+    --padding:1.2rem;
+    --vertical-align:top;
+    
+    background-color:var(--table-td-background-color);
+    color:var(--table-td-color);
+    border:var(--table-border);
+    padding:var(--padding);
+    vertical-align:var(--vertical-align);
+}
+.js-added-table-td > ul > li{
+    color:var(--table-td-color);
+}
+
 /*<---------------------------->*/
 /*-------------共通-------------*/
 /*問い合わせ「リセット」「入力内容の確認へ」ボタン*/
@@ -209,6 +267,8 @@ input[class="btn_reset"], input[class="btn_submit"] {
 
 
 
+
+
 /*テーブル*/
 .js-added-table {
     border:var(--table-border);
@@ -235,9 +295,14 @@ input[class="btn_reset"], input[class="btn_submit"] {
     padding:var(--padding);
     vertical-align:var(--vertical-align);
 }
-.js-added-table-td > ul > li{
+.js-added-table-td > ul > li {
     color:var(--table-td-color);
 }
+
+
+
+
+
 /*タブコンテンツ*/
 .js-added-tab-contents {
     --width:100%;
