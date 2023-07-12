@@ -95,6 +95,7 @@
 }
 /*============================================================================*/
 /*------コンポーネント------*/
+/*ボタン*/
 .component--button {
     border:var(--button-border);
     border-radius:var(--button-border-radius);
