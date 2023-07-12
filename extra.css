@@ -209,11 +209,6 @@ input[class="btn_reset"], input[class="btn_submit"] {
 
 
 
-/*.owner-form {*/
-    /*--border-width:0.3rem;*/
-    
-    /*border:var(--border-light);*/
-/*}*/
 /*テーブル*/
 .js-added-table {
     border:var(--table-border);
