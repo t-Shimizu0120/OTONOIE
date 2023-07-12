@@ -538,3 +538,16 @@ class AddPopoverContents {
     //*******
 //);
 //--------------------------------------------------
+
+
+const testTable = new AddTable(
+    {
+        table_BaseId:'test',
+        table_Contents:[
+            [{th:'テスト'},{td:['テスト']}],
+            [{th:'テスト'},{td:['テスト']}]
+        ],
+        add_Styles:``
+    }
+);
+document.querySelector('detail_btm').appendChild(testTable);
