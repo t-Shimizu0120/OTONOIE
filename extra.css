@@ -261,7 +261,6 @@ input[class="btn_reset"], input[class="btn_submit"] {
 .result .detail, .owner-form {
     --border-width:0.3rem;
     --border-color:var(--color-theme-border-light);
-    --border-style:solid;
         
     border:var(--border);
     border-width:var(--border-width);
