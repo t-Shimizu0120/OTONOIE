@@ -33,11 +33,8 @@
     /*<-----------------------others------------------------->*/
     /*border*/
     --border-width:0.1rem;
-    --border-color-light:var(--color-theme-border-light);
-    --border-color-dark:var(--color-theme-border-dark);
+    --border-color:var(--color-theme-border-dark);
     --border-style:solid;
-    --border-light:var(--border-width) var(--border-color-light) var(--border-style);
-    --border-dark:var(--border-width) var(--border-color-dark) var(--border-style);
     /*font-size*/
     --font-size:1rem;
     /*margin*/
@@ -202,16 +199,21 @@ input[class="btn_reset"], input[class="btn_submit"] {
 }
 /*-----------------------*/
 /*外枠*/
-.result .detail {
+.result .detail, .owner-form {
     --border-width:0.3rem;
-    
-    border:var(--border-light);
+    --border-color:var(--color-theme-border-light);
+    --border-style:solid;
+        
+    border:var(--border-width) var(--border-color) var(--border-style);
 }
-.owner-form {
-    --border-width:0.3rem;
+
+
+
+/*.owner-form {*/
+    /*--border-width:0.3rem;*/
     
-    border:var(--border-light);
-}
+    /*border:var(--border-light);*/
+/*}*/
 /*テーブル*/
 .js-added-table {
     border:var(--table-border);
