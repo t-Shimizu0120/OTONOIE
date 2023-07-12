@@ -94,6 +94,22 @@
     --popover-backside-button-cursor:default;
 }
 /*============================================================================*/
+/*------コンポーネント------*/
+.component--button {
+    border:var(--button-border);
+    border-radius:var(--button-border-radius);
+    font-weight:var(--button-font-weight);
+    text-align:var(--button-text-align);
+    cursor:var(--button-cursor);
+    text-decoration:var(--button-text-decoration);
+}
+.component--button:hover {
+    opacity:var(--button-hover-opacity);
+}
+.component--button:disabled {
+    opacity:var(--button-disabled-opacity);
+    pointer-events:var(--button-disabled-pointer-events);
+}
 /*----------共通----------*/
 /*問い合わせ「リセット」「入力内容の確認へ」ボタン*/
 input[class="btn_reset"], input[class="btn_submit"] {
