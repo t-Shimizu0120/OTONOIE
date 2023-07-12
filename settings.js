@@ -227,7 +227,7 @@ class AddTable {
         const table_Obj = {
             table_Contents:[],
             
-            table_Attrs:[{class:'js-added-table .component--table'}],
+            table_Attrs:[{class:'js-added-table component--table'}],
             tbody_Attrs:[],
             th_Attrs:[{class:'js-added-table-th'}],
             td_Attrs:[{class:'js-added-table-td'}]
