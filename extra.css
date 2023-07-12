@@ -94,7 +94,7 @@
     --popover-backside-button-cursor:default;
 }
 /*============================================================================*/
-/*------コンポーネント------*/
+/*---------コンポーネント---------*/
 /*ボタン*/
 .component--button {
     border:var(--button-border);
@@ -106,12 +106,15 @@
 }
 .component--button:hover {
     opacity:var(--button-hover-opacity);
+    text-decoration:var(--button-text-decoration);
 }
 .component--button:disabled {
     opacity:var(--button-disabled-opacity);
+    text-decoration:var(--button-text-decoration);
     pointer-events:var(--button-disabled-pointer-events);
 }
-/*----------共通----------*/
+/*<---------------------------->*/
+/*-------------共通-------------*/
 /*問い合わせ「リセット」「入力内容の確認へ」ボタン*/
 input[class="btn_reset"], input[class="btn_submit"] {
     --font-size:1.4rem;
@@ -161,8 +164,6 @@ input[class="btn_reset"], input[class="btn_submit"] {
     padding:var(--padding);
     color:var(--color-white);
     background:var(--color-black);
-    border:var(--button-border);
-    border-radius:var(--button-border-radius);
     display:flex;
     display:-webkit-box;
     display:-webkit-flex;
@@ -172,12 +173,8 @@ input[class="btn_reset"], input[class="btn_submit"] {
     align-items:var(--align-items);
     z-index:var(--z-index);
     opacity:var(--opacity);
-    cursor:var(--button-cursor);
 }
-.js-added-pagetop:hover {
-    text-decoration:var(--button-text-decoration);
-}
-.js-added-pagetop-arrow {
+.icom--arrow {
     --width:2rem;
     --height:2rem;
     --border-top:0.4rem solid var(--color-white);
