@@ -227,23 +227,14 @@ input[class="btn_reset"], input[class="btn_submit"] {
     border-width:var(--border-width);
     border-color:var(--border-color);
 }
-
-
-
-
-
 /*テーブル*/
 .js-added-table {
-    border:var(--table-border);
 }
 .js-added-table-th {
     --padding:1.2rem;
     --text-align:center;
     --vertical-align:middle;
     
-    background-color:var(--table-th-background-color);
-    color:var(--table-th-color);
-    border:var(--table-border);
     padding:var(--padding);
     text-align:var(--text-align); 
     vertical-align:var(--vertical-align);
@@ -252,14 +243,10 @@ input[class="btn_reset"], input[class="btn_submit"] {
     --padding:1.2rem;
     --vertical-align:top;
     
-    background-color:var(--table-td-background-color);
-    color:var(--table-td-color);
-    border:var(--table-border);
     padding:var(--padding);
     vertical-align:var(--vertical-align);
 }
 .js-added-table-td > ul > li {
-    color:var(--table-td-color);
 }
 
 
