@@ -550,4 +550,4 @@ const testTable = new AddTable(
         add_Styles:``
     }
 );
-document.querySelector('detail_btm').appendChild(testTable);
+document.querySelector('.detail_btm').appendChild(testTable);
