@@ -96,6 +96,13 @@
 /*<------------------------------------------------------>*/
 /*============================================================================*/
 /*---------コンポーネント---------*/
+/*ボックス*/
+.component--flex-box {
+    display:flex;
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+}
 /*ボタン*/
 .component--button {
     border:var(--button-border);
