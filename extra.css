@@ -393,7 +393,7 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
 
 
 
-#container-top {
+.js-added-container-top {
     width:100%;
     display:flex;
     display:-webkit-box;
@@ -402,7 +402,7 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
     flex-flow:row wrap;
     justify-content:space-between;
 }
-#container-top-left {
+.js-added-container-top-left {
     display:flex;
     display:-webkit-box;
     display:-webkit-flex;
@@ -413,7 +413,7 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
     flex-basis:33%;
     order:0;
 }
-#container-top-right {
+.js-added-container-top-right {
     background:#3f3f3f;
     margin-left:.6rem;
     padding-bottom:.7rem;
@@ -421,7 +421,7 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
     flex-grow:1;
     flex-basis:auto;
 }
-#container-top-bottom {
+.js-added-container-top-bottom {
     flex-basis:100%;
     order:2;
 }
@@ -444,21 +444,21 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
     display:none;
 }
 @media screen and (${settings['media']['m']}) {
-    #container-top {
+    .js-added-container-top {
         flex-flow:column nowrap;
     }
-    #container-top-left {
+    .js-added-container-top-left {
         width:100%;
         order:0;
     }
-    #container-top-right {
+    .js-added-container-top-right {
         margin-left:0;
         padding-bottom:0;
         width:100%;
         flex-grow:0;
         order:1;
     }
-    #container-top-bottom {
+    .js-added-container-top-bottom {
         width:100%;
         order:2;
     }
