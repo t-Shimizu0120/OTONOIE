@@ -566,6 +566,8 @@ const testTabContents = new AddTabContents(
 );
 document.querySelector('.detail_btm').appendChild(testTabContents);
 
+const test_p = create_Element('p',[]);
+test_p.textContent = 'test';
 const testPopoverContents = new AddPopoverContents(
     {
         contents_BaseId:'test',
@@ -576,7 +578,6 @@ const testPopoverContents = new AddPopoverContents(
         buttonText:'test',
         add_Styles:``
     },
-    null,
-    null
+    test_p
 );
 document.querySelector('.detail_btm').appendChild(testPopoverContents);
