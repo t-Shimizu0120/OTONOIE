@@ -255,10 +255,6 @@ input[class="btn_reset"], input[class="btn_submit"] {
     --flex-flow:row wrap;
     
     width:var(--width);
-    display:flex;
-    display:-webkit-box;
-    display:-webkit-flex;
-    display:-ms-flexbox;
     flex-flow:var(--flex-flow);
 }
 input[name="js-added-tab-input"] {
