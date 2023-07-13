@@ -425,7 +425,7 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
     flex-basis:100%;
     order:2;
 }
-#container-middle {
+.js-added-container-middle {
     width:100%;
     display:flex;
     display:-webkit-box;
@@ -437,10 +437,10 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
     padding:0.8rem 1.6rem;
     margin: 0 auto;
 }
-#container-bottom {
+.js-added-container-bottom {
     
 }
-#container-share {
+.js-added-container-share {
     display:none;
 }
 @media screen and (${settings['media']['m']}) {
@@ -462,10 +462,10 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
         width:100%;
         order:2;
     }
-    #container-middle {
+    .js-added-container-middle {
         padding:0.3rem;
     }
-    #container-share {
+    .js-added-container-share {
         background:#dddddd;
         display:flex;
         display:-webkit-box;
