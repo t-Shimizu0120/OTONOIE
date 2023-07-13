@@ -181,10 +181,6 @@
     padding:var(--padding);
     color:var(--color-white);
     background:var(--color-black);
-    display:flex;
-    display:-webkit-box;
-    display:-webkit-flex;
-    display:-ms-flexbox;
     flex-flow:var(--flex-flow);
     justify-content:var(--justify-content);
     align-items:var(--align-items);
