@@ -307,9 +307,6 @@ input:disabled + .js-added-tab-label:hover {
 input:checked + .js-added-tab-label + .js-added-tab-content {
     display: block;
 }
-
-
-
 /*ポップオーバーコンテンツ*/
 .js-added-popover {
 }
@@ -317,18 +314,6 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
     --width:100%;
     
     width:var(--width);
-    text-align:var(--button-text-align);
-    font-weight:var(--button-font-weight);
-    border:var(--button-border);
-    border-radius:var(--button-border-radius);
-    cursor:var(--button-cursor);
-}
-.js-added-popover-button:hover {
-    opacity:var(--button-hover-opacity);
-}
-.js-added-popover-button:disabled {
-    opacity:var(--button-disabled-opacity);
-    pointer-events:var(--button-disabled-pointer-events);
 }
 .js-added-popover-content {
     --popover-contents-background-color:var(--color-white);
@@ -342,18 +327,14 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
 }
 .js-added-popover-close-button {
     --padding:0;
+    --border-radius:0;
     
     position:absolute;
     right:var(--popover-close-button-right);
     top:var(--popover-close-button-top);
-    text-align:var(--button-text-align);
-    border:var(--button-border);
-    cursor:var(--button-cursor);
     background-color:var(--color-transparent);
+    border-radius:var(--border-radius);
     padding:var(--padding);
-}
-.js-added-popover-close-button:hover {
-    opacity:var(--button-hover-opacity);
 }
 .icon-close {
     --width:2.6rem;
@@ -407,6 +388,7 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
     cursor:var(--popover-backside-button-cursor);
     z-index:var(--z-index);
 }
+
 /*============================================================================*/
 /*@media--m*/
 /*============================================================================*/
