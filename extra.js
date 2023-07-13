@@ -60,7 +60,7 @@ if (settings['mask']) {
                 {class:'js-added-container-share'},
                 {id:'container-share'}
             ]);
-            document.querySelector('div.detail_btm').appendChild(share_container);
+            document.querySelector('div.detail_btm').appendChild(containerShare);
             //-----------------------------------------------------------------
         })();
     } else if (locationURL.includes('property')) {
