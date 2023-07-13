@@ -233,19 +233,15 @@ input[class="btn_reset"], input[class="btn_submit"] {
 .js-added-table {
 }
 .js-added-table-th {
-    --padding:1.2rem;
     --text-align:center;
     --vertical-align:middle;
     
-    padding:var(--padding);
     text-align:var(--text-align); 
     vertical-align:var(--vertical-align);
 }
 .js-added-table-td {
-    --padding:1.2rem;
     --vertical-align:top;
     
-    padding:var(--padding);
     vertical-align:var(--vertical-align);
 }
 .js-added-table-td > ul > li {
