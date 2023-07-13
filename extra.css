@@ -393,7 +393,7 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
 
 
 
-#component-wrap-top {
+#container-top {
     width:100%;
     display:flex;
     display:-webkit-box;
@@ -402,7 +402,7 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
     flex-flow:row wrap;
     justify-content:space-between;
 }
-#component-top-l {
+#container-top-left {
     display:flex;
     display:-webkit-box;
     display:-webkit-flex;
@@ -413,7 +413,7 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
     flex-basis:33%;
     order:0;
 }
-#component-top-r {
+#container-top-right {
     background:#3f3f3f;
     margin-left:.6rem;
     padding-bottom:.7rem;
@@ -421,11 +421,11 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
     flex-grow:1;
     flex-basis:auto;
 }
-#component-top-b {
+#container-top-bottom {
     flex-basis:100%;
     order:2;
 }
-#component-middle {
+#container-middle {
     width:100%;
     display:flex;
     display:-webkit-box;
@@ -437,32 +437,35 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
     padding:0.8rem 1.6rem;
     margin: 0 auto;
 }
-#share {
+#container-bottom {
+    
+}
+#container-share {
     display:none;
 }
 @media screen and (${settings['media']['m']}) {
-    #component-wrap-top {
+    #container-top {
         flex-flow:column nowrap;
     }
-    #component-top-l {
+    #container-top-left {
         width:100%;
         order:0;
     }
-    #component-top-r {
+    #container-top-right {
         margin-left:0;
         padding-bottom:0;
         width:100%;
         flex-grow:0;
         order:1;
     }
-    #component-top-b {
+    #container-top-bottom {
         width:100%;
         order:2;
     }
-    #component-middle {
+    #container-middle {
         padding:0.3rem;
     }
-    #share {
+    #container-share {
         background:#dddddd;
         display:flex;
         display:-webkit-box;
