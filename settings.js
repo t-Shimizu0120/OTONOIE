@@ -362,7 +362,7 @@ class AddTabContents {
         const tab_Obj = {
             tab_Contents:[],
             
-            div_Attrs:[{class:'js-added-tab-contents'}],
+            div_Attrs:[{class:'js-added-tab-contents component--flex-box'}],
             input_Attrs:[{type:'radio'},{name:'js-added-tab-input'}],
             label_Attrs:[{class:'js-added-tab-label'}],
             content_Attrs:[{class:'js-added-tab-content'}]
