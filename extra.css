@@ -153,7 +153,7 @@
     background-color:var(--color-theme-border-dark);
 }
 /*ページトップボタン*/
-#pagetop {
+.pagetop {
     --right:3rem;
     --bottom:2rem;
     
@@ -161,7 +161,7 @@
     right:var(--right);
     bottom:var(--bottom);
 }
-#pagetop:hover {
+.pagetop:hover {
     --opacity:0.8;
     
     opacity:var(--opacity);
