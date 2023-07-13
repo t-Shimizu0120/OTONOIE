@@ -162,9 +162,9 @@
     bottom:var(--bottom);
 }
 #pagetop:hover {
-    --button-hover-opacity:0.8;
+    --opacity:0.8;
     
-    opacity:var(--button-hover-opacity);
+    opacity:var(--opacity);
 }
 .js-added-pagetop {
     --width:7.5rem;
