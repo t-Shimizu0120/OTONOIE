@@ -387,10 +387,6 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
     cursor:var(--popover-backside-button-cursor);
     z-index:var(--z-index);
 }
-
-
-
-
 /*コンテナ*/
 .js-added-container-top {
     --width:100%;
@@ -457,7 +453,26 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
 .js-added-container-share {
     display:none;
 }
-@media screen and (${settings['media']['m']}) {
+
+
+
+/*============================================================================*/
+/*@media--m*/
+/*============================================================================*/
+@media screen and (max-width:750px) {
+    /*============================================================================*/
+    /*root*/
+    :root {
+    }
+    /*============================================================================*/
+    header {
+        position:initial;
+    }
+    #content_wrap {
+        --padding:0;
+        
+        padding:var(--padding);
+    }
     .js-added-container-top {
         --flex-flow:column nowrap;
     }
@@ -487,33 +502,6 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
         align-items:var(--align-items);
         padding:var(--padding);
         margin:var(--margin);
-    }
-}
-@media screen and (${settings['media']['s']}) {
-    
-}
-
-
-
-
-
-
-/*============================================================================*/
-/*@media--m*/
-/*============================================================================*/
-@media screen and (max-width:750px) {
-    /*============================================================================*/
-    /*root*/
-    :root {
-    }
-    /*============================================================================*/
-    header {
-        position:initial;
-    }
-    #content_wrap {
-        --padding:0;
-        
-        padding:var(--padding);
     }
 }
 
