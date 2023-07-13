@@ -551,3 +551,32 @@ const testTable = new AddTable(
     }
 );
 document.querySelector('.detail_btm').appendChild(testTable);
+
+const testTabContents = new AddTabContents(
+    {
+        contents_BaseId:'test',
+        tab_Contents:[
+            {tabContentTitle:'test1',tabContentName:'test1'},
+            {tabContentTitle:'test2',tabContentName:'test2'}
+        ],
+        add_Styles:``
+    },
+    null,
+    null
+);
+document.querySelector('.detail_btm').appendChild(testTabContents);
+
+const testPopoverContents = new AddPopoverContents(
+    {
+        contents_BaseId:'test',
+        popover_Contents:'test',
+        popover_Option:'auto',
+        popover_Target_Action_Open:'show',
+        popover_Target_Action_Close:'hide',
+        buttonText:'test',
+        add_Styles:``
+    },
+    null,
+    null
+);
+document.querySelector('.detail_btm').appendChild(testPopoverContents);
