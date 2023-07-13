@@ -514,7 +514,7 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
     :root {
     }
     /*============================================================================*/
-    #pagetop {
+    .pagetop {
         --right:2rem;
     }
     input[class="btn_reset"], input[class="btn_submit"] {
