@@ -489,7 +489,7 @@ class AddPopoverContents {
         const popover_Obj = {
             buttonText:'',
             container_Attrs:[{class:'js-added-popover'}],
-            button_Attrs:[{class:'js-added-popover-button'}],
+            button_Attrs:[{class:'js-added-popover-button component--button'}],
             content_Attrs:[{class:'js-added-popover-content'}],
             button_Close_Attrs:[{class:'js-added-popover-close-button'}]
         };
