@@ -246,11 +246,6 @@ input[class="btn_reset"], input[class="btn_submit"] {
 }
 .js-added-table-td > ul > li {
 }
-
-
-
-
-
 /*タブコンテンツ*/
 .js-added-tab-contents {
     --width:100%;
@@ -312,6 +307,9 @@ input:disabled + .js-added-tab-label:hover {
 input:checked + .js-added-tab-label + .js-added-tab-content {
     display: block;
 }
+
+
+
 /*ポップオーバーコンテンツ*/
 .js-added-popover {
 }
