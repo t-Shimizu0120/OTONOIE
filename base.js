@@ -6,7 +6,7 @@ if (settings['mask']) {
         const pageTopElm = document.getElementById('pagetop');
         const pageTop_a = pageTopElm.querySelector('a');
         pageTop_a.removeChild(pageTop_a.querySelector('img'));
-        pageTop_a.setAttribute('class','js-added-pagetop component--button');
+        pageTop_a.setAttribute('class','js-added-pagetop component--button component--flex-box');
         const pageTop_div = create_Element('div',[
             {class:'icom--arrow'}
         ]);
