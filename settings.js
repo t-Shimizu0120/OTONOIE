@@ -425,6 +425,7 @@ class AddPopoverContents {
                 {class:'icon-close'}
             ]);
             const popover_Button_Close = create_Element('button',obj.button_Close_Attrs);
+            popover_Button_Close.classList.add('component--button');
             popover_Button_Close.addEventListener('click', (e) => this.clickHandlerInvalid(e));
             popover_Button_Close.appendChild(closeIcon);
             //表示用attributeの設定・コンテンツ要素へ入れる
