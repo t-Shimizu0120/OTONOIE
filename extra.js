@@ -102,26 +102,26 @@ if (settings['mask']) {
             //問い合わせフォーム用ポップオーバー
             const popover_Content_div = create_Element('div',[
                 {class:'js-added-popover-content'},
-                {id:'inquiry-popover-contents'},
+                {id:'inquiry-popover-content'},
                 {popover:'auto'}
             ]);
             document.querySelector('#content').querySelector('div.inner').appendChild(popover_Content_div);
             popoverFocusControl(popover_Content_div);
             //ポップオーバー背面クローズボタン
-            const popover_Backside_Button_Close = create_Element('button',[
+            const popover_Backside_Close_Button = create_Element('button',[
                 {class:'js-added-popover-content-backside-button match-media-target-close-btn'},
-                {popovertarget:'inquiry-popover-contents'},
+                {popovertarget:'inquiry-popover-content'},
                 {popovertargetaction:'hide'}
             ]);
-            popover_Backside_Button_Close.addEventListener('click',popoverProcess_Close);
-            bodyElm.appendChild(popover_Backside_Button_Close);
+            popover_Backside_Close_Button.addEventListener('click',popoverProcess_Close);
+            bodyElm.appendChild(popover_Backside_Close_Button);
             //クローズボタン（×ボタン）
             const closeIcon = create_Element('span',[
                 {class:'icon-close'}
             ]);
             const popover_Close_Button = create_Element('button',[
                 {class:'js-added-popover-close-button match-media-target-close-btn component--button'},
-                {popovertarget:'inquiry-popover-contents'},
+                {popovertarget:'inquiry-popover-content'},
                 {popovertargetaction:'hide'},
                 {type:'button'}
             ]);
