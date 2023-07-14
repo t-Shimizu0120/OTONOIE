@@ -16,6 +16,7 @@ if (settings['mask']) {
         //問い合わせフォーム
         const inquiryForm = document.querySelector('#contact_area');
         //個人情報の取り扱い
+        const handlingOfPersonalInformation = inquiryForm.nextElementSibling;
         (() => {
             //=================================================================
             //コンテナ
