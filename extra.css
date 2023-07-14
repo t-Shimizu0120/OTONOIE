@@ -411,13 +411,19 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
     order:var(--order);
 }
 .js-added-container-top-right {
+    --flex-flow:row nowrap;
+    --justify-content:space-between;
+    --align-items:center;
     --background:var(--color-theme-dark);
     --margin-left:0.6rem;
-    --padding-bottom:0.7rem;
+    --padding-bottom:0.6rem;
     --order:1;
     --flex-grow:1;
     --flex-basis:auto;
-    
+
+    flex-flow:var(--flex-flow);
+    justify-content:var(--justify-content);
+    align-items:var(--align-items);
     background:var(--background);
     margin-left:var(--margin-left);
     padding-bottom:var(--padding-bottom);
