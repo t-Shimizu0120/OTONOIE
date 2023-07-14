@@ -201,7 +201,7 @@ if (settings['mask']) {
                 {class:'component--flex-box component--button'},
                 {href:'tel:' + settings['company_data']['tel_number']}
             ]);
-            inquiry_Tel_button.textContent = '電話をかける';
+            inquiry_Tel_Button.textContent = '電話をかける';
             inquiryBox_1.appendChild(inquiry_Tel_Button);
             //QRコード１
             const qr_1 = (() => {
