@@ -130,7 +130,6 @@ if (settings['mask']) {
                 {class:'js-added-popover-bottom-buttons-wrap'},
                 {id:'inquiry-popover-bottom-buttons-wrap'}
             ]);
-            
             //問い合わせフォームWRAP
             const inquiry_wrap = create_Element('div',[
                 {class:'js-added-popover-content-wrap'},
@@ -146,6 +145,108 @@ if (settings['mask']) {
             inquiry_wrap.querySelector('form').appendChild(handlingOfPersonalInformation.cloneNode(true));
             inquiry_wrap.querySelector('form').appendChild(inquiry_Bottom_Buttons_wrap);
             popover_Content_div.appendChild(inquiry_wrap);
+            //-----------------------------------------------------------------
+            //--------------------------コンポーネント１------------------------
+            //お問い合わせWRAP１
+            const inquiryBox_1 = create_Element('div',[
+                {class:'js-added-inquiry-box'},
+                {id:'inquiry1-box'}
+            ]);
+            containerTop_Left.appendChild(inquiryBox_1);
+            //お問合せボタン１
+            const inquiry_1 = create_Element('button',[
+                {class:'js-added-inquiry-button component--button'},
+                //{id:'inquiry-button1'}
+                {id:'inquiry1-button'}
+            ]);
+            inquiry_1.textContent = 'この物件にお問い合わせ';
+            inquiryBox_1.appendChild(inquiry_1);
+
+            
+            //電話番号１
+            const inquiry_Tel_1 = (() => {
+                const inquiry_Tel_div = create_Element('div',[
+                    {class:'js-added-inquiry-tel'},
+                    {id:'inquiry1-tel'}
+                ]);
+                const inquiry_Tel_hr_1 = create_Element('hr',[]);
+                inquiry_Tel_div.appendChild(inquiry_Tel_hr_1);
+                const inquiry_Tel_p_Number = create_Element('p',[
+                    {class:'tel-number'}
+                ]);
+                inquiry_Tel_p_Number.textContent = 'TEL ' + settings['company_data']['telNumber_display'];
+                inquiry_Tel_div.appendChild(inquiry_Tel_p_Number);
+                const inquiry_Tel_p_Time = create_Element('p',[
+                    {class:'tel-time'}
+                ]);
+                inquiry_Tel_p_Time.textContent = settings['company_data']['business_hours'];
+                inquiry_Tel_div.appendChild(inquiry_Tel_p_Time);
+                const inquiry_Tel_hr_2 = create_Element('hr',[]);
+                inquiry_Tel_div.appendChild(inquiry_Tel_hr_2);
+    
+                return inquiry_Tel_div;
+            })();
+            inquiryBox_1.appendChild(inquiry_Tel_1);
+            //電話をかけるボタン
+            const inquiry_Tel_Button = (() => {
+                const inquiry_Tel_button = create_Element('a',[
+                    {href:'tel:' + settings['company_data']['tel_number']}
+                ]);
+                inquiry_Tel_button.textContent = '電話をかける';
+    
+                return inquiry_Tel_button;
+            })();
+            inquiryBox_1.appendChild(inquiry_Tel_Button);
+            //QRコード１
+            const qr_1 = (() => {
+                const qr_div = create_Element('div',[
+                    {class:'js-added-qrcode'},
+                    {id:'qrcode1'}
+                ]);
+                //QRコード生成
+                const qr_img = create_Element('img',[
+                    {title:'qrcode1'},
+                    {alt:'qrcode1'}
+                ]);
+                qr_img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=65x65&margin=3`;
+                //QRコードテーブル作成
+                const qrcode_table = new AddTable(
+                    {
+                        contents_Title:'',
+                        table_BaseId:'qrcode1',
+                        table_Contents:[[{th:'携帯表示用QRコード'},{td:['']}]],
+                        add_Styles:`
+                            #qrcode1-table {
+                                border:0;
+                                width:100%;
+                            }
+                            #qrcode1-table > tbody > tr > th {
+                                border:0;
+                                font-size:1.2rem;
+                            }
+                            #qrcode1-table > tbody > tr > td {
+                                border:0;
+                                padding:0.6rem;
+                                text-align:end;
+                                background-color:#dddddd;
+                            }
+                            @media screen and (${settings['media']['m']}) {
+                            
+                            }
+                            @media screen and (${settings['media']['s']}) {
+                            
+                            }
+                        `, 
+                        add_To_Selector:''
+                    }
+                );
+                qrcode_table.querySelector('td').removeChild(qrcode_table.querySelector('ul'));
+                qrcode_table.querySelector('td').appendChild(qr_img);
+                qr_div.appendChild(qrcode_table);
+        
+                return qr_div;
+            })();
+            component_1.appendChild(qr_1);
             //-----------------------------------------------------------------
         })();
     } else if (locationURL.includes('property')) {
