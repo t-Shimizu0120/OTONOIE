@@ -28,7 +28,8 @@ if (settings['mask']) {
                 {class:'js-added-container-top component--flex-box'},
                 {id:'container-top'}
             ]);
-            document.querySelector('div.detail_l').appendChild(containerTop);
+            //document.querySelector('div.detail_l').appendChild(containerTop);
+            document.querySelector('div.detail.clearfix').appendChild(containerTop);
             const containerTop_Left = create_Element('div',[
                 {class:'js-added-container-top-left component--flex-box'},
                 {id:'container-top-left'}
@@ -50,21 +51,24 @@ if (settings['mask']) {
                 {class:'js-added-container-middle component--flex-box'},
                 {id:'container-middle'}
             ]);
-            document.querySelector('div.detail_r').appendChild(containerMiddle);
+            //document.querySelector('div.detail_r').appendChild(containerMiddle);
+            document.querySelector('div.detail.clearfix').appendChild(containerMiddle);
             //-----------------------------------------------------------------
             //----------------------------下部---------------------------------
             const containerBottom = create_Element('div',[
                 {class:'js-added-container-bottom component--flex-box'},
                 {id:'container-bottom'}
             ]);
-            document.querySelector('div.detail_btm').appendChild(containerBottom);
+            //document.querySelector('div.detail_btm').appendChild(containerBottom);
+            document.querySelector('div.detail.clearfix').appendChild(containerBottom);
             //-----------------------------------------------------------------
             //----------------------------シェア-------------------------------
             const containerShare = create_Element('div',[
                 {class:'js-added-container-share component--flex-box'},
                 {id:'container-share'}
             ]);
-            document.querySelector('div.detail_btm').appendChild(containerShare);
+            //document.querySelector('div.detail_btm').appendChild(containerShare);
+            document.querySelector('div.detail.clearfix').appendChild(containerShare);
             //-----------------------------------------------------------------
             //===============================================================
             //お問い合わせ
