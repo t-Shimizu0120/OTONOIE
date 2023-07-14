@@ -248,6 +248,23 @@ if (settings['mask']) {
             })();
             containerTop_Left.appendChild(qr_1);
             //-----------------------------------------------------------------
+            //--------------------------レスポンシブ--------------------------------
+            //ブレイクポイント
+            const mediaQueryList = window.matchMedia(`(${settings['media']['m']})`);
+            //regist listener
+            mediaQueryList.addEventListener('change', listener);
+            listener(mediaQueryList);
+            // listener
+            function listener (event) {
+                if (event.matches) {
+                    // SP
+                    
+                } else {
+                    // PC
+                    
+                };
+            };
+            //--------------------------------------------------------------------
         })();
     } else if (locationURL.includes('property')) {
     } else {
