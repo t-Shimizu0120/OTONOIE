@@ -208,7 +208,7 @@ if (settings['mask']) {
                     {title:'qrcode'},
                     {alt:'qrcode'}
                 ]);
-                qr_img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=65x65&margin=3`;
+                //qr_img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=65x65&margin=3`;
                 
                 
                 
@@ -261,7 +261,7 @@ if (settings['mask']) {
                     
                 } else {
                     // PC
-                    
+                    qr_1.querySelector('img').src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=65x65&margin=3`;
                 };
             };
             //--------------------------------------------------------------------
