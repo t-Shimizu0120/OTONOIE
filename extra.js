@@ -9,7 +9,9 @@ if (settings['mask']) {
         //掲載データ
         //=================================================================
         //物件コード
+        const apartmentCode = document.querySelector('p.code').textContent.match(/[0-9]+$/)[0];
         //物件URL
+        const detailPageUrl = 'https://www.otonoie.net/detail/index.html?number=' + apartmentCode;
         //上部右側データ
         //賃料
         //管理費
@@ -201,24 +203,29 @@ if (settings['mask']) {
             ]);
             inquiry_Tel_button.textContent = '電話をかける';
             inquiryBox_1.appendChild(inquiry_Tel_Button);
-
-            
             //QRコード１
             const qr_1 = (() => {
                 const qr_div = create_Element('div',[
                     {class:'js-added-qrcode'},
                     {id:'qrcode1'}
                 ]);
+
+
+
+                
                 //QRコード生成
                 const qr_img = create_Element('img',[
                     {title:'qrcode1'},
                     {alt:'qrcode1'}
                 ]);
                 qr_img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=65x65&margin=3`;
+                
+                
+                
+
                 //QRコードテーブル作成
                 const qrcode_table = new AddTable(
                     {
-                        contents_Title:'',
                         table_BaseId:'qrcode1',
                         table_Contents:[[{th:'携帯表示用QRコード'},{td:['']}]],
                         add_Styles:`
@@ -237,13 +244,10 @@ if (settings['mask']) {
                                 background-color:#dddddd;
                             }
                             @media screen and (${settings['media']['m']}) {
-                            
                             }
                             @media screen and (${settings['media']['s']}) {
-                            
                             }
-                        `, 
-                        add_To_Selector:''
+                        `
                     }
                 );
                 qrcode_table.querySelector('td').removeChild(qrcode_table.querySelector('ul'));
@@ -252,7 +256,7 @@ if (settings['mask']) {
         
                 return qr_div;
             })();
-            component_1.appendChild(qr_1);
+            containerTop_Left.appendChild(qr_1);
             //-----------------------------------------------------------------
         })();
     } else if (locationURL.includes('property')) {
