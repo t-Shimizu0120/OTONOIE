@@ -161,8 +161,6 @@ if (settings['mask']) {
             ]);
             inquiry_1.textContent = 'この物件にお問い合わせ';
             inquiryBox_1.appendChild(inquiry_1);
-
-            
             //電話番号１
             const inquiry_Tel_1 = (() => {
                 const inquiry_Tel_div = create_Element('div',[
@@ -174,7 +172,7 @@ if (settings['mask']) {
                 const inquiry_Tel_p_Number = create_Element('p',[
                     {class:'tel-number'}
                 ]);
-                inquiry_Tel_p_Number.textContent = 'TEL ' + settings['company_data']['telNumber_display'];
+                inquiry_Tel_p_Number.textContent = 'TEL ' + settings['company_data']['tel_number_display'];
                 inquiry_Tel_div.appendChild(inquiry_Tel_p_Number);
                 const inquiry_Tel_p_Time = create_Element('p',[
                     {class:'tel-time'}
@@ -188,15 +186,16 @@ if (settings['mask']) {
             })();
             inquiryBox_1.appendChild(inquiry_Tel_1);
             //電話をかけるボタン
-            const inquiry_Tel_Button = (() => {
-                const inquiry_Tel_button = create_Element('a',[
-                    {href:'tel:' + settings['company_data']['tel_number']}
-                ]);
-                inquiry_Tel_button.textContent = '電話をかける';
-    
-                return inquiry_Tel_button;
-            })();
+            const inquiry_Tel_Button = create_Element('a',[
+                {href:'tel:' + settings['company_data']['tel_number']}
+            ]);
+            inquiry_Tel_button.textContent = '電話をかける';
             inquiryBox_1.appendChild(inquiry_Tel_Button);
+
+
+
+
+            
             //QRコード１
             const qr_1 = (() => {
                 const qr_div = create_Element('div',[
