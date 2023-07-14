@@ -199,20 +199,11 @@ if (settings['mask']) {
                     {class:'js-added-qrcode'},
                     {id:'qrcode-1'}
                 ]);
-
-
-
-                
-                //QRコード生成
+                //QRコードimageタグ
                 const qr_img = create_Element('img',[
                     {title:'qrcode'},
                     {alt:'qrcode'}
                 ]);
-                //qr_img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=65x65&margin=3`;
-                
-                
-                
-
                 //QRコードテーブル作成
                 const qrcode_table = new AddTable(
                     {
