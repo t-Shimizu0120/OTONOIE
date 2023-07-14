@@ -187,6 +187,7 @@ if (settings['mask']) {
             inquiryBox_1.appendChild(inquiry_Tel_1);
             //電話をかけるボタン
             const inquiry_Tel_Button = create_Element('a',[
+                {class:'component--flex-box component--button'},
                 {href:'tel:' + settings['company_data']['tel_number']}
             ]);
             inquiry_Tel_button.textContent = '電話をかける';
