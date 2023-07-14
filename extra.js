@@ -156,7 +156,16 @@ if (settings['mask']) {
             //お問合せボタン１
             const inquiry_1 = create_Element('button',[
                 {class:'js-added-inquiry-button component--button'},
+
+
+
+                
                 //{id:'inquiry-button1'}
+
+
+
+
+                
                 {id:'inquiry1-button'}
             ]);
             inquiry_1.textContent = 'この物件にお問い合わせ';
@@ -192,9 +201,6 @@ if (settings['mask']) {
             ]);
             inquiry_Tel_button.textContent = '電話をかける';
             inquiryBox_1.appendChild(inquiry_Tel_Button);
-
-
-
 
             
             //QRコード１
