@@ -13,7 +13,7 @@ settings['company_data']['company_name'] = '株式会社トータルメディエ
 //所在地
 settings['company_data']['company_address'] = '東京都北区上十条2-25-4 榎本ビル1F';
 //電話番号
-settings['company_data']['tel_number'] = '0359485411';
+settings['company_data']['telNumber'] = '0359485411';
 settings['company_data']['telNumber_display'] = '03-5948-5411';
 //営業時間
 settings['company_data']['business_hours'] = '受付時間 10:00～17:00（水曜定休）';
