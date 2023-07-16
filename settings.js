@@ -499,9 +499,9 @@ class AddPopoverContents {
         container_Id.id = object.contents_BaseId + '-popover';
         popover_Obj.container_Attrs.push(container_Id);
         const contents_Id = {};
-        contents_Id.id = object.popover_Contents + '-popover-contents';
+        contents_Id.id = object.popover_Contents + '-popover-content';
         popover_Obj.content_Attrs.push(contents_Id);
-        const target_Id = object.popover_Contents + '-popover-contents';
+        const target_Id = object.popover_Contents + '-popover-content';
         const button_Target = {};
         button_Target.popovertarget = target_Id;
         popover_Obj.button_Attrs.push(button_Target);
