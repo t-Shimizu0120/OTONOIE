@@ -274,6 +274,17 @@ if (settings['mask']) {
                     containerTop_Left.appendChild(inquiryBox_1);
                     qr_1.querySelector('img').src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=65x65&margin=3`;
                     bodyScrollPrevent(false);
+                    if (inquiry_wrap.querySelector('#year')　&& inquiry_wrap.querySelector('#month')) {
+                        inquiry_wrap.querySelector('#contact_area').id += '-invalid';
+                        inquiry_wrap.querySelector('#year').id += '-invalid';
+                        inquiry_wrap.querySelector('#month').id += '-invalid';
+                        inquiry_wrap.querySelector('textarea').id += 'textarea-invalid';
+                        inquiryForm.id = 'contact_area';
+                        inquiryForm.querySelector('#year-invalid').id = 'year';
+                        inquiryForm.querySelector('#month-invalid').id = 'month';
+                        inquiryForm.querySelector('textarea').id = '';
+                    } else {
+                    };
                     if (inquiryPopoverContent) {
                         for (targetInquiryButton of targetInquiryButtons) {
                             targetInquiryButton.setAttribute('popovertarget','');
