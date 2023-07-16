@@ -268,7 +268,7 @@ if (settings['mask']) {
                 const inquiry_Tel_p_Number = create_Element('p',[
                     {class:'tel-number'}
                 ]);
-                inquiry_Tel_p_Number.textContent = 'TEL ' + settings['company_data']['telNumber_display'];
+                inquiry_Tel_p_Number.textContent = 'TEL ' + settings['company_data']['tel_number_display'];
                 inquiry_Tel_div.appendChild(inquiry_Tel_p_Number);
                 const inquiry_Tel_p_Time = create_Element('p',[
                     {class:'business-hours'}
