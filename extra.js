@@ -247,12 +247,6 @@ if (settings['mask']) {
             listener(mediaQueryList);
             // listener
             function listener (event) {
-                
-                
-                const targetPopoverCloseButtons = document.querySelectorAll('.js-added-popover-close-button.match-media-target-close-btn');
-                const targetPopoverBacksideCloseButtons = document.querySelectorAll('.js-added-popover-content-backside-button.match-media-target-close-btn');
-
-
                 const popoverElms = document.querySelectorAll('.js-added-popover-content');
                 const inquiryPopoverContent = document.getElementById('inquiry-popover-content');
                 const targetInquiryButtons = document.querySelectorAll('.js-added-inquiry-button');
@@ -266,6 +260,22 @@ if (settings['mask']) {
                             targetInquiryButton.setAttribute('popovertargetaction','show');
                             targetInquiryButton.setAttribute('onclick','');
                             targetInquiryButton.addEventListener('click',popoverProcess_Open);
+                        };
+                    } else {
+                    };
+                    if (popoverElms) {
+                        for (popoverElm of popoverElms) {
+                            if (popoverElm.matches(':popover-open')) {
+                                popoverElm.hidePopover();
+                            } else {
+                            };
+                        };
+                        if (document.querySelectorAll('button.js-added-popover-content-backside-button.valid').length !== 0) {
+                            const popover_Backside_Buttons_Valid = document.querySelectorAll('button.js-added-popover-content-backside-button.valid');
+                            for (backside_Button of popover_Backside_Buttons_Valid) {
+                                backside_Button.classList.remove('valid');
+                            };
+                        } else {
                         };
                     } else {
                     };
