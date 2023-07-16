@@ -337,39 +337,39 @@ if (settings['mask']) {
                     popover_Target_Action_Close:'hide',
                     buttonText:'QRコードを表示',
                     add_Styles:`
-                        #share-qrcode-popover {
-                            flex-basis:calc(50% - 0.3rem);
-                        }
-                        #share-qrcode-popover > button {
-                            background:#3f3f3f;
-                            color:#ffffff;
-                            font-size:1.2rem;
-                            padding:1rem 0;
-                        }
-                        #share-qrcode-popover-contents {
-                            width:calc(9.6rem + 120px);
-                            margin:auto;
-                            padding:3.2rem;
-                            text-align:center;
-                        }
-                        #share-qrcode-popover-contents > img {
-                            margin-top:1.6rem;
-                            width:120px;
-                            height:120px;
-                        }
-                        #share-qrcode-popover-contents > p {
-                            margin-top:1.4rem;
-                            font-size:1.4rem;
-                            color:#000;
-                        }
-                        @media screen and (${settings['media']['m']}) {
-                        
-                        }
-                        @media screen and (${settings['media']['s']}) {
-                            #share-qrcode-popover > button {
-                                padding:0.8rem 0;
-                            }
-                        }
+#share-qrcode-popover {
+    flex-basis:calc(50% - 0.3rem);
+}
+#share-qrcode-popover > button {
+    background:#3f3f3f;
+    color:#ffffff;
+    font-size:1.2rem;
+    padding:1rem 0;
+}
+#share-qrcode-popover-content {
+    width:calc(9.6rem + 120px);
+    margin:auto;
+    padding:3.2rem;
+    text-align:center;
+}
+#share-qrcode-popover-content > img {
+    margin-top:1.6rem;
+    width:120px;
+    height:120px;
+}
+#share-qrcode-popover-content > p {
+    margin-top:1.4rem;
+    font-size:1.4rem;
+    color:#000;
+}
+@media screen and (${settings['media']['m']}) {
+
+}
+@media screen and (${settings['media']['s']}) {
+    #share-qrcode-popover > button {
+        padding:0.8rem 0;
+    }
+}
                     `
                 },
                 qr_img
