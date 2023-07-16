@@ -498,6 +498,7 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
         --padding:0.3rem;
     }
     .js-added-container-share {
+        --display:;
         --background:var(--color-table-bg-light);
         --flex-flow:row nowrap;
         --justify-content:space-between;
@@ -505,6 +506,7 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
         --padding:0.3rem;
         --margin:0 auto;
         
+        display:var(--display);
         background:var(--background);
         flex-flow:var( --flex-flow);
         justify-content:var(--justify-content);
