@@ -153,6 +153,13 @@
     background-color:var(--color-theme-border-dark);
 }
 /*ページトップボタン*/
+#pagetop {
+    --right:initial;
+    --bottom:initial;
+
+    right:var(--right);
+    bottom:var(--bottom);
+}
 .pagetop {
     --right:3rem;
     --bottom:2rem;
