@@ -375,12 +375,10 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
 }
 .js-added-popover-content-backside-button {
     --z-index:-50000;
-    --top:0;
-    --left:0;
-
-    top:var(--top);
-    left:var(--left);
+    --display:none;
+    
     z-index:var(--z-index);
+    display:var(--display);
 }
 .js-added-popover-content-backside-button.valid {
     --width:100vw;
