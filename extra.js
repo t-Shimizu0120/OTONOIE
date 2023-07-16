@@ -241,11 +241,17 @@ if (settings['mask']) {
             //-----------------------------------------------------------------
             //--------------------------お問い合せ下部--------------------------
             //WRAP
+            const inquiryContainer = create_Element('div',[
+                {class:'js-added-inquiry-container'},
+                {id:'inquiry-container'}
+            ]);
+            containerMiddle.appendChild(inquiryContainer);
+            //お問い合わせコンテンツBOX
             const inquiryBox_2 = create_Element('div',[
                 {class:'js-added-inquiry-box'},
                 {id:'inquiry-box-2'}
             ]);
-            containerMiddle.appendChild(inquiryBox_2);
+            inquiryContainer.appendChild(inquiryBox_2);
             //お問合せボタン２
             const inquiry_2 = create_Element('button',[
                     {class:'js-added-inquiry-button component--button'},
@@ -253,16 +259,11 @@ if (settings['mask']) {
             ]);
             inquiry_2.textContent = 'この物件にお問い合わせ';
             inquiryBox_2.appendChild(inquiry_2);
-
-
-
-
-            
             //電話番号２
             const inquiry_Tel_2 = (() => {
                 const inquiry_Tel_div = create_Element('div',[
                     {class:'js-added-inquiry-tel'},
-                    {id:'inquiry2-tel'}
+                    {id:'inquiry-tel-2'}
                 ]);
                 const inquiry_Tel_p_Number = create_Element('p',[
                     {class:'tel-number'}
@@ -270,7 +271,7 @@ if (settings['mask']) {
                 inquiry_Tel_p_Number.textContent = 'TEL ' + settings['company_data']['telNumber_display'];
                 inquiry_Tel_div.appendChild(inquiry_Tel_p_Number);
                 const inquiry_Tel_p_Time = create_Element('p',[
-                    {class:'tel-time'}
+                    {class:'business-hours'}
                 ]);
                 inquiry_Tel_p_Time.textContent = settings['company_data']['business_hours'];
                 inquiry_Tel_div.appendChild(inquiry_Tel_p_Time);
@@ -284,22 +285,21 @@ if (settings['mask']) {
             const qr_2 = (() => {
                 const qr_div = create_Element('div',[
                     {class:'js-added-qrcode'},
-                    {id:'qrcode2'}
+                    {id:'qrcode-2'}
                 ]);
-                //QRコード生成
+                //QRコードimageタグ
                 const qr_img = create_Element('img',[
-                    {title:'qrcode2'},
-                    {alt:'qrcode2'}
+                    {title:'qrcode'},
+                    {alt:'qrcode'}
                 ]);
-                qr_img.src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=80x80&margin=3`;
+                qr_div.appendChild(qr_img);
                 const qr_p = create_Element('p',[]);
                 qr_p.textContent = '携帯表示用QRコード';
-                qr_div.appendChild(qr_img);
                 qr_div.appendChild(qr_p);
                 
                 return qr_div;
             })();
-            component_2.appendChild(qr_2);
+            inquiryContainer.appendChild(qr_2);
             //-----------------------------------------------------------------
 
 
@@ -353,6 +353,7 @@ if (settings['mask']) {
                     // PC
                     containerTop_Left.appendChild(inquiryBox_1);
                     qr_1.querySelector('img').src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=65x65&margin=3`;
+                    qr_2.querySelector('img').src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=80x80&margin=3`;
                     bodyScrollPrevent(false);
                     if (inquiry_wrap.querySelector('#year')　&& inquiry_wrap.querySelector('#month')) {
                         inquiry_wrap.querySelector('#contact_area').id += '-invalid';
