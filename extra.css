@@ -153,14 +153,7 @@
     background-color:var(--color-theme-border-dark);
 }
 /*ページトップボタン*/
-#pagetop {
-    --right:initial;
-    --bottom:initial;
-
-    right:var(--right);
-    bottom:var(--bottom);
-}
-.pagetop {
+.pagetop#pagetop {
     --right:3rem;
     --bottom:2rem;
     
@@ -530,7 +523,7 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
     :root {
     }
     /*============================================================================*/
-    .pagetop {
+    .pagetop#pagetop {
         --right:2rem;
     }
     input[class="btn_reset"], input[class="btn_submit"] {
