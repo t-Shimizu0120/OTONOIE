@@ -375,7 +375,7 @@ if (settings['mask']) {
                 qr_img
             );
             share_qr.querySelector('#share-qrcode-popover-content').appendChild(qr_popover_p);
-            share_container.appendChild(share_qr);
+            containerShare.appendChild(share_qr);
             //---------------------------------------------------------------------
 
 
