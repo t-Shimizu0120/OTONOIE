@@ -498,7 +498,7 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
         --padding:0.3rem;
     }
     .js-added-container-share {
-        --display:;
+        --display:flex;
         --background:var(--color-table-bg-light);
         --flex-flow:row nowrap;
         --justify-content:space-between;
