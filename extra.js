@@ -301,7 +301,82 @@ if (settings['mask']) {
             })();
             inquiryContainer.appendChild(qr_2);
             //-----------------------------------------------------------------
-
+            //=================================================================
+            //共有
+            //=================================================================
+            //-----------------------------LINE--------------------------------
+            const share_Line = (() => {
+                const line_div = create_Element('div',[
+                    {class:'js-added-line'},
+                    {id:'share-line'}
+                ]);
+                const line_button = create_Element('a',[
+                    {class:'component--flex-box component--button'},
+                    {href:'https://social-plugins.line.me/lineit/share?url=' + detailPageUrl}
+                ]);
+                line_button.textContent = 'LINE共有';
+                line_div.appendChild(line_button);
+                
+                return line_div;
+            })();
+            containerShare.appendChild(share_Line);
+            //-----------------------------------------------------------------
+            //----------------------------QRコード------------------------------
+            const qr_img = create_Element('img',[
+                {title:'qrcode'},
+                {alt:'qrcode'}
+            ]);
+            const qr_popover_p = create_Element('p',[]);
+            qr_popover_p.textContent = '物件ページのQRコード';
+            const share_qr = new AddPopoverContents(
+                {
+                    contents_BaseId:'share-qrcode',
+                    popover_Contents:'share-qrcode',
+                    popover_Option:'auto',
+                    popover_Target_Action_Open:'show',
+                    popover_Target_Action_Close:'hide',
+                    buttonText:'QRコードを表示',
+                    add_Styles:`
+                        #share-qrcode-popover {
+                            flex-basis:calc(50% - 0.3rem);
+                        }
+                        #share-qrcode-popover > button {
+                            background:#3f3f3f;
+                            color:#ffffff;
+                            font-size:1.2rem;
+                            padding:1rem 0;
+                        }
+                        #share-qrcode-popover-contents {
+                            width:calc(9.6rem + 120px);
+                            margin:auto;
+                            padding:3.2rem;
+                            text-align:center;
+                        }
+                        #share-qrcode-popover-contents > img {
+                            margin-top:1.6rem;
+                            width:120px;
+                            height:120px;
+                        }
+                        #share-qrcode-popover-contents > p {
+                            margin-top:1.4rem;
+                            font-size:1.4rem;
+                            color:#000;
+                        }
+                        @media screen and (${settings['media']['m']}) {
+                        
+                        }
+                        @media screen and (${settings['media']['s']}) {
+                            #share-qrcode-popover > button {
+                                padding:0.8rem 0;
+                            }
+                        }
+                    `
+                },
+                qr_img
+            );
+            share_qr.querySelector('#share-qrcode-popover-content').appendChild(qr_popover_p);
+            share_container.appendChild(share_qr);
+            //---------------------------------------------------------------------
 
 
             
@@ -323,6 +398,7 @@ if (settings['mask']) {
                 if (event.matches) {
                     // SP
                     containerTop.appendChild(inquiryBox_1);
+                    share_qr.querySelector('img').src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=120x120&margin=3`;
                     bodyScrollPrevent(false);
                     if (inquiryPopoverContent) {
                         for (targetInquiryButton of targetInquiryButtons) {
