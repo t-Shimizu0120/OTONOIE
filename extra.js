@@ -247,22 +247,19 @@ if (settings['mask']) {
             listener(mediaQueryList);
             // listener
             function listener (event) {
-                const popoverElms = document.querySelectorAll('.js-added-popover-content');
                 
-                const targetInquiryButtons = document.querySelectorAll('.js-added-inquiry-button');
                 
                 const targetPopoverCloseButtons = document.querySelectorAll('.js-added-popover-close-button.match-media-target-close-btn');
                 const targetPopoverBacksideCloseButtons = document.querySelectorAll('.js-added-popover-content-backside-button.match-media-target-close-btn');
 
 
-                
+                const popoverElms = document.querySelectorAll('.js-added-popover-content');
                 const inquiryPopoverContent = document.getElementById('inquiry-popover-content');
-                
+                const targetInquiryButtons = document.querySelectorAll('.js-added-inquiry-button');
                 if (event.matches) {
                     // SP
                     containerTop.appendChild(inquiryBox_1);
                     bodyScrollPrevent(false);
-                    
                     if (inquiryPopoverContent) {
                         for (targetInquiryButton of targetInquiryButtons) {
                             targetInquiryButton.setAttribute('popovertarget','inquiry-popover-content');
@@ -275,11 +272,33 @@ if (settings['mask']) {
                 } else {
                     // PC
                     containerTop_Left.appendChild(inquiryBox_1);
-                    bodyScrollPrevent(false);
-                    
-                    
-                    
                     qr_1.querySelector('img').src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=65x65&margin=3`;
+                    bodyScrollPrevent(false);
+                    if (inquiryPopoverContent) {
+                        for (targetInquiryButton of targetInquiryButtons) {
+                            targetInquiryButton.setAttribute('popovertarget','');
+                            targetInquiryButton.setAttribute('popovertargetaction','');
+                            targetInquiryButton.setAttribute('onclick','location.href=\'#contact_area\'');
+                            targetInquiryButton.removeEventListener('click',popoverProcess_Open);
+                        };
+                    } else {
+                    };
+                    if (popoverElms) {
+                        for (popoverElm of popoverElms) {
+                            if (popoverElm.matches(':popover-open')) {
+                                popoverElm.hidePopover();
+                            } else {
+                            };
+                        };
+                        if (document.querySelectorAll('button.js-added-popover-content-backside-button.valid').length !== 0) {
+                            const popover_Backside_Buttons_Valid = document.querySelectorAll('button.js-added-popover-content-backside-button.valid');
+                            for (backside_Button of popover_Backside_Buttons_Valid) {
+                                backside_Button.classList.remove('valid');
+                            };
+                        } else {
+                        };
+                    } else {
+                    };
                 };
             };
             //--------------------------------------------------------------------
