@@ -374,17 +374,17 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
     right:21%;
 }
 .js-added-popover-content-backside-button {
-    --z-index:-50000;
     --display:none;
     
-    z-index:var(--z-index);
     display:var(--display);
 }
 .js-added-popover-content-backside-button.valid {
+    --display:block;
     --width:100vw;
     --height:100vh;
     --z-index:50000;
-    
+
+    display:var(--display);
     width:var(--width);
     height:var(--height);
     position:fixed;
