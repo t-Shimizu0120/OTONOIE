@@ -210,24 +210,24 @@ if (settings['mask']) {
                         table_BaseId:'qrcode-1',
                         table_Contents:[[{th:'携帯表示用QRコード'},{td:['']}]],
                         add_Styles:`
-                            #qrcode-1-table {
-                                border:0;
-                                width:100%;
-                            }
-                            #qrcode-1-table > tbody > tr > th {
-                                border:0;
-                                font-size:1.2rem;
-                            }
-                            #qrcode-1-table > tbody > tr > td {
-                                border:0;
-                                padding:0.6rem;
-                                text-align:end;
-                                background-color:#dddddd;
-                            }
-                            @media screen and (${settings['media']['m']}) {
-                            }
-                            @media screen and (${settings['media']['s']}) {
-                            }
+#qrcode-1-table {
+    border:0;
+    width:100%;
+}
+#qrcode-1-table > tbody > tr > th {
+    border:0;
+    font-size:1.2rem;
+}
+#qrcode-1-table > tbody > tr > td {
+    border:0;
+    padding:0.6rem;
+    text-align:end;
+    background-color:#dddddd;
+}
+@media screen and (${settings['media']['m']}) {
+}
+@media screen and (${settings['media']['s']}) {
+}
                         `
                     }
                 );
@@ -247,11 +247,38 @@ if (settings['mask']) {
             listener(mediaQueryList);
             // listener
             function listener (event) {
+                const popoverElms = document.querySelectorAll('.js-added-popover-content');
+                
+                const targetInquiryButtons = document.querySelectorAll('.js-added-inquiry-button');
+                
+                const targetPopoverCloseButtons = document.querySelectorAll('.js-added-popover-close-button.match-media-target-close-btn');
+                const targetPopoverBacksideCloseButtons = document.querySelectorAll('.js-added-popover-content-backside-button.match-media-target-close-btn');
+
+
+                
+                const inquiryPopoverContent = document.getElementById('inquiry-popover-content');
+                
                 if (event.matches) {
                     // SP
+                    containerTop.appendChild(inquiryBox_1);
+                    bodyScrollPrevent(false);
                     
+                    if (inquiryPopoverContent) {
+                        for (targetInquiryButton of targetInquiryButtons) {
+                            targetInquiryButton.setAttribute('popovertarget','inquiry-popover-content');
+                            targetInquiryButton.setAttribute('popovertargetaction','show');
+                            targetInquiryButton.setAttribute('onclick','');
+                            targetInquiryButton.addEventListener('click',popoverProcess_Open);
+                        };
+                    } else {
+                    };
                 } else {
                     // PC
+                    containerTop_Left.appendChild(inquiryBox_1);
+                    bodyScrollPrevent(false);
+                    
+                    
+                    
                     qr_1.querySelector('img').src = `https://api.qrserver.com/v1/create-qr-code/?data=${detailPageUrl}&size=65x65&margin=3`;
                 };
             };
