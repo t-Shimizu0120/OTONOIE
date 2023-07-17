@@ -242,7 +242,7 @@ if (settings['mask']) {
             //--------------------------お問い合せ下部--------------------------
             //WRAP
             const inquiryContainer = create_Element('div',[
-                {class:'js-added-inquiry-container'},
+                {class:'js-added-inquiry-container component--flex-box'},
                 {id:'inquiry-container'}
             ]);
             containerMiddle.appendChild(inquiryContainer);
