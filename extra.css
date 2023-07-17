@@ -587,6 +587,28 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
     
     margin-bottom:var(--margin-bottom);
 }
+#inquiry-tel-2 {
+    --flex-grow:1;
+    --order:1;
+
+    flex-grow:var(--flex-grow);
+    order:var(--order);
+}
+#inquiry-tel-2 > .tel-number {
+    --font-size:1.8rem;
+    
+    font-size:var(--font-size);
+}
+#inquiry-tel-2 > .business-hours {
+    --font-size:1rem;
+
+    font-size:var(--font-size);
+}
+#inquiry-box-2 > a {
+    --display:none;
+    
+    display:var(--display);
+}
 #qrcode-2 {
     --margin-bottom:0;
     --margin-left:3.2rem;
@@ -621,19 +643,11 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
 
 
 
-#inquiry-tel-2 {
-    flex-grow:1;
-    order:1;
-}
-#inquiry2-tel > .tel-number {
-    font-size:1.8rem;
-}
-#inquiry2-tel > .tel-time {
-    font-size:1rem;
-}
-#inquiry2-box > a {
-    display:none;
-}
+
+
+
+
+
 #inquiry-popover-contents {
     top:1.2rem;
     width:94%;
