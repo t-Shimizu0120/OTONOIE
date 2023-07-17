@@ -758,6 +758,155 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
         margin:var(--margin);
     }
     /*お問い合わせフォーム・QRコード・シェア*/
+    .js-added-popover-bottom-buttons-wrap {
+        --flex-flow:row nowrap;
+        --justify-content:space-between;
+        --background:var(--color-container-bg-light);
+        --padding:0.3rem;
+        --position:fixed;
+        --width:94%;
+        --bottom:1.2rem;
+        --left:3%;
+
+        flex-flow:var(--flex-flow);
+        justify-content:var(--justify-content);
+        background:var(--background);
+        padding:var(--padding);
+        position:var(--position);
+        width:var(--width);
+        bottom:var(--bottom);
+        left:var(--left);
+    }
+    .js-added-popover-bottom-buttons-wrap > ul.owner_form_btns {
+        --flex-flow:row nowrap;
+        --justify-content:space-between;
+        --flex-basis:calc(85% - 0.6rem);
+        --margin:0;
+        --order:0;
+        
+        display:flex;
+        display:-webkit-box;
+        display:-webkit-flex;
+        display:-ms-flexbox;
+        flex-flow:var(--flex-flow);
+        justify-content:var(--justify-content);
+        flex-basis:var(--flex-basis);
+        margin:var(--margin);
+        order:var(--order);
+    }
+
+
+
+    
+    #inquiry-popover-bottom-buttons-wrap > ul.owner_form_btns > li {
+        margin-right:0;
+    }
+    #inquiry-popover-bottom-buttons-wrap > ul.owner_form_btns > li {
+        flex-basis:33%;
+    }
+    #inquiry-popover-bottom-buttons-wrap > ul.owner_form_btns > li + li {
+        flex-basis:calc(67% - 0.6rem);
+    }
+    #inquiry-popover-bottom-buttons-wrap > .js-added-popover-close-button.match-media-target-close-btn {
+        position:initial;
+        top:initial;
+        right:initial;
+        flex-basis:15%;
+        border-radius:2px;
+        background-color:#9fadb2;
+        order:1;
+    }
+    .js-added-inquiry-button {
+        font-size:1.4rem;
+        padding:1.2rem 0;
+    }
+    #inquiry-popover-content-wrap > #contact_area {
+        margin-bottom:0;
+        border:0;
+    }
+    #inquiry-popover-content-wrap > #contact_area > .txt_r{
+        margin-top:-5rem;
+    }
+    #qrcode1 {
+        display:none;
+    }
+    #inquiry1-box {
+        display:flex;
+        display:-webkit-box;
+        display:-webkit-flex;
+        display :-ms-flexbox;
+        flex-flow:row wrap;
+        justify-content:space-between;
+        background:#dddddd;
+        padding:0.3rem;
+        order:3;
+    }
+    #inquiry1-box > button {
+        margin-bottom:0.6rem;
+    }
+    #inquiry1-tel {
+        margin-right:0.6rem;
+        flex-grow:1;
+        order:1;
+    }
+    #inquiry1-tel > hr {
+        display:none;
+    }
+    #inquiry1-box > a {
+        display:flex;
+        display:-webkit-box;
+        display:-webkit-flex;
+        display :-ms-flexbox;
+        flex-flow:row nowrap;
+        flex-basis:33%;
+        background:#26aaff;
+        color:#ffffff;
+        text-decoration:none;
+        justify-content:center;
+        align-items:center;
+        font-weight:bold;
+        font-size:1.4rem;
+        padding:1.2rem 0;
+        order:2;
+    }
+    #inquiry1-box > a:hover {
+        opacity:.6;
+    }
+    #qrcode2 {
+        display:none;
+    }
+    #inquiry2-box > button {
+        margin-bottom:0.6rem;
+    }
+    #inquiry2-tel {
+        margin-right:0.6rem;
+    }
+    #inquiry2-tel > .tel-number {
+        font-size:1.6rem;
+    }
+    #inquiry2-tel > .tel-time {
+        font-size:0.8rem;
+    }
+    #inquiry2-box > a {
+        display:flex;
+        display:-webkit-box;
+        display:-webkit-flex;
+        display :-ms-flexbox;
+        flex-flow:row nowrap;
+        flex-basis:33%;
+        background:#26aaff;
+        color:#ffffff;
+        text-decoration:none;
+        justify-content:center;
+        align-items:center;
+        font-weight:bold;
+        font-size:1.4rem;
+        padding:1.2rem 0;
+        order:2;
+    }
+    #inquiry2-box > a:hover {
+        opacity:.6;
+    }
 }
 
 /*============================================================================*/
@@ -775,4 +924,5 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
     input[class="btn_reset"], input[class="btn_submit"] {
         --font-size:1.2rem;
     }
+    /*お問い合わせフォーム・QRコード・シェア*/
 }
