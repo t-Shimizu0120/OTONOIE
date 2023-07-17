@@ -17,6 +17,7 @@
     --color-white:#fff;
     --color-black:#000;
     --color-orange:#ffb911;
+    --color-primary:#26aaff;
     --color-line-color:#06c755;
     --color-bg-light:var(--color-white,);
     --color-bg-dark:var(--color-black);
@@ -35,6 +36,8 @@
     --color-tab-label-bg-dark:#2f2f2f;
     --color-container-bg-light:var(--color-dddddd);
     --color-container-bg-dark:;
+    --color-inquiry-popover-close-button-bg-light:#9fadb2;
+    --color-inquiry-popover-close-button-bg-dark:;
     /*<------------------------------------------------------>*/
     /*<-----------------------others------------------------->*/
     /*border*/
@@ -794,81 +797,110 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
         margin:var(--margin);
         order:var(--order);
     }
+    #inquiry-popover-bottom-buttons-wrap > ul.owner_form_btns > li {
+        --margin-right:0;
+        
+        margin-right:var(--margin-right);
+    }
+    #inquiry-popover-bottom-buttons-wrap > ul.owner_form_btns > li {
+        --flex-basis:33%;
+        
+        flex-basis:var(--flex-basis);
+    }
+    #inquiry-popover-bottom-buttons-wrap > ul.owner_form_btns > li + li {
+        --flex-basis:calc(67% - 0.6rem);
+        
+        flex-basis:var(--flex-basis);
+    }
+    
+    #inquiry-popover-bottom-buttons-wrap > .js-added-popover-close-button.match-media-target-close-btn.component--button {
+        --position:initial;
+        --top:initial;
+        --right:initial;
+        --flex-basis:15%;
+        --background-color:var(--color-inquiry-popover-close-button-bg-light);
+        --order:1;
+        
+        position:var(--position);
+        top:var(--top);
+        right:var(--right);
+        flex-basis:var(--flex-basis);
+        background-color:var(--background-color);
+        order:var(--order);
+    }
+    .js-added-inquiry-button {
+        --font-size:1.4rem;
+        --padding:1.2rem 0;
+
+        font-size:var(--font-size);
+        padding:var(--padding);
+    }
+    #inquiry-popover-content-wrap > #contact_area {
+        --margin-bottom:0;
+        --border:0;
+        
+        margin-bottom:var(--margin-bottom);
+        border:var(--border);
+    }
+    #inquiry-popover-content-wrap > #contact_area > .txt_r{
+        --margin-top:-5rem;
+
+        margin-top:var(--margin-top);
+    }
+    #qrcode-1 {
+        --display:none;
+    }
+    #inquiry-box-1 {
+        --flex-flow:row wrap;
+        --order:3;
+        --background:var(--color-container-bg-light);
+        --padding:0.3rem;
+        
+        background:var(--background);
+        padding:var(--padding);
+    }
+    #inquiry-box-1 > button {
+        --margin-bottom:0.6rem;
+        
+        margin-bottom:var(--margin-bottom);
+    }
+    #inquiry-tel-1 {
+        --margin-right:0.6rem;
+        --flex-grow:1;
+
+        margin-right:var(--margin-right);
+        flex-grow:var(--flex-grow);
+    }
+    #inquiry-tel-1 > hr {
+        --display:none;
+
+        display:var(--display);
+    }
+    #inquiry-box-1 > a {
+        --flex-flow:row nowrap;
+        --flex-basis:33%;
+        --background:var(--color-primary);
+        --color:var(--color-white);
+        --justify-content:center;
+        --align-items:center;
+        --font-size:1.4rem;
+        --padding:1.2rem 0;
+        --order:2;
+        
+        flex-flow:var(--flex-flow);
+        flex-basis:var(--flex-basis);
+        background:var(--background);
+        color:var(--color);
+        justify-content:var(--justify-content);
+        align-items:var(--align-items);
+        font-size:var(--font-size);
+        padding:var(--padding);
+        order:var(--order);
+    }
 
 
 
     
-    #inquiry-popover-bottom-buttons-wrap > ul.owner_form_btns > li {
-        margin-right:0;
-    }
-    #inquiry-popover-bottom-buttons-wrap > ul.owner_form_btns > li {
-        flex-basis:33%;
-    }
-    #inquiry-popover-bottom-buttons-wrap > ul.owner_form_btns > li + li {
-        flex-basis:calc(67% - 0.6rem);
-    }
-    #inquiry-popover-bottom-buttons-wrap > .js-added-popover-close-button.match-media-target-close-btn {
-        position:initial;
-        top:initial;
-        right:initial;
-        flex-basis:15%;
-        border-radius:2px;
-        background-color:#9fadb2;
-        order:1;
-    }
-    .js-added-inquiry-button {
-        font-size:1.4rem;
-        padding:1.2rem 0;
-    }
-    #inquiry-popover-content-wrap > #contact_area {
-        margin-bottom:0;
-        border:0;
-    }
-    #inquiry-popover-content-wrap > #contact_area > .txt_r{
-        margin-top:-5rem;
-    }
-    #qrcode1 {
-        display:none;
-    }
-    #inquiry1-box {
-        display:flex;
-        display:-webkit-box;
-        display:-webkit-flex;
-        display :-ms-flexbox;
-        flex-flow:row wrap;
-        justify-content:space-between;
-        background:#dddddd;
-        padding:0.3rem;
-        order:3;
-    }
-    #inquiry1-box > button {
-        margin-bottom:0.6rem;
-    }
-    #inquiry1-tel {
-        margin-right:0.6rem;
-        flex-grow:1;
-        order:1;
-    }
-    #inquiry1-tel > hr {
-        display:none;
-    }
-    #inquiry1-box > a {
-        display:flex;
-        display:-webkit-box;
-        display:-webkit-flex;
-        display :-ms-flexbox;
-        flex-flow:row nowrap;
-        flex-basis:33%;
-        background:#26aaff;
-        color:#ffffff;
-        text-decoration:none;
-        justify-content:center;
-        align-items:center;
-        font-weight:bold;
-        font-size:1.4rem;
-        padding:1.2rem 0;
-        order:2;
-    }
     #inquiry1-box > a:hover {
         opacity:.6;
     }
