@@ -819,8 +819,10 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
     }
     #inquiry-popover-bottom-buttons-wrap > ul.owner_form_btns > li {
         --flex-basis:33%;
+        --order:1;
         
         flex-basis:var(--flex-basis);
+        order:var(--order);
     }
     #inquiry-popover-bottom-buttons-wrap > ul.owner_form_btns > li + li {
         --flex-basis:calc(67% - 0.6rem);
