@@ -602,7 +602,7 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
 #qrcode-2 > p {
     --font-size:0.8rem;
     --color:#000;
-    --margin-top:0.5rem;
+    --margin-top:0.6rem;
 
     font-size:var(--font-size);
     color:var(--color);
