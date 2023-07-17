@@ -797,6 +797,13 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
         margin:var(--margin);
         order:var(--order);
     }
+    .js-added-inquiry-button {
+        --font-size:1.4rem;
+        --padding:1.2rem 0;
+
+        font-size:var(--font-size);
+        padding:var(--padding);
+    }
     #inquiry-popover-bottom-buttons-wrap > ul.owner_form_btns > li {
         --margin-right:0;
         
@@ -812,7 +819,6 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
         
         flex-basis:var(--flex-basis);
     }
-    
     #inquiry-popover-bottom-buttons-wrap > .js-added-popover-close-button.match-media-target-close-btn.component--button {
         --position:initial;
         --top:initial;
@@ -827,13 +833,6 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
         flex-basis:var(--flex-basis);
         background-color:var(--background-color);
         order:var(--order);
-    }
-    .js-added-inquiry-button {
-        --font-size:1.4rem;
-        --padding:1.2rem 0;
-
-        font-size:var(--font-size);
-        padding:var(--padding);
     }
     #inquiry-popover-content-wrap > #contact_area {
         --margin-bottom:0;
