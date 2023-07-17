@@ -546,7 +546,6 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
 
     order:var(--order);
 }
-
 #inquiry-tel-1 {
     --order:1;
 
@@ -557,7 +556,7 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
 
     font-size:var(--font-size);
 }
-#inquiry-tel-1 > .tel-time {
+#inquiry-tel-1 > .business-hours {
     --font-size:0.8rem;
 
     font-size:var(--font-size);
@@ -567,37 +566,51 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
 
     display:var(--display);
 }
-#inquiry2-box {
-    display:flex;
-    display:-webkit-box;
-    display:-webkit-flex;
-    display:-ms-flexbox;
-    flex-flow:row wrap;
-    justify-content:space-between;
-    flex-grow:1;
-    order:0;
+#inquiry-box-2 {
+    --flex-flow:row wrap;
+    --justify-content:space-between;
+    --flex-grow:1;
+    --order:0;
+
+    flex-flow:var(--flex-flow);
+    justify-content:var(--justify-content);
+    flex-grow:var(--flex-grow);
+    order:var(--order);
 }
-#qrcode2 {
-    margin-bottom:0;
-    margin-left:3.2rem;
-    display:flex;
-    display:-webkit-box;
-    display:-webkit-flex;
-    display:-ms-flexbox;
-    flex-flow:column nowrap;
-    justify-content:space-between;
-    align-items:center;
-    order:1;
+#qrcode-2 {
+    --margin-bottom:0;
+    --margin-left:3.2rem;
+    --flex-flow:column nowrap;
+    --justify-content:space-between;
+    --align-items:center;
+    --order:1;
+
+    margin-bottom:var(--margin-bottom);
+    margin-left:var(--margin-left);
+    flex-flow:var(--flex-flow);
+    justify-content:var(--justify-content);
+    align-items:var(--align-items);
+    order:var(--order);
 }
-#qrcode2 > img {
-    width:80px;
-    height:80px;
+#qrcode-2 > img {
+    --width:80px;
+    --height:80px;
+    
+    width:var(--width);
+    height:var(--height);
 }
-#qrcode2 > p {
-    font-size:0.8rem;
-    color:#000;
-    margin-top:0.5rem;
+#qrcode-2 > p {
+    --font-size:0.8rem;
+    --color:#000;
+    --margin-top:0.5rem;
+
+    font-size:var(--font-size);
+    color:var(--color);
+    margin-top:var(--margin-top);
 }
+
+
+
 #inquiry-button2 {
     order:0;
 }
