@@ -500,30 +500,6 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
 
 
 
-.component--button {
-    border:var(--button-border);
-    border-radius:var(--button-border-radius);
-    font-weight:var(--button-font-weight);
-    text-align:var(--button-text-align);
-    cursor:var(--button-cursor);
-    text-decoration:var(--button-text-decoration);
-}
-.component--button:hover {
-    opacity:var(--button-hover-opacity);
-    text-decoration:var(--button-text-decoration);
-}
-.component--button:disabled {
-    opacity:var(--button-disabled-opacity);
-    text-decoration:var(--button-text-decoration);
-    pointer-events:var(--button-disabled-pointer-events);
-}
-
-
-
-
-
-
-
 
 
 
