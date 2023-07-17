@@ -375,11 +375,13 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
     --display:block;
     --width:100vw;
     --height:100vh;
+    --padding:0;
     --z-index:50000;
 
     display:var(--display);
     width:var(--width);
     height:var(--height);
+    padding:var(--padding);
     position:fixed;
     top:var(--popover-backside-button-top);
     left:var(--popover-backside-button-left);
@@ -461,6 +463,68 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
 .js-added-container-share {
     display:none;
 }
+/*お問い合わせフォーム・QRコード・シェア*/
+.js-added-inquiry-button {
+    --width:100%;
+    --background:#ffb911;
+    --color:#ffffff;
+    --font-size:1.6rem;
+    --padding:1.4rem 0;
+    
+    width:var(--width);
+    background:var(--background);
+    color:var(--color);
+    font-size:var(--font-size);
+    padding:var(--padding);
+}
+.js-added-inquiry-tel {
+    text-align: center;
+    background: none;
+}
+.js-added-inquiry-tel > .tel-number {
+    font-weight:bold;
+    color:#000;
+}
+.js-added-inquiry-tel > .business-hours {
+    color:#000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.component--button {
+    border:var(--button-border);
+    border-radius:var(--button-border-radius);
+    font-weight:var(--button-font-weight);
+    text-align:var(--button-text-align);
+    cursor:var(--button-cursor);
+    text-decoration:var(--button-text-decoration);
+}
+.component--button:hover {
+    opacity:var(--button-hover-opacity);
+    text-decoration:var(--button-text-decoration);
+}
+.component--button:disabled {
+    opacity:var(--button-disabled-opacity);
+    text-decoration:var(--button-text-decoration);
+    pointer-events:var(--button-disabled-pointer-events);
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -514,6 +578,7 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
         padding:var(--padding);
         margin:var(--margin);
     }
+    /*お問い合わせフォーム・QRコード・シェア*/
 }
 
 /*============================================================================*/
