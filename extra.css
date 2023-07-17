@@ -16,6 +16,7 @@
     
     --color-white:#fff;
     --color-black:#000;
+    --color-orange:#ffb911;
     --color-bg-light:var(--color-white,);
     --color-bg-dark:var(--color-black);
     --color-theme-light:#f7f4f4;
@@ -475,17 +476,10 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
     padding:var(--padding);
     margin:var(--margin);
 }
-
-
-
-
-
-
-
 .js-added-inquiry-button {
     --width:100%;
-    --background:#ffb911;
-    --color:#ffffff;
+    --background:var(--color-orange);
+    --color:var(--color-white);
     --font-size:1.6rem;
     --padding:1.4rem 0;
     
@@ -502,16 +496,17 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
     text-align:var(--text-align);
     background:var(--background);
 }
+
 .js-added-inquiry-tel > .tel-number {
     --font-weight:bold;
-    --color:#000;
-
+    --color:var(--color-black);
+    
     font-weight:var(--font-weight);
     color:var(--color);
 }
 .js-added-inquiry-tel > .business-hours {
-    --color:#000;
-
+    --color:var(--color-black);
+    
     color:var(--color);
 }
 
@@ -644,7 +639,7 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
 }
 #qrcode-2 > p {
     --font-size:0.8rem;
-    --color:#000;
+    --color:var(--color-black);
     --margin-top:0.6rem;
 
     font-size:var(--font-size);
@@ -664,18 +659,15 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
     margin:var(--margin);
     background-color:var(--background-color);
 }
-
-
-
-
-
 #inquiry-popover-content-wrap {
-    padding:0;
-    border:0.3rem #dfdfdf solid;
-    height: calc(100dvh - 7.8rem);
-    overflow:scroll;
+    --height:calc(100dvh - 7.8rem);
+    --overflow:scroll;
+    --scrollbar-width:none;
+    
+    height:var(--height);
+    overflow:var(--overflow);
     -ms-overflow-style:none;
-    scrollbar-width:none;
+    scrollbar-width:var(--scrollbar-width);
 }
 
 
