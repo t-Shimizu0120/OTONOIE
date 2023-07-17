@@ -577,6 +577,16 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
     flex-grow:var(--flex-grow);
     order:var(--order);
 }
+#inquiry-button-2 {
+    --order:0;
+
+    order:var(--order);
+}
+#inquiry-box-2 > button {
+    --margin-bottom:0.6rem;
+    
+    margin-bottom:var(--margin-bottom);
+}
 #qrcode-2 {
     --margin-bottom:0;
     --margin-left:3.2rem;
@@ -611,13 +621,7 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
 
 
 
-#inquiry-button2 {
-    order:0;
-}
-#inquiry2-box > button {
-    margin-bottom:0.4rem;
-}
-#inquiry2-tel {
+#inquiry-tel-2 {
     flex-grow:1;
     order:1;
 }
