@@ -284,7 +284,7 @@ if (settings['mask']) {
             //QRコード２
             const qr_2 = (() => {
                 const qr_div = create_Element('div',[
-                    {class:'js-added-qrcode'},
+                    {class:'js-added-qrcode component--flex-box'},
                     {id:'qrcode-2'}
                 ]);
                 //QRコードimageタグ
