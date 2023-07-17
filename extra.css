@@ -761,6 +761,9 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
         margin:var(--margin);
     }
     /*お問い合わせフォーム・QRコード・シェア*/
+    .js-added-inquiry-container {
+        --padding:0.3rem;
+    }
     .js-added-popover-bottom-buttons-wrap {
         --flex-flow:row nowrap;
         --justify-content:space-between;
