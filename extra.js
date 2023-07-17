@@ -151,7 +151,7 @@ if (settings['mask']) {
             //--------------------------お問い合せ上部--------------------------
             //WRAP
             const inquiryBox_1 = create_Element('div',[
-                {class:'js-added-inquiry-box'},
+                {class:'js-added-inquiry-box component--flex-box'},
                 {id:'inquiry-box-1'}
             ]);
             containerTop_Left.appendChild(inquiryBox_1);
@@ -248,7 +248,7 @@ if (settings['mask']) {
             containerMiddle.appendChild(inquiryContainer);
             //お問い合わせコンテンツBOX
             const inquiryBox_2 = create_Element('div',[
-                {class:'js-added-inquiry-box'},
+                {class:'js-added-inquiry-box component--flex-box'},
                 {id:'inquiry-box-2'}
             ]);
             inquiryContainer.appendChild(inquiryBox_2);
