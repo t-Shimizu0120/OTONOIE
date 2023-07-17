@@ -444,16 +444,12 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
 }
 .js-added-container-middle {
     --width:100%;
-    --flex-flow:row nowrap;
+    --flex-flow:row wrap;
     --justify-content:space-between;
-    --background-color:var(--color-dddddd);
-    --margin:0 auto;
     
     width:var(--width);
     flex-flow:var(--flex-flow);
     justify-content:var(--justify-content);
-    background-color:var(--background-color);
-    margin:var(--margin);
 }
 .js-added-container-bottom {
     
@@ -462,6 +458,19 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
     display:none;
 }
 /*お問い合わせフォーム・QRコード・シェア*/
+.js-added-inquiry-container {
+    --flex-flow:row nowrap;
+    --justify-content:space-between;
+    --background-color:#dddddd;
+    --padding:0.8rem 1.6rem;
+    --margin: 0 auto;
+
+    flex-flow:var(--flex-flow);
+    justify-content:var(--justify-content);
+    background-color:var(--background-color);
+    padding:var(--padding);
+    margin:var(--margin);
+}
 .js-added-inquiry-button {
     --width:100%;
     --background:#ffb911;
@@ -495,6 +504,21 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
     color:var(--color);
 }
 
+#contact_area-invalid h4 {
+    --font-size:1.6rem;
+    --font-weight:bold;
+    --color:#424242;
+    --border-left:4px solid #82b822;
+    --padding:5px;
+    --margin-bottom:15px;
+
+    font-size:var(--font-size);
+    font-weight:var(--font-weight);
+    color:var(--color);
+    border-left:var(--border-left);
+    padding:var(--padding);
+    margin-bottom:var(--margin-bottom);
+}
 #qrcode-1 {
     --display:block;
     --width:100%;
@@ -539,66 +563,9 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
     font-size:var(--font-size);
 }
 #inquiry-box-1 > a {
-    display:none;
-}
+    --display:none;
 
-
-
-
-
-
-
-.component--button {
-    border:var(--button-border);
-    border-radius:var(--button-border-radius);
-    font-weight:var(--button-font-weight);
-    text-align:var(--button-text-align);
-    cursor:var(--button-cursor);
-    text-decoration:var(--button-text-decoration);
-}
-.component--button:hover {
-    opacity:var(--button-hover-opacity);
-    text-decoration:var(--button-text-decoration);
-}
-.component--button:disabled {
-    opacity:var(--button-disabled-opacity);
-    text-decoration:var(--button-text-decoration);
-    pointer-events:var(--button-disabled-pointer-events);
-}
-
-
-
-
-
-
-
-#contact_area-invalid h4 {
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: #424242;
-    border-left: 4px solid #82b822;
-    padding: 5px;
-    margin-bottom: 15px;
-}
-
-
-
-
-
-#inquiry-button1 {
-    order:0;
-}
-#inquiry1-tel {
-    order:1;
-}
-#inquiry1-tel > .tel-number {
-    font-size:1.6rem;
-}
-#inquiry1-tel > .tel-time {
-    font-size:0.8rem;
-}
-#inquiry1-box > a {
-    display:none;
+    display:var(--display);
 }
 #inquiry2-box {
     display:flex;
