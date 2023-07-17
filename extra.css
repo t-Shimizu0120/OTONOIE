@@ -879,6 +879,7 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
         display:var(--display);
     }
     #inquiry-box-1 > a {
+        --display:flex;
         --flex-flow:row nowrap;
         --flex-basis:33%;
         --background:var(--color-primary);
@@ -916,6 +917,7 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
         --font-size:0.8rem;
     }
     #inquiry-box-2 > a {
+        --display:flex;
         --flex-flow:row nowrap;
         --flex-basis:33%;
         --background:var(--color-primary);
