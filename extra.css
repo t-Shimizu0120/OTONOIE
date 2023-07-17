@@ -664,10 +664,15 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
     background-color:var(--background-color);
 }
 #inquiry-popover-content-wrap {
+    --border-width:0.3rem;
+    --border-color:var(--color-theme-border-light);    
     --height:calc(100dvh - 7.8rem);
     --overflow:scroll;
     --scrollbar-width:none;
     
+    border:var(--border);
+    border-width:var(--border-width);
+    border-color:var(--border-color);
     height:var(--height);
     overflow:var(--overflow);
     -ms-overflow-style:none;
