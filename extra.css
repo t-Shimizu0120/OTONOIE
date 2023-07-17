@@ -897,47 +897,42 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
         padding:var(--padding);
         order:var(--order);
     }
+    #qrcode-2 {
+        --display:none;
+        
+        display:var(--display);
+    }
+    #inquiry-tel-2 {
+        --margin-right:0.6rem;
 
-
-
-    
-    #inquiry1-box > a:hover {
-        opacity:.6;
+        margin-right:var(--margin-right);
     }
-    #qrcode2 {
-        display:none;
+    #inquiry-tel-2 > .tel-number {
+        --font-size:1.6rem;
     }
-    #inquiry2-box > button {
-        margin-bottom:0.6rem;
-    }
-    #inquiry2-tel {
-        margin-right:0.6rem;
-    }
-    #inquiry2-tel > .tel-number {
-        font-size:1.6rem;
-    }
-    #inquiry2-tel > .tel-time {
-        font-size:0.8rem;
+    #inquiry-tel-2 > .business-hours {
+        --font-size:0.8rem;
     }
     #inquiry2-box > a {
-        display:flex;
-        display:-webkit-box;
-        display:-webkit-flex;
-        display :-ms-flexbox;
-        flex-flow:row nowrap;
-        flex-basis:33%;
-        background:#26aaff;
-        color:#ffffff;
-        text-decoration:none;
-        justify-content:center;
-        align-items:center;
-        font-weight:bold;
-        font-size:1.4rem;
-        padding:1.2rem 0;
-        order:2;
-    }
-    #inquiry2-box > a:hover {
-        opacity:.6;
+        --flex-flow:row nowrap;
+        --flex-basis:33%;
+        --background:var(--color-primary);
+        --color:var(--color-white);
+        --justify-content:center;
+        --align-items:center;
+        --font-size:1.4rem;
+        --padding:1.2rem 0;
+        --order:2;
+        
+        flex-flow:var(--flex-flow);
+        flex-basis:var(--flex-basis);
+        background:var(--background);
+        color:var(--color);
+        justify-content:var(--justify-content);
+        align-items:var(--align-items);
+        font-size:var(--font-size);
+        padding:var(--padding);
+        order:var(--order);
     }
 }
 
