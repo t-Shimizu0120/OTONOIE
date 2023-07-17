@@ -459,12 +459,14 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
 }
 /*お問い合わせフォーム・QRコード・シェア*/
 .js-added-inquiry-container {
+    --width:100%;
     --flex-flow:row nowrap;
     --justify-content:space-between;
     --background-color:#dddddd;
     --padding:0.8rem 1.6rem;
     --margin: 0 auto;
-
+    
+    width:var(--width);
     flex-flow:var(--flex-flow);
     justify-content:var(--justify-content);
     background-color:var(--background-color);
