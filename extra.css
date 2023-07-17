@@ -828,6 +828,7 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
         --right:initial;
         --flex-basis:15%;
         --background-color:var(--color-inquiry-popover-close-button-bg-light);
+        --border-radius:var(--button-border-radius);
         --order:1;
         
         position:var(--position);
@@ -835,6 +836,7 @@ input:checked + .js-added-tab-label + .js-added-tab-content {
         right:var(--right);
         flex-basis:var(--flex-basis);
         background-color:var(--background-color);
+        border-radius:var(--border-radius);
         order:var(--order);
     }
     #inquiry-popover-content-wrap > #contact_area {
