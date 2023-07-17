@@ -129,7 +129,7 @@ if (settings['mask']) {
             popover_Close_Button.addEventListener('click',popoverProcess_Close);
             //下部ボタンWRAP
             const inquiry_Bottom_Buttons_wrap = create_Element('div',[
-                {class:'js-added-popover-bottom-buttons-wrap'},
+                {class:'js-added-popover-bottom-buttons-wrap component--flex-box'},
                 {id:'inquiry-popover-bottom-buttons-wrap'}
             ]);
             //問い合わせフォームWRAP
